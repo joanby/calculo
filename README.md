@@ -1,4 +1,4 @@
-# Curso Completo de Calculo en una variable con Python y Sage
+# Curso Completo de Cálculo en una variable con Python y Sage
 
 1. Nümeros Reales
 2. Sucesiones y límites de números reales
