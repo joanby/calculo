@@ -1,6 +1,6 @@
 # Curso Completo de Cálculo en una variable con Python y Sage
 
-1. Nümeros Reales
+1. Números Reales
 2. Sucesiones y límites de números reales
 3. Sumas y series
 4. Funciones real de variable real y continuidad
