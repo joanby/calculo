@@ -1,0 +1,15 @@
+---
+title: "Tema 1 - Números reales"
+author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+date: ''
+output: 
+  ioslides_presentation:
+    widescreen: true
+    css: Mery_style.css
+    logo: Images/matriz_mov.gif
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
