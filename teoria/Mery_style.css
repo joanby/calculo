@@ -83,8 +83,21 @@
 }
 
 
+.button{
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: #f44336;
+    color: white;
+    padding: 14px 14px;
+    text-align: center; 
+    text-decoration: none;
+}
 
 
+a:link, a:visited, a:hover, a:active {
+  color: white;
+  text-decoration: none;
+}
 
 
 
