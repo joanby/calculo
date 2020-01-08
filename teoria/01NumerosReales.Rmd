@@ -19,4 +19,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Apartat/trans2
 
+- això és un element
+- això és un altre
+
+$$\int_0^1 x\ dx$$
 
