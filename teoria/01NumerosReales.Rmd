@@ -1,6 +1,6 @@
 ---
 title: "Tema 1 - Números reales"
-author: "Ricardo Alberich, Juan Gabriel Gomila y Arnau Mir"
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
 date: ''
 output: 
   ioslides_presentation:
@@ -12,4 +12,11 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+# Tema
+
+## Apartat/trans
+
+## Apartat/trans2
+
 
