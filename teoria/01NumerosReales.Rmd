@@ -22,5 +22,23 @@ knitr::opts_chunk$set(echo = TRUE)
 - això és un element
 - això és un altre
 
-$$\int_0^1 x\ dx$$
+$$\int_0^1 x\ dx `r 2+2`$$
+
+
+```{python, echo = FALSE}
+### reticulate::py_install("sympy")
+# import sympy  
+from sympy import * 
+  
+x = symbols('x') 
+expr = sin(x)/x; 
+    
+print("Expression : {}".format(expr))  
+      
+# Use sympy.limit() method  
+limit_expr = limit(expr, x, 0)   
+      
+print("Limit of the expression tends to 0 : {}".format(limit_expr))   
+
+```
 
