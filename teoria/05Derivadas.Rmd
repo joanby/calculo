@@ -15,7 +15,27 @@ reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
 #reticulate::py_install("sympy")
 ```
 
-# Tema
+# Definición de derivada
+
+## Introducción
+La derivada de una función nace de formalizar la noción de **recta tangente** en un valor $x_0$ para una función $f(x)$.
+
+En el gráfico siguiente, podemos observar un ejemplo del dibujo de una función junto con la recta tangente en un punto $x_0$ de su dominio.
+
+La pendiente de la recta tangente (en rojo) vendría a representar lo que denominaremos la derivada de la función $f(x)$ en $x=x_0$.
+
+## Introducción
+```{r,echo=FALSE,fig.align='center'}
+x=seq(from=-1,to=pi, by=0.01)
+f = function(x){sin(x)+cos(x)}
+plot(x,f(x),type="l")
+x0=0
+text(x0+0.15,f(x0)-0.175,expression(paste("(",x[0],",f(",x[0],"))")))
+points(x0,f(x0),pch=19,col="blue")
+m=cos(x0)-sin(x0)
+abline(f(x0)-m*x0,m,col="red")
+```
+
 
 ## Apartat/trans
 
