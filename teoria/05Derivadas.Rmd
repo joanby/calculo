@@ -1,0 +1,50 @@
+---
+title: "Tema 1 - Derivación"
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ''
+output: 
+  ioslides_presentation:
+    widescreen: true
+    css: Mery_style.css
+    logo: Images/calculus.gif
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
+#reticulate::py_install("sympy")
+```
+
+# Tema
+
+## Apartat/trans
+
+<div class="center">
+[![Ejemplo de serie de Taylor](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=taylor+series+arctan%281%2F%281%2Bx%5E6%29%29+at+x+%3D+pi%2F4)
+</div>
+
+## Apartat/trans2
+
+- això és un element
+- això és un altre
+
+$$\int_0^1 x\ dx `r 2+2`$$
+
+
+```{python, echo = FALSE}
+### reticulate::py_install("sympy")
+# import sympy  
+from sympy import * 
+  
+x = symbols('x') 
+expr = sin(x)/x; 
+    
+print("Expression : {}".format(expr))  
+      
+# Use sympy.limit() method  
+limit_expr = limit(expr, x, 0)   
+      
+print("Limit of the expression tends to 0 : {}".format(limit_expr))   
+
+```
+
