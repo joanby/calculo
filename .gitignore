@@ -39,3 +39,5 @@ vignettes/*.pdf
 .Renviron
 
 
+.DS_Store
+teoria/.DS_Store
