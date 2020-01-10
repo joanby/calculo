@@ -1,5 +1,5 @@
 ---
-title: "Tema 1 - Derivación"
+title: "Tema 5 - Derivabilidad de funciones"
 author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
 date: ''
 output: 
@@ -15,7 +15,7 @@ reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
 #reticulate::py_install("sympy")
 ```
 
-# Definición de derivada
+# Derivada de una función en un valor del dominio de la misma
 
 ## Introducción
 La derivada de una función nace de formalizar la noción de **recta tangente** en un valor $x_0$ para una función $f(x)$.
@@ -36,8 +36,400 @@ m=cos(x0)-sin(x0)
 abline(f(x0)-m*x0,m,col="red")
 ```
 
+## Introducción
 
-## Apartat/trans
+<div class="center">
+
+```{r, echo=FALSE, label=der1,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/Derivada1.png",dpi=1200)
+```
+</div>
+
+
+## Definición de derivada de una función en un punto
+
+Consideremos la figura anterior.
+
+La pendiente de una recta recordemos que se define como la tangente del ángulo con el eje X. 
+
+Hemos dibujado una función $f(x)$ que pasa por el punto $(x_0,f(x_0))$ junto con una recta secante que pasa por el punto. 
+
+Otro punto de dicha recta dado un valor $h$ sería $(x_0+h,f(x_0+h))$. Intuitivamente dicha recta secante "tiende" a la tangente cuando el valor $h$ tiende a cero. 
+
+## Definición de derivada de una función en un punto
+
+La pendiente de la recta secante como puede observarse es la tangente del ángulo $\alpha$ que vale $\frac{f(x_0+h)-f(x_0)}{h}$.
+Entonces, la definición de derivada de $f(x)$ en $x=x_0$ es la siguiente:
+
+<l class="definition"> Definición de derivada en un punto </l>
+Sea $f:(a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$. Diremos que $f$ es **derivable** en $x_0$ o que **existe la derivada de $f$ en $x_0$** cuando existe el límite siguiente:
+$$
+\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h},
+$$
+y, en caso en que exista, llamaremos a dicho límite **derivada de la función $f$ en $x_0$** escrita matemáticamente como $f'(x_0)$.
+
+## Definición de derivada de una función en un punto
+<l class="observ">Observación: </l>
+la derivada de una función es un propiedad **local**, es decir, está definida en un punto $x_0$ del dominio.
+
+Cuando, haciendo un abuso del lenguaje, se dice que la función $f$ es **derivable**, se quiere decir que dicha función es derivable en todos los puntos del dominio de la misma.
+
+## Definición de derivada de una función en un punto
+
+<l class="observ">Observación: </l>
+La derivada de una función $f$ en un punto de su dominio $x_0$ se puede expresar también de la forma siguiente:
+$$
+\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}.
+$$
+Para ver la expresión anterior, basta considerar el cambio de variable siguiente $x=x_0+h$, de donde $h=x-x_0$ y aplicar la definición de derivada.
+
+Fijaos que decir que $h$ tiende a cero es equivalente a decir que $x$ tiende a $x_0$.
+
+
+## Ejemplos
+<div class="example">
+**Derivada de la función constante**
+
+Veamos que si la función $f$ es constante en todo su dominio, $f(x)=k$, para todo $x$ del dominio, la derivada de $f$ en cualquier punto del mismo es nula.
+
+Sea $x_0$ un punto del dominio de $f$. La **derivada** de $f$ en $x_0$ será:
+$$
+f'(x_0)=\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}=\lim_{x\to x_0}\frac{k-k}{x-x_0}=\lim_{x\to x_0} 0 =0.
+$$
+
+</div>
+
+
+<div class="example">
+**Derivada del monomio de grado $n$**
+
+Calculemos la derivada de función $f$ si ésta vale $f(x)=x^n$, donde $n$ es un valor natural mayor que $1$ ($n=1,2,\ldots$):
+
+Sea $x_0$ un punto del dominio de $f$. La **derivada** de $f$ en $x_0$ será:
+$$
+\begin{array}{rl}
+f'(x_0) & =\displaystyle\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}=\lim_{x\to x_0}\frac{x^n-x_0^n}{x-x_0}=\lim_{x\to x_0} \frac{(x-x_0)(x^{n-1}+x^{n-2}x_0+x^{n-3}x_0^2+\cdots+ x_0^{n-1})}{x-x_0} \\ & \displaystyle =\lim_{x\to x_0} x^{n-1}+x^{n-2}x_0+x^{n-3}x_0^2+\cdots+ x_0^{n-1} =n\cdot x_0^{n-1}.
+\end{array}
+$$
+</div>
+
+## Ejemplo
+<div class="example">
+**Derivada del monomio de grado $n$**
+
+La derivada de la función anterior en `Wolfram Alpha` se muestra en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=derivative+of+x%5En)
+</l>
+
+</div>
+
+
+## Ejemplos
+<div class="example">
+**Derivada del valor absoluto**
+
+Consideremos la función $f(x)=|x|$, valor absoluto de $x$, definida en todo $\mathbb{R}$ como:
+$f(x)=\begin{cases}
+x, & \mbox{si } x\geq 0, \\
+-x & \mbox{si }x<0.
+\end{cases}$
+
+Estudiemos la derivabilidad de $f$ en $x_0=0$, es decir, veamos si el límite siguiente existe:
+$\displaystyle\lim_{x\to 0}\frac{f(x)-f(0)}{x-0}=\lim_{x\to 0}\frac{|x|}{x}$.
+
+Si hacemos el límite anterior por la derecha o para los valores $x>0$, obtenemos:
+$$
+\lim_{x\to 0^+}\frac{|x|}{x}=\lim_{x\to 0^+}\frac{x}{x}=\lim_{x\to 0^+}1 =1.
+$$
+En cambio, si lo hacemos por la izquierda o para los valores $x<0$, obtenemos:
+$$
+\lim_{x\to 0^-}\frac{|x|}{x}=\lim_{x\to 0^-}\frac{-x}{x}=\lim_{x\to 0^-} -1 =-1.
+$$
+
+</div>
+
+## Ejemplos
+<div class="example">
+**Derivada del valor absoluto**
+
+Como los límites anteriores no coinciden, concluimos que el límite $\displaystyle \lim_{x\to 0}\frac{|x|}{x}$ no existe y por tanto, $f$ no es derivable en $x=0$.
+
+Gráficamente se observa que la función anterior tiene una punta en $x=0$ y, por tanto, $f$ no puede ser derivable en dicho punto.
+
+Este comportamiento es el usual cuando una función no es derivable en un punto $x_0$, es decir, se observa gráficamente que en dicho punto, la función no tiene un comportamiento suave.
+
+</div>
+
+## Ejemplos
+<div class="example">
+**Derivada del valor absoluto**
+```{r,echo=FALSE,fig.align='center'}
+x=seq(from=-1,to=1,by=0.01)
+plot(x,abs(x),type='l',ylab=expression("|x|"),main="Gráfica de función valor absoluto")
+```
+
+
+</div>
+
+## Ejemplo
+<div class="example">
+**Derivada del valor absoluto**
+
+La gráfica del valor absoluto en `Wolfram Alpha` se muestra en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=plot+of+%7Cx%7C)
+</l>
+
+</div>
+
+# Propiedades de las funciones derivables
+
+## Derivabilidad implica continuidad
+
+<l class="prop"> Teorema:</l> sea $f$ una función real de variable real y sea $x_0$ un valor del dominio de $f$. Si $f$ es derivable en $x_0$, entonces $f$ es continua en $x_0$.
+
+
+## Derivabilidad implica continuidad
+<div class="dem">
+**Demostración.**
+
+Definimos la función siguiente en un entorno de valor $x_0$:
+$$
+g(x)=\begin{cases}
+\frac{f(x)-f(x_0)}{x-x_0}, & \mbox{si }x\neq x_0,\\
+f'(x_0), & \mbox{si } x=x_0.
+\end{cases}
+$$
+Usando que $f$ es derivable en $x_0$, tenemos que la función $g$ definida anteriormente será continua en $x_0$ ya que:
+$$
+\lim_{x\to x_0} g(x)=\lim_{x\to x_0} \frac{f(x)-f(x_0)}{x-x_0}=f'(x_0)=g(x_0).
+$$
+Si despejamos $f(x)$ de la expresión de $g(x)$ obtenemos $f(x)=f(x_0)+g(x)\cdot (x-x_0)$. 
+
+Veamos que $f$ es continua en $x_0$:
+$$
+\lim_{x\to x_0}f(x)=\lim_{x\to x_0} f(x_0)+g(x)\cdot (x-x_0) = f(x_0)+f'(x_0)\cdot 0 = f(x_0),
+$$
+tal como queríamos ver.
+</div>
+
+
+## La derivada de la suma es suma de derivadas
+Sean $f$ y $g$ dos funciones reales de variable real y sea $x_0$ un valor del dominio de $f$ y de $g$. Si $f$ y $g$ son derivables en $x_0$, también lo es la función suma $f+g$, y se verifica que: $(f+g)'(x_0)=f'(x_0)+g'(x_0)$.
+
+<div class="dem">
+**Demostración:**
+$$
+\begin{array}{rl}
+(f+g)'(x_0) & = \displaystyle\lim_{x\to x_0}\frac{(f+g)(x)-(f+g)(x_0)}{x-x_0}=\lim_{x\to x_0}\frac{f(x)+g(x)-f(x_0)-g(x_0)}{x-x_0} \\ & = \displaystyle \lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0} + \lim_{x\to x_0}\frac{g(x)-g(x_0)}{x-x_0}=f'(x_0)+g'(x_0).
+\end{array}
+$$
+
+</div>
+
+## La derivada de una función por una constante es la constante por la derivada de la función
+Sea $k\in\mathbb{R}$ un valor real, $f$ una función real de variable real y $x_0$ un valor del dominio de $f$. Entonce si $f$ es derivable en $x_0$, también lo es $k\cdot f$ y se verifica que: $(k\cdot f)'(x_0)=k\cdot f'(x_0)$.
+
+<div class="dem">
+**Demostración:**
+
+$$
+\begin{array}{rl}
+(k\cdot f)'(x_0) & \displaystyle =\lim_{x\to x_0}\frac{(k\cdot f)(x)-(k\cdot f)(x_0)}{x-x_0}=
+\lim_{x\to x_0}\frac{k\cdot f(x)-k\cdot f(x_0)}{x-x_0}=\lim_{x\to x_0}\frac{k\cdot (f(x)-f(x_0))}{x-x_0} \\  &\displaystyle =k\lim_{x\to x_0}\frac{ f(x)-f(x_0)}{x-x_0}=k f'(x_0).
+\end{array}
+$$
+</div>
+
+## La derivada del producto de funciones
+Sean $f$ y $g$ dos funciones reales de variable real y sea $x_0$ un valor del dominio de $f$ y de $g$. Si $f$ y $g$ son derivables en $x_0$, también lo es la función producto $f\cdot g$, y se verifica que: $(f\cdot g)'(x_0)=f'(x_0)\cdot g(x_0)+f(x_0)\cdot g'(x_0)$.
+
+<div class="dem">
+**Demostración:**
+$$
+\begin{array}{rl}
+(f\cdot g)'(x_0) & = \displaystyle\lim_{x\to x_0}\frac{(f\cdot g)(x)-(f\cdot g)(x_0)}{x-x_0}=\lim_{x\to x_0}\frac{f(x)\cdot g(x)-f(x_0)\cdot g(x_0)}{x-x_0} \\ & = \displaystyle \lim_{x\to x_0}\frac{f(x)\cdot g(x)-f(x)\cdot g(x_0)+f(x)\cdot g(x_0)-f(x_0)\cdot g(x_0)}{x-x_0}\\ & = \displaystyle \lim_{x\to x_0}\frac{f(x)\cdot (g(x)- g(x_0))+(f(x)-f(x_0))\cdot g(x_0)}{x-x_0}\\ & = \displaystyle \lim_{x\to x_0}f(x)\cdot\frac{g(x)- g(x_0)}{x-x_0}+\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}\cdot g(x_0)=f(x_0)\cdot g'(x_0)+f'(x_0)\cdot g(x_0).
+\end{array}
+$$
+
+</div>
+
+## La derivada del cociente de funciones
+Sean $f$ y $g$ dos funciones reales de variable real y sea $x_0$ un valor del dominio de $f$ y de $g$ tal que $g'(x_0)\neq 0$. Si $f$ y $g$ son derivables en $x_0$, también lo es la función cociente $\frac{f}{g}$, y se verifica que: $\left(\frac{f}{g}\right)'(x_0)=\frac{f'(x_0)\cdot g(x_0)-f(x_0)\cdot g'(x_0)}{g(x_0)^2}$.
+
+<div class="dem">
+**Demostración:**
+$$
+\begin{array}{rl}
+\left(\frac{f}{g}\right)'(x_0) & = \displaystyle\lim_{x\to x_0}\frac{\left(\frac{f}{g}\right)(x)-\left(\frac{f}{g}\right)(x_0)}{x-x_0}=\lim_{x\to x_0}\frac{\frac{f(x)}{g(x)}-\frac{f(x_0)}{g(x_0)}}{x-x_0} =\lim_{x\to x_0} \frac{f(x)\cdot g(x_0)-g(x)\cdot f(x_0)}{g(x)\cdot g(x_0)\cdot (x-x_0)}  \\ & \displaystyle =\lim_{x\to x_0} \frac{f(x)\cdot g(x_0)-f(x_0)\cdot g(x_0)+f(x_0)\cdot g(x_0) -g(x)\cdot f(x_0)}{g(x)\cdot g(x_0)\cdot (x-x_0)} \\ & = \displaystyle \lim_{x\to x_0}\frac{1}{g(x)\cdot g(x_0)}\cdot \left(\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}\cdot g(x_0)-f(x_0)\cdot \lim_{x\to x_0} \frac{g(x)-g(x_0)}{x-x_0}\right) \\ & = \displaystyle \frac{1}{g(x_0)^2}(f'(x_0)\cdot g(x_0)-f(x_0)\cdot g'(x_0)).
+\end{array}
+$$
+
+</div>
+
+
+## Derivada de la función inversa
+Sea $f$ una función real de variable real y $x_0$ un valor del dominio de $f$. Suponemos que $f$ es derivable en $x_0$ y que $f'(x_0)\neq 0$. Supongamos que $f$ admite inversa $g$, es decir, existe una función $g$ tal que $g\circ f=\mathrm{Id}$, es decir, para cualquier valor $x$ del dominio de $f$, se cumple que $g(f(x))=x$. Además, suponemos que $g$ es continua en $f(x_0)$. Entonces $g$ es derivable en $f(x_0)$ y se verifica que $g'(f(x_0))=\frac{1}{f'(x_0)}$.
+
+## Derivada de la función inversa
+<div class="dem">
+**Demostración:**
+
+El valor de $g'(f(x_0))$ es:
+$g'(f(x_0))  = \displaystyle\lim_{y\to f(x_0)}\frac{g(y)-g(f(x_0))}{y-f(x_0)}.$
+
+Para el cálculo del límite anterior, hacemos el cambio de variable siguiente: $y=f(x)$, o $x=g(y)$. Como $y$ tiende a $f(x_0)$, tendremos con la variable nueva que $f(x)$ tiende a $f(x_0)$ pero como $g$ es continua en $f(x_0)$, deducimos que $g(f(x))=x$ tiende a $g(f(x_0))=x_0$. En resumen, el límite anterior puede escribirse como:
+$$
+g'(f(x_0)) =\lim_{x\to x_0}\frac{g(f(x))-g(f(x_0))}{f(x)-f(x_0)}=\lim_{x\to x_0}\frac{x-x_0}{f(x)-f(x_0)} = \frac{1}{\displaystyle\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}}=\frac{1}{f'(x_0)}.
+$$
+
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo: derivada de la función $g(x)=\sqrt[n]{x}$.**
+
+La función $g(x)=\sqrt[n]{x}$ es la inversa de la función $f(x)=x^n$ ya que:
+$g(f(x))=g(x^n)=\sqrt[n]{x^n}=x$. 
+
+Usando la expresión vista anteriormente, podemos escribir que: $g'(f(x))=g'(x^n)=\frac{1}{f'(x)}$.
+
+En un ejemplo anterior vimos que $f'(x)=n\cdot x^{n-1}$. Por tanto:  $g'(x^n)=\frac{1}{n\cdot x^{n-1}}$.
+
+Sea $y=x^n$, entonces $x=\sqrt[n]{y}$. Por tanto, $g'(y)=\frac{1}{n\cdot x^{n-1}}=\frac{1}{n\cdot \sqrt[n]{y^{n-1}}}$.
+
+
+La derivada de la función $g(x)$ en `Wolfram Alpha` se muestra en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=derivative+of+x%5E%281%2Fn%29)
+</l>
+
+</div>
+
+
+## Ejemplo
+<div class="example">
+**Ejemplo: derivada de la función $\tan x$.**
+
+La función $\tan x$ está definida como $\frac{\sin x}{\cos x}$.
+
+Calculemos primero la derivada de la función $\sin x$ en un valor $x_0$:
+$$
+\begin{array}{rl}
+(\sin)'(x_0) & \displaystyle =\lim_{x\to x_0}\frac{\sin x-\sin x_0}{x-x_0}=\lim_{x\to x_0}\frac{2\cos\left(\frac{x+x_0}{2}\right)\cdot\sin\left(\frac{x-x_0}{2}\right)}{x-x_0}=2\cdot \cos(x_0)\lim_{x\to x_0}\frac{\sin\left(\frac{x-x_0}{2}\right)}{x-x_0} \\ & \displaystyle = \cos(x_0)\lim_{x\to x_0}\frac{\sin\left(\frac{x-x_0}{2}\right)}{\frac{x-x_0}{2}} = \cos(x_0),
+\end{array}
+$$
+usando que $\lim\limits_{x\to x_0}\frac{\sin\left(\frac{x-x_0}{2}\right)}{\frac{x-x_0}{2}}=1.$ La expresión anterior se deduce del hecho de que $\lim\limits_{t\to 0} \frac{\sin t}{t}=1$. 
+
+Si se hace el cambio de variable $t=\frac{x-x_0}{2}$ y teniendo en cuenta que como $x\to x_0$, entonces $t\to 0$, los dos límites anteriores son iguales a 1.
+
+
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo: derivada de la función $\tan x$.**
+
+Para calcular la derivada de la función $\cos x$, usamos una técnica similar:
+$$
+\begin{array}{rl}
+(\cos)'(x_0) & \displaystyle =\lim_{x\to x_0}\frac{\cos x-\cos x_0}{x-x_0}=\lim_{x\to x_0}\frac{-2\sin\left(\frac{x+x_0}{2}\right)\cdot\sin\left(\frac{x-x_0}{2}\right)}{x-x_0}=-2\cdot \sin(x_0)\lim_{x\to x_0}\frac{\sin\left(\frac{x-x_0}{2}\right)}{x-x_0} \\ & \displaystyle =- \sin(x_0)\lim_{x\to x_0}\frac{\sin\left(\frac{x-x_0}{2}\right)}{\frac{x-x_0}{2}} = -\sin(x_0).
+\end{array}
+$$
+Usamos la propiedad de la derivada del cociente, podemos hallar la derivada de la función $\tan x$:
+$$
+\begin{array}{rl}
+(\tan)'(x_0) & =\left(\frac{\sin}{\cos}\right)'(x_0)=\frac{\sin'(x_0)\cdot \cos(x_0)-\sin (x_0)\cdot \cos'(x_0)}{\cos^2(x_0)}=\frac{\cos(x_0)\cdot \cos(x_0)+\sin (x_0)\cdot \sin(x_0)}{\cos^2(x_0)} \\ & =
+\frac{\cos^2(x_0)+\sin^2(x_0)}{\cos^2(x_0)}=\frac{1}{\cos^2 (x_0)}=1+\tan^2 (x_0).
+\end{array}
+$$
+
+
+La derivada de la función $\tan x$ en `Wolfram Alpha` se muestra en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=derivative+of+tan%28x%29)
+</l>
+
+</div>
+
+##  Derivada de la función compuesta. Regla de la cadena
+Sean $f$ y $g$ dos funciones reales de variable real. Sea $x_0$ un valor del dominio de $f$ tal que $f(x_0)$ es del dominio de $g$. Supongamos que $g$ es derivable en $f(x_0)$ y $f$ es derivable en $x_0$. Entonces la función compuesta $g\circ f$ es derivable en $x_0$ y se verifica que:
+$(g\circ f)'(x_0)=g'(f(x_0))\cdot f'(x_0)$. 
+
+
+##  Derivada de la función compuesta. Regla de la cadena
+
+<div class="dem">
+**Demostración:**
+$$
+\begin{array}{rl}
+(g\circ f)'(x_0) & \displaystyle =\lim_{x\to x_0}\frac{(g\circ f)(x)-(g\circ f)(x_0)}{x-x_0}=\lim_{x\to x_0}\frac{g(f(x))-g(f(x_0))}{x-x_0} \\ & \displaystyle =\lim_{x\to x_0}\frac{g(f(x))-g(f(x_0))}{f(x)-f(x_0)}\cdot \lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}=g'(f(x_0))\cdot f'(x_0).
+\end{array}
+$$
+En el último cálculo, podemos afirmar que el límite $\displaystyle\lim_{x\to x_0}\frac{g(f(x))-g(f(x_0))}{f(x)-f(x_0)}$ vale $g'(f(x_0))$ porque como $f$ es derivable en $x_0$, $f$ será continua en $x_0$ y si $x\to x_0$, entonces $f(x)\to f(x_0)$ y el límite anterior queda:
+$$
+\lim_{x\to x_0}\frac{g(f(x))-g(f(x_0))}{f(x)-f(x_0)} =\lim_{f(x)\to f(x_0)}\frac{g(f(x))-g(f(x_0))}{f(x)-f(x_0)}=g'(f(x_0)).
+$$
+
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Hallemos la derivada de la función $h(x)=\arctan (x^3+x^2+1)$.
+
+La función anterior es la composición de la función $f(x)=x^3+x^2+1$ y $g(y)=\arctan y$, es decir:
+$h(x)=(g\circ f)(x)$.
+
+La derivada de la función $f(x)$ se puede calcular usando la propiedad de la suma de derivadas y la expresión de la derivada del monomio $x^n$:
+$$
+(x^3+x^2+1)'=(x^3)'+(x^2)'+(1)' = 3x^2+2x+0=3x^2+2x.
+$$
+
+A continuación, hallemos la derivada de la función $g(y)=\arctan y$. Dicha función es la función inversa de la función $\tan x$.
+Usando la expresión de la derivada de la función inversa, tenemos:
+$$
+g'(\tan x)=\frac{1}{\tan'(x)}=\frac{1}{\frac{1}{\cos^2 x}}=\cos^2 x.
+$$
+
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Para hallar $g'(y)$, tenemos que escribir $y=\tan x$, y, por tanto, $x=\arctan y$:
+$$
+g'(y)=\cos^2(\arctan y)=\frac{1}{1+\tan^2 (\arctan y)}=\frac{1}{1+y^2},
+$$
+donde hemos usado la siguiente relación trigonométrica: $\cos^2\alpha = \frac{1}{1+\tan^2\alpha}$.
+
+La derivada de la función $h(x)$ usando la **regla de la cadena** será:
+$$
+\begin{array}{rl}
+h'(x) & =(g\circ f)'(x)=g'(f(x))\cdot f'(x)=\frac{1}{1+f(x)^2}\cdot (3 x^2+2x)=\frac{3x^2+2x}{1+(x^3+x^2+1)^2}\\ & =\frac{3x^2+2x}{x^6+2 x^5+x^4+2 x^3+2 x^2+2}.
+\end{array}
+$$
+
+
+La derivada de la función $h(x)$ en `Wolfram Alpha` se muestra en el enlace siguiente: <l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=derivative+of+arctan%28x%5E3%2Bx%5E2%2B1%29)
+</l>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+## Ejemplo
 
 <div class="center">
 [![Ejemplo de serie de Taylor](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=taylor+series+arctan%281%2F%281%2Bx%5E6%29%29+at+x+%3D+pi%2F4)
