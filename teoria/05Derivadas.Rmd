@@ -419,7 +419,290 @@ La derivada de la función $h(x)$ en `Wolfram Alpha` se muestra en el enlace sig
 </l>
 </div>
 
+## Tablas de derivadas
 
+Si vais a [tablas de derivadas](https://www.google.com/search?tbm=isch&sxsrf=ACYBGNQqojnjJv8BaCiJGV99iyRexZsPcg%3A1578831703469&source=hp&biw=2560&bih=1268&ei=Vw8bXsXVGoKkgweJ7qO4Bw&q=tablas+de+derivadas&oq=tablas+de+der&gs_l=img.3.0.35i39j0l5j0i5i30l4.5860.8647..10003...2.0..0.70.862.13......0....1..gws-wiz-img.....10..35i362i39j0i131.bUJ_Ou6rWlA) y escribís "tablas de derivadas" en la casilla de búsqueda, encontraréis un montón de tablas de derivadas para las funciones más usadas.
+
+
+# Teoremas de derivación
+
+## Relación de la derivación con los extremos relativos de una función
+
+<l class="definition"> Definición de máximo relativo de una función.</l>
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ tiene un **máximo relativo** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$, tal que para todo valor $x$ de este entorno, es decir, $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, se cumple que $f(x)\leq f(x_0)$. Si la condición anterior se verifica para cualquier valor $x\in (a,b)$, diremos que $f$ tiene un **máximo absoluto** en el punto $x_0$.
+
+## Relación de la derivación con los extremos relativos de una función
+<l class="definition"> Definición de mínimo relativo de una función.</l>
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ tiene un **mínimo relativo** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$, tal que para todo valor $x$ de este entorno, es decir, $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, se cumple que $f(x)\geq f(x_0)$. Si la condición anterior se verifica para cualquier valor $x\in (a,b)$, diremos que $f$ tiene un **mínimo absoluto** en el punto $x_0$.
+
+Los puntos donde $f$ presente un **máximo** o un **mínimo** **relativos** o **absolutos** se denominan **extremos relativos** o **absolutos** de la función.
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Consideremos la función siguiente definida en el intervalo $(-2\pi,2\pi)$: 
+$$
+\begin{array}{rl}
+f:(-2\pi,2\pi) & \longrightarrow \mathbb{R},\\
+ x& \longrightarrow \sin(x)-\cos(x).
+\end{array}
+$$
+El gráfico de dicha función puede observase en la figura siguiente.
+
+Vemos que tiene dos **máximos relativos** en los valores $x=-\frac{5}{4}\pi$ y $x=\frac{3}{4}\pi$ y dos **mínimos relativos** en los valores $x=-\frac{\pi}{4}$ y $x=\frac{7}{4}\pi$. 
+
+Observamos que dichos máximos y mínimos son **absolutos**.
+
+El gráfico de la función anterior puede verse en `Wolfram Alpha` en el enlace siguiente: <l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=plot+of+sin%28x%29-cos%28x%29%2C+where++x+is+between+-2+pi+and+2+pi)
+</l>
+</div>
+
+
+## Ejemplo
+<div class="example">
+```{r,echo=FALSE,fig.align='center'}
+xmin=-2*pi
+xmax=2*pi
+ymin=-1.5
+ymax=1.5
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=8
+quantsy=6
+f = function(x){sin(x)-cos(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-2*tolx,"x")
+text(toly,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  ii=-2+0.5*i}
+text(xmin+((xmax-xmin)/quantsx)*0,-1.5*toly,expression(-2*pi),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*1,-2.5*toly,expression(-frac(3,2)*pi),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*2,-1.5*toly,expression(-pi),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*3,-2.5*toly,expression(-frac(pi,2)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*4+0.1,-1.5*toly,0,cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*5,-2.5*toly,expression(frac(pi,2)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*6,-1.5*toly,expression(pi),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*7,-2.5*toly,expression(frac(3,2)*pi),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*8,-1.5*toly,expression(2*pi),cex=0.75)
+
+lines(rep(xmin+((xmax-xmin)/quantsx)*1.5,2),c(-0.5*toly,+0.5*toly))
+lines(c(-5*pi/4,-5*pi/4),c(0,f(-5*pi/4)),lty=2,col="blue")
+text(xmin+((xmax-xmin)/quantsx)*1.5,-2.5*toly,expression(-frac(5,4)*pi),cex=0.75)
+
+lines(rep(xmin+((xmax-xmin)/quantsx)*3.5,2),c(-0.5*toly,+0.5*toly))
+lines(c(-pi/4,-pi/4),c(0,f(-pi/4)),lty=2,col="blue")
+text(xmin+((xmax-xmin)/quantsx)*3.5,2.5*toly,expression(-frac(pi,4)),cex=0.75)
+
+lines(rep(xmin+((xmax-xmin)/quantsx)*5.5,2),c(-0.5*toly,+0.5*toly))
+lines(c(3*pi/4,3*pi/4),c(0,f(3*pi/4)),lty=2,col="blue")
+text(xmin+((xmax-xmin)/quantsx)*5.5,-2.5*toly,expression(frac(3,4)*pi),cex=0.75)
+
+lines(rep(xmin+((xmax-xmin)/quantsx)*7.5,2),c(-0.5*toly,+0.5*toly))
+lines(c(7*pi/4,7*pi/4),c(0,f(7*pi/4)),lty=2,col="blue")
+text(xmin+((xmax-xmin)/quantsx)*7.5,2.5*toly,expression(frac(7,4)*pi),cex=0.75)
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  if (i==3){text(2.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*3,ymin+((ymax-ymin)/quantsy)*3,cex=0.75)}
+  else
+    {text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
+  }
+lines(x,f(x),col="red")
+text(pi,1.3,"f(x)")
+```
+
+
+</div>
+
+
+## Relación de la derivación con los extremos relativos de una función
+<l class="prop">Teorema:</l>
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$ que sea **extremo relativo** de la función. Entonces si $f$ es **derivable** en el punto $x_0$, se verifica que $f'(x_0)=0$.
+
+Intuitivamente, el teorema anterior nos dice que si la función $f$ tiene un comportamiento **suave** en el extremo $x_0$, la recta tangente en este punto tiene que ser **horizontal**, es decir, su pendiente tiene que ser nula, tal como podemos observar en los extremos del ejemplo anterior. 
+
+
+## Relación de la derivación con los extremos relativos de una función
+
+<div class="dem">
+**Demostración**
+
+Como $f$ es derivable en el punto $x_0$, sabemos que existe el límite siguiente $\displaystyle\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$.
+
+Decir que $f$ es derivable en $x_0$ es equivalente a decir que la función siguiente:
+$$
+g(x)=\begin{cases}
+\frac{f(x)-f(x_0)}{x-x_0}, & \mbox{si }x\neq x_0,\\
+f'(x_0), &\mbox{si }x=x_0,
+\end{cases}
+$$
+es continua en $x_0$.
+
+Veamos a continuación que necesariamente $g(x_0)=f'(x_0)=$ y quedará demostrado el teorema.
+
+Supongamos que $g(x_0)>0$. Como la función $g$ es continua en $x_0$, por el teorema de conservación del signo de funciones continuas, existirá un entorno de $x_0$, es decir, existirá un $\delta >0$ tal que si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, $g(x)>0$ también será positiva para todos los valores $x$ de dicho entorno.
+
+
+</div>
+
+## Relación de la derivación con los extremos relativos de una función
+
+<div class="dem">
+**Demostración**
+
+Es decir, para todo $x\in (x_0-\delta,x_0+\delta)$, $g(x)=\frac{f(x)-f(x_0)}{x-x_0}>0$.
+
+Esto es equivalente a decir que el numerador y el denominador de la fracción anterior tienen el mismo signo o, dicho en otras palabras:
+
+* si $x\in (x_0-\delta,x_0+\delta)$ y $x>x_0$, entonces $f(x) > f(x_0)$ y,
+* si $x\in (x_0-\delta,x_0+\delta)$ y $x<x_0$, entonces $f(x) < f(x_0)$.
+
+Las condiciones anteriores contradicen el hecho que $x_0$ sea un extremo ya que hemos encontrado valores en un entorno del mismo que superan $f(x_0)$ y valores del mismo entorno que son menores que $f(x_0)$. 
+En conclusión, llegamos a una contradicción al suponer que $g(x_0)=f'(x_0)>0$.
+
+
+
+</div>
+
+<div class="exercise">
+**Ejercicio**
+
+Suponer que $g(x_0)=f'(x_0)<0$ y ver que se llega a una contradicción razonando de manera similar.
+</div>
+
+
+
+## Relación de la derivación con los extremos relativos de una función
+
+<div class="dem">
+**Demostración**
+
+Al no poder ser que $f'(x_0)>$ ni $f'(x_0)<0$, necesariamente $f'(x_0)=0$ tal como queríamos demostrar.
+</div>
+
+</l class="observ"> Observación: </l> el recíproco del teorema anterior es falso. Es decir, el hecho que $f'(x_0)$ sea 0, no implica que $x_0$ sea un **extremo relativo** de la función.
+
+<div class="example">
+**Ejemplo**
+
+Considerar, por ejemplo, la función $f(x)=x^2\cdot \sin(x)$. Si derivamos dicha función, obtenemos:
+$$
+f'(x)=2x\sin(x)+x^2\cos(x).
+$$
+Vemos que $f'(0)=0$. En cambio $f$ no tiene ningún extremo en este punto tal como se observa en el gráfico de su función:
+</div>
+
+
+
+## Relación de la derivación con los extremos relativos de una función
+<div class="example">
+**Ejemplo**
+```{r,echo=FALSE,fig.align='center'}
+xmin=-2
+xmax=2
+ymin=-2.5
+ymax=2.5
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){x^2*sin(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-3*tolx,"x")
+text(toly,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+  }
+lines(x,f(x),col="red")
+text(pi,1.3,"f(x)")
+```
+
+
+</div>
+
+## Relación de la derivación con los extremos relativos de una función
+<div class="example">
+**Ejemplo**
+
+Para ver que el 0 no es extremo relativo, es facil ver que para $x\in (0,\pi)$, $f(x)\geq 0$ y para $x\in (-\pi,0)$, $f(x)\leq 0$. Comprobémoslo para unos cuantos valores en `python`, para $x=-0.2,-0.1,0.1,0.2$:
+```{python}
+from sympy import * 
+  
+def f(x):
+ return(x**2*sin(x))
+```
+
+</div>
+
+## Relación de la derivación con los extremos relativos de una función
+<div class="example">
+**Ejemplo**
+
+```{python}
+print('f(-0.2)=',f(-0.2))
+print('f(-0.1)=',f(-0.1))
+```
+</div>
+
+
+
+## Relación de la derivación con los extremos relativos de una función
+<div class="example">
+**Ejemplo**
+
+```{python}
+print("f(0.1)=",f(0.1))
+print("f(0.2)=",f(0.2))
+```
+</div>
+
+## Relación de la derivación con los extremos relativos de una función
+<div class="example">
+**Ejemplo**
+
+El cálculo de la derivada de la función anterior puede verse en `Wolfram Alpha` en el enlace siguiente: <l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=derivative+of+x%5E2*sin%28x%29)</l>
+
+
+
+El gráfico de la función anterior puede verse en `Wolfram Alpha` en el enlace siguiente: <l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=plot+of+x%5E2*sin%28x%29%2C+where+x+is+between+-2+and+2)
+</l>
+
+</div>
+
+## Relación de la derivación con el crecimiento de una función
+<l class="definition">Definición de crecimiento de una función: </l>
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ es **creciente** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$ tal que para todo $x$ de dicho entorno diferente de $x_0$, o si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, con $x\neq x_0$, se verifica que el cociente siguiente es positivo: $\frac{f(x)-f(x_0)}{x-x_0}>0$.
+
+<l class="observ">Observación: </l> la definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)>f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)<f(x_0)$:
+
+
+
+## Relación de la derivación con el crecimiento de una función
+<div class="center">
+
+```{r, echo=FALSE, label=der2,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/Derivada2.png",dpi=1200)
+```
+</div>
 
 
 
