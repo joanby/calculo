@@ -17,6 +17,9 @@ reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
 
 # Tema
 
+## Las Matemáticas del cambio
+
+
 ## Apartat/trans
 
 <div class="center">
@@ -48,3 +51,24 @@ print("Limit of the expression tends to 0 : {}".format(limit_expr))
 
 ```
 
+## Apartat/bujeros en Q
+
+<div class="teo">
+**Proposición**
+
+No existe ningún número racional $q \in \mathbb{Q}$ tal que $q^2=2$.
+</div>
+
+<div class="dem">
+**Demostración:**
+
+Supongamos que sí, que para un cierto $q =\dfrac{a}{b} \in \mathbb{Q}$,  es $q^2=\dfrac{a^2}{b^2} = 2$.
+
+Podemos elegir $a$ y $b$ de tal manera que   $\\mcd(a,b)=1$ 
+
+Entonces seria $a^2=2b^2$, lo qual significa que $a$ es un múltiplo de $2$. 
+
+Dado que se trata de un número primo, debe ser $a$ un múltiplo de $2$, es decir $a=2k$
+
+Por lo tanto $a^2 = 4k^2$, lo que significa que $b^2=2k^2$ y que $b$ tambien debería ser múltiplo de $2$, lo que contradice el hecho que $a$ y $b$ sean primos entre sí.
+</div>
