@@ -7,6 +7,7 @@ output:
     widescreen: true
     css: Mery_style.css
     logo: Images/calculus.gif
+    fig_caption: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -688,6 +689,22 @@ Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea
 <div class="center">
 ```{r, echo=FALSE, label=der2,fig.cap="",out.width = "650px"}
 knitr::include_graphics("Images/Derivada2.png",dpi=1200)
+```
+</div>
+
+
+## Relación de la derivación con el crecimiento de una función
+<l class="definition">Definición de decrecimiento de una función: </l>
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ es **decreciente** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$ tal que para todo $x$ de dicho entorno diferente de $x_0$, o si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, con $x\neq x_0$, se verifica que el cociente siguiente es negativo: $\frac{f(x)-f(x_0)}{x-x_0}<0$.
+
+<l class="observ">Observación: </l> la definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)<f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)>f(x_0)$:
+
+
+
+## Relación de la derivación con el crecimiento de una función
+<div class="center">
+```{r, echo=FALSE, label=der3,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/Derivada3.png",dpi=1200)
 ```
 </div>
 
