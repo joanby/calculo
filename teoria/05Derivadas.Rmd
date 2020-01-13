@@ -217,6 +217,7 @@ tal como queríamos ver.
 
 
 ## La derivada de la suma es suma de derivadas
+<l class="prop">Proposición.</l>
 Sean $f$ y $g$ dos funciones reales de variable real y sea $x_0$ un valor del dominio de $f$ y de $g$. Si $f$ y $g$ son derivables en $x_0$, también lo es la función suma $f+g$, y se verifica que: $(f+g)'(x_0)=f'(x_0)+g'(x_0)$.
 
 <div class="dem">
@@ -230,6 +231,7 @@ $$
 </div>
 
 ## La derivada de una función por una constante es la constante por la derivada de la función
+<l class="prop">Proposición.</l>
 Sea $k\in\mathbb{R}$ un valor real, $f$ una función real de variable real y $x_0$ un valor del dominio de $f$. Entonce si $f$ es derivable en $x_0$, también lo es $k\cdot f$ y se verifica que: $(k\cdot f)'(x_0)=k\cdot f'(x_0)$.
 
 <div class="dem">
@@ -244,6 +246,7 @@ $$
 </div>
 
 ## La derivada del producto de funciones
+<l class="prop">Proposición.</l>
 Sean $f$ y $g$ dos funciones reales de variable real y sea $x_0$ un valor del dominio de $f$ y de $g$. Si $f$ y $g$ son derivables en $x_0$, también lo es la función producto $f\cdot g$, y se verifica que: $(f\cdot g)'(x_0)=f'(x_0)\cdot g(x_0)+f(x_0)\cdot g'(x_0)$.
 
 <div class="dem">
@@ -257,6 +260,7 @@ $$
 </div>
 
 ## La derivada del cociente de funciones
+<l class="prop">Proposición.</l>
 Sean $f$ y $g$ dos funciones reales de variable real y sea $x_0$ un valor del dominio de $f$ y de $g$ tal que $g'(x_0)\neq 0$. Si $f$ y $g$ son derivables en $x_0$, también lo es la función cociente $\frac{f}{g}$, y se verifica que: $\left(\frac{f}{g}\right)'(x_0)=\frac{f'(x_0)\cdot g(x_0)-f(x_0)\cdot g'(x_0)}{g(x_0)^2}$.
 
 <div class="dem">
@@ -271,6 +275,7 @@ $$
 
 
 ## Derivada de la función inversa
+<l class="prop">Proposición.</l>
 Sea $f$ una función real de variable real y $x_0$ un valor del dominio de $f$. Suponemos que $f$ es derivable en $x_0$ y que $f'(x_0)\neq 0$. Supongamos que $f$ admite inversa $g$, es decir, existe una función $g$ tal que $g\circ f=\mathrm{Id}$, es decir, para cualquier valor $x$ del dominio de $f$, se cumple que $g(f(x))=x$. Además, suponemos que $g$ es continua en $f(x_0)$. Entonces $g$ es derivable en $f(x_0)$ y se verifica que $g'(f(x_0))=\frac{1}{f'(x_0)}$.
 
 ## Derivada de la función inversa
@@ -355,6 +360,7 @@ La derivada de la función $\tan x$ en `Wolfram Alpha` se muestra en el enlace s
 </div>
 
 ##  Derivada de la función compuesta. Regla de la cadena
+<l class="prop">Proposición.</l>
 Sean $f$ y $g$ dos funciones reales de variable real. Sea $x_0$ un valor del dominio de $f$ tal que $f(x_0)$ es del dominio de $g$. Supongamos que $g$ es derivable en $f(x_0)$ y $f$ es derivable en $x_0$. Entonces la función compuesta $g\circ f$ es derivable en $x_0$ y se verifica que:
 $(g\circ f)'(x_0)=g'(f(x_0))\cdot f'(x_0)$. 
 
@@ -679,10 +685,9 @@ El gráfico de la función anterior puede verse en `Wolfram Alpha` en el enlace 
 
 ## Relación de la derivación con el crecimiento de una función
 <l class="definition">Definición de crecimiento de una función: </l>
-Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ es **creciente** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$ tal que para todo $x$ de dicho entorno diferente de $x_0$, o si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, con $x\neq x_0$, se verifica que el cociente siguiente es positivo: $\frac{f(x)-f(x_0)}{x-x_0}>0$.
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ es **estrictamente creciente** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$ tal que para todo $x$ de dicho entorno diferente de $x_0$, o si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, con $x\neq x_0$, se verifica que el cociente siguiente es positivo: $\frac{f(x)-f(x_0)}{x-x_0}>0$.
 
-<l class="observ">Observación: </l> la definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)>f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)<f(x_0)$:
-
+<l class="observ">Observación: </l> la definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)>f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)<f(x_0)$. Ver gráfico siguiente.
 
 
 ## Relación de la derivación con el crecimiento de una función
@@ -694,10 +699,15 @@ knitr::include_graphics("Images/Derivada2.png",dpi=1200)
 
 
 ## Relación de la derivación con el crecimiento de una función
-<l class="definition">Definición de decrecimiento de una función: </l>
-Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ es **decreciente** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$ tal que para todo $x$ de dicho entorno diferente de $x_0$, o si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, con $x\neq x_0$, se verifica que el cociente siguiente es negativo: $\frac{f(x)-f(x_0)}{x-x_0}<0$.
+<l class="observ">Observación: </l> si la desigualdad anterior $\frac{f(x)-f(x_0)}{x-x_0}\geq 0$ no es estricta, se dice que $f$ es **creciente**.
 
-<l class="observ">Observación: </l> la definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)<f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)>f(x_0)$:
+<l class="definition">Definición de decrecimiento de una función: </l>
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ es **estrictamente decreciente** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$ tal que para todo $x$ de dicho entorno diferente de $x_0$, o si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, con $x\neq x_0$, se verifica que el cociente siguiente es negativo: $\frac{f(x)-f(x_0)}{x-x_0}<0$.
+
+## Relación de la derivación con el crecimiento de una función
+<l class="observ">Observación: </l> la definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)<f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)>f(x_0)$. Ver gráfico siguiente.
+
+<l class="observ">Observación: </l> si la desigualdad anterior $\frac{f(x)-f(x_0)}{x-x_0}\leq 0$ no es estricta, se dice que $f$ es **decreciente**.
 
 
 
@@ -708,42 +718,343 @@ knitr::include_graphics("Images/Derivada3.png",dpi=1200)
 ```
 </div>
 
+## Relación de la derivación con el crecimiento de una función
+<l class="prop">Proposición.</l>
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Supongamos que $f$ es derivable en $x_0$. Entonces si $f'(x_0)>0$ o $f$ tiene **derivada positiva** en $x_0$, entonce $f$ es **estrictamente creciente** en $x_0$.
 
+<div class="dem">
+**Demostración**
 
-
-
-
-
-
-
-## Ejemplo
-
-<div class="center">
-[![Ejemplo de serie de Taylor](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=taylor+series+arctan%281%2F%281%2Bx%5E6%29%29+at+x+%3D+pi%2F4)
+Como $\displaystyle f'(x_0)=\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}>0$, usando la definición de límite tenemos que:
+$$
+\forall \epsilon >0,\ \exists\delta >0\ \mbox{t.q. si }|x-x_0|<\delta,\mbox{ entonces }\left|f'(x_0)-\frac{f(x)-f(x_0)}{x-x_0}\right|< \epsilon.
+$$
 </div>
 
-## Apartat/trans2
+## Relación de la derivación con el crecimiento de una función
+<div class="dem">
+**Demostración**
 
-- això és un element
-- això és un altre
+La última condición se puede escribir de la siguiente manera:
+$$
+f'(x_0)-\epsilon < \frac{f(x)-f(x_0)}{x-x_0} < f'(x_0)+\epsilon.
+$$
+Como $f'(x_0)>0$, siempre es posible hallar un $\epsilon >0$ tal que $f'(x_0)-\epsilon>0$.
 
-$$\int_0^1 x\ dx `r 2+2`$$
+Para este $\epsilon >0$, podemos encontrar un entorno de $x_0$, es decir, un $\delta >0$ tal que si $x\in (x_0-\delta,x_0+\delta)$, entonces:
+$$
+0<f'(x_0)-\epsilon < \frac{f(x)-f(x_0)}{x-x_0} < f'(x_0)+\epsilon,
+$$
+de donde deducimos que $\frac{f(x)-f(x_0)}{x-x_0}>0$ para todo $x$ del entorno, $x\in (x_0-\delta,x_0+\delta)$, lo que equivale a decir que $f$ es estrictamente creciente en $x_0$.
+</div>
+
+## Relación de la derivación con el crecimiento de una función
+<l class="prop">Proposición.</l>
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Supongamos que $f$ es derivable en $x_0$. Entonces si $f'(x_0)<0$ o $f$ tiene **derivada negativa** en $x_0$, entonce $f$ es **estrictamente decreciente** en $x_0$.
+
+<div class="exercise">
+**Ejercicio**
+
+Demostrar la proposición anterior usando la misma técnica que para demostrar que si $f'(x_0)>0$, entonces $f$ es **estrictamente creciente** en $x_0$.
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Consideremos la función siguiente de un ejemplo anterior: $f(x)=\sin(x)-\cos(x)$.
+
+La derivada de la función $f$ vale: $f'(x)=\cos(x)+\sin(x)$.
+
+Dicha función se anula en los **extremos** $x=-\frac{5}{4}\pi,-\frac{\pi}{4},\frac{3}{4}\pi$ y $\frac{7}{4}\pi$:
+```{python}
+def f(x):
+ return(cos(x)+sin(x))
+ 
+for x in [-5*pi/4,-pi/4,3*pi/4,7*pi/4]:
+  print('f({x})={res}'.format(x=x, res=f(x)))
+```
+
+</div>
+
+## Ejemplo
+<div class="example">
+
+En los puntos $x=-\frac{3}{2}\pi$ y $x=\frac{\pi}{2}$ la función es **estrictamente creciente** al tener derivada positiva en dichos puntos:
+```{python}
+for x in [-3*pi/2,pi/2]:
+  print('f({x})={res}'.format(x=x, res=f(x)))
+```
+
+En cambio, en los puntos $x=-\frac{\pi}{2}$ y $\frac{3}{2}\pi$ la función es **estrictamente decreciente** al tener derivada negativa en dichos puntos:
+```{python}
+for x in [-pi/2,3*pi/2]:
+  print('f({x})={res}'.format(x=x, res=f(x)))
+```
+
+</div>
+
+## Teorema de Rolle. Teorema del valor medio
+
+Las proposiciones vistas hasta ahora nos estudian el comportamiento local de una función en un punto en términos de su crecimiento dependiendo del signo de la derivada de dicha función en dicho punto.
+
+Vamos a ver dos resultados que estudian las propiedades globales de la función en todo su dominio a partir del comportamiento de la función derivada de dicha función.
+
+El teorema de Rolle dice en pocas palabras que si una función derivable en todo su dominio coincide en los extremos del mismo, necesariamente ha de tener como mínimo un extremo. Intuitivamente, el resultado es claro ya que si suponemos por ejemplo que la función crece en su extremo izquierdo $a$, como $f(a)=f(b)$, donde $b$ es su extremo derecho, en algún momento tiene que decrecer. Por tanto, en "dicho momento", la función tendrá un extremo o un máximo en este caso:
+
+## Teorema de Rolle. Teorema del valor medio
+<div class="center">
+```{r, echo=FALSE, label=rolle1,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/Rolle1.png",dpi=1200)
+```
+</div>
+
+## Teorema de Rolle. Teorema del valor medio
+El teorema del valor medio nos dice que dada una función derivable en todo su dominio, ha de existir un punto en el que recta tangente en dicho punto sea paralela a la recta que pasa por los extremos del dominio de la función.
+
+En el gráfico siguiente la recta verde es la recta que pasa por los extremos de la función (en azul) y la recta roja es la recta tangente al punto $c$ que pertenece al dominio de la función.
 
 
-```{python, echo = FALSE}
-### reticulate::py_install("sympy")
-# import sympy  
-from sympy import * 
-  
-x = symbols('x') 
-expr = sin(x)/x; 
-    
-print("Expression : {}".format(expr))  
-      
-# Use sympy.limit() method  
-limit_expr = limit(expr, x, 0)   
-      
-print("Limit of the expression tends to 0 : {}".format(limit_expr))   
+## Teorema de Rolle. Teorema del valor medio
+<div class="center">
+```{r, echo=FALSE, label=valormedio1,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/ValorMedio1.png",dpi=1200)
+```
+</div>
+
+## Teorema de Rolle
+<l class="prop">Teorema de Rolle.</l>
+Sea $f: [a,b]\longrightarrow \mathbb{R}$ una función real de variable real (!ojo!, están incluidos los extremos del intervalo). Supongamos que $f$ es continua en todo su dominio $[a,b]$ y derivable en los puntos del interior $(a,b)$. Supongamos además que las imágenes en los extremos coinciden, es decir, $f(a)=f(b)$. Entonces existe al menos un punto $c\in (a,b)$ tal que $f'(c)=0$.
+
+
+## Teorema de Rolle
+<div class="dem">
+**Demostración**
+
+Como la función $f$ es continua en el intervalo cerrado $[a,b]$, deducimos que $f$ tiene un máximo absoluto $M$ y un mínimo absoluto $m$. 
+
+Pueden ocurrir dos casos:
+
+* Que el máximo absoluto se alcance en el extremo $a$ y el mínimo, en el extremo $b$, con $f(a)=M$ y $f(b)=m$ o al revés, es decir, que el máximo absoluto se alcance en el extremo $b$ y el mínimo, en el extremo $a$, con $f(a)=m$ y $f(b)=M$. Como $f(a)=f(b)$, resulta que $M=m$ y la única función en un intervalo en donde su máximo coincide con su mínimo es la función constante. En este caso $f'(x)=0$, para todo $x\in (a,b)$ como ya vimos anteriormente y el teorema quedaría demostrado en este caso.
+* Supongamos que el máximo o el mínimo de la función se alcanza en un punto $c\in (a,b)$ del interior del intervalo. Por un teorema visto anteriormente, tenemos que $f'(c)=0$ y el teorema quedaría demostrado también en este caso.
+</div>
+
+## Teorema del valor medio de Cauchy
+<l class="prop">Teorema del valor medio de Cauchy.</l>
+Sean $f,g:[a,b]\longrightarrow \mathbb{R}$ dos funciones continuas en $[a,b]$ y derivables en $(a,b)$. Entonces, existe un punto $c\in (a,b)$ del interior del intervalo tal que:
+$$
+f'(c)\cdot (g(b)-g(a)) = g'(c)\cdot (f(b)-f(a)).
+$$
+
+## Teorema del valor medio de Cauchy
+<div class="dem">
+**Demostración**
+
+Consideramos la función siguiente:
+$$
+h(x)=f(x)\cdot (g(b)-g(a))-g(x)\cdot (f(b)-f(a)),
+$$
+que será continua en $[a,b]$ y derivable en $(a,b)$ al ser suma de productos de funciones continuas y derivables por constantes.
+
+La idea es aplicar el **teorema de Rolle** a la función $h(x)$. Calculemos $h(a)$ y $h(b)$:
+$$
+\begin{array}{rl}
+h(a) & = f(a)\cdot (g(b)-g(a))-g(a)\cdot (f(b)-f(a)) = f(a)\cdot g(b)-g(a)\cdot f(b),\\
+h(b) & = f(b)\cdot (g(b)-g(a))-g(b)\cdot (f(b)-f(a)) = -f(b)\cdot g(a)+g(b)\cdot f(a).
+\end{array}
+$$
+Se cumple, por tanto, que $h(a)=h(b)$. Aplicando el **teorema de Rolle** a la función $h$, tenemos que existe un punto $c\in (a,b)$ tal que $h'(c)=0$:
+$$
+h'(c)=f'(c)\cdot (g(b)-g(a))-g'(c)\cdot (f(b)-f(a))=0,
+$$
+de donde deducimos lo que dice la tesis del teorema:
+$$
+f'(c)\cdot (g(b)-g(a)) = g'(c)\cdot (f(b)-f(a)).
+$$
+</div>
+
+## Teorema del valor medio de Lagrange
+<l class="prop">Teorema del valor medio de Lagrange</l>
+Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función continua en $[a,b]$ y derivable en $(a,b)$. Entonces, existe un punto $c\in (a,b)$ del interior del intervalo tal que:
+$$
+f(b)-f(a)=f'(c)\cdot (b-a).
+$$
+
+<div class="exercise">
+**Ejercicio**
+
+Demostrar el teorema del valor medio de Lagrange.
+
+Indicación: considerar $f(x)$ la función del teorema, $g(x)=x$ y aplicar el **teorema del valor medio de Cauchy**.
+</div>
+
+## Teorema del valor medio de Lagrange
+<l class="observ">Observación:</l>
+el **teorema del valor medio de Lagrange** es equivalente a afirmar lo que hemos dicho anteriormente: si $f$ es derivable en el intervalo abierto y continua en el cerrado, existe un valor $c$ del interior del intervalo tal que $f'(c)=\frac{f(b)-f(a)}{b-a}$, es decir, la pendiente de la recta tangente en el punto $c$ coincide con la pendiente de la recta que pasa por los extremos $(a,f(a))$ y $(b,f(b))$. Es decir, la recta tangente en el punto $c$ es paralela a la recta que pasa por los extremos del intervalo de definición de la función $f$.
+
+## Resultados que se derivan de los teoremas de Rolle y del valor medio
+<l class="prop">Corolario.</l>
+Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función continua en $[a,b]$ y derivable en $(a,b)$ tal que $f'(x)=0$ para todo $x\in (a,b)$. Entonces $f$ es constante.
+
+<div class="dem">
+**Demostración**
+
+Sea $x\in (a,b]$. Veamos que $f(x)=f(a)$ y, por tanto, $f$ será constante.
+
+Para ello, consideremos la función $f$ restringida al intervalo $[a,x]$, $f:[a,x]\longrightarrow\mathbb{R}$, que será continua en $[a,x]$ y derivable en $(a,x)$. Si aplicamos el **teorema del valor medio de Lagrange**, tenemos que existe un $c\in (a,x)$ tal que:
+$$
+f(x)-f(a)=f'(c)\cdot (x-a)=0,
+$$
+ya que nos dicen que $f'(c)=0$ al ser la derivada nula en cualquier punto del intervalo $(a,b)$.
+
+Deducimos, por tanto, que $f(x)=f(a)$, condición que equivale a que la función $f$ es constante.
+</div>
+
+
+## Resultados que se derivan de los teoremas de Rolle y del valor medio
+<l class="prop">Corolario.</l>
+Sean $f, g:[a,b]\longrightarrow \mathbb{R}$ funciones continuas en $[a,b]$ y derivables en $(a,b)$ tal que $f'(x)=g'(x)$ para todo $x\in (a,b)$. Entonces $f(x)-g(x)$ es constante.
+
+<div class="exercise">
+**Ejercicio**
+
+Demostrar el corolario anterior.
+
+Indicación: aplicar el resultado que hemos visto antes a la función $h(x)=f(x)-g(x)$.
+</div>
+
+
+## Resultados que se derivan de los teoremas de Rolle y del valor medio
+<l class="prop">Corolario.</l>
+Sea $f:(a,b)\longrightarrow \mathbb{R}$ una función  derivable en todo punto del intervalo $(a,b)$.
+Entonces, $f$ es creciente en $(a,b)$ si, y sólo si, $f'(x)\geq 0$, para todo $x\in (a,b)$ del intervalo.
+
+<div class="dem">
+**Demostración**
+
+$\Rightarrow$ Supongamos que la función $f$ es creciente en $(a,b)$. Esto significa que fijado $x_0\in (a,b)$ en el intervalo, existe un entorno de $x_0$, es decir, existe un $\delta >0$, tal que para todo valor $x\in (x_0-\delta,x_0+\delta)$, se verifica que $\frac{f(x)-f(x_0)}{x-x_0}\geq 0$.
+
+Entonces, usando que $\displaystyle f'(x_0)=\lim_{x\to x_0} \frac{f(x)-f(x_0)}{x-x_0}$, tendremos que $f'(x_0)\geq 0$, tal como queríamos ver.
+</div>
+
+## Resultados que se derivan de los teoremas de Rolle y del valor medio
+
+<div class="dem">
+**Demostración**
+
+$\Leftarrow$ Supongamos ahora que $f'(x_0)\geq 0$, para todo valor $x_0\in (a,b)$ dentro del intervalo. Veamos que $f$ es creciente en $x_0$. 
+
+Sea $x>x_0$. Si aplicamos el **teorema del valor medio de Lagrange** a la función $f$ restringida al intervalo $[x_0,x]$ tenemos que existe un valor $c$ tal que: 
+$$
+f'(c)=\frac{f(x)-f(x_0)}{x-x_0}\geq 0.
+$$
+Sea ahora $x<x_0$. Si volvemos a aplicar el el **teorema del valor medio de Lagrange** a la función $f$ restringida al intervalo $[x,x_0]$ tenemos que existe un valor $c$ tal que: 
+$$
+f'(c)=\frac{f(x_0)-f(x)}{x_0-x}=\frac{f(x)-f(x_0)}{x-x_0}\geq 0.
+$$
+
+</div>
+
+## Resultados que se derivan de los teoremas de Rolle y del valor medio
+
+<div class="dem">
+**Demostración**
+
+En resumen, el cociente $\frac{f(x)-f(x_0)}{x-x_0}\geq 0$ siempre es positivo, condición que equivale a afirmar que $f$ es creciente en $x_0$.
+
+De hecho, hubiera sido suficiente demostrar que el cociente anterior es positivo en un entorno de $x_0$ pero hemos demostrado más, hemos visto que dicho cociente siempre es positivo sea cual sea el valor $x\in (a,b)$ del intervalo.
+</div>
+
+## Resultados que se derivan de los teoremas de Rolle y del valor medio
+<l class="prop">Corolario.</l>
+Sea $f:(a,b)\longrightarrow \mathbb{R}$ una función  derivable en todo punto del intervalo $(a,b)$.
+Entonces, $f$ es decreciente en $(a,b)$ si, y sólo si, $f'(x)\leq 0$, para todo $x\in (a,b)$ del intervalo.
+
+<div class="exercise">
+**Ejercicio**
+
+Demostrar el corolario anterior usando la misma técnica de demostración para el caso en que la función $f$ es creciente.
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Consideremos la función vista anteriormente $f(x)=\sin (x)-\cos(x)$ definida en el intervalo $(-\pi,\pi)$.
+
+Como $f(-\pi)=1=f(\pi)$, aplicando el **teorema de Rolle**, sabemos que existe como mínimo un valor $c$ tal que $f'(c)=0$. De hecho, hay dos como hemos visto anteriormente: $c=-\frac{\pi}{4}$ y $c=\frac{3}{4}\pi$:
+$$
+\begin{array}{rl}
+f'(x) & =\cos(x)+\sin(x),\\
+f'\left(-\frac{\pi}{4}\right) & =\cos\left(-\frac{\pi}{4}\right)+\sin\left(-\frac{\pi}{4}\right)=\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}=0,\\
+f'\left(\frac{3\pi}{4}\right) & =\cos\left(\frac{3\pi}{4}\right)+\sin\left(\frac{3\pi}{4}\right)=-\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}=0.
+\end{array}
+$$
+Si ahora consideramos la función anterior pero definida en el intervalo $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, tenemos que existe un valor $c$ tal que:
+$$
+f'(c)=\cos(c)+\sin(c)=\frac{f\left(\frac{\pi}{2}\right)-f\left(-\frac{\pi}{2}\right)}{\frac{\pi}{2}-\left(-\frac{\pi}{2}\right)}=\frac{1-(-1)}{\pi}=\frac{2}{\pi}.
+$$
+</div>
+
+## Ejemplo
+<div class="example">
+Hallemos a continuación el valor $c$:
+$$
+\begin{array}{rl}
+\cos(c)+\sin(c) & = \frac{2}{\pi}, \\
+\cos(c) & = \frac{2}{\pi}-\sin(c), \\
+\pm \sqrt{1-\sin^2(c)} & = \frac{2}{\pi}-\sin(c), \\
+1-\sin^2(c)  & = \left(\frac{2}{\pi}-\sin(c)\right)^2 = \frac{4}{\pi^2}+\sin^2(c)-\frac{4}{\pi}\sin(c),\\
+2\sin^2(c)-\frac{4}{\pi}\sin(c)+\frac{4}{\pi^2}-1 & = 0,\\
+\sin(c) & = \frac{\frac{4}{\pi}\pm \sqrt{\frac{16}{\pi^2}-8\cdot\left(\frac{4}{\pi^2}-1\right)}}{4},\\
+\sin(c) & = \frac{\frac{4}{\pi}\pm \sqrt{8-\frac{16}{\pi^2}}}{4}=\frac{4\pm\sqrt{8\pi^2-16}}{4\pi}=\frac{2\pm\sqrt{2\pi^2-4}}{2\pi}.
+\end{array}
+$$
+</div>
+
+## Ejemplo
+<div class="example">
+
+El valor de $\cos(c)$ será:
+$$
+\begin{array}{rl}
+\cos(c) & =\pm\sqrt{1-\left(\frac{2\pm\sqrt{2\pi^2-4}}{2\pi}\right)^2} = \pm\sqrt{1-\frac{2\pi^2\pm 4\sqrt{2\pi^2-4}}{4\pi^2}}=\pm\sqrt{\frac{2\pi^2\mp4\sqrt{2\pi^2-4}}{4\pi^2}}\\ 
+& =\pm\sqrt{\frac{(2\mp\sqrt{2\pi^2-4})^2}{4\pi^2}} = \pm\frac{(2\mp\sqrt{2\pi^2-4})}{2\pi}.
+\end{array}
+$$
+Entonces las parejas $(\sin(c),\cos(c))$ son las siguientes:
+
+* si $\sin(c)=\frac{2+\sqrt{2\pi^2-4}}{2\pi}$, entonces $\cos(c)=\frac{2-\sqrt{2\pi^2-4}}{2\pi}$,
+* si $\sin(c)=\frac{2-\sqrt{2\pi^2-4}}{2\pi}$, entonces $\cos(c)=\frac{2+\sqrt{2\pi^2-4}}{2\pi}$.
+
+El primer caso no puede ser ya que $\cos(c)<0$ y como estamos en el intervalo $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, la función coseno es positiva.
+
+Sólo será solución el segundo caso, donde el valor de $c$ será aproximadamente: `r round(asin((2-sqrt(2*pi^2-4))/(2*pi)),3)`.
+
+</div>
+
+</div>
+
+## Ejemplo
+<div class="example">
+Comprobemos usando `python` que el valor de $c$ hallado es el correcto:
+
+```{python}
+from numpy import * 
+c=arcsin((2-sqrt(2*pi**2-4))/(2*pi))
+derivada_c = sin(c)+cos(c)
+k=2/pi
+print('El valor de c es: {c}'.format(c=c))
 
 ```
 
+</div>
+
+## Ejemplo
+<div class="example">
+```{python}
+print('El valor de la derivada de f en c es:{x}'.format(x=derivada_c))
+print('El valor de 2/pi es:{k}'.format(k=k))
+```
+
+</div>
