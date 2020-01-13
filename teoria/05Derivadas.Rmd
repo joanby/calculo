@@ -698,7 +698,6 @@ Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea
 
 ## Relación de la derivación con el crecimiento de una función
 <div class="center">
-
 ```{r, echo=FALSE, label=der2,fig.cap="",out.width = "650px"}
 knitr::include_graphics("Images/Derivada2.png",dpi=1200)
 ```
