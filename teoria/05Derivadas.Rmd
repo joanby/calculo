@@ -656,20 +656,8 @@ def f(x):
 **Ejemplo**
 
 ```{python}
-print('f(-0.2)=',f(-0.2))
-print('f(-0.1)=',f(-0.1))
-```
-</div>
-
-
-
-## Relación de la derivación con los extremos relativos de una función
-<div class="example">
-**Ejemplo**
-
-```{python}
-print("f(0.1)=",f(0.1))
-print("f(0.2)=",f(0.2))
+for x in [-0.2,-0.1,0.1,0.2]:
+  print('f({x})={res}'.format(x=x, res=f(x)))
 ```
 </div>
 
