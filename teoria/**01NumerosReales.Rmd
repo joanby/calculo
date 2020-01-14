@@ -23,95 +23,12 @@ reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
 
 El término Cálculo identifica un conjunto de instrumentos matemáticos para efectuar medidas.
 
-El Cálculo Diferencial trata de la medida de tasas de variación: objetos en movimiento, crecimiento de seres vivos, transmisión de calor, campos electromagnéticos y un largo etcétera.
+El Cálculo Diferencial está orientado a la medida de tasas de variación: objetos en movimiento, crecimiento de seres vivos, transmisión de calor, campos electromagnéticos y un largo etcétera.
 
 Por su parte, el Càlculo Integral, trata de medidas de longitudes, áreas, volúmenes, flujos de fluidos, $\ldots$
 
 Los números reales, $\mathbb{R}$, proporcionan la base para expresar los resultados de estas medidas. Por ello empezaremos describiendo estos números, su estructura y propiedades más significativas. 
 </div>
-
-## Números y medida
-
-Los números naturales $\mathbb{N} =  \{1,2,3, \ldots ,n, \ldots \}$
-
-Los números enteros $\mathbb{Z} = \{ \ldots ,-n, \ldots -3,-2,-1,0,1,2,3, \ldots , n \ldots\}$
-
-Los números racionales $\mathbb{Q} = \{ \dfrac{p}{q}: p,q \in \mathbb{Z} \}$
-
-Los números racionales no son suficientes puesto hay medidas cuyo resultado no és un número racional:
-
-* La longitud de la diagonal de un cuadrado con el lado como unidad ($\sqrt{2}$)
-* La longitud de una circunferencia tomando el diámetro como unidad ($\pi$)
-
-
-## La raiz cuadrada de 2 no es un número racional, $\sqrt{2} \notin \mathbb{Q}$
-
-<div class="teo">
-**Proposición**
-
-No existe ningún número racional $q \in \mathbb{Q}$ tal que $q^2=2$.
-</div>
-
-<div class="dem">
-**Demostración:**
-
-Supongamos que sí, que para un cierto $q =\dfrac{a}{b} \in \mathbb{Q}$,  es $q^2=\dfrac{a^2}{b^2} = 2$.
-
-Podemos elegir $a$ y $b$ de tal manera que   $\\mcd(a,b)=1$ 
-
-Entonces seria $a^2=2b^2$, lo qual significa que $a$ es un múltiplo de $2$. 
-
-Dado que se trata de un número primo, debe ser $a$ un múltiplo de $2$, es decir $a=2k$
-
-Por lo tanto $a^2 = 4k^2$, lo que significa que $b^2=2k^2$ y que $b$ tambien debería ser múltiplo de $2$, lo que contradice el hecho que $a$ y $b$ sean primos entre sí.
-</div>
-
-## Los números reales: $\mathbb{R}$
-
-
-
-
-
-## $\sqrt{2}$ es un un número real.
-
-<div class="teo">
-**Proposición**
-
-Existe un número real $p \in \mathbb{R}$ tal que $p^2 = 2$.
-</div>
-
-<div class="dem">
-**Demostración:**
-
-Consideremos el conjunto $M = \{r \in \mathbb{R}: r^2 <2 \}$. $M$ es un subconjunto acotado de $\mathbb{R}$ (¿Por qué?). Sea $p = \sup M$. Demostraremos que $p^2 =2$.
-
-Supongamos, en primer lugar, que $p^2<2$,  veamos que existe $\epsilon >0$, tal que $(p+ \epsilon)^2 <2$. Con este fin, supongamos que, efectivamente, existe un tal $\epsilon$, entonces seria $p^2+2p \epsilon +{\epsilon}^2 <2$ y, por lo tanto debería ser
-
-$$
-\epsilon < \dfrac{2-p^2}{2p+\epsilon}
-$$
-
-Consideremos ahora $\epsilon = \min \{1,\dfrac{2-p^2}{2p+1}\}$, entonces 
-es $(p+\epsilon)^2 < 2$, es decir $(p+\epsilon) \in M$ y como $\epsilon >0$, esto contradice que $p= \sup M$. 
-
-
-
-## $\sqrt{2}$ es un un número real (Continuación)
-
-<div class="dem">
-**Demostración (Continuación):**
-
-Supongamos ahora que $p^2>2$. Veremos que existe $\epsilon >0$ tal que $(p-\epsilon)^2 >2$, por lo que $p$ tampoco podrá ser el supremo de $M$. Ahora, si $(p-\epsilon)^2 >2$, debe ser $p^2-2p\epsilon+\epsilon^2>2$, es decir, $p^2-2 > \epsilon(2p -\epsilon)$, es decir
-$$
-\epsilon < \dfrac{p^2-2}{2p-\epsilon}
-$$
-Si ahora consideramos $\epsilon = \frac{p^2 -2}{2p}$, está claro que para este $\epsilon >0$ es $(p-\epsilon)^2 >2$, y por lo tanto $p$ tampoco puede ser el supremo de $M$ si $p^2 >2$.
-
-En definitiva, sólo queda la opción que el supremo $p$ del conjunto $M$, sea tal que $p^2=2$, es decir que $\sqrt{2}$ és un número real.
-</div>
-
-
-
 
 ## Apartat/trans
 
@@ -143,3 +60,63 @@ limit_expr = limit(expr, x, 0)
 print("Limit of the expression tends to 0 : {}".format(limit_expr))   
 
 ```
+
+## Apartat/bujeros en Q
+
+<div class="teo">
+**Proposición**
+
+No existe ningún número racional $q \in \mathbb{Q}$ tal que $q^2=2$.
+</div>
+
+<div class="dem">
+**Demostración:**
+
+Supongamos que sí, que para un cierto $q =\dfrac{a}{b} \in \mathbb{Q}$,  es $q^2=\dfrac{a^2}{b^2} = 2$.
+
+Podemos elegir $a$ y $b$ de tal manera que   $\\mcd(a,b)=1$ 
+
+Entonces seria $a^2=2b^2$, lo qual significa que $a$ es un múltiplo de $2$. 
+
+Dado que se trata de un número primo, debe ser $a$ un múltiplo de $2$, es decir $a=2k$
+
+Por lo tanto $a^2 = 4k^2$, lo que significa que $b^2=2k^2$ y que $b$ tambien debería ser múltiplo de $2$, lo que contradice el hecho que $a$ y $b$ sean primos entre sí.
+</div>
+
+## $\sqrt{2}$ es un un número real.
+
+<div class="teo">
+**Proposición**
+
+Existe un número real $p \in \mathbb{R}$ tal que $p^2 = 2$.
+</div>
+
+<div class="dem">
+**Demostración:**
+
+Consideremos el conjunto $M = \{r \in \mathbb{R}: r^2 <2 \}$. $M$ es un subconjunto acotado de $\mathbb{R}$ (¿Por qué?). Sea $p = \sup M$. Demostraremos que $p^2 =2$.
+
+Supongamos, en primer lugar, que $p^2<2$,  veamos que existe $\epsilon >0$, tal que $(p+ \epsilon)^2 <2$. Con este fin, supongamos que, efectivamente, existe un tal $\epsilon$, entonces seria $p^2+2p \epsilon +{\epsilon}^2 <2$ y, por lo tanto debería ser
+
+$$
+\epsilon < \dfrac{2-p^2}{2p+\epsilon}
+$$
+
+Consideremos ahora $\epsilon = \min \{1,\dfrac{2-p^2}{2p+1}\}$, entonces 
+es $(p+\epsilon)^2 < 2$, es decir $(p+\epsilon) \in M$ y como $\epsilon >0$, esto contradice que $p= \sup M$. 
+
+</div>
+
+## $\sqrt{2}$ es un un número real (Continuación)
+
+<div class="dem">
+**Demostración (Continuación):**
+
+Supongamos ahora que $p^2>2$. Veremos que existe $\epsilon >0$ tal que $(p-\epsilon)^2 >2$, por lo que $p$ tampoco podrá ser el supremo de $M$. Ahora, si $(p-\epsilon)^2 >2$, debe ser $p^2-2p\epsilon+\epsilon^2>2$, es decir, $p^2-2 > \epsilon(2p -\epsilon)$, es decir
+$$
+\epsilon < \dfrac{p^2-2}{2p-\epsilon}
+$$
+Si ahora consideramos $\epsilon = \frac{p^2 -2}{2p}$, está claro que para este $\epsilon >0$ es $(p-\epsilon)^2 >2$, y por lo tanto $p$ tampoco puede ser el supremo de $M$ si $p^2 >2$.
+
+En definitiva, sólo queda la opción que el supremo $p$ del conjunto $M$, sea tal que $p^2=2$, es decir que $\sqrt{2}$ és un número real.
+</div>
