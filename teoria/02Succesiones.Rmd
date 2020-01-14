@@ -3,10 +3,11 @@ title: "Tema 2 - Sucesiones y límites"
 author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
 date: ''
 output: 
-    ioslides_presentation:
+  ioslides_presentation:
     widescreen: true
     css: Mery_style.css
     logo: Images/calculus.gif
+    fig_caption: yes
 ---
 
 ```{r setup, include=FALSE}
