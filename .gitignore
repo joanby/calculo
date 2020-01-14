@@ -29,3 +29,7 @@ vignettes/*.pdf
 
 .DS_Store
 teoria/.DS_Store
+
+
+*.html
+*/*.html
