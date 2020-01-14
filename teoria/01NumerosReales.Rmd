@@ -20,15 +20,16 @@ reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
 ## Cálculo: Las Matemáticas del cambio
 
 <div class="important">
+Importante
+</div>
 
-El término Cálculo identifica un conjunto de instrumentos matemáticos para efectuar medidas.
+El término <l class="important">Cálculo</l> identifica un conjunto de instrumentos matemáticos para efectuar medidas.
 
-El Cálculo Diferencial trata de la medida de tasas de variación: objetos en movimiento, crecimiento de seres vivos, transmisión de calor, campos electromagnéticos y un largo etcétera.
+El <l class="important">Cálculo Diferencial</l> trata de la medida de tasas de variación: objetos en movimiento, crecimiento de seres vivos, transmisión de calor, campos electromagnéticos y un largo etcétera.
 
-Por su parte, el Càlculo Integral, trata de medidas de longitudes, áreas, volúmenes, flujos de fluidos, $\ldots$
+Por su parte, el <l class="important">Cálculo Integral</l>, trata de medidas de longitudes, áreas, volúmenes, flujos de fluidos, $\ldots$
 
 Los números reales, $\mathbb{R}$, proporcionan la base para expresar los resultados de estas medidas. Por ello empezaremos describiendo estos números, su estructura y propiedades más significativas. 
-</div>
 
 ## Números y medida
 
@@ -46,11 +47,10 @@ Los números racionales no son suficientes puesto hay medidas cuyo resultado no 
 
 ## La raiz cuadrada de 2 no es un número racional, $\sqrt{2} \notin \mathbb{Q}$
 
-<div class="teo">
-**Proposición**
+<l class="prop">Proposición</l>
 
 No existe ningún número racional $q \in \mathbb{Q}$ tal que $q^2=2$.
-</div>
+
 
 <div class="dem">
 **Demostración:**
@@ -74,11 +74,9 @@ Por lo tanto $a^2 = 4k^2$, lo que significa que $b^2=2k^2$ y que $b$ tambien deb
 
 ## $\sqrt{2}$ es un un número real.
 
-<div class="teo">
-**Proposición**
+<l class="prop">Proposición</l>
 
 Existe un número real $p \in \mathbb{R}$ tal que $p^2 = 2$.
-</div>
 
 <div class="dem">
 **Demostración:**
