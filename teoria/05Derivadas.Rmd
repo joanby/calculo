@@ -1058,3 +1058,85 @@ print('El valor de 2/pi es:{k}'.format(k=k))
 ```
 
 </div>
+
+## Regla de L'Hôpital
+
+Una de las aplicaciones más importantes de las derivadas es su aplicación al cálculo de límites de funciones.
+
+La regla de L'Hôpital nos permite calcular límites indeterminados usando derivadas:
+
+## Regla de L'Hôpital
+<l class="prop">Teorema: regla de L'Hôpital.</l>
+Sean $f,g:(a,b)\longrightarrow\mathbb{R}$ y sea $c\in (a,b)$ un punto interior del intervalo. Supongamos:
+
+* $f$ y $g$ son derivables en un entorno del punto $c$,
+* $f(c)=g(c)=0$,
+* $g(x)\neq 0$ para todo valor $x$ del entorno de $c$ diferente de $c$,
+* $g'(x)\neq 0$, para todo valor $x$ del entorno de $c$ diferente de $c$.
+
+Si se verifican las condiciones anteriores y el límite siguiente existe $\displaystyle\lim_{x\to c}\frac{f'(x)}{g'(x)}=L$ y vale $L$ ($L$ puede ser $\pm\infty$), entonces también existe el límite $\displaystyle\lim_{x\to c}\frac{f(x)}{g(x)}=L$ y vale $L$.
+
+
+## Regla de L'Hôpital
+<div class="dem">
+**Demostración**
+
+Sea $\delta >0$ tal que $(c-\delta,c+\delta)\subseteq (a,b)$ en entorno de $c$ donde se cumplen las condiciones del teorema. 
+
+Sea $x\in (c-\delta,c+\delta)$ un valor del entorno. Podemos afirmar que en intervalo $[c,x]$ se cumplen las hipótesis del **teorema del valor medio de Cauchy** ya que $f$ y $g$ son derivables en $(c,x)$ al serlo en todo el entorno $(c-\delta,c+\delta)$ y continuas en $[c,x]$ ya que como son derivables en todo en entorno, serán continuas y como $[c,x]\subset (c-\delta,c+\delta)$, también serán continuas en el intervalo $[c,x]$.
+
+Usando por tanto el **teorema del valor medio de Cauchy**, podemos afirmar que existe un punto $d\in (c,x)$ tal que:
+$$
+f'(d)\cdot (g(d)-g(c))=g'(d)\cdot (f(d)-f(c)).
+$$
+Recordemos que $f(c)=g(c)=0$, $f'(d)\neq 0$ y $g'(d)\neq 0$ ya que suponíamos que las derivadas $f'$ y $g'$ no se anulaban en el entorno de $c$. Usando las condiciones anteriores, podemos simplificar la expresión anterior de la siguiente manera:
+$$
+\frac{f'(d)}{g'(d)}=\frac{f(d)}{g(d)}.
+$$
+</div>
+
+## Regla de L'Hôpital
+<div class="dem">
+
+Si hacemos tender $x\to c$, como $d\in (c,x)$, tendremos que $d\to c$. Por tanto,
+$$
+\lim_{x\to c}\frac{f(x)}{g(x)}=\lim_{x\to c}\frac{f'(x)}{g'(x)}=L,
+$$
+por hipótesis. 
+
+En resumen, si existe $\displaystyle \lim_{x\to c}\frac{f'(x)}{g'(x)}$, también existe el límite $\displaystyle \lim_{x\to c}\frac{f(x)}{g(x)}$ y los dos coinciden.
+</div>
+
+<l class="observ">Observación:</l> el teorema sigue siendo cierto en el caso en que $a$, $b$, $c$ o $L$ son $\pm \infty$. Es decir, si existe el límite $\displaystyle \lim_{x\to \pm\infty}\frac{f'(x)}{g'(x)}$, también existe el límite $\displaystyle \lim_{x\to \pm\infty}\frac{f(x)}{g(x)}$ y los dos coinciden y pueden tener como resultado $\pm\infty$.
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Calculemos el valor del límite siguiente $\displaystyle\lim_{x\to 0}\frac{\sin x-x}{x-x\cos x}$.
+
+Observemos que si sustituimos por el valor $0$, obtenemos la indeterminación $\frac{0}{0}$.
+
+Usando la regla de L'Hôpital, calculemos el límite anterior:
+$$
+\lim_{x\to 0}\frac{\sin x-x}{x-x\cos x} = \lim_{x\to 0}\frac{\cos x-1}{1-\cos x+x\sin x}=\frac{0}{0}.
+$$
+Nos vuelve a dar la indeterminación $\frac{0}{0}$. Aplicando la regla de L'Hôpital por segunda vez, obtenemos:
+$$
+\lim_{x\to 0}\frac{\cos x-1}{1-\cos x+x\sin x} =\lim_{x\to 0}\frac{-\sin x}{\sin x+\sin x+x\cos x}=\lim_{x\to 0}\frac{-\sin x}{2\sin x+x\cos x}=\frac{0}{0}.
+$$
+</div>
+
+## Ejemplo
+<div class="example">
+Nos vuelve a dar la indeterminación $\frac{0}{0}$. Aplicando la regla de L'Hôpital por tercera vez, obtenemos:
+$$
+\lim_{x\to 0}\frac{-\sin x}{2\sin x+x\cos x} =\lim_{x\to 0}\frac{-\cos x}{2\cos x+\cos x-x\sin x}=\frac{-1}{3}.
+$$
+El límite tiene el valor $-\frac{1}{3}$.
+
+El límite anterior en `Wolfram Alpha` se muestra en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=limit+of+%28sin%28x%29-x%29%2F%28x-x*cos%28x%29%29+when+x+tends+to+0)
+</l>
+</div>
