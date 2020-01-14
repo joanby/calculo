@@ -1,0 +1,34 @@
+---
+title: "Tema 2 - Sucesiones y límites"
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ''
+output: 
+    ioslides_presentation:
+    widescreen: true
+    css: Mery_style.css
+    logo: Images/calculus.gif
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
+#reticulate::py_install("sympy")
+```
+
+# Tema
+
+## Límite de una sucessión
+
+<l class="definition">Definición</l>
+ 
+Dada una sucessión $\{a_n\}_{n \in \mathbb{N}}$ de números reales, el número real $a$ és el **límite de la successión dada** si para cada $\epsilon > 0$ existe un lugar $n_0$, a partir del cual todos los términos de la sucesión distan de $a$ menos que $\epsilon$, es decir, si para todo $n \geq n_0$ es 
+$$
+|a_n -a|< \epsilon 
+$$
+## zzzzz
+
+<div class="example">
+
+**Ejemplo: Las sucesivas paroximaciones decimales de $\sqrt{2}$, $1,1.4,1.41,1.414,1.4142,1.41421,\ldots$ conforman una sucesió cuyo límite és precisamente $\sqrt{2}$. Obsérvese que dad un $\epsilon$, es decir, una precisión, podemos asegurar que los subsiguientes términos de dicha sucesión distan de $\sqrt{2}$ menos que esa precisión. En el caso que $\epsilon= 10^{-n}$, entonces el primer término de la sucesión que dista de $\sqrt{2}$ menos que esa cantidad es precisamente el que tiene n cifras decimales.
+
+</div>
