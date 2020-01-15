@@ -9,6 +9,7 @@ output:
     logo: Images/calculus.gif
     fig_caption: yes
 ---
+<script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -1139,4 +1140,122 @@ El límite anterior en `Wolfram Alpha` se muestra en el enlace siguiente:
 <l class="center">
 [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=limit+of+%28sin%28x%29-x%29%2F%28x-x*cos%28x%29%29+when+x+tends+to+0)
 </l>
+</div>
+
+## Regla de L'Hôpital
+<div class="box">
+<div class="important">
+<i class="fa fa-exclamation-triangle"> ¡Cuidado! </i>
+</div>
+La regla de L'Hôpital sólo se puede aplicar en un sentido. Es decir, si existe el límite $\displaystyle \lim_{x\to c}\frac{f'(x)}{g'(x)}$, bajo las condiciones del Teorema anterior, existe el $\displaystyle \lim_{x\to c}\frac{f(x)}{g(x)}$ y son iguales; ahora bien, si no existe el límite $\displaystyle \lim_{x\to c}\frac{f'(x)}{g'(x)}$, no podemos decir nada acerca del límite $\displaystyle \lim_{x\to c}\frac{f(x)}{g(x)}$. Véase el ejemplo siguiente.
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Consideremos el límite siguiente:
+$\displaystyle\lim_{x\to 0}\frac{x^2\sin\left(\frac{1}{x}\right)}{\sin x}.$
+
+Si sustituimos $x$ por $0$ en el límite anterior obtenemos el valor $\frac{0}{0}$, pensad que $\displaystyle\lim_{x\to 0}x^2\sin\left(\frac{1}{x}\right)=0$ vale $0$ ya que es el límite de una funció que tiende a 0 ($x^2$) por una función acotada ($\sin\left(\frac{1}{x}\right)$).
+
+Apliquemos pues la regla de l'Hôpital:
+$$
+\begin{array}{rl}
+\displaystyle\lim_{x\to 0}\frac{x^2\sin\left(\frac{1}{x}\right)}{\sin x} & \displaystyle =\lim_{x\to 0}\frac{2x\sin\left(\frac{1}{x}\right)+x^2\cdot \left(-\frac{1}{x^2}\cos\left(\frac{1}{x}\right)\right)}{\cos x}=
+\lim_{x\to 0}\frac{2x\sin\left(\frac{1}{x}\right)-\cos\left(\frac{1}{x}\right)}{\cos x} \\ & \displaystyle =\lim_{x\to 0} \frac{2x\sin\left(\frac{1}{x}\right)}{\cos x}-\lim_{x\to 0}\frac{\cos\left(\frac{1}{x}\right)}{\cos x} = 0-\lim_{x\to 0}\frac{\cos\left(\frac{1}{x}\right)}{\cos x} = -\lim_{x\to 0}\frac{\cos\left(\frac{1}{x}\right)}{\cos x}.
+\end{array}
+$$
+El límite $\displaystyle \lim_{x\to 0} \frac{2x\sin\left(\frac{1}{x}\right)}{\cos x}$ vale $0$ ya que el denominador tiende a $1$ cuando $x\to 0$ y el numerador es el límite de una función que tiende a $0$ ($2x$) por una función acotada ($\sin\left(\frac{1}{x}\right)$).
+
+</div>
+
+## Ejemplo
+<div class="example">
+El límite anterior no existe ya que si consideramos la sucesión $x_n=\frac{1}{2\pi n}\longrightarrow 0$, si $n\to\infty$, el límite de la sucesión $\frac{\cos\left(\frac{1}{x_n}\right)}{\cos x_n}$ vale:
+$$
+-\lim_{n\to\infty}\frac{\cos (2\pi n)}{\cos\left(\frac{1}{2\pi n}\right)}=-1.
+$$
+En cambio, si consideramos la sucesión $y_n =\frac{1}{\frac{\pi}{2}+2\pi n}\longrightarrow 0$, si $n\to\infty$, el límite de la sucesión $\frac{\cos\left(\frac{1}{y_n}\right)}{\cos y_n}$ vale:
+$$
+-\lim_{n\to\infty}\frac{\cos \left(\frac{\pi}{2}+2\pi n\right)}{\cos\left(\frac{1}{\frac{\pi}{2}+2\pi n}\right)}=0.
+$$
+
+</div>
+
+## Ejemplo
+<div class="example">
+A continuación estaríamos tentados a decir que nuestro límite inicial $\displaystyle\lim_{x\to 0}\frac{x^2\sin\left(\frac{1}{x}\right)}{\sin x}$ no existe pero esto es falso ya que:
+$$
+\lim_{x\to 0}\frac{x^2\sin\left(\frac{1}{x}\right)}{\sin x}= \lim_{x\to 0}\frac{x}{\sin x}\cdot \lim_{x\to 0}
+ x\sin\left(\frac{1}{x}\right)=1\cdot 0=0!
+$$
+El primer límite $\displaystyle \lim_{x\to 0}\frac{x}{\sin x}$ vale $1$ ya que vimos en su momento que $\displaystyle \lim_{x\to 0}\frac{\sin x}{x}=1$, por tanto, si hacemos el límite de su recíproco también será $1$: $\displaystyle \lim_{x\to 0}\frac{x}{\sin x}=1$.
+
+El segundo límite $\displaystyle \lim_{x\to 0} x\sin\left(\frac{1}{x}\right)$ vale $0$ ya que es el límite de una función que tiende a $0$ ($x$) por una función acotada ($\sin\left(\frac{1}{x}\right)$).
+
+</div>
+
+## Ejemplo
+<div class="example">
+En resumen, que no exista el límite una vez aplicada la regla de l'Hôpital no significa que no exista el límite inicial que nos hemos planteado.
+
+El límite anterior en `Wolfram Alpha` se muestra en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=limit+of+%28x%5E2*sin%281%2Fx%29%29%2Fsin%28x%29+when+x+tends+to+0)
+</l>
+</div>
+
+# Fórmula de Taylor
+
+## Introducción
+
+La idea fundamental de la **fórmula de Taylor** es aproximar localmente una función en un entorno de un valor determinado por las funciones más sencillas que se conocen, los polinomios.
+
+Dicho de manera más explícita, consideremos una función $f:(a,b)\longrightarrow\mathbb{R}$ que se puede derivar hasta un cierto orden, pongamos $n+1$, para un cierto valor $n$ natural, y sea $x_0\in (a,b)$ un valor del interior del dominio de $f$. Queremos hallar un polinomio $P_n(x)$ tal que se verifique que $f$ y $P_n$ sean "iguales" en $x_0$ hasta orden $n$:
+$$
+\lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)^n} =0,\mbox{ para }m=0,1,\ldots,n.
+$$
+
+## Introducción
+La condición anterior para $m=0$ es la siguiente:
+$$
+\lim_{x\to x_0}f(x)-P_n(x) =0,\ \Rightarrow P_n(x_0)=f(x_0),
+$$
+es decir, la función y el polinomio a hallar deben coincidir en el valor $x_0$.
+
+## Introducción
+La condición anterior para $m=1$ es la siguiente:
+$$
+\lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)} =0,\ \Rightarrow P_n'(x_0)=f'(x_0),
+$$
+es decir, la derivada de la función y el polinomio a hallar deben coincidir en el valor $x_0$ ya que si aplicamos la regla de L'Hôpital (el límite es indeterminado de la forma $\frac{0}{0}$ ya que recordemos que $P_n(x_0)=f(x_0)$):
+$$
+\lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)} = \lim_{x\to x_0}\frac{f'(x)-P_n'(x)}{(x-x_0)}=0,
+$$
+y el numerador debe ser $0$ para $x=x_0$ ya que en caso contrario el límite anterior sería de la forma $\frac{f'(x_0)-P_n'(x_0)}{0}=\infty$, al ser el numerador diferente de $0$.
+
+## Introducción
+En general, la condición para $m$ entre $0$ y $n$ es la siguiente:
+$$
+\lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)^m} =0,\ \Rightarrow P_n^{(m)}(x_0)=f^{(m)}(x_0),
+$$
+es decir, la derivada $m$-ésima de la función y el polinomio a hallar deben coincidir en el valor $x_0$ ya que si aplicamos la regla de L'Hôpital $m$ veces (el límite es indeterminado de la forma $\frac{0}{0}$ ya que recordemos que $P_n^{(i)}(x_0)=f^{(i)}(x_0)$ para los $i$ anteriores desde $0$ hasta $m-1$):
+$$
+\lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)^m} = \lim_{x\to x_0}\frac{f'(x)-P_n(x)}{m (x-x_0)^{m-1}}=\cdots = \lim_{x\to x_0}\frac{f^{(m)}(x)-P_n^{(m)}(x)}{m! (x-x_0)}=0,
+$$
+
+## Introducción
+y el numerador debe ser $0$ para $x=x_0$ ya que en caso contrario el límite anterior sería de la forma $\frac{f^{(m)}(x_0)-P_n^{(m)}(x_0)}{0}=\infty$, al ser el numerador diferente de $0$.
+
+
+<div class="box">
+<div class="important">
+<i class="fa fa-star"> Importante: </i>
+</div>
+Las condiciones que debe verificar el polinomio $P_n(x)$ para aproximar la función $f(x)$ hasta orden $n$ en un entorno del punto $x_0$ son las siguientes:
+$$
+P_n^{(m)}(x_0)=f^{(m)}(x_0),\mbox{ para }m=0,\ldots,n.
+$$
+En este caso decimos que el polinomio $P_n(x)$ tiene en el punto $x_0$ **orden de contacto** con $f$ superior a $n$.
 </div>
