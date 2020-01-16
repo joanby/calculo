@@ -1316,3 +1316,14 @@ $$
 ya que $n+1-i>0$ por lo que el segundo sumando será nulo y la última igualdad es cierta por hipótesis de inducción.
 </div>
 
+## Cálculo del polinomio de Taylor
+<div class="dem">
+Sólo falta demostrar el caso $i=n+1$. Si hacemos la derivada $n+1$-ésima del polinomio $P_{n+1}(x)$ obtenemos:
+$$
+P_{n+1}^{(n+1)}(x)=P_n^{(n+1)}(x)+f^{(n+1)}(x_0) = f^{(n+1)}(x_0),
+$$
+ya que $P_n^{(n+1)}(x)=0$ al ser $P_n(x)$ un polinomio de grado $n$ y por tanto la derivada $n+1$-ésima del mismo será 0.
+
+Concluimos por tanto que la derivada $n+1$-ésima del polinomio $P_{n+1}(x)$ será la constante $f^{(n+1)}(x_0)$ y, en particular, se cumplirá que $P_{n+1}^{(n+1)}(x_0)=f^{(n+1)}(x_0)$, tal como queríamos demostrar.
+</div>
+
