@@ -18,6 +18,16 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Tema
 
+## Límite de una sucesión
+
+Como hemos visto, el conjunto de los números reales incluye todos los números racionales, es decir, todos los números que tengan un número finito de cifras en su desarrollo decimal. De hecho, también incluye algunos con un número infinito de cifras decimales como seria el caso de los decimales periódicos.
+
+Por consiguiente, los números reales que no son racionales, es decir los números **irracionales** tienen un número infito de cifras en su desarrollo decimal, tal seria el caso de, por ejemplo $\sqrt{2}$, $\pi$ o $e$.  
+
+Siendo así, ¿cómo podemos utilizar estos números con infinitas cifras decimales? La respuesta viene de la mano del concepto de **sucesión** y **límite**. 
+
+Cómo hemos demostrado, dado un número irracional y una precisión, siempre es posible determinar un racional que diste del iracional dado menos que dicha precisión. Es lo que hacemos cuando tomamos $\pi$ como $3.14$ o $3.1415$, $\ldots$
+
 ## Límite de una sucessión
 
 <l class="definition">Definición</l>
