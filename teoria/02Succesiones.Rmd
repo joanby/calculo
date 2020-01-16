@@ -28,16 +28,6 @@ Siendo así, ¿cómo podemos utilizar estos números con infinitas cifras decima
 
 Cómo hemos demostrado, dado un número irracional y una precisión, siempre es posible determinar un racional que diste del iracional dado menos que dicha precisión. Es lo que hacemos cuando tomamos $\pi$ como $3.14$ o $3.1415$, $\ldots$
 
-## Límite de una sucessión
-
-<l class="definition">Definición</l>
- 
-Dada una sucessión $\{a_n\}_{n \in \mathbb{N}}$ de números reales, el número real $a$ és el **límite de la successión dada** si para cada $\epsilon > 0$ existe un lugar $n_0$, a partir del cual todos los términos de la sucesión distan de $a$ menos que $\epsilon$, es decir, si para todo $n \geq n_0$ es 
-
-$$
-|a_n -a|< \epsilon 
-$$
-
 ## Ejemplos
 
 <div class="example">
@@ -61,11 +51,22 @@ Obsérvese que dado un $\epsilon$, es decir, una precisión, podemos asegurar qu
 
 Análogamente, las sucesivas aproximaciones decimales del número $\pi$:
 $$
-3,3.1,3.14,3.141,3.1415,,3.14159, \ldots
+3,3.1,3.14,3.141,3.1415,3.14159, \ldots
 $$
 forman una sucesión cuyo límite es precisamente el número $\pi$
 
 </div>
+## Límite de una sucessión
+
+<l class="definition">Definición</l>
+ 
+Dada una sucessión $\{a_n\}_{n \in \mathbb{N}}$ de números reales, el número real $a$ és el **límite de la successión dada** si para cada $\epsilon > 0$ existe un lugar $n_0$, a partir del cual todos los términos de la sucesión distan de $a$ menos que $\epsilon$, es decir, si para todo $n \geq n_0$ es 
+
+$$
+|a_n -a|< \epsilon 
+$$
+
+
 
 ## Más ejemplos
 
