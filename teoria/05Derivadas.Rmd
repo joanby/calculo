@@ -1259,3 +1259,60 @@ P_n^{(m)}(x_0)=f^{(m)}(x_0),\mbox{ para }m=0,\ldots,n.
 $$
 En este caso decimos que el polinomio $P_n(x)$ tiene en el punto $x_0$ **orden de contacto** con $f$ superior a $n$.
 </div>
+
+## Cálculo del polinomio de Taylor
+El resultado siguiente nos da una expresión del polinomio de Taylor:
+
+<l class="prop">Teorema. Expresión del polinomio de Taylor.</l>
+Sea $n$ un valor natural. Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto interior del dominio de $f$. Supongamos que $f$ es derivable $n+1$ veces en $x_0$. Entonces el polinomio de Taylor de grado $n$ con **orden de contacto** con $f$ superior a $n$ en $x_0$ es el siguiente:
+$$
+\begin{array}{rl}
+P_n(x) = & f(x_0)+f'(x_0)\cdot (x-x_0)+\frac{f''(x_0)}{2!}\cdot (x-x_0)^2+\cdots +\\ & +\frac{f^{(n)}(x_0)}{n!}\cdot (x-x_0)^n.
+\end{array}
+$$
+
+
+## Cálculo del polinomio de Taylor
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido muy técnico. </i>
+</div>
+</div>
+
+<div class="dem">
+**Demostración**
+
+Vamos a demostrar la fórmula anterior por inducción sobre $n$.
+
+Para $n=0$, $P_0(x)=f(x_0)$, que por definición es el **polinomio de Taylor** de grado $0$ o constante.
+
+Suponemos cierto para $n$, es decir suponemos que:
+$$
+P_n(x) =  f(x_0)+f'(x_0)\cdot (x-x_0)+\frac{f''(x_0)}{2!}\cdot (x-x_0)^2+\cdots  +\frac{f^{(n)}(x_0)}{n!}\cdot (x-x_0)^n.
+$$
+Hemos de demostrar que:
+$$
+\begin{array}{rl}
+P_{n+1}(x) = & f(x_0)+f'(x_0)\cdot (x-x_0)+\frac{f''(x_0)}{2!}\cdot (x-x_0)^2+\cdots + \frac{f^{(n)}(x_0)}{n!}\cdot (x-x_0)^n+\\ & +\frac{f^{(n+1)}(x_0)}{(n+1)!}\cdot (x-x_0)^{n+1} = P_n(x)+\frac{f^{(n+1)}(x_0)}{(n+1)!}\cdot (x-x_0)^{n+1}.
+\end{array}
+$$
+
+</div>
+
+## Cálculo del polinomio de Taylor
+<div class="dem">
+Por hipótesis de inducción, sabemos que: $P_n^{(i)}(x_0)=f^{(i)}(x_0)$, para $i=0,\ldots,n$ ya que recordemos que $P_n(x)$ es el polinomio de Taylor de grado $n$.
+
+Para verificar que $P_{n+1}(x)$ correspondiente a la expresión anterior es el polinomio de Taylor de grado $n+1$, hay que verificar las condiciones siguientes: $P_{n+1}^{(i)}(x_0)=f^{(i)}(x_0)$, para $i=0,\ldots,n+1$.
+
+Si $i$ está entre $0$ y $n$, tenemos que:
+$$
+P_{n+1}^{(i)}(x)=P_{n}^{(i)}(x)+(n+1)\cdots (n+2-i)\cdot\frac{f^{(n+1)}(x_0)}{(n+1)!}\cdot (x-x_0)^{n+1-i}.
+$$
+Si evaluamos la expresión anterior en $x=x_0$, obtenemos:
+$$
+P_{n+1}^{(i)}(x_0)=P_{n}^{(i)}(x_0)+(n+1)\cdots (n+2-i)\cdot\frac{f^{(n+1)}(x_0)}{(n+1)!}\cdot (x_0-x_0)^{n+1-i} = P_n^{(i)}(x_0)=f^{(i)}(x_0),
+$$
+ya que $n+1-i>0$ por lo que el segundo sumando será nulo y la última igualdad es cierta por hipótesis de inducción.
+</div>
+
