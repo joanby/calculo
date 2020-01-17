@@ -1260,10 +1260,44 @@ $$
 En este caso decimos que el polinomio $P_n(x)$ tiene en el punto $x_0$ **orden de contacto** con $f$ superior a $n$.
 </div>
 
+## Introducción
+<div class="example">
+**Ejemplo ilustrativo**
+
+En el enlace siguiente  [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=taylors+series+of+sin%28x%29+at+x%3D0) se muestra la función $f(x)=\sin x$ (en rojo) y los polinomios de grado $1$, $P_1(x)$ (la recta en azul discontinua), de grado $3$, $P_3(x)$ (la curva en azul discontinua) para $x_0=0$. El polinomio $P_2(x)$ coincide con el polinomio de grado $1$ en este caso ya que el coeficiente de $x^2$ vale $0$ como veremos más adelante.
+
+En la casilla *expansion point* podéis cambiar el valor $x_0$. Intentad escribir `pi/2` y `pi` y observad qué ocurre.
+
+Si clicáis en la casilla *More terms* en la parte de arriba del gráfico veréis los polinomios de grado $5$, $P_5(x)$ y de grado $7$, $P_7(x)$. Observad cómo cada vez los polinomios se aproximan más a la función $f(x)$.
+
+</div>
+
+<l class="observ">Observación: </l> la elección del punto $x_0$ no es arbitraria. Hemos de elegir un valor $x_0$ del que conozcamos el valor $f(x_0)$ y las derivadas de cualquier orden en $x_0$, $f^{(m)}(x_0)$, $m=1,2,\ldots$
+
+
+## Introducción
+<div class="example">
+**Ejemplo anterior**
+
+En el ejemplo anterior donde recordemos que $f(x)=\sin x$, debemos elegir un punto $x_0$ en el cual conozcamos los valores de $\sin x_0$ y $\cos x_0$ ya que si conocemos dichos valores, conoceremos $f(x_0)$ y las derivadas de cualquier orden:
+$$
+f(x_0)=\sin x_0,\ f'(x_0)=\cos x_0,\ f''(x_0)=-\sin x_0,\ f'''(x_0)=-\cos x_0,\ f^{iv}(x_0)=\sin x_0,\ldots
+$$
+Algunos valores $x_0$ elegibles en este caso son los siguientes: $x_0=0,\frac{\pi}{6}, \frac{\pi}{4},\frac{\pi}{3},\frac{\pi}{2},\pi$ ya que conocemos el valor de $\sin (x_0)$ y $\cos(x_0)$ tal como se observa en la tabla siguiente:
+
+<div class="center">
+|$x_0$| $0$| $\frac{\pi}{6}$| $\frac{\pi}{4}$|$\frac{\pi}{3}$|$\frac{\pi}{2}$|$\pi$|
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+$\sin(x_0)$|$0$|$\frac{1}{2}$|$\frac{\sqrt{2}}{2}$|$\frac{\sqrt{3}}{2}$|$1$|$0$|
+$\cos(x_0)$|$1$|$\frac{\sqrt{3}}{2}$|$\frac{\sqrt{2}}{2}$|$\frac{1}{2}$|$0$|$-1$|
+</div>
+</div>
+
+
 ## Cálculo del polinomio de Taylor
 El resultado siguiente nos da una expresión del polinomio de Taylor:
 
-<l class="prop">Teorema. Expresión del polinomio de Taylor.</l>
+<l class="prop">Teorema. Expresión del polinomio de Taylor o la expansión de Taylor.</l>
 Sea $n$ un valor natural. Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto interior del dominio de $f$. Supongamos que $f$ es derivable $n+1$ veces en $x_0$. Entonces el polinomio de Taylor de grado $n$ con **orden de contacto** con $f$ superior a $n$ en $x_0$ es el siguiente:
 $$
 \begin{array}{rl}
@@ -1327,3 +1361,102 @@ ya que $P_n^{(n+1)}(x)=0$ al ser $P_n(x)$ un polinomio de grado $n$ y por tanto 
 Concluimos por tanto que la derivada $n+1$-ésima del polinomio $P_{n+1}(x)$ será la constante $f^{(n+1)}(x_0)$ y, en particular, se cumplirá que $P_{n+1}^{(n+1)}(x_0)=f^{(n+1)}(x_0)$, tal como queríamos demostrar.
 </div>
 
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Consideremos la función $f(x)=\sin (x)$ y el punto $x_0=0$. Vamos a hallar el polinomio de Taylor de grado $n$ de $f(x)$ en $x_0=0$.
+
+Lo primero que hemos de calcular a la vista de la expresión vista en el teorema anterior que nos da la expresión del polinomio de Taylor es el valor de la función en $x_0$, $f(x_0)$ y el valor de las derivadas de $f$ en $x_0$, $f^{(m)}(x_0)$, para $m=1,2,\ldots$
+
+Los valores de $f^{(m)}(0)$ valen lo siguiente:
+$$
+f(0)=\sin 0=0,\ f'(0)=\cos 0=1,\ f''(0)=-\sin 0=0,\ f'''(0)=-\cos 0 =-1,\ f^{(iv)}(0)=\sin 0 =0, \ldots
+$$
+A partir de los cálculos anteriores podemos deducir que $f^{(n)}(0)=0$, si $n$ es par y $f^{(n)}(0)=\pm 1$, si $n$ es impar y valdrá $1$ si $n=1,5,9,\ldots$ y $-1$ si $n=3,7,11,\ldots$
+
+Intentemos escribir el resultado anterior de forma más "compacta". Decir que $n$ es par es equivalente a decir que existe un valor $k$ natural tal que $n=2k$ y decir que $n$ es impar es equivalente a decir que existe un valor $k$ natural tal que $n=2k+1$. Por tanto, las condiciones anteriores se pueden escribir como: $f^{(2k)}(0)=0$, $f^{(2k+1)}(0)=\pm 1$.
+</div>
+
+## Ejemplo
+<div class="example">
+
+Observemos además que los valores de $n$ para los que la derivada $n$-ésima valía $1$, ($n=1,5,9,\ldots$) corresponde a valores de $k$ par ya que $1=2\cdot 0+1,\ 5=2\cdot 2+1,\ 9=2\cdot 4+1,\ldots$ y los valores de $n$ para los que la derivada $n$-ésima valía $-1$ ($n=3,7,11,\ldots$) corresponde a valores de $k$ impar ya que $3=2\cdot 1+1,\ 7=2\cdot 3+1,\ 11=2\cdot 5+1,\ldots$
+
+Por tanto, la condición $f^{(2k+1)}(0)=\pm 1$ puede escribirse como $f^{(2k+1)}(0)=(-1)^k$ ya que la expresión $(-1)^k$ da $1$ para los $k$ pares y $-1$, para los $k$ impares.
+
+En resumen, tenemos lo siguiente: $f^{(2k)}(0)=0$, $f^{(2k+1)}(0)=(-1)^k$, para $k=0,1,2,3,\ldots$
+
+Sea $n$ un natural. Consideremos dos casos:
+
+* $n$ par. En este caso, el polinomio de Taylor de grado $n$ es el siguiente:
+$$
+P_n(x)=f(0)+f'(0)\cdot x+\frac{f''(0)}{2!}\cdot x^2+\cdots + \frac{f^{n}(0)}{n!}\cdot x^n.
+$$
+Observemos que el último término del polinomio anterior será $0$ ya que hemos dicho que $f^{(n)}(0)=0$ para $n$ par.
+Entonces el polinomio $P_n(x)$ se puede escribir como:
+$$
+P_n(x)=f(0)+f'(0)\cdot x+\frac{f''(0)}{2!}\cdot x^2+\cdots + \frac{f^{n-1}(0)}{(n-1)!}\cdot x^{n-1}.
+$$
+
+</div>
+
+## Ejemplo
+<div class="example">
+Si eliminamos los términos correspondientes a derivadas pares al ser nulos, nos queda la expresión siguiente:
+$$
+P_n(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}+\cdots + \frac{(-1)^k x^{2k+1}}{(2k+1)!}=\sum_{i=0}^k \frac{(-1)^i x^{2i+1}}{(2i+1)!},
+$$
+donde $k$ es tal que $n-1=2k+1$, o, lo que es lo mismo, $k=\frac{n-2}{2}$.
+```{r,echo=FALSE}
+options(scipen=999)
+```
+Consideremos por ejemplo $n=14$, en este caso $k=\frac{14-2}{2}=6$. El polinomio de Taylor de $f(x)=\sin x$ de grado $14$ en $x_0=0$ es el siguiente:
+$$
+\begin{array}{rl}
+P_{14}(x) & =x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\frac{x^{11}}{11!}+\frac{x^{13}}{13!},\\
+& = x-\frac{x^3}{`r factorial(3)`}+\frac{x^5}{`r factorial(5)`}-\frac{x^7}{`r factorial(7)`}+\frac{x^9}{`r factorial(9)`}-\frac{x^{11}}{`r factorial(11)`}+\frac{x^{13}}{`r factorial(13)`}.
+\end{array}
+$$
+</div>
+
+## Ejemplo
+<div class="example">
+* $n$ impar. En este caso, el polinomio de Taylor de grado $n$ es el siguiente:
+$$
+P_n(x)=f(0)+f'(0)\cdot x+\frac{f''(0)}{2!}\cdot x^2+\cdots + \frac{f^{n}(0)}{n!}\cdot x^n.
+$$
+Si eliminamos los términos correspondientes a derivadas pares al ser nulos, nos queda la expresión siguiente:
+$$
+P_n(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}+\cdots + \frac{(-1)^k x^{2k+1}}{(2k+1)!}=\sum_{i=0}^k \frac{(-1)^i x^{2i+1}}{(2i+1)!},
+$$
+donde $k$ es tal que $n=2k+1$, o, lo que es lo mismo, $k=\frac{n-1}{2}$.
+Consideremos por ejemplo $n=11$, en este caso $k=\frac{11-1}{2}=5$. El polinomio de Taylor de $f(x)=\sin x$ de grado $11$ en $x_0=0$ es el siguiente:
+$$
+P_{11}(x)  =x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\frac{x^{11}}{11!}
+ = x-\frac{x^3}{`r factorial(3)`}+\frac{x^5}{`r factorial(5)`}-\frac{x^7}{`r factorial(7)`}+\frac{x^9}{`r factorial(9)`}-\frac{x^{11}}{`r factorial(11)`}.
+$$
+Si váis al enlace siguiente  [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=taylors+series+of+sin%28x%29+at+x%3D0) y apretáis una vez la casilla `More terms` en la sección `Series expansion at x=0` os aparecerá el polinomio de Taylor de grado 11 y si volvéis a apretar, os aparecerá el polinomio de Taylor de grado 19 que "incluye" el polinomio de Taylor de grado 14.
+
+</div>
+
+
+## Desarrollos de MacLaurin
+
+<div class="exercise">
+**Ejercicio**
+
+Hallar el polinomio de Taylor de grado $n$ para la misma función que el ejemplo anterior en el punto $x_0=\frac{\pi}{2}$.
+</div>
+
+<l class="definition">Definición.</l> Dada una función $f:(a,b)\longrightarrow \mathbb{R}$, $n+1$ veces derivable y dado $x_0\in (a,b)$ un punto interior del dominio de $f$. Sea $P_n(x)$ el polinomio de Taylor de grado $n$ en $x_0=0$. Dicho polinomio se denomina **polinomio o expansión de MacLaurin de grado $n$ de $f$ **.
+
+En el ejemplo anterior, hemos hallado el polinomio de MacLaurin de grado $n$ de la función $f(x)=\sin x$.
+
+
+
+## Error en el polinomio de Taylor
+
+Una vez conocido cómo hallar el **polinomio de Taylor** de una función $f(x)$ en un punto $x_0$ de su dominio, podemos usar dicho polinomio o dicha expansión para **aproximar** el valor de dicha función $f(x)$ para valores $x$ **cercanos** a $x_0$.
+
+Ahora bien, si no tenemos manera de estimar o calcular alguna **cota del error** que estamos cometiendo, dicha aproximación no tiene ningún sentido ya que sería como "ir a ciegas", es decir, no sabemos hasta qué punto el valor $P_n(x)$ aproxima bien o no el valor de $f(x)$.
