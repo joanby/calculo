@@ -168,7 +168,21 @@ Supondremos la existencia de un conjunto $\mathbb{R}$ de números en el que hay 
       
 ## El orden de los números reales: $\mathbb{R}$
 
+Para definir una relción de orden entre los números reales, supondremos que existe un subconjunto $P$ de números reales tal que:
+    
+  1. Cualquier número real o està en $P$ o és igual a $0$ o su simétrico está en P:
+    
+$$
+P \cup  \{ 0 \} \cup (-P) = \mathbb{R} 
+$$
+
+donde $-P = \{-x: x \in \mathbb{R} \} $
+
+  2. $P+P \subset P$
   
+  3. $P \cdot P \subset P$
+
+
 ## $\sqrt{2}$ es un un número real.
 
 <l class="prop">Proposición</l>
