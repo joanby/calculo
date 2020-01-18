@@ -4219,7 +4219,7 @@ P_n(x) = &amp; f(x_0)+f&#39;(x_0)\cdot (x-x_0)+\frac{f&#39;&#39;(x_0)}{2!}\cdot 
 
 <div class="box">
 <div class="important">
-<p><i class="fa fa-dizzy"> Contenido muy técnico. </i></p></div></div>
+<p><i class="fa fa-dizzy"> Contenido bastante técnico. </i></p></div></div>
 
 <div class="dem">
 <p><strong>Demostración</strong></p>
@@ -4327,7 +4327,7 @@ P_{11}(x)  =x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\frac{
 
 <p>Hallar el polinomio de Taylor de grado \(n\) para la misma función que el ejemplo anterior en el punto \(x_0=\frac{\pi}{2}\).</p></div>
 
-<p><l class="definition">Definición.</l> Dada una función \(f:(a,b)\longrightarrow \mathbb{R}\), \(n+1\) veces derivable y dado \(x_0\in (a,b)\) un punto interior del dominio de \(f\). Sea \(P_n(x)\) el polinomio de Taylor de grado \(n\) en \(x_0=0\). Dicho polinomio se denomina <strong>polinomio o expansión de MacLaurin de grado \(n\) de \(f\) </strong>.</p>
+<p><l class="definition">Definición.</l> Dada una función \(f:(a,b)\longrightarrow \mathbb{R}\), \(n+1\) veces derivable y dado \(x_0\in (a,b)\) un punto interior del dominio de \(f\), sea \(P_n(x)\) el polinomio de Taylor de grado \(n\) en \(x_0=0\). Dicho polinomio se denomina <strong>polinomio o expansión de MacLaurin de grado \(n\) de \(f\) </strong>.</p>
 
 <p>En el ejemplo anterior, hemos hallado el polinomio de MacLaurin de grado \(n\) de la función \(f(x)=\sin x\).</p>
 
@@ -4335,7 +4335,130 @@ P_{11}(x)  =x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\frac{
 
 <p>Una vez conocido cómo hallar el <strong>polinomio de Taylor</strong> de una función \(f(x)\) en un punto \(x_0\) de su dominio, podemos usar dicho polinomio o dicha expansión para <strong>aproximar</strong> el valor de dicha función \(f(x)\) para valores \(x\) <strong>cercanos</strong> a \(x_0\).</p>
 
-<p>Ahora bien, si no tenemos manera de estimar o calcular alguna <strong>cota del error</strong> que estamos cometiendo, dicha aproximación no tiene ningún sentido ya que sería como &ldquo;ir a ciegas&rdquo;, es decir, no sabemos hasta qué punto el valor \(P_n(x)\) aproxima bien o no el valor de \(f(x)\).</p></article></slide>
+<p>Ahora bien, si no tenemos manera de estimar o calcular alguna <strong>cota del error</strong> que estamos cometiendo, dicha aproximación no tiene ningún sentido ya que sería como &ldquo;ir a ciegas&rdquo;, es decir, no sabemos hasta qué punto el valor \(P_n(x)\) aproxima bien o no el valor de \(f(x)\).</p>
+
+<p>El siguiente resultado nos da una expresión que permite acotar el error cometido usando el polinomio de Taylor.</p>
+
+</article></slide><slide class=""><hgroup><h2>Error en el polinomio de Taylor</h2></hgroup><article  id="error-en-el-polinomio-de-taylor-1">
+
+<p><l class="prop">Teorema. Error en la fórmula de Taylor. </l> Sea \(f\) una función \(f:(a,b)\longrightarrow \mathbb{R}\), sea \(x_0\in (a,b)\) un punto interior del dominio de \(f\) y supongamos que \(f\) es \(n+1\) veces derivable en un entorno de \(x_0\). Sea \(P_n(x)\) el polinomio de Taylor de grado \(n\) en \(x_0\). Entonces si \(x\) es un punto del entorno anterior de \(x_0\), se verifica: \[
+f(x)-P_n(x)=\frac{f^{n+1}(c)}{m\cdot n!}\cdot (x-c)^{n-m+1}\cdot (x-x_0)^m,
+\] donde \(c\) es un punto que está situado entre \(x_0\) y \(x\) (o entre \(x\) y \(x_0\), dependiendo de cuál de los dos valores es el menor y el mayor) y se denota por \(x\in &lt;x_0,x&gt;\) y \(m\) es un natural entre \(1\) y \(n+1\). Dicha expresión es conocida por <strong>resto de Cauchy</strong>.</p>
+
+</article></slide><slide class=""><hgroup><h2>Error en el polinomio de Taylor</h2></hgroup><article  id="error-en-el-polinomio-de-taylor-2">
+
+<p><l class="observ">Observación:</l> a la expresión \(f(x)-P_n(x)\) se le denota por \(R_n(x-x_0)\), \(R\) de resto.</p>
+
+<p><l class="prop">Corolario.</l> En las condiciones del teorema anterior, considerando \(m=n+1\), tenemos la expresión siguiente conocida como <strong>resto de Lagrange</strong>: \[
+f(x)-P_n(x)=\frac{f^{n+1}(c)}{(n+1)!}\cdot (x-x_0)^{n+1}.
+\]</p>
+
+<p>Esta es la expresión más conocida de la expresión del error del <strong>polinomio de Taylor</strong> de grado \(n\).</p>
+
+</article></slide><slide class=""><hgroup><h2>Error en el polinomio de Taylor</h2></hgroup><article  id="error-en-el-polinomio-de-taylor-3">
+
+<div class="box">
+<div class="important">
+<p><i class="fa fa-dizzy"> <i class="fa fa-dizzy"> Contenido muy técnico. </i></i></p></div></div>
+
+<div class="dem">
+<p><strong>Demostración</strong></p>
+
+<p>Sea \(x\in (a,b)\) un valor del interior del entorno de \(x_0\) donde \(f\) es \(n+1\) veces derivable. Fijado dicho valor de \(x\), se considera la función siguiente que depende de la variable \(t\): \[
+F(t)=f(t)+\sum_{k=1}^n \frac{f^{(k)}(t)}{k!}\cdot (x-t)^k.
+\] Dicha función \(F(t)\) es continua y derivable en el intervalo \(&lt;x_0,x&gt;\) (recordemos que dicha expresión vale \((x_0,x)\), si \(x&gt;x_0\) y \((x,x_0)\) si \(x&lt;x_0\)) ya que es suma de productos de continuas y derivables: pensad que \(f\) es derivable por hipótesis, \(f^{(k)}\) será derivable ya que \(k\leq n\) y por ser \(f\) derivable \(n+1\) veces por hipótesis y la función \((x-t)^k\) será derivable al ser un polinomio en \(t\).</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Error en el polinomio de Taylor</h2></hgroup><article  id="error-en-el-polinomio-de-taylor-4">
+
+<div class="dem">
+<p>Hallemos el valor de la derivada de \(F\), \(F&#39;(t)\): \[
+\begin{array}{rl}
+F&#39;(t)   = &amp; \displaystyle f&#39;(t)+\sum_{k=1}^n \frac{f^{(k+1)}(t)}{k!}\cdot (x-t)^k -\sum_{k=1}^n k\cdot \frac{f^{(k)}(t)}{k!}(x-t)^{k-1} \\
+ = &amp;\displaystyle f&#39;(t)+\sum_{k=1}^n \frac{f^{(k+1)}(t)}{k!}\cdot (x-t)^k -\sum_{k=1}^n \frac{f^{(k)}(t)}{(k-1)!}(x-t)^{k-1}\\
+ = &amp;  f&#39;(t)+\frac{f&#39;&#39;(t)}{1!}\cdot (x-t)+\frac{f&#39;&#39;&#39;(t)}{2!}\cdot (x-t)^2+\cdots+ \frac{f^{(n)}(t)}{(n-1)!}\cdot (x-t)^{n-1} + \frac{f^{(n+1)}(t)}{n!}\cdot (x-t)^n\\ &amp; -\left(f&#39;(t)+\frac{f&#39;&#39;(t)}{1!}\cdot (x-t)+\frac{f&#39;&#39;&#39;(t)}{2!}\cdot (x-t)^2 +\cdots + \frac{f^{(n)}(t)}{(n-1)!}\cdot (x-t)^{n-1} \right) = \frac{f^{(n+1)}(t)}{n!}\cdot (x-t)^n.
+\end{array}
+\] Consideremos ahora una función \(G\) cualquiera continua en el intervalo \(&lt;x_0,x&gt;\) cerrado y diferenciable en el mismo intervalo anterior pero abierto tal que \(G&#39;(t)\neq 0\) para todo \(t\in &lt;x_0,x&gt;\) y \(G(x_0)\neq G(x)\).</p>
+
+<p>Si aplicamos el Teorema del valor medio de Cauchy al intervalo \(&lt;x_0,x&gt;\) a las funciones \(F\) y \(G\), tenemos que existe un valor \(c\in &lt;x_0,x&gt;\) tal que: \[
+G&#39;(c)\cdot (F(x)-F(x_0))=F&#39;(c)\cdot (G(x)-G(x_0)).
+\]</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Error en el polinomio de Taylor</h2></hgroup><article  id="error-en-el-polinomio-de-taylor-5">
+
+<div class="dem">
+<p>El valor de \(F(x)-F(x_0)\) es precisamente el error que cometemos al aproximar \(f(x)\) por el polinomio de Taylor de grado \(n\), \(P_n(x)\) ya que: \[
+F(x)-F(x_0)=f(t)-\left(f(x_0)+\sum_{k=1}^n \frac{f^{(k)}(x_0)}{k!}\cdot (x-x_0)^k\right)=f(x)-P_n(x).
+\] Usando la expresión deducida del Teorema del valor medio de Cauchy, podemos escribir que: \[
+F(x)-F(x_0)=f(x)-P_n(x)=R_n(x-x_0)=\frac{F&#39;(c)}{G&#39;(c)}\cdot (G(x)-G(x_0)).
+\] Diferentes expresiones del error se obtienen eligiendo \(G\) de una determinada forma:</p>
+
+<ul>
+<li>Si \(G(t)=(x-t)^{n+1}\), tenemos que \(G&#39;(t)=-(n+1)\cdot (x-t)^n\) y, por tanto: \[
+R_n(x-x_0)=\frac{F&#39;(c)}{G&#39;(c)}\cdot (G(x)-G(x_0))=\frac{\frac{f^{(n+1)}(c)}{n!}\cdot (x-c)^n}{-(n+1)\cdot (x-c)^n}\cdot \left(-(x-x_0)^{n+1}\right)=\frac{f^{(n+1)}(c)}{(n+1)!}\cdot (x-x_0)^{n+1}.
+\]</li>
+</ul></div>
+
+</article></slide><slide class=""><hgroup><h2>Error en el polinomio de Taylor</h2></hgroup><article  id="error-en-el-polinomio-de-taylor-6">
+
+<div class="dem">
+<ul>
+<li>Si \(G(t)=(x-t)^{m}\), con \(m\) natural entre \(1\) y \(n+1\), tenemos que \(G&#39;(t)=-m\cdot (x-t)^{m-1}\) y, por tanto: \[
+\begin{array}{rl}
+R_n(x-x_0) &amp; =\frac{F&#39;(c)}{G&#39;(c)}\cdot (G(x)-G(x_0))=\frac{\frac{f^{(n+1)}(c)}{n!}\cdot (x-c)^n}{-m\cdot (x-c)^{m-1}}\cdot \left(-(x-x_0)^{m}\right)\\ &amp; =\frac{f^{(n+1)}(c)}{m\cdot n!}\cdot (x-c)^{n-m+1}\cdot (x-x_0)^{m},
+\end{array}
+\] tal como queríamos demostrar.</li>
+</ul></div>
+
+</article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-26">
+
+<div class="example">
+<p><strong>Ejemplo</strong></p>
+
+<p>Vamos a intentar aproximar la función \(f(x)=\sin x\) para un \(x\) próximo a \(0\).</p>
+
+<p>Recordemos que el polinomio de Taylor (de hecho, el de MacLaurin) de la función \(f(x)\) de grado \(n\) es el siguiente: \[
+P_n(x)=\sum_{i=0}^k \frac{(-1)^i x^{2i+1}}{(2i+1)!},
+\] con \(k=\frac{n-2}{2}\), si \(n\) es par y \(k=\frac{n-1}{2}\), si \(n\) es impar.</p>
+
+<p>El problema que nos planteamos es el siguiente: dado \(x\) y \(e\) un error absoluto máximo que estamos dispuestos a cometer, calcular el valor de \(P_n(x)\) tal que \(|f(x)-P_n(x)=|\sin x-P_n(x)|\leq e\).</p>
+
+<p>El primer paso es calcular el valor de \(n\). Nos fijamos a partir de la expresión de \(P_n(x)\) que si \(n\) es par el grado del polinomio de MacLaurin tiene grado \(n-1\) ya que la potencia más alta de \(x\), \(2k+1\) vale \(2k+1=n-1\).</p>
+
+<p>Supondremos que \(n\) es par ya que tiene un término menos que si \(n\) es impar y esto es una ventaja a la hora de computar \(P_n(x)\).</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-27">
+
+<div class="example">
+<p>El error cometido \(R_n(x)\) usando el teorema anterior vale: (usaremos la fórmula de Lagrange) \[
+f(x)-P_n(x)=R_n(x)=\frac{f^{n+1}(c)}{(n+1)!}\cdot x^{n+1}.
+\] Dicho error se puede acotar por: \[
+|f(x)-P_n(x)|=|R_n(x)|=\left|\frac{f^{n+1}(c)}{(n+1)!}\cdot x^{n+1}\right|\leq \max_{c\in &lt;0,x&gt;}\left|f^{n+1}(c)\right|\cdot \frac{|x|^{n+1}}{(n+1)!}.
+\] Al ser \(n\) par, \(|f^{n+1}(c)|=|\cos c|\) ya que \(n+1\) es impar y recordemos que cualquier derivada impar era \(\pm \cos c\). Por tanto, podemos acotar \(\displaystyle \max_{c\in &lt;0,x&gt;}\left|f^{n+1}(c)\right|\) por \(1\): \(\displaystyle\max_{c\in &lt;0,x&gt;}\left|f^{n+1}(c)\right|\leq 1\) y la cota del error será: \[
+|f(x)-P_n(x)|=|R_n(x)|\leq  \frac{|x|^{n+1}}{(n+1)!}.
+\] La \(n\) buscada debe verificar: \(\frac{|x|^{n+1}}{(n+1)!}\leq e\).</p>
+
+<p>Como para cualquier valor de \(x\) el límite \(\displaystyle\lim_{n\to\infty} \frac{|x|^{n+1}}{(n+1)!}=0\), seguro que existe una \(n\) tal que \(\frac{|x|^{n+1}}{(n+1)!}\leq e\).</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-28">
+
+<div class="example">
+<p>La función siguiente nos calcula la \(n\) dado \(x\) y \(e\) en <code>python</code> asegurándose que \(n\) es par:</p>
+
+<pre class = 'prettyprint lang-python'>import math
+def n(x,error):
+ x=float(x)
+ m=2
+ while(abs(x)**(m+1)/math.factorial(m+1) &gt;=error):
+   m=m+1
+ if(m % 2==1):
+   m=m+1
+ return(m)</pre>
+
+<p>El valor de \(n\) para \(x=0.5\) con un error máximo permitido de \(0.0001\) será:</p>
+
+<pre class = 'prettyprint lang-python'>n(0.5,0.0001)</pre>
+
+<pre >## 6</pre></div></article></slide>
 
 
   <slide class="backdrop"></slide>
