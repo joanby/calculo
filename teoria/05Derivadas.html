@@ -4412,7 +4412,7 @@ R_n(x-x_0) &amp; =\frac{F&#39;(c)}{G&#39;(c)}\cdot (G(x)-G(x_0))=\frac{\frac{f^{
 </article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-26">
 
 <div class="example">
-<p><strong>Ejemplo</strong></p>
+<p><strong>Ejemplo: cálculo aproximado de \(\sin x\)</strong></p>
 
 <p>Vamos a intentar aproximar la función \(f(x)=\sin x\) para un \(x\) próximo a \(0\).</p>
 
@@ -4420,7 +4420,7 @@ R_n(x-x_0) &amp; =\frac{F&#39;(c)}{G&#39;(c)}\cdot (G(x)-G(x_0))=\frac{\frac{f^{
 P_n(x)=\sum_{i=0}^k \frac{(-1)^i x^{2i+1}}{(2i+1)!},
 \] con \(k=\frac{n-2}{2}\), si \(n\) es par y \(k=\frac{n-1}{2}\), si \(n\) es impar.</p>
 
-<p>El problema que nos planteamos es el siguiente: dado \(x\) y \(e\) un error absoluto máximo que estamos dispuestos a cometer, calcular el valor de \(P_n(x)\) tal que \(|f(x)-P_n(x)=|\sin x-P_n(x)|\leq e\).</p>
+<p>El problema que nos planteamos es el siguiente: dado \(x\) y \(\mathrm{error}\) un error absoluto máximo que estamos dispuestos a cometer, calcular el valor de \(P_n(x)\) tal que \(|f(x)-P_n(x)=|\sin x-P_n(x)|\leq \mathrm{error}\).</p>
 
 <p>El primer paso es calcular el valor de \(n\). Nos fijamos a partir de la expresión de \(P_n(x)\) que si \(n\) es par el grado del polinomio de MacLaurin tiene grado \(n-1\) ya que la potencia más alta de \(x\), \(2k+1\) vale \(2k+1=n-1\).</p>
 
@@ -4435,14 +4435,14 @@ f(x)-P_n(x)=R_n(x)=\frac{f^{n+1}(c)}{(n+1)!}\cdot x^{n+1}.
 |f(x)-P_n(x)|=|R_n(x)|=\left|\frac{f^{n+1}(c)}{(n+1)!}\cdot x^{n+1}\right|\leq \max_{c\in &lt;0,x&gt;}\left|f^{n+1}(c)\right|\cdot \frac{|x|^{n+1}}{(n+1)!}.
 \] Al ser \(n\) par, \(|f^{n+1}(c)|=|\cos c|\) ya que \(n+1\) es impar y recordemos que cualquier derivada impar era \(\pm \cos c\). Por tanto, podemos acotar \(\displaystyle \max_{c\in &lt;0,x&gt;}\left|f^{n+1}(c)\right|\) por \(1\): \(\displaystyle\max_{c\in &lt;0,x&gt;}\left|f^{n+1}(c)\right|\leq 1\) y la cota del error será: \[
 |f(x)-P_n(x)|=|R_n(x)|\leq  \frac{|x|^{n+1}}{(n+1)!}.
-\] La \(n\) buscada debe verificar: \(\frac{|x|^{n+1}}{(n+1)!}\leq e\).</p>
+\] La \(n\) buscada debe verificar: \(\frac{|x|^{n+1}}{(n+1)!}\leq \mathrm{error}\).</p>
 
-<p>Como para cualquier valor de \(x\) el límite \(\displaystyle\lim_{n\to\infty} \frac{|x|^{n+1}}{(n+1)!}=0\), seguro que existe una \(n\) tal que \(\frac{|x|^{n+1}}{(n+1)!}\leq e\).</p></div>
+<p>Como para cualquier valor de \(x\) el límite \(\displaystyle\lim_{n\to\infty} \frac{|x|^{n+1}}{(n+1)!}=0\), seguro que existe una \(n\) tal que \(\frac{|x|^{n+1}}{(n+1)!}\leq \mathrm{error}\).</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-28">
 
 <div class="example">
-<p>La función siguiente nos calcula la \(n\) dado \(x\) y \(e\) en <code>python</code> asegurándose que \(n\) es par:</p>
+<p>La función siguiente nos calcula la \(n\) dado \(x\) y el error en <code>python</code> asegurándose que \(n\) es par:</p>
 
 <pre class = 'prettyprint lang-python'>import math
 def n(x,error):
@@ -4458,7 +4458,142 @@ def n(x,error):
 
 <pre class = 'prettyprint lang-python'>n(0.5,0.0001)</pre>
 
-<pre >## 6</pre></div></article></slide>
+<pre >## 6</pre></div>
+
+</article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-29">
+
+<div class="example">
+<p>El polinomio de Taylor sería en este caso: \[
+P_6(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}.
+\] El valor de \(P_6(0.5)\) vale:</p>
+
+<pre class = 'prettyprint lang-python'>x=0.5
+x-x**3/math.factorial(3)+x**5/math.factorial(5)</pre>
+
+<pre >## 0.47942708333333334</pre>
+
+<p>Sabemos que el valor anterior evalúa \(\sin 0.5\) con un error menor que \(0.0001\). Comprobémoslo en <code>python</code>:</p>
+
+<pre class = 'prettyprint lang-python'>valor_pol_taylor = x-x**3/math.factorial(3)+x**5/math.factorial(5)
+abs(sin(0.5)-valor_pol_taylor)</pre>
+
+<pre >## 1.5447291303316568e-06</pre></div>
+
+</article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-30">
+
+<div class="example">
+<p><strong>Ejemplo: cálculo de \(\mathrm{e}\)</strong></p>
+
+<p>Vamos a calcular \(\mathrm{e}\) con 6 cifras decimales exactas.</p>
+
+<p>Para ello vamos a calcular el polinomio de Taylor de la función \(f(x)=\mathrm{e}^x\) para \(x_0=0\), \(P_n(x)\) y aproximaremos \(f(1)=\mathrm{e}\) por \(P_n(1)\) cometiendo un error menor que \(0.000001\).</p>
+
+<p>Para calcular el polinomio de Taylor de \(f(x)=\mathrm{e}^x\), hemos de calcular \(f^{k}(x)\) para cualquier valor \(k\) natural. En este caso, observamos que \(f^{(k)}(x)=\mathrm{e}^x\) siempre vale lo mismo. Por tanto: \[
+P_n(x)=\sum_{k=0}^n \frac{f^{(k)}(0)}{k!}\cdot x^k = \sum_{k=0}^n \frac{x^k}{k!},
+\] ya que \(f^{(k)}(0)=\mathrm{e}^0=1.\)</p>
+
+<p>Seguidamente vamos a calcular el valor que \(n\) que nos asegure que el error cometido para \(x=1\) usando la expresión anterior \(P_n(1)\) en lugar de \(f(1)=\mathrm{e}\) es menor que \(e=0.000001\).</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-31">
+
+<div class="example">
+<p>Recordemos la expresión de la fórmula del error: \[
+|f(x)-P_n(x)|=|R_n(x)|=\left|\frac{f^{n+1}(c)}{(n+1)!}\cdot x^{n+1}\right|\leq \max_{c\in &lt;0,x&gt;}\left|f^{n+1}(c)\right|\cdot \frac{|x|^{n+1}}{(n+1)!}.
+\] La expresión anterior para \(x=1\) vale: \[
+|f(1)-P_n(1)|=|R_n(1)|=\left|\frac{f^{n+1}(c)}{(n+1)!}\cdot 1^{n+1}\right|\leq \max_{c\in (0,1)}\left|f^{n+1}(c)\right|\cdot \frac{1}{(n+1)!}=\max_{c\in (0,1)}\mathrm{e}^c\cdot \frac{1}{(n+1)!}=\frac{\mathrm{e}}{(n+1)!}.
+\] En la última igualdad hemos usado que la función \(f(x)=\mathrm{e}^x\) es creciente y por tanto \(\displaystyle\max_{c\in (0,1)}\mathrm{e}^c=\mathrm{e}^1=\mathrm{e}\).</p>
+
+<p>Vemos que la cota del error depende del valor de \(\mathrm{e}\) que es precisamente el valor que queremos calcular.</p>
+
+<p>No sabemos el valor exacto de \(\mathrm{e}\) pero podemos usar que es menor que \(3\): \(\mathrm{e}&lt;3\).</p>
+
+<p>La cota anterior será, pues: \[
+|f(1)-P_n(1)|=|R_n(1)|=\frac{\mathrm{e}}{(n+1)!}&lt;\frac{3}{(n+1)!}.
+\]</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-32">
+
+<div class="example">
+<p>La función siguiente nos calcula la \(n\) dado el error en <code>python</code>:</p>
+
+<pre class = 'prettyprint lang-python'>def ne(error):
+ m=2
+ while(3./math.factorial(m+1) &gt;=error):
+   m=m+1
+ return(m)</pre>
+
+<p>El valor de \(n\) para un error de \(0.000001\) vale:</p>
+
+<pre class = 'prettyprint lang-python'>ne(0.000001)</pre>
+
+<pre >## 9</pre></div>
+
+</article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-33">
+
+<div class="example">
+<p>El valor de \(\mathrm{e}\) con 6 cifras decimales exactas será: \[
+\mathrm{e}\approx 1+1+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}+\frac{1}{7!}+\frac{1}{8!}+\frac{1}{9!}.
+\] Si calculamos su valor en <code>python</code>, obtenemos:</p>
+
+<pre class = 'prettyprint lang-python'>valor_e_aproximado =1
+for i in range(1,10):
+  valor_e_aproximado=valor_e_aproximado+1./math.factorial(i)
+valor_e_aproximado</pre>
+
+<pre >## 2.7182815255731922</pre>
+
+<p>Comprobamos que efectivamente tiene 6 cifras decimales exactas:</p>
+
+<pre class = 'prettyprint lang-python'>math.exp(1)</pre>
+
+<pre >## 2.718281828459045</pre></div>
+
+</article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-34">
+
+<div class="example">
+<p><strong>Ejemplo: generalización del binomio de Newton</strong></p>
+
+<p>Recordemos la fórmula del binomio de Newton: dados \(x,y\in\mathbb{R}\) y un natural \(N\), podemos desarrollar la potencia \((x+y)^N\) como: \[
+(x+y)^N = \sum_{k=0}^N \binom{N}{k}\cdot x^k\cdot y^{N-k}.
+\] Sea ahora la función \(f(x)=(x+C)^N\), donde \(C\) es una constante cualquiera. Sea \(x_0\) un valor real. Queremos hallar el polinomio de Taylor de la función anterior alrededor de \(x=x_0\).</p>
+
+<p>Usando la fórmula del binomio de Newton anterior, el polinomio de Taylor de \(f(x)\) de grado \(N\) alrededor del valor \(x=x_0\) es relativamente sencillo de obtener: \[
+\begin{array}{rl}
+f(x)=(x+C)^N &amp; \displaystyle =((x-x_0)+(C+x_0))=\sum_{k=0}^N \binom{N}{k}\cdot (x-x_0)^k\cdot (C+x_0)^{N-k}\\ &amp; =\displaystyle \sum_{k=0}^N \binom{N}{k}\cdot (C+x_0)^{N-k}\cdot (x-x_0)^k.
+\end{array}
+\]</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo-35">
+
+<div class="example">
+<p>Observad que el desarrollo anterior no tiene error ya que la expresión de la izquierda es un polinomio de grado \(N\). Otra manera de verlo es usar la expresión de la fórmula del error: \[
+f(x)-P_N(x)=R_N(x-x_0)=\frac{f^{N+1}(c)}{(N+1)!}\cdot (x-x_0)^{N+1}.
+\] Ahora bien, como \(f(x)\) es un polinomio de grado \(N\), la derivada \(N+1\)-ésima en cualquier valor será \(0\) (\(f^{N+1}(c)=0\)) y, por tanto, \(R_N(x-x_0)=0\).</p>
+
+<p>Podemos hallar en particular una expresión para \(f^{(k)}(x_0)\): \[
+\begin{array}{rl}
+\frac{f^{(k)}(x_0)}{k!} &amp; =\binom{N}{k}\cdot (C+x_0)^{N-k},\\  f^{(k)}(x_0) &amp; =\binom{N}{k}\cdot k!\cdot (C+x_0)^{N-k} = N\cdot (N-1)\cdots (N-k+1)\cdot (C+x_0)^{N-k}.
+\end{array}
+\]</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Propiedades del desarrollo de Taylor</h2></hgroup><article  id="propiedades-del-desarrollo-de-taylor">
+
+<p>La proposición siguiente es útil si queremos hallar el polinomio de Taylor de una función que puede escribirse como suma, producto o cociente de funciones donde es más fácil conocer su polinomio de Taylor:</p>
+
+<p><l class="prop">Proposición.</l> Sean \(f\), \(g\) funciones reales de variable real \(f,g:(a,b)\longrightarrow\mathbb{R}\) definidas en \((a,b)\) y sea \(x_0\in (a,b)\) un punto del interior de su dominio. Sean \(P_n(x)\) y \(Q_n(x)\) los polinomios de Taylor de grado \(n\) de las funciones \(f\) y \(g\), respectivamente en un entorno del punto \(x_0\). Entonces:</p>
+
+<ul>
+<li>El polinomio de Taylor de toda función escrita como combinación lineal de \(f\) y \(g\), \(\lambda f+\mu g\), con \(\lambda,\mu\in \mathbb{R}\) constantes reales es \(\lambda P_n(x)+\mu Q_n(x)\).</li>
+<li>La función producto \(f\cdot g\) admite un polinomio de Taylor en el mismo entorno del punto \(x_0\). Dicho polinomio de Taylor de la función \(f\cdot g\) se calcula realizando el producto de los dos polinomios, \(P_n(x)\cdot Q_n(x)\) y eliminando todos los términos de grado mayor o igual que \(n+1\) en \((x-x_0)\).</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Propiedades del desarrollo de Taylor</h2></hgroup><article  id="propiedades-del-desarrollo-de-taylor-1">
+
+<p><l class="prop">Proposición (continuación).</l></p>
+
+<ul>
+<li>Si \(g(x_0)\neq 0\), el cociente \(\frac{f}{g}\) admite un polinomio de Taylor en este entorno. Dicho polinomio de Taylor de la función \(\frac{f}{g}\) se calcula de realizar la operación \(\frac{P_n(x)}{Q_n(x)}\), desarrollando esta expresión en potencias de \((x-x_0)\) y eliminando todos los términos de grado mayor o igual que \(n+1\).</li>
+</ul></article></slide>
 
 
   <slide class="backdrop"></slide>
