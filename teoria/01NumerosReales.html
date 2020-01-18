@@ -3150,6 +3150,7 @@ font-variant: small-caps;
 border-radius: 10px 10px 10px 10px;
 -moz-border-radius: 10px 10px 10px 10px;
 -webkit-border-radius: 10px 10px 10px 10px;
+padding: 10px;
 border: 2px solid gray;
 }
 .dem {
@@ -3234,13 +3235,80 @@ text-align: center; text-decoration: none;
 
 <p>Los números reales, \(\mathbb{R}\), proporcionan la base para expresar los resultados de estas medidas. Por ello empezaremos describiendo estos números, su estructura y propiedades más significativas.</p>
 
-</article></slide><slide class=""><hgroup><h2>Números y medida</h2></hgroup><article  id="números-y-medida">
+</article></slide><slide class=""><hgroup><h2>Números y medida: El conjunto \(\mathbb{N}\) de los números naturales</h2></hgroup><article  id="números-y-medida-el-conjunto-mathbbn-de-los-números-naturales">
 
 <p>Los números naturales \(\mathbb{N} = \{1,2,3, \ldots ,n, \ldots \}\)</p>
 
+<p>Suma de números naturales: propiedades conmutativa y asociativa</p>
+
+<p>Producto de números naturales: elemento neutro, \(1\), propiedades conmutativa y asociativa.</p>
+
+<p>Distributiva del producto respecto de la suma.</p>
+
+</article></slide><slide class=""><hgroup><h2>El conjunto \(\mathbb{N}\) de los números naturales.</h2></hgroup><article  id="el-conjunto-mathbbn-de-los-números-naturales.">
+
+<p><strong>Principio de inducción</strong>:</p>
+
+<p>Si un subconjunto \(A\) de números naturales es tal que</p>
+
+<ol>
+<li><p>\(1 \in A\), y</p></li>
+<li><p>Siempre que \(n \in A\) es \(n+1 \in A\)</p></li>
+</ol>
+
+<p>entonces \(A = \mathbb{N}\).</p>
+
+<p><strong>Principio de la buena ordenación</strong>:</p>
+
+<p>Todo subconjunto de números naturales no vacío tiene primer elemento.</p>
+
+</article></slide><slide class=""><hgroup><h2>Números y medida: El conjunto \(\mathbb{Z}\) de los números enteros</h2></hgroup><article  id="números-y-medida-el-conjunto-mathbbz-de-los-números-enteros">
+
 <p>Los números enteros \(\mathbb{Z} = \{ \ldots ,-n, \ldots -3,-2,-1,0,1,2,3, \ldots , n \ldots\}\)</p>
 
-<p>Los números racionales \(\mathbb{Q} = \{ \dfrac{p}{q}: p,q \in \mathbb{Z} \}\)</p>
+<p>Suma: elemento neutro, \(0\), elemento simétrico, propiedades conmutativa y asociativa.</p>
+
+<p>Producto: elemento neutro, \(1\), propiedades conmutativa y asociativa.</p>
+
+<p>Distributiva del producto respecto de la suma.</p>
+
+</article></slide><slide class=""><hgroup><h2>El conjunto \(\mathbb{Z}\) de los números enteros</h2></hgroup><article  id="el-conjunto-mathbbz-de-los-números-enteros">
+
+<p>División entera:</p>
+
+<p>Dados dos números enteros \(a\) y \(b\), existen otros dos enteros \(q\) y \(r\), con \(0 \leq r&lt;q\) tales que</p>
+
+<p>\[
+a=bq+r
+\] q: cociente, r=resto</p>
+
+<p>Si \(r=0\), entonces decimos que \(a\) es un <strong>múltiplo</strong> de \(b\) y tambien que \(b\) es un dvisor de \(a\)</p>
+
+<p>Si \(r&gt;0\) entonces \(a\) y \(b\) son <strong>primos</strong> entre si.</p>
+
+</article></slide><slide class=""><hgroup><h2>Números y medida: El conjunto \(\mathbb{Q}\) de los números racionales</h2></hgroup><article  id="números-y-medida-el-conjunto-mathbbq-de-los-números-racionales">
+
+<p>Los números racionales: \(\mathbb{Q} = \{ \dfrac{p}{q}: p,q \in \mathbb{Z} \}\)</p>
+
+<p>Suma: elemento neutro, \(0\), elemento simétrico, propiedades conmutativa y asociativa.</p>
+
+<p>Producto: elemento neutro, \(1\), elemento simétrico (para todo número diferente de \(0\)), propiedades conmutativa y asociativa.</p>
+
+</article></slide><slide class=""><hgroup><h2>El conjunto \(\mathbb{Q}\) de los números racionales</h2></hgroup><article  id="el-conjunto-mathbbq-de-los-números-racionales">
+
+<p>Orden: \[
+\dfrac{a}{b} \leq \dfrac{c}{d} \quad \text{ si } \quad  ad \leq bc
+\]</p>
+
+<p>Se trata de un orden denso: Dados dos números racionales tales que \(\dfrac{a}{b} &lt; \dfrac{c}{d}\), entonces existen números racionales \(\dfrac{p}{q}\) tales que</p>
+
+<p>\[
+\dfrac{a}{b} &lt; \dfrac{p}{q} &lt; \dfrac{c}{d}
+\]</p>
+
+<p>Es suficiente considerar \(p=a+c\) y \(q=b+d\).</p>
+
+</article></slide><slide class=""><hgroup><h2>El conjunto \(\mathbb{Q}\) de los números racionales</h2></hgroup><article  id="el-conjunto-mathbbq-de-los-números-racionales-1">
 
 <p>Los números racionales no son suficientes puesto hay medidas cuyo resultado no és un número racional:</p>
 
@@ -3269,6 +3337,35 @@ text-align: center; text-decoration: none;
 <p>Por lo tanto \(a^2 = 4k^2\), lo que significa que \(b^2=2k^2\) y que \(b\) tambien debería ser múltiplo de \(2\), lo que contradice el hecho que \(a\) y \(b\) sean primos entre sí.</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Los números reales: \(\mathbb{R}\)</h2></hgroup><article  id="los-números-reales-mathbbr">
+
+<p>Supondremos la existencia de un conjunto \(\mathbb{R}\) de números en el que hay definidas dos operaciones, suma y producto, con las siguientes propiedades:</p>
+
+<ul>
+<li>Propiedades de la suma:
+
+<ul>
+<li><p>Conmutativa: \(a+b= b+a\), para todos los \(a,b \in \mathbb{R}\)</p></li>
+<li><p>Asociativa: \(a+(b+c) = (a+b)+c\) para todos los \(a,b,c \in \mathbb{R}\)</p></li>
+<li><p>Existe un elemento neutro, \(0 \in \mathbb{R}\), para la suma: \(a+0=a=0+a\).</p></li>
+<li><p>Para cada \(a \in \mathbb{R}\) existe un elemento \(-a \in \mathbb{R}\), simétrico de \(a\), tal que \(a+(-a)=0=(-a)+0\)</p></li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Los números reales: \(\mathbb{R}\)</h2></hgroup><article  id="los-números-reales-mathbbr-1">
+
+<ul>
+<li><p>Propiedades del producto de números reales:</p>
+
+<ul>
+<li><p>Conmutativa: \(a\cdot b=b \cdot a\), para todos los \(a,b \in \mathbb{R}\).</p></li>
+<li><p>Asociativa: \(a \cdot (b \cdot c) = (a\cdot b)\cdot c\) para todos los \(a,b,c \in \mathbb{R}\)</p></li>
+<li><p>Existe un elemento neutro, \(1 \in \mathbb{R}\), para el producto: \(a\cdot1=a=1\cdot a\).</p></li>
+<li><p>Para cada \(a \in \mathbb{R}\) existe un elemento \(\dfrac{1}{a} = a^{-1} \in \mathbb{R}\), inverso de \(a\), tal que \(a \cdot a^{-1}=1=a ^{-1}\cdot a\)</p></li>
+<li><p>El producto es distributivo respecto de la suma: \(a\cdot (b+c) = a\cdot b + a \cdot c\) para todos los \(a,b,c \in \mathbb{R}\).</p></li>
+</ul></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>El orden de los números reales: \(\mathbb{R}\)</h2></hgroup><article  id="el-orden-de-los-números-reales-mathbbr">
 
 </article></slide><slide class=""><hgroup><h2>\(\sqrt{2}\) es un un número real.</h2></hgroup><article  id="sqrt2-es-un-un-número-real.">
 
