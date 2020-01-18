@@ -166,6 +166,14 @@ Supondremos la existencia de un conjunto $\mathbb{R}$ de números en el que hay 
       
       + El producto es distributivo respecto de la suma: $a\cdot (b+c) = a\cdot b + a \cdot c$ para todos los $a,b,c \in \mathbb{R}$.
       
+##  Los números reales incluyen los naturales, enteros y racionales: $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$
+
+
+
+  * Dado que en $\mathbb{R}$ existe un elemento neutro para el producto, $1$, podemos asimilar el número natural $n$ con el número real $1+ \ldots n) \ldots + 1$
+  
+  * Dado que en $\mathbb{R}$, existe $-1$, el simétrico de $1$, podemos asimilar el número entero $-n$ con el número real $(-1)+(-1) \ldots +(-1)$
+      
 ## El orden de los números reales: $\mathbb{R}$
 
 Para definir una relción de orden entre los números reales, supondremos que existe un subconjunto $P$ de números reales tal que:
