@@ -140,10 +140,35 @@ Por lo tanto $a^2 = 4k^2$, lo que significa que $b^2=2k^2$ y que $b$ tambien deb
 
 ## Los números reales: $\mathbb{R}$
 
+Supondremos la existencia de un conjunto $\mathbb{R}$ de números en el que hay definidas dos operaciones, suma y producto, con las siguientes propiedades:
+
+  * Propiedades de la suma:
+      + Conmutativa: $a+b= b+a$, para todos los $a,b \in \mathbb{R}$
+      
+      + Asociativa: $a+(b+c) = (a+b)+c$ para todos los $a,b,c \in \mathbb{R}$
+
+      + Existe un elemento neutro, $0 \in \mathbb{R}$,  para la suma: $a+0=a=0+a$.
+      
+      + Para cada $a \in \mathbb{R}$ existe un elemento $-a \in \mathbb{R}$, simétrico de $a$, tal que $a+(-a)=0=(-a)+0$
 
 
+## Los números reales: $\mathbb{R}$
 
+  * Propiedades del producto de números reales:
+      
+      + Conmutativa: $a\cdot b=b \cdot a$, para todos los $a,b \in \mathbb{R}$.
+      
+      + Asociativa: $a \cdot (b \cdot c) = (a\cdot b)\cdot c$ para todos los $a,b,c \in \mathbb{R}$
+      
+      + Existe un elemento neutro, $1 \in \mathbb{R}$,  para el producto: $a\cdot1=a=1\cdot a$.
+      
+      + Para cada $a \in \mathbb{R}$ existe un elemento $\dfrac{1}{a} = a^{-1} \in \mathbb{R}$, inverso de $a$, tal que $a \cdot a^{-1}=1=a ^{-1}\cdot a$
+      
+      + El producto es distributivo respecto de la suma: $a\cdot (b+c) = a\cdot b + a \cdot c$ para todos los $a,b,c \in \mathbb{R}$.
+      
+## El orden de los números reales: $\mathbb{R}$
 
+  
 ## $\sqrt{2}$ es un un número real.
 
 <l class="prop">Proposición</l>
