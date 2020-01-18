@@ -70,14 +70,14 @@ Distributiva del producto respecto de la suma.
 
 ## El conjunto $\mathbb{Z}$ de los números enteros
 
-División entera:
+**División entera**
 
 Dados dos números enteros $a$ y $b$, existen otros dos enteros $q$ y $r$, con $0 \leq r<q$ tales que 
 
 $$
 a=bq+r
 $$
-q: cociente, r=resto
+q: cociente, r: resto
 
 Si $r=0$, entonces decimos que $a$ es un **múltiplo** de $b$ y tambien que $b$ es un dvisor de $a$
 
@@ -162,7 +162,7 @@ Supondremos la existencia de un conjunto $\mathbb{R}$ de números en el que hay 
       
       + Existe un elemento neutro, $1 \in \mathbb{R}$,  para el producto: $a\cdot1=a=1\cdot a$.
       
-      + Para cada $a \in \mathbb{R}$ existe un elemento $\dfrac{1}{a} = a^{-1} \in \mathbb{R}$, inverso de $a$, tal que $a \cdot a^{-1}=1=a ^{-1}\cdot a$
+      + Para cada $a \in \mathbb{R}$, $a\neq 0$, existe un elemento $\dfrac{1}{a} = a^{-1} \in \mathbb{R}$, inverso de $a$, tal que $a \cdot a^{-1}=1=a ^{-1}\cdot a$
       
       + El producto es distributivo respecto de la suma: $a\cdot (b+c) = a\cdot b + a \cdot c$ para todos los $a,b,c \in \mathbb{R}$.
       
@@ -170,25 +170,30 @@ Supondremos la existencia de un conjunto $\mathbb{R}$ de números en el que hay 
 
 
 
-  * Dado que en $\mathbb{R}$ existe un elemento neutro para el producto, $1$, podemos asimilar el número natural $n$ con el número real $1+ \ldots n) \ldots + 1$
+  * Dado que en $\mathbb{R}$ existe un elemento neutro para el producto, $1$, podemos asimilar el número natural $n$ con el número real $1+ \ldots \overset{n)}{} \ldots + 1$
   
-  * Dado que en $\mathbb{R}$, existe $-1$, el simétrico de $1$, podemos asimilar el número entero $-n$ con el número real $(-1)+(-1) \ldots +(-1)$
+  * Dado que en $\mathbb{R}$, existe $-1$, el simétrico de $1$, podemos asimilar el número entero $-n$ con el número real $(-1)+(-1)+ \ldots \overset{n)}{} \ldots +(-1)$
       
 ## El orden de los números reales: $\mathbb{R}$
 
-Para definir una relción de orden entre los números reales, supondremos que existe un subconjunto $P$ de números reales tal que:
+Para definir una relación de orden entre los números reales, supondremos que existe un subconjunto $P$ de números reales tal que:
     
-  1. Cualquier número real o està en $P$ o és igual a $0$ o su simétrico está en P:
     
 $$
 P \cup  \{ 0 \} \cup (-P) = \mathbb{R} 
 $$
 
-donde $-P = \{-x: x \in \mathbb{R} \} $
+donde $-P = \{-x: x \in \mathbb{R}  \}$. 
 
-  2. $P+P \subset P$
+Es decir, todo número real o està en $P$ o és igual a $0$ o su simétrico está en $P$, y sólo una de estas  tres opciones.
+
+
+
+Además, $P$, satisface las propiedades: 
+
+  (@) $P+P \subset P$, es decir, la suma de dos números de $P$ és un número de $P$, y
   
-  3. $P \cdot P \subset P$
+  (@) $P \cdot P \subset P$, el producto de dos números de $P$ tam,bién es un número de $P$
 
 
 ## $\sqrt{2}$ es un un número real.
