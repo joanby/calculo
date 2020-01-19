@@ -47,9 +47,9 @@ Distributiva del producto respecto de la suma.
 
 Si un subconjunto $A$ de números naturales es tal que
 
-  1. $1 \in A$, y
+  a) $1 \in A$, y
 
-  2. Siempre que $n \in A$ es  $n+1 \in A$
+  b) Siempre que $n \in A$ es  $n+1 \in A$
 
 entonces $A = \mathbb{N}$.
 
@@ -170,9 +170,12 @@ Supondremos la existencia de un conjunto $\mathbb{R}$ de números en el que hay 
 
 
 
-  * Dado que en $\mathbb{R}$ existe un elemento neutro para el producto, $1$, podemos asimilar el número natural $n$ con el número real $1+ \ldots \overset{n)}{} \ldots + 1$
+  * Dado que en $\mathbb{R}$ existe un elemento neutro para el producto, $1$, podemos asimilar el número natural $n$ con el número real $1+ \ldots \overset{n)}{} \ldots + 1$,
+es decir $\mathbb{N} \subset \mathbb{R}$
   
-  * Dado que en $\mathbb{R}$, existe $-1$, el simétrico de $1$, podemos asimilar el número entero $-n$ con el número real $(-1)+(-1)+ \ldots \overset{n)}{} \ldots +(-1)$
+  * Dado que en $\mathbb{R}$, existe $-1$, el simétrico de $1$, podemos asimilar el número entero $-n$ con el número real $(-1)+(-1)+ \ldots \overset{n)}{} \ldots +(-1)$. En definitiva $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{R}$
+  
+  * Dado que para cada  $a \in \mathbb{R}, \quad a\neq 0$ existe elas inverso de $a$, $\dfrac{1}{a}$, para cada $n,m \in \mathbb{Z}$, con $m \neq 0$, será $\dfrac{n}{m} \in \mathbb{R}$, es decir, $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$.
       
 ## El orden de los números reales: $\mathbb{R}$
 
@@ -231,6 +234,33 @@ Obsérvese que  $a \in P$ es equivalente a decir que $a > 0$. De ahí que a los 
   3. Si $a=b$ o $b=c$, el resultado es inmediato. Si los tres son diferentes, entonces si $b-a$ y $c-b$,estan en $P$, su suma $(b-a)+(c-b)=c-a$ también está en $P$, es decir $a \leq c$.
 
 </dem>
+
+## Conjuntos acotados
+
+<l class="definition">Definición</l> 
+
+  * Un subconjunto $A \subset \mathbb{R}$ está **acotado superiormente** si existe un $\alpha \in \mathbb{R}$ tal que $a \leq \alpha$ para todo $a \in A$. Al elemeto $\alpha$ se le llama **cota superior** del conjunto $A$.
+  
+  * Un subconjunto $A \subset \mathbb{R}$ está **acotado inferiormente** si existe un $\alpha \in \mathbb{R}$ tal que $a \geq \alpha$ para todo $a \in A$. En este caso $\alpha$ es **una cota inferior** de $A$.
+  
+  * Un subconjunto $A \subset \mathbb{R}$ está **acotado** si si està acotado superiormente e inferiormente.
+  
+<div class="example">Ejemplos.
+
+  * $1$ es una cota inferior del conjunto de los números naturales.
+  
+  * El conjunto $A =\{q \in \mathbb{Q}$ tal que $q^2=2 \}$ está acotado superiormente. Tambien lo está inferiormente. Obsérvese que la existencia de una cota superior  supone la existencia de infinitas cotas, puesto que cualquier número mayor también será una cota superior. Análogamente para las cotas inferiores.
+
+</div>
+
+## Supremos e ínfimos
+
+<l class="definition">Definición</l> 
+
+  * El **supremo** de un conjunto acotado superiormente es la menor de las cotas superiores de dicho conjunto. Un conjunto puede estar acotado superiormente, pero no tener supremo.
+  
+  * El **ínfimo** de un conjunto acotado inferiormente es la mayor de las cotas inferiores de dicho conjunto. Tambien puede pasar que un conjunto acotado inferiormente
+
 
 
 ## $\sqrt{2}$ es un un número real.
