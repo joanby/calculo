@@ -25,7 +25,7 @@ Como hemos visto, el conjunto de los números reales incluye todos los números 
 
 Por consiguiente, los números reales que no son racionales, es decir los números **irracionales** tienen un número infinito de cifras en su desarrollo decimal, tal seria el caso de, por ejemplo $\sqrt{2}$, $\pi$ o $e$.  
 
-Siendo así, ¿cómo podemos utilizar estos números con infinitas cifras decimales? La respuesta viene de la mano del concepto de **sucesión** y **límite**. 
+Siendo así, ¿cómo podemos utilizar estos números con infinitas cifras decimales? La respuesta viene de la mano del concepto de **sucesión** y de **límite**. 
 
 Cómo hemos demostrado, dado un número irracional y una precisión, siempre es posible determinar un racional que diste del iracional dado menos que dicha precisión. Es lo que hacemos cuando tomamos $\pi$ como $3.14$ o $3.1415$, $\ldots$
 
@@ -62,9 +62,9 @@ aproximan el número $\pi$
 
 <l class="definition">Definición</l>
 
-Una **sucesión** de números reales es la imagen de una aplicación del conjunto $\mathbb{N}$ en los reales $\mathbb{R}$, dicho de otra forma, es un conjunto de números reales ordenado según un subíndice que recorre los números naturales. 
+Una **sucesión** $\{a_n \}_{n \in \mathbb{N}}$ de números reales es un conjunto de números reales ordenado según un subíndice que recorre los números naturales. Dicho de una manera más formal, una sucesión de números reales es la imagen de una aplicación del conjunto $\mathbb{N}$ en los reales $\mathbb{R}$.
 
-Escribiremos $\{a_n \}_{n \in \mathbb{N}}$, para indicar la sucesión de término general $a_n$.
+
 
 <div class="example">
 
@@ -78,7 +78,22 @@ Escribiremos $\{a_n \}_{n \in \mathbb{N}}$, para indicar la sucesión de términ
 
 $a_1=1.4 \quad a_2=1.41 \quad a_3=1.414 \quad a_4=1.4142 \quad a_5=1.41421 \quad \ldots$
 
+</div>
 
+## Ejemplos de sucesiones
+
+<div class="example">
+
+**Ejemplos**
+
+**3.** En general, todo número  $\alpha \in \mathbb{R}$, admite un desarrollo decimal en la forma
+$$
+\alpha= \alpha_0 + \alpha_1 10^{-1}+ \alpha_2 10^{-2}+ \ldots + \alpha_k 10^{-k}+ \ldots 
+$$
+donde $a_0 \in \mathbb{Z}$ y cada $a_i \in \{0,1,2,\ldots, 9 \}$, de forma que determina una sucesión de término general 
+$$
+a_n = \alpha_0 + \alpha_1 10^{-1}+ \alpha_2 10^{-2}+ \ldots + \alpha_n 10^{-n}
+$$
 
 ## Sucesiones y límites
 
