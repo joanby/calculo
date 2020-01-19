@@ -86,7 +86,7 @@ Si $r>0$  entonces $a$ y $b$ son **primos** entre si.
 
 ## Números y medida: El conjunto $\mathbb{Q}$ de los números racionales
 
-Los números racionales: $\mathbb{Q} = \{ \dfrac{p}{q}: p,q \in \mathbb{Z} \}$
+Los números racionales: $\mathbb{Q} = \{ \dfrac{p}{q}: p,q \in \mathbb{Z}, q \neq 0 \}$
 
 Suma: elemento neutro, $0$, elemento simétrico, propiedades conmutativa y asociativa.
 
@@ -194,6 +194,43 @@ Además, $P$, satisface las propiedades:
   (@) $P+P \subset P$, es decir, la suma de dos números de $P$ és un número de $P$, y
   
   (@) $P \cdot P \subset P$, el producto de dos números de $P$ tam,bién es un número de $P$
+
+
+## El orden de los números reales
+
+<l class="definition">Definición</l> 
+
+Dados dos números reales, $a$ y $b$, diremos que $a$ és **menor o igual** que $b$  y escribiremos $a \leq b$, si $b-a \in P \cup \{0\}$.
+
+
+Es decir, $a \leq b$ si la diferencia $b-a$ está en $P$ o $a=b$. 
+
+Si $a\neq b$ diremos que $a$ es estrictamente menor que $b$ y escribiremos $a<b$.
+
+Diremos que $a \geq b$, es decir que $a$ es **mayor o igual** que $b$, si $b \leq a$.
+
+Obsérvese que  $a \in P$ es equivalente a decir que $a > 0$. De ahí que a los elementos de $P$ se les llame **números positivos**
+
+## Propiedades del orden en los números reales
+
+<l class="prop">Proposición</l>
+
+  1. $a \leq a$ (Propiedad reflexiva),
+  
+  2. Si $a \leq b$ y $b \leq a$, entonces $a=b$ (Propiedad antisimétrica)
+  
+  3. Si $a \leq b$ y $b \leq c$, entonces $a \leq c$ (Propiedad transitiva)
+
+<div class="dem">
+**Demostración:**
+
+  1. Obviamente $a-a=0 \in P \cup \{ 0\}$.
+  
+  2. Si $a-b$ y $b-a$ estan los dos en $P \cup  \{ 0\}$, dado que un número y su simétrico no pueden estar a la vez en $P$, la única posibilidad que queda es que sean iguales, es decir que $a-b=b-a=0$.
+  
+  3. Si $a=b$ o $b=c$, el resultado es inmediato. Si los tres son diferentes, entonces si $b-a$ y $c-b$,estan en $P$, su suma $(b-a)+(c-b)=c-a$ también está en $P$, es decir $a \leq c$.
+
+</dem>
 
 
 ## $\sqrt{2}$ es un un número real.
