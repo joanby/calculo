@@ -3452,8 +3452,31 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 
 <ul>
 <li><p>El <strong>supremo</strong> de un conjunto acotado superiormente es la menor de las cotas superiores de dicho conjunto. Un conjunto puede estar acotado superiormente, pero no tener supremo.</p></li>
-<li><p>El <strong>ínfimo</strong> de un conjunto acotado inferiormente es la mayor de las cotas inferiores de dicho conjunto. Tambien puede pasar que un conjunto acotado inferiormente</p></li>
+<li><p>El <strong>ínfimo</strong> de un conjunto acotado inferiormente es la mayor de las cotas inferiores de dicho conjunto. Tambien puede pasar que un conjunto acotado inferiormente no tenga ínfimo.</p></li>
 </ul>
+
+<div class="example">
+<p>Ejemplos.</p>
+
+<ul>
+<li>El subconjunto \(A\) de \(\mathbb{Q}\) definido por \(A =\{q \in \mathbb{Q}\) tal que \(q^2=2 \}\), está acotado superiormente, pero, como se ha demostrado no tiene supremo, puesto que este supremo deberia ser \(\sqrt{2}\) que no es un número racional.</li>
+</ul></div>
+
+</article></slide><slide class=""><hgroup><h2>El axioma del supremo</h2></hgroup><article  id="el-axioma-del-supremo">
+
+<p><l class="important">Axioma del supremo</l></p>
+
+<div class="box">
+<div class="center">
+Todo subconjunto de \(\mathbb{R}\) acotado superiormente tiene supremo.</div></div>
+
+<p>Esta es, efectivamente, una propiedad que no se satisface en \(\mathbb{Q}\), como se ha demostrado con el conjunto \(A =\{q \in \mathbb{Q}\) tal que \(q^2=2 \}\).</p>
+
+<p>Resulta fácil comprobar que si \(s= \sup A\), entonces \(-s= \inf(-A)\), por lo que el axioma del supremo tambien implica que</p>
+
+<div class="box">
+<div class="center">
+Todo subconjunto de \(\mathbb{R}\) acotado inferiormente tiene ínfimo.</div></div>
 
 </article></slide><slide class=""><hgroup><h2>\(\sqrt{2}\) es un un número real.</h2></hgroup><article  id="sqrt2-es-un-un-número-real.">
 
@@ -3462,7 +3485,6 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <p>Existe un número real \(p \in \mathbb{R}\) tal que \(p^2 = 2\).</p>
 
 <div class="dem">
-
 <p><strong>Demostración:</strong></p>
 
 <p>Consideremos el conjunto \(M = \{r \in \mathbb{R}: r^2 &lt;2 \}\). \(M\) es un subconjunto acotado de \(\mathbb{R}\) (¿Por qué?). Sea \(p = \sup M\). Demostraremos que \(p^2 =2\).</p>
@@ -3485,6 +3507,17 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 \] Si ahora consideramos \(\epsilon = \frac{p^2 -2}{2p}\), está claro que para este \(\epsilon &gt;0\) es \((p-\epsilon)^2 &gt;2\), y por lo tanto \(p\) tampoco puede ser el supremo de \(M\) si \(p^2 &gt;2\).</p>
 
 <p>En definitiva, sólo queda la opción que el supremo \(p\) del conjunto \(M\), sea tal que \(p^2=2\), es decir que \(\sqrt{2}\) és un número real.</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Consecuencias del axioma del supremo.</h2></hgroup><article  id="consecuencias-del-axioma-del-supremo.">
+
+<p><l class="proposicion"><strong>Proposición</strong></l></p>
+
+<p>El conjunto \(\mathbb{N}\) de los números naturales no está acotado superiormente en \(\mathbb{R}\).</p>
+
+<div class="dem">
+<p><strong>Demostración:</strong></p>
+
+<p>Supongamos que si, que existen cotas superiores para \(\mathbb{N}\) en \(\mathbb{R}\), por el axioma del supremo deberá existir \(\alpha = \sup \mathbb{N}\). Al ser \(\alpha\) la menor de las cotas superiores, resultará que \(\alpha -1\) no es cota superior. Por lo tanto exite un \(n \in \mathbb{N}\) tal que \(\alpha -1 &lt;n\), es decir que \(\alpha &lt; n+1\), lo cual es absurdo, puesto que habíamos supuesto que \(\alpha\) era mayor que todos los nombres naturales.</p></div></div>
 
 </article></slide><slide class=""><hgroup><h2>Apartat/trans</h2></hgroup><article  id="apartattrans">
 

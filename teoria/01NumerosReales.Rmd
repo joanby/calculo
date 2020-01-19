@@ -259,9 +259,36 @@ Obsérvese que  $a \in P$ es equivalente a decir que $a > 0$. De ahí que a los 
 
   * El **supremo** de un conjunto acotado superiormente es la menor de las cotas superiores de dicho conjunto. Un conjunto puede estar acotado superiormente, pero no tener supremo.
   
-  * El **ínfimo** de un conjunto acotado inferiormente es la mayor de las cotas inferiores de dicho conjunto. Tambien puede pasar que un conjunto acotado inferiormente
+  * El **ínfimo** de un conjunto acotado inferiormente es la mayor de las cotas inferiores de dicho conjunto. Tambien puede pasar que un conjunto acotado inferiormente no tenga ínfimo.
 
+<div class="example">Ejemplos.
 
+  * El subconjunto  $A$ de $\mathbb{Q}$ definido por $A =\{q \in \mathbb{Q}$ tal que $q^2=2 \}$, está acotado superiormente, pero, como se ha demostrado no tiene supremo, puesto que este supremo deberia ser $\sqrt{2}$ que no es un número racional.
+</div>
+
+## El axioma del supremo 
+
+<l class="important">Axioma del supremo</l>
+
+<div class="box">
+
+<div class="center">
+  Todo subconjunto de $\mathbb{R}$ acotado superiormente tiene supremo.
+  </div>
+</div>
+
+Esta es, efectivamente, una propiedad que no se satisface en $\mathbb{Q}$, como se ha demostrado con el conjunto $A =\{q \in \mathbb{Q}$ tal que $q^2=2 \}$.
+
+Resulta fácil comprobar que si $s= \sup A$, entonces $-s= \inf(-A)$, por lo que el axioma del supremo tambien implica que
+
+<div class="box">
+
+<div class="center">
+  Todo subconjunto de $\mathbb{R}$ acotado inferiormente tiene ínfimo.
+  </div>
+</div>
+
+ 
 
 ## $\sqrt{2}$ es un un número real.
 
@@ -299,8 +326,19 @@ Si ahora consideramos $\epsilon = \frac{p^2 -2}{2p}$, está claro que para este 
 En definitiva, sólo queda la opción que el supremo $p$ del conjunto $M$, sea tal que $p^2=2$, es decir que $\sqrt{2}$ és un número real.
 </div>
 
+## Consecuencias del axioma del supremo.
 
+<l class="proposicion">**Proposición**</l>
 
+El conjunto $\mathbb{N}$ de los números naturales no está acotado superiormente en $\mathbb{R}$.
+
+<div class="dem">
+**Demostración:**
+
+Supongamos que si, que existen cotas superiores para $\mathbb{N}$ en $\mathbb{R}$, por el axioma del supremo deberá existir $\alpha = \sup \mathbb{N}$. Al ser $\alpha$ la menor de las cotas superiores, resultará que $\alpha -1$ no es cota superior. Por lo tanto exite un $n \in \mathbb{N}$ tal que $\alpha -1 <n$, es decir que $\alpha < n+1$, lo cual es absurdo, puesto que habíamos supuesto que $\alpha$ era mayor que todos los nombres naturales.
+
+</div>
+</div>
 
 ## Apartat/trans
 
