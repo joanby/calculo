@@ -1535,7 +1535,9 @@ Diferentes expresiones del error se obtienen eligiendo $G$ de una determinada fo
 
 * Si $G(t)=(x-t)^{n+1}$, tenemos que $G'(t)=-(n+1)\cdot (x-t)^n$ y, por tanto:
 $$
-R_n(x-x_0)=\frac{F'(c)}{G'(c)}\cdot (G(x)-G(x_0))=\frac{\frac{f^{(n+1)}(c)}{n!}\cdot (x-c)^n}{-(n+1)\cdot (x-c)^n}\cdot \left(-(x-x_0)^{n+1}\right)=\frac{f^{(n+1)}(c)}{(n+1)!}\cdot (x-x_0)^{n+1}.
+\begin{array}{rl}
+R_n(x-x_0) & =\frac{F'(c)}{G'(c)}\cdot (G(x)-G(x_0))=\frac{\frac{f^{(n+1)}(c)}{n!}\cdot (x-c)^n}{-(n+1)\cdot (x-c)^n}\cdot \left(-(x-x_0)^{n+1}\right)\\ & =\frac{f^{(n+1)}(c)}{(n+1)!}\cdot (x-x_0)^{n+1}.
+\end{array}
 $$
 
 
@@ -1588,11 +1590,12 @@ $$
 $$
 La $n$ buscada debe verificar: $\frac{|x|^{n+1}}{(n+1)!}\leq \mathrm{error}$.
 
-Como para cualquier valor de $x$ el límite $\displaystyle\lim_{n\to\infty} \frac{|x|^{n+1}}{(n+1)!}=0$, seguro que existe una $n$ tal que $\frac{|x|^{n+1}}{(n+1)!}\leq \mathrm{error}$.
 </div>
 
 ## Ejemplo
 <div class="example">
+Como para cualquier valor de $x$ el límite $\displaystyle\lim_{n\to\infty} \frac{|x|^{n+1}}{(n+1)!}=0$, seguro que existe una $n$ tal que $\frac{|x|^{n+1}}{(n+1)!}\leq \mathrm{error}$.
+
 La función siguiente nos calcula la $n$ dado $x$ y el error en `python` asegurándose que $n$ es par:
 ```{python}
 import math
@@ -1605,15 +1608,16 @@ def n(x,error):
    m=m+1
  return(m)
 ```
-El valor de $n$ para $x=0.5$ con un error máximo permitido de $0.0001$ será:
-```{python}
-n(0.5,0.0001)
-```
 
 </div>
 
 ## Ejemplo
 <div class="example">
+El valor de $n$ para $x=0.5$ con un error máximo permitido de $0.0001$ será:
+```{python}
+n(0.5,0.0001)
+```
+
 El polinomio de Taylor sería en este caso:
 $$
 P_6(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}.
@@ -1623,6 +1627,10 @@ El valor de $P_6(0.5)$ vale:
 x=0.5
 x-x**3/math.factorial(3)+x**5/math.factorial(5)
 ```
+</div>
+
+## Ejemplo
+<div class="example">
 Sabemos que el valor anterior evalúa $\sin 0.5$ con un error menor que $0.0001$. Comprobémoslo en `python`:
 ```{python}
 valor_pol_taylor = x-x**3/math.factorial(3)+x**5/math.factorial(5)
@@ -1657,7 +1665,9 @@ $$
 $$
 La expresión anterior para $x=1$ vale:
 $$
-|f(1)-P_n(1)|=|R_n(1)|=\left|\frac{f^{n+1}(c)}{(n+1)!}\cdot 1^{n+1}\right|\leq \max_{c\in (0,1)}\left|f^{n+1}(c)\right|\cdot \frac{1}{(n+1)!}=\max_{c\in (0,1)}\mathrm{e}^c\cdot \frac{1}{(n+1)!}=\frac{\mathrm{e}}{(n+1)!}.
+\begin{array}{rl}
+|f(1)-P_n(1)| & =|R_n(1)|=\left|\frac{f^{n+1}(c)}{(n+1)!}\cdot 1^{n+1}\right|\leq \max_{c\in (0,1)}\left|f^{n+1}(c)\right|\cdot \frac{1}{(n+1)!}=\max_{c\in (0,1)}\mathrm{e}^c\cdot \frac{1}{(n+1)!}\\ & =\frac{\mathrm{e}}{(n+1)!}.
+\end{array}
 $$
 En la última igualdad hemos usado que la función $f(x)=\mathrm{e}^x$ es creciente y por tanto $\displaystyle\max_{c\in (0,1)}\mathrm{e}^c=\mathrm{e}^1=\mathrm{e}$.
 
@@ -1741,9 +1751,126 @@ $$
 \frac{f^{(k)}(x_0)}{k!} & =\binom{N}{k}\cdot (C+x_0)^{N-k},\\  f^{(k)}(x_0) & =\binom{N}{k}\cdot k!\cdot (C+x_0)^{N-k} = N\cdot (N-1)\cdots (N-k+1)\cdot (C+x_0)^{N-k}.
 \end{array}
 $$
+</div>
 
+## Ejemplo
+<div class="example">
+Supongamos ahora que "generalizamos" la función $f$ de la forma siguiente $f(x)=(x+C)^\alpha$, donde $\alpha$ no tiene por qué ser entero sino cualquier valor real. Sea $x_0$ un valor real que supondremos distinto de $-C$ para no tener problemas en caso en que $\alpha <0$ ya que en este caso $\displaystyle\lim_{x\to x_0}f(x)=\lim_{x\to x_0}(x+C)^\alpha = \lim_{x\to x_0} 0^\alpha =\lim_{x\to x_0}\frac{1}{0^{-\alpha}}=\frac{1}{0}=\infty$.
+
+¿Cuál sería el polinomio de Taylor de grado $n$ para dicha función $f(x)$ en $x=x_0$?
+
+Estaríamos tentados de generalizar la fórmula anterior de la forma siguiente:
+$$
+P_n(x)=\sum_{k=0}^n \binom{\alpha}{k}\cdot (C+x_0)^{\alpha -k}\cdot (x-x_0)^k,
+$$
+pero ¿qué vale $\binom{\alpha}{k}$?. Pensad que sabemos calcular $\binom{N}{k}$ si $N$ es natural pero ahora "nuestra" $N$ es $\alpha$ y es un valor real cualquiera.
+
+Como $\binom{N}{k}$ se puede escribir como $\binom{N}{k}=\frac{N\cdot (N-1)\cdots (N-k+1)}{k!}$, podríamos generalizar $\binom{\alpha}{k}$ como $\binom{\alpha}{k}=\frac{\alpha\cdot (\alpha-1)\cdots (\alpha-k+1)}{k!}$ y la expresión anterior ya tendría sentido.
+
+De acuerdo, todo lo escrito hasta ahora está muy bien, pero ¿es cierta la fórmula anterior?
+</div>
+
+## Ejemplo
+<div class="example">
+Veamos que sí, que la fórmula anterior es cierta.
+
+Primero calculemos las derivadas sucesivas de $f(x)=(x+C)^\alpha$:
+$$
+f'(x)=\alpha\cdot (x+C)^{\alpha-1},\ f''(x)=\alpha\cdot (\alpha-1)\cdot (x+C)^{\alpha-2},\ f'''(x)=\alpha\cdot (\alpha-1)\cdot (\alpha-2)\cdot (x+C)^{\alpha-3},
+$$
+y, en general:
+$$
+f^{(k)}(x)=\alpha\cdot (\alpha-1)\cdots (\alpha-k+1)\cdot (x+C)^{\alpha-k}.
+$$
+Si evaluamos en $x=x_0$ obtenemos:
+$$
+f^{(k)}(x_0)=\alpha\cdot (\alpha-1)\cdots (\alpha-k+1)\cdot (x_0+C)^{\alpha-k}=\binom{\alpha}{k}\cdot k!\cdot (x_0+C)^{\alpha-k}.
+$$
+</div>
+
+## Ejemplo
+<div class="example">
+El polinomio de Taylor de grado $n$ de $f(x)$ en $x=x_0$ será:
+$$
+\begin{array}{rl}
+P_n(x) & \displaystyle =\sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!}\cdot (x-x_0)^k = \sum_{k=0}^n\frac{\alpha\cdot (\alpha-1)\cdots (\alpha-k+1)}{k!}\cdot (x_0+C)^{\alpha-k}\cdot (x-x_0)^k \\ & \displaystyle = \sum_{k=0}^n \binom{\alpha}{k}\cdot (x_0+C)^{\alpha-k}\cdot (x-x_0)^k,
+\end{array}
+$$
+tal como queríamos ver.
+
+El error cometido será:
+$$
+R_n(x-x_0)=\frac{f^{(n+1)}(c)}{(n+1)!}\cdot (x-x_0)^{n+1}=\binom{\alpha}{n+1}\cdot (c+C)^{\alpha-n-1}\cdot  (x-x_0)^{n+1}
+$$
+donde $c\in <x_0,x>$.
+</div>
+
+## Ejemplo
+<div class="example">
+Como aplicación, calculemos el polinomio de Taylor de la función $f(x)=\frac{1}{\sqrt{x+1}}$ para $x_0=2$.
+
+En este caso $\alpha = -\frac{1}{2}$ y $C=1$.
+
+Los valores de $\binom{-\frac{1}{2}}{k}$ son los siguientes:
+$$
+\binom{-\frac{1}{2}}{k} = \frac{-\frac{1}{2}\cdot\left(-\frac{1}{2}-1\right)\cdots \left(-\frac{1}{2}-k+1\right)}{k!}=\frac{-\frac{1}{2}\cdot\left(-\frac{3}{2}\right)\cdots \left(-\frac{(2k-1)}{2}\right)}{k!}=\frac{(-1)^k\cdot (2k-1)!!}{2^k\cdot k!}.
+$$
+El polinomio de Taylor de grado $n$ para $f(x)$ en $x_0=2$ será:
+$$
+P_n(x)=\sum_{k=0}^n \frac{(-1)^k\cdot (2k-1)!!}{2^k\cdot k!}\cdot 3^{-\frac{1}{2}-k}\cdot (x-2)^k=\sum_{k=0}^n \frac{(-1)^k\cdot (2k-1)!!}{2^k\cdot \sqrt{3^{2k+1}}\cdot k!}\cdot (x-2)^k.
+$$
+El error cometido será:
+$$
+R_n(x-2)=\binom{-\frac{1}{2}}{n+1}\cdot (1+c)^{-\frac{1}{2}-n-1}\cdot  (x-2)^{n+1}=\frac{(-1)^{n+1}\cdot (2n+1)!!}{2^{n+1}\cdot \sqrt{(1+c)^{2n+3}}\cdot (n+1)!}\cdot (x-2)^{n+1}.
+$$
+</div>
+
+## Ejemplo
+<div class="example">
+Si suponemos que $x>2$, usando que $c\in (2,x)$, y, por tanto, $\frac{1}{1+c}\leq \frac{1}{3}$, podemos acotar el error cometido por:
+$$
+|R_n(x-2)|\leq\frac{(2n+1)!!}{2^{n+1}\cdot \sqrt{3^{2n+3}}\cdot (n+1)!}\cdot (x-2)^{n+1}.
+$$
+Consideremos $x=2.25$. Calculemos el valor de $n$ para calcular $f(2.25)$ con un error menor que $0.000001$:
+```{python}
+def doublefactorial(n):
+  if n in (0, 1):
+    return 1
+  else:
+    return n * doublefactorial(n-2)
+```
 
 </div>
+
+## Ejemplo
+<div class="example">
+```{python}
+def calculo_n(error):
+  x=2.25
+  m=2
+  cota_error=(doublefactorial(2*m+1)/(2.**(m+1)*math.sqrt(3.)**(2*m+3)*
+    math.factorial(m+1)))*(x-2)**(m+1) 
+  while(cota_error >= error):
+    m=m+1
+    cota_error=(doublefactorial(2*m+1)/(2.**(m+1)*math.sqrt(3.)**(2*m+3)*
+      math.factorial(m+1)))*(x-2)**(m+1) 
+  return(m)
+```
+El valor del grado $n$ del polinomio de Taylor será:
+```{python}
+calculo_n(0.000001)
+```
+</div>
+
+## Ejemplo
+<div class="example">
+El polinomio de Taylor será:
+$$
+P_4(x)=\frac{1}{\sqrt{3}}-\frac{1}{6 \sqrt{3}}\cdot (x-2)+\frac{1}{24\sqrt{3}}\cdot (x-2)^2-\frac{5}{432\sqrt{3}}\cdot (x-2)^3+\frac{35}{10368\sqrt{3}}\cdot (x-2)^4.
+$$
+</div>
+
+
 
 ## Propiedades del desarrollo de Taylor
 La proposición siguiente es útil si queremos hallar el polinomio de Taylor de una función que puede escribirse como suma, producto o cociente de funciones donde es más fácil conocer su polinomio de Taylor:
