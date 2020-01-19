@@ -3370,7 +3370,7 @@ a=bq+r
 <ul>
 <li><p>Dado que en \(\mathbb{R}\) existe un elemento neutro para el producto, \(1\), podemos asimilar el número natural \(n\) con el número real \(1+ \ldots \overset{n)}{} \ldots + 1\), es decir \(\mathbb{N} \subset \mathbb{R}\)</p></li>
 <li><p>Dado que en \(\mathbb{R}\), existe \(-1\), el simétrico de \(1\), podemos asimilar el número entero \(-n\) con el número real \((-1)+(-1)+ \ldots \overset{n)}{} \ldots +(-1)\). En definitiva \(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{R}\)</p></li>
-<li><p>Dado que para cada \(a \in \mathbb{R}, \quad a\neq 0\) existe elas inverso de \(a\), \(\dfrac{1}{a}\), para cada \(n,m \in \mathbb{Z}\), con \(m \neq 0\), será \(\dfrac{n}{m} \in \mathbb{R}\), es decir, \(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}\).</p></li>
+<li><p>Dado que para cada \(a \in \mathbb{R}, \quad a\neq 0\) existe \(\dfrac{1}{a}\), el inverso de \(a\). Entonces para cada \(n,m \in \mathbb{Z}\), con \(m \neq 0\), será \(\dfrac{n}{m} \in \mathbb{R}\), es decir, \(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}\).</p></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>El orden de los números reales: \(\mathbb{R}\)</h2></hgroup><article  id="el-orden-de-los-números-reales-mathbbr">
@@ -3454,7 +3454,45 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 
 <p>Dado un número real \(a\), el <strong>valor absoluto</strong> de \(a\), representado por \(|a|\), es el mayor de los dos valores \(\{a,-a \}\).</p>
 
-<p>Es fácil comprobar que \(|a| = \sqrt{a^2}\).</p>
+<p><l class="important">Es fácil comprobar que </l> \(|a| = \sqrt{a^2}\).</p>
+
+<p><l class="important">Un error frecuente que se debe evitar es considerar que </l> \(\sqrt{a^2}=a\).</p>
+
+<p><l class="prop">Proposición</l></p>
+
+<ul>
+<li>\(|a| \geq 0\) y \(|a|=0\) si, y sólo si, \(a=0\).</li>
+<li>\(|-a|=a\), para todo \(a \in \mathbb{R}\).</li>
+<li>\(|ab|= |a||b|\), para toda \(a,b \in \mathbb{R}\).</li>
+<li>$ -|a| a |a|$, para todo \(a \in \mathbb{R}\).</li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>Desigualdad triangular</h2></hgroup><article  id="desigualdad-triangular">
+
+<p><l class="prop">Proposición</l></p>
+
+<p>Para toda \(a,b \in \mathbb{R}\):</p>
+
+<ul>
+<li>\(|a+b| \leq |a| + |b|\) .</li>
+<li>\(||a|-|b|| \leq |a-b|\).</li>
+<li>\(|a-b| \leq |a|+|b|\).</li>
+</ul>
+
+<div class="dem">
+<p><strong>Demostración:</strong></p>
+
+<ul>
+<li>Dado que $ -|a| a |a|$ y $ -|b| b |b|$, tenemos que</li>
+</ul>
+
+<p>\[ 
+-(|a|+|b|) \leq a+b \leq  |a| + |b|
+\] es decir, \(|a+b| \leq |a| + |b|\).</p>
+
+<ul>
+<li>\(|a| = |a-b+b| \leq |a-b| + |b|\), es decir \(|a|-|b| \leq |a-b|\). Análogamente comprobaríamos que \(|b|-|a| \leq |b-a|\).</li>
+</ul></div>
 
 </article></slide><slide class=""><hgroup><h2>Conjuntos acotados</h2></hgroup><article  id="conjuntos-acotados">
 
@@ -3490,6 +3528,8 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <li>El subconjunto \(A\) de \(\mathbb{Q}\) definido por \(A =\{q \in \mathbb{Q}\) tal que \(q^2=2 \}\), está acotado superiormente, pero, como se ha demostrado no tiene supremo, puesto que este supremo deberia ser \(\sqrt{2}\) que no es un número racional.</li>
 </ul></div>
 
+</article></slide><slide class=""><hgroup><h2>Propiedades del supremo y del ínfimo</h2></hgroup><article  id="propiedades-del-supremo-y-del-ínfimo">
+
 </article></slide><slide class=""><hgroup><h2>El axioma del supremo</h2></hgroup><article  id="el-axioma-del-supremo">
 
 <p><l class="important">Axioma del supremo</l></p>
@@ -3513,6 +3553,7 @@ Todo subconjunto de \(\mathbb{R}\) acotado inferiormente tiene ínfimo.</div></d
 <p>Existe un número real \(p \in \mathbb{R}\) tal que \(p^2 = 2\).</p>
 
 <div class="dem">
+
 <p><strong>Demostración:</strong></p>
 
 <p>Consideremos el conjunto \(M = \{r \in \mathbb{R}: r^2 &lt;2 \}\). \(M\) es un subconjunto acotado de \(\mathbb{R}\) (¿Por qué?). Sea \(p = \sup M\). Demostraremos que \(p^2 =2\).</p>
@@ -3545,7 +3586,7 @@ Todo subconjunto de \(\mathbb{R}\) acotado inferiormente tiene ínfimo.</div></d
 <div class="dem">
 <p><strong>Demostración:</strong></p>
 
-<p>Supongamos que si, que existen cotas superiores para \(\mathbb{N}\) en \(\mathbb{R}\), por el axioma del supremo deberá existir \(\alpha = \sup \mathbb{N}\). Al ser \(\alpha\) la menor de las cotas superiores, resultará que \(\alpha -1\) no es cota superior. Por lo tanto exite un \(n \in \mathbb{N}\) tal que \(\alpha -1 &lt;n\), es decir que \(\alpha &lt; n+1\), lo cual es absurdo, puesto que habíamos supuesto que \(\alpha\) era mayor que todos los nombres naturales.</p></div></div>
+<p>Supongamos que si, que existen cotas superiores para \(\mathbb{N}\) en \(\mathbb{R}\), por el axioma del supremo deberá existir \(\alpha = \sup \mathbb{N}\). Al ser \(\alpha\) la menor de las cotas superiores, resultará que \(\alpha -1\) no es cota superior. Por lo tanto exite un \(n \in \mathbb{N}\) tal que \(\alpha -1 &lt;n\), es decir que \(\alpha &lt; n+1\), lo cual es absurdo, puesto que habíamos supuesto que \(\alpha\) era mayor que todos los nombres naturales.</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Apartat/trans</h2></hgroup><article  id="apartattrans">
 
