@@ -246,5 +246,5 @@ Si $a_n \rightarrow a$ y $b_n \rightarrow b$, entonces
 $$|(a_n + b_n) - (a+b)| = |(a_n -a)+(b_n-b)| \leq |a_n -a|+|b_n - b| < \dfrac{\epsilon}{2}+ \dfrac{\epsilon}{2} = \epsilon 
 $$
 
-
+  2) 
 
