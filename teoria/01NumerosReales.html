@@ -3603,14 +3603,50 @@ Todo subconjunto de \(\mathbb{R}\) acotado superiormente tiene supremo.</div></d
 <div class="center">
 Todo subconjunto de \(\mathbb{R}\) acotado inferiormente tiene ínfimo.</div></div>
 
-</article></slide><slide class=""><hgroup><h2>\(\sqrt{2}\) es un un número real.</h2></hgroup><article  id="sqrt2-es-un-un-número-real.">
+</article></slide><slide class=""><hgroup><h2>Consecuencias del axioma del supremo.</h2></hgroup><article  id="consecuencias-del-axioma-del-supremo.">
+
+<p><l class="proposicion"><strong>Proposición. (Propiedad arquimediana)</strong></l></p>
+
+<p>El conjunto \(\mathbb{N}\) de los números naturales no está acotado superiormente en \(\mathbb{R}\).</p>
+
+<div class="dem">
+<p><strong>Demostración:</strong></p>
+
+<p>Supongamos que existen cotas superiores para \(\mathbb{N}\) en \(\mathbb{R}\), por el axioma del supremo, existe \(\alpha = \sup \mathbb{N}\). Al ser \(\alpha\) la menor de las cotas superiores, resulta que \(\alpha -1\) no es cota superior. Por lo tanto existe un \(n \in \mathbb{N}\) tal que \(\alpha -1 &lt;n\), es decir que \(\alpha &lt; n+1\), lo cual es absurdo, puesto que habíamos supuesto que \(\alpha\) era mayor que todos los nombres naturales.</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Consecuencias del axioma del supremo.</h2></hgroup><article  id="consecuencias-del-axioma-del-supremo.-1">
+
+<p><l class="prop"><strong>Corolario</strong></l></p>
+
+<p>Sean \(y,z\) reales positivos. Entonces:</p>
+
+<ul>
+<li>Existe \(n \in \mathbb{N}\) tal que \(z&lt;ny\).</li>
+<li>Existe \(n \in \mathbb{N}\) tal que \(0 &lt;\dfrac{1}{n}&lt;y\).</li>
+<li>Existe \(n \in \mathbb{N}\) tal que \(n-1 &lt;z &lt; n\).</li>
+</ul>
+
+<div class="dem">
+
+<p><strong>Demostración:</strong></p>
+
+<ul>
+<li><p>Considere \(\dfrac{z}{y}\), se trata de un número positivo, por consiguiente existe \(n \in \mathbb{N}\) tal que \(\dfrac{z}{y} &lt;n\), es decir \(z &lt; ny\).</p></li>
+<li><p>Inmediata a partir del resultado anterior con \(z=1\).</p></li>
+<li><p>El conjunto \(\{ m \in \mathbb{N}: z&lt;m \}\) es no vacío. Sea \(n\) el primer elemento de este conjunto, entonces</p></li>
+</ul>
+
+<p>\[
+n-1 \leq z &lt; n
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Consecuencias del Ax. del supremo: \(\sqrt{2} \in \mathbb{R}\).</h2></hgroup><article  id="consecuencias-del-ax.-del-supremo-sqrt2-in-mathbbr.">
 
 <p><l class="prop">Proposición</l></p>
 
 <p>Existe un número real \(p \in \mathbb{R}\) tal que \(p^2 = 2\).</p>
 
 <div class="dem">
-
 <p><strong>Demostración:</strong></p>
 
 <p>Consideremos el conjunto \(M = \{r \in \mathbb{R}: r^2 &lt;2 \}\). \(M\) es un subconjunto acotado de \(\mathbb{R}\) (¿Por qué?). Sea \(p = \sup M\). Demostraremos que \(p^2 =2\).</p>
@@ -3621,9 +3657,9 @@ Todo subconjunto de \(\mathbb{R}\) acotado inferiormente tiene ínfimo.</div></d
 \epsilon &lt; \dfrac{2-p^2}{2p+\epsilon}
 \]</p>
 
-<p>Consideremos ahora \(\epsilon = \min \{1,\dfrac{2-p^2}{2p+1}\}\), entonces es \((p+\epsilon)^2 &lt; 2\), es decir \((p+\epsilon) \in M\) y como \(\epsilon &gt;0\), esto contradice que \(p= \sup M\).</p>
+<p>Consideremos ahora \(\epsilon = \min \{1,\dfrac{2-p^2}{2p+1}\}\), entonces es \((p+\epsilon)^2 &lt; 2\), es decir \((p+\epsilon) \in M\) y como \(\epsilon &gt;0\), esto contradice que \(p= \sup M\).</p></div>
 
-</article></slide><slide class=""><hgroup><h2>\(\sqrt{2}\) es un un número real (Continuación)</h2></hgroup><article  id="sqrt2-es-un-un-número-real-continuación">
+</article></slide><slide class=""><hgroup><h2>\(\sqrt{2} \in \mathbb{R}\) (Continuación)</h2></hgroup><article  id="sqrt2-in-mathbbr-continuación">
 
 <div class="dem">
 <p><strong>Demostración (Continuación):</strong></p>
@@ -3634,16 +3670,37 @@ Todo subconjunto de \(\mathbb{R}\) acotado inferiormente tiene ínfimo.</div></d
 
 <p>En definitiva, sólo queda la opción que el supremo \(p\) del conjunto \(M\), sea tal que \(p^2=2\), es decir que \(\sqrt{2}\) és un número real.</p></div>
 
-</article></slide><slide class=""><hgroup><h2>Consecuencias del axioma del supremo.</h2></hgroup><article  id="consecuencias-del-axioma-del-supremo.">
+<p><l class="prop"><strong>Corolario</strong></l></p>
 
-<p><l class="proposicion"><strong>Proposición</strong></l></p>
+<p>Para todo número real positivo \(b\), existe un número real positivo \(\beta\) tal que \(\beta^2 =b\).</p>
 
-<p>El conjunto \(\mathbb{N}\) de los números naturales no está acotado superiormente en \(\mathbb{R}\).</p>
+</article></slide><slide class=""><hgroup><h2>Más consecuencias del axioma del supremo.</h2></hgroup><article  id="más-consecuencias-del-axioma-del-supremo.">
+
+<p><l class="prop"><strong>Proposición. \(\mathbb{Q}\) es denso en \(\mathbb{R}\)</strong></l></p>
+
+<p>Sean \(x,y \in \mathbb{R}\) tales que \(x&lt;y\), entonces existe \(q \in \mathbb{Q}\) tal que \(x&lt;q&lt;y\)</p>
 
 <div class="dem">
 <p><strong>Demostración:</strong></p>
 
-<p>Supongamos que si, que existen cotas superiores para \(\mathbb{N}\) en \(\mathbb{R}\), por el axioma del supremo deberá existir \(\alpha = \sup \mathbb{N}\). Al ser \(\alpha\) la menor de las cotas superiores, resultará que \(\alpha -1\) no es cota superior. Por lo tanto exite un \(n \in \mathbb{N}\) tal que \(\alpha -1 &lt;n\), es decir que \(\alpha &lt; n+1\), lo cual es absurdo, puesto que habíamos supuesto que \(\alpha\) era mayor que todos los nombres naturales.</p></div>
+<p>Supongamos que \(x&gt;0\), entonces \(y-x &gt;0\) y, por la propiedad arquimediana, existe \(n in \mathbb{N}\) tal que \(\dfrac{1}{n} &lt;y-x\), es decir que \(ny-nx &gt;1\).</p>
+
+<p>Dado que \(nx &gt;0\), existe \(m \in \mathbb{N}\) tal que \(m-1 &lt;nx&lt;m\). \(m\) también verifica \(m&lt;ny\), ya que \(m&lt; nx+1&lt;ny\). En definitiva es \(nx&lt;m&lt;ny\) y, por lo tanto</p>
+
+<p>\[
+x&lt;\dfrac{m}{n}&lt;y
+\] es decir, \(q = \dfrac{m}{n}\) es el número racional buscado. Razonamientos análogos sirven para el caso \(x&lt;0\).</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Más consecuencias del axioma del supremo.</h2></hgroup><article  id="más-consecuencias-del-axioma-del-supremo.-1">
+
+<p><l class="prop"><strong>Corolario</strong></l></p>
+
+<p>Si \(x,y \in \mathbb{R}\), con \(x&lt;y\), entonces existe un número irracional z (es decir que \(z \in \mathbb{R} \setminus \mathbb{Q}\)) tal que \(x&lt;z&lt;y\).</p>
+
+<div class="dem">
+<p><strong>Demostración:</strong></p>
+
+<p>Consideremos \(s \in \mathbb{R} \setminus \mathbb{Q}\) (por ejemplo \(\sqrt{2}\)), entonces, sabemos que existe un racional \(q \in \mathbb{Q}\) tal que \(\dfrac{x}{s} &lt;q &lt; \dfrac{y}{s}\). Ahora \(qs \in \mathbb{R} \setminus \mathbb{Q}\), puesto que si \(z=qs \in \mathbb{Q}\), \(s=\dfrac{z}{q}\) seria el cociente de dos racionales y, por la tanto racional. En definitiva es \(x&lt;z&lt;y\), con \(z\) irracional.</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Apartat/trans</h2></hgroup><article  id="apartattrans">
 
