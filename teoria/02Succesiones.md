@@ -150,13 +150,14 @@ Dicho de otra forma, $\lim_{n \rightarrow \infty} a_{n} = a$, si para cada $\eps
 
 <div class="example">
 
-**Ejemplo 1.** La propiedad arquimediana implica que
+**Ejemplo 1.** La propiedad arquimediana implica que $\displaystyle{\lim_{n \rightarrow \infty}\dfrac{1}{n} = 0}$
 
-$$
-\lim_{n \rightarrow \infty}\displaystyle\left\{\frac{1}{n}\right\}_{n \in \mathbb{N}} = 0
-$$
-
-
-puesto que para cada $\epsilon >0$, existe un número natural $n_0$ tal que $0<\dfrac{1}{n_0}< \epsilon$, por lo tanto, dado que para todo $n \geq n_0$, es $\dfrac{1}{n} \leq \dfrac{1}{n_0} < \epsilon$.
+puesto que para cada $\epsilon >0$, existe un número natural $n_0$ tal que $0<\dfrac{1}{n_0}< \epsilon$, por lo tanto, dado que para todo $n \geq n_0$, es $\dfrac{1}{n} \leq \dfrac{1}{n_0} < \epsilon$, que es lo que había que demostrar.
 
 Así, si $\epsilon = 10^{-5}$, entonces $n_0 = \dfrac{1}{10^{-5}}+1= 10^5 +1$ y, si $n>n_0$, entonces $\dfrac{1}{n} < 10^{-5}$.
+
+**Ejemplo 2.** $\displaystyle{\lim_{n \rightarrow \infty}\dfrac{n+1}{n} }= 1$
+
+Efectivamente, dado que $n+1 > n$, $\displaystyle{\left| \dfrac{n+1}{n} -1 \right|} = \dfrac{n+1}{n} -1 = \dfrac{1}{n}$.
+
+Ahora, como sabemos que dado un $\epsilon > 0$  existe $n_0 \in \mathbb{N}$ tal que $\dfrac{1}{n} < \epsilon$ para todo $n\geq n_0$, obtenemos el resultado pedido.
