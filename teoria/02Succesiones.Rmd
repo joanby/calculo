@@ -19,11 +19,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Tema
 
-## Límite de una sucesión
+## Sucesiones
 
 Como hemos visto, el conjunto de los números reales incluye todos los números racionales, es decir, todos los números que tengan un número finito de cifras en su desarrollo decimal. De hecho, también incluye algunos con un número infinito de cifras decimales como seria el caso de los decimales periódicos.
 
-Por consiguiente, los números reales que no son racionales, es decir los números **irracionales** tienen un número infinito de cifras en su desarrollo decimal, tal seria el caso de, por ejemplo $\sqrt{2}$, $\pi$ o $e$.  
+Por consiguiente, los números reales que no son racionales, es decir los números **irracionales** tienen una cantidad infinita de cifras en su desarrollo decimal, tal seria el caso de, por ejemplo $\sqrt{2}$, $\pi$ o $e$.  
 
 Siendo así, ¿cómo podemos utilizar estos números con infinitas cifras decimales? La respuesta viene de la mano del concepto de **sucesión** y de **límite**. 
 
@@ -33,9 +33,7 @@ Cómo hemos demostrado, dado un número irracional y una precisión, siempre es 
 
 <div class="example">
 
-**Ejemplo 1**
-
-Consideremos las sucesivas aproximaciones decimales de $\sqrt{2}$,
+**Ejemplo 1.** Consideremos las sucesivas aproximaciones decimales de $\sqrt{2}$,
 
 $$
 1,1.4,1.41,1.414,1.4142,1.41421,\ldots
@@ -48,13 +46,14 @@ En general, dado un $\epsilon$, es decir, una precisión, podemos asegurar que, 
 
 <div class="example">
 
-**Ejemplo 2**
-
-Análogamente, las sucesivas aproximaciones decimales del número $\pi$:
+**Ejemplo 2.** Análogamente, las sucesivas aproximaciones decimales del número $\pi$:
 $$
 3,3.1,3.14,3.141,3.1415,3.14159, \ldots
 $$
 aproximan el número $\pi$
+
+
+
 
 </div>
 
@@ -70,15 +69,14 @@ Una **sucesión** $\{a_n \}_{n \in \mathbb{N}}$ de números reales es un conjunt
 
 **Ejemplos**
 
-**1.** La sucesión de aproximaciones decimales del número $\pi$: 
+**Ejemplo 1. ** Dado un número real $r$, la sucesión constante $a_n = r$, para todo $n \in \mathbb{N}$ es un ejemplo de sucesión. Obsérvese que una sucesión tiene siempre infinitos términos, aunque puedan estar todos o algunos repetidos.
 
- $a_1=3.1\quad a_2=3.14 \quad a_3=3.141 \quad a_4 = 3.1415 \quad a_4 =3.14159 \quad \ldots$
+**Ejemplo 2.** La sucesión de término general $a_n = \dfrac{1}{n}$:
+$$
+1,\dfrac{1}{2},\dfrac{1}{3},\dfrac{1}{4}, \ldots ,\dfrac{1}{n}, \ldots
+$$
 
-**2.** Las sucesivas aproximaciones decimales del número $\sqrt{2}$:
 
-$a_1=1.4 \quad a_2=1.41 \quad a_3=1.414 \quad a_4=1.4142 \quad a_5=1.41421 \quad \ldots$
-
-</div>
 
 ## Ejemplos de sucesiones
 
@@ -86,14 +84,37 @@ $a_1=1.4 \quad a_2=1.41 \quad a_3=1.414 \quad a_4=1.4142 \quad a_5=1.41421 \quad
 
 **Ejemplos**
 
-**3.** En general, todo número  $\alpha \in \mathbb{R}$, admite un desarrollo decimal en la forma
+**Ejemplo 3.** Un ejemplo interesante de sucesión lo constituye la de término general $a_n = 10^{-n}$, és decir la sucesión
+$$
+0.1,0.01,0.001,0.0001,0.00001, \ldots
+$$
+
+**Ejemplo 4.** La sucesión de aproximaciones decimales del número $\pi$: 
+
+ $$
+ a_1=3.1\quad a_2=3.14 \quad a_3=3.141 \quad a_4 = 3.1415 \quad a_4 =3.14159 \quad \ldots
+ $$
+
+**Ejemplo 5.** Las sucesivas aproximaciones decimales del número $\sqrt{2}$:
+
+$$
+a_1=1.4 \quad a_2=1.41 \quad a_3=1.414 \quad a_4=1.4142 \quad a_5=1.41421 \quad \ldots
+$$
+
+
+**Ejemplo 6.** En general, todo número  $\alpha \in \mathbb{R}$, admite un desarrollo decimal en la forma
 $$
 \alpha= \alpha_0 + \alpha_1 10^{-1}+ \alpha_2 10^{-2}+ \ldots + \alpha_k 10^{-k}+ \ldots 
 $$
 donde $a_0 \in \mathbb{Z}$ y cada $a_i \in \{0,1,2,\ldots, 9 \}$, de forma que determina una sucesión de término general 
 $$
-a_n = \alpha_0 + \alpha_1 10^{-1}+ \alpha_2 10^{-2}+ \ldots + \alpha_n 10^{-n}
+a_n = \alpha_0 + \alpha_1 10^{-1}+ \alpha_2 10^{-2}+ \ldots + \alpha_n 10^{-n} = \alpha_0.\alpha_1\alpha_2\alpha_3\ldots\alpha_n
 $$
+Obsérvese que para cada $n \in \mathbb{N}$ se tiene que $\alpha-a_n = \alpha_{n+1}10^{-(n+1)}+ \ldots < 10^{-n}$.
+
+
+</div>
+
 
 ## Sucesiones y límites
 
