@@ -2142,6 +2142,15 @@ Un punto de inflexión de una función es un punto donde a la izquierda del mism
 Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Diremos que $x_0$ es un punto de inflexión si existe un valor $\delta >0$ tal que 
  si $x\in (x_0-\delta,x_0)$, $f$ es **concava** (**convexa**) en $x$ y si $x\in (x_0,x_0+\delta)$, $f$ es **convexa** (**concava**) en $x$.
 
+Ver la figura siguiente.
+
+## Estudio de la concavidad y la convexidad de una función
+<div class="center">
+
+```{r, echo=FALSE, label=infle,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/inflexion.png",dpi=1200)
+```
+</div>
 
 ## Estudio de la concavidad y la convexidad de una función
 El siguiente resultado caracteriza la concavidad y la convexidad de una función a partir de sus derivadas:
@@ -2150,7 +2159,7 @@ El siguiente resultado caracteriza la concavidad y la convexidad de una función
 Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Supongamos que existe un natural $n$ tal que $f$ es derivable $2n+1$ veces. Entonces:
 
 * si $f''(x_0)=f'''(x_0)=\cdots = f^{(2n-1)}(x_0)=0$ y $f^{(2n)}(x_0)\neq 0$, entonces 
-  * si $f^{(2n)(x_0)>0$, tenemos que $f$ es convexa en $x_0$ y
-  * si $f^{(2n)(x_0)<0$, tenemos que $f$ es cóncava en $x_0$.
+  * si $f^{(2n)}(x_0)>0$, tenemos que $f$ es convexa en $x_0$ y
+  * si $f^{(2n)}(x_0)<0$, tenemos que $f$ es cóncava en $x_0$.
   
 * si $f''(x_0)=f'''(x_0)=\cdots = f^{(2n-1)}(x_0)=0$ y $f^{(2n)}(x_0)= 0$, entonces $f$ tiene un punto de inflexión en $x=x_0$.
