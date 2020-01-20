@@ -267,6 +267,16 @@ Sean $a,b, c \in \mathbb{R}$
   f) Si $a<0$, entonces $\dfrac{1}{a} <0$
      
      
+## Todavía más propiedades del orden en $\mathbb{R}$
+   
+<l class="prop">Proposición.</l>
+
+Sean $a,b \in \mathbb{R}$  
+
+  a) Si $a < b$ entonces $a < \dfrac{a+b}{2} <b$.
+  b) Si $b>0$, entonces $0<\dfrac{b}{2} < b$
+  c) Si $0\leq 2< \epsilon$ para todo número real positivo $\epsilon$, entonces $a=0$.
+  d) Si $a-\epsilon < b$ para todo $\epsilon > 0$, entonces $a\leq b$
 
 ## Valor absoluto
 
@@ -292,7 +302,7 @@ Dado un número real $a$, el **valor absoluto** de $a$, representado por $|a|$, 
 
 Para toda $a,b \in \mathbb{R}$:
 
-  * $|a+b| \leq |a| + |b|$ .
+  * $|a+b| \leq |a| + |b|$ (Desigualdad triangular).
   * $||a|-|b|| \leq |a-b|$.
   * $|a-b| \leq |a|+|b|$.
 
@@ -344,6 +354,40 @@ es decir, $|a+b| \leq |a| + |b|$.
 
 ## Propiedades del supremo y del ínfimo
 
+<l class="prop">**Proposición**</l>
+
+El supremo  (el ínfimo) de un conjunto, si existe, és único.
+
+<div class="dem">
+**Demostración:**
+Supongamos que $s_1$ y $s_2$ son dos supremos del conjunto $A$. Entonces, dado que $s_1$ es supremo, es una cota superior, por lo tanto debe ser mayor que el supremo $s_2$, es decir $s_1 > s_2$. Por otro lado, dado que $s_2$ es supremo, es cota superior, por lo tanto debe ser mayor que el supremo $s_1$, es decir $s_2>s_1$. En definitiva, debe ser $s_1=s_2$.
+ 
+</div>
+
+<l class="prop">**Proposición**</l>
+
+Un número $s$ es el supremo de un subconjunto no vacío $A$ de $\mathbb{R}$ si, y sólo si, $s$ satisface las condiciones:
+
+  a) $s\leq a$, para todo $a \in A$.
+  
+  b) Si $b<s$, entonces existe $a' \in A$ tal que $b<a'$.
+
+
+## Propiedades del supremo y del ínfimo
+
+<l class="prop">**Proposición**</l>
+
+Una cota superior $s$ de un subconjunto no vacío $A$ de $\mathbb{R}$, es el supremo de $A$, si, y sólo si, para cada $\epsilon >0$ existe un $s_{\epsilon} \in A$, tal  que $s-\epsilon < s_\epsilon$
+
+<div class="dem">
+**Demostración:**
+
+Supongamos que $s$ es una cota superior que satisface la propiedad enunciada, entonces si $a<s$, tomando $\epsilon = s-a$, entonces $\epsilon >0$, por lo que existe un número $a_{\epsilon}$ tal que $a=s-\epsilon < s_{\epsilon}, es decir que $a$ no es cota superior de $A$, es decir $s=\sup A$.
+
+Recíprocamente, supongamos que $s = \sup A$ y sea $\epsilon$ un número positivo. Como $s-\epsilon <s$, $s-\epsilon$ no es cota superior de A, por lo que debe existir $s_{\epsilon}$
+tal que $s-\epsilon < s_{\epsilon}$.
+
+</div>
 
 
 ## El axioma del supremo 

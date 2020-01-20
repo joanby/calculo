@@ -3463,6 +3463,19 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <li>Si \(a&lt;0\), entonces \(\dfrac{1}{a} &lt;0\)</li>
 </ol>
 
+</article></slide><slide class=""><hgroup><h2>Todavía más propiedades del orden en \(\mathbb{R}\)</h2></hgroup><article  id="todavía-más-propiedades-del-orden-en-mathbbr">
+
+<p><l class="prop">Proposición.</l></p>
+
+<p>Sean \(a,b \in \mathbb{R}\)</p>
+
+<ol>
+<li>Si \(a &lt; b\) entonces \(a &lt; \dfrac{a+b}{2} &lt;b\).</li>
+<li>Si \(b&gt;0\), entonces \(0&lt;\dfrac{b}{2} &lt; b\)</li>
+<li>Si \(0\leq 2&lt; \epsilon\) para todo número real positivo \(\epsilon\), entonces \(a=0\).</li>
+<li>Si \(a-\epsilon &lt; b\) para todo \(\epsilon &gt; 0\), entonces \(a\leq b\)</li>
+</ol>
+
 </article></slide><slide class=""><hgroup><h2>Valor absoluto</h2></hgroup><article  id="valor-absoluto">
 
 <p><l class="definition">Definición</l></p>
@@ -3489,7 +3502,7 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <p>Para toda \(a,b \in \mathbb{R}\):</p>
 
 <ul>
-<li>\(|a+b| \leq |a| + |b|\) .</li>
+<li>\(|a+b| \leq |a| + |b|\) (Desigualdad triangular).</li>
 <li>\(||a|-|b|| \leq |a-b|\).</li>
 <li>\(|a-b| \leq |a|+|b|\).</li>
 </ul>
@@ -3544,6 +3557,35 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 </ul></div>
 
 </article></slide><slide class=""><hgroup><h2>Propiedades del supremo y del ínfimo</h2></hgroup><article  id="propiedades-del-supremo-y-del-ínfimo">
+
+<p><l class="prop"><strong>Proposición</strong></l></p>
+
+<p>El supremo (el ínfimo) de un conjunto, si existe, és único.</p>
+
+<div class="dem">
+<p><strong>Demostración:</strong> Supongamos que \(s_1\) y \(s_2\) son dos supremos del conjunto \(A\). Entonces, dado que \(s_1\) es supremo, es una cota superior, por lo tanto debe ser mayor que el supremo \(s_2\), es decir \(s_1 &gt; s_2\). Por otro lado, dado que \(s_2\) es supremo, es cota superior, por lo tanto debe ser mayor que el supremo \(s_1\), es decir \(s_2&gt;s_1\). En definitiva, debe ser \(s_1=s_2\).</p></div>
+
+<p><l class="prop"><strong>Proposición</strong></l></p>
+
+<p>Un número \(s\) es el supremo de un subconjunto no vacío \(A\) de \(\mathbb{R}\) si, y sólo si, \(s\) satisface las condiciones:</p>
+
+<ol>
+<li><p>\(s\leq a\), para todo \(a \in A\).</p></li>
+<li><p>Si \(b&lt;s\), entonces existe \(a&#39; \in A\) tal que \(b&lt;a&#39;\).</p></li>
+</ol>
+
+</article></slide><slide class=""><hgroup><h2>Propiedades del supremo y del ínfimo</h2></hgroup><article  id="propiedades-del-supremo-y-del-ínfimo-1">
+
+<p><l class="prop"><strong>Proposición</strong></l></p>
+
+<p>Una cota superior \(s\) de un subconjunto no vacío \(A\) de \(\mathbb{R}\), es el supremo de \(A\), si, y sólo si, para cada \(\epsilon &gt;0\) existe un \(s_{\epsilon} \in A\), tal que \(s-\epsilon &lt; s_\epsilon\)</p>
+
+<div class="dem">
+<p><strong>Demostración:</strong></p>
+
+<p>Supongamos que \(s\) es una cota superior que satisface la propiedad enunciada, entonces si \(a&lt;s\), tomando \(\epsilon = s-a\), entonces \(\epsilon &gt;0\), por lo que existe un número \(a_{\epsilon}\) tal que $a=s-&lt; s_{}, es decir que \(a\) no es cota superior de \(A\), es decir \(s=\sup A\).</p>
+
+<p>Recíprocamente, supongamos que \(s = \sup A\) y sea \(\epsilon\) un número positivo. Como \(s-\epsilon &lt;s\), \(s-\epsilon\) no es cota superior de A, por lo que debe existir \(s_{\epsilon}\) tal que \(s-\epsilon &lt; s_{\epsilon}\).</p></div>
 
 </article></slide><slide class=""><hgroup><h2>El axioma del supremo</h2></hgroup><article  id="el-axioma-del-supremo">
 
