@@ -412,9 +412,46 @@ Resulta fácil comprobar que si $s= \sup A$, entonces $-s= \inf(-A)$, por lo que
   </div>
 </div>
 
- 
+## Consecuencias del axioma del supremo.
 
-## $\sqrt{2}$ es un un número real.
+<l class="proposicion">**Proposición. (Propiedad arquimediana)**</l>
+
+El conjunto $\mathbb{N}$ de los números naturales no está acotado superiormente en $\mathbb{R}$.
+
+<div class="dem">
+**Demostración:**
+
+Supongamos que existen cotas superiores para $\mathbb{N}$ en $\mathbb{R}$, por el axioma del supremo, existe $\alpha = \sup \mathbb{N}$. Al ser $\alpha$ la menor de las cotas superiores, resulta que $\alpha -1$ no es cota superior. Por lo tanto existe un $n \in \mathbb{N}$ tal que $\alpha -1 <n$, es decir que $\alpha < n+1$, lo cual es absurdo, puesto que habíamos supuesto que $\alpha$ era mayor que todos los nombres naturales.
+
+</div>
+
+## Consecuencias del axioma del supremo.
+
+<l class="prop">**Corolario**</l>
+
+Sean $y,z$ reales positivos. Entonces:
+
+  * Existe $n \in \mathbb{N}$ tal que $z<ny$.
+  * Existe $n \in \mathbb{N}$ tal que $0 <\dfrac{1}{n}<y$.
+  * Existe $n \in \mathbb{N}$ tal que $n-1 <z < n$.
+
+<div class="dem">
+**Demostración:**
+
+  * Considere $\dfrac{z}{y}$, se trata de un número positivo, por consiguiente existe $n \in \mathbb{N}$ tal que $\dfrac{z}{y} <n$, es decir $z < ny$.
+  
+  * Inmediata a partir del resultado anterior con $z=1$.
+  
+  * El conjunto $\{ m \in \mathbb{N}: z<m \}$ es no vacío. Sea $n$ el primer elemento de este conjunto, entonces
+
+$$
+n-1 \leq z < n
+$$
+
+
+
+
+## Consecuencias del Ax. del supremo: $\sqrt{2} \in \mathbb{R}$.
 
 <l class="prop">Proposición</l>
 
@@ -434,9 +471,12 @@ $$
 Consideremos ahora $\epsilon = \min \{1,\dfrac{2-p^2}{2p+1}\}$, entonces 
 es $(p+\epsilon)^2 < 2$, es decir $(p+\epsilon) \in M$ y como $\epsilon >0$, esto contradice que $p= \sup M$. 
 
+</div>
 
 
-## $\sqrt{2}$ es un un número real (Continuación)
+
+
+## $\sqrt{2} \in \mathbb{R}$  (Continuación)
 
 <div class="dem">
 **Demostración (Continuación):**
@@ -450,18 +490,46 @@ Si ahora consideramos $\epsilon = \frac{p^2 -2}{2p}$, está claro que para este 
 En definitiva, sólo queda la opción que el supremo $p$ del conjunto $M$, sea tal que $p^2=2$, es decir que $\sqrt{2}$ és un número real.
 </div>
 
-## Consecuencias del axioma del supremo.
+<l class="prop">**Corolario**</l>
 
-<l class="proposicion">**Proposición**</l>
+Para todo número real positivo $b$, existe un número real positivo $\beta$ tal que $\beta^2 =b$.
 
-El conjunto $\mathbb{N}$ de los números naturales no está acotado superiormente en $\mathbb{R}$.
+## Más consecuencias del axioma del supremo.
+
+<l class="prop">**Proposición. $\mathbb{Q}$ es denso en $\mathbb{R}$**</l>
+
+Sean $x,y \in \mathbb{R}$ tales que $x<y$, entonces existe $q \in \mathbb{Q}$ tal que 
+$x<q<y$
 
 <div class="dem">
 **Demostración:**
 
-Supongamos que si, que existen cotas superiores para $\mathbb{N}$ en $\mathbb{R}$, por el axioma del supremo deberá existir $\alpha = \sup \mathbb{N}$. Al ser $\alpha$ la menor de las cotas superiores, resultará que $\alpha -1$ no es cota superior. Por lo tanto exite un $n \in \mathbb{N}$ tal que $\alpha -1 <n$, es decir que $\alpha < n+1$, lo cual es absurdo, puesto que habíamos supuesto que $\alpha$ era mayor que todos los nombres naturales.
+Supongamos que $x>0$, entonces $y-x >0$ y, por la propiedad arquimediana, existe $n in \mathbb{N}$ tal que $\dfrac{1}{n} <y-x$, es decir que $ny-nx >1$.
+
+Dado que $nx >0$, existe $m \in \mathbb{N}$ tal que $m-1 <nx<m$. $m$ también verifica $m<ny$, ya que $m< nx+1<ny$. En definitiva es $nx<m<ny$ y, por lo tanto
+
+$$
+x<\dfrac{m}{n}<y
+$$
+es decir, $q = \dfrac{m}{n}$ es el número racional buscado. Razonamientos análogos sirven para el caso $x<0$.
 
 </div>
+
+## Más consecuencias del axioma del supremo.
+
+<l class="prop">**Corolario**</l>
+
+Si $x,y \in \mathbb{R}$, con $x<y$, entonces existe un número irracional z (es decir que $z \in \mathbb{R} \setminus \mathbb{Q}$) tal que $x<z<y$.
+
+<div class="dem">
+**Demostración:**
+
+Consideremos $s \in \mathbb{R} \setminus \mathbb{Q}$ (por ejemplo $\sqrt{2}$), entonces, sabemos que existe un racional $q \in \mathbb{Q}$ tal que $\dfrac{x}{s} <q < \dfrac{y}{s}$. Ahora $qs \in \mathbb{R} \setminus \mathbb{Q}$, puesto que si $z=qs \in \mathbb{Q}$, $s=\dfrac{z}{q}$ seria el cociente de dos racionales y, por la tanto racional. En definitiva es $x<z<y$, con $z$ irracional.
+
+</div>
+
+
+
 
 
 ## Apartat/trans
@@ -469,6 +537,7 @@ Supongamos que si, que existen cotas superiores para $\mathbb{N}$ en $\mathbb{R}
 <div class="center">
 [![Ejemplo de serie de Taylor](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=taylor+series+arctan%281%2F%281%2Bx%5E6%29%29+at+x+%3D+pi%2F4)
 </div>
+
 
 ## Apartat/trans2
 
