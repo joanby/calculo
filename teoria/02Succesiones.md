@@ -161,3 +161,86 @@ Así, si $\epsilon = 10^{-5}$, entonces $n_0 = \dfrac{1}{10^{-5}}+1= 10^5 +1$ y,
 Efectivamente, dado que $n+1 > n$, $\displaystyle{\left| \dfrac{n+1}{n} -1 \right|} = \dfrac{n+1}{n} -1 = \dfrac{1}{n}$.
 
 Ahora, como sabemos que dado un $\epsilon > 0$  existe $n_0 \in \mathbb{N}$ tal que $\dfrac{1}{n} < \epsilon$ para todo $n\geq n_0$, obtenemos el resultado pedido.
+
+## Observación
+
+<l class="important"> Téngase en cuenta que </l> $\epsilon$ <l class="important"> determina el lugar a partir del cual los términos de la sucesión satisfacen </l> $|a_n - a|<\epsilon$. <l class="important"> Un cambio en </l> $\epsilon$ <l class="important"> sólo cambia el lugar a partir del cual se satisface la desigualdad.</l>
+
+<div class="important"> La existencia o no del límite de una sucesión no depende de los primeros términos de la misma, es decir sólo depende del comportamiento final de los términos de la sucesión. s decir, si se remplazan qualquier número finito de los términos de una sucesión la sucesión resultante seguirá teniendo límite o no.
+
+</div>
+
+## Propiedades  de los límites de sucesiones (1).
+
+<l class="prop">**Proposición** </l>
+
+El límite de una sucesión, si existe, és único.
+
+<div class="dem">
+
+**Demostración**
+
+Supongamos que no, que $a_1$ y que $a_2$ son los dos límites de la sucessión ${a_n}_{n\in  \mathbb{N}}. En tonces, dado un $\epsilon >0$ existen $n_1$ y $n_2$ tales que 
+$$
+|a_n-a_1| <\dfrac{\epsilon}{2}  \quad \text{ y } \quad  |a_n-a_2| <\dfrac{\epsilon}{2}
+$$
+para todo $n>n1$, para la primera desigualdad y para todo $n>n_2$, para la segunda.
+
+Ahora $|a_1-a_2| = $|a_1-a_n +a_n -a_2| \leq |a_1-a_n| + |a_n -a_2| < \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon$, siempre que $n>n_1$ y $n>n_2. POr lo tanto, para todo $\epsilon >0$ es $|a_1-a_2| <\epsilon$ y esto sólo puede ocurrir si $|a_1-a_2| =0$, es decir si $a_1 = a_2$.
+
+## Propiedades de los límites (2).
+
+<l class="prop">**Proposición**
+
+Toda sucesión convergente esta acotada. Es decir, si existe el $\lim_{n \rightarrow \infty} a_n $, entonces existen $n_ 0 \in \mathbb{N}$ y $K \in \mathbb{R}$, $K>0$, tal que $|a_n |<K$ para todo $n>n_0$.
+
+<div class="dem">
+
+**Demostración.**
+
+Sea $a=\lim_{n \rightarrow \infty}a_n$. Dado que $1>0$,  existe $n_0$ tal que para todo $n \geq n_0$ es $|a_n -a|<1$. Ahora $|a_n| -|a| <|a_n - a|<1$, es decir, $|a_n| < |a|+1$.
+Sea $K= \max \{|a_1|, |a_2|, \ldots |a_{n_0-1}|, 1+|a| \}$. 
+
+Con esta elección de $K$, está claro que $|a_n| < K$ para todo $n \in \mathbb{N}$.
+
+</div>
+
+Si representamos los números reales mediante límites de sucesiones, para que esta representación sea útil, también debería servir para representar las operaciones entre ellos. De esto se ocupa la proposición siguiente.
+
+
+## Operaciones entre sucesiones.
+
+Dadas dos sucesiones $\{a_n\}_{n\in \mathbb{N}}$ y $\{b_n\}_{n \in \mathbb{N}}$, se definen la sucesión suma y producto de la forma:
+
+  1) $\{a_n \}_{n \in \mathbb{N}} + \{b_n \}_{n \in \mathbb{N}} = \{a_n+b_n\}_{n \in \mathbb{N}}$
+  
+  2) $\{a_n \}_{n \in \mathbb{N}} \cdot \{b_n \}_{n \in \mathbb{N}} = \{a_n \cdot b_n\}_{n \in \mathbb{N}}$
+
+  3) Si $a_n \neq 0$ para todo $n \in \mathbb{N}$, entonces $\dfrac{1}{\{a_n\}_{n \in \mathbb{N}}} = \displaystyle{ \left\{\dfrac{1}{a_n}\right\}}_{n \in \mathbb{N}}$
+
+En realidad, para poder definir la inversa de una sucesión, no es necesario que todos los términos sean diferentes de $0$, es suficiente que sean diferentes de $0$ todos los términos a partir de una dado.
+
+## Límites y operaciones (1).
+
+<l class="prop">**Proposición**</l>
+
+Si $a_n \rightarrow a$ y $b_n \rightarrow b$, entonces
+
+  a) $a_n+b_n \rightarrow a+b$.
+  b) $a_nb_n \rightarrow ab$.
+  c) Si $b \neq  0$, entonces $\dfrac{a_n}{b_n} \rightarrow \dfrac{a}{b}$
+  d) Si $a_n \leq b_n$, entonces $a \leq b$.
+
+
+## Límites y operaciones (2).
+
+<div class="dem">
+
+**Demostración**
+
+  1) Dado un $\epsilon >0$, existen $n_1,n_2 \in \mathbb{N}$, tales que $|a_1 -a|< \dfrac{\epsilon}{2}$ si $n>n_1$ y $|b_n -b|< \dfrac{\epsilon}{2}$ si $n>n_2$. Entonces, si $n \geq \max\{n_1,n_2\}$, tendremos que: 
+$$|(a_n + b_n) - (a+b)| = |(a_n -a)+(b_n-b)| \leq |a_n -a|+|b_n - b| < \dfrac{\epsilon}{2}+ \dfrac{\epsilon}{2} = \epsilon 
+$$
+
+
+
