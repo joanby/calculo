@@ -2018,7 +2018,139 @@ $$
 \mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}\right)=\mathrm{signo}\left(\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\right).
 $$
 Probemos a continuación las tesis de la primera parte del teorema:
-
-* supongamos que $f^{(2n+1)}(x_0)>0$. En este caso, como $\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}\right)=\mathrm{signo}\left(\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\right)$, tendremos que $\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}} > 0$, condición que significa que $f$ es creciente en $x_0$.
-
 </div>
+
+## Estudio del crecimiento y extremos de una función
+<div class="dem">
+* supongamos que $f^{(2n+1)}(x_0)>0$. En este caso, como $\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}\right)=\mathrm{signo}\left(\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\right)$, tendremos que $\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}} > 0$, y, como consecuencia $\frac{f(x)-f(x_0)}{(x-x_0)} > 0$ (ya que $2n+1$ es impar y el signo de $(x-x_0)^{2n+1}$ y $x-x_0$ es el mismo), condición que equivale a decir  que $f$ es creciente en $x_0$.
+
+* supongamos que $f^{(2n+1)}(x_0)<0$. En este caso, como $\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}\right)=\mathrm{signo}\left(\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\right)$, tendremos que $\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}} < 0$, y, como consecuencia $\frac{f(x)-f(x_0)}{(x-x_0)} < 0$ (por la misma razón que antes), condición que equivale a decir que $f$ es decreciente en $x_0$.
+</div>
+
+## Estudio del crecimiento y extremos de una función
+<div class="dem">
+Para la demostración de la segunda parte, consideremos la expresión del polinomio de Taylor de grado $2n$ en $x_0$ junto con la expresión del resto de Lagrange:
+$$
+f(x)=\sum_{k=0}^{2n}\frac{f^{(k)}(x_0)}{k!}\cdot (x-x_0)^k + R_{2n}(x-x_0).
+$$
+Teniendo en cuenta que $f'(x_0)=f''(x_0)=\cdots = f^{2n-1}(x_0)=0$, la expresión anterior queda de la forma siguiente al ser $0$ los sumandos para $k=1,2,\ldots,2n-1$:
+$$
+f(x)=f(x_0)+\frac{f^{(2n)}(x_0)}{(2n)!}\cdot (x-x_0)^{2n} + R_{2n}(x-x_0).
+$$
+Por tanto:
+$$
+\frac{f(x)-f(x_0)}{(x-x_0)^{2n}}=\frac{f^{(2n)}(x_0)}{(2n)!} +\frac{R_{2n}(x-x_0)}{(x-x_0)^{2n}}.
+$$
+</div>
+
+## Estudio del crecimiento y extremos de una función
+<div class="dem">
+Como $R_{2n}(x-x_0)=\frac{f^{(2n+1)}(c)}{(2n+1)!}\cdot (x-x_0)^{2n+1}$, con $c\in <x,x_0>$, se verificará que:
+$$
+\lim_{x\to x_0}\frac{R_{2n}(x-x_0)}{(x-x_0)^{2n}}=\lim_{x\to x_0}\frac{f^{(2n+1)}(c)}{(2n+1)!}\cdot (x-x_0)=0.
+$$
+La condición anterior nos dice que el término dominante en la expresión de $\frac{f(x)-f(x_0)}{(x-x_0)^{2n}}$ es el primero, $\frac{f^{(2n)}(x_0)}{(2n)!}$, ya que el segundo, $\frac{R_{2n}(x-x_0)}{(x-x_0)^{2n}}$, tiende a cero. Por tanto, para $x$ suficientemente próximo a $x_0$, 
+$$
+\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n}}\right)=\mathrm{signo}\left(\frac{f^{(2n)}(x_0)}{(2n)!}\right).
+$$
+</div>
+
+## Estudio del crecimiento y extremos de una función
+<div class="dem">
+Probemos a continuación las tesis de la segunda parte del teorema:
+
+* si $f^{(2n)}(x_0)>0$, como $\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n}}\right)=\mathrm{signo}\left(\frac{f^{(2n)}(x_0)}{(2n)!}\right)$, tendremos que $\frac{f(x)-f(x_0)}{(x-x_0)^{2n}} > 0$, y, como consecuencia $f(x)-f(x_0) > 0$ (ya que $2n$ es par y el signo de $(x-x_0)^{2n}$ siempre es positivo), condición que equivale a decir que $f$ tiene un mínimo en $x_0$.
+
+* si $f^{(2n)}(x_0)<0$, como $\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n}}\right)=\mathrm{signo}\left(\frac{f^{(2n)}(x_0)}{(2n)!}\right)$, tendremos que $\frac{f(x)-f(x_0)}{(x-x_0)^{2n}} < 0$, y, como consecuencia $f(x)-f(x_0) < 0$ (por la misma razón que antes), condición que  equivale a decir que $f$ tiene un máximo en $x_0$.
+</div>
+
+## Estudio de la concavidad y la convexidad de una función
+<l class="definition">Definición.</l> 
+Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Diremos que $f$ es **convexa** si, y sólo si, dados $x_1,x_2\in (a,b)$ y $t\in [0,1]$ entonces 
+$$
+f(t\cdot x_1+(1-t)\cdot x_2)\leq t\cdot f(x_1)+(1-t)\cdot f(x_2).
+$$
+
+<l class="definition">Definición.</l> 
+Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Diremos que $f$ es **cóncava** si, y sólo si, dados $x_1,x_2\in (a,b)$ y $t\in [0,1]$ entonces 
+$$
+f(t\cdot x_1+(1-t)\cdot x_2)\geq t\cdot f(x_1)+(1-t)\cdot f(x_2).
+$$
+
+Diremos que $f$ es **estrictamente convexa** o **estrictamente cóncava** si las desigualdades anteriores son estrictas.
+
+## Estudio de la concavidad y la convexidad de una función
+
+Gráficamente una función es convexa cuando dados dos valores cualesquiera $x_1<x_2$ dentro del dominio de la función, el trozo de la gráfica de la función entre $x_1$ y $x_2$ está **por debajo** de la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$. 
+
+Ver la figura siguiente.
+
+## Estudio de la concavidad y la convexidad de una función
+<div class="center">
+
+```{r, echo=FALSE, label=convexa,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/convexa.png",dpi=1200)
+```
+</div>
+
+## Estudio de la concavidad y la convexidad de una función
+
+Matemáticamente, la condición anterior es equivalente a decir que para todo punto $x$ del intervalo $[x_1,x_2]$, $f(x)\leq \mathrm{imagen\ de\ }x\  \mathrm{por\  la\  recta\  que\  une\  los\  puntos\  }(x_1,f(x_1))\  \mathrm{e}\  (x_2,f(x_2)).$
+
+La ecuación de la recta que une los puntos $(x_1,f(x_1))$ e $(x_2,f(x_2))$ es la siguiente:
+$$
+y=f(x_1)+\frac{f(x_2)-f(x_1)}{x_2-x_1}\cdot (x-x_1).
+$$
+
+## Estudio de la concavidad y la convexidad de una función
+Entonces decir que $f(x)\leq \mathrm{imagen\ de\ }x\  \mathrm{por\  la\  recta\  que\  une\  los\  puntos\  }(x_1,f(x_1))\  \mathrm{e}\  (x_2,f(x_2))$ equivale a la expresión siguiente:
+$$
+f(x)\leq f(x_1)+\frac{f(x_2)-f(x_1)}{x_2-x_1}\cdot (x-x_1).
+$$
+Los puntos $x$ que están en el intervalo $[x_1,x_2]$ se pueden escribir como $t\cdot x_1+(1-t)\cdot x_2$ variando $t$ en el intervalo $[0,1]$. Por ejemplo, para $t=0$, obtenemos el extremo izquierdo $x_1$, para $t=1$, el extremo derecho $x_2$ y para $t=\frac{1}{2}$, el punto medio entre los dos valores $\frac{x_1+x_2}{2}$.
+
+## Estudio de la concavidad y la convexidad de una función
+La condición de concavidad sería la siguiente: dados $x_1< x_2$ y $t\in [0,1]$ se verifica:
+$$
+\begin{array}{rl}
+f(t\cdot x_1+(1-t)\cdot x_2) & \leq f(x_1)+\frac{f(x_2)-f(x_1)}{x_2-x_1}\cdot (t\cdot x_1+(1-t)\cdot x_2-x_1)\\
+f(t\cdot x_1+(1-t)\cdot x_2) & \leq f(x_1)+\frac{f(x_2)-f(x_1)}{x_2-x_1}\cdot (1-t)\cdot (x_2-x_1)\\
+f(t\cdot x_1+(1-t)\cdot x_2) & \leq f(x_1)+(f(x_2)-f(x_1))\cdot (1-t) \\
+f(t\cdot x_1+(1-t)\cdot x_2) & \leq t\cdot f(x_1)+(1-t)\cdot f(x_2).
+\end{array}
+$$
+La última desigualdad es la condición que tenemos en la definición de convexidad.
+
+## Estudio de la concavidad y la convexidad de una función
+La concavidad se razona de la misma manera, sólo se tiene que tener en cuenta que ahora dados dos valores cualesquiera $x_1<x_2$ dentro del dominio de la función, el trozo de la gráfica de la función entre $x_1$ y $x_2$ está **por encima** de la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$.
+
+Ver la figura siguiente.
+
+
+## Estudio de la concavidad y la convexidad de una función
+<div class="center">
+
+```{r, echo=FALSE, label=concava,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/concava.png",dpi=1200)
+```
+</div>
+
+## Estudio de la concavidad y la convexidad de una función
+Un punto de inflexión de una función es un punto donde a la izquierda del mismo la función tiene un tipo de convexidad (cóncava o convexa) y a la derecha, otro tipo de convexidad. Es decir, se pasa de cóncava a convexa o de convexa a cóncava:
+
+<l class="definition">Definición de punto de inflexión. </l>
+Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Diremos que $x_0$ es un punto de inflexión si existe un valor $\delta >0$ tal que 
+ si $x\in (x_0-\delta,x_0)$, $f$ es **concava** (**convexa**) en $x$ y si $x\in (x_0,x_0+\delta)$, $f$ es **convexa** (**concava**) en $x$.
+
+
+## Estudio de la concavidad y la convexidad de una función
+El siguiente resultado caracteriza la concavidad y la convexidad de una función a partir de sus derivadas:
+
+<l class="prop">Teorema.</l>
+Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Supongamos que existe un natural $n$ tal que $f$ es derivable $2n+1$ veces. Entonces:
+
+* si $f''(x_0)=f'''(x_0)=\cdots = f^{(2n-1)}(x_0)=0$ y $f^{(2n)}(x_0)\neq 0$, entonces 
+  * si $f^{(2n)(x_0)>0$, tenemos que $f$ es convexa en $x_0$ y
+  * si $f^{(2n)(x_0)<0$, tenemos que $f$ es cóncava en $x_0$.
+  
+* si $f''(x_0)=f'''(x_0)=\cdots = f^{(2n-1)}(x_0)=0$ y $f^{(2n)}(x_0)= 0$, entonces $f$ tiene un punto de inflexión en $x=x_0$.
