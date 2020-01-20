@@ -120,12 +120,15 @@ Obsérvese que para cada $n \in \mathbb{N}$ se tiene que $\alpha-a_n = \alpha_{n
 **Ejemplo 7.** La sucesión de **Fibonacci** és una sucesión *recurrente* definida a partir de dos números $x_1$ y $x_2$, de la forma
 
 $$
-x_n=x_{n-1}+x +x_{n-2}
+x_n=x_{n-1} +x_{n-2}
 $$
 De tal manera que si $x_1 = x_2=1$, sus términos son:
 $$
 1,1,2,3,5,8,13,21,34, \ldots 
 $$
+**Ejemplo 8.** La sucesión, también recurrente, $x_1=c>0$, x_{n+1}=\dfrac{1}{2}(x_n + \dfrac{a}{x_n})$, donde $a$ es un nombre real positivo.
+
+</div>
 
 ## Sucesiones y límites
 
@@ -133,11 +136,7 @@ $$
 <l class="definition">Definición</l>
 
  
-Dada una sucessión $\{a_n\}_{n \in \mathbb{N}}$ de números reales, el número real $a$ és el **límite de la successión dada** si para cada $\epsilon > 0$ existe un lugar $n_0$, a partir del cual todos los términos de la sucesión distan de $a$ menos que $\epsilon$, es decir, si para todo $n \geq n_0$ es 
-
-$$
-|a_n -a|< \epsilon 
-$$
+Dada una sucessión $\{a_n\}_{n \in \mathbb{N}}$ de números reales, el número real $a$ és el **límite de la successión** dada si para cada $\epsilon > 0$ existe un lugar $n_0$, a partir del cual todos los términos de la sucesión distan de $a$ menos que $\epsilon$, es decir, si para todo $n \geq n_0$ es $|a_n -a|< \epsilon$
 
 Escribiremos 
 
@@ -145,14 +144,19 @@ $$
 \lim_{n \rightarrow \infty} a_{n} = a \quad \text{ o }  \quad a_n \rightarrow a
 $$
 
+Dicho de otra forma, $\lim_{n \rightarrow \infty} a_{n} = a$, si para cada $\epsilon >0$, existe un término de la sucesión $a_{n_0}$ tal que, a partir de el, todos los términos de la sucesión estan en el intervalo $(a-\epsilon, a+\epsilon)$.
 
-
-## Más ejemplos
+## Ejemplos
 
 <div class="example">
 
-**Ejemplo 3**
+**Ejemplo 1.** La propiedad arquimediana implica que
 
 $$
 \lim_{n \rightarrow \infty}\displaystyle\left\{\frac{1}{n}\right\}_{n \in \mathbb{N}} = 0
 $$
+
+
+puesto que para cada $\epsilon >0$, existe un número natural $n_0$ tal que $0<\dfrac{1}{n_0}< \epsilon$, por lo tanto, dado que para todo $n \geq n_0$, es $\dfrac{1}{n} \leq \dfrac{1}{n_0} < \epsilon$.
+
+Así, si $\epsilon = 10^{-5}$, entonces $n_0 = \dfrac{1}{10^{-5}}+1= 10^5 +1$ y, si $n>n_0$, entonces $\dfrac{1}{n} < 10^{-5}$.
