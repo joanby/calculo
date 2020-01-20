@@ -111,6 +111,21 @@ Obsérvese que para cada $n \in \mathbb{N}$ se tiene que $\alpha-a_n = \alpha_{n
 
 </div>
 
+## Ejemplos de sucesiones
+
+<div class="example">
+
+**Ejemplos**
+
+**Ejemplo 7.** La sucesión de **Fibonacci** és una sucesión *recurrente* definida a partir de dos números $x_1$ y $x_2$, de la forma
+
+$$
+x_n=x_{n-1}+x +x_{n-2}
+$$
+De tal manera que si $x_1 = x_2=1$, sus términos son:
+$$
+1,1,2,3,5,8,13,21,34, \ldots 
+$$
 
 ## Sucesiones y límites
 
