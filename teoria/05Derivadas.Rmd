@@ -1868,6 +1868,25 @@ El polinomio de Taylor será:
 $$
 P_4(x)=\frac{1}{\sqrt{3}}-\frac{1}{6 \sqrt{3}}\cdot (x-2)+\frac{1}{24\sqrt{3}}\cdot (x-2)^2-\frac{5}{432\sqrt{3}}\cdot (x-2)^3+\frac{35}{10368\sqrt{3}}\cdot (x-2)^4.
 $$
+Calculemos el valor de $P_4(2.25)$:
+```{python}
+coeficientes=[1.,-1./6,1./24,-5./432,35./10368]
+coeficientes=[(1./math.sqrt(3.))*c for c in coeficientes]
+x=2.25
+y=x-2
+potencias=[1,y,y**2,y**3,y**4]
+import numpy
+numpy.dot(potencias,coeficientes)
+```
+</div>
+
+## Ejemplo
+<div class="example">
+Comprobemos que tiene efectivamente 6 cifras decimales exactas:
+```{python}
+1/math.sqrt(2.25+1.)
+```
+
 </div>
 
 
@@ -1886,3 +1905,120 @@ Sean $f$, $g$ funciones reales de variable real $f,g:(a,b)\longrightarrow\mathbb
 <l class="prop">Proposición (continuación).</l>
 
 * Si $g(x_0)\neq 0$, el cociente $\frac{f}{g}$ admite un polinomio de Taylor en este entorno. Dicho polinomio de Taylor de la función $\frac{f}{g}$ se calcula de realizar la operación $\frac{P_n(x)}{Q_n(x)}$, desarrollando esta expresión en potencias de $(x-x_0)$ y eliminando todos los términos de grado mayor o igual que $n+1$.
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Como ejemplo de aplicación, calculemos el polinomio de Taylor grado $n$ de la función $f(x)=\frac{1}{1-x^2}$ en un punto $x_0$ cualquiera distinto de $\pm 1$ ya que los valores $\pm 1$ no pertenecen al dominio de $f(x)$. Pensad que
+$\displaystyle\lim_{x\to\pm 1}f(x)=\lim_{x\to\pm 1}\frac{1}{1-x^2}=\frac{1}{0}=\infty$.
+
+Podemos descomponer la función $f(x)$ de la forma siguiente:
+$$
+\frac{1}{1-x^2}=\frac{1}{2}\left(\frac{1}{1-x}+\frac{1}{1+x}\right).
+$$
+Para calcular los polinomios de Taylor de las funciones $f_1(x)=\frac{1}{1-x}$ y $f_2(x)=\frac{1}{1+x}$ en un punto cualquiera $x_0$, a los que llamaremos $P_{1,n}(x)$ y $P_{2,n}(x)$, respectivamente, podemos usar la técnica vista en el ejemplo anterior donde generalizábamos la fórmula de Newton.
+
+</div>
+
+## Ejemplo
+<div class="example">
+Escribimos $f_1(x)$ de la forma siguiente: $f_1(x)=-\frac{1}{x-1}$. Entonces el valor de $\alpha$ vale $\alpha=-1$ y $C=-1$. El polinomio $P_{1,n}(x)$ será el siguiente:
+$$
+P_{1,n}(x)=-\sum_{k=0}^n\binom{-1}{k}\cdot (x_0-1)^{-1-k}\cdot (x-x_0)^k.
+$$
+Calculemos el valor de $\binom{-1}{k}$:
+$$
+\binom{-1}{k}=\frac{(-1)\cdot (-2)\cdots (-1-k+1)}{k!}=\frac{(-1)^k\cdot k!}{k!}=(-1)^k.
+$$
+El valor del polinomio $P_{1,n}(x)$ será el siguiente:
+$$
+P_{1,n}(x)=-\sum_{k=0}^n\frac{(-1)^k}{(x_0-1)^{k+1}}\cdot (x-x_0)^k.
+$$
+</div>
+
+## Ejemplo
+<div class="example">
+Usando el mismo razonamiento anterior, podemos obtener el polinomio $P_{2,n}(x)$ donde $\alpha =-1$ y $C=1$:
+$$
+P_{2,n}(x)=\sum_{k=0}^n\frac{(-1)^k}{(x_0+1)^{k+1}}\cdot (x-x_0)^k.
+$$
+Usando que $f(x)=\frac{1}{2}\left(\frac{1}{1-x}+\frac{1}{1+x}\right)$, el polinomio de Taylor de la función $f(x)$ en $x_0$ de grado $n$ será:
+$$
+P_n(x)=\frac{1}{2}\left(P_{1,n}(x)+P_{2,n}(x)\right)=\frac{1}{2}\sum_{k=0}^n (-1)^k\left(\frac{1}{(x_0+1)^{k+1}}-\frac{1}{(x_0-1)^{k+1}}\right)\cdot (x-x_0)^k.
+$$
+
+En el enlace siguiente
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=taylor+series+of+1%2F%281-x%5E2%29+at+x%3Dx0)
+se muestra el desarrollo de Taylor de la función $f(x)=\frac{1}{1-x^2}$ hasta orden $5$, es decir, hasta el polinomio de grado $5$, $P_5(x)$. Si apretáis el botón `More terms` en la sección `Series expansion at x=x0`, `Mathematica` os calculará más términos del desarrollo de Taylor o aumentará el grado del polinomio.
+Comparad los valores que da el `Mathematica` con la solución obtenida.
+En la sección `Series representation at x = x0` da una expresión muy parecida a la obtenida.
+</div>
+
+# Estudio local de una función 
+
+## Introducción
+Dada una función real de variable real $f$, en esta sección vamos a estudiar cómo podemos **representarla gráficamente** estudiando un conjunto de características de la mismas donde la mayoría de ellas están basadas en la **función derivada**.
+
+Antes de realizar dicho estudio necesitamos:
+
+* estudiar el crecimiento, decrecimento y extremos locales de la función $f$ en el caso general, es decir, estudiando las derivadas de orden superior y,
+* estudiar la concavidad y la convexidad de la función $f$ que definiremos más adelante.
+
+## Estudio del crecimiento y extremos de una función
+El teorema siguiente nos dice cuándo una función es creciente o decreciente y nos da condiciones para los extremos a partir de condiciones que tienen que verificar derivadas de orden superior de la función:
+
+<l class="prop">Teorema. </l>
+Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real y sea $x_0\in (a,b)$ un punto interior del dominio de $f$. Supongamos que existe un natural $n$ tal que $f$ es derivable hasta orden $2n+2$ en un entorno de $x_0$. Entonces:
+
+* Si $f'(x_0)=f''(x_0)=\cdots =f^{(2n)}(x_0)=0$ y $f^{(2n+1)}(x_0)\neq 0$, resulta que:
+  * si $f^{(2n+1)}(x_0)>0$, $f$ es creciente en $x_0$,
+  * si $f^{(2n+1)}(x_0)<0$, $f$ es decreciente en $x_0$.
+  
+## Estudio del crecimiento y extremos de una función
+<l class="prop">Teorema (continuación). </l>
+
+* Si $f'(x_0)=f''(x_0)=\cdots =f^{(2n-1)}(x_0)=0$ y $f^{(2n)}(x_0)\neq 0$, resulta que:
+  * si $f^{(2n)}(x_0)>0$, entonces $f$ tiene un mínimo en $x=x_0$,
+  * si $f^{(2n)}(x_0)<0$, entonces $f$ tiene un máximo en $x=x_0$.
+  
+<l class="observ">Observación:</l> si aplicamos la primera parte del teorema anterior para $n=0$, tenemos un resultado conocido: si $f'(x_0)>0$, $f$ es creciente en $x_0$ y si $f'(x_0)<0$, $f$ es decreciente en $x_0$. Por tanto, la primera parte del teorema generaliza dicho resultado.
+
+## Estudio del crecimiento y extremos de una función
+<l class="observ">Observación (continuación):</l> 
+Respecto a la segunda parte del teorema, sabíamos que si $f$ tiene un extremo relativo en $x_0$, entonces $f'(x_0)=0$ y también sabíamos que el recíproco era falso. Esta segunda parte nos dice cuando dicho recíproco es cierto. Si lo aplicamos en el caso sencillo de que $n=1$, nos dice que si $f''(x_0)>0$, entonces $(x_0,f(x_0))$ es un mínimo relativo de $f$ y si $f''(x_0)<0$, entonces $(x_0,f(x_0))$ es un máximo relativo de $f$.
+
+## Estudio del crecimiento y extremos de una función
+<div class="dem">
+**Demostración**
+
+Consideremos la expresión del polinomio de Taylor de grado $2n+1$ en $x_0$ junto con la expresión del resto de Lagrange:
+$$
+f(x)=\sum_{k=0}^{2n+1}\frac{f^{(k)}(x_0)}{k!}\cdot (x-x_0)^k + R_{2n+1}(x-x_0).
+$$
+Teniendo en cuenta que $f'(x_0)=f''(x_0)=\cdots = f^{2n}(x_0)=0$, la expresión anterior queda de la forma siguiente
+al ser $0$ los sumandos para $k=1,2,\ldots,2n$:
+$$
+f(x)=f(x_0)+\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\cdot (x-x_0)^{2n+1} + R_{2n+1}(x-x_0).
+$$
+Por tanto:
+$$
+\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}=\frac{f^{(2n+1)}(x_0)}{(2n+1)!} +\frac{R_{2n+1}(x-x_0)}{(x-x_0)^{2n+1}}.
+$$
+</div>
+
+## Estudio del crecimiento y extremos de una función
+<div class="dem">
+Como $R_{2n+1}(x-x_0)=\frac{f^{(2n+2)}(c)}{(2n+2)!}\cdot (x-x_0)^{2n+2}$, con $c\in <x,x_0>$, se verificará que:
+$$
+\lim_{x\to x_0}\frac{R_{2n+1}(x-x_0)}{(x-x_0)^{2n+1}}=\lim_{x\to x_0}\frac{f^{(2n+2)}(c)}{(2n+2)!}\cdot (x-x_0)=0.
+$$
+La condición anterior nos dice que el término dominante en la expresión de $\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}$ es el primero, $\frac{f^{(2n+1)}(x_0)}{(2n+1)!}$, ya que el segundo, $\frac{R_{2n+1}(x-x_0)}{(x-x_0)^{2n+1}}$, tiende a cero. Por tanto, para $x$ suficientemente próximo a $x_0$, 
+$$
+\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}\right)=\mathrm{signo}\left(\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\right).
+$$
+Probemos a continuación las tesis de la primera parte del teorema:
+
+* supongamos que $f^{(2n+1)}(x_0)>0$. En este caso, como $\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}\right)=\mathrm{signo}\left(\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\right)$, tendremos que $\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}} > 0$, condición que significa que $f$ es creciente en $x_0$.
+
+</div>
