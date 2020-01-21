@@ -242,5 +242,30 @@ Si $a_n \rightarrow a$ y $b_n \rightarrow b$, entonces
 $$|(a_n + b_n) - (a+b)| = |(a_n -a)+(b_n-b)| \leq |a_n -a|+|b_n - b| < \dfrac{\epsilon}{2}+ \dfrac{\epsilon}{2} = \epsilon 
 $$
 
-  2) 
+  2) Por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, está acotada, es decir,existen
+$K>0$ i $n_1 \in \mathbb{N}$ tal que $|a_n| < K$, para todo $n>n_1$.
 
+Sea $M= \max\{|a|, K \}$.
+
+Por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, existe $n_2  \in \mathbb{N}$
+tal que $|a_n-a|< \dfrac{\epsilon}{2K}$ para todo $n>n_2$.
+
+Por ser $\{b_n \}_{n \in \mathbb{N}}$ convergente, existe $n_3 \in \mathbb{N}$
+tal que $|b_n-b|< \dfrac{\epsilon}{2K}$ para todo $n>n_3$.
+
+Ahora, si $n \geq \max \{n_1,n_2,n_3\}$, será $|a_nb_n -ab| = |a_nb_n +a_nb -a_nb-ab| =|a_n(b_n-b) + b(a_n-a)|$
+
+$$
+\leq |a_n||b_n-b| + |b||a_n-a| \leq K\dfrac{\epsilon}{2K} + K\dfrac{\epsilon}{2K} = \epsilon
+$$
+</div>
+
+
+## Límites y operaciones (3).
+
+<div class="dem">
+
+**Demostración**
+  
+  @) Veamos, en primer lugar que si $\{a_n \}_{n \in \mathbb{N}}$
+    
