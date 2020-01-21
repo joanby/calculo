@@ -2169,4 +2169,24 @@ Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $
 
 * si $f''(x_0)=f'''(x_0)=\cdots = f^{(2n)}(x_0)=0$ y $f^{(2n+1)}(x_0)\neq 0$, entonces $f$ tiene un **punto de inflexión** en $x=x_0$.
 
+<l class="observ">Observación.</l> 
+Si aplicamos el teorema anterior para $n=1$, obtenemos que si $f''(x_0)>0$, $f$ es **convexa** en $x_0$ y si $f''(x_0)<0$, $f$ es **cóncava** en $x_0$.
+En caso en que $f''(x_0)=0$ sea $0$ pero $f'''(x_0)\neq 0$, $x_0$ es un **punto de inflexión** de $f$.
 
+## Estudio de la concavidad y la convexidad de una función
+<l class="observ">Observación.</l> 
+Dicho en otros términos, si $f''(x_0)>0$, vimos anteriormente que $f'$ es una función creciente en $x_0$ y si $f''(x_0)<0$, $f'$ es una función decreciente en un entorno de $x_0$.
+
+Es decir que si una función es **convexa**, $f'$ es creciente y si es **cóncava**, $f'$ es decreciente.
+
+En el gráfico siguiente se muestran en verde un conjunto de rectas tangentes a una función convexa en rojo. Fijáos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va aumentando. Es decir, las rectas tangentes cada vez están "más verticales". Se empieza con rectas tangentes de pendiente negativa, se llega a la recta tangente de pendiente cero (el mínimo) y se acaba con rectas tangentes de pendiente positiva.
+
+
+
+## Estudio de la concavidad y la convexidad de una función
+<div class="center">
+
+```{r, echo=FALSE, label=convexa2,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/convexa2.png",dpi=1200)
+```
+</div>
