@@ -238,11 +238,11 @@ Si $a_n \rightarrow a$ y $b_n \rightarrow b$, entonces
 
 **Demostración**
 
-1) Dado un $\epsilon >0$, existen $n_1,n_2 \in \mathbb{N}$, tales que $|a_1 -a|< \dfrac{\epsilon}{2}$ si $n>n_1$ y $|b_n -b|< \dfrac{\epsilon}{2}$ si $n>n_2$. Entonces, si $n \geq \max\{n_1,n_2\}$, tendremos que: 
+  1. Dado un $\epsilon >0$, existen $n_1,n_2 \in \mathbb{N}$, tales que $|a_1 -a|< \dfrac{\epsilon}{2}$ si $n>n_1$ y $|b_n -b|< \dfrac{\epsilon}{2}$ si $n>n_2$. Entonces, si $n \geq \max\{n_1,n_2\}$, tendremos que: 
 $$|(a_n + b_n) - (a+b)| = |(a_n -a)+(b_n-b)| \leq |a_n -a|+|b_n - b| < \dfrac{\epsilon}{2}+ \dfrac{\epsilon}{2} = \epsilon 
 $$
 
-2) Por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, está acotada, es decir,existen
+  2. Por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, está acotada, es decir,existen
 $K>0$ i $n_1 \in \mathbb{N}$ tal que $|a_n| < K$, para todo $n>n_1$.
 
 Sea $M= \max\{|a|, K \}$.
@@ -267,4 +267,12 @@ $$
 
 **Demostración**
   
-3) Veamos, en primer lugar que si $\lim {a_n} =a \neq 0$, entonces existe $n_0 \in \mathbb{N}$ tal que para todo $n >n_0$,  $|a_n| > \dfrac{|a|}{2}$. Dado que $\dfrac{|a|}{2} >0$, existe $n_0 \in \mathbb{N}$ tal que para todo $n >n_0$, es $|a|-|a_n| \leq |a-a_n| < \dfrac{|a|}{2}$, en definitiva es $-|a_n| \leq -|a|+ \dfrac{|a|}{2} = -  \dfrac{|a|}{2}$ . En definitiva hemos visto que $|a_n|> \dfrac{|a|}{2}$ ,para todo  
+  3. Veamos, en primer lugar que si $\lim {a_n} =a \neq 0$, entonces existe $n_0 \in \mathbb{N}$ tal que para todo $n >n_1$,  $|a_n| > \dfrac{|a|}{2}$. Dado que $\dfrac{|a|}{2} >0$, existe $n_0 \in \mathbb{N}$ tal que para todo $n >n_1$, es $|a|-|a_n| \leq |a-a_n| < \dfrac{|a|}{2}$, en definitiva es $-|a_n| < -|a|+ \dfrac{|a|}{2} = -  \dfrac{|a|}{2}$ . En definitiva hemos visto que $|a_n|> \dfrac{|a|}{2}$, para todo $n > n_1$.
+  
+Ahora, si $\lim {a_n} =a \neq 0$, tenemos, por una parte que existen $\epsilon >0$ y $n_2$ tal que para todo $n > n_2$ es $|a_n-a|< \dfrac{ \epsilon}{2} $
+
+Dado que ${a_n}_{n \in \mathbb{N}}$ tiene límite diferente de $0$, existe $n_1$ tal que $|a_n|$ para todo $n>n_1$ tal que $|a_n| > \dfrac{|a|}{2}$, es decir  $\displaystyle{ \left|\dfrac{1}{a_n}\right|} <  \dfrac{2}{|a|}$
+
+Finalmente $\displaystyle{\left|\dfrac{1}{a}-\dfrac{1}{a_n}\right|} = \displaystyle{ \left|\dfrac{a_n -a}{aa_n} \right|} < \dfrac{\epsilon}{2} \dfrac{2|a|}{|a|}$
+
+  4.
