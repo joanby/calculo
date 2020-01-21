@@ -166,11 +166,19 @@ Efectivamente, dado que $n+1 > n$, $\displaystyle{\left| \dfrac{n+1}{n} -1 \righ
 
 Ahora, como sabemos que dado un $\epsilon > 0$  existe $n_0 \in \mathbb{N}$ tal que $\dfrac{1}{n} < \epsilon$ para todo $n\geq n_0$, obtenemos el resultado pedido.
 
-## Observación
+## Límite de una sucesión
 
-<l class="important"> Téngase en cuenta que </l> $\epsilon$ <l class="important"> determina el lugar a partir del cual los términos de la sucesión satisfacen </l> $|a_n - a|<\epsilon$. <l class="important"> Un cambio en </l> $\epsilon$ <l class="important"> sólo cambia el lugar a partir del cual se satisface la desigualdad.</l>
 
-<div class="important"> La existencia o no del límite de una sucesión no depende de los primeros términos de la misma, es decir sólo depende del comportamiento final de los términos de la sucesión. s decir, si se remplazan qualquier número finito de los términos de una sucesión la sucesión resultante seguirá teniendo límite o no.
+
+
+
+## Observaciones
+
+<l class="important">De una sucesión con límite diremos que es **convergente**</l>
+
+<l class="important"> Téngase en cuenta que </l> $\epsilon$ <l class="important"> determina el lugar a partir del cual los términos de la sucesión satisfacen </l> $|a_n - a|<\epsilon$. <l class="important"> Un cambio en </l> $\epsilon$ <l class="important"> sólo cambia el lugar a partir del cual se satisface la desigualdad. Por eso no deben sorprenderse si alguna vez aparece un </l> $\epsilon$ <l class="important"> multiplicado o dividido por una constante. La única restricción es que la expresión resultante en función de </l> $\epsilon$ <l class="important"> pueda hacerse tan pequeña como se desee, es decir que una expresión del tipo </l> $\epsilon +K$ <l class="important"> no sirve.</l>
+
+<div class="important"> La existencia o no del límite de una sucesión no depende de los primeros términos de la misma, es decir sólo depende del comportamiento final de los términos de la sucesión. Es decir, si se remplaza qualquier número finito de términos de una sucesión, la sucesión resultante seguirá teniendo límite o no, según lo tuviera o no la sucesión original.
 
 </div>
 
@@ -190,7 +198,7 @@ $$
 $$
 para todo $n>n1$, para la primera desigualdad y para todo $n>n_2$, para la segunda.
 
-Ahora $|a_1-a_2| = $|a_1-a_n +a_n -a_2| \leq |a_1-a_n| + |a_n -a_2| < \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon$, siempre que $n>n_1$ y $n>n_2. POr lo tanto, para todo $\epsilon >0$ es $|a_1-a_2| <\epsilon$ y esto sólo puede ocurrir si $|a_1-a_2| =0$, es decir si $a_1 = a_2$.
+Ahora $|a_1-a_2| = $|a_1-a_n +a_n -a_2| \leq |a_1-a_n| + |a_n -a_2| < \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon$, siempre que $n>n_1$ y $n>n_2. Por lo tanto, para todo $\epsilon >0$ es $|a_1-a_2| <\epsilon$ y esto sólo puede ocurrir si $|a_1-a_2| =0$, es decir si $a_1 = a_2$.
 
 ## Propiedades de los límites (2).
 
@@ -209,7 +217,7 @@ Con esta elección de $K$, está claro que $|a_n| < K$ para todo $n \in \mathbb{
 
 </div>
 
-Si representamos los números reales mediante límites de sucesiones, para que esta representación sea útil, también debería servir para representar las operaciones entre ellos. De esto se ocupa la proposición siguiente.
+<l class=important>Si representamos los números reales mediante límites de sucesiones, para que esta representación sea útil, también debería servir para representar las operaciones entre ellas. De esto se ocupa la proposición siguiente.</l>
 
 
 ## Operaciones entre sucesiones.
@@ -246,26 +254,34 @@ Si $a_n \rightarrow a$ y $b_n \rightarrow b$, entonces
 $$|(a_n + b_n) - (a+b)| = |(a_n -a)+(b_n-b)| \leq |a_n -a|+|b_n - b| < \dfrac{\epsilon}{2}+ \dfrac{\epsilon}{2} = \epsilon 
 $$
 
-  2. Por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, está acotada, es decir,existen
-$K>0$ i $n_1 \in \mathbb{N}$ tal que $|a_n| < K$, para todo $n>n_1$.
+  2. En Primer lugar, si uno de los dos límites es $0$ entonces el producto también tiene límite $0$, puesto que, por ser $\{a_n\}$ convergente, está acotada, es decir, existe un $K>0$  tal que $|a_n| <K$ para todo $n$ a partir de un cierto $n_1$. Puesto que $\lim b_n =b=0$, tenemos que, para cada, $\epsilon  >0$ existe $n_2$ tal que, para todo $n>n_2$ es $|b_n|<\dfrac{\epsilon}{K}$. Por lo tanto $|a_nb_n - a\cdot0|=|a_n||b_n|<K\dfrac{\epsilon}{K}=\epsilon$.
+  
+</div>
 
+## Límites y operaciones (3)
+
+<div class="dem">
+
+**Demostración**
+
+Si $b\neq 0$, por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, está acotada, es decir,existen $K>0$ i $n_1 \in \mathbb{N}$ tal que $|a_n| < K$, para todo $n>n_1$.
 Sea $M= \max\{|a|, K \}$.
-
 Por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, existe $n_2  \in \mathbb{N}$
 tal que $|a_n-a|< \dfrac{\epsilon}{2K}$ para todo $n>n_2$.
-
 Por ser $\{b_n \}_{n \in \mathbb{N}}$ convergente, existe $n_3 \in \mathbb{N}$
-tal que $|b_n-b|< \dfrac{\epsilon}{2K}$ para todo $n>n_3$.
+tal que $|b_n-b|< \dfrac{\epsilon}{2|b|}$ para todo $n>n_3$.
 
 Ahora, si $n \geq \max \{n_1,n_2,n_3\}$, será $|a_nb_n -ab| = |a_nb_n +a_nb -a_nb-ab| =|a_n(b_n-b) + b(a_n-a)|$
 
 $$
-\leq |a_n||b_n-b| + |b||a_n-a| \leq K\dfrac{\epsilon}{2K} + K\dfrac{\epsilon}{2K} = \epsilon
+\leq |a_n||b_n-b| + |b||a_n-a| \leq K\dfrac{\epsilon}{2K} + |b|\dfrac{\epsilon}{2|b|} = \epsilon
 $$
+que es lo que se quería demostrar.
+
+</div>
 
 
-
-## Límites y operaciones (3).
+## Límites y operaciones (4).
 
 <div class="dem">
 
