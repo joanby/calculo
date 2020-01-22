@@ -1989,6 +1989,11 @@ Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real y sea 
 Respecto a la segunda parte del teorema, sabíamos que si $f$ tiene un extremo relativo en $x_0$, entonces $f'(x_0)=0$ y también sabíamos que el recíproco era falso. Esta segunda parte nos dice cuando dicho recíproco es cierto. Si lo aplicamos en el caso sencillo de que $n=1$, nos dice que si $f''(x_0)>0$, entonces $(x_0,f(x_0))$ es un mínimo relativo de $f$ y si $f''(x_0)<0$, entonces $(x_0,f(x_0))$ es un máximo relativo de $f$.
 
 ## Estudio del crecimiento y extremos de una función
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido técnico. </i>
+</div>
+</div>
 <div class="dem">
 **Demostración**
 
@@ -2001,14 +2006,16 @@ al ser $0$ los sumandos para $k=1,2,\ldots,2n$:
 $$
 f(x)=f(x_0)+\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\cdot (x-x_0)^{2n+1} + R_{2n+1}(x-x_0).
 $$
-Por tanto:
-$$
-\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}=\frac{f^{(2n+1)}(x_0)}{(2n+1)!} +\frac{R_{2n+1}(x-x_0)}{(x-x_0)^{2n+1}}.
-$$
+
 </div>
 
 ## Estudio del crecimiento y extremos de una función
 <div class="dem">
+Por tanto:
+$$
+\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}=\frac{f^{(2n+1)}(x_0)}{(2n+1)!} +\frac{R_{2n+1}(x-x_0)}{(x-x_0)^{2n+1}}.
+$$
+
 Como $R_{2n+1}(x-x_0)=\frac{f^{(2n+2)}(c)}{(2n+2)!}\cdot (x-x_0)^{2n+2}$, con $c\in <x,x_0>$, se verificará que:
 $$
 \lim_{x\to x_0}\frac{R_{2n+1}(x-x_0)}{(x-x_0)^{2n+1}}=\lim_{x\to x_0}\frac{f^{(2n+2)}(c)}{(2n+2)!}\cdot (x-x_0)=0.
@@ -2017,11 +2024,13 @@ La condición anterior nos dice que el término dominante en la expresión de $\
 $$
 \mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}\right)=\mathrm{signo}\left(\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\right).
 $$
-Probemos a continuación las tesis de la primera parte del teorema:
+
 </div>
 
 ## Estudio del crecimiento y extremos de una función
 <div class="dem">
+Probemos a continuación las tesis de la primera parte del teorema:
+
 * supongamos que $f^{(2n+1)}(x_0)>0$. En este caso, como $\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}\right)=\mathrm{signo}\left(\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\right)$, tendremos que $\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}} > 0$, y, como consecuencia $\frac{f(x)-f(x_0)}{(x-x_0)} > 0$ (ya que $2n+1$ es impar y el signo de $(x-x_0)^{2n+1}$ y $x-x_0$ es el mismo), condición que equivale a decir  que $f$ es creciente en $x_0$.
 
 * supongamos que $f^{(2n+1)}(x_0)<0$. En este caso, como $\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}\right)=\mathrm{signo}\left(\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\right)$, tendremos que $\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}} < 0$, y, como consecuencia $\frac{f(x)-f(x_0)}{(x-x_0)} < 0$ (por la misma razón que antes), condición que equivale a decir que $f$ es decreciente en $x_0$.
@@ -2156,22 +2165,14 @@ knitr::include_graphics("Images/inflexion.png",dpi=1200)
 El siguiente resultado caracteriza la concavidad y la convexidad de una función a partir de sus derivadas:
 
 <l class="prop">Teorema.</l>
-Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Supongamos que existe un natural $n$ tal que $f$ es derivable $2n+1$ veces. Entonces:
+Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Supongamos que $f$ es derivable tres veces. Entonces:
 
-* si $f''(x_0)=f'''(x_0)=\cdots = f^{(2n-1)}(x_0)=0$ y $f^{(2n)}(x_0)\neq 0$, entonces 
-  * si $f^{(2n)}(x_0)>0$, tenemos que $f$ es **convexa** en $x_0$ y
-  * si $f^{(2n)}(x_0)<0$, tenemos que $f$ es **cóncava** en $x_0$.
-  
+* si $f''(x_0)\neq 0$, entonces 
+  * si $f''(x_0)>0$, tenemos que $f$ es **convexa** en un entorno de $x_0$ y
+  * si $f''(x_0)<0$, tenemos que $f$ es **cóncava** en un entorno de $x_0$.
 
+* si $f''(x_0)=0$ y $f'''(x_0)\neq 0$, entonces $f$ tiene un **punto de inflexión** en $x=x_0$.
 
-## Estudio de la concavidad y la convexidad de una función
-<l class="prop">Teorema (continuación).</l>
-
-* si $f''(x_0)=f'''(x_0)=\cdots = f^{(2n)}(x_0)=0$ y $f^{(2n+1)}(x_0)\neq 0$, entonces $f$ tiene un **punto de inflexión** en $x=x_0$.
-
-<l class="observ">Observación.</l> 
-Si aplicamos el teorema anterior para $n=1$, obtenemos que si $f''(x_0)>0$, $f$ es **convexa** en $x_0$ y si $f''(x_0)<0$, $f$ es **cóncava** en $x_0$.
-En caso en que $f''(x_0)=0$ sea $0$ pero $f'''(x_0)\neq 0$, $x_0$ es un **punto de inflexión** de $f$.
 
 ## Estudio de la concavidad y la convexidad de una función
 <l class="observ">Observación.</l> 
@@ -2179,7 +2180,7 @@ Dicho en otros términos, si $f''(x_0)>0$, vimos anteriormente que $f'$ es una f
 
 Es decir que si una función es **convexa**, $f'$ es creciente y si es **cóncava**, $f'$ es decreciente.
 
-En el gráfico siguiente se muestran en verde un conjunto de rectas tangentes a una función convexa en rojo. Fijáos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va aumentando. Es decir, las rectas tangentes cada vez están "más verticales". Se empieza con rectas tangentes de pendiente negativa, se llega a la recta tangente de pendiente cero (el mínimo) y se acaba con rectas tangentes de pendiente positiva.
+En el gráfico siguiente se muestran en verde un conjunto de rectas tangentes a una función convexa en rojo. Fijáos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va aumentando. Es decir, las rectas tangentes van "subiendo". Se empieza con rectas tangentes de pendiente negativa, se llega a la recta tangente de pendiente cero (el mínimo) y se acaba con rectas tangentes de pendiente positiva.
 
 
 
@@ -2189,4 +2190,49 @@ En el gráfico siguiente se muestran en verde un conjunto de rectas tangentes a 
 ```{r, echo=FALSE, label=convexa2,fig.cap="",out.width = "650px"}
 knitr::include_graphics("Images/convexa2.png",dpi=1200)
 ```
+</div>
+
+## Estudio de la concavidad y la convexidad de una función
+En el gráfico siguiente hacemos lo mismo pero para una función cóncava. Fijáos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va disminuyendo. Es decir, las rectas tangentes van "bajando". Se empieza con rectas tangentes de pendiente positiva, se llega a la recta tangente de pendiente cero (el máximo) y se acaba con rectas tangentes de pendiente negativa.
+
+## Estudio de la concavidad y la convexidad de una función
+
+<div class="center">
+
+```{r, echo=FALSE, label=concava2,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/concava2.png",dpi=1200)
+```
+</div>
+
+## Estudio de la concavidad y la convexidad de una función
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido técnico. </i>
+</div>
+</div>
+<div class="dem">
+**Demostración del teorema**
+
+Supongamos que $f''(x_0)>0$ y vamos que $f$ que $f$ es **convexa** en un entorno de $x_0$.
+
+Como $f''$ es continua al ser $f$  tres veces derivable y $f''(x_0)>0$, existe un $\delta >0$ tal que $f''(x)>0$, para todo $x\in (x_0-\delta,x_0+\delta)$. Es decir, $f''$ es positiva en un entorno del punto $x_0$.
+
+Sean $x_1$ y $x_2$ dos valores en dicho entorno, $x_1,x_2\in (x_0-\delta,x_0+\delta)$.
+
+Sea $x_3=t\cdot x_1+(1-t)\cdot x_2\in (x_0-\delta,x_0+\delta)$.
+
+
+Aplicando la expresión anterior para $x=x_1,x_2$, obtenemos:
+$$
+\begin{array}{rl}
+f(x_1) & =\displaystyle f(x_0)+f'(x_0)\cdot (x_1-x_0)+\frac{f^{(2n)}(c_1)}{(2n)!}\cdot (x-x_0)^{2n},\\
+f(x_2) & =\displaystyle f(x_0)+f'(x_0)\cdot (x_2-x_0)+\frac{f^{(2n)}(c_2)}{(2n)!}\cdot (x-x_0)^{2n},
+\end{array}
+$$
+con $c_1\in <x_0,x_1>$ y $c_2\in <x_0,x_2>$. Por tanto, $c_1,c_2\in (x_0-\delta,x_0+\delta)$ y, como consecuencia $f^{(2n)}(c_1)>0$ y $f^{(2n)}(c_2)>0$.
+</div>
+
+## Estudio de la concavidad y la convexidad de una función
+<div class="dem">
+Sea $x=t\cdot x_1+(1-t)\cdot x_2\in (x_0-\delta,x_0+\delta)$. 
 </div>
