@@ -2074,6 +2074,32 @@ Probemos a continuación las tesis de la segunda parte del teorema:
 </div>
 
 ## Estudio de la concavidad y la convexidad de una función
+La **concavidad/convexidad** de una función es una propiedad muy útil a la hora de representar dicha función. 
+
+De forma intuitiva, una **función convexa** es aquélla que está por **encima** de las rectas tangentes en sus puntos de su gráfica y una **función cóncava** es aquélla que está por **debajo**.
+
+Ver las dos gráficas siguientes.
+
+## Estudio de la concavidad y la convexidad de una función
+<div class="center">
+
+```{r, echo=FALSE, label=convexa2,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/convexa2.png",dpi=1200)
+```
+</div>
+
+## Estudio de la concavidad y la convexidad de una función
+
+<div class="center">
+
+```{r, echo=FALSE, label=concava2,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/concava2.png",dpi=1200)
+```
+</div>
+
+## Estudio de la concavidad y la convexidad de una función
+Demos a continuación su definición formal:
+
 <l class="definition">Definición.</l> 
 Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Diremos que $f$ es **convexa** si, y sólo si, dados $x_1,x_2\in (a,b)$ y $t\in [0,1]$ entonces 
 $$
@@ -2104,7 +2130,7 @@ knitr::include_graphics("Images/convexa.png",dpi=1200)
 
 ## Estudio de la concavidad y la convexidad de una función
 
-Matemáticamente, la condición anterior es equivalente a decir que para todo punto $x$ del intervalo $[x_1,x_2]$, $f(x)\leq \mathrm{imagen\ de\ }x\  \mathrm{por\  la\  recta\  que\  une\  los\  puntos\  }(x_1,f(x_1))\  \mathrm{e}\  (x_2,f(x_2)).$
+Matemáticamente, la condición anterior es equivalente a decir que para todo punto $x$ del intervalo $[x_1,x_2]$, $f(x)\leq$ imagen de $x$ por la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2)).$
 
 La ecuación de la recta que une los puntos $(x_1,f(x_1))$ e $(x_2,f(x_2))$ es la siguiente:
 $$
@@ -2112,7 +2138,7 @@ y=f(x_1)+\frac{f(x_2)-f(x_1)}{x_2-x_1}\cdot (x-x_1).
 $$
 
 ## Estudio de la concavidad y la convexidad de una función
-Entonces decir que $f(x)\leq \mathrm{imagen\ de\ }x\  \mathrm{por\  la\  recta\  que\  une\  los\  puntos\  }(x_1,f(x_1))\  \mathrm{e}\  (x_2,f(x_2))$ equivale a la expresión siguiente:
+Entonces decir que $f(x)\leq$ imagen de $x$ por la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ equivale a la expresión siguiente:
 $$
 f(x)\leq f(x_1)+\frac{f(x_2)-f(x_1)}{x_2-x_1}\cdot (x-x_1).
 $$
@@ -2142,6 +2168,74 @@ Ver la figura siguiente.
 ```{r, echo=FALSE, label=concava,fig.cap="",out.width = "650px"}
 knitr::include_graphics("Images/concava.png",dpi=1200)
 ```
+</div>
+
+## Estudio de la concavidad y la convexidad de una función
+La proposición siguiente nos dice que la recta tangente en un punto de la gráfica de una función **convexa** (**cóncava**) está por **debajo** (**encima**) de la función tal como enunciamos al introducir los conceptos de **convexidad** y **concavidad**:
+
+<l class="prop">Proposición.</l>
+Sea $f:(a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio donde suponemos que $f$ es derivable en $x_0$. Entonces,
+
+* si $f$ es **convexa** en un entorno de $x_0$, se verifica que $f(x)\geq f(x_0)+f'(x_0)\cdot (x-x_0)$, para todo valor $x$ en dicho entorno.
+* si $f$ es **cóncava** en un entorno de $x_0$, se verifica que $f(x)\leq f(x_0)+f'(x_0)\cdot (x-x_0)$, para todo valor $x$ en dicho entorno.
+
+## Estudio de la concavidad y la convexidad de una función
+<l class="observ">Observación.</l>
+Las condiciones anteriores equivalen a decir que si $f$ es **convexa** en un entorno de $x_0$ y $x$ está en dicho entorno, entonces la imagen de $f$ es $x$ es mayor que la imagen de $x$ por la recta tangente de $f$ en $x_0$.
+Pensad que la recta tangente de $f$ en $x_0$ tiene la ecuación siguiente: $y=f(x_0)+f'(x_0)\cdot (x-x_0)$, por tanto, la imagen de $x$ por la recta tangente será: $f(x_0)+f'(x_0)\cdot (x-x_0)$. 
+
+Entonces afirmar que $f(x)\geq f(x_0)+f'(x_0)\cdot (x-x_0)$ equivale a afirmar que la función en $x$ está por **encima** de la recta tangente en $x$ tal como se observaba en el gráfico anterior.
+
+En el caso de que $f$ sea **cóncava**, la observación anterior es la misma pero en lugar de decir que la función está por encima, hemos de decir que la función está por **debajo**.
+
+## Estudio de la concavidad y la convexidad de una función
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido técnico. </i>
+</div>
+</div>
+<div class="dem">
+**Demostración de la proposición**
+
+Supongamos que $f$ es convexa en $x_0$ en un entorno de $x_0$. Es decir, existe un $\delta >0$ tal que $f$ es convexa en el intervalo $(x_0-\delta,x_0+\delta)$. 
+
+Sean $x\in (x_0-\delta,x_0+\delta)$ un valor en dicho entorno. Por ser $f$ convexa, se verifica la condición siguiente para todo valor $t\in  [0,1]$:
+$$
+f(t\cdot x+(1-t)\cdot x_0)\leq t\cdot f(x)+(1-t)\cdot f(x_0).
+$$
+Operando, obtenemos:
+$$
+\frac{f(x_0+t\cdot (x-x_0))-f(x_0)}{t}\leq f(x)-f(x_0).
+$$
+</div>
+
+## Estudio de la concavidad y la convexidad de una función
+
+<div class="dem">
+Como la desigualdad anterior es cierta para todo valor de $t\in [0,1]$, si hacemos tender $t\to 0$ la parte de la izquierda obtenemos:
+$$
+\begin{array}{rl}
+\displaystyle \lim_{t\to 0}\frac{f(x_0+t\cdot (x-x_0))-f(x_0)}{t} & \leq f(x)-f(x_0)\\
+\displaystyle f'(x_0)\cdot (x-x_0)& \leq f(x)-f(x_0) \\
+\displaystyle f(x_0)+f'(x_0)\cdot (x-x_0) & \leq f(x),
+\end{array}
+$$
+tal como queríamos ver. 
+
+</div>
+
+## Estudio de la concavidad y la convexidad de una función
+
+<div class="dem">
+El cálculo del límite $\displaystyle\lim_{t\to 0}\frac{f(x_0+t\cdot (x-x_0))-f(x_0)}{t}$ se puede realizar usando la regla de L'Hôpital:
+$$
+\begin{array}{rl}
+\displaystyle \lim_{t\to 0}\frac{f(x_0+t\cdot (x-x_0))-f(x_0)}{t}  &\displaystyle =\lim_{t\to 0}\frac{\frac{d}{dt}(f(x_0+t\cdot (x-x_0))-f(x_0))}{1} \\ & \displaystyle = \lim_{t\to 0}f'(x_0+t\cdot (x-x_0))\cdot (x-x_0) =f'(x_0)\cdot (x-x_0),
+\end{array}
+$$
+donde hemos aplicado la regla de la cadena al derivar respecto la variable $t$.
+
+El caso en que $f$ sea **cóncava** se razona de manera similar.
 </div>
 
 ## Estudio de la concavidad y la convexidad de una función
@@ -2180,29 +2274,13 @@ Dicho en otros términos, si $f''(x_0)>0$, vimos anteriormente que $f'$ es una f
 
 Es decir que si una función es **convexa**, $f'$ es creciente y si es **cóncava**, $f'$ es decreciente.
 
-En el gráfico siguiente se muestran en verde un conjunto de rectas tangentes a una función convexa en rojo. Fijáos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va aumentando. Es decir, las rectas tangentes van "subiendo". Se empieza con rectas tangentes de pendiente negativa, se llega a la recta tangente de pendiente cero (el mínimo) y se acaba con rectas tangentes de pendiente positiva.
-
-
-
-## Estudio de la concavidad y la convexidad de una función
-<div class="center">
-
-```{r, echo=FALSE, label=convexa2,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/convexa2.png",dpi=1200)
-```
-</div>
-
-## Estudio de la concavidad y la convexidad de una función
-En el gráfico siguiente hacemos lo mismo pero para una función cóncava. Fijáos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va disminuyendo. Es decir, las rectas tangentes van "bajando". Se empieza con rectas tangentes de pendiente positiva, se llega a la recta tangente de pendiente cero (el máximo) y se acaba con rectas tangentes de pendiente negativa.
-
 ## Estudio de la concavidad y la convexidad de una función
 
-<div class="center">
+En el gráfico que vimos al principio de la sección se muestran en verde un conjunto de rectas tangentes a una función convexa en rojo. Fijáos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va aumentando. Es decir, las rectas tangentes van "subiendo". Se empieza con rectas tangentes de pendiente negativa, se llega a la recta tangente de pendiente cero (el mínimo) y se acaba con rectas tangentes de pendiente positiva.
 
-```{r, echo=FALSE, label=concava2,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/concava2.png",dpi=1200)
-```
-</div>
+En el segundo gráfico que vimos al principio de la sección se muestra lo mismo pero para una función cóncava. Fijáos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va disminuyendo. Es decir, las rectas tangentes van "bajando". Se empieza con rectas tangentes de pendiente positiva, se llega a la recta tangente de pendiente cero (el máximo) y se acaba con rectas tangentes de pendiente negativa.
+
+
 
 ## Estudio de la concavidad y la convexidad de una función
 <div class="box">
