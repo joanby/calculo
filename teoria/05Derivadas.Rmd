@@ -2073,14 +2073,14 @@ Probemos a continuación las tesis de la segunda parte del teorema:
 * si $f^{(2n)}(x_0)<0$, como $\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n}}\right)=\mathrm{signo}\left(\frac{f^{(2n)}(x_0)}{(2n)!}\right)$, tendremos que $\frac{f(x)-f(x_0)}{(x-x_0)^{2n}} < 0$, y, como consecuencia $f(x)-f(x_0) < 0$ (por la misma razón que antes), condición que  equivale a decir que $f$ tiene un máximo en $x_0$.
 </div>
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 La **concavidad/convexidad** de una función es una propiedad muy útil a la hora de representar dicha función. 
 
 De forma intuitiva, una **función convexa** es aquélla que está por **encima** de las rectas tangentes en sus puntos de su gráfica y una **función cóncava** es aquélla que está por **debajo**.
 
 Ver las dos gráficas siguientes.
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 <div class="center">
 
 ```{r, echo=FALSE, label=convexa2,fig.cap="",out.width = "650px"}
@@ -2088,7 +2088,7 @@ knitr::include_graphics("Images/convexa2.png",dpi=1200)
 ```
 </div>
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 
 <div class="center">
 
@@ -2097,7 +2097,7 @@ knitr::include_graphics("Images/concava2.png",dpi=1200)
 ```
 </div>
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 Demos a continuación su definición formal:
 
 <l class="definition">Definición.</l> 
@@ -2114,13 +2114,13 @@ $$
 
 Diremos que $f$ es **estrictamente convexa** o **estrictamente cóncava** si las desigualdades anteriores son estrictas.
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 
 Gráficamente una función es convexa cuando dados dos valores cualesquiera $x_1<x_2$ dentro del dominio de la función, el trozo de la gráfica de la función entre $x_1$ y $x_2$ está **por debajo** de la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$. 
 
 Ver la figura siguiente.
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 <div class="center">
 
 ```{r, echo=FALSE, label=convexa,fig.cap="",out.width = "650px"}
@@ -2128,7 +2128,7 @@ knitr::include_graphics("Images/convexa.png",dpi=1200)
 ```
 </div>
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 
 Matemáticamente, la condición anterior es equivalente a decir que para todo punto $x$ del intervalo $[x_1,x_2]$, $f(x)\leq$ imagen de $x$ por la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2)).$
 
@@ -2137,14 +2137,14 @@ $$
 y=f(x_1)+\frac{f(x_2)-f(x_1)}{x_2-x_1}\cdot (x-x_1).
 $$
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 Entonces decir que $f(x)\leq$ imagen de $x$ por la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ equivale a la expresión siguiente:
 $$
 f(x)\leq f(x_1)+\frac{f(x_2)-f(x_1)}{x_2-x_1}\cdot (x-x_1).
 $$
 Los puntos $x$ que están en el intervalo $[x_1,x_2]$ se pueden escribir como $t\cdot x_1+(1-t)\cdot x_2$ variando $t$ en el intervalo $[0,1]$. Por ejemplo, para $t=0$, obtenemos el extremo izquierdo $x_1$, para $t=1$, el extremo derecho $x_2$ y para $t=\frac{1}{2}$, el punto medio entre los dos valores $\frac{x_1+x_2}{2}$.
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 La condición de concavidad sería la siguiente: dados $x_1< x_2$ y $t\in [0,1]$ se verifica:
 $$
 \begin{array}{rl}
@@ -2156,13 +2156,13 @@ f(t\cdot x_1+(1-t)\cdot x_2) & \leq t\cdot f(x_1)+(1-t)\cdot f(x_2).
 $$
 La última desigualdad es la condición que tenemos en la definición de convexidad.
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 La concavidad se razona de la misma manera, sólo se tiene que tener en cuenta que ahora dados dos valores cualesquiera $x_1<x_2$ dentro del dominio de la función, el trozo de la gráfica de la función entre $x_1$ y $x_2$ está **por encima** de la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$.
 
 Ver la figura siguiente.
 
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 <div class="center">
 
 ```{r, echo=FALSE, label=concava,fig.cap="",out.width = "650px"}
@@ -2170,25 +2170,25 @@ knitr::include_graphics("Images/concava.png",dpi=1200)
 ```
 </div>
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 La proposición siguiente nos dice que la recta tangente en un punto de la gráfica de una función **convexa** (**cóncava**) está por **debajo** (**encima**) de la función tal como enunciamos al introducir los conceptos de **convexidad** y **concavidad**:
 
 <l class="prop">Proposición.</l>
-Sea $f:(a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio donde suponemos que $f$ es derivable en $x_0$. Entonces,
+Sea $f:(a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Suponemos que $f$ es derivable en $(a,b)$ con derivada continua. Entonces,
 
-* si $f$ es **convexa** en un entorno de $x_0$, se verifica que $f(x)\geq f(x_0)+f'(x_0)\cdot (x-x_0)$, para todo valor $x$ en dicho entorno.
-* si $f$ es **cóncava** en un entorno de $x_0$, se verifica que $f(x)\leq f(x_0)+f'(x_0)\cdot (x-x_0)$, para todo valor $x$ en dicho entorno.
+* $f$ es **convexa** en $(a,b)$ si, y sólo si, se verifica que $f(x)\geq f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$, para todo valor $x,\hat{x}\in (a,b)$ en dicho dominio.
+* si $f$ es **cóncava** en $(a,b)$ si, y sólo si, se verifica que $f(x)\leq f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$, para todo valor $x,\hat{x}\in (a,b)$ en dicho dominio.
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 <l class="observ">Observación.</l>
-Las condiciones anteriores equivalen a decir que si $f$ es **convexa** en un entorno de $x_0$ y $x$ está en dicho entorno, entonces la imagen de $f$ es $x$ es mayor que la imagen de $x$ por la recta tangente de $f$ en $x_0$.
-Pensad que la recta tangente de $f$ en $x_0$ tiene la ecuación siguiente: $y=f(x_0)+f'(x_0)\cdot (x-x_0)$, por tanto, la imagen de $x$ por la recta tangente será: $f(x_0)+f'(x_0)\cdot (x-x_0)$. 
+Las condiciones anteriores equivalen a decir que si $f$ es **convexa** en un intervalo $(a,b)$ y $x,\hat{x}\in (a,b)$, entonces la imagen de $f$ en $x$ es mayor que la imagen de $x$ por la recta tangente de $f$ en $\hat{x}$.
+Pensad que la recta tangente de $f$ en $\hat{x}$ tiene la ecuación siguiente: $y=f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$, por tanto, la imagen de $x$ por la recta tangente será: $y=f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$. 
 
-Entonces afirmar que $f(x)\geq f(x_0)+f'(x_0)\cdot (x-x_0)$ equivale a afirmar que la función en $x$ está por **encima** de la recta tangente en $x$ tal como se observaba en el gráfico anterior.
+Entonces afirmar que $f(x)\geq f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$ equivale a afirmar que la función en $x$ está por **encima** de la recta tangente en $\hat{x}$ tal como se observaba en el gráfico anterior.
 
 En el caso de que $f$ sea **cóncava**, la observación anterior es la misma pero en lugar de decir que la función está por encima, hemos de decir que la función está por **debajo**.
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 <div class="box">
 <div class="important">
 <i class="fa fa-dizzy"> Contenido técnico. </i>
@@ -2197,40 +2197,35 @@ En el caso de que $f$ sea **cóncava**, la observación anterior es la misma per
 <div class="dem">
 **Demostración de la proposición**
 
-Supongamos que $f$ es convexa en $x_0$ en un entorno de $x_0$. Es decir, existe un $\delta >0$ tal que $f$ es convexa en el intervalo $(x_0-\delta,x_0+\delta)$. 
+$\Rightarrow$ Supongamos que $f$ es convexa en $(a,b)$.
 
-Sean $x\in (x_0-\delta,x_0+\delta)$ un valor en dicho entorno. Por ser $f$ convexa, se verifica la condición siguiente para todo valor $t\in  [0,1]$:
+Sean $x,\hat{x}\in (a,b)$ dos valores del dominio de $f$. Por ser $f$ convexa, se verifica la condición siguiente para todo valor $t\in  [0,1]$:
 $$
-f(t\cdot x+(1-t)\cdot x_0)\leq t\cdot f(x)+(1-t)\cdot f(x_0).
+f(t\cdot x+(1-t)\cdot \hat{x})\leq t\cdot f(x)+(1-t)\cdot f(\hat{x}).
 $$
 Operando, obtenemos:
 $$
-\frac{f(x_0+t\cdot (x-x_0))-f(x_0)}{t}\leq f(x)-f(x_0).
+\frac{f(\hat{x}+t\cdot (x-\hat{x}))-f(\hat{x})}{t}\leq f(x)-f(\hat{x}).
 $$
 </div>
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 
 <div class="dem">
 Como la desigualdad anterior es cierta para todo valor de $t\in [0,1]$, si hacemos tender $t\to 0$ la parte de la izquierda obtenemos:
 $$
 \begin{array}{rl}
-\displaystyle \lim_{t\to 0}\frac{f(x_0+t\cdot (x-x_0))-f(x_0)}{t} & \leq f(x)-f(x_0)\\
-\displaystyle f'(x_0)\cdot (x-x_0)& \leq f(x)-f(x_0) \\
-\displaystyle f(x_0)+f'(x_0)\cdot (x-x_0) & \leq f(x),
+\displaystyle \lim_{t\to 0}\frac{f(\hat{x}+t\cdot (x-\hat{x}))-f(\hat{x})}{t} & \leq f(x)-f(\hat{x})\\
+\displaystyle f'(\hat{x})\cdot (x-\hat{x})& \leq f(x)-f(\hat{x}) \\
+\displaystyle f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x}) & \leq f(x),
 \end{array}
 $$
 tal como queríamos ver. 
 
-</div>
-
-## Estudio de la concavidad y la convexidad de una función
-
-<div class="dem">
-El cálculo del límite $\displaystyle\lim_{t\to 0}\frac{f(x_0+t\cdot (x-x_0))-f(x_0)}{t}$ se puede realizar usando la regla de L'Hôpital:
+El cálculo del límite $\displaystyle\lim_{t\to 0}\frac{f(\hat{x}+t\cdot (x-\hat{x}))-f(\hat{x})}{t}$ se puede realizar usando la regla de L'Hôpital:
 $$
 \begin{array}{rl}
-\displaystyle \lim_{t\to 0}\frac{f(x_0+t\cdot (x-x_0))-f(x_0)}{t}  &\displaystyle =\lim_{t\to 0}\frac{\frac{d}{dt}(f(x_0+t\cdot (x-x_0))-f(x_0))}{1} \\ & \displaystyle = \lim_{t\to 0}f'(x_0+t\cdot (x-x_0))\cdot (x-x_0) =f'(x_0)\cdot (x-x_0),
+\displaystyle \lim_{t\to 0}\frac{f(\hat{x}+t\cdot (x-\hat{x}))-f(\hat{x})}{t}  &\displaystyle =\lim_{t\to 0}\frac{\frac{d}{dt}(f(\hat{x}+t\cdot (x-\hat{x}))-f(\hat{x}))}{1} \\ & \displaystyle = \lim_{t\to 0}f'(\hat{x}+t\cdot (x-\hat{x}))\cdot (x-\hat{x}) =f'(\hat{x})\cdot (x-\hat{x}),
 \end{array}
 $$
 donde hemos aplicado la regla de la cadena al derivar respecto la variable $t$.
@@ -2238,7 +2233,36 @@ donde hemos aplicado la regla de la cadena al derivar respecto la variable $t$.
 El caso en que $f$ sea **cóncava** se razona de manera similar.
 </div>
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
+
+<div class="dem">
+$\Leftarrow$ Supongamos ahora que $f(x)\geq f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$, para todo valor $x,\hat{x}\in (a,b)$ en dicho dominio.
+
+Sea $t\in [0,1]$. Entonces, como $x_t = t\cdot x+(1-t)\cdot \hat{x}\in (a,b)$ podemos escribir que:
+$$
+\begin{array}{rl}
+f(x) & \geq f(x_t)+f'(x_t)\cdot (x-x_t), \\
+f(\hat{x}) & \geq f(x_t)+f'(x_t)\cdot (\hat{x}-x_t).
+\end{array}
+$$
+Multiplicando la primera desigualdad por $t$ y la segunda por $1-t$ y sumando, obtenemos:
+$$
+t\cdot f(x)+(1-t)\cdot f(\hat{x})\geq f(x_t)+f'(x_t) (t\cdot (x-x_t)+(1-t)\cdot (\hat{x}-x_t)),
+$$
+pero 
+$$
+t\cdot (x-x_t)+(1-t)\cdot (\hat{x}-x_t) = t\cdot x+(1-t)\cdot \hat{x}-t\cdot x_t-(1-t)\cdot x_t=x_t-t\cdot x_t-x_t+t\cdot x_t =0.
+$$
+En conclusión:
+$$
+t\cdot f(x)+(1-t)\cdot f(\hat{x})\geq f(x_t)=f(t\cdot x+(1-t)\cdot \hat{x}),
+$$
+condición que equivale a decir que $f$ es **convexa** en el intervalo $(a,b)$.
+
+La demostración en el caso en que  $f$ sea **cóncava** se razona de manera similar.
+</div>
+
+## Concavidad y convexidad
 Un punto de inflexión de una función es un punto donde a la izquierda del mismo la función tiene un tipo de convexidad (cóncava o convexa) y a la derecha, otro tipo de convexidad. Es decir, se pasa de cóncava a convexa o de convexa a cóncava:
 
 <l class="definition">Definición de punto de inflexión. </l>
@@ -2247,7 +2271,7 @@ Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $
 
 Ver la figura siguiente.
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 <div class="center">
 
 ```{r, echo=FALSE, label=infle,fig.cap="",out.width = "650px"}
@@ -2255,26 +2279,24 @@ knitr::include_graphics("Images/inflexion.png",dpi=1200)
 ```
 </div>
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 El siguiente resultado caracteriza la concavidad y la convexidad de una función a partir de sus derivadas:
 
 <l class="prop">Teorema.</l>
-Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Supongamos que $f$ es derivable tres veces. Entonces:
+Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Supongamos que $f$ es derivable tres veces con $f'''$ continua. Entonces:
 
-* si $f''(x_0)\neq 0$, entonces 
+* si $f''(x_0) \neq0$, entonces 
   * si $f''(x_0)>0$, tenemos que $f$ es **convexa** en un entorno de $x_0$ y
   * si $f''(x_0)<0$, tenemos que $f$ es **cóncava** en un entorno de $x_0$.
 
 * si $f''(x_0)=0$ y $f'''(x_0)\neq 0$, entonces $f$ tiene un **punto de inflexión** en $x=x_0$.
 
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 <l class="observ">Observación.</l> 
-Dicho en otros términos, si $f''(x_0)>0$, vimos anteriormente que $f'$ es una función creciente en $x_0$ y si $f''(x_0)<0$, $f'$ es una función decreciente en un entorno de $x_0$.
+Si aplicamos el teorema anterior, obtenemos que si $f''(x_0)>0$, o, equivalentemente, que $f'$ es una función creciente en $x_0$, $f$ es **convexa** en un entorno de $x_0$ y si $f''(x_0)<0$, o, equivalentemente, que $f'$ es una función decreciente en $x_0$, $f$ es **cóncava** en un entorno de $x_0$.
 
-Es decir que si una función es **convexa**, $f'$ es creciente y si es **cóncava**, $f'$ es decreciente.
-
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 
 En el gráfico que vimos al principio de la sección se muestran en verde un conjunto de rectas tangentes a una función convexa en rojo. Fijáos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va aumentando. Es decir, las rectas tangentes van "subiendo". Se empieza con rectas tangentes de pendiente negativa, se llega a la recta tangente de pendiente cero (el mínimo) y se acaba con rectas tangentes de pendiente positiva.
 
@@ -2282,7 +2304,7 @@ En el segundo gráfico que vimos al principio de la sección se muestra lo mismo
 
 
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 <div class="box">
 <div class="important">
 <i class="fa fa-dizzy"> Contenido técnico. </i>
@@ -2291,26 +2313,66 @@ En el segundo gráfico que vimos al principio de la sección se muestra lo mismo
 <div class="dem">
 **Demostración del teorema**
 
-Supongamos que $f''(x_0)>0$ y vamos que $f$ que $f$ es **convexa** en un entorno de $x_0$.
+Demostremos la primera parte del teorema: supongamos que $f''(x_0)>0$. Vamos a ver que $f$ es **convexa** en un entorno de $x_0$.
 
-Como $f''$ es continua al ser $f$  tres veces derivable y $f''(x_0)>0$, existe un $\delta >0$ tal que $f''(x)>0$, para todo $x\in (x_0-\delta,x_0+\delta)$. Es decir, $f''$ es positiva en un entorno del punto $x_0$.
+Como $f''$ es continua al ser $f$ tres veces derivable y $f''(x_0)>0$, existe un $\delta >0$ tal que $f''(x)>0$, para todo $x\in (x_0-\delta,x_0+\delta)$. Es decir, $f''$ es positiva en un entorno del punto $x_0$.
 
-Sean $x_1$ y $x_2$ dos valores en dicho entorno, $x_1,x_2\in (x_0-\delta,x_0+\delta)$.
-
-Sea $x_3=t\cdot x_1+(1-t)\cdot x_2\in (x_0-\delta,x_0+\delta)$.
-
-
-Aplicando la expresión anterior para $x=x_1,x_2$, obtenemos:
+Sean $x_1,x_2\in (x_0-\delta,x_0+\delta)$. Consideremos el desarrollo de Taylor de $f$ en $x_1$ de grado $1$, es decir, el polinomio de Taylor en $x_1$ de grado $1$ junto con el resto de Lagrange y aplicamos dicho desarrollo a $x_2$
 $$
-\begin{array}{rl}
-f(x_1) & =\displaystyle f(x_0)+f'(x_0)\cdot (x_1-x_0)+\frac{f^{(2n)}(c_1)}{(2n)!}\cdot (x-x_0)^{2n},\\
-f(x_2) & =\displaystyle f(x_0)+f'(x_0)\cdot (x_2-x_0)+\frac{f^{(2n)}(c_2)}{(2n)!}\cdot (x-x_0)^{2n},
-\end{array}
+f(x_2) =f(x_1)+f'(x_1)\cdot (x_2-x_1)+\frac{f''(c_{12})}{2!}\cdot (x_2-x_1)^2,
 $$
-con $c_1\in <x_0,x_1>$ y $c_2\in <x_0,x_2>$. Por tanto, $c_1,c_2\in (x_0-\delta,x_0+\delta)$ y, como consecuencia $f^{(2n)}(c_1)>0$ y $f^{(2n)}(c_2)>0$.
+donde $c_{12}\in <x_1,x_2>\subseteq (x_0-\delta,x_0+\delta)$.
 </div>
 
-## Estudio de la concavidad y la convexidad de una función
+## Concavidad y convexidad
 <div class="dem">
-Sea $x=t\cdot x_1+(1-t)\cdot x_2\in (x_0-\delta,x_0+\delta)$. 
+Como $f''$ es positiva en el intervalo $(x_0-\delta,x_0+\delta)$, tendremos que $f''(c_{12})>0$ y por tanto:
+$$
+f(x_2)\leq f(x_1)+f'(x_1)\cdot (x_2-x_1),
+$$
+ya que $\frac{f''(c_{12})}{2!}\cdot (x_2-x_1)^2>0$.
+
+La condición anterior equivale a afirmar que $f$ en convexa en el entorno de $x_0$, $(x_0-\delta,x_0+\delta)$.
+
+El caso $f''(x_0)<0$ se razona de manera similar.
+
+Demostremos la segunda parte del teorema: supongamos ahora que $f''(x_0)=0$ y $f'''(x_0)\neq 0$.
+
+Supongamos para fijar ideas que $f'''(x_0)>0$ (el caso $f'''(x_0)<0$ se razonaría de forma similar).
+
+Como $\displaystyle f'''(x_0)=\lim_{x\to x_0}\frac{f''(x)-f''(x_0)}{x-x_0}=\lim_{x\to x_0}\frac{f''(x)}{x-x_0}>0$,
+tendremos que existe $\delta >0$ tal que $f''(x)>0$ si $x\in (x_0,x_0+\delta)$ y $f''(x)<0$ si $x\in (x_0-\delta,x_0)$. 
+</div>
+
+## Concavidad y convexidad
+<div class="dem">
+Sean $x_1,x_2\in (x_0-\delta,x_0)$. Si consideramos otra vez el desarrollo de Taylor de $f$ en $x_1$ de grado $1$, y aplicamos dicho desarrollo a $x_2$, obtenemos:
+$$
+f(x_2) =f(x_1)+f'(x_1)\cdot (x_2-x_1)+\frac{f''(c_{12})}{2!}\cdot (x_2-x_1)^2,
+$$
+donde $c_{12}\in <x_1,x_2>\subseteq (x_0-\delta,x_0)$.
+
+Como $f''$ es negativa en el intervalo $(x_0-\delta,x_0)$, tendremos que $f''(c_{12})<0$ y por tanto:
+$$
+f(x_2)\geq f(x_1)+f'(x_1)\cdot (x_2-x_1),
+$$
+ya que $\frac{f''(c_{12})}{2!}\cdot (x_2-x_1)^2<0$. Es decir, $f$ es **cóncava** en el intervalo $(x_0-\delta,x_0)$.
+
+</div>
+
+## Concavidad y convexidad
+<div class="dem">
+Sean ahora $x_1,x_2\in (x_0,x_0+\delta)$. Si consideramos otra vez el desarrollo de Taylor de $f$ en $x_1$ de grado $1$, y aplicamos dicho desarrollo a $x_2$, obtenemos:
+$$
+f(x_2) =f(x_1)+f'(x_1)\cdot (x_2-x_1)+\frac{f''(c_{12})}{2!}\cdot (x_2-x_1)^2,
+$$
+donde $c_{12}\in <x_1,x_2>\subseteq (x_0,x_0+\delta)$.
+
+Como $f''$ es positiva en el intervalo $(x_0,x_0+\delta)$, tendremos que $f''(c_{12})>0$ y por tanto:
+$$
+f(x_2)\leq f(x_1)+f'(x_1)\cdot (x_2-x_1),
+$$
+ya que $\frac{f''(c_{12})}{2!}\cdot (x_2-x_1)^2>0$. Es decir, $f$ es **convexa** en el intervalo $(x_0-\delta,x_0)$.
+
+En resumen, acabamos de demostrar que $x_0$ es un punto de inflexión, tal como queríamos ver.
 </div>
