@@ -2441,3 +2441,87 @@ El conjunto de **puntos de discontinuidad** de una función son aquellos puntos 
 
 En el ejemplo anterior en donde $f(x)=\frac{x^3-3 x+2}{x^3-x}$, no hay **puntos de discontinuidad** ya que los únicos puntos en los que $f$ no es continua serían aquéllos en los que el denominador se anula pero éstos no pertenecen al dominio.
 </div>
+
+## Cálculo de los **puntos de corte**
+Para calcular los **puntos de corte** de una función $f(x)$ se tienen que realizar los procedimientos siguientes:
+
+* **Puntos de corte** con el eje de abscisas o eje X. Hay que resolver la ecuación $f(x)=0$. Sean (en caso que existan) $x_1,\ldots,x_n$ sus soluciones. Entonces los puntos de corte son $(x_1,0),\ldots (x_n,0)$.
+
+* **Punto de corte** con el eje de ordenadas o eje Y. En este caso, sólo hay un punto de corte y es el siguiente: $(0,f(0))$.
+
+## Cálculo de los **puntos de corte** 
+<div class="example">
+**Ejemplo anterior**
+
+Los puntos de corte para la función $f(x)=\frac{x^3-3 x+2}{x^3-x}$ son los siguientes:
+
+* Eje de abscisas o eje X. Hay que resolver la ecuación siguiente: $\frac{x^3-3 x+2}{x^3-x}=0$, que equivale a resolver $x^3-3 x+2=0$. 
+
+Una solución de la ecuación anterior es $x=1$. Para hallar las demás, podemos descomponer el polinomio anterior usando la regla de Ruffini:
+<div class="center">
+| | $1$| $0$| $-3$|$2$|
+|---:|:---:|:---:|:---:|:---:|
+|$1$| |$1$|$1$|$-2$|
+||$1$|$1$|$-2$|$0$|
+</div>
+
+</div>
+
+
+## Cálculo de los **puntos de corte** 
+<div class="example">
+Las demás soluciones serán los ceros del polinomio $x^2+x-2=0$:
+$$
+x=\frac{-1\pm\sqrt{1+4\cdot 2}}{2}=\frac{-1\pm 3}{2}=1,-2.
+$$
+Los puntos de corte con el eje de abscisas o eje $X$ son los siguientes: $(-2,0)$ y $(1,0)$.
+
+* El punto de corte con el eje de ordenadas o eje $Y$ no existe en este caso ya que el valor $x=0$ no es del dominio de la función tal como hemos indicado anteriormente.
+</div>
+
+## Estudio de las **simetrías**
+Averiguar si una función tiene **simetrías** es muy importante de cara a realizar una representación de la misma ya que nos dice cuál es el valor de $f(-x)$ a partir del valor de $f(x)$ para cualquier valor de $x$ de su dominio.
+
+Existen dos tipos de **simetrías**:
+
+* **Simetría** con respecto al eje de ordenadas o eje $Y$:
+
+<l class="definition">Definición de simetría con respecto al eje de ordenadas o eje $Y$.</l> 
+Dada $f$ una función real de variable real con dominio $D$, diremos que tiene simetría con respecto al eje $Y$ si para cualquier valor $x$ del dominio $D$, $-x$ también está en $D$ y además $f(-x)=f(x)$.
+
+## Estudio de las **simetrías**
+* **Simetría** con respecto al origen de coordenadas $(0,0)$:
+
+<l class="definition">Definición de simetría con respecto al origen de coordenadas $(0,0)$.</l> 
+Dada $f$ una función real de variable real con dominio $D$, diremos que tiene simetría con respecto al origen de coordenadas $(0,0)$ si para cualquier valor $x$ del dominio $D$, $-x$ también está en $D$ y además $f(-x)=-f(x)$.
+
+<l class="observ">Observación:</l> la única función real de variable real que tiene los dos tipos de **simetrías** es la función idénticamente nula $f(x)=0$ ya que si suponemos que $f$ tiene los dos tipos de simetrías, tenemos por un lado que $f(-x)=f(x)$ y por otro, que $f(-x)=-f(x)$. 
+
+En resumen $f(x)=-f(x)$, de donde deducimos que $f(x)=0$, para todo valor $x$ de su dominio.
+
+
+## Estudio de las **simetrías**
+<div class="example">
+**Ejemplo anterior**
+
+Veamos si la función $f(x)=\frac{x^3-3 x+2}{x^3-x}$ tiene algún tipo de simetría:
+
+El valor de $f(-x)$ vale:
+$$
+f(-x)=\frac{(-x)^3-3\cdot (-x)+2}{(-x)^3-(-x)}=\frac{-x^3+3x+2}{-x^3+x},
+$$
+valor que, claramente es diferente de $f(x)$ y de $f(-x)$. 
+</div>
+
+
+## Estudio de las **simetrías**
+<div class="example">
+Comprobémoslo con un valor concreto de $x$ de su dominio en `python`, por ejemplo $x=2$:
+```{python}
+def f(x):
+ return((x**3-3*x+2)/(x**3-x))
+ 
+f(2.)
+f(-2.)
+```
+</div>
