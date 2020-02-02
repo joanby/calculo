@@ -2510,7 +2510,7 @@ El valor de $f(-x)$ vale:
 $$
 f(-x)=\frac{(-x)^3-3\cdot (-x)+2}{(-x)^3-(-x)}=\frac{-x^3+3x+2}{-x^3+x},
 $$
-valor que, claramente es diferente de $f(x)$ y de $f(-x)$. 
+valor que, claramente es diferente de $f(x)$ y de $f(-x)$. Por tanto, la función $f(x)$ no presenta ningún tipo de simetría.
 </div>
 
 
@@ -2525,3 +2525,358 @@ f(2.)
 f(-2.)
 ```
 </div>
+
+
+## Cálculo de las posibles **asíntotas**
+
+Una **asíntota** es una recta que se aproxima a la función de forma que la distancia entre dicha función y la **asíntota** tiende a cero en un límite determinado.
+
+Su determinación es clave a la hora de realizar una representación de la función ya que nos dice como se comporta dicha función en lugares "remotos".
+
+Existen tres tipos de **asíntotas**:
+
+## Cálculo de las posibles **asíntotas**
+
+* **Asíntotas horizontales**. Diremos que la recta horizontal $y=b$ para un $b$ determinado es una **asíntota horizontal** de la función $y=f(x)$ si, y sólo si, $\displaystyle\lim_{x\to\pm \infty}f(x)=b$.
+
+Es decir, $\displaystyle\lim_{x\to\pm\infty} (f(x)-b)=0$. En este caso, se dice que la recta $y=b$ es **tangente** a la función $f(x)$ en el infinito. En la gráfica siguiente vemos una función (en verde) que tiene por un lado, cuando $x\to \infty$ la **asíntota horizontal** $y=1$ (en rojo) y, por otro, cuando $x\to -\infty$ la **asíntota horizontal** $y=-1$ (en azul).
+
+
+## Cálculo de las posibles **asíntotas**
+
+<div class="center">
+
+```{r, echo=FALSE, label=ah,fig.cap="",out.width = "750px"}
+knitr::include_graphics("Images/AsintotaHorizontal.png",dpi=1200)
+```
+</div>
+
+
+## Cálculo de las posibles **asíntotas**
+
+* **Asíntotas verticales**. Diremos que la recta vertical $y=a$ para un $a$ determinado es una **asíntota vertical** de la función $y=f(x)$ si, y sólo si, $\displaystyle\lim_{x\to a}f(x)=\pm \infty$.
+
+En este caso, se dice que la recta $x=a$ es **tangente** a la función $f(x)$ en el infinito. En la gráfica siguiente vemos una función (en verde) que tiene una asíntota vertical en $x=1$ (en rojo). Observar que:
+$$
+\lim_{x\to 1^-} f(x)=\infty, \quad\lim_{x\to 1^+} f(x)=-\infty.
+$$
+
+<l class="observ"> Observación: </l> usualmente, los posibles valores de $a$ son puntos que no pertenecen al dominio de la función $f$. Por tanto, los puntos de discontinuidad de la función son buenos candidatos para hallar dichos valores de $a$.
+
+## Cálculo de las posibles **asíntotas**
+
+<div class="center">
+
+```{r, echo=FALSE, label=av,fig.cap="",out.width = "750px"}
+knitr::include_graphics("Images/AsintotaVertical.png",dpi=1200)
+```
+</div>
+
+
+## Cálculo de las posibles **asíntotas**
+
+* **Asíntotas oblicuas**. Diremos que la recta vertical $y=m x+n$ para unos $m$ y $n$ determinados es una **asíntota oblicua** de la función $y=f(x)$ si, y sólo si, $\displaystyle\lim_{x\to \pm\infty}(f(x)-(mx+n))=0$.
+
+En este caso, se dice que la recta $y=m x+n$ es **tangente** a la función $f(x)$ en el infinito. 
+
+## Cálculo de las posibles **asíntotas**
+Para hallar el valor de $m$, observar que el límite $\displaystyle\lim_{x\to\pm\infty}\frac{f(x)-(mx+n)}{x}=0$ ya que el numerador tiende a $0$ y el denominador, a $\pm\infty$, y $\frac{0}{\pm\infty}=0$. Arreglando el límite anterior, obtenemos $m$:
+$$
+\begin{array}{rl}
+\displaystyle \lim_{x\to\pm\infty}\frac{f(x)-(mx+n)}{x} & =0,\displaystyle \ \Leftrightarrow \lim_{x\to\pm\infty}\left(\frac{f(x)}{x}-m-\frac{n}{x}\right)=0,\Leftrightarrow\\  \displaystyle \lim_{x\to\pm\infty}\frac{f(x)}{x}-m & =0,\Leftrightarrow\displaystyle 
+m = \lim_{x\to\pm\infty}\frac{f(x)}{x}.
+\end{array}
+$$
+
+## Cálculo de las posibles **asíntotas**
+Para hallar el valor de $n$, basta usar que $\displaystyle\lim_{x\to \pm\infty}(f(x)-(mx+n))=0$ y el valor de $m$ hallado anteriormente:
+$$
+\begin{array}{rl}
+\displaystyle \lim_{x\to \pm\infty}(f(x)-(mx+n)) & =0,\displaystyle \Leftrightarrow \lim_{x\to \pm\infty}(f(x)-mx)-n=0,\Leftrightarrow\\  n & =\displaystyle\lim_{x\to \pm\infty}(f(x)-mx).
+\end{array}
+$$
+
+
+
+En la gráfica siguiente vemos una función (en verde) que tiene la asíntota oblicua en $y=x$ (en rojo). En este caso, tendremos que los valores de $m$ y $n$ serán $m=1$ y $n=0$. Fijarse que:
+$$
+\lim_{x\to\infty} (f(x)-x)=0,\quad \lim_{x\to -\infty} (f(x)-x)=0.
+$$
+
+
+## Cálculo de las posibles **asíntotas**
+
+<div class="center">
+
+```{r, echo=FALSE, label=ao,fig.cap="",out.width = "750px"}
+knitr::include_graphics("Images/AsintotaOblicua.png",dpi=1200)
+```
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo anterior**
+
+Hallemos las posibles asíntotas para la función $f(x)=\frac{x^3-3 x+2}{x^3-x}$:
+
+* Asíntotas horizontales. Para hallar las **asíntotas horizontales**, tenemos que hacer el límite de la función cuando el valor de $x$ tiende a $\pm\infty$:
+$$
+\lim_{x\to\pm \infty} f(x)=\lim_{x\to\pm \infty} \frac{x^3-3 x+2}{x^3-x}=1.
+$$
+Entoces la recta horizontal $y=1$ sería una **asíntota horizontal** de nuestra función.
+
+* Asíntotas verticales. Como ya hemos indicado anteriormente, unos buenos candidatos para las posibles **asíntotas verticales** $x=a$ serían los valores de $a$ correspondientes a los puntos de discontinuidad. Recordemos que tenemos tres puntos de discontinuidad: $-1,0,1$. Probemos con cada uno de ellos haciendo el límite correspondiente:
+</div>
+
+## Ejemplo
+<div class="example">
+  * $x=-1$: $\displaystyle\lim_{x\to -1}f(x)=\lim_{x\to -1}\frac{x^3-3 x+2}{x^3-x}=\frac{`r (-1)^3-3*(-1)+2`}{`r (-1)^3-(-1)`}=\infty.$ De hecho para ser más explícitos, tendríamos que escribir:
+$$
+\lim_{x\to -1^-}\frac{x^3-3 x+2}{x^3-x}=-\infty,\quad \lim_{x\to -1^+}\frac{x^3-3 x+2}{x^3-x}=+\infty,
+$$
+ya que si $x\to -1^-$, significa que $x<-1$ pero está cerca de $-1$. Veamos cuál es su signo para el valor $x=-1.001$ por ejemplo:
+```{python}
+f(-1.001)
+```
+Es decir, su valor tiende a $-\infty$. 
+
+</div>
+
+## Ejemplo
+<div class="example">
+Si hacemos $x\to -1^+$, significa que $x>-1$ pero está cerca de $-1$. Veamos cuál es su signo para el valor $x=-0.999$ por ejemplo:
+```{python}
+f(-0.999)
+```
+Es decir, su valor tiende a $+\infty$ tal como hemos indicado anteriormente. Por tanto, la recta vertical $x=-1$ es una **asíntota vertical**.
+
+  * $x=0$: $\displaystyle\lim_{x\to 0}f(x)=\lim_{x\to 0}\frac{x^3-3 x+2}{x^3-x}=\frac{`r (0)^3-3*(0)+2`}{`r (0)^3-(0)`}=\infty.$ De hecho para ser más explícitos, tendríamos que escribir:
+$$
+\lim_{x\to 0^-}\frac{x^3-3 x+2}{x^3-x}=+\infty,\quad \lim_{x\to 0^+}\frac{x^3-3 x+2}{x^3-x}=-\infty,
+$$
+Por tanto, la recta vertical $x=0$ es una **asíntota vertical**.
+
+</div>
+
+## Ejemplo
+<div class="example">
+ * $x=1$: $\displaystyle\lim_{x\to 1}f(x)=\lim_{x\to 1}\frac{x^3-3 x+2}{x^3-x}=\frac{`r (1)^3-3*(1)+2`}{`r (1)^3-(1)`}.$ 
+ Como hemos obtenido una indeterminación, la resolvemos descomponiendo los polinomios del numerador y del denominador:
+$$
+\lim_{x\to 1}\frac{x^3-3 x+2}{x^3-x} =\lim_{x\to 1}\frac{(x^2+x-2)\cdot (x-1)}{x\cdot (x-1)\cdot (x+1)}= \lim_{x\to 1}\frac{(x^2+x-2)}{x\cdot (x+1)}=\frac{`r (1+1-2)`}{`r (1+1)`}=0.
+$$
+Entonces, la recta $x=1$ no sería una **asíntota vertical**.
+
+* Asíntotas oblicuas. Existe un "rumor" sin justificar que dice que si una función tiene **asíntotas horizontales**, entonces no tiene **asíntotas oblicuas**. La razón de dicho "rumor" es que si $\displaystyle\lim_{x\to \pm \infty}f(x)=b\neq 0$, entonces el valor de la pendiente $m$ en la posible **asíntota oblicua** sería $0$, siendo dicha asíntota una **asíntota horizontal** ya que:
+$\displaystyle m=\lim_{x\to\pm\infty}\frac{f(x)}{x}=\frac{b}{\pm\infty}=0.$
+Dicho razonamiento, aunque es válido la mayoría de las veces, tiene un pequeño problema en su línea argumental. No podemos asegurar que exista una función $f(x)$ donde por ejemplo pase lo siguiente: $\displaystyle\lim_{x\to +\infty}=b$ pero $\displaystyle\lim_{x\to -\infty}\frac{f(x)}{x}=m\neq 0$. Es decir, que $f(x)$ tiene una **asíntota horizontal** cuando $x$ tiende a $+\infty$ y una **asíntota oblicua** cuando $x\to -\infty$.
+</div>
+
+## Ejemplo
+<div class="example">
+En resumen, aunque la mayoría de las veces no hace falta comprobar que haya **asíntotas oblicuas** si hay **horizontales**, hay que hacer la comprobación correspondiente.
+
+En nuestro ejemplo, no hay **asíntotas oblicuas** ya que la pendiente correspondiente es $0$:
+$$
+m=\lim_{x\to\pm\infty}\frac{f(x)}{x}=\lim_{x\to\pm\infty}\frac{x^3-3 x+2}{x\cdot (x^3-x)}=\lim_{x\to\pm\infty}\frac{x^3-3 x+2}{x^4-x^2}=0.
+$$
+
+</div>
+
+## Estudio del crecimento de la función
+
+Para realizar una representación aproximada de una función, sólo es necesario conocer dos propiedades fundamentales: sus **asíntotas** y sus **extremos relativos**, es decir, sus **máximos y mínimos relativos.**
+
+Seguidamente, para confirmar que nuestro esbozo es correcto, podemos determinar sus **intervalos de crecimiento y decrecimiento** de la misma y comprobar que los resultados obtenidos son los observados visualmente.
+
+Vamos a dar un método práctico para realizar las dos tareas mencionadas anteriormente: el cálculo de sus **extremos relativos** y los **intervalos de crecimiento y decrecimiento.**
+
+Recordemos que una función **crece** en una región determinada de $\mathbb{R}$ si su derivada es **positiva** y **decrece** si su derivada es **negativa**.
+
+
+
+## Estudio del crecimento de la función
+
+Recordemos también que los **extremos relativos** de la función deben verificar que su **derivada** debe ser nula. El primer paso será, pues, calcular los ceros de la ecuación $f'(x)=0$ calculando así los candidatos a **extremos relativos**.
+
+Sean, pues, $x_1,\ldots,x_n$ los ceros de la ecuación $f'(x)=0$ o los candidatos a **extremos relativos**.
+
+Sean tambien $y_1,\ldots, y_k$ los **puntos de discontinuidad** de la función $f(x)$.
+
+Considero el conjunto unión de los conjuntos anteriores $\{x_1,\ldots,x_n\}\cup \{y_1,\ldots,y_k\}$ y nombro $z_i$, $i=1,\ldots,k+n$ a sus elementos suponiendo éstos por orden creciente:
+$$
+\{x_1,\ldots,x_n\}\cup \{y_1,\ldots,y_k\} =\{z_1 < \cdots <z_{k+n}\}.
+$$
+
+## Estudio del crecimento de la función
+
+A continuación construyo la tabla siguiente:
+
+<div class="center">
+|$x$| $-\infty$| | $z_1$| |$z_2$|$\ldots$| |$z_{k+n}$| |$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|$y'$| |$\pm$| | $\pm$| |$\ldots$|$\pm$| |$\pm$| |
+|$y$| |$\nearrow \searrow$| |$\nearrow \searrow$| |$\ldots$|$\nearrow \searrow$| |$\nearrow \searrow$| |
+</div>
+
+En la segunda fila indicamos el signo de la derivada en los intervalos correspondientes, esto es, escribimos $+$ si el signo de la derivada en el intervalo $(-\infty,z_1)$ es positivo y escribimos $-$ si es negativo. Y lo mismo para los intervalos siguientes $(z_1,z_2)$ hasta llegar a $(z_{k+n},\infty)$. Para saber el signo de la derivada en un intervalo cualquiera, digamos $(z_{i-1},z_i)$, elegimos un valor $z$ que pertenezca a dicho intervalo, por ejemplo su punto medio $z=\frac{z_{i-1}+z_i}{2}$ y calculamos $f'(z)$ para saber su signo.
+
+
+## Estudio del crecimento de la función
+
+En la tercera fila, dependiendo del signo de la derivada, indicamos el comportamiento de la función escribiendo el signo $\nearrow$ si la derivada es positiva $+$ y escribiendo el signo $\searrow$ si la derivada es negativa $-$.
+
+De esta manera si en un valor $z_i$, a la izquierda del mismo aparece el signo $\nearrow$ y a la derecha, el signo $\searrow$ observándose $\nearrow \searrow$ sabemos que en $z_i$ hay un **máximo relativo**. Si en cambio es al revés, es decir, a la izquierda del mismo aparece el signo $\searrow$ y a la derecha, el signo $\nearrow$ observándose $\searrow \nearrow$, sabemos que en $z_i$ hay un **mínimo relativo.**
+
+Los **intervalos de crecimiento** de la función $f$ serán aquéllos en los que aparece el signo $\nearrow$ y los **intervalos de decrecimiento** serán aquéllos en los que aparece el signo $\searrow$.
+
+
+## Ejemplo
+<div class="example">
+**Ejemplo anterior**
+
+Para hallar los **extremos relativos** y los **intervalos de crecimiento y decrecimiento** de la función $\frac{x^3-3 x+2}{x^3-x}$, tal como hemos indicado, resolvemos la ecuación $f'(x)=0$.
+
+En primer lugar, calculemos la función derivada $f'(x)$:
+$$
+\begin{array}{rl}
+f'(x) & =\frac{(3x^2-3)\cdot (x^3-x)-(3x^2-1)\cdot (x^3-3x+2)}{(x^3-x)^2}=\frac{3 x^5-6 x^3+3 x-(3 x^5-10 x^3+6 x^2+3 x-2)}{(x^3-x)^2}\\
+& = \frac{4 x^3-6 x^2+2}{(x^3-x)^2}=\frac{(4x+2)\cdot (x-1)^2}{x^2\cdot (x-1)^2\cdot (x+1)^2}=\frac{4x+2}{x^2\cdot (x+1)^2}.
+\end{array}
+$$
+
+Para resolver la ecuación $f'(x)=0$, hemos de igualar a cero el numerador de la expresión anterior $4x+2=0$, obteniendo $x=-\frac{2}{4}=-\frac{1}{2}$.
+</div>
+
+## Ejemplo
+<div class="example">
+Recordemos que los puntos de discontinuidad de la función $f$ eran $-1,0,1$. El conjunto de los $z_i$ será en nuestro caso: $\left\{-1,-\frac{1}{2},0,1\right\}$.
+
+A continuación construimos la tabla anterior para calcular los **intervalos de crecimiento y decrecimiento** y los **máximos y mínimos relativos** de la función:
+
+<div class="center">
+|$x$| $-\infty$| | $-1$| |$-\frac{1}{2}$| |$0$| |$1$| |$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|$y'$| |$-$| | $-$| |$+$| |$+$| |$+$|
+|$y$| |$\searrow$| |$\searrow$| |$\nearrow$| |$\nearrow$| |$\nearrow$| |
+</div>
+</div>
+
+## Ejemplo
+<div class="example">
+Observando la tabla anterior, concluimos que 
+
+* hay un **mínimo relativo** en el punto $\left(-\frac{1}{2},f\left(-\frac{1}{2}\right)\right)=\left(-\frac{1}{2},9\right)$,
+* la función **crece** en la siguiente región de $\mathbb{R}$: $\left(-\frac{1}{2},0\right)\cup (0,1)\cup (1,\infty)$ y,
+* la función **decrece** en la siguiente región de $\mathbb{R}$: $(-\infty,-1)\cup \left(-1,-\frac{1}{2}\right)$.
+</div>
+
+
+## Concavidad y convexidad
+Saber en qué regiones una función es **cóncava o convexa**, ayuda de forma significativa a su representación.
+
+Vamos a dar un método parecido al estudio del **crecimiento y decrecimiento** de una función cambiando los papeles de $f'$ por $f''$.
+
+Recordemos que una función es **convexa** en una región de $\mathbb{R}$ si su derivada segunda es **positiva** y es **convexa**, si es **negativa**.
+
+Recordemos también que los **puntos de inflexión** deben verificar que su derivada segunda debe ser nula. El primer paso será, pues, calcular los ceros de la ecuación $f''(x)=0$ calculando de esta manera los candidatos a **puntos de inflexión**.
+
+## Concavidad y convexidad
+
+Sean $\hat{x}_1,\ldots,\hat{x}_m$ los ceros de la ecuación $f''(x)=0$ o los candidatos a los **puntos de inflexión**.
+
+Recordemos que $y_1,\ldots,y_k$ eran los **puntos de discontinuidad** de la función $f(x)$.
+
+Igual que antes, consideramos el conjunto unión de los conjuntos $\{\hat{x}_1,\ldots,\hat{x}_m\}\cup \{y_1,\ldots,y_k\}$ y nombramos $\hat{z}_1,\ldots,\hat{z}_{k+m}$ a sus elementos suponiendo éstos por orden creciente:
+$$
+\{\hat{x}_1,\ldots,\hat{x}_m\}\cup \{y_1,\ldots,y_k\}=\{\hat{z}_1 < \cdots <\hat{z}_{k+m}\}.
+$$
+
+
+## Concavidad y convexidad
+A continuación construyo la tabla siguiente:
+
+<div class="center">
+|$x$| $-\infty$| | $\hat{z}_1$| |$\hat{z}_2$|$\ldots$| |$\hat{z}_{k+m}$| |$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|$y''$| |$\pm$| | $\pm$| |$\ldots$|$\pm$| |$\pm$| |
+|$y$| |$\bigcup \bigcap$| |$\bigcup \bigcap$| |$\ldots$|$\bigcup \bigcap$| |$\bigcup \bigcap$| |
+</div>
+
+
+En la segunda fila indicamos el signo de la derivada segunda en los intervalos correspondientes, esto es, escribimos $+$ si el signo de la derivada en el intervalo $(-\infty,\hat{z}_1)$ es positivo y escribimos $-$ si es negativo. Y lo mismo para los intervalos siguientes $(\hat{z}_1,\hat{z}_2)$ hasta llegar a $(\hat{z}_{k+m},\infty)$. Para saber el signo de la derivada en un intervalo cualquiera, digamos $(z_{i-1},z_i)$, elegimos un valor $z$ que pertenezca a dicho intervalo, por ejemplo su punto medio $z=\frac{z_{i-1}+z_i}{2}$ y calculamos $f''(z)$ para saber su signo.
+
+
+## Concavidad y convexidad
+
+En la tercera fila, dependiendo del signo de la derivada segunda, indicamos el comportamiento de la función escribiendo el signo $\bigcup$ si la derivada segunda es positiva $+$ y escribiendo el signo $\bigcap$ si la derivada segunda es negativa $-$.
+
+De esta manera si en un valor $\hat{z}_i$, a la izquierda del mismo aparece el signo $\bigcup$ y a la derecha, el signo $\bigcap$, o viceversa observándose $\bigcup \bigcap$, o $\bigcap \bigcup$ sabemos que en $z_i$ hay un **punto de inflexión**.
+
+Los **intervalos de convexidad** de la función $f$ serán aquéllos en los que aparece el signo $\bigcup$ y los **intervalos de concavidad** serán aquéllos en los que aparece el signo $\bigcap$.
+
+## Ejemplo
+<div class="example">
+**Ejemplo anterior**
+
+Para hallar los **puntos de inflexión** y los **intervalos de convexidad y concavidad** de la función $\frac{x^3-3 x+2}{x^3-x}$, tal como hemos indicado, resolvemos la ecuación $f''(x)=0$.
+
+En primer lugar, calculemos la función derivada $f''(x)$:
+$$
+\begin{array}{rl}
+f''(x) &  = \frac{4\cdot x^2\cdot (x+1)^2-(4x+2)\cdot (2x\cdot (x+1)^2+2x^2\cdot (x+1))}{x^4\cdot (x+1)^4}\\ & =\frac{4\cdot x\cdot (x+1)-(4x+2)\cdot (2 (x+1)+2x)}{x^3\cdot (x+1)^3}=\frac{-4(3 x^2+3 x+1)}{x^3\cdot (x+1)^3}.
+\end{array}
+$$
+Para resolver la ecuación $f''(x)=0$, hemos de igualar a cero el numerador de la expresión anterior $3 x^2+3 x+1=0$, obteniendo $x=\frac{-3\pm\sqrt{9-3\cdot 4}}{6}=\frac{-3\pm\sqrt{-3}}{6}$. No tiene solución, por tanto, la función no tiene **puntos de inflexión**.
+</div>
+
+
+## Ejemplo
+<div class="example">
+Recordemos que los puntos de discontinuidad de la función $f$ eran $-1,0,1$. El conjunto de los $\hat{z}_i$ será en nuestro caso: $\left\{-1,0,1\right\}$.
+
+A continuación construimos la tabla anterior para calcular los **intervalos de convexidad y concavidad** de la función:
+
+<div class="center">
+|$x$| $-\infty$| | $-1$| |$0$| |$1$| |$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|$y''$| |$-$| | $+$| |$-$| |$-$| |
+|$y$| |$\bigcap$| |$\bigcup$| |$\bigcap$| |$\bigcap$| |
+</div>
+
+Observando la tabla anterior, concluimos que 
+
+* la función es **convexa** en la siguiente región de $\mathbb{R}$: $(-1,0)$ y
+* la función es **cóncava** en la siguiente región de $\mathbb{R}$: $(-\infty,-1)\cup (0,1)\cup (1,\infty)$.
+</div>
+
+
+
+
+## Ejemplo
+<div class="example">
+Las propiedades que hemos estado hallando que en forma de resumen son las siguientes:
+
+* Corte con los ejes: $(-2,0)$ y $(1,0)$.
+* Asíntotas: $y=1$, $x=-1$ y $x=0$.
+* Mínimo en $\left(-\frac{1}{2},9\right)$, $f$ crece en $\left(-\frac{1}{2},0\right)\cup (0,1)\cup (1,\infty)$ y decrece en $(-\infty,-1)\cup \left(-1,-\frac{1}{2}\right)$.
+* No tiene puntos de inflexión, es convexa en $(-1,0)$ y cóncava en $(-\infty,-1)\cup (0,1)\cup (1,\infty)$.
+
+En el gráfico siguiente hemos indicado las asíntotas (en rojo), los puntos de corte y el mínimo $(\bigcup)$. ¿Seríais capaces de acabar la representación gráfica?
+
+Si queréis ver el gráfico de la función que hemos desarrollado en `Wolfram Alpha`, id al enlace siguiente:
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=plot+of+%28x%5E3+-+3+x+%2B+2%29%2F%28x%5E3+-+x%29%2C+x+between+-8+and+8+and+y+between+-20+and+20). 
+</div>
+
+## Ejemplo
+<div class="example">
+<div class="center">
+
+```{r, echo=FALSE, label=repre,fig.cap="",out.width = "650px"}
+knitr::include_graphics("Images/Representacion.png",dpi=1200)
+```
+</div>
+
+</div>
+
+
