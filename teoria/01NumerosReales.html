@@ -3373,7 +3373,7 @@ a=bq+r
 <li><p>Dado que para cada \(a \in \mathbb{R}, \quad a\neq 0\) existe \(\dfrac{1}{a}\), el inverso de \(a\). Entonces para cada \(n,m \in \mathbb{Z}\), con \(m \neq 0\), será \(\dfrac{n}{m} \in \mathbb{R}\), es decir, \(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}\).</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>El orden de los números reales: \(\mathbb{R}\)</h2></hgroup><article  id="el-orden-de-los-números-reales-mathbbr">
+</article></slide><slide class=""><hgroup><h2>El orden en los números reales: \(\mathbb{R}\)</h2></hgroup><article  id="el-orden-en-los-números-reales-mathbbr">
 
 <p>Para definir una relación de orden entre los números reales, supondremos que existe un subconjunto \(P\) de números reales tal que:</p>
 
@@ -3392,7 +3392,7 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <li><p>\(P \cdot P \subset P\), el producto de dos números de \(P\) tam,bién es un número de \(P\)</p></li>
 </ol>
 
-</article></slide><slide class=""><hgroup><h2>El orden de los números reales</h2></hgroup><article  id="el-orden-de-los-números-reales">
+</article></slide><slide class=""><hgroup><h2>El orden en los números reales</h2></hgroup><article  id="el-orden-en-los-números-reales">
 
 <p><l class="definition">Definición</l></p>
 
@@ -3522,6 +3522,18 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <li>\(|a| = |a-b+b| \leq |a-b| + |b|\), es decir \(|a|-|b| \leq |a-b|\). Análogamente comprobaríamos que \(|b|-|a| \leq |b-a|\).</li>
 </ul></div>
 
+</article></slide><slide class=""><hgroup><h2>Observación importante sobre el valor absoluto</h2></hgroup><article  id="observación-importante-sobre-el-valor-absoluto">
+
+<p>A menudo usaremos desigualdades del estilo \[
+|x-a|\leq \epsilon
+\] De acuerdo con la definición de valor absoluto, esta desigualdad equivale a las dos desigualdades \[
+-\epsilon \leq a-x \leq \epsilon
+\] y también</p>
+
+<p>\[
+x-\epsilon \leq a \leq x+ \epsilon
+\]</p>
+
 </article></slide><slide class=""><hgroup><h2>Conjuntos acotados</h2></hgroup><article  id="conjuntos-acotados">
 
 <p><l class="definition">Definición</l></p>
@@ -3563,7 +3575,7 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <p>El supremo (el ínfimo) de un conjunto, si existe, és único.</p>
 
 <div class="dem">
-<p><strong>Demostración:</strong> Supongamos que \(s_1\) y \(s_2\) son dos supremos del conjunto \(A\). Entonces, dado que \(s_1\) es supremo, es una cota superior, por lo tanto debe ser mayor que el supremo \(s_2\), es decir \(s_1 &gt; s_2\). Por otro lado, dado que \(s_2\) es supremo, es cota superior, por lo tanto debe ser mayor que el supremo \(s_1\), es decir \(s_2&gt;s_1\). En definitiva, debe ser \(s_1=s_2\).</p></div>
+<p><strong>Demostración:</strong> Supongamos que \(s_1\) y \(s_2\) son dos supremos del conjunto \(A\). Entonces, dado que \(s_1\) es supremo, es una cota superior, por lo tanto debe ser mayor que el supremo \(s_2\), es decir \(s_1 &gt; s_2\). Por otro lado, dado que \(s_2\) es supremo, es cota superior, por lo tanto debe ser mayor que el supremo \(s_1\), es decir \(s_2 &gt; s_1\). En definitiva, debe ser \(s_1=s_2\).</p></div>
 
 <p><l class="prop"><strong>Proposición</strong></l></p>
 
@@ -3583,7 +3595,7 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <div class="dem">
 <p><strong>Demostración:</strong></p>
 
-<p>Supongamos que \(s\) es una cota superior que satisface la propiedad enunciada, entonces si \(a&lt;s\), tomando \(\epsilon = s-a\), entonces \(\epsilon &gt;0\), por lo que existe un número \(a_{\epsilon}\) tal que $a=s-&lt; s_{}, es decir que \(a\) no es cota superior de \(A\), es decir \(s=\sup A\).</p>
+<p>Supongamos que \(s\) es una cota superior que satisface la propiedad enunciada, entonces si \(a&lt;s\), tomando \(\epsilon = s-a\), entonces \(\epsilon &gt;0\), por lo que existe un número \(a_{\epsilon}\) tal que \(a=s-\epsilon &lt; s_{\epsilon}\), es decir que \(a\) no es cota superior de \(A\), es decir \(s=\sup A\).</p>
 
 <p>Recíprocamente, supongamos que \(s = \sup A\) y sea \(\epsilon\) un número positivo. Como \(s-\epsilon &lt;s\), \(s-\epsilon\) no es cota superior de A, por lo que debe existir \(s_{\epsilon}\) tal que \(s-\epsilon &lt; s_{\epsilon}\).</p></div>
 
