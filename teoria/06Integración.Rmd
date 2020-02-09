@@ -1,0 +1,51 @@
+---
+title: "Tema 6 - Integración de Riemann"
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ''
+output: 
+  ioslides_presentation:
+    widescreen: true
+    css: Mery_style.css
+    logo: Images/calculus.gif
+    fig_caption: yes
+---
+<script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
+#reticulate::py_install("sympy")
+```
+
+
+# Introducción
+
+## Motivación
+
+La idea de **integración** nace de la necesidad de calcular **áreas.**
+
+El cálculo de un **área** es la medición de la cantidad de unidades de **superficie** necesarias para una cobertura exacta de una determinada **figura plana.**
+
+A partir de un **cuadrado unitario** el área de un rectángulo se puede calcular multiplicando la **longitud** por la **anchura** del mismo.
+
+Dado que un **triángulo** se puede **diseccionar** y volver a montar para formar un **rectángulo**, el área del mismo se puede calcular dividiendo por dos el **área** del rectángulo correspondiente.
+
+Usando la mismo idea, y dado que un **polígono** se puede **diseccionar** en **triángulos**, el área de cualquier polígono también se puede calcular sumando el área de los **triángulos** involucrados. 
+
+## Motivación
+
+
+Sin embargo, cuando la figura es **curva**, el cálculo de su área se complica mucho. 
+Usando el mismo razonamiento que el cálculo del área de polígonos, podíamos considerar los **polígonos inscritos** y **circunscritos** como **cotas inferiores y superiores** del área de la figura a calcular.
+
+Si hacemos dichos polígonos más "precisos" progresivamente, podemos considerar que el área de la **figura curva** sería el límite del **área** de cada colección de dichos polígonos. Ver figura siguiente.
+
+Ésta es la idea fundamental de la **integración de Riemman** y es la que vamos a desarrollar seguidamente.
+
+## Motivación
+<div class="center">
+
+```{r, echo=FALSE, label=int1,fig.cap="",out.width = "500px"}
+knitr::include_graphics("Images/MotivacionIntegral.png",dpi=1200)
+```
+</div>
