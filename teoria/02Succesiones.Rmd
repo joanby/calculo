@@ -57,7 +57,7 @@ aproximan el número $\pi$
 
 </div>
 
-## Sucesiones y límites
+## Sucesiones
 
 <l class="definition">Definición</l>
 
@@ -130,17 +130,23 @@ De tal manera que si $x_1 = x_2=1$, sus términos son:
 $$
 1,1,2,3,5,8,13,21,34, \ldots 
 $$
-**Ejemplo 8.** La sucesión, también recurrente, $x_1=c>0$, x_{n+1}=\dfrac{1}{2}(x_n + \dfrac{a}{x_n})$, donde $a$ es un nombre real positivo.
+**Ejemplo 8.** La sucesión, también recurrente, $x_1=c>0$, $x_{n+1}=\dfrac{1}{2}(x_n + \dfrac{a}{x_n})$, donde $a$ es un nombre real positivo.
 
 </div>
 
-## Sucesiones y límites
+## Límite de una sucesión
+
+Hemos visto que dado un número irracional, siempre podemos encontrar un racional tan cerca como se quiera, es decir que fijada una precisión con la que se necesite representar el irracional, es posible determinar un racional que lo represente con dicha precisión, es decir, si $r$ es el irracional, $q$ el racional y $\epsilon$ la precisión, entonces $|r-q| < \epsilon$. Por otra parte, una precisión menor incluye todos los racionales de mayor precisión. 
+
+Esta es la idea queda formalizada con la noción de límite, que exponemos a continuación.
+
+## Límite de una sucesión
 
 
 <l class="definition">Definición</l>
 
  
-Dada una sucessión $\{a_n\}_{n \in \mathbb{N}}$ de números reales, el número real $a$ és el **límite de la successión** dada si para cada $\epsilon > 0$ existe un lugar $n_0$, a partir del cual todos los términos de la sucesión distan de $a$ menos que $\epsilon$, es decir, si para todo $n \geq n_0$ es $|a_n -a|< \epsilon$
+Dada una sucesión $\{a_n\}_{n \in \mathbb{N}}$ de números reales, el número real $a$ és el **límite de la sucesión** dada si para cada $\epsilon > 0$ existe un lugar $n_0$, a partir del cual todos los términos de la sucesión distan de $a$ menos que $\epsilon$, es decir, si para todo $n \geq n_0$ es $|a_n -a|< \epsilon$
 
 Escribiremos 
 
@@ -166,8 +172,6 @@ Efectivamente, dado que $n+1 > n$, $\displaystyle{\left| \dfrac{n+1}{n} -1 \righ
 
 Ahora, como sabemos que dado un $\epsilon > 0$  existe $n_0 \in \mathbb{N}$ tal que $\dfrac{1}{n} < \epsilon$ para todo $n\geq n_0$, obtenemos el resultado pedido.
 
-## Límite de una sucesión
-
 
 
 
@@ -182,7 +186,7 @@ Ahora, como sabemos que dado un $\epsilon > 0$  existe $n_0 \in \mathbb{N}$ tal 
 
 </div>
 
-## Propiedades  de los límites de sucesiones (1).
+## Propiedadesde los límites de sucesiones (1).
 
 <l class="prop">**Proposición** </l>
 
@@ -192,25 +196,25 @@ El límite de una sucesión, si existe, és único.
 
 **Demostración**
 
-Supongamos que no, que $a_1$ y que $a_2$ son los dos límites de la sucessión ${a_n}_{n\in  \mathbb{N}}. En tonces, dado un $\epsilon >0$ existen $n_1$ y $n_2$ tales que 
+Supongamos que no, que $a_1$ y que $a_2$ son los dos límites de la sucessión ${a_n}_{n\in  \mathbb{N}}$. En tonces, dado un $\epsilon >0$ existen $n_1$ y $n_2$ tales que 
 $$
 |a_n-a_1| <\dfrac{\epsilon}{2}  \quad \text{ y } \quad  |a_n-a_2| <\dfrac{\epsilon}{2}
 $$
 para todo $n>n1$, para la primera desigualdad y para todo $n>n_2$, para la segunda.
 
-Ahora $|a_1-a_2| = $|a_1-a_n +a_n -a_2| \leq |a_1-a_n| + |a_n -a_2| < \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon$, siempre que $n>n_1$ y $n>n_2. Por lo tanto, para todo $\epsilon >0$ es $|a_1-a_2| <\epsilon$ y esto sólo puede ocurrir si $|a_1-a_2| =0$, es decir si $a_1 = a_2$.
+Ahora $|a_1-a_2| = |a_1-a_n +a_n -a_2| \leq |a_1-a_n| + |a_n -a_2| < \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon$, siempre que $n>n_1$ y $n>n_2$. Por lo tanto, para todo $\epsilon >0$ es $|a_1-a_2| <\epsilon$ y esto sólo puede ocurrir si $|a_1-a_2| =0$, es decir si $a_1 = a_2$.
 
 ## Propiedades de los límites (2).
 
-<l class="prop">**Proposición**
+<l class="prop">**Proposición** </l>
 
-Toda sucesión convergente esta acotada. Es decir, si existe el $\lim_{n \rightarrow \infty} a_n $, entonces existen $n_ 0 \in \mathbb{N}$ y $K \in \mathbb{R}$, $K>0$, tal que $|a_n |<K$ para todo $n>n_0$.
+Toda sucesión convergente esta acotada. Es decir, si existe el $\lim_{n \rightarrow \infty} a_n$, entonces existen $n_ 0 \in \mathbb{N}$ y $K \in \mathbb{R}$, $K>0$, tal que $|a_n |<K$ para todo $n>n_0$.
 
 <div class="dem">
 
 **Demostración.**
 
-Sea $a=\lim_{n \rightarrow \infty}a_n$. Dado que $1>0$,  existe $n_0$ tal que para todo $n \geq n_0$ es $|a_n -a|<1$. Ahora $|a_n| -|a| <|a_n - a|<1$, es decir, $|a_n| < |a|+1$.
+Sea $a=\lim_{n \rightarrow \infty}a_n$. Dado que $1>0$,  existe $n_0$ tal que para todo $n \geq n_0$ es $|a_n -a|<1$. Ahora $|a_n| -|a| <|a_n - a|<1$, es decir, $|a_n| < |a|+1$, para todo $n\leq n_0$.
 Sea $K= \max \{|a_1|, |a_2|, \ldots |a_{n_0-1}|, 1+|a| \}$. 
 
 Con esta elección de $K$, está claro que $|a_n| < K$ para todo $n \in \mathbb{N}$.

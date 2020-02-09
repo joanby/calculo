@@ -177,7 +177,7 @@ es decir $\mathbb{N} \subset \mathbb{R}$
   
   * Dado que para cada  $a \in \mathbb{R}, \quad a\neq 0$ existe $\dfrac{1}{a}$, el inverso de $a$. Entonces para cada $n,m \in \mathbb{Z}$, con $m \neq 0$, será $\dfrac{n}{m} \in \mathbb{R}$, es decir, $\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}$.
       
-## El orden de los números reales: $\mathbb{R}$
+## El orden en los números reales: $\mathbb{R}$
 
 Para definir una relación de orden entre los números reales, supondremos que existe un subconjunto $P$ de números reales tal que:
     
@@ -199,7 +199,7 @@ Además, $P$, satisface las propiedades:
   (@) $P \cdot P \subset P$, el producto de dos números de $P$ tam,bién es un número de $P$
 
 
-## El orden de los números reales
+## El orden en los números reales
 
 <l class="definition">Definición</l> 
 
@@ -321,6 +321,23 @@ es decir, $|a+b| \leq |a| + |b|$.
 
 </div>
 
+## Observación importante  sobre el valor absoluto
+
+A menudo usaremos desigualdades del estilo 
+$$
+|x-a|\leq \epsilon
+$$
+De acuerdo con la definición de valor absoluto, esta desigualdad equivale a las dos desigualdades
+$$
+-\epsilon \leq a-x \leq \epsilon
+$$
+y también
+
+$$
+x-\epsilon \leq a \leq x+ \epsilon
+$$
+
+
 ## Conjuntos acotados
 
 <l class="definition">Definición</l> 
@@ -360,7 +377,7 @@ El supremo  (el ínfimo) de un conjunto, si existe, és único.
 
 <div class="dem">
 **Demostración:**
-Supongamos que $s_1$ y $s_2$ son dos supremos del conjunto $A$. Entonces, dado que $s_1$ es supremo, es una cota superior, por lo tanto debe ser mayor que el supremo $s_2$, es decir $s_1 > s_2$. Por otro lado, dado que $s_2$ es supremo, es cota superior, por lo tanto debe ser mayor que el supremo $s_1$, es decir $s_2>s_1$. En definitiva, debe ser $s_1=s_2$.
+Supongamos que $s_1$ y $s_2$ son dos supremos del conjunto $A$. Entonces, dado que $s_1$ es supremo, es una cota superior, por lo tanto debe ser mayor que el supremo $s_2$, es decir $s_1 > s_2$. Por otro lado, dado que $s_2$ es supremo, es cota superior, por lo tanto debe ser mayor que el supremo $s_1$, es decir $s_2 > s_1$. En definitiva, debe ser $s_1=s_2$.
  
 </div>
 
@@ -382,7 +399,7 @@ Una cota superior $s$ de un subconjunto no vacío $A$ de $\mathbb{R}$, es el sup
 <div class="dem">
 **Demostración:**
 
-Supongamos que $s$ es una cota superior que satisface la propiedad enunciada, entonces si $a<s$, tomando $\epsilon = s-a$, entonces $\epsilon >0$, por lo que existe un número $a_{\epsilon}$ tal que $a=s-\epsilon < s_{\epsilon}, es decir que $a$ no es cota superior de $A$, es decir $s=\sup A$.
+Supongamos que $s$ es una cota superior que satisface la propiedad enunciada, entonces si $a<s$, tomando $\epsilon = s-a$, entonces $\epsilon >0$, por lo que existe un número $a_{\epsilon}$ tal que $a=s-\epsilon < s_{\epsilon}$, es decir que $a$ no es cota superior de $A$, es decir $s=\sup A$.
 
 Recíprocamente, supongamos que $s = \sup A$ y sea $\epsilon$ un número positivo. Como $s-\epsilon <s$, $s-\epsilon$ no es cota superior de A, por lo que debe existir $s_{\epsilon}$
 tal que $s-\epsilon < s_{\epsilon}$.
