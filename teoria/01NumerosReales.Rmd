@@ -511,6 +511,18 @@ En definitiva, sólo queda la opción que el supremo $p$ del conjunto $M$, sea t
 
 Para todo número real positivo $b$, existe un número real positivo $\beta$ tal que $\beta^2 =b$.
 
+## Los números irracionales
+
+
+
+Acabamos de demostrar que hay números en $\mathbb{R}$ que no estan $\mathbb{Q}$, como seria el caso de $\sqrt{2}$. Por lo tanto el conjunto de los números reales que no son racionales, $\mathbb{R} \setminus \mathbb{Q}$, és un conjunto no vacio. Es el conjunto de <l class="important"> los números irracionales </l>.
+
+Este nombre indica que estos números no se pueden expresar como el cociente -la razón- de dos enteros.
+
+Obsérvese que ni la suma ni el producto de dos números irracionales tienen porqué ser números irracionales. (Por ejemplo $\sqrt{2} \cdot \sqrt{2} = 2$)
+
+
+
 ## Más consecuencias del axioma del supremo.
 
 <l class="prop">**Proposición. $\mathbb{Q}$ es denso en $\mathbb{R}$**</l>
