@@ -53,10 +53,10 @@ knitr::include_graphics("Images/MotivacionIntegral.png",dpi=1200)
 
 # Definición de integral de Riemann
 
-## Integral inferior y superior
+## Partición de un intervalo
 Para  definir las áreas de los **polígonos inscritos** y **circunscritos** como aproximaciones al área de una figura **curva** cualquiera, necesitamos definir el concepto de **partición** de un intervalo que será dónde "descansarán" los polígonos anteriores.
 
-<l class="definition">Definición de partición de un intervalo</l>
+<l class="definition">Definición de partición de un intervalo.</l>
 Sea $[a,b]\subset\mathbb{R}$ un intervalo de la recta real. Una **partición** $P$ del intervalo anterior es un conjunto finito $P=\{x_0=a< x_1<\ldots,x_n=b\}$ de puntos ordenados dentro del intervalo donde el mínimo coincide con $a$ y el máximo, con $b$. A los subintervalos $[x_i,x_{i+1}]$, para $i=0,\ldots,n-1$ se le denomina subintervalos de la partición $[a,b]$:
 
 <div class="center">
@@ -65,3 +65,80 @@ Sea $[a,b]\subset\mathbb{R}$ un intervalo de la recta real. Una **partición** $
 knitr::include_graphics("Images/Particion.png",dpi=1200)
 ```
 </div>
+
+
+## Partición de un intervalo
+Para aproximar cada vez más el área de la **figura curva** al área de la **colección de polígonos**, necesitamos introducir el concepto de **partición más fina** en el sentido de que cuánta más fina sea una partición, más buena será la aproximación del área de los **polígonos** que descansan sobre ella:
+
+<l class="definition">Definición de partición más fina.</l>
+Sea $[a,b]\subset\mathbb{R}$ un intervalo de la recta real. Sean $P$ y $P'$ dos **particiones** del intervalo $[a,b]$. Diremos que la **partición** $P'$ es más fina que la partición $P$ si $P\subseteq P'$, es decir si todos los puntos de la partición $P$ son puntos de la partición $P'$, o si se quiere decir en otros términos, si todo **subintervalo** de $P'$ está incluido en algún **subintervalo** de $P$.
+
+
+## Ejemplo de partición de un intervalo
+<div class="example">
+**Ejemplo de partición del intervalo $[0,1]$**
+
+Consideramos la partición siguiente del intervalo $[0,1]$:
+$$
+P=\left\{x_0=0<x_1=\frac{1}{3}<x_2=\frac{2}{3}<x_3=1\right\}.
+$$
+La siguiente partición $P'$ es más fina que $P$:
+$$
+P'=\left\{x_0'=0<x_1'=\frac{1}{6}<x_2'=\frac{1}{3}<x_3'=\frac{1}{2}<x_4'=\frac{2}{3}<x_5'=1\right\}.
+$$
+
+Observar que $P\subseteq P'$ ya que $\left\{0,\frac{1}{3},\frac{2}{3},1\right\}\subseteq \left\{0,\frac{1}{6},\frac{1}{3},\frac{1}{2},\frac{2}{3}, 1\right\}$.
+
+Además, cualquier subintervalo de la partición $P'$ está incluido en algún **subintervalo** de la partición $P$:
+$$
+\left[0,\frac{1}{6}\right]\subseteq \left[0,\frac{1}{3}\right],\ \left[\frac{1}{6},\frac{1}{3}\right]\subseteq \left[0,\frac{1}{3}\right],\ \left[\frac{1}{3},\frac{1}{2}\right]\subseteq \left[\frac{1}{3},\frac{2}{3}\right],\ \left[\frac{1}{2},\frac{2}{3}\right]\subseteq \left[\frac{1}{3},\frac{2}{3}\right],\ \left[\frac{2}{3},1\right]\subseteq \left[\frac{2}{3},1\right]
+$$
+</div>
+
+## Partición de un intervalo
+El **diámetro** de una partición es una forma de medir la finura de la misma:
+
+<l class="definition">Definición de diámetro de una partición.</l>
+Sea $[a,b]\subset\mathbb{R}$ un intervalo de la recta real. Sea $P=\{x_0=a<x_1<\ldots <x_n\}$ una partición del intervalo. Llamaremos **diámetro** de la partición $P$ y lo denotaremos por $|P|$ a la longitud máxima de los subintervalos de la misma:
+$$
+|P|=\max_{i=1,\ldots,n} (x_i-x_{i-1}).
+$$
+
+<div class="example">
+**Ejemplo anterior**
+
+En el ejemplo anterior, tendremos que los diámetros de las particiones consideradas serán:
+$$
+|P|=\max\left\{\frac{1}{3}-0,\frac{2}{3}-\frac{1}{3},1-\frac{2}{3}\right\}=\frac{1}{3},\ |P'|=\max\left\{\frac{1}{6}-0,\frac{1}{3}-\frac{1}{6},\frac{1}{2}-\frac{1}{3},\frac{2}{3}-\frac{1}{2},1-\frac{2}{3}\right\}=\frac{1}{3}.
+$$
+Observamos que las dos particiones tienen el mismo diámetro.
+</div>
+
+
+## Partición de un intervalo
+<l class="observ">Observación. </l> 
+Dadas dos particiones, si $P'$ es más **fina** que $P$, se verifica que el diámetro de la más fina es menor o igual que el diámetro de la menos fina ya que ésta incluye todos los subintervalos de la más fina: $|P'|\leq |P|$.
+
+A continuación vamos a definir las **aproximaciones inferior y superior** del área de la función curva a calcular usando como **colección de polígonos** los rectángulos con base en los subintervalos de las particiones y cuyas alturas serán los valores ínfimo y supremo, respectivamente, de la función en cada subintervalo:
+
+## Sumas inferiores y superiores
+<l class="definition">Definición de sumas inferiores y superiores.</l>
+Sea $[a,b]\subset\mathbb{R}$ un intervalo de la recta real. Sea $P=\{x_0=a<x_1<\ldots <x_n\}$ una partición del intervalo.
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada en dicho intervalo. Definimos para cada subintervalo $[x_{i-1},x_i]$ el valor ínfimo y supremo de la función en dicho subintervalo:
+$$
+m_i =\inf_{x\in [x_{i-1},x_i]} f(x),\quad M_i =\sup_{x\in [x_{i-1},x_i]} f(x).
+$$
+
+## Sumas inferiores y superiores
+La **suma inferior** correspondiente a la partición $P$ a la función $f$ se define como:
+$$
+L(f,P)=\sum_{i=1}^n m_i\cdot (x_i-x_{i-1}),
+$$
+y la **suma superior** correspondiente a la partición $P$ a la función $f$ se define como:
+$$
+U(f,P)=\sum_{i=1}^n M_i\cdot (x_i-x_{i-1}).
+$$
+
+## Sumas inferiores y superiores
+<l class="observ">Observación.</l>
+El nombre de $L$ en la notación de **suma inferior** viene del inglés "lower" y el nombre de $U$ en la **suma superior**, de "upper".
