@@ -142,3 +142,171 @@ $$
 ## Sumas inferiores y superiores
 <l class="observ">Observación.</l>
 El nombre de $L$ en la notación de **suma inferior** viene del inglés "lower" y el nombre de $U$ en la **suma superior**, de "upper".
+
+En las dos figuras siguientes se puede ver un ejemplo de una partición de 6 puntos indicando los infimos $m_i$ y los supremos $M_i$ de la función representada en verde en cada subintervalo de la partición.
+
+La suma de las áreas de los rectángulos en azul sería la suma inferior $L(f,P)$ correspondiente a la partición $P$ de la función $f$ y la suma de las áreas de los rectángulo en rojo, la suma superior $U(f,P)$ correspondiente a dicha partición $P$ de la función $f$.
+
+## Sumas inferiores y superiores
+<div class="center">
+
+```{r, echo=FALSE, label=suminf1,fig.cap="",out.width = "700px"}
+knitr::include_graphics("Images/SumaInferiorNet.png",dpi=1200)
+```
+</div>
+
+## Sumas inferiores y superiores
+<div class="center">
+
+```{r, echo=FALSE, label=sumsup1,fig.cap="",out.width = "700px"}
+knitr::include_graphics("Images/SumaSuperiorNet.png",dpi=1200)
+```
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo** 
+
+Consideremos la función $f(x)=1-x^2$ definida en el intervalo $[0,1]$ y la partición vista anteriormente:
+$$
+P=\left\{x_0=0<x_1=\frac{1}{3}<x_2=\frac{2}{3}<x_3=1\right\}.
+$$
+La suma inferior de $f$ correspondiente a la partición $P$, $L(f,P)$ sería:
+$$
+L(f,P)=\inf_{x\in \left[0,\frac{1}{3}\right]} f(x)\cdot \left(\frac{1}{3}-0\right)+\inf_{x\in \left[\frac{1}{3},\frac{2}{3}\right]} f(x)\cdot \left(\frac{2}{3}-\frac{1}{3}\right)+\inf_{x\in \left[\frac{2}{3},1\right]} f(x)\cdot \left(1-\frac{2}{3}\right).
+$$
+La función $f(x)=1-x^2$ es decreciente en el intervalo $[0,1]$ tal como muestra su gráfica. Hemos indicado con rectas verticales discontinuas los valores de la partición considerada en el eje $X$.
+</div>
+
+## Ejemplo
+<div class="example">
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+x=seq(from=0,to=1,by=0.01)
+f=function(x){1-x^2}
+plot(x,f(x),type="l",xlab="x",ylab="y")
+abline(h=0)
+lines(c(0,0),c(0,f(0)),lty=3)
+lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
+lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
+```
+</div>
+
+## Ejemplo
+<div class="example">
+Otra forma de ver que la función es decreciente es observar el signo de la derivada en el intervalo considerado $[0,1]$.
+
+El valor de la derivada es $f'(x)=-2x$ y su valor será negativo para todo valor $x$ en el intervalo $[0,1]$. Por tanto, recordemos que en este caso la función es decreciente.
+
+Usando la observación anterior, podemos afirmar que, en general, el ínfimo de la función $f$ en un subintervalo cualquiera $[x_{i-1},x_i]$ de la partición se alcanzará en el valor $x_i$: 
+$$
+m_i =\inf_{x\in [x_{i-1},x_i]} f(x) = f(x_i).
+$$
+El valor de la suma inferior será, pues,
+$$
+\begin{array}{rl}
+L(f,P) & =f\left(\frac{1}{3}\right)\cdot \frac{1}{3}+f\left(\frac{2}{3}\right)\cdot \frac{1}{3}+f\left(1\right)\cdot \frac{1}{3}=\left(1-\frac{1}{9}\right)\cdot \frac{1}{3}+\left(1-\frac{4}{9}\right)\cdot \frac{1}{3}+\left(1-1\right)\cdot \frac{1}{3}\\
+& = \frac{13}{27}=`r round((f(1/3)+f(2/3))/3,4)`.
+\end{array}
+$$
+</div>
+
+## Ejemplo
+<div class="example">
+Razonando de manera similar, podemos afirmar que, en general, el supremo de la función $f$ en un subintervalo cualquiera $[x_{i-1},x_i]$ de la partición se alcanzará en el valor $x_{i-1}$: 
+$$
+M_i =\sup_{x\in [x_{i-1},x_i]} f(x) = f(x_{i-1}).
+$$
+El valor de la suma superior será, pues,
+$$
+\begin{array}{rl}
+U(f,P) & =f\left(0\right)\cdot \frac{1}{3}+f\left(\frac{1}{3}\right)\cdot \frac{1}{3}+f\left(\frac{2}{3}\right)\cdot \frac{1}{3}=\left(1-0\right)\cdot \frac{1}{3}+\left(1-\frac{1}{9}\right)\cdot \frac{1}{3}+\left(1-\frac{4}{9}\right)\cdot \frac{1}{3}\\
+& = \frac{22}{27}=`r round((f(0)+f(1/3)+f(2/3))/3,4)`.
+\end{array}
+$$
+En las dos figuras siguientes, hemos dibujado en verde los rectángulos correspondientes a la suma inferior $L(f,P)$ y en rojo, los correspondientes a la suma superior $U(f,P)$. Los valores obtenidos anteriormente serían, pues, la suma de las áreas de los rectángulos en verde para $L(f,P)$ y la suma de las áreas de los rectángulos en rojo para $U(f,P)$.
+</div>
+
+## Ejemplo
+<div class="example">
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+x=seq(from=0,to=1,by=0.01)
+f=function(x){1-x^2}
+plot(x,f(x),type="l",xlab="x",ylab="y")
+abline(h=0)
+lines(c(0,0),c(0,f(0)),lty=3)
+lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
+lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
+rect(0,0,1/3,f(1/3),col="green")
+rect(1/3,0,2/3,f(2/3),col="green")
+```
+</div>
+
+## Ejemplo
+<div class="example">
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+x=seq(from=0,to=1,by=0.01)
+f=function(x){1-x^2}
+plot(x,f(x),type="l",xlab="x",ylab="y")
+abline(h=0)
+lines(c(0,0),c(0,f(0)),lty=3)
+lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
+lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
+rect(0,0,1/3,f(0),col="red")
+rect(1/3,0,2/3,f(1/3),col="red")
+rect(2/3,0,1,f(2/3),col="red")
+lines(x,f(x))
+```
+</div>
+
+## Sumas inferiores y superiores
+<div class="exercise">
+**Ejercicio**
+
+Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función acotada. Sea $P=\{x_0=a < x_1<\cdots <x_n=b\}$ una partición del intervalo $[a,b]$. 
+Sea $m=\inf_{x\in [a,b]}f(x)$ el ínfimo de la función $f$ en el intervalo considerado $[a,b]$ y $M$, el supremo: $M=\sup_{x\in [a,b]}f(x)$. Demostrar que se verifican las desigualdades siguientes:
+$$
+m\cdot (b-a)\leq L(f,P)\leq U(f,P)\leq M\cdot (b-a).
+$$
+Indicación: pensad que $m_i\geq m$ y $M_i\leq M$, para todo subintervalo de la partición $P$.
+</div>
+
+El resultado siguiente nos dice cómo se comportan las **sumas inferiores y superiores** a medida que hacemos más **finas** las particiones del intervalo en cuestión:
+
+
+## Sumas inferiores y superiores
+<l class="prop">Proposición. </l>
+Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función acotada. Sean $P$ y $P'$ dos particiones del intervalo $[a,b]$. Entonces:
+
+* Si la partición $P'$ es más fina que la partición $P$, se verifica:
+$$
+L(f,P')\geq L(f,P), \quad U(f,P')\leq U(f,P).
+$$
+
+* Sin necesidad de que una partición sea más fina que la otra, siempre se verifica que:
+$$
+L(f,P)\leq U(f,P').
+$$
+
+## Sumas inferiores y superiores
+
+<l class="observ">Observación. </l>
+La proposición anterior nos dice que a medida que las **particiones** se hacen más **finas**, las **sumas inferiores van creciendo** y las **sumas superiores van disminuyendo.** 
+
+O, dicho en otros términos, cuánta más **fina** es la partición, el **área por defecto** de la función $f$ va **creciendo** y el **área por exceso** va **disminuyendo.**
+
+La segunda parte nos dice que cualquier suma superior de cualquier partición siempre supera cualquier suma inferior de otra partición cualquiera. Es decir, cualquier área por exceso siempre supera cualquier área por defecto.
+
+
+## Sumas inferiores y superiores
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido bastante técnico. </i>
+</div>
+</div>
+
+<div class="dem">
+**Demostración**
+
+
+
+</div>
