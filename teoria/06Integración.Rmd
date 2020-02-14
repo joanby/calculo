@@ -256,6 +256,37 @@ rect(1/3,0,2/3,f(1/3),col="red")
 rect(2/3,0,1,f(2/3),col="red")
 lines(x,f(x))
 ```
+
+</div>
+
+
+## Ejemplo
+<div class="example">
+El cálculo de la suma inferior y superior en `python` es el siguiente:
+```{python}
+def f(x):
+ return(1-x**2)
+
+x = [0.,1./3.,2./3.,1.];
+suma_inferior = 0;
+suma_superior = 0;
+for i in range(1,len(x)):
+  suma_inferior = suma_inferior+f(x[i])*(x[i]-x[i-1]);
+  suma_superior = suma_superior+f(x[i-1])*(x[i]-x[i-1]);
+
+
+```
+
+</div>
+
+
+## Ejemplo
+<div class="example">
+```{python}
+print('Suma inferior={res}'.format(x=x, res=suma_inferior))
+print('Suma superior={res}'.format(x=x, res=suma_superior))
+```
+
 </div>
 
 ## Sumas inferiores y superiores
@@ -307,6 +338,306 @@ La segunda parte nos dice que cualquier suma superior de cualquier partición si
 <div class="dem">
 **Demostración**
 
+Demostremos en primer lugar que $L(f,P')\geq L(f,P)$.
+
+Sea $P=\{x_0=a<x_1<\cdots < x_n\}$ la partición $P$. Como la partición $P'$ es más fina que la partición $P$, cada subintervalo $[x_{i-1},x_i]$ de $P$ contendrá puntos de la partición de $P'$. Llamaremos $x_{i-1}=x_{i,0}<x_{i,1}<\cdots < x_{i,n_i}=x_i$ a los puntos de la partición $P'$ incluidos en el subintervalo $[x_{i-1},x_i]$. Notar que hemos llamado $x_{i,0}=x_{i-1}$ al extremo de la izquierda y $x_{i,n_i}=x_i$ al extremo de la derecha del subintervalo $[x_{i-1},x_i]$.
+
+Sea $m_{ij}$ el ínfimo de la función $f$ en el subintervalo $[x_{i,j-1},x_{i,j}]$: $\displaystyle m_{ij} = \inf_{x\in [x_{i,j-1},x_{i,j}]} f(x),$
+y $m_i$, al ínfimo de la función $f$ en el subintervalo grande $[x_{i-1},x_i]$: $\displaystyle m_i = \inf_{x\in [x_{i-1},x_{i}]} f(x).$
+
+</div>
+
+## Sumas inferiores y superiores
+<div class="dem">
+Usando la notación anterior, podemos escribir la suma inferior de $f$ respecto las particiones $P'$ y $P$ de la forma siguiente:
+$$
+\begin{array}{rl}
+L(f,P') & = \displaystyle\sum_{i=1}^n\sum_{j=1}^{n_i} m_{ij}\cdot (x_{i,j}-x_{i,j-1}), \\
+L(f,P) & = \displaystyle\sum_{i=1}^n m_{i}\cdot (x_{i}-x_{i-1}).
+\end{array}
+$$
+
+De cara a realizar la resta de las dos sumas inferiores anteriores, necesitamos escribir la suma inferior $L(f,P)$ como la suma doble que aparece en la suma inferior $L(f,P')$. Para ello, notemos lo siguiente:
+$$
+x_i-x_{i-1}=x_{i,n_i}-x_{i,0}=x_{i,n_i}-x_{i,n_i-1}+x_{i,n_i-1}+\cdots -x_{i,1}+x_{i,1}-x_{i,0},
+$$
+es decir, vamos sumando y restando los valores de la partición $P'$ que están en el subintervalo $[x_{i-1},x_i]$ distintos de los extremos $x_{i-1}$ y $x_i$.
+</div>
+
+## Sumas inferiores y superiores
+<div class="dem">
+De esta manera obtenemos la expresión siguiente:
+$$
+x_i-x_{i-1}=\sum_{j=1}^{n_i} (x_{i,j}-x_{i,j-1}).
+$$
+La expresión anterior nos permite escribir la suma inferior de $f$ respecto la partición $P$ en términos de la suma doble que aparece en la expresión de la suma inferior de $f$ respecto la partición más fina $P'$ permitiendo obtener $L(f,P')-L(f,P)$ de forma relativamente sencilla:
+$$
+\begin{array}{rl}
+L(f,P') & = \displaystyle\sum_{i=1}^n\sum_{j=1}^{n_i} m_{ij}\cdot (x_{i,j}-x_{i,j-1}), \\
+L(f,P) & = \displaystyle\sum_{i=1}^n\sum_{j=1}^{n_i} m_{i}\cdot (x_{i,j}-x_{i,j-1}).
+\end{array}
+$$
+Usando las expresiones anteriores, la expresión de $L(f,P')-L(f,P)$ será:
+$$
+L(f,P')-L(f,P) = \sum_{i=1}^n\sum_{j=1}^{n_i} (m_{ij}-m_i)\cdot (x_{i,j}-x_{i,j-1}).
+$$
+
+</div>
+
+## Sumas inferiores y superiores
+<div class="dem">
+El objetivo es demostrar que $L(f,P')-L(f,P)\geq 0$, o que $L(f,P')\geq L(f,P)$. Para ello, basta observar que los sumandos que aparecen en la suma doble de la expresión anterior son positivos ya que en primer lugar, $x_{i,j}-x_{i,j-1}\geq 0$ y $m_{ij}-m_i\geq 0$, o $m_{i,j}\geq m_i$ ya que $m_{i,j}$ es el ínfimo de la función $f$ en el subintervalo $[x_{i,j-1},x_{i,j}]$ y $m_i$, el ínfimo de la función $f$ en el subintervalo $[x_{i-1},x_i]$. 
+
+Como el subintervalo  $[x_{i,j-1},x_{i,j}]$ está incluído en el subintervalo $[x_{i-1},x_i]$, el valor de su ínfimo será mayor al ser el primer subintervalo "más pequeño que el segundo".
+
+Queda visto por tanto que $L(f,P')\geq L(f,P)$.
+
+</div>
+
+## Sumas inferiores y superiores
+<div class="dem">
+Para demostrar que $U(f,P')\leq U(f,P)$, escribamos dichas sumas de la forma siguiente siguiendo un razonamiento similar al realizado anteriormente:
+$$
+\begin{array}{rl}
+U(f,P') & = \displaystyle\sum_{i=1}^n\sum_{j=1}^{n_i} M_{ij}\cdot (x_{i,j}-x_{i,j-1}), \\
+U(f,P) & = \displaystyle\sum_{i=1}^n\sum_{j=1}^{n_i} M_{i}\cdot (x_{i,j}-x_{i,j-1}),
+\end{array}
+$$
+donde $M_{ij}$ es el supremo de la función $f$ en el subintervalo $[x_{i,j-1},x_{i,j}]$: $\displaystyle M_{ij} =\sup_{x\in [x_{i,j-1},x_{i,j}]} f(x),$
+y $M_i$, el supremo de la función $f$ en el subintervalo grande $[x_{i-1},x_i]$: $\displaystyle M_i = \sup_{x\in [x_{i-1},x_{i}]} f(x).$
+
+La expresión de $U(f,P')-U(f,P)$ será:
+$$
+U(f,P')-U(f,P)=\sum_{i=1}^n\sum_{j=1}^{n_i} (M_{ij}-M_i)\cdot (x_{i,j}-x_{i,j-1}).
+$$
+</div>
+
+## Sumas inferiores y superiores
+<div class="dem">
+El objetivo es demostrar que $U(f,P')-U(f,P)\leq 0$, o que $L(f,P')\leq L(f,P)$. Para ello, basta observar que los sumandos que aparecen en la suma doble de la expresión anterior son negativos ya que en primer lugar, $x_{i,j}-x_{i,j-1}\geq 0$ y $M_{ij}-M_i\leq 0$, o $M_{i,j}\leq M_i$ ya que $M_{i,j}$ es el supremo de la función $f$ en el subintervalo $[x_{i,j-1},x_{i,j}]$ y $M_i$, el supremo de la función $f$ en el subintervalo $[x_{i-1},x_i]$. 
+
+Como el subintervalo  $[x_{i,j-1},x_{i,j}]$ está incluído en el subintervalo $[x_{i-1},x_i]$, el valor de su supremo será menor al ser el primer subintervalo "más pequeño que el segundo".
+
+Queda visto por tanto que $U(f,P')\leq U(f,P)$.
+
+Falta demostrar que $L(f,P)\leq U(f,P')$:
+$$
+L(f,P)\leq L(f,P')\leq U(f,P').
+$$
+La primera desigualdad es consecuencia de la primera parte de esta demostración, la segunda desigualdad, consecuencia del hecho de que cualquier suma inferior siempre es menor que cualquier suma superior.
+</div>
+
+
+## Ejemplo
+<div class="example">
+**Ejemplo** 
+
+Consideremos la función $f(x)=1-x^2$ definida en el intervalo $[0,1]$ y las particines siguientes donde $P'$, como puede observarse, es más fina que $P$:
+$$
+\begin{array}{rl}
+P & =\left\{x_0=0<x_1=\frac{1}{3}<x_2=\frac{2}{3}<x_3=1\right\},\\
+P' & =\left\{x_{0,0}=0<x_{0,1}=\frac{1}{6}<x_{1,0}=\frac{1}{3}<x_{1,1}=\frac{1}{2}<x_{1,2}=\frac{7}{12}<x_{2,0}=\frac{2}{3}<x_{2,1}=\frac{5}{6}<x_{3,0}=1\right\}.
+\end{array}
+$$
+Comprobemos en `python` que $L(f,P')\geq L(f,P)$ y $U(f,P')\leq U(f,P)$:
+
+</div>
+
+
+## Ejemplo
+<div class="example">
+```{python}
+def f(x):
+ return(1-x**2)
+
+P = [0.,1./3.,2./3.,1.];
+P2 = [0.,1./6.,1./3.,1./2.,7./12.,2./3.,5./6.,1.]
+suma_inferior_P = 0;
+suma_inferior_P2 = 0;
+suma_superior_P = 0;
+suma_superior_P2 = 0;
+
+for i in range(1,len(P)):
+  suma_inferior_P = suma_inferior_P+f(P[i])*(P[i]-P[i-1]);
+  suma_superior_P = suma_superior_P+f(P[i-1])*(P[i]-P[i-1]);
+
+for i in range(1,len(P2)):
+  suma_inferior_P2 = suma_inferior_P2+f(P2[i])*(P2[i]-P2[i-1]);
+  suma_superior_P2 = suma_superior_P2+f(P2[i-1])*(P2[i]-P2[i-1]);
+```
+
+</div>
+
+
+## Ejemplo
+<div class="example">
+```{python}
+print('Suma inferior={res}'.format(x=x, res=suma_inferior_P))
+print('Suma inferior partición más fina={res}'.format(x=x, res=suma_inferior_P2))
+
+```
+</div>
+
+
+## Ejemplo
+<div class="example">
+```{python}
+print('Suma superior={res}'.format(x=x, res=suma_superior_P))
+print('Suma superior partición más fina={res}'.format(x=x, res=suma_superior_P2))
+```
+
+</div>
+
+
+## Ejemplo
+<div class="example">
+Por último mostramos gráficamente las dos particiones junto con las sumas inferiores y superiores.
+
+Los dos gráficos siguientes corresponden a las sumas inferiores de las dos particiones consideradas empezando con la menos fina y mostrando a continuación la más fina y en los dos gráficos siguientes hacemos lo mismo pero con las sumas superiores.
 
 
 </div>
+
+## Ejemplo
+<div class="example">
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+x=seq(from=0,to=1,by=0.01)
+f=function(x){1-x^2}
+plot(x,f(x),type="l",xlab="x",ylab="y")
+abline(h=0)
+lines(c(0,0),c(0,f(0)),lty=3)
+lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
+lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
+rect(0,0,1/3,f(1/3),col="green")
+rect(1/3,0,2/3,f(2/3),col="green")
+```
+</div>
+
+## Ejemplo
+<div class="example">
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+x=seq(from=0,to=1,by=0.01)
+plot(x,f(x),type="l",xlab="x",ylab="y")
+abline(h=0)
+particio = c(0,1/6,1/3,1/2,7/12,2/3,5/6,1)
+for (i in 1:length(particio)){
+  lines(c(particio[i],particio[i]),c(0,f(particio[i])))
+}
+for (i in 1:(length(particio)-1)){
+  rect(particio[i],0,particio[i+1],f(particio[i+1]),col="green")
+}
+```
+</div>
+
+## Ejemplo
+<div class="example">
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+x=seq(from=0,to=1,by=0.01)
+f=function(x){1-x^2}
+plot(x,f(x),type="l",xlab="x",ylab="y")
+abline(h=0)
+lines(c(0,0),c(0,f(0)),lty=3)
+lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
+lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
+rect(0,0,1/3,f(0),col="red")
+rect(1/3,0,2/3,f(1/3),col="red")
+rect(2/3,0,1,f(2/3),col="red")
+lines(x,f(x))
+```
+
+</div>
+
+## Ejemplo
+<div class="example">
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+x=seq(from=0,to=1,by=0.01)
+plot(x,f(x),type="l",xlab="x",ylab="y")
+abline(h=0)
+particio = c(0,1/6,1/3,1/2,7/12,2/3,5/6,1)
+for (i in 1:(length(particio)-1)){
+  rect(particio[i],0,particio[i+1],f(particio[i]),col="red")
+}
+lines(x,f(x))
+```
+</div>
+
+## Integral superior e inferior
+
+Dada una función acotada $f$, usando la proposición anterior, a medida que hagamos **más finas** las particiones del intervalo de definición de dicha función, las **sumas inferiores** irán **aumentando**  y las **sumas superiores** irán **disminuyendo**.
+
+Como cualquier **suma inferior** está acotada **superiormente** por una **suma superior** cualquiera, existirá el **supremo** de dichas **sumas inferiores** para todas las particiones del intervalo.
+
+De la misma manera, como cualquier **suma superior** está acotada **inferiormente** por una **suma inferior** cualquiera, existirá el **ínfimo** de dichas **sumas superiores** para todas las particiones del intervalo.
+
+A dicho **supremo** y a dicho **ínfimo** se le conoce como **integral inferior** y **superior** de la función $f$, respectivamente:
+
+
+## Integral superior e inferior
+<l class="definition">Definición de integral superior e inferior. </l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. Definimos **integral inferior** e **integral superior** de la función $f$ al **supremo** y al **ínfimo** de las **sumas inferiores** e **superiores** respectivamente para todas las particiones del intervalo:
+$$
+\underline{\int_a^b} f =\sup_P L(f,P),\quad \overline{\int_a^b} f =\inf_P U(f,P).
+$$
+
+## Integral superior e inferior
+<l class="observ">Observación.</l>
+Dada una partición cualquiera del intervalo $[a,b]$ se verifica siempre:
+$$
+L(f,P)\leq \underline{\int_a^b} f\leq \overline{\int_a^b} f \leq U(f,P).
+$$
+La primera desigualdad es consecuencia de que un elemento (suma inferior de $f$ respecto de una partición $P$) siempre es menor que el supremo del conjunto (supremo de las sumas inferiores de $f$ respecto de las particiones).
+
+## Integral superior e inferior
+
+La segunda desigualdad es consecuencia de que siempre cualquier suma inferior respecto de una partición $P$ es menor que cualquier suma superior respecto de cualquier partición $P'$ no necesariamente la misma que $P$ (ver proposición anterior): $L(f,P)\leq U(f,P')$. Si consideramos ínfimos en la parte "derecha" de la desigualdad anterior, tendremos:
+$$
+L(f,P)\leq\inf_{P'} U(f,P')=\overline{\int_a^b} f.
+$$
+
+## Integral superior e inferior
+
+Y ahora, como $\overline{\int_a^b} f$ es un valor fijo, si consideramos supremos en la parte "izquierda" de la desigualdad anterior, tenemos:
+$$
+\underline{\int_a^b} f =\sup_P L(f,P)\leq \overline{\int_a^b} f,
+$$
+tal como queríamos ver.
+
+Por último, la tercera desigualdad es consecuencia de que el ínfimo de un conjunto de elementos (sumas superiores respecto de particiones) siempre es menor que cualquiera de sus elementos (suma superior respecto de la partición $P$).
+
+## Integral superior e inferior
+
+La proposición siguiente nos dice que siempre es posible hallar una partición $P$, tan **fina** como sea posible, tal que la **integral superior** e **inferior** de $f$ se puede aproximar tanto como se quiera a la **suma superior** e **inferior** de $f$ respecto la partición $P$.
+
+<l class="prop">Proposición.</l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. Entonces, para todo valor $\epsilon >0$, siempre es posible hallar un valor $\delta >0$ tal que si $P$ es una partición del intervalo $[a,b]$ con diámetro menor que $\delta$, $|P|<\delta$, entonces:
+$$
+0\leq \underline{\int_a^b} f -L(f,P)<\epsilon, \quad 0\leq U(f,P)-\overline{\int_a^b} f <\epsilon.
+$$
+
+## Integral superior e inferior
+
+<l class="observ">Observación.</l>
+La proposición anterior es equivalente a la siguiente:
+Si $(P_n)_n$ es una sucesión de particiones con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$, entonces:
+$$
+\lim_{n\to\infty} L(f,P_n)=\underline{\int_a^b} f,\quad \lim_{n\to\infty} U(f,P)=\overline{\int_a^b} f.
+$$
+
+
+## Funciones integrables
+
+En estos momentos ya estamos en condiciones de definir cuándo una función acotada cualquiera será **integrable**. 
+
+La idea intuitiva es que la **integral superior** e **inferior** de la misma deben coincidir.
+
+Es decir, los "límites" de las **sumas superiores** e **inferiores** cuando las particiones se hacen más y más finas deben ser los mismos:
+
+## Funciones integrables
+
+<l class="definition">Definición de función integrable.</l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. 
+Diremos que dicha función es **integrable** si su **integral inferior** y **superior coinciden** y en este caso, llamaremos **integral de $f$ en el intervalo $[a,b]$** al valor de dichas integrales:
+$$
+\int_a^b f = \underline{\int_a^b}= \overline{\int_a^b} f.
+$$
+La integral también se indica por $\displaystyle\int_a^b f(x)\, dx$.
