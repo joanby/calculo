@@ -284,15 +284,20 @@ Sean $a,b \in \mathbb{R}$
 
 Dado un número real $a$, el **valor absoluto** de $a$, representado por $|a|$, es el mayor de los dos valores $\{a,-a \}$.
 
+Así $|-3|=3$ y $|45|=45$, es decir $|a| = a$, si $a \geq 0$ y, si $a <0$, entonces $|a| = -a$, 
+
 <l class="important">Es fácil comprobar que </l> $|a| = \sqrt{a^2}$. 
 
 <l class="important">Un error frecuente que se debe evitar es considerar que </l> $\sqrt{a^2}=a$.
 
+## Valor absoluto
+
 <l class="prop">Proposición</l>
 
   * $|a| \geq 0$ y $|a|=0$ si, y sólo si, $a=0$.
-  * $|-a|=a$, para todo $a \in \mathbb{R}$.
+  * $|-a|=|a|$, para todo $a \in \mathbb{R}$.
   * $|ab|= |a||b|$, para toda $a,b \in \mathbb{R}$.
+  * Si $c \geq 0$, entonces $|a| \leq c$, si y sólo si $-c \leq a \leq c$
   * $-|a| \leq a \leq  |a|$, para todo $a \in \mathbb{R}$. 
 
 
@@ -406,6 +411,20 @@ tal que $s-\epsilon < s_{\epsilon}$.
 
 </div>
 
+## Máximos y mínimos
+
+<l class="definition">Definición</l>
+
+Si el supremo de un conjunto és un elemento del conjunto, entonces recibe el nombre de **máximo**.
+
+Análogamente, si el ínfimo de un conjunto es un elemento del conjunto, entoces recibe el nombre de **mínimo**
+
+<div class="example">Ejemplos
+
+$2$ es un máximo del conjunto $\{x \in \mathbb{R}: x \leq 2 \}$. 
+
+Sin embargo no lo es del conjunto $\{x \in \mathbb{R}: x < 2 \}$, del que sigue siendo el supremo.
+</div>
 
 ## El axioma del supremo 
 

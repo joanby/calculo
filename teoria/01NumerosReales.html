@@ -3472,7 +3472,7 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <ol>
 <li>Si \(a &lt; b\) entonces \(a &lt; \dfrac{a+b}{2} &lt;b\).</li>
 <li>Si \(b&gt;0\), entonces \(0&lt;\dfrac{b}{2} &lt; b\)</li>
-<li>Si \(0\leq 2&lt; \epsilon\) para todo número real positivo \(\epsilon\), entonces \(a=0\).</li>
+<li>Si \(0\leq a &lt; \epsilon\) para todo número real positivo \(\epsilon\), entonces \(a=0\).</li>
 <li>Si \(a-\epsilon &lt; b\) para todo \(\epsilon &gt; 0\), entonces \(a\leq b\)</li>
 </ol>
 
@@ -3482,16 +3482,21 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 
 <p>Dado un número real \(a\), el <strong>valor absoluto</strong> de \(a\), representado por \(|a|\), es el mayor de los dos valores \(\{a,-a \}\).</p>
 
+<p>Así \(|-3|=3\) y \(|45|=45\), es decir \(|a| = a\), si \(a \geq 0\) y, si \(a &lt;0\), entonces \(|a| = -a\),</p>
+
 <p><l class="important">Es fácil comprobar que </l> \(|a| = \sqrt{a^2}\).</p>
 
 <p><l class="important">Un error frecuente que se debe evitar es considerar que </l> \(\sqrt{a^2}=a\).</p>
+
+</article></slide><slide class=""><hgroup><h2>Valor absoluto</h2></hgroup><article  id="valor-absoluto-1">
 
 <p><l class="prop">Proposición</l></p>
 
 <ul>
 <li>\(|a| \geq 0\) y \(|a|=0\) si, y sólo si, \(a=0\).</li>
-<li>\(|-a|=a\), para todo \(a \in \mathbb{R}\).</li>
+<li>\(|-a|=|a|\), para todo \(a \in \mathbb{R}\).</li>
 <li>\(|ab|= |a||b|\), para toda \(a,b \in \mathbb{R}\).</li>
+<li>Si \(c \geq 0\), entonces \(|a| \leq c\), si y sólo si \(-c \leq a \leq c\)</li>
 <li>\(-|a| \leq a \leq |a|\), para todo \(a \in \mathbb{R}\).</li>
 </ul>
 
@@ -3511,7 +3516,7 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <p><strong>Demostración:</strong></p>
 
 <ul>
-<li>Dado que $ -|a| a |a|$ y $ -|b| b |b|$, tenemos que</li>
+<li>Dado que \(-|a| \leq a \leq |a|\) y \(-|b| \leq b \leq |b|\), tenemos que</li>
 </ul>
 
 <p>\[ 
@@ -3598,6 +3603,21 @@ x-\epsilon \leq a \leq x+ \epsilon
 <p>Supongamos que \(s\) es una cota superior que satisface la propiedad enunciada, entonces si \(a&lt;s\), tomando \(\epsilon = s-a\), entonces \(\epsilon &gt;0\), por lo que existe un número \(a_{\epsilon}\) tal que \(a=s-\epsilon &lt; s_{\epsilon}\), es decir que \(a\) no es cota superior de \(A\), es decir \(s=\sup A\).</p>
 
 <p>Recíprocamente, supongamos que \(s = \sup A\) y sea \(\epsilon\) un número positivo. Como \(s-\epsilon &lt;s\), \(s-\epsilon\) no es cota superior de A, por lo que debe existir \(s_{\epsilon}\) tal que \(s-\epsilon &lt; s_{\epsilon}\).</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Máximos y mínimos</h2></hgroup><article  id="máximos-y-mínimos">
+
+<p><l class="definition">Definición</l></p>
+
+<p>Si el supremo de un conjunto és un elemento del conjunto, entonces recibe el nombre de <strong>máximo</strong>.</p>
+
+<p>Análogamente, si el ínfimo de un conjunto es un elemento del conjunto, entoces recibe el nombre de <strong>mínimo</strong></p>
+
+<div class="example">
+<p>Ejemplos</p>
+
+<p>\(2\) es un máximo del conjunto \(\{x \in \mathbb{R}: x \leq 2 \}\).</p>
+
+<p>Sin embargo no lo es del conjunto \(\{x \in \mathbb{R}: x &lt; 2 \}\), del que sigue siendo el supremo.</p></div>
 
 </article></slide><slide class=""><hgroup><h2>El axioma del supremo</h2></hgroup><article  id="el-axioma-del-supremo">
 
