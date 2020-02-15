@@ -275,7 +275,7 @@ Sean $a,b \in \mathbb{R}$
 
   a) Si $a < b$ entonces $a < \dfrac{a+b}{2} <b$.
   b) Si $b>0$, entonces $0<\dfrac{b}{2} < b$
-  c) Si $0\leq 2< \epsilon$ para todo número real positivo $\epsilon$, entonces $a=0$.
+  c) Si $0\leq a < \epsilon$ para todo número real positivo $\epsilon$, entonces $a=0$.
   d) Si $a-\epsilon < b$ para todo $\epsilon > 0$, entonces $a\leq b$
 
 ## Valor absoluto
@@ -309,7 +309,7 @@ Para toda $a,b \in \mathbb{R}$:
 <div class="dem">
 **Demostración:**
 
-  * Dado que $ -|a| \leq a \leq  |a|$ y $ -|b| \leq b \leq  |b|$, tenemos que
+  * Dado que $-|a| \leq a \leq  |a|$ y $-|b| \leq b \leq  |b|$, tenemos que
 
 $$ 
 -(|a|+|b|) \leq a+b \leq  |a| + |b|
