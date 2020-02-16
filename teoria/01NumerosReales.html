@@ -3488,6 +3488,24 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 
 <p><l class="important">Un error frecuente que se debe evitar es considerar que </l> \(\sqrt{a^2}=a\).</p>
 
+</article></slide><slide class=""><hgroup><h2>Intervalos en \(\mathbb{R}\)</h2></hgroup><article  id="intervalos-en-mathbbr">
+
+<p><l class="definition">Definición</l></p>
+
+<p>Dados números reales \(a,b \in \mathbb{R}\) tales que \(a&lt;b\), el <strong>intervalo cerrado de extremos \(a\) y \(b\)</strong> es el conjunto</p>
+
+<p>\[
+[a,b] = \{x\in \mathbb{R}: a \leq x \leq b \}
+\] Por su parte, <strong>intervalo abierto de extremos \(a\) y \(b\)</strong> es el conjunto:</p>
+
+<p>\[
+[a,b] = \{x\in \mathbb{R}: a &lt; x &lt; b \}
+\] <strong>Intervalos semiabiertos:</strong></p>
+
+<p>\[
+(a,b] = \{ x \in \mathbb{R}: a&lt;x \leq b \} \quad \text{ y } \quad [a,b) = \{ x \in \mathbb{R}: a \leq x &lt; b \}
+\]</p>
+
 </article></slide><slide class=""><hgroup><h2>Valor absoluto</h2></hgroup><article  id="valor-absoluto-1">
 
 <p><l class="prop">Proposición</l></p>
@@ -3532,11 +3550,17 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <p>A menudo usaremos desigualdades del estilo \[
 |x-a|\leq \epsilon
 \] De acuerdo con la definición de valor absoluto, esta desigualdad equivale a las dos desigualdades \[
--\epsilon \leq a-x \leq \epsilon
+-\epsilon \leq x-a \leq \epsilon
 \] y también</p>
 
 <p>\[
-x-\epsilon \leq a \leq x+ \epsilon
+a-\epsilon \leq x \leq a+ \epsilon
+\]</p>
+
+<p>o, lo que es lo mismo,</p>
+
+<p>\[
+x \in [a-\epsilon,a+\epsilon]
 \]</p>
 
 </article></slide><slide class=""><hgroup><h2>Conjuntos acotados</h2></hgroup><article  id="conjuntos-acotados">
@@ -3718,12 +3742,12 @@ n-1 \leq z &lt; n
 
 <p><l class="prop"><strong>Proposición. \(\mathbb{Q}\) es denso en \(\mathbb{R}\)</strong></l></p>
 
-<p>Sean \(x,y \in \mathbb{R}\) tales que \(x&lt;y\), entonces existe \(q \in \mathbb{Q}\) tal que \(x&lt;q&lt;y\)</p>
+<p>Sean \(x,y \in \mathbb{R}\) tales que \(x&lt;y\), entonces existe \(q \in \mathbb{Q}\) tal que \(x&lt;q&lt;y\). Es decir, entre dos números reales siempre hay un número racional.</p>
 
 <div class="dem">
 <p><strong>Demostración:</strong></p>
 
-<p>Supongamos que \(x&gt;0\), entonces \(y-x &gt;0\) y, por la propiedad arquimediana, existe \(n in \mathbb{N}\) tal que \(\dfrac{1}{n} &lt;y-x\), es decir que \(ny-nx &gt;1\).</p>
+<p>Supongamos que \(x&gt;0\), entonces \(y-x &gt;0\) y, por la propiedad arquimediana, existe \(n \in \mathbb{N}\) tal que \(\dfrac{1}{n} &lt;y-x\), es decir que \(ny-nx &gt;1\).</p>
 
 <p>Dado que \(nx &gt;0\), existe \(m \in \mathbb{N}\) tal que \(m-1 &lt;nx&lt;m\). \(m\) también verifica \(m&lt;ny\), ya que \(m&lt; nx+1&lt;ny\). En definitiva es \(nx&lt;m&lt;ny\) y, por lo tanto</p>
 
@@ -3735,7 +3759,7 @@ x&lt;\dfrac{m}{n}&lt;y
 
 <p><l class="prop"><strong>Corolario</strong></l></p>
 
-<p>Si \(x,y \in \mathbb{R}\), con \(x&lt;y\), entonces existe un número irracional z (es decir que \(z \in \mathbb{R} \setminus \mathbb{Q}\)) tal que \(x&lt;z&lt;y\).</p>
+<p>Si \(x,y \in \mathbb{R}\), con \(x&lt;y\), entonces existe un número irracional z (es decir que \(z \in \mathbb{R} \setminus \mathbb{Q}\)) tal que \(x&lt;z&lt;y\). Es decir, entre dos numeros reales, siempre hay un número irracional.</p>
 
 <div class="dem">
 <p><strong>Demostración:</strong></p>

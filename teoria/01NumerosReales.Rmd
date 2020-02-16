@@ -290,6 +290,27 @@ Así $|-3|=3$ y $|45|=45$, es decir $|a| = a$, si $a \geq 0$ y, si $a <0$, enton
 
 <l class="important">Un error frecuente que se debe evitar es considerar que </l> $\sqrt{a^2}=a$.
 
+## Intervalos en $\mathbb{R}$
+
+<l class="definition">Definición</l>  
+
+Dados números reales $a,b \in \mathbb{R}$ tales que $a<b$, el **intervalo cerrado de extremos $a$ y $b$** es el conjunto 
+
+$$
+[a,b] = \{x\in \mathbb{R}: a \leq x \leq b \}
+$$
+Por su parte, **intervalo abierto de extremos $a$ y $b$** es el conjunto:
+
+$$
+[a,b] = \{x\in \mathbb{R}: a < x < b \}
+$$
+**Intervalos semiabiertos:**
+
+$$
+(a,b] = \{ x \in \mathbb{R}: a<x \leq b \} \quad \text{ y } \quad [a,b) = \{ x \in \mathbb{R}: a \leq x < b \}
+$$
+
+
 ## Valor absoluto
 
 <l class="prop">Proposición</l>
@@ -334,14 +355,19 @@ $$
 $$
 De acuerdo con la definición de valor absoluto, esta desigualdad equivale a las dos desigualdades
 $$
--\epsilon \leq a-x \leq \epsilon
+-\epsilon \leq x-a \leq \epsilon
 $$
 y también
 
 $$
-x-\epsilon \leq a \leq x+ \epsilon
+a-\epsilon \leq x \leq a+ \epsilon
 $$
 
+o, lo que es lo mismo,
+
+$$
+x \in [a-\epsilon,a+\epsilon]
+$$
 
 ## Conjuntos acotados
 
@@ -547,12 +573,12 @@ Obsérvese que ni la suma ni el producto de dos números irracionales tienen por
 <l class="prop">**Proposición. $\mathbb{Q}$ es denso en $\mathbb{R}$**</l>
 
 Sean $x,y \in \mathbb{R}$ tales que $x<y$, entonces existe $q \in \mathbb{Q}$ tal que 
-$x<q<y$
+$x<q<y$. Es decir, entre dos números reales siempre hay un número racional.
 
 <div class="dem">
 **Demostración:**
 
-Supongamos que $x>0$, entonces $y-x >0$ y, por la propiedad arquimediana, existe $n in \mathbb{N}$ tal que $\dfrac{1}{n} <y-x$, es decir que $ny-nx >1$.
+Supongamos que $x>0$, entonces $y-x >0$ y, por la propiedad arquimediana, existe $n \in \mathbb{N}$ tal que $\dfrac{1}{n} <y-x$, es decir que $ny-nx >1$.
 
 Dado que $nx >0$, existe $m \in \mathbb{N}$ tal que $m-1 <nx<m$. $m$ también verifica $m<ny$, ya que $m< nx+1<ny$. En definitiva es $nx<m<ny$ y, por lo tanto
 
@@ -567,7 +593,7 @@ es decir, $q = \dfrac{m}{n}$ es el número racional buscado. Razonamientos anál
 
 <l class="prop">**Corolario**</l>
 
-Si $x,y \in \mathbb{R}$, con $x<y$, entonces existe un número irracional z (es decir que $z \in \mathbb{R} \setminus \mathbb{Q}$) tal que $x<z<y$.
+Si $x,y \in \mathbb{R}$, con $x<y$, entonces existe un número irracional z (es decir que $z \in \mathbb{R} \setminus \mathbb{Q}$) tal que $x<z<y$. Es decir, entre dos numeros reales, siempre hay un número irracional.
 
 <div class="dem">
 **Demostración:**
