@@ -439,7 +439,7 @@ tal que $s-\epsilon < s_{\epsilon}$.
 
 ## Máximos y mínimos
 
-<l class="definition">Definición</l>
+<l class="definition">**Definición**</l>
 
 Si el supremo de un conjunto és un elemento del conjunto, entonces recibe el nombre de **máximo**.
 
@@ -601,8 +601,6 @@ Si $x,y \in \mathbb{R}$, con $x<y$, entonces existe un número irracional z (es 
 Consideremos $s \in \mathbb{R} \setminus \mathbb{Q}$ (por ejemplo $\sqrt{2}$), entonces, sabemos que existe un racional $q \in \mathbb{Q}$ tal que $\dfrac{x}{s} <q < \dfrac{y}{s}$. Ahora $qs \in \mathbb{R} \setminus \mathbb{Q}$, puesto que si $z=qs \in \mathbb{Q}$, $s=\dfrac{z}{q}$ seria el cociente de dos racionales y, por la tanto racional. En definitiva es $x<z<y$, con $z$ irracional.
 
 </div>
-
-
 
 
 
