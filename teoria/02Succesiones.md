@@ -139,7 +139,7 @@ Esta es la idea queda formalizada con la noción de límite, que exponemos a con
 ## Límite de una sucesión
 
 
-<l class="definition">Definición</l>
+<l class="definition">**Definición**</l>
 
  
 Dada una sucesión $\{a_n\}_{n \in \mathbb{N}}$ de números reales, el número real $a$ és el **límite de la sucesión** dada si para cada $\epsilon > 0$ existe un lugar $n_0$, a partir del cual todos los términos de la sucesión distan de $a$ menos que $\epsilon$, es decir, si para todo $n \geq n_0$ es $|a_n -a|< \epsilon$
@@ -306,6 +306,51 @@ Finalmente $\displaystyle{\left|\dfrac{1}{a}-\dfrac{1}{a_n}\right|} = \displayst
 Ahora, si $a_n \leq b_n$, entonces $b_n - a_n \geq 0$ y, por lo tanto $b-a = \lim (b_n - a_n) \geq 0$
 
 </div>
+
+## Sucesiones monótonas
+
+Una clase importante de sucesiones son las llamadas **monótonas**:
+
+<l class="definicion"> **Definición** </l>
+
+1. Una sucesión de números reales $\{a_n\}_{n \in \mathbb{N}}$ és **creciente** si existe un $n_0 \in \mathbb{N}$ tal que para todo $n \geq n_0$ es $a_n \leq a_{n+1}$.
+
+2. Una sucesión és **decreciente** si $a_n \geq a_{n+1}$, para todo $n \geq n_0$
+2. Una sucesión **monótona** es una sucesión que es creciente o decreciente.
+3. Una sucesión és **estrictamente creciente** si $a_n < a_{n+1}$, para todo $n \geq n_0$
+4. Una sucesión es **estrictamente decreciente** si $a_n > a_{n+1}$, para todo $n \geq n_0$
+
+
+## Convergencia de las sucsiones monótonas
+
+<l class="prop"> **Proposición**
+
+a) Una sucesión monótona creciente acotada superiormente es convergente.
+b) Una sucesión monótona decreciente acotada inferiormente es convergente.
+
+<div class="dem"> **Demostración**
+
+Supongamos que $\{a_n\}_{n \in \mathbb{N}}$ ser acotada tiene supremo, sea $a= \sup \{a_n: n\in \mathbb{N} \}$. Veamos que $a= \lim _{n \rightarrow \infty} a_n$.
+
+Sea ahora $\epsilon >0$, $a - \epsilon$ no es cota superior, por lo que existe algún $n_0$ tal que $a - \epsilon < a_{n_0}$, dado que la sucesión és monótona creciente será $a-\epsilon <a_{n_0}\leq n$, para todo $n \geq n_0$. En definitiva es
+$$
+0 \leq |a-a_n| < \epsilon
+$$
+para todo $n \geq n_{0}$, es decir
+
+$$
+\lim _{n \rightarrow \infty} a_n = a
+$$
+</div>
+
+Consideraciones similares sirven para el caso de sucesiones decrecientes.
+
+
+## Ejemplos
+
+
+
+
 
 ## El criterio de Stolz
 
