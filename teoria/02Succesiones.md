@@ -174,13 +174,13 @@ Ahora, como sabemos que dado un $\epsilon > 0$  existe $n_0 \in \mathbb{N}$ tal 
 
 ## Observaciones
 
-<l class="important">De una sucesión con límite diremos que es **convergente**</l>
+1. De una sucesión con límite diremos que es <l class="important">**convergente**</l>
 
-<l class="important"> Téngase en cuenta que </l> $\epsilon$ <l class="important"> determina el lugar a partir del cual los términos de la sucesión satisfacen </l> $|a_n - a|<\epsilon$. <l class="important"> Un cambio en </l> $\epsilon$ <l class="important"> sólo cambia el lugar a partir del cual se satisface la desigualdad. Por eso no deben sorprenderse si alguna vez aparece un </l> $\epsilon$ <l class="important"> multiplicado o dividido por una constante. La única restricción es que la expresión resultante en función de </l> $\epsilon$ <l class="important"> pueda hacerse tan pequeña como se desee, es decir que una expresión del tipo </l> $\epsilon +K$ <l class="important"> no sirve.</l>
+1. Téngase en cuenta que  $\epsilon$  determina el lugar a partir del cual los términos de la sucesión satisfacen  $|a_n - a|<\epsilon$.  Un cambio en  $\epsilon$ sólo cambia el lugar a partir del cual se satisface la desigualdad. Por eso no deben sorprenderse si alguna vez aparece un  $\epsilon$  multiplicado o dividido por una constante. La única restricción es que la expresión resultante en función de  $\epsilon$  pueda hacerse tan pequeña como se desee, es decir que una expresión del tipo $\epsilon +K$  no sirve.
 
-<div class="important"> La existencia o no del límite de una sucesión no depende de los primeros términos de la misma, es decir sólo depende del comportamiento final de los términos de la sucesión. Es decir, si se remplaza qualquier número finito de términos de una sucesión, la sucesión resultante seguirá teniendo límite o no, según lo tuviera o no la sucesión original.
+2. La existencia o no del límite de una sucesión no depende de los primeros términos de la misma, es decir sólo depende del comportamiento final de los términos de la sucesión. Es decir, si se remplaza qualquier número finito de términos de una sucesión, la sucesión resultante seguirá teniendo límite o no, según lo tuviera o no la sucesión original.
 
-</div>
+
 
 ## Propiedadesde los límites de sucesiones (1).
 
@@ -217,7 +217,7 @@ Con esta elección de $K$, está claro que $|a_n| < K$ para todo $n \in \mathbb{
 
 </div>
 
-<l class=important>Si representamos los números reales mediante límites de sucesiones, para que esta representación sea útil, también debería servir para representar las operaciones entre ellas. De esto se ocupa la proposición siguiente.</l>
+Si representamos los números reales mediante límites de sucesiones, para que esta representación sea útil, también debería servir para representar las operaciones entre ellas. De esto se ocupa la proposición siguiente.
 
 
 ## Operaciones entre sucesiones.
@@ -320,6 +320,7 @@ Entonces existe el $\lim\dfrac{a_n}{b_n}$ y es igual a $l$.
 
 ## El criterio de Stolz (Demostración)
 
+ **Contenido muy técnico**
 <div class="dem">**Demostración**
 
 Dado un $\epsilon >0$ existe un $N(\epsilon)$ tal que para todo $n>N(\epsilon)$ es
@@ -346,6 +347,8 @@ $$
 
 
 ## Criterio de Stolz. (Demostración)
+
+**Contenido muy técnico**
 
 <div class="dem">**Demostración (continuación)**
 
