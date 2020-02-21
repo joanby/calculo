@@ -306,3 +306,75 @@ Finalmente $\displaystyle{\left|\dfrac{1}{a}-\dfrac{1}{a_n}\right|} = \displayst
 Ahora, si $a_n \leq b_n$, entonces $b_n - a_n \geq 0$ y, por lo tanto $b-a = \lim (b_n - a_n) \geq 0$
 
 </div>
+
+## El criterio de Stolz
+
+<l class="prop">**Proposición. (Criterio de Stolz)**</l>
+
+Sea $\{a_n\}_{n \in \mathbb{N}}$ una sucesión de números reales con límite $0$ y sea $\{b_n\}_{n \in \mathbb{N}}$ una sucesión estrictamente creciente y no acotada (es decir que $\lim b_n = \infty$), tales que  
+$$
+\lim \dfrac{a_{n+1} -a_n}{b_{n+1}-b_n} = l
+$$
+Entonces existe el $\lim\dfrac{a_n}{b_n}$ y es igual a $l$.
+
+
+## El criterio de Stolz (Demostración)
+
+<div class="dem">**Demostración**
+
+Dado un $\epsilon >0$ existe un $N(\epsilon)$ tal que para todo $n>N(\epsilon)$ es
+$$
+l-\epsilon < \dfrac{a_{n+1} - a_n}{b_{n+1}-b_n} <l+\epsilon
+$$
+es decir,
+
+$$
+(l-\epsilon)(b_{n+1}-b_n) < a_{n+1} - a_n <(l+\epsilon)(b_{n+1}-b_n)
+$$
+
+Sea ahora $k>N(\epsilon)$, 
+$$
+(l-\epsilon) \sum_{i=N(\epsilon)}^k (b_{n+1}-b_n) < \sum_{i=N(\epsilon)}^k (a_{n+1} - a_n) <(l+\epsilon)\sum_{i=N(\epsilon)}^k (b_{n+1}-b_n)
+$$
+
+se trata de sumas telescópicas, por lo que se reduciran a 
+
+$$
+(l-\epsilon)(b_{k+1}-b_{N(\epsilon)}) < a_{k+1} - a_{N(\epsilon)} <(l+\epsilon)(b_{k+1}-b_{N(\epsilon)})
+$$
+</div>
+
+
+## Criterio de Stolz. (Demostración)
+
+<div class="dem">**Demostración (continuación)**
+
+Dividimos ahora por $b_{k+1}>0$, y obtenemos
+
+$$
+(l-\epsilon) \left(1-\dfrac{b_{N(\epsilon)}}{b_{k+1}}\right) < \dfrac{a_{k+1}}{b_{k+1}} - \dfrac{a_{N(\epsilon)}}{b_{k+1}} <(l+\epsilon) \left(1- \dfrac{b_{N(\epsilon)}}{b_{k+1}}\right)
+$$
+
+Ahora, dado que $b_{k+1} \rightarrow \infty$, resulta que 
+$\lim \dfrac{b_{N(\epsilon)}}{b_{k+1}} = 0 = \lim \dfrac{a_{N(\epsilon)}}{b_{k+1}}$ y, por lo tanto,  existe un $K$ tal que, para todo $k \geq K$, es
+$$
+l-\epsilon < \dfrac{a_{k+1}}{b_{k+1}} <l+\epsilon
+$$
+
+es decir, que 
+
+$$
+\lim \dfrac{a_k}{b_k} = l
+$$
+
+
+</div>
+
+
+
+
+
+
+
+
+
