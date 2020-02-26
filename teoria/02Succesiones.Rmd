@@ -350,7 +350,80 @@ $$
 Consideraciones similares sirven para el caso de sucesiones decrecientes.
 
 
-## Ejemplos
+## Ejemplos: **El número $e$**
+
+Vamos a demostrar que la sucesión de término general
+$$
+a_n = \left( 1 + \dfrac{1}{n}\right)^n
+$$
+es monótona creciente y está acotada.
+
+## Ejemplos: **El número $e$**
+
+En primer lugar, veamos que es creciente. Por el teorema del binomio tenemos que
+$$
+a_n = \left( 1 + \dfrac{1}{n}\right)^n =1+ \dfrac{n}{1}\dfrac{1}{n}+\dfrac{n(n-1)}{2!}\dfrac{1}{n^2}+ \dfrac{n(n-1)(n-2)}{3!}\dfrac{1}{n^3}
+$$
+$$
++ \cdots+ \dfrac{n(n-1) \cdots 2 \cdot 1}{n!}\dfrac{1}{n^n}
+$$
+si ahora dividimos por las respectivas potencias de los términos de los numeradores, obtenemos:
+
+$$
+a_n= 1+1+\dfrac{1}{2!}\left( 1 -\dfrac{1}{n}\right)+\dfrac{1}{3!}\left( 1 - \dfrac{1}{n}\right)\left( 1 - \dfrac{2}{n}\right)
+$$
+
+$$
++ \cdots + \dfrac{1}{n!}\left(1 -\dfrac{1}{n}\right)\left(1-\dfrac{2}{n}\right) \cdots \left( 1 - \dfrac{n-1}{n}\right)
+$$
+
+## Ejemplos: **El número $e$**
+Análogamente, tenemos que 
+$$
+a_{n+1}= 1+1+\dfrac{1}{2!}\left( 1 -\dfrac{1}{n+1}\right)+\dfrac{1}{3!}\left( 1 - \dfrac{1}{n+1}\right)\left( 1 - \dfrac{2}{n+1}\right)
+$$
+$$
++ \cdots + \dfrac{1}{n!}\left(1 -\dfrac{1}{n+1}\right)\left(1-\dfrac{2}{n+1}\right) \cdots \left( 1 - \dfrac{n-1}{n+1}\right)
+$$
+$$
+ + \dfrac{1}{(n+1)!}\left(1 -\dfrac{1}{n+1}\right)\left(1-\dfrac{2}{n+1}\right) \cdots \left( 1 - \dfrac{n}{n+1}\right)
+$$
+
+Si ahora comparamos término a término $a_n$ y $a_{n+1}$ veremos que en el segundo aparece un término positivo más y que cada uno de los restantes son menores o iguales en $a_n$ que los de $a_{n+1}. Por lo tanto la sucesión es creciente:
+$$
+a_1 \leq a_2 \leq \ldots \leq a_{n-1} \leq a_n
+$$
+
+
+## Ejemplos: **El número $e$**
+
+Veamos ahora que la sucesión $\{a_n\}_{n \in \mathbb{N}}$ está acotada.
+
+Por una parte, tenemos que para $k = 1, 2 ,\ldots n$, es $(1-\frac{k}{n} )<1$. Por la otra, se puede demostrar por inducción que $2^{k-1} \leq k!$, por lo tanto es $\frac{1}{k!} \leq \frac{1}{2^{k-1}}$. E definitiva, , para $n >1$ se verifica que
+$$
+2 <a_n <1+1+ \dfrac{1}{2}+\dfrac{1}{2^2}+ \cdots +\dfrac{1}{2^{n-1}}
+$$
+Por otra parte,
+$$  
+\dfrac{1}{2}+\dfrac{1}{2^2}+ \cdots +\dfrac{1}{2^{n-1}} = 1 - \dfrac{1}{2^{n-1}} <1
+$$
+ puesto que se trata de la suma de los términos de una progresión geométrica de razón $\frac{1}{2}$. 
+ 
+ 
+## Ejemplos: **El número $e$**
+
+ En definitiva el límite de la sucesión 
+ $$
+ a_n = \left( 1 + \dfrac{1}{n}\right)^n
+ $$
+ existe y
+ $$
+ 2 < \lim \left( 1 + \dfrac{1}{n}\right)^n <3
+ $$
+puesto que todos los términos -a a partir del primero- s´on mayores que $2$ y menores que $3$. Este límite es lo que conocemos como el número $e$
+$$
+ \lim \left( 1 + \dfrac{1}{n}\right)^n = e
+$$
 
 
 
