@@ -452,6 +452,30 @@ $$
 es decir, $a_n^2 \geq a$, para todo $n \in \mathbb{N}$. En definitiva, $\sqrt{a}$ es una cota inferior para esta sucesión.
 
 
+## Sucesiones definidas en forma recurrente
+Veamos ahora que la sucesión es decreciente:
+$$
+a_n - a_{n-1} =a_n - \dfrac{1}{2} \left(a_n + \dfrac{a}{a_n}\right) = \dfrac{1}{2} \left( \dfrac{a_n^2 -a}{a_n}\right) \geq 0
+$$
+puesto que, como hemos visto, $a_n \geq a$. Por lo tanto, la sucesión $\{a_n \}_{n \in \mathbb{N}}$ es convergente.
+
+
+## Sucesiones definidas en forma recurrente
+
+Finalmente, usando las propiedades de los límites de sucesiones con respecto de las operaciones aritméticas, tenemos que
+
+$$
+L= \lim_{n \rightarrow \infty} {a_{n+1}} = \lim_{n \rightarrow \infty} \dfrac{1}{2} \left(a_n + \dfrac{a}{a_n}\right) 
+$$
+$$= \dfrac{1}{2} \left(\lim_{n \rightarrow \infty} a_n + \dfrac{a}{\lim_n a_n}\right) = \dfrac{1}{2}\left( L +\dfrac{a}{L}\right) = \dfrac{L^2+a}{2L}
+$$
+
+es decir, $2 L^2 = L^2 +a$ y, por lo tanto, $L=a$, dado que todos los términos de la sucesión son positivos.
+
+Los babilonios usaban esta sucesión para calcular raíces cuadradas, cerca de 2000 años antes de nuestra era.
+
+
+
 
 
 
