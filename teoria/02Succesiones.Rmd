@@ -23,11 +23,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Como hemos visto, el conjunto de los números reales incluye todos los números racionales, es decir, todos los números que tengan un número finito de cifras en su desarrollo decimal. De hecho, también incluye algunos con un número infinito de cifras decimales como seria el caso de los decimales periódicos.
 
-Por consiguiente, los números reales que no son racionales, es decir los números **irracionales** tienen una cantidad infinita de cifras en su desarrollo decimal, tal seria el caso de, por ejemplo $\sqrt{2}$, $\pi$ o $e$.  
+Por consiguiente, los números reales que no son racionales, es decir los números **irracionales** tienen una cantidad infinita de cifras en su desarrollo decimal, tal seria el caso de, por ejemplo, $\sqrt{2}$, $\pi$ o $e$.  
 
 Siendo así, ¿cómo podemos utilizar estos números con infinitas cifras decimales? La respuesta viene de la mano del concepto de **sucesión** y de **límite**. 
 
-Cómo hemos demostrado, dado un número irracional y una precisión, siempre es posible determinar un racional que diste del iracional dado menos que dicha precisión. Es lo que hacemos cuando tomamos $\pi$ como $3.14$ o $3.1415$, $\ldots$
+Cómo hemos demostrado, dado un número irracional y una precisión, siempre es posible determinar un racional que diste del irracional dado menos que dicha precisión. Es lo que hacemos cuando tomamos $\pi$ como $3.14$ o $3.1415$, $\ldots$
 
 ## Ejemplos
 
@@ -186,7 +186,7 @@ Ahora, como sabemos que dado un $\epsilon > 0$  existe $n_0 \in \mathbb{N}$ tal 
 
 
 
-## Propiedadesde los límites de sucesiones (1).
+## Propiedades de los límites de sucesiones (1).
 
 <l class="prop">**Proposición** </l>
 
@@ -325,7 +325,7 @@ Una clase importante de sucesiones son las llamadas **monótonas**:
 4. Una sucesión es **estrictamente decreciente** si $a_n > a_{n+1}$, para todo $n \geq n_0$
 
 
-## Convergencia de las sucsiones monótonas
+## Convergencia de las sucesiones monótonas
 
 <l class="prop"> **Proposición**
 
@@ -391,7 +391,7 @@ $$
 
 Si ahora comparamos término a término $a_n$ y $a_{n+1}$ veremos que en el segundo aparece un término positivo más y que cada uno de los restantes son menores o iguales en $a_n$ que los de $a_{n+1}. Por lo tanto la sucesión es creciente:
 $$
-a_1 \leq a_2 \leq \ldots \leq a_{n-1} \leq a_n
+a_1 \leq a_2 \leq \ldots \leq a_{n-1} \leq a_n \leq \ldots
 $$
 
 
@@ -399,7 +399,7 @@ $$
 
 Veamos ahora que la sucesión $\{a_n\}_{n \in \mathbb{N}}$ está acotada.
 
-Por una parte, tenemos que para $k = 1, 2 ,\ldots n$, es $(1-\frac{k}{n} )<1$. Por la otra, se puede demostrar por inducción que $2^{k-1} \leq k!$, por lo tanto es $\frac{1}{k!} \leq \frac{1}{2^{k-1}}$. E definitiva, , para $n >1$ se verifica que
+Por una parte, tenemos que para $k = 1, 2 ,\ldots n$, es $(1-\frac{k}{n} )<1$. Por la otra, se puede demostrar por inducción que $2^{k-1} \leq k!$, por lo tanto es $\frac{1}{k!} \leq \frac{1}{2^{k-1}}$. En definitiva, para $n >1$, se verifica que
 $$
 2 <a_n <1+1+ \dfrac{1}{2}+\dfrac{1}{2^2}+ \cdots +\dfrac{1}{2^{n-1}}
 $$
@@ -407,7 +407,7 @@ Por otra parte,
 $$  
 \dfrac{1}{2}+\dfrac{1}{2^2}+ \cdots +\dfrac{1}{2^{n-1}} = 1 - \dfrac{1}{2^{n-1}} <1
 $$
- puesto que se trata de la suma de los términos de una progresión geométrica de razón $\frac{1}{2}$. 
+ puesto que se trata de la suma de los $n$ primerostérminos de una progresión geométrica de razón $\frac{1}{2}$. 
  
  
 ## Ejemplos: **El número $e$**
@@ -445,7 +445,7 @@ Veamos, en primer lugar que está acotada inferiormente. De acuerdo con la igual
 $$
 a_n^2-2a_{n+1}a_n +a = 0
 $$
-De esta ecuación sabemos que tiene, por lo menas u solución real, por lo que su discriminante deberá ser positivo, es decir
+De esta ecuación sabemos que tiene, por lo menos una solución real, por lo que su discriminante deberá ser positivo, es decir
 $$
 4a_n^2 -4a \geq 0
 $$
@@ -475,7 +475,30 @@ es decir, $2 L^2 = L^2 +a$ y, por lo tanto, $L=a$, dado que todos los términos 
 Los babilonios usaban esta sucesión para calcular raíces cuadradas, cerca de 2000 años antes de nuestra era.
 
 
+## Cálculo de límites de sucesiones de números reales.
 
+Veremos en esta sección algunas técnicas para el cáslculo de límites. En una primera lectura se puede prescindir de esta sección, pero sus resultados son necesarios en apartados posteriores.
+
+1) **Criterio del sandwich**
+
+Si $\lim a_n =L=\lim b_n$ y $\{c_n\}_{n \in \mathbb{N}}$ es tal que $a_n \leq c_n \leq b_n$, entonces la sucesión $c_n$ es convergente y $\lim c_n = L$.
+
+## Criterio del sandwich
+
+<div class="dem"> **Demostración**
+
+Por hipótesis, para cada $\epsilon >0$, existen $n_1$ i $n_2$ tales que $|a_n-L|< \epsilon$, para todo $n \geq n_1$ y $|b_n-L|< \epsilon$  , para todo $n \geq n_2$.
+
+Ahora, dado que que $a_n \leq c_n \leq b_n$, tendremos que
+$$
+-\epsilon < a_n -L \leq c_n -L \leq b_n -L < \epsilon
+$$
+para todo $n \geq n_0= \max\{n_1,n_2\}$. Por lo tanto tenemos que, para todo $n \geq n_0$ es $|c_n -L| < \epsilon$, es decir
+
+$$
+\lim_{n \rightarrow \infty} c_n =L
+$$
+\div
 
 
 
