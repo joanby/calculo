@@ -434,10 +434,24 @@ En primer lugar, entendemos por sucesión definida en forma recurrente una suces
 
 Sean $a$ y $a_1$  dos números reales positivos. A partir de ellos definimos la sucesión:
 $$
-a_n = \dfrac{1}{2}\left( a_{n-1} + \dfrac{a}{a_{n-1}}\right)
+a_{n+1} = \dfrac{1}{2}\left( a_n + \dfrac{a}{a_n}\right)
 $$
 
-Veremos que esta sucesión es monótona creciente y que está acotada.
+Veremos que esta sucesión es monótona decreciente y que está acotada inferiormente.
+
+## Sucesiones definidas en forma recurrente
+
+Veamos, en primer lugar que está acotada inferiormente. De acuerdo con la igualdad que define la sucesión, $a_n$ y $a_{n+1}$ satisfacen la ecuación de segundo grado
+$$
+a_n^2-2a_{n+1}a_n +a = 0
+$$
+De esta ecuación sabemos que tiene, por lo menas u solución real, por lo que su discriminante deberá ser positivo, es decir
+$$
+4a_n^2 -4a \geq 0
+$$
+es decir, $a_n^2 \geq a$, para todo $n \in \mathbb{N}$. En definitiva, $\sqrt{a}$ es una cota inferior para esta sucesión.
+
+
 
 
 
