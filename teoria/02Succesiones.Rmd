@@ -500,6 +500,22 @@ $$
 $$
 \div
 
+## Ejemplo de aplicación del criterio del sandwich
+
+<div class="example"> **Ejemplo** 
+
+Calcular el límite de la sucesión de término general $a_n = \dfrac{\sin n}{n}$.
+
+Dado que $-1 \leq \sin x \leq 1$, para todo $x \in \mathbb{R}$, tenemos que
+$$
+-\dfrac{1}{n} \leq  \dfrac{\sin n}{n} \leq \dfrac{1}{n}
+$$
+resulta que
+$$
+\lim_{n \rightarrow \infty} \dfrac{\sin n}{n} =0
+$$
+\div
+
 
 
 ## El criterio de Stolz
