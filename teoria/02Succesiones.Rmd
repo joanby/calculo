@@ -426,6 +426,18 @@ $$
 $$
 
 
+## Sucesiones definidas en forma recurrente
+
+El cálculo de límites de sucesiones definidas en forma recurrente es otra de las aplicaciones interesantes de la convergencia monótona de sucesiones.
+
+En primer lugar, entendemos por sucesión definida en forma recurrente una sucesión en la que su término general está definido sólo a partir de los anteriores. Algunos ejemplos serian los siguientes: 
+
+Sean $a$ y $a_1$  dos números reales positivos. A partir de ellos definimos la sucesión:
+$$
+a_n = \dfrac{1}{2}\left( a_{n-1} + \dfrac{a}{a_{n-1}}\right)
+$$
+
+Veremos que esta sucesión es monótona creciente y que está acotada.
 
 
 
