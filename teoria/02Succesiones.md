@@ -502,7 +502,39 @@ $$
 </div>   
 
 
+## Otros límites relacionados con el número $e$ (2)
 
+<l class="prop"> **Proposición** </l>
+
+Sean $x_n$ una sucesión tal que $x_n \rightarrow x$ y $a_n$ tal que $a_n \rightarrow \infty$. Entonces
+$$
+\lim \left( 1 + \dfrac{x_n}{a_n}\right)^{a_n} = e^x
+$$
+<div class="dem"> **Demostración**
+
+Sea $b_n = \dfrac{a_n}{x_n}$. Con esta notación tendremos que
+$$
+\lim \left( 1 + \dfrac{x_n}{a_n}\right)^{a_n} = \left( \lim \left( 1 + \dfrac{1}{b_n}\right)^{b_n} \right)^{x_n} = e^{\lim x_n} = e^x
+$$
+</div>
+
+## Otros límites relacionados con el número $e$ (3)
+
+<l class="prop"> **Proposición** </l>
+
+Sean $a_n$ y $b_n$ tales que $a_n \rightarrow 1$ y $b_n \rightarrow \infty$. Entonces
+$$
+\lim a_n ^{b_n} = e^{\lim (b_n(a_n-1))}
+$$
+<div class="dem"> **Demostración**
+
+Dado que $a_n \rightarrow 1$, podemos poner $a_n = 1+ \delta_n$, con $\delta_n \rightarrow 0$. Ahora, si $x_n=\delta_n b_n = (a_n-1)b_n$, tendremos que
+$$
+\lim a_n ^{b_n} = (1+\delta_n)^{b_n} = \left(1 +\dfrac{x_n}{b_n} \right)^{b_n} = e^{\lim x_n} = e^{\lim (b_n(a_n-1))}
+$$
+
+
+</div>
 
 
 ## Sucesiones definidas en forma recurrente
