@@ -467,6 +467,48 @@ $$
 $$
 
 
+## Otros límites relacionados con el número $e$
+
+<l class="prop">**Proposición** </l>
+
+Sea $a_n$ una sucesión tal que $a_n \rightarrow \infty$. Entonces 
+$$
+\lim \left( 1 + \dfrac{1}{a_n}\right)^{a_n} = e
+$$
+
+<div class="dem">**Demostración**
+Tecordemos, en primer lugar, que dado un número real $\alpha$, el mayor entero  que es menor que $\alpha$ se llama *parte entera* de $\alpha$ y se denota por $\lfloor \alpha \rfloor$.
+
+Consideremos, en primer lugar que $a_n \rightarrow +\infty$. Sea $\alpha_n = \lfloor a_n \rfloor$, dado que $\alpha_n \leq a_n \leq \alpha_n +1$, tendremos que 
+$$
+1 + \dfrac{1}{\alpha_n +1} \leq 1+ \dfrac{1}{a_n} \leq1+ \dfrac{1}{\alpha_n}
+$$
+y, por lo tanto,
+$$
+\left(1 + \dfrac{1}{\alpha_n +1} \right)^{\alpha_n} \leq \left( 1+ \dfrac{1}{a_n}\right)^{a_n} \leq \left( 1+ \dfrac{1}{\alpha_n} \right)^{\alpha_n +1}
+$$
+</div>
+
+## Otros límites relacionados con el número $e$ (2)
+
+<div class="dem"> **Demostración** (Continuación)
+
+Ahora, dado que cada $\alpha_n$ es un número natural y que 
+$$ 
+\left(1 + \dfrac{1}{\alpha_n +1} \right)^{\alpha_n} =\dfrac{\left(1 + \dfrac{1}{\alpha_n +1} \right)^{\alpha_n +1}}{1 + \dfrac{1}{\alpha_n +1} } \quad \text{ y } \left( 1+ \dfrac{1}{\alpha_n} \right)^{\alpha_n +1} = \left( 1+ \dfrac{1}{\alpha_n} \right)^{\alpha_n}\left( 1+ \dfrac{1}{\alpha_n} \right)
+$$
+resulta que las dos sucesiones son subsucesiones de la sucesión $\left( 1+ \dfrac{1}{n} \right)^{n}$
+y, por lo tanto, las dos tienen el mismo límite: $e$. En defintiva:
+$$
+\lim \left( 1 + \dfrac{1}{a_n}\right)^{a_n} = e
+$$
+ Consideraciones análogas, sirven para el caso que  $a_n \rightarrow -\infty$
+</div>   
+
+
+
+
+
 ## Sucesiones definidas en forma recurrente
 
 El cálculo de límites de sucesiones definidas en forma recurrente es otra de las aplicaciones interesantes de la convergencia monótona de sucesiones.
