@@ -307,11 +307,52 @@ Ahora, si $a_n \leq b_n$, entonces $b_n - a_n \geq 0$ y, por lo tanto $b-a = \li
 
 </div>
 
+## Límites y operaciones (6)
+
+<l class="prop">**Proposición**</l>
+
+Si $\{a_n\}_{n\in \mathbb{N}}$ es una sucesión de términos positivos tal que $\lim a_n =a$, con $a>0$, entonces la sucesión $\{\log(a_n)\}_{n\in \mathbb{N}}$ es convergente y su límite es $\log a$.
+
+<div class="dem">**Demostración**
+
+Dado que $a_n \rightarrow a$, resulta que $\lim \dfrac{a}{a_n} =1$, por consiguiente, como para cada $\epsilon >0 $ es $e^{\epsilon} >1$ y $e^{-\epsilon} <1$, existirá un $n_0 \in \mathbb{N}$, tal que para todo $n \geq n_0$ es
+$$
+e^{-\epsilon} < \dfrac{a}{a_n} < e^{\epsilon}
+$$
+Ahora sólo basta tomar logaritmos en estas desigualdades para obtener
+$$
+-\epsilon < \log a - \log a_n < \epsilon
+$$
+</div>
+
+
+## Límites y operaciones (7)
+
+<l class="prop">**Proposición**</l>
+
+Si $\{a_n\}_{n \in \mathbb{N}}$ es una sucesión de términos positivos tal que $\lim a_n =a$, con $a>0$, y si $\{b_n\}_{n\in \mathbb{N}}$ es tal que $\lim b_n =b$ entonces, la sucesión $\{a_n ^{b_n}\}_{n\in \mathbb{N}}$ es convergente y su límite es $a^b$.
+
+<div class="dem">**Demostración**
+
+Consideremos la sucesión $\left\{\log \left(a_n ^{b_n} \right)\right\}_{n \in \mathbb{N}}$, tenemos que 
+$$
+\log \left( a_n ^{b_n} \right) = b_n \log a_n
+$$
+ahora, tenemos que  $\lim (b_n \log a_n) = b \log a$. Por lo tanto, aplicando la proposición anterior, tendremos
+que
+$$
+\lim \left(a_n ^{b_n} \right) = (\lim a_n)^{\lim b_n}= a^b 
+$$
+
+</div>
+
+
+
 ## Sucesiones monótonas
 
 Una clase importante de sucesiones son las llamadas **monótonas**:
 
-<l class="definicion"> **Definición** </l>
+<l class="definicion"> **Definición** </l> 
 
 1. Una sucesión de números reales $\{a_n\}_{n \in \mathbb{N}}$ és **creciente** si existe un $n_0 \in \mathbb{N}$ tal que para todo $n \geq n_0$ es $a_n \leq a_{n+1}$.
 
