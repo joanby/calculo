@@ -222,6 +222,29 @@ Ahora $|a_1-a_2| = |a_1-a_n +a_n -a_2| \leq |a_1-a_n| + |a_n -a_2| < \dfrac{\eps
 
 ## Propiedades de los límites (2).
 
+<l class="prop"> **Proposición** </l>
+
+Una sucesión $\{a_n\}$ es convergente si, y sólo sí, todas sus subsucesiones lo son y tienen el mismo límite.
+
+<div class="dem"> **Demostración**
+
+En primer lugar, si todas las subsucesiones de $\{a_n\}$ son convergentes, entonces, dado que ella misma es una subsucesión ($n_1 =1$; $n_2=2$; $\ldots$), deberá ser convergente.
+
+Recíprocamente, si $\{a_{n_k}\}$ es una subsucesión de $\{a_n\}$ y esta es convergente, entonces si $a = \lim a_n$, para cada $\epsilon > 0$ existe $n_0$ tal que para todo $n>n_0$ es $|a_n-a|<\epsilon$. Sea ahora $n_{n_{k_0}}$ el menor de los $n_k$ mayor que $n_0$, entonces para todo $n_k > n_{n_{k_0}} \geq n_0$, será $|a_{n_k}-a|<\epsilon$, es decir, que la subsucesión es convergente y tiene el mismo límite que la sucesión.
+</div>
+
+<div class="example"> **Ejemplos**
+
+1. Dado que $\{ \frac{1}{n+5}\}$ es una subsucesión de $\{\frac{1}{n}\}$, será $\lim  \frac{1}{n+5} =0= \lim \frac{1}{n}$
+2. La sucesión $\{1,-1,1,-1, \ldots\}=\{(-1)^n\}$, no es convergente, puesto que las subsucesiones $\{1,1,1, \ldots \}$ y $\{-1,-1,-1, \ldots \}$ tienen límites diferentes, $1$ y $-1$, respectivamente.
+</div>
+
+
+
+
+
+## Propiedades de los límites (3).
+
 <l class="prop">**Proposición** </l>
 
 Toda sucesión convergente esta acotada. Es decir, si existe el $\lim_{n \rightarrow \infty} a_n$, entonces existen $n_ 0 \in \mathbb{N}$ y $K \in \mathbb{R}$, $K>0$, tal que $|a_n |<K$ para todo $n>n_0$.
