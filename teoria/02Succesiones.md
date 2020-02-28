@@ -55,7 +55,7 @@ aproximan el número $\pi$
 
 ## Sucesiones
 
-<l class="definition">Definición</l>
+<l class="definition"> **Definición**</l>
 
 Una **sucesión** $\{a_n \}_{n \in \mathbb{N}}$ de números reales es un conjunto de números reales ordenado según un subíndice que recorre los números naturales. Dicho de una manera más formal, una sucesión de números reales es la imagen de una aplicación del conjunto $\mathbb{N}$ en los reales $\mathbb{R}$.
 
@@ -129,6 +129,22 @@ $$
 **Ejemplo 8.** La sucesión, también recurrente, $x_1=c>0$, $x_{n+1}=\dfrac{1}{2}(x_n + \dfrac{a}{x_n})$, donde $a$ es un nombre real positivo.
 
 </div>
+
+## Subsucesión de una dada
+
+<l class="definition"> **Definición** </l>
+
+Sean $\{a_n\}$ una sucesión y $n_1 <n_2< \ldots <n_k < \ldots$ una colección -infinita- de números naturales, entonces la sucesión $\{a_{n_k}\}$ recibe el nombre de **subsucesión** de la sucesión dada.
+
+
+Dicho de otra forma, una subsucesión de una dada está formada eliminando términos de la sucesión, respetando el orden en el cual estan dados. Obsérvese que una subsucesión es siempre una sucesión.
+
+<div class="example"> **Ejemplos**
+
+a) La sucesión $\{\frac{1}{n^2}\}_{n \in \mathbb{N}}$ es una subsucesión de $\{\frac{1}{n}\}_{n \in \mathbb{N}}$
+b) La sucesión $\{n+5\}$ lo es de la sucesión $\{n\}_{n \in \mathbb{N}}$.
+c) La sucesión $\{\frac{1}{2},1,\frac{1}{4},\frac{1}{3}, \ldots ,\frac{1}{n+1},\frac{1}{n}, \ldots \}$, no es una subsucesión de la sucesión $\{\frac{1}{n}\}_{n \in \mathbb{N}}$. (¿Por qué?).
+d) Tampoco lo es $\{1,2,3, \ldots, 234501\}$ respecto de la sucesión  $\{n\}_{n \in \mathbb{N}}$.  (¿Por qué?).
 
 ## Límite de una sucesión
 
