@@ -369,6 +369,25 @@ $$
 x \in [a-\epsilon,a+\epsilon]
 $$
 
+## Entornos abiertos y cerrados
+
+Las consideraciones anterores llevan a la siguiente
+
+<l class="definition"> **Definición** </l>
+
+1) **Entorno abierto:** Dados  un punto $a \in \mathbb{R}$ y un $\epsilon >0$, el **entorno abierto de centro $a$ y radio $\epsilon$ es el conjunto de puntos $V_{\epsilon}(a)=\{ x \in \mathbb{R}: |x-a|<\epsilon \} = (a-\epsilon, a+\epsilon)$. 
+
+2) **Entorno cerrado:** Dados  un punto $a \in \mathbb{R}$ y un $\epsilon >0$, el **entorno cerrado de centro $a$ y radio $\epsilon$ es el conjunto de puntos $\overline{V}_{\epsilon}(a)=\{ x \in \mathbb{R}: |x-a| \leq \epsilon \} = [a-\epsilon, a+\epsilon]$. 
+
+3) **Entorno reducido** de un punto: un entorno abierto (cerrado) sin el punto, es decir $V^*_{\epsilon}(a)=V_{\epsilon}(a) \setminus \{a\}$ ($\overline{V}^*_{\epsilon}(a)  \setminus \{a\}$)
+
+Vecindad o bola son también  nombres habituales para los entornos.
+
+
+
+
+
+
 ## Conjuntos acotados
 
 <l class="definition">Definición</l> 
