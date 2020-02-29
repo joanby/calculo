@@ -371,7 +371,7 @@ $$
 
 ## Entornos abiertos y cerrados
 
-Las consideraciones anterores llevan a la siguiente
+Las consideraciones anteriores llevan a la siguiente
 
 <l class="definition"> **Definición** </l>
 
