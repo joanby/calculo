@@ -415,18 +415,43 @@ $$
 
 Veremos en este apartado algunas estrategias para calcular limites de sucesiones reales, la mayoría, orientadas a resolver algunas de las indeterminaciones que involucran límites infinitos y que hemos explicitado al extender la recta real.
 
-<l class="prop">Límite del cociente de dos polinomios: </l>
+<l class="prop"> Límite del cociente de dos polinomios: </l>
 $$
 \lim \dfrac{P(n)}{Q(n)}=\lim \dfrac{a_hn^h+a_{h-1}n^{h-1}+ \ldots + a_1n+a_0}{b_kn^k+b_{k-1}n^{k-1}+ \ldots +b_1n+b_0}
 $$
+
+
 
 ## Cálculo de límites (2)
 
 Se trata de una indeterminación del tipo $\dfrac{\infty}{\infty}$. Se puede resolver dividiendo todos los terminos por la potencia mayor de $n$, para obtener
 
-![Alt Casos en límite del cociente de dos polinomios](/Images/casespol.jpg)
+<img src="Images/casespol.jpg" width="650px" />
+
+## Cálculo de límites (3)
+
+<l class="example"> **Ejemplos** </l>
+
+1. $\lim \dfrac{3n^4-4n^3-5}{2n^5+5n^3-2n} = 0$
+2. $\lim \dfrac{2n^3+4n+1}{3n^3+2n^2}= \dfrac{2}{3}$
+3. $\lim \dfrac{3n^5+4n^4+2n}{7n^4+2n^3+n^2+5n}= \infty$
+4. $\lim \dfrac{\sqrt{3n^2-1}-\sqrt{n}}{n+1}= \sqrt{3}$
 
 
+
+## Cálculo de límites (4)
+
+<l class="prop"> Indeterminaciones del tipo $\infty -\infty$
+
+En estos casos es conveniente multiplicar y dividir por el conjugado de la expresión dada.
+
+<l class="example"> **Ejemplo**
+
+ $\lim (\sqrt{n^2-n+4}-\sqrt{n^2+2})$
+
+$= \lim \dfrac{(\sqrt{n^2-n+4}-\sqrt{n^2+2})(\sqrt{n^2-n+4}+\sqrt{n^2+2})}{\sqrt{n^2-n+4}+\sqrt{n^2+2}}$
+
+$= \lim \dfrac{n^2-n+4-n^2-2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = \lim \dfrac{-n+2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = -\dfrac{1}{2}$
 
 
 
@@ -669,7 +694,7 @@ es decir, $2 L^2 = L^2 +a$ y, por lo tanto, $L=a$, dado que todos los términos 
 Los babilonios usaban esta sucesión para calcular raíces cuadradas, cerca de 2000 años antes de nuestra era.
 
 
-## Cálculo de límites de sucesiones de números reales.
+## Criterio del sandwich
 
 Veremos en esta sección algunas técnicas para el cáslculo de límites. En una primera lectura se puede prescindir de esta sección, pero sus resultados son necesarios en apartados posteriores.
 
