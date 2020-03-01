@@ -696,13 +696,9 @@ Los babilonios usaban esta sucesión para calcular raíces cuadradas, cerca de 2
 
 ## Criterio del sandwich
 
-Veremos en esta sección algunas técnicas para el cáslculo de límites. En una primera lectura se puede prescindir de esta sección, pero sus resultados son necesarios en apartados posteriores.
-
-1) **Criterio del sandwich**
 
 Si $\lim a_n =L=\lim b_n$ y $\{c_n\}_{n \in \mathbb{N}}$ es tal que $a_n \leq c_n \leq b_n$, entonces la sucesión $c_n$ es convergente y $\lim c_n = L$.
 
-## Criterio del sandwich
 
 <div class="dem"> **Demostración**
 
@@ -717,7 +713,7 @@ para todo $n \geq n_0= \max\{n_1,n_2\}$. Por lo tanto tenemos que, para todo $n 
 $$
 \lim_{n \rightarrow \infty} c_n =L
 $$
-\div
+</div>
 
 ## Ejemplo de aplicación del criterio del sandwich
 
@@ -734,6 +730,8 @@ $$
 \lim_{n \rightarrow \infty} \dfrac{\sin n}{n} =0
 $$
 \div
+
+## Ejemplo 2 de aplicación del critrio del sandwich
 
 
 
@@ -802,6 +800,9 @@ $$
 
 
 </div>
+
+
+## Aplicaciones del criterio de Stolz
 
 
 
