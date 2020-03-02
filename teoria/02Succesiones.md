@@ -738,7 +738,7 @@ $$
 $$
 \div
 
-## Ejemplo 2 de aplicación del critrio del sandwich
+## Ejemplo 2 de aplicación del criterio del sandwich
 
 
 
