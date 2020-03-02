@@ -831,16 +831,46 @@ $$
 $$
 </div>
 
+## Ejemplos 
+
+
+
+
 ## Aplicaciones del criterio de Stolz
 
 <l class="prop"> **Proposición: Criterio de la media geométrica**  </l>
 
+Si $a_n >0$ y $\lim_{n \rightarrow \infty} a_n =a$, entonces 
+$$
+\lim_{n \rightarrow \infty} \sqrt{a_1 a_2 \cdots a_n} = a
+$$
+<div class="dem"> **Demostración** 
+
+Dado que la sucesión $a_n$ es de términos positivos, podemos tomar logaritmos y aplicar el criterio de la media aritmética:
+$$
+\log \lim_{n \rightarrow \infty} \sqrt{a_1 a_2 \cdots a_n} = \lim \dfrac{\log a_1 + \log a_2 + \cdots + \log a_n}{n} = \log a
+$$
+Por lo tanto, es $\lim_{n \rightarrow \infty} \sqrt{a_1 a_2 \cdots a_n} = a$.
+</div>
+
+## Ejemplos
+
 
 
 ## Aplicaciones del criterio de Stolz
 
-<l class="prop"> **Proposición: Criterio decociente raiz**  </l>
+<l class="prop"> **Proposición: Criterio del cociente raiz**  </l>
 
+Si $a_n >0$, para todo $n$,  y $\lim_{n \rightarrow \infty} \dfrac{a_{n}}{a_{n-1}} =a$, entonces 
+$$
+\lim_{n \rightarrow \infty} \sqrt{a_n} = a
+$$
+<div class="dem"> **Demostración**
 
+Dado que $a_n>0$ para todo $n$, podemos tomar logaritmos y aplicar el criterio de Stolz
+$$
+\log \lim_{n \rightarrow \infty} \sqrt{a_n} = \lim \dfrac{\log a_n}{n}= \lim \dfrac{\log a_{n} - \log a_{n-1}}{n-(n-1)}= \lim \log \left(\dfrac{a_{n}}{a_{n-1}} \right)= \log a
+$$
+Por lo tanto, $\lim_{n \rightarrow \infty} \sqrt{a_n} = a$ 
 
-
+</div>
