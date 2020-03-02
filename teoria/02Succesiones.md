@@ -426,7 +426,7 @@ $$
 
 Se trata de una indeterminación del tipo $\dfrac{\infty}{\infty}$. Se puede resolver dividiendo todos los terminos por la potencia mayor de $n$, para obtener
 
-<img src="Images/casespol.jpg" width="650px" />
+<img src="Images/casespol.jpg" width="400px" />
 
 
 
@@ -455,6 +455,10 @@ En estos casos es conveniente multiplicar y dividir por el conjugado de la expre
 $= \lim \dfrac{(\sqrt{n^2-n+4}-\sqrt{n^2+2})(\sqrt{n^2-n+4}+\sqrt{n^2+2})}{\sqrt{n^2-n+4}+\sqrt{n^2+2}}$
 
 $= \lim \dfrac{n^2-n+4-n^2-2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = \lim \dfrac{-n+2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = -\dfrac{1}{2}$
+
+
+## Cálculo de límites (5)
+
 
 
 

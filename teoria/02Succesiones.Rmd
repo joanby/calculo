@@ -430,7 +430,7 @@ $$
 
 Se trata de una indeterminación del tipo $\dfrac{\infty}{\infty}$. Se puede resolver dividiendo todos los terminos por la potencia mayor de $n$, para obtener
 
-```{r, echo=FALSE, label=convexa,fig.cap="",out.width = "650px"}
+```{r, echo=FALSE, label=convexa,fig.cap="",out.width = "400px"}
 knitr::include_graphics("Images/casespol.jpg",dpi=1200)
 ```
 
@@ -461,6 +461,10 @@ En estos casos es conveniente multiplicar y dividir por el conjugado de la expre
 $= \lim \dfrac{(\sqrt{n^2-n+4}-\sqrt{n^2+2})(\sqrt{n^2-n+4}+\sqrt{n^2+2})}{\sqrt{n^2-n+4}+\sqrt{n^2+2}}$
 
 $= \lim \dfrac{n^2-n+4-n^2-2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = \lim \dfrac{-n+2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = -\dfrac{1}{2}$
+
+
+## Cálculo de límites (5)
+
 
 
 
