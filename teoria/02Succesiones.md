@@ -428,6 +428,9 @@ Se trata de una indeterminación del tipo $\dfrac{\infty}{\infty}$. Se puede res
 
 <img src="Images/casespol.jpg" width="650px" />
 
+
+
+
 ## Cálculo de límites (3)
 
 <l class="example"> **Ejemplos** </l>

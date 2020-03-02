@@ -434,6 +434,9 @@ Se trata de una indeterminación del tipo $\dfrac{\infty}{\infty}$. Se puede res
 knitr::include_graphics("Images/casespol.jpg",dpi=1200)
 ```
 
+
+
+
 ## Cálculo de límites (3)
 
 <l class="example"> **Ejemplos** </l>
