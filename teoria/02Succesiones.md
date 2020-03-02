@@ -857,6 +857,7 @@ Por lo tanto, es $\lim_{n \rightarrow \infty} \sqrt[n]{a_1 a_2 \cdots a_n} = a$.
 
 
 
+
 ## Aplicaciones del criterio de Stolz
 
 <l class="prop"> **Proposición: Criterio del cociente raiz**  </l>
