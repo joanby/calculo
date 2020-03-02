@@ -425,8 +425,14 @@ $$
 ## Cálculo de límites (2)
 
 Se trata de una indeterminación del tipo $\dfrac{\infty}{\infty}$. Se puede resolver dividiendo todos los terminos por la potencia mayor de $n$, para obtener
-
-<img src="Images/casespol.jpg" width="400px" />
+$$\lim \dfrac{P(n)}{Q(n)} =
+\begin{cases}
+\mbox{  } 0, & \mbox{ si } h<k; \\
+\dfrac{a_h}{b_k}, & \mbox { si } h=k; \\
++\infty, &\mbox{ si } h>k \mbox { y }  \dfrac{a_h}{b_k} >0;\\
+-\infty,& \mbox{ si } h>k \mbox { y }  \dfrac{a_h}{b_k} <0.
+\end{cases}
+$$
 
 
 
@@ -811,10 +817,29 @@ $$
 
 ## Aplicaciones del criterio de Stolz
 
+<l class="prop"> **Proposición: Criterio de la media aritmética**  </l>
+
+Si $\lim_{n \rightarrow \infty}a_n =a$, entonces
+$$
+\lim_{n \rightarrow \infty} \dfrac{a_1 +a_2 + \ldots + a_n}{n} = a
+$$
+<div class="dem"> **Demostración**
+
+Puesto que $\{a_n -a\} \rightarrow 0$ y $\{n\}$ es creciente y no está acotada, podemos aplicar el criterio de Stolz
+$$
+\lim_{n \rightarrow \infty} \dfrac{a_1 +a_2 + \ldots + a_n}{n} = \lim_{n \rightarrow \infty} \dfrac{(a_1+ \ldots + a_{n-2}+a_n)-(a_1+ \ldots +a_{n-1})}{n-(n-1)}= \lim \dfrac{a_n}{1} =a
+$$
+</div>
+
+## Aplicaciones del criterio de Stolz
+
+<l class="prop"> **Proposición: Criterio de la media geométrica**  </l>
 
 
 
+## Aplicaciones del criterio de Stolz
 
+<l class="prop"> **Proposición: Criterio decociente raiz**  </l>
 
 
 
