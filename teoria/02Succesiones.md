@@ -752,7 +752,7 @@ $$
 
 <l class="prop">**Proposición. (Criterio de Stolz)**</l>
 
-Sea $\{a_n\}_{n \in \mathbb{N}}$ una sucesión de números reales con límite $0$ y sea $\{b_n\}_{n \in \mathbb{N}}$ una sucesión estrictamente creciente y no acotada (es decir que $\lim b_n = \infty$), tales que  
+Sea $\{a_n\}_{n \in \mathbb{N}}$ una sucesión de números reales y sea $\{b_n\}_{n \in \mathbb{N}}$ una sucesión estrictamente creciente y no acotada (es decir que $\lim b_n = \infty$), tales que  
 $$
 \lim \dfrac{a_{n+1} -a_n}{b_{n+1}-b_n} = l
 $$
@@ -813,6 +813,35 @@ $$
 
 
 </div>
+
+## Criterio de Stolz: Ejemplo 1
+
+<div class="example"> **Ejemplo** 
+
+Calcular el límite 
+$$
+\lim \dfrac{1^2+2^2+ \cdots + n^2}{n^3}
+$$
+</div>
+
+En primer lugar, $n^3$ es una sucesión creciente y no está acotada, por lo tanto se puede aplicar el criterio de Stolz:
+$$
+\lim \dfrac{1^2+ \cdots + n^2}{n^3} = \lim \dfrac{1^2+ \cdots + n^2+(n+1)^2 - (1^2+ \cdots + n^2)}{(n+1)^3-n^3} 
+$$
+$$
+= \lim \dfrac{(n+1)^2}{(n^3+3n^2+3n+1)-n^3} = \lim \dfrac{n^2+2n+1}{3n^2+3n+1}=\dfrac{1}{3}
+$$
+
+
+## Criterio de Stolz: Ejemplo 2
+
+<div class="example"> **Ejemplo** 
+
+Calcular el límite 
+$$
+\lim
+$$
+
 
 
 ## Aplicaciones del criterio de Stolz
