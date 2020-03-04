@@ -931,9 +931,18 @@ Por lo tanto, $\lim_{n \rightarrow \infty} \sqrt[n]{a_n} = a$
 </div>
 
 
-## Ejemplo
+## Ejemplos
 
-**Calcular el $\lim \dfrac{\sqrt[n]{n!}}{n}$.**
+<div class="example"> **1. Calcular el $\lim \sqrt[n]{a^n}+b^n$, con $a>b>0$**
+
+Apliquemos el criterio del cociente-raíz a la sucesión $\{a^n+b^n\}$ y dividimos numerador y denominador por $a^{n+1}$:
+$$
+\lim_{n \rightarrow \infty} \dfrac{a^{n+1}+b^{n+1}}{a^n+b^n}= \lim_{n \rightarrow \infty} \dfrac{a+\left(\dfrac{b}{a} \right)^n b}{1+\left(\dfrac{b}{a} \right)^n} = a
+$$
+
+Puesto que $\lim_{n \rightarrow \infty} \left(\dfrac{b}{a} \right)^n =0$, al ser $a >b$.
+
+**2. Calcular el $\lim \dfrac{\sqrt[n]{n!}}{n}$.**
 
 Apliquemos el criterio del cociente raiz a la sucesión $a_n=\left\{ \dfrac{n!}{n^n}\right\}$, 
 $$
@@ -941,5 +950,5 @@ $$
 $$
 Por consiguiente es $\lim \dfrac{\sqrt[n]{n!}}{n}= \dfrac{1}{e}$
 
-
+</div>
 
