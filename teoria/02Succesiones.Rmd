@@ -750,6 +750,27 @@ $$
 
 ## Ejemplo 2 de aplicación del criterio del sandwich
 
+<div class="example"> **Ejemplo**
+
+Calcular el límite: ${\displaystyle \lim_{n \rightarrow \infty} \sum_{k=1}^n \dfrac{1}{ \sqrt {n^2+k}} = \lim_{n \rightarrow \infty} \left(\dfrac{1}{\sqrt{n^2+1}}+ \dfrac{1}{\sqrt{n^2+2}}+ \cdots+\dfrac{1}{\sqrt{n^2+n}}\right)}$
+
+Aplicamos el criterio del sandwich. Puesto que, para todo $kn \in \{1,2, \ldots, n\}$, tenemos
+$$
+\dfrac{1}{\sqrt{n^2+n}} \leq \dfrac{1}{\sqrt{n^2+k}} \leq \dfrac{1}{\sqrt{n^2+1}}
+$$
+por consiguiente:
+$$
+\dfrac{n}{\sqrt{n^2+n}} \leq \sum_{k=1}^n \dfrac{1}{\sqrt{n^2+k}} \leq \dfrac{n}{\sqrt{n^2+1}}
+$$
+Ahora, es fácil comprobar que ${\displaystyle \lim_{n \rightarrow \infty} \dfrac{n}{\sqrt{n^2+n}} =1= \lim_{n \rightarrow \infty} \dfrac{n}{\sqrt{n^2+1}}}$.
+
+Por lo tanto
+$$
+\lim_{n \rightarrow \infty} \sum_{k=1}^n \dfrac{1}{\sqrt{n^2+k}} =1
+$$
+
+
+
 
 
 ## El criterio de Stolz
