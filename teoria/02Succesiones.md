@@ -880,7 +880,7 @@ $$
 
 En segundo lugar,
 $$
-\lim_{n \rightarrow \infty} \dfrac{\dfrac{x_1}{1}+\dfrac{x_2}{2}+\cdots+\dfrac{x_n}{n}}{\log n} = \lim_{n \rightarrow \infty} \dfrac{\dfrac{x_n}{n}}{\log(n) - \log(n-1)} = \lim_{n \rightarrow \infty} \dfrac{x_n}{\log\left(\dfrac{n}{n-1}\right)^n} = \lim x_n = x
+\lim_{n \rightarrow \infty} \dfrac{\dfrac{x_1}{1}+\dfrac{x_2}{2}+\cdots+\dfrac{x_n}{n}}{\log n} = \lim_{n \rightarrow \infty} \dfrac{\dfrac{x_n}{n}}{\log(n) - \log(n-1)} = \lim_{n \rightarrow \infty} \dfrac{x_n}{\log\left(\dfrac{n}{n-1}\right)^n} = \lim_{n \rightarrow \infty} x_n = x
 $$
 Ya que $\lim_{n \rightarrow \infty} \log\left(\dfrac{n}{n-1}\right)^n = \log e =1$.
 
@@ -902,7 +902,54 @@ $$
 $$
 </div>
 
-## Ejemplos 
+## Criterio de media aritmética: Ejemplos 
+
+<div class="example"> **Ejemplo 1**
+
+Calcula el límite:
+$$
+\lim_{n \rightarrow \infty} \dfrac{1+\dfrac{1}{2}+\dfrac{1}{3}+ \cdots +\dfrac{1}{n}}{n} = \lim_{n \rightarrow \infty} \dfrac{{\displaystyle\sum_{k=1}^n }\dfrac{1}{k}}{n}
+$$
+
+La sucesión dada es la sucesión de medias aritméticas de la sucesión $a_n = \left\{\dfrac{1}{n}\right\}_{n \in \mathbb{N}}$, por lo tanto, el límite pedido será igual al de la sucesión $a_n$, es decir
+$$
+\lim_{n \rightarrow \infty} \dfrac{1+\dfrac{1}{2}+\dfrac{1}{3}+ \cdots +\dfrac{1}{n}}{n} = \lim_{n \rightarrow \infty} \dfrac{1}{n} =0
+$$
+
+
+</div>
+
+## Criterio de media aritmética: Ejemplos 
+
+<div class="example"> **Ejemplo 2**
+
+Calcula el límite:
+$$
+\lim_{n \rightarrow \infty} \dfrac{\log (n!)}{n}
+$$
+
+Dado que $\log (n!) = \log (1\cdot 2\cdot 3\cdots n)= \log (1)+ \log (2) + \log3) + \cdots \log(n)$, la sucesión dada es la sucesión de medias aritméticas de $a_n = \log (n)$, por lo tanto, el límite pedido es
+$$
+\lim_{n \rightarrow \infty} \dfrac{\log (n!)}{n} =  \lim_{n \rightarrow \infty} \log (n) = + \infty
+$$
+
+</div>
+
+## Criterio de media aritmética: Ejemplos 
+
+<div class="example"> **Ejemplo 3**
+
+Calcula el límite:
+$$
+\lim_{n \rightarrow \infty} \left(\dfrac{2}{n}+\dfrac{3}{2n}+ \cdots \dfrac{n+1}{n^2} \right) = \lim \sum_{k=2}^{n+1} \dfrac{k}{(k-1)n}
+$$
+
+Es suficiente observar que $\dfrac{2}{n}+\dfrac{3}{2n}+ \cdots \dfrac{n+1}{n^2}= \dfrac{1}{n}\left(\dfrac{2}{1}+\dfrac{3}{2}+ \cdots +\dfrac{n+1}{n}\right)$, es decir que se trata de la sucesión de medias aritméticas de la sucesión de término general $a_n = \dfrac{n+1}{n}$, por lo tanto 
+$$
+\lim_{n \rightarrow \infty} \left(\dfrac{2}{n}+\dfrac{3}{2n}+ \cdots \dfrac{n+1}{n^2} \right) = \lim \sum_{k=2}^{n+1} \dfrac{k}{(k-1)n} = \lim_{n \rightarrow \infty} \dfrac{n+1}{n} = 1.
+$$
+</div>
+
 
 
 
