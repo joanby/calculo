@@ -971,14 +971,40 @@ $$
 Por lo tanto, es $\lim_{n \rightarrow \infty} \sqrt[n]{a_1 a_2 \cdots a_n} = a$.
 </div>
 
-## Ejemplos
+## Criterio de la media geométrica: Ejemplos
+
+<div class="example"> **Ejemplo 1**
+
+Calcula el límite:
+$$
+\lim_{n \rightarrow \infty} \sqrt[n]{\dfrac{3}{2} \cdot \dfrac{6}{8} \cdots \dfrac{n^2+2}{2n^2}}
+$$
+La sucesión dada es la sucesión de medias geométricas de la sucesión $a_n \dfrac{2^2+2}{2n^2}$, por lo tanto el límite pedido es
+$$
+\lim_{n \rightarrow \infty} \sqrt[n]{\dfrac{3}{2} \cdot \dfrac{6}{8} \cdots \dfrac{n^2+2}{2n^2}} = \lim_{n \rightarrow \infty} \dfrac{n^2+2}{2n^2} = \dfrac{1}{2}
+$$
+</div>
 
 
+## Criterio de la media geométrica: Ejemplos
 
+<div class="example"> **Ejemplo 2**
+
+Calcula el límite:
+$$
+\lim_{n \rightarrow \infty} \sqrt[n]{\dfrac{(3+1)(3+2) \cdots (3+n)}{n!}}
+$$
+La sucesión dada es la sucesión de media geométricas de la sucesión de término general $a_n = \dfrac{3+n}{n}$, por consiguiente, el límite pedido es
+$$
+\lim_{n \rightarrow \infty} \sqrt[n]{\dfrac{(3+1)(3+2) \cdots (3+n)}{n!}} = \lim_{n \rightarrow \infty} \dfrac{n+3}{n} = 1
+$$
+
+
+</div>
 
 ## Aplicaciones del criterio de Stolz
 
-<l class="prop"> **Proposición: Criterio del cociente raiz**  </l>
+<l class="prop"> **Proposición: Criterio del cociente-raiz**  </l>
 
 Si $a_n >0$, para todo $n$,  y $\lim_{n \rightarrow \infty} \dfrac{a_{n}}{a_{n-1}} =a$, entonces 
 $$
