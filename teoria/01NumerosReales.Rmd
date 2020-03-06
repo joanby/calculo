@@ -621,6 +621,47 @@ Consideremos $s \in \mathbb{R} \setminus \mathbb{Q}$ (por ejemplo $\sqrt{2}$), e
 
 </div>
 
+## Intervalos anidados (1)
+
+<l class="definition"> **Definición** </l>
+
+Una sucesión de **intervalos anidados** es una conjunto de intervalos cerrados y acotados de $\mathbb{R}$, $I_n = [a_n,b_n]$, tal que para todo $n \in \mathbb{N}$, es $I_{n+1} \supset I_n$ o, lo que es equivalente, tal que $a_n \leq a_{n+1} \leq b_{n+1} \leq b_n$
+
+Observación: como se verá más adelante, un conjunto indexado por los números natulaes, como lo son $\{I_n\}$, $\{a_n\}$ y $\{b_n\}$, reciben el nombre de **sucesiones**
+
+## Intervalos anidados (2)
+
+<l class="proposition"> **Proposición** </l>
+
+Sea $\{I_n\}_{n \in \mathbb{N}}$ una sucesión de intervalos anidados de $\mathbb{R}$. Entonces existe un $\xi n\in \mathbb{R}$ tal que $\xi \in I_n$ para todo $n \in \mathbb{N}$, o lo que es lo mismo, tal que $a_n \leq \xi \leq b_n$, para todo $n \in  \mathbb{N}$
+
+<div class="dem"> **Demostración**
+
+En primer lugar, veamos que $a_k \leq b_n$ para todo $k$ y para todo $n$: Si $n \leq k$, entonces $I_k \subset I_n$ y, por lo tanto, $a_k \leq b_k \leq b_n$. Por otra parte, si $k < n$, entonces $I_k \supset I_n$ y, por lo tanto, $a_k \leq a_n \leq b_n$
+
+Es decir, el conjunto de exteremos inferiores de los intervalos $\{a_n: n \in \mathbb{N}\}$ está acotado superiormente por cualquiera de los $b_n$. Sea $\xi$ el supremo de este conjunto. Está claro que $a_n \leq \xi}, para todo $n \in \mathbb{N}$, puesto que  $\xi$ es el supremo de todos los $a_n$.
+
+Pero todos los $b_n$ son cotas superiores de este conjunto, y el supremo es la menor de las cotas superiores, por lo que $\xi \leq b_n$, para todo n. En definitiva es $a_n \leq \xi \leq b_n$, para todo $n \in \mathbb{N}$ o, lo que es lo mismo, $\xi \in I_n$ para todo $n \in \mathbb{N}$.
+
+</div>
+
+
+## Principio de los intervalos anidados.
+
+<l class="prop"> **Proposición: Principio de los intervalos anidados** </l>
+
+Sea $I_n = [a_n,b_n]$ una sucesión de intervalos anidados tales que $\inf\{b_n-a_n: n \in \mathbb{N}\}=0$. Entoces existe un único punto $\xi$ que está en todos los intervalos $I_n$.
+
+<div class="dem"> **Demostración**
+
+Hemos visto en la proposición anterior que $\xi = \sup\{a_n: n \in \mathbb{N} \}$ está en todos los $I_n$. Igual tambien que en la proposición anterior se demuestra que $\eta = \inf \{b_n: n \in \mathbb{N} \}$ tambien está en todos los intervalos. Sólo falta comprobar que $\xi = \eta$. Ahora bien:
+
+Dado que $\eta \leq b_n$ y que $\xi\geq a_n$, para todo $n$, tenemos que $0 \leq \eta - \xi \leq b_n -a_n$, para todo $n$, por lo tanto $0 \leq \eta - \xi \leq \inf\{b_n-a_n: n \in \mathbb{N}\}=0$, es decir que
+$$
+\xi = \eta
+$$
+
+
 
 ## Recta real ampliada
 
@@ -666,6 +707,9 @@ Obsérvese que las operaciones siguientes tienen un resultado indeterminado:
 $$
 \infty - \infty, \quad 0\cdot (\pm \infty), \quad 1^{\infty}, \quad \frac{0}{0}, \quad  \frac{\infty}{\infty}, \quad 0^0, \quad  \infty^0
 $$
+
+
+
 
 ## Apartat/trans
 

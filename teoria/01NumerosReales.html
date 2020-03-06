@@ -3780,6 +3780,45 @@ x&lt;\dfrac{m}{n}&lt;y
 
 <p>Consideremos \(s \in \mathbb{R} \setminus \mathbb{Q}\) (por ejemplo \(\sqrt{2}\)), entonces, sabemos que existe un racional \(q \in \mathbb{Q}\) tal que \(\dfrac{x}{s} &lt;q &lt; \dfrac{y}{s}\). Ahora \(qs \in \mathbb{R} \setminus \mathbb{Q}\), puesto que si \(z=qs \in \mathbb{Q}\), \(s=\dfrac{z}{q}\) seria el cociente de dos racionales y, por la tanto racional. En definitiva es \(x&lt;z&lt;y\), con \(z\) irracional.</p></div>
 
+</article></slide><slide class=""><hgroup><h2>Intervalos anidados (1)</h2></hgroup><article  id="intervalos-anidados-1">
+
+<p><l class="definition"> <strong>Definición</strong> </l></p>
+
+<p>Una sucesión de <strong>intervalos anidados</strong> es una conjunto de intervalos cerrados y acotados de \(\mathbb{R}\), \(I_n = [a_n,b_n]\), tal que para todo \(n \in \mathbb{N}\), es \(I_{n+1} \supset I_n\) o, lo que es equivalente, tal que \(a_n \leq a_{n+1} \leq b_{n+1} \leq b_n\)</p>
+
+<p>Observación: como se verá más adelante, un conjunto indexado por los números natulaes, como lo son \(\{I_n\}\), \(\{a_n\}\) y \(\{b_n\}\), reciben el nombre de <strong>sucesiones</strong></p>
+
+</article></slide><slide class=""><hgroup><h2>Intervalos anidados (2)</h2></hgroup><article  id="intervalos-anidados-2">
+
+<p><l class="proposition"> <strong>Proposición</strong> </l></p>
+
+<p>Sea \(\{I_n\}_{n \in \mathbb{N}}\) una sucesión de intervalos anidados de \(\mathbb{R}\). Entonces existe un \(\xi n\in \mathbb{R}\) tal que \(\xi \in I_n\) para todo \(n \in \mathbb{N}\), o lo que es lo mismo, tal que \(a_n \leq \xi \leq b_n\), para todo \(n \in \mathbb{N}\)</p>
+
+<div class="dem">
+<p><strong>Demostración</strong></p>
+
+<p>En primer lugar, veamos que \(a_k \leq b_n\) para todo \(k\) y para todo \(n\): Si \(n \leq k\), entonces \(I_k \subset I_n\) y, por lo tanto, \(a_k \leq b_k \leq b_n\). Por otra parte, si \(k &lt; n\), entonces \(I_k \supset I_n\) y, por lo tanto, \(a_k \leq a_n \leq b_n\)</p>
+
+<p>Es decir, el conjunto de exteremos inferiores de los intervalos \(\{a_n: n \in \mathbb{N}\}\) está acotado superiormente por cualquiera de los \(b_n\). Sea \(\xi\) el supremo de este conjunto. Está claro que $a_n }, para todo \(n \in \mathbb{N}\), puesto que \(\xi\) es el supremo de todos los \(a_n\).</p>
+
+<p>Pero todos los \(b_n\) son cotas superiores de este conjunto, y el supremo es la menor de las cotas superiores, por lo que \(\xi \leq b_n\), para todo n. En definitiva es \(a_n \leq \xi \leq b_n\), para todo \(n \in \mathbb{N}\) o, lo que es lo mismo, \(\xi \in I_n\) para todo \(n \in \mathbb{N}\).</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Principio de los intervalos anidados.</h2></hgroup><article  id="principio-de-los-intervalos-anidados.">
+
+<p><l class="prop"> <strong>Proposición: Principio de los intervalos anidados</strong> </l></p>
+
+<p>Sea \(I_n = [a_n,b_n]\) una sucesión de intervalos anidados tales que \(\inf\{b_n-a_n: n \in \mathbb{N}\}=0\). Entoces existe un único punto \(\xi\) que está en todos los intervalos \(I_n\).</p>
+
+<div class="dem">
+
+<p><strong>Demostración</strong></p>
+
+<p>Hemos visto en la proposición anterior que \(\xi = \sup\{a_n: n \in \mathbb{N} \}\) está en todos los \(I_n\). Igual tambien que en la proposición anterior se demuestra que \(\eta = \inf \{b_n: n \in \mathbb{N} \}\) tambien está en todos los intervalos. Sólo falta comprobar que \(\xi = \eta\). Ahora bien:</p>
+
+<p>Dado que \(\eta \leq b_n\) y que \(\xi\geq a_n\), para todo \(n\), tenemos que \(0 \leq \eta - \xi \leq b_n -a_n\), para todo \(n\), por lo tanto \(0 \leq \eta - \xi \leq \inf\{b_n-a_n: n \in \mathbb{N}\}=0\), es decir que \[
+\xi = \eta
+\]</p>
+
 </article></slide><slide class=""><hgroup><h2>Recta real ampliada</h2></hgroup><article  id="recta-real-ampliada">
 
 <p>A menudo será conveniente considerar conjuntos como \(\{ x \in \mathbb{R}: x \geq a \}\) o \(\{x \in \mathbb{R}: x \leq a \}\), donde \(a\) indica un número real. Para referirnos a estos conjuntos es útil introducir los símbolos más infinito, \(+ \infty\), y menos infinito, \(- \infty\), tales que, para todo número real \(x\) es \(-\infty &lt; x &lt; +\infty\). Siendo así, podemos escribir \[
