@@ -495,7 +495,7 @@ Resulta fácil comprobar que si $s= \sup A$, entonces $-s= \inf(-A)$, por lo que
 
 ## Consecuencias del axioma del supremo.
 
-<l class="proposicion">**Proposición. (Propiedad arquimediana)**</l>
+<l class="prop"> **Proposición. (Propiedad arquimediana)** </l>
 
 El conjunto $\mathbb{N}$ de los números naturales no está acotado superiormente en $\mathbb{R}$.
 
@@ -534,7 +534,7 @@ $$
 
 ## Consecuencias del Ax. del supremo: $\sqrt{2} \in \mathbb{R}$.
 
-<l class="prop">Proposición</l>
+<l class="prop"> **Proposición** </l>
 
 Existe un número real $p \in \mathbb{R}$ tal que $p^2 = 2$.
 
@@ -627,7 +627,7 @@ Consideremos $s \in \mathbb{R} \setminus \mathbb{Q}$ (por ejemplo $\sqrt{2}$), e
 
 Una sucesión de **intervalos anidados** es una conjunto de intervalos cerrados y acotados de $\mathbb{R}$, $I_n = [a_n,b_n]$, tal que para todo $n \in \mathbb{N}$, es $I_{n+1} \supset I_n$ o, lo que es equivalente, tal que $a_n \leq a_{n+1} \leq b_{n+1} \leq b_n$
 
-Observación: como se verá más adelante, un conjunto indexado por los números natulaes, como lo son $\{I_n\}$, $\{a_n\}$ y $\{b_n\}$, reciben el nombre de **sucesiones**
+Observación: como se verá más adelante, un conjunto indexado por los números naturales, como lo son $\{I_n\}$, $\{a_n\}$ y $\{b_n\}$, reciben el nombre de **sucesiones**
 
 ## Intervalos anidados (2)
 
