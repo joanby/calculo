@@ -693,7 +693,25 @@ Todo conjunto de números reales infinito y acotado tiene un punto de acumulaci�
 
 <div class="dem"> **Demostración**
 
-Sea $A\subset \mathbb{R}$ infinito y acotado, veremos que tiene un punto de acumulación. Por estar $A$ acotado, existe $K>0$ tal que $A \subset [-K,K]$. Por tener $A$ infinitos puntos, en al menos uno de los intervalos $[-K,0]$ y $[0,K]$ hay infinitos puntos de $A$. Sea $I_1 =[a_1,b_1]$ esta mitad. (Si los hay en los dos, nos quedamos con el de la izquierda, por ejemplo), observen que $|b_1-a_1|=\dfrac{K}{2}$. Dado que en $I_1 =[a_1,b_1]$ hay infinitos puntos de $A$, podemos repetir el proceso y determinar así un intervalo $I_2 = [a_2,b_2]$, con infinitos puntos de $A$ y tal que $I_2 \subset I_1$ y que $b_2-a_2= \dfrac{b_1 - a_1}{2}= \dfrac{k}{2^2}$. Reiterando este proceso, construiremos una sucesión $I_n$ de intervalos anidados $I_n$, tal que $I_{n+1} \subset I_n$ y $b_n-a_n = \dfrac{K}{2^n}$. Dado que $\inf \{\dfrac{k}{2^n}: n \in \mathbb{N} \} =0$, por el principio de los intervalos anidados, tendremos que hay un solo punto $\xi$ que está en todos los intervalos. $\xi$ es el punto de acumulación buscado, puesto que  cualquier entorno de $\xi$ contiene todos los los intervalos $I_n$ a partir de un cierto $n_0$ y, por lo tanto, infinitos puntos de $A$ 
+Sea $A\subset \mathbb{R}$ infinito y acotado, veremos que tiene un punto de acumulación. 
+
+Por estar $A$ acotado, es decir que existe $K>0$ tal que  $|a|<K$ para todo $a \in A$, es $A \subset [-K,K]$. 
+
+Por tener $A$ infinitos puntos, en al menos uno de los intervalos $[-K,0]$ y $[0,K]$ hay infinitos puntos de $A$. Sea $I_1 =[a_1,b_1]$ esta mitad. (Si los hay en los dos, nos quedamos con el de la izquierda, por ejemplo), Observen que $|b_1-a_1|=\dfrac{K}{2}$. 
+
+Dado que en $I_1 =[a_1,b_1]$ hay infinitos puntos de $A$, podemos repetir el proceso y determinar así un intervalo $I_2 = [a_2,b_2]$, con infinitos puntos de $A$ y tal que $I_2 \subset I_1$ y que $b_2-a_2= \dfrac{b_1 - a_1}{2}= \dfrac{K}{2^2}$. 
+
+</div>
+
+## Teorema de Bolzano-Weirstrass (cont.)
+
+<div class="dem"> **Demostración**
+
+Reiterando este proceso, construiremos una sucesión $I_n$ de intervalos anidados $I_n$, tal que $I_{n+1} \subset I_n$ y $b_n-a_n = \dfrac{K}{2^n}$. 
+
+Además,  el $\inf \{\dfrac{k}{2^n}: n \in \mathbb{N} \}$, existe puesto que se trata de un conjunto acotado inferiormente por $0$. Este ínfimo no puede ser positivo, puesto que si existe $0 < r <\dfrac{1}{2^n}$ para todo $n \in \mathbb{N}$, resultaria que tendria que ser $2^n < \dfrac{1}{r}$, o lo que es lo mismo, $n \log 2 <-\log r$ y, por lo tanto, $n < -\dfrac{\log r}{\log 2}$, lo que signiciaría que los números naturales estan acotados en $\mathbb{R}$ y ya hemos visto que no puede ser.
+
+Ahora, por el principio de los intervalos anidados, tendremos que hay un solo punto $\xi$ que está en todos los intervalos. $\xi$ es el punto de acumulación buscado, puesto que por ser $\xi$ el infimo de los $b_n$ y el supremo de los $a_n$,dado un $\epsilon >0$, existe un $n \in \mathbb{N}$ tal que $\xi-\epsilon \leq a_n \leq \xi \leq b_n \leq \xi+ \epsilon$, y, por lo tanto, cualquier entorno de $\xi$ contiene infinitos puntos de $A$.
 
 </div>
 
