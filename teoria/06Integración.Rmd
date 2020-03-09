@@ -641,3 +641,193 @@ $$
 \int_a^b f = \underline{\int_a^b}= \overline{\int_a^b} f.
 $$
 La integral también se indica por $\displaystyle\int_a^b f(x)\, dx$.
+
+
+## Funciones integrables
+A continuación vamos a dar condiciones y criterios para verificar si una determinada función es o no **integrable**.
+
+La proposición siguiente nos dice que afirmar que una función es **integrable** es equivalente a decir que podemos encontrar un **partición** del intervalo correspondiente tal que la diferencia entre la **sumas inferior** y la **superior** de dicha **partición** se puede hacer tan pequeña como se quiera: 
+
+<l class="prop"> Proposición: condición necesaria y suficiente de integrabilidad.</l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. Entonces $f$ es integrable si, y sólo si se verifica la condición siguiente:
+para todo valor positivo $\epsilon >0$, existe una partición $P$ del intervalo $[a,b]$ tal que $U(f,P)-L(f,P)<\epsilon$.
+
+## Funciones integrables
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido bastante técnico. </i>
+</div>
+</div>
+<div class="dem">
+**Demostración**
+
+La demostración de la proposición anterior se basa en la proposición vista sobre integrales superiores e inferiores.
+
+Veamos primero la implicación directa:
+
+$\Rightarrow$: supongamos que $f$ es integrable. Entonces, $\underline{\int_a^b}= \overline{\int_a^b} f$.
+
+Consideremos un valor $\epsilon >0$. Sabemos que existe un valor $\delta >0$ tal que si $P$ es una partición del intervalo $[a,b]$ con diámetro menor que $\delta$, $|P|<\delta$, se tiene: 
+$$
+0\leq \underline{\int_a^b} f -L(f,P)<\frac{\epsilon}{2}, \quad 0\leq U(f,P)-\overline{\int_a^b} f <\frac{\epsilon}{2}.
+$$
+</div>
+
+## Funciones integrables
+<div class="dem">
+Por tanto:
+$$
+0< U(f,P)-L(f,P)=U(f,P)-\overline{\int_a^b} f+\underline{\int_a^b} f -L(f,P) <\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon,
+$$
+tal como queríamos ver.
+</div>
+
+## Funciones integrables
+<div class="dem">
+Demostremos ahora la implicación inversa:
+
+$\Leftarrow$: sabemos que dado cualquier $\epsilon >0$, existe una partición $P$ del intervalo $[a,b]$ tal que $U(f,P)-L(f,P)<\epsilon$.
+
+Ahora bien, recordemos que:
+$$
+L(f,P)\leq \underline{\int_a^b} f\leq \overline{\int_a^b} f \leq U(f,P).
+$$
+Por tanto, usando la condición anterior tenemos que $\overline{\int_a^b} f-\underline{\int_a^b} f<\epsilon$.
+
+Como la condición es para todo $\epsilon >0$, necesariamente ha de cumplirse que $\underline{\int_a^b} f=\overline{\int_a^b} f$, condición que equivale a decir que $f$ es integrable en el intervalo $[a,b]$.
+</div>
+
+## Funciones integrables
+
+La condición anterior es difícil de aplicar en la práctica y en su lugar se usa la proposición equivalente siguiente:
+
+<l class="prop"> Proposición: condición necesaria y suficiente de integrabilidad.</l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. Sea $(P_n)_n$ una sucesión de particiones del intervalo $[a,b]$ tal que $\displaystyle\lim_{n\to\infty}|P_n|=0$, es decir, los diámetros tienden a cero.  Entonces $f$ es integrable si, y sólo si $I=\displaystyle\lim_{n\to\infty}U(f,P_n)=\lim_{n\to\infty}L(f,P_n)$ y, en este caso, $\int_a^b f=I$.
+
+Dicha proposición nos dice que para verificar que una función $f$ sea **integrable** en un intervalo $[a,b]$, basta hallar una sucesión de particiones $(P_n)_n$ con diámetros cada vez más pequeños y tendiendo a cero tal que el límite de las **sumas superiores** e **inferiores** tienden hacia el mismo límite siendo dicho límite el valor de la integral de la función $f$ en el intervalo $[a,b]$.
+
+## Funciones integrables
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido bastante técnico. </i>
+</div>
+</div>
+<div class="dem">
+**Demostración**
+
+Demostremos primero la implicación directa:
+
+$\Rightarrow$: supongamos que $f$ es integrable. Entonces, $\underline{\int_a^b}= \overline{\int_a^b} f$.
+
+Usando la proposición anterior, sabemos que para cualquier $\epsilon >0$, existe una partición $P$, tal que $U(f,P)-L(f,P)<\epsilon$.
+
+Consideremos $n\in\mathbb{N}$ un valor natural y $\epsilon = \frac{1}{n}$. Entonces existe una partición $P_n$ tal que $U(f,P_n)-L(f,P_n)<\frac{1}{n}.$ A continuación, consideremos la partición 
+$$
+\hat{P}_n =P_n\cup \{x_0=a < a+\frac{b-a}{n}<\cdots < x_i=a+i\cdot \frac{b-a}{n}<\cdots <  b=x_n\}.
+$$
+</div>
+
+## Funciones integrables
+<div class="dem">
+Fijarse que se cumple, por un lado que el diámetro de $\hat{P}_n$ es menor o igual que $\frac{1}{n}$, $|\hat{P}_n|\leq \frac{1}{n}$ y, por otro,
+$$
+0\leq U(f,\hat{P}_n)-L(f,\hat{P}_n)\leq U(f,P_n)-L(f,P_n)<\frac{1}{n},
+$$
+ya que la partición $\hat{P}_n$ es más fina que $P_n$.
+
+A partir de la condición anterior, haciendo tender $n\to\infty$, tenemos que $I=\displaystyle\lim_{n\to\infty}U(f,\hat{P}_n)=\lim_{n\to\infty}L(f,\hat{P}_n)$, tal como queríamos ver. Es decir, existe una sucesión de particiones $(\hat{P}_n)_n$ con $\displaystyle\lim_{n\to \infty}|\hat{P}_n|=0$ tal que $I=\displaystyle\lim_{n\to\infty}U(f,\hat{P}_n)=\lim_{n\to\infty}L(f,\hat{P}_n)$.
+
+
+El valor de $I$ anterior sería el valor de la integral de $f$ en el intervalo $[a,b]$ ya que 
+
+* por un lado, se verifica que:
+$\overline{\int_a^b} f \leq U(f,\hat{P}_n)$ para todo valor de $n$. Si pasamos a límite tendremos que $\overline{\int_a^b} f \leq I$;
+* por otro lado, tenemos que $\underline{\int_a^b} f \geq  L(f,\hat{P}_n)$ para todo valor de $n$. Si pasamos a límite tendremos que $\underline{\int_a^b} f \geq I$.
+
+En resumen: $I\leq \underline{\int_a^b} f=\overline{\int_a^b} f \leq I$, lo que implica que $I=\underline{\int_a^b} f=\overline{\int_a^b} f =\int_a^b f$.
+
+
+</div>
+
+## Funciones integrables
+<div class="dem">
+Hagamos la demostración de la implicación inversa:
+
+$\Leftarrow$: supongamos que existe una partición $(P_n)_n$ con $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que $I=\displaystyle\lim_{n\to\infty}U(f,P_n)=\lim_{n\to\infty}L(f,P_n)$.
+
+Como $\displaystyle\lim_{n\to\infty} U(f,P_n)-L(f,P_n)=0$, entonces para todo valor $\epsilon >0$, existe un valor $n_0$ tal que si $n\geq n_0$, $U(f,P_n)-L(f,P_n)<\epsilon$.
+
+Es decir, para todo $\epsilon >0$, existe una partición $P$ (cualquier partición $P_n$ con $n\geq n_0$) tal que $U(f,P)-L(f,P)<\epsilon$. Usando la primera proposición vista que nos da una condición necesaria y suficiente de integrabilidad, tenemos que $f$ será integrable en el intervalo $[a,b]$, tal como queríamos ver.
+
+</div>
+
+## Funciones integrables. Ejemplo
+<div class="example">
+**Ejemplo**
+
+Sea $k\geq 1$ un natural cualquiera mayor que $1$. Veamos que la función $f(x)=x^k$ es integrable en el intervalo $[0,1]$.
+
+Para ello, aplicaremos la proposición anterior y consideraremos la suceción de particiones siguiente:
+$$
+P_n =\left\{x_0=0<\frac{1}{n}<\cdots < \frac{i}{n}<\cdots < x_n =\frac{1}{n}\right\}.
+$$
+La partición anterior sería equiespaciada donde $x_i-x_{i-1}=\frac{1}{n}$. Por tanto el diámetro de $P_n$ sería $|P_n|=\frac{1}{n}$ y se verificará que $\displaystyle\lim_{n\to\infty}|P_n|=0$.
+
+Calculemos las sumas inferiores y superiores de $f$ respecto las particiones $P_n$:
+$$
+\begin{array}{rl}
+L(f,P_n) & \displaystyle = \sum_{i=1}^n m_i\cdot (x_i-x_{i-1}) = \sum_{i=1}^n \inf_{x\in [x_{i-1},x_i]}x^k\cdot \frac{1}{n},\\
+U(f,P_n) & \displaystyle = \sum_{i=1}^n M_i\cdot (x_i-x_{i-1}) = \sum_{i=1}^n \sup_{x\in [x_{i-1},x_i]}x^k\cdot \frac{1}{n}.
+\end{array}
+$$
+</div>
+
+## Funciones integrables. Ejemplo
+<div class="example">
+Como la función $f(x)=x^k$ es creciente en el intervalo $[0,1]$ tendremos que $\displaystyle \inf_{x\in [x_{i-1},x_i]}x^k =x_{i-1}^k =\left(\frac{i-1}{n}\right)^k$, $\displaystyle \sup_{x\in [x_{i-1},x_i]}x^k =x_{i}^k =\left(\frac{i}{n}\right)^k$.
+
+Las sumas inferiores y superiores serán, por tanto,
+$$
+\begin{array}{rl}
+L(f,P_n) & \displaystyle = \frac{1}{n}\sum_{i=1}^n \left(\frac{i-1}{n}\right)^k = \frac{1}{n^{k+1}}\sum_{i=1}^n (i-1)^k ,\\
+U(f,P_n) & \displaystyle = \frac{1}{n}\sum_{i=1}^n \left(\frac{i}{n}\right)^k = \frac{1}{n^{k+1}}\sum_{i=1}^n i^k.
+\end{array}
+$$
+El valor de la diferencia entre las sumas superiores e inferiores será:
+$$
+U(f,P_n)-L(f,P_n)= \frac{1}{n^{k+1}}\left(\sum_{i=1}^n i^k -\sum_{i=1}^n (i-1)^k\right) =\frac{n^k}{n^{k+1}}.
+$$
+</div>
+
+## Funciones integrables. Ejemplo
+<div class="example">
+Como el grado de denominador es mayor que el grado del numerador, el límite de la sucesión $\frac{n^k}{n^{k+1}}$ será cero y, por tanto,
+$\displaystyle\lim_{n\to\infty} U(f,P_n)-L(f,P_n)=0$, lo que implica que $\displaystyle \lim_{n\to\infty} U(f,P_n)=\lim_{n\to\infty} L(f,P_n)$, condición que, como ya hemos visto, equivale a afirmar que $f(x)=x^k$ es integrable en el intervalo $[0,1]$.
+
+Usando la última proposición, sabemos que el valor de la integral de la función $f(x)=x^k$ en el intervalo $[0,1]$ vale:
+$$
+\int_0^1 x^k =\lim_{n\to \infty}\frac{1}{n^{k+1}}\sum_{i=1}^n i^k.
+$$
+Los valores de la integral para $k\in\{2,\ldots, 25\}$ en `Wolfram Alpha` se muestran en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Table%5BLimit%5BSum%5Bi%5Ek%2C+%7Bi%2C+1%2C+n%7D%5D%2Fn%5E%28k+%2B+1%29%2C+n+-%3E+Infinity%5D%2C%7Bk%2C1%2C25%7D%5D)
+</l>
+Parece que el valor de la integral es $\frac{1}{k+1}$. Más adelante veremos que efectivamente así es.
+</div>
+
+## Funciones integrables. Ejemplo
+<div class="example">
+El cálculo de la integral en `python` se realizaría de la forma siguiente:
+
+```{python}
+from sympy import * 
+from sympy.abc import i, k, n
+
+for k in range(1,10):
+  valor=Limit(Sum(i**k, (i, 1, n)).doit()/n**(k+1),n,oo).doit();
+  print('k={res}, valor integral={valor}'.format(res=k, valor=valor))
+```
+
+</div>
+
+# Propiedades de las integrales
