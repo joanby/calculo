@@ -3796,22 +3796,33 @@ x&lt;\dfrac{m}{n}&lt;y
 
 <p>Finalmente, una aplicación es <strong>biyectiva</strong> si es inyectiva y exhaustiva a la vez. A menudo, una aplicación biyectiva también es llamada <strong>correspondencia uno a uno</strong>.</p>
 
-</article></slide><slide class=""><hgroup><h2>Ejemplos de aplicaciones</h2></hgroup><article  id="ejemplos-de-aplicaciones">
-
 <div class="example">
-<p><strong>Ejemplo de aplicación</strong></p></div>
+<p><strong>Ejemplo de aplicación</strong></p>
+
+<p>\(f: \mathbb{N} \rightarrow \mathbb{N}\) definida por \(f(n) = 2n\) es una aplicación del conjunto de los números naturales en sí mismo. Por otro lado, la misma asignación entre \(\mathbb{Z}\) y \(\mathbb{N}\), no es una aplicación, puesto que el doble de un número negativo no es un número natural.</p></div>
+
+</article></slide><slide class=""><hgroup><h2>Ejemplos de aplicaciones</h2></hgroup><article  id="ejemplos-de-aplicaciones">
 
 <div class="example">
 <p><strong>Ejemplo de aplicación inyectiva</strong></p>
 
-<p>Sean \(n \in \mathbb{N}\) y \(N_n\) el conjunto de los \(n\) primeros números naturales. La aplicación \(f(k)=k\) es inyectiva, pero no exhaustiva, ya que todos los naturales mayores que \(n\) no son imagen de ningún elemento de \(N_n\).</p></div>
+<p>Sean \(n \in \mathbb{N}\) y \(N_n\) el conjunto de los \(n\) primeros números naturales. La aplicación \(f(k)=k\) es inyectiva, pero no exhaustiva, ya que cualquier natural mayor que \(n\) no es imagen de ningún elemento de \(N_n\).</p></div>
 
 <div class="example">
-<p><strong>Ejemplo de aplicación exhaustiva</strong></p></div>
+<p><strong>Ejemplo de aplicación exhaustiva</strong></p>
+
+<p>La aplicación \(h: \mathbb{Z} \rightarrow \mathbb{N}\), definida por \(h(n)=|n|\), es una aplicación exhaustiva, pero no inyectiva, puesto que \(h(n)=h(-n)\).</p></div>
 
 <div class="example">
-
 <p><strong>Ejemplo de aplicación biyectiva</strong></p>
+
+<p>La aplicación de \(f: \mathbb{N} \rightarrow \mathbb{Z}\) definida por \[
+f(n) =
+\begin{cases}
+\dfrac{n}{2}, &amp;  \text{ si n es par}\\
+-\dfrac{n+1}{2},&amp;  \text{ si n es impar}
+\end{cases}
+\] es una aplicación biyectiva.</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Cardinal de un conjunto: Conjuntos infinitos.</h2></hgroup><article  id="cardinal-de-un-conjunto-conjuntos-infinitos.-2">
 
@@ -3822,6 +3833,26 @@ x&lt;\dfrac{m}{n}&lt;y
 <p>Un conjunto <strong>finito</strong> es un conjunto con \(n\) elementos. Es decir, un conjunto \(A\) es finito si existe una aplicación inyectiva de \(A\) en el conjunto de los números naturales \(\mathbb{N}\).</p>
 
 <p>Un conjunto es <strong>infinito</strong> si no es finito.</p>
+
+<p><l class="definition"> <strong>Definición</strong> </l></p>
+
+<p>Dos conjuntos \(A\) y \(B\) tienen el mismo <strong>cardinal</strong> si existe una correspondencia uno a uno entre ellos.</p>
+
+</article></slide><slide class=""><hgroup><h2>Cardinal de un conjunto: Conjuntos infinitos.</h2></hgroup><article  id="cardinal-de-un-conjunto-conjuntos-infinitos.-3">
+
+<p>Está claro que dos conjuntos finitos con el mismo número de elementos tienen el mismo cardianl, pero ¿qué pasa con los conjutos infinitos?</p>
+
+<p>Hemos visto un ejemplo de una aplicación biyectiva entre los conjuntos \(\mathbb{Z}\) y \(\mathbb{N}\) y, por lo tanto tienen el mismo cardinal, aunque \(\mathbb{N} \subset \mathbb{Z}\). Conviene observar que esta es una característica de los conjuntos infinitos: pueden tenr el mismo cardinal que alguno de sus subconjuntos propios.</p>
+
+<p><l class="definition"> <strong>Definición</strong></p>
+
+<p>Diremos que un conjunto es <strong>numerable</strong> si tiene el mismo cardinal que \(\mathbb{N}\). Diremos que un conjunto es <strong>contable</strong> si es finito o numerable.</p>
+
+<p><l class="example"> <strong>Ejemplo</strong> </l></p>
+
+<p>El conjunto \(Z\) de los números enteros es numerable. También lo es el conjunto de los números naturales pares o el de los múltiplos de otro número natural \(k\).</p>
+
+</article></slide><slide class=""><hgroup><h2>El conjunto de los números racionales es numerable</h2></hgroup><article  id="el-conjunto-de-los-números-racionales-es-numerable">
 
 </article></slide><slide class=""><hgroup><h2>Intervalos anidados (1)</h2></hgroup><article  id="intervalos-anidados-1">
 

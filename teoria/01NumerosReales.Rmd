@@ -639,24 +639,40 @@ Una aplicación es **exhaustiva** si todos los elementos de $B$ son la imagen de
 
 Finalmente, una aplicación es **biyectiva** si es inyectiva y exhaustiva a la vez. A menudo, una aplicación biyectiva también es llamada **correspondencia uno a uno**.
 
-## Ejemplos de aplicaciones
-
 <div class="example"> **Ejemplo de aplicación**
+
+$f: \mathbb{N} \rightarrow \mathbb{N}$ definida por $f(n) = 2n$ es una aplicación del conjunto de los números naturales en sí mismo. Por otro lado, la misma asignación entre $\mathbb{Z}$ y $\mathbb{N}$, no es una aplicación, puesto que el doble de un número negativo no es un número natural.
 
 </div>
 
+## Ejemplos de aplicaciones
+
+
+
 <div class="example"> **Ejemplo de aplicación inyectiva**
 
-Sean $n \in \mathbb{N}$ y $N_n$ el conjunto de los $n$ primeros números naturales. La aplicación $f(k)=k$ es inyectiva, pero no exhaustiva, ya que todos los naturales  mayores que $n$ no son  imagen de ningún elemento de $N_n$.
+Sean $n \in \mathbb{N}$ y $N_n$ el conjunto de los $n$ primeros números naturales. La aplicación $f(k)=k$ es inyectiva, pero no exhaustiva, ya que cualquier natural  mayor que $n$ no es  imagen de ningún elemento de $N_n$.
 </div>
 
 <div class="example"> **Ejemplo de aplicación exhaustiva**
 
+La aplicación $h: \mathbb{Z} \rightarrow \mathbb{N}$, definida por $h(n)=|n|$, es una aplicación exhaustiva, pero no inyectiva, puesto que $h(n)=h(-n)$.
 
 </div>
 
-
 <div class="example"> **Ejemplo de aplicación biyectiva**
+
+La aplicación de $f: \mathbb{N} \rightarrow \mathbb{Z}$ definida por
+$$
+f(n) =
+\begin{cases}
+\dfrac{n}{2}, &  \text{ si n es par}\\
+-\dfrac{n+1}{2},&  \text{ si n es impar}
+\end{cases}
+$$
+es una aplicación biyectiva.
+</div>
+
 
 
 ## Cardinal de un conjunto: Conjuntos infinitos.
@@ -669,8 +685,28 @@ Un conjunto **finito** es un conjunto con $n$ elementos. Es decir, un conjunto $
 
 Un conjunto es **infinito** si no es finito. 
 
+<l class="definition"> **Definición** </l>
+
+Dos conjuntos $A$ y $B$ tienen el mismo **cardinal** si existe una correspondencia uno a uno entre ellos. 
 
 
+
+## Cardinal de un conjunto: Conjuntos infinitos.
+
+Está claro que dos conjuntos finitos con el mismo número de elementos tienen el mismo cardianl, pero ¿qué pasa con los conjutos infinitos? 
+
+Hemos visto un ejemplo de una aplicación biyectiva entre los conjuntos $\mathbb{Z}$ y $\mathbb{N}$ y, por lo tanto tienen el mismo cardinal, aunque $\mathbb{N} \subset \mathbb{Z}$. Conviene observar que esta es una característica de los conjuntos infinitos: pueden tenr el mismo cardinal que alguno de sus subconjuntos propios.
+
+<l class="definition"> **Definición**
+
+Diremos que un conjunto es **numerable** si tiene el mismo cardinal que $\mathbb{N}$. Diremos que un conjunto es **contable** si es finito o numerable.
+
+<l class="example"> **Ejemplo** </l>
+
+El conjunto $Z$ de los números enteros es numerable. También lo es el conjunto de los números naturales pares o el de los múltiplos de otro número natural $k$.
+
+
+## El conjunto de los números racionales es numerable
 
 
 
@@ -698,6 +734,8 @@ Es decir, el conjunto de exteremos inferiores de los intervalos $\{a_n: n \in \m
 Pero todos los $b_n$ son cotas superiores de este conjunto, y el supremo es la menor de las cotas superiores, por lo que $\xi \leq b_n$, para todo n. En definitiva es $a_n \leq \xi \leq b_n$, para todo $n \in \mathbb{N}$ o, lo que es lo mismo, $\xi \in I_n$ para todo $n \in \mathbb{N}$.
 
 </div>
+
+
 
 
 ## Principio de los intervalos anidados.
