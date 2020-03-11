@@ -621,6 +621,60 @@ Consideremos $s \in \mathbb{R} \setminus \mathbb{Q}$ (por ejemplo $\sqrt{2}$), e
 
 </div>
 
+
+## Cardinal de un conjunto: Conjuntos infinitos.
+
+Esta sección está destinada a comparar el "tamaño" de los conjuntos de números $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ y $\mathbb{R}$. Veremos que, en tanto que los tres primeros tienen el mismo tamaño, en un sentido que se definirá, el de los números reales es mayor, es decir que hay muchos más números irracionales que racionales. Cantor fue el primero que lo descubrió, la cual cosa le supuso no pocos problemas ante la incomprensión de una buena parte de los matemáticos contemporáneos.
+
+Para lo que sigue, es conviente recordar que una **aplicación**, $f$ de un conjunto $A$ en otro $B$, representada por $f: A \rightarrow B$, es una asignación de elementos de $B$ a elementos de $A$. de tal manera a que cada elemento de $A$ se le asigna un, y sólo un, elemento de $B$. 
+
+Escribiremos $b=f(a)$, y diremos que $b$ *es la imagen de* $a$ por $f$, para indicar que $b$ es un elemento asignado a $a$. 
+
+
+## Cardinal de un conjunto: Conjuntos infinitos.
+
+Una aplicación, $f$,  es **inyectiva** si a elementos distintos de $A$ le corresponden elementos diferentes de $B$, es decir si $a_1 \neq a_2$  entonces $f(a_1) \neq f(a_2)$, para todo $a_1$ y $a_2$ de $A$.
+
+Una aplicación es **exhaustiva** si todos los elementos de $B$ son la imagen de algún elemento de $A$, es decir si para todo $b \in B$, existe un $a \in A$ tal que $b=f(a)$.
+
+Finalmente, una aplicación es **biyectiva** si es inyectiva y exhaustiva a la vez. A menudo, una aplicación biyectiva también es llamada **correspondencia uno a uno**.
+
+## Ejemplos de aplicaciones
+
+<div class="example"> **Ejemplo de aplicación**
+
+</div>
+
+<div class="example"> **Ejemplo de aplicación inyectiva**
+
+Sean $n \in \mathbb{N}$ y $N_n$ el conjunto de los $n$ primeros números naturales. La aplicación $f(k)=k$ es inyectiva, pero no exhaustiva, ya que todos los naturales  mayores que $n$ no son  imagen de ningún elemento de $N_n$.
+</div>
+
+<div class="example"> **Ejemplo de aplicación exhaustiva**
+
+
+</div>
+
+
+<div class="example"> **Ejemplo de aplicación biyectiva**
+
+
+## Cardinal de un conjunto: Conjuntos infinitos.
+
+<l class="definition"> **Definición** </l>
+
+Sea $N_n$ el conjunto de los $n$ primeros números naturales. Diremos que un conjunto $A$ tiene $n$ elementos si existe una correspondencia uno a uno entre $A$ y $N_n$.
+
+Un conjunto **finito** es un conjunto con $n$ elementos. Es decir, un conjunto $A$ es finito si existe una aplicación inyectiva de $A$ en el conjunto de los números naturales $\mathbb{N}$.
+
+Un conjunto es **infinito** si no es finito. 
+
+
+
+
+
+
+
 ## Intervalos anidados (1)
 
 <l class="definition"> **Definición** </l>
