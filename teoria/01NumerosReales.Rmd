@@ -708,7 +708,19 @@ El conjunto $Z$ de los números enteros es numerable. También lo es el conjunto
 
 ## El conjunto de los números racionales es numerable
 
-
+\begin{tabular}{cccccccccccc}
+$\dfrac{1}{1}$ & & $\dfrac{1}{2}$ &$\rightarrow$& $\dfrac{1}{3}$ && $\dfrac{1}{4}$ & $\rightarrow$ &  $\ldots$&  & $\dfrac{1}{n}$ & \\
+ $\downarrow $ &$\nearrow$ && $\swarrow$  && $\nearrow$ &&  & &  &  \\
+  $\dfrac{2}{1}$ && $\dfrac{2}{2}$ && $\dfrac{2}{3}$ && $\dfrac{2}{4}$ && $\ldots$ && $\dfrac{2}{n}$
+ & \\
+ &$\swarrow$ && $\nearrow$  && $\swarrow$ &&  & &  &  \\
+ $\dfrac{3}{1}$ && $\dfrac{3}{2}$ && $\dfrac{3}{3}$ && $\dfrac{3}{4}$ && $\ldots$ && $\dfrac{3}{n}$
+ & \\
+ $\downarrow $ &$\nearrow$ && $\swarrow$  && $\nearrow$ &&  & & &  \\
+ $\dfrac{4}{1}$ && $\dfrac{4}{2}$ && $\dfrac{4}{3}$ && $\dfrac{4}{4}$ && $\ldots$ && $\dfrac{4}{n}$
+ & \\
+ $\vdots$ && $\vdots$ && $\vdots$ && $\vdots$ && &&$\vdots$ & 
+\end{tabular}
 
 
 ## Intervalos anidados (1)
