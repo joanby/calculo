@@ -689,22 +689,36 @@ Un conjunto es **infinito** si no es finito.
 
 Dos conjuntos $A$ y $B$ tienen el mismo **cardinal** si existe una correspondencia uno a uno entre ellos. 
 
+## $\mathbb{N}$ es infinito.
 
+<l class="prop"> **Proposición** </l>
 
-## Cardinal de un conjunto: Conjuntos infinitos.
+El conjunto de los números naturales, $\mathbb{N}$ es infinito.
 
-Está claro que dos conjuntos finitos con el mismo número de elementos tienen el mismo cardianl, pero ¿qué pasa con los conjutos infinitos? 
+<div class="dem"> 
 
-Hemos visto un ejemplo de una aplicación biyectiva entre los conjuntos $\mathbb{Z}$ y $\mathbb{N}$ y, por lo tanto tienen el mismo cardinal, aunque $\mathbb{N} \subset \mathbb{Z}$. Conviene observar que esta es una característica de los conjuntos infinitos: pueden tenr el mismo cardinal que alguno de sus subconjuntos propios.
+Es suficiente demostrar que para todo $m \in \mathbb{N}$ no puede existir una aplicación inyectiva de $\mathbb{N}$ en $N_m$, puesto que, de ser así, no podrá existir una aplicación biyectiva entre esos dos conjuntos y, por lo tanto $\mathbb{N}$ no será un conjunto finito.
+
+Ahora, en primer lugar, cada subconjunto de $\mathbb{N}$ de $m$ elementos se puede poner en correspondencia uno a uno com $N_m$, por lo tanto será suficiente considerar el propio $N_m = \{1,2, \ldots, m\}$ como subconjunto de $\mathbb{N}$. Una vez que hemos asignado la imagen de estos primeros $m$ elementos de $\mathbb{N}$ hemos agotado los elementos de $N_m$, por consiguiente, para asignar una imagen a $m+1 \in \mathbb{N}$ no quedará más remedio que tomar alguno de los elementos de $N_m$ y, por lo tanto tendríamos dos naturales distintos con la misma imagen, lo que significa que la aplicación no puede ser inyectiva.
+
+</div>
+
+La técnica aplicada en la demostración anterior, se conoce con el nombre del **Principìo del palomar** y resulta ser extremadamente útil en la resolución de diversos tipos de problemas.
+
+## Conjuntos numerables.
+
+Está claro que dos conjuntos finitos con el mismo número de elementos tienen el mismo cardinal, pero ¿qué pasa con los conjutos infinitos? 
+
+Hemos visto un ejemplo de una aplicación biyectiva entre los conjuntos $\mathbb{Z}$ y $\mathbb{N}$ y, por lo tanto tienen el mismo cardinal, aunque $\mathbb{N} \subset \mathbb{Z}$. Conviene observar que esta es una característica de los conjuntos infinitos: pueden tener el mismo cardinal que alguno de sus subconjuntos propios.
 
 <l class="definition"> **Definición**
 
 Diremos que un conjunto es **numerable** si tiene el mismo cardinal que $\mathbb{N}$. Diremos que un conjunto es **contable** si es finito o numerable.
 
-<l class="example"> **Ejemplo** </l>
+<div class="example"> **Ejemplo** 
 
-El conjunto $Z$ de los números enteros es numerable. También lo es el conjunto de los números naturales pares o el de los múltiplos de otro número natural $k$.
-
+El conjunto $\mathbb{Z}$ de los números enteros es numerable. También lo es el conjunto de los números naturales pares o el de los múltiplos de otro número natural $k$.
+</div>
 
 ## $\mathbb{Q}$ es numerable
 
@@ -727,12 +741,36 @@ A continuación se muestra una "demostración" visual de que $\mathbb{Q}$ es num
 
 ## $\mathbb{Q}$ es numerable
 
+El gráfico muestra cómo disponer los elementos de $\mathbb{Q}$ para numerarlos.
+
 <div class="center">
 
-```{r, echo=FALSE, label=der1,fig.cap="",out.width = "650px"}
+```{r, echo=FALSE, label=der1,fig.cap="",out.width = "600px"}
 knitr::include_graphics("Images/cantor.png",dpi=1200)
 ```
 </div>
+
+## $\mathbb{R}$ no es numerable
+
+<l class="prop"> **Proposición** </l>
+
+El conjunto de los números reales, $\mathbb{N}$, no es numerable.
+
+<div class="dem"> **Demostración**
+
+Demostraremos que el intervalo abierto $(0,1) \subset \mathbb{R}$ no es numerable y, por lo tanto, el conjunto $\mathbb{R}$ no podrá ser numerable.
+
+Supongamos que si, que $(0,1)$ es numerable. Es decir que podemos disponer estos números, en su representación decimal, de manera que uno sea el primero, otro el segundo , y así sucesivamente:
+$$
+a_1 = 0.a_{11}a_{12}a_{13} \ldots a_{1n} \ldots \\
+a_2 = 0.a_{21}a_{22}a_{23} \ldots a_{2n} \ldots \\
+a_3 = 0.a_{31}a_{32}a_{33} \ldots a_{3n} \ldots \\
+\ldots\\
+a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
+\ldots
+$$
+Consideremos ahora el número $a=0.b_1b_2b_3 \ldots b_n \ldots$, en el que cada $b_k=a_{kk}$, si $a_{kk} \neq 8$, y $b_k = 0$, si $a_{kk} = 8$. El número $a$ no está en la lista de números anterior, puesto que si ocupase el lugar $k$ diferiria del correspondiente $a_k$ en la cifra que ocupa el lugar $k$ de este número. 
+
 
 ## Intervalos anidados (1)
 
@@ -740,7 +778,7 @@ knitr::include_graphics("Images/cantor.png",dpi=1200)
 
 Una sucesión de **intervalos anidados** es un conjunto de intervalos cerrados y acotados de $\mathbb{R}$, $I_n = [a_n,b_n]$, tal que para todo $n \in \mathbb{N}$, es $I_{n+1} \supset I_n$ o, lo que es equivalente, tal que $a_n \leq a_{n+1} \leq b_{n+1} \leq b_n$
 
-Observación: como se verá más adelante, un conjunto indexado por los números naturales, como lo son $\{I_n\}$, $\{a_n\}$ y $\{b_n\}$, reciben el nombre de **sucesiones**
+Observación: como se verá más adelante, un conjunto indexado por los números naturales, como lo son $\{I_n\}$, $\{a_n\}$ y $\{b_n\}$, recibe el nombre de **sucesión**
 
 ## Intervalos anidados (2)
 
@@ -752,7 +790,7 @@ Sea $\{I_n\}_{n \in \mathbb{N}}$ una sucesión de intervalos anidados de $\mathb
 
 En primer lugar, veamos que $a_k \leq b_n$ para todo $k$ y para todo $n$: Si $n \leq k$, entonces $I_k \subset I_n$ y, por lo tanto, $a_k \leq b_k \leq b_n$. Por otra parte, si $k < n$, entonces $I_k \supset I_n$ y, por lo tanto, $a_k \leq a_n \leq b_n$
 
-Es decir, el conjunto de exteremos inferiores de los intervalos $\{a_n: n \in \mathbb{N}\}$ está acotado superiormente por cualquiera de los $b_n$. Sea $\xi$ el supremo de este conjunto. Está claro que $a_n \leq \xi}, para todo $n \in \mathbb{N}$, puesto que  $\xi$ es el supremo de todos los $a_n$.
+Es decir, el conjunto de extremos inferiores de los intervalos $\{a_n: n \in \mathbb{N}\}$ está acotado superiormente por cualquiera de los $b_n$. Sea $\xi$ el supremo de este conjunto. Está claro que $a_n \leq \xi}, para todo $n \in \mathbb{N}$, puesto que  $\xi$ es el supremo de todos los $a_n$.
 
 Pero todos los $b_n$ son cotas superiores de este conjunto, y el supremo es la menor de las cotas superiores, por lo que $\xi \leq b_n$, para todo n. En definitiva es $a_n \leq \xi \leq b_n$, para todo $n \in \mathbb{N}$ o, lo que es lo mismo, $\xi \in I_n$ para todo $n \in \mathbb{N}$.
 
