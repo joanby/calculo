@@ -302,7 +302,7 @@ $$
 Por su parte, **intervalo abierto de extremos $a$ y $b$** es el conjunto:
 
 $$
-[a,b] = \{x\in \mathbb{R}: a < x < b \}
+(a,b) = \{x\in \mathbb{R}: a < x < b \}
 $$
 **Intervalos semiabiertos:**
 
@@ -575,9 +575,8 @@ En definitiva, sólo queda la opción que el supremo $p$ del conjunto $M$, sea t
 
 Para todo número real positivo $b$, existe un número real positivo $\beta$ tal que $\beta^2 =b$.
 
-## Los números irracionales
 
-
+## Los números irracionales (1)
 
 Acabamos de demostrar que hay números en $\mathbb{R}$ que no estan $\mathbb{Q}$, como seria el caso de $\sqrt{2}$. Por lo tanto el conjunto de los números reales que no son racionales, $\mathbb{R} \setminus \mathbb{Q}$, és un conjunto no vacio. Es el conjunto de <l class="important"> los números irracionales </l>.
 
@@ -585,7 +584,16 @@ Este nombre indica que estos números no se pueden expresar como el cociente -la
 
 Obsérvese que ni la suma ni el producto de dos números irracionales tienen porqué ser números irracionales. (Por ejemplo $\sqrt{2} \cdot \sqrt{2} = 2$)
 
-Es importante observar que, la representación decimal de los números irracionales constará siempre de un número ilimitado de cifras que no se repiten de forma periódica, puesto que como es sabido, una represdntación decimal con un número limitado de cifras o que  se repitan periódicamente siempre corresponde a un número racional
+
+## Los números irracionales (2)
+
+Hemos visto que todo número real  está entre dos enteros, es decir, dado un $r \in \mathbb{N}$, existe un $n \in \mathbb{Z}$ tal que $n \leq r < n+1$. Se puede demostrar que dado un número irracional existe una representación decimal de dicho número, es decir, existen $b_1,b_2, \ldots, b_n, \ldots$, con no todos igual a $9$, tales que
+$$
+r = n.b_1b_2b_3 \ldots b_n \ldots
+$$
+
+Es importante observar que, la representación decimal de los números irracionales constará siempre de un número ilimitado de cifras que no se repiten de forma periódica, puesto que como es sabido, una representación decimal con un número limitado de cifras o que se repitan periódicamente siempre corresponde a un número racional
+
 
 
 
@@ -709,7 +717,7 @@ La técnica aplicada en la demostración anterior, se conoce con el nombre del *
 
 ## Conjuntos numerables.
 
-Está claro que dos conjuntos finitos con el mismo número de elementos tienen el mismo cardinal, pero ¿qué pasa con los conjutos infinitos? 
+Está claro que dos conjuntos finitos con el mismo número de elementos tienen el mismo cardinal, pero ¿qué pasa con los conjuntos infinitos? 
 
 Hemos visto un ejemplo de una aplicación biyectiva entre los conjuntos $\mathbb{Z}$ y $\mathbb{N}$ y, por lo tanto tienen el mismo cardinal, aunque $\mathbb{N} \subset \mathbb{Z}$. Conviene observar que esta es una característica de los conjuntos infinitos: pueden tener el mismo cardinal que alguno de sus subconjuntos propios.
 
