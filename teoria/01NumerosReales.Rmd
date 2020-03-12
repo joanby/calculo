@@ -706,7 +706,26 @@ Diremos que un conjunto es **numerable** si tiene el mismo cardinal que $\mathbb
 El conjunto $Z$ de los números enteros es numerable. También lo es el conjunto de los números naturales pares o el de los múltiplos de otro número natural $k$.
 
 
-## El conjunto de los números racionales es numerable
+## $\mathbb{Q}$ es numerable
+
+<l class="prop"> **Proposición (Cantor)** </l>
+
+El conjunto $\mathbb{Q}$ es numerable.
+
+<div class="dem"> **Demostración**
+
+El resultado se sigue del hecho que la aplicación $f: \mathbb{Q} \rightarrow \mathbb{N}$ definida por 
+$$
+f \left(\dfrac{m}{n} \right) = \dfrac{1}{2}(m+n-2)(m+n-1)+m
+$$
+es biyectiva.
+
+</div>
+
+A continuación se muestra una "demostración" visual de que $\mathbb{Q}$ es numerable.
+
+
+## $\mathbb{Q}$ es numerable
 
 <div class="center">
 
