@@ -585,6 +585,8 @@ Este nombre indica que estos números no se pueden expresar como el cociente -la
 
 Obsérvese que ni la suma ni el producto de dos números irracionales tienen porqué ser números irracionales. (Por ejemplo $\sqrt{2} \cdot \sqrt{2} = 2$)
 
+Es importante observar que, la representación decimal de los números irracionales constará siempre de un número ilimitado de cifras que no se repiten de forma periódica, puesto que como es sabido, una represdntación decimal con un número limitado de cifras o que  se repitan periódicamente siempre corresponde a un número racional
+
 
 
 ## Más consecuencias del axioma del supremo.
@@ -693,7 +695,7 @@ Dos conjuntos $A$ y $B$ tienen el mismo **cardinal** si existe una correspondenc
 
 <l class="prop"> **Proposición** </l>
 
-El conjunto de los números naturales, $\mathbb{N}$ es infinito.
+El conjunto de los números naturales, $\mathbb{N}$, es infinito.
 
 <div class="dem"> 
 
@@ -758,18 +760,35 @@ El conjunto de los números reales, $\mathbb{N}$, no es numerable.
 
 <div class="dem"> **Demostración**
 
-Demostraremos que el intervalo abierto $(0,1) \subset \mathbb{R}$ no es numerable y, por lo tanto, el conjunto $\mathbb{R}$ no podrá ser numerable.
-
-Supongamos que si, que $(0,1)$ es numerable. Es decir que podemos disponer estos números, en su representación decimal, de manera que uno sea el primero, otro el segundo , y así sucesivamente:
+Demostraremos que el intervalo abierto $(0,1) \subset \mathbb{R}$ no es numerable y, por lo tanto, el conjunto $\mathbb{R}$ no podrá ser numerable. Supongamos que si, que $(0,1)$ es numerable. Es decir que podemos disponer estos números, en su representación decimal, de manera que uno sea el primero, otro el segundo, y así sucesivamente:
 $$
 a_1 = 0.a_{11}a_{12}a_{13} \ldots a_{1n} \ldots \\
-a_2 = 0.a_{21}a_{22}a_{23} \ldots a_{2n} \ldots \\
+a_2 = 0.a_{21}a_{22}a_{23} \ldots a_{2n} \ldots \\
 a_3 = 0.a_{31}a_{32}a_{33} \ldots a_{3n} \ldots \\
 \ldots\\
 a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 \ldots
 $$
-Consideremos ahora el número $a=0.b_1b_2b_3 \ldots b_n \ldots$, en el que cada $b_k=a_{kk}$, si $a_{kk} \neq 8$, y $b_k = 0$, si $a_{kk} = 8$. El número $a$ no está en la lista de números anterior, puesto que si ocupase el lugar $k$ diferiria del correspondiente $a_k$ en la cifra que ocupa el lugar $k$ de este número. 
+Consideremos ahora el número $a=0.b_1b_2b_3 \ldots b_n \ldots$, en el que cada $b_k=a_{kk}+1$, si $a_{kk} \neq 8$, y $b_k = 0$, si $a_{kk} = 8$. El número $a$ no está en la lista de números anterior, puesto que si ocupase el lugar $k$ diferiria del correspondiente $a_k$ precisamente en la cifra que ocupa el lugar $k$. 
+
+## El conjunto de los números irracionales no es numerable
+
+<l class="prop"> **Proposición** </l>
+
+La reunión de dos conjuntos finitos es un conjunto finito.
+
+La reunión de dos conjuntos numerables es numerable.
+
+La reunión de dos conjuntos contables es contable.
+
+<l class="prop"> **Proposición**
+
+El conjunto de los numeros irracionales no es numerable.
+
+<div class="dem"> **Demostración**
+
+Dado que $\mathbb{R} = \mathbb{Q} \cup (\mathbb{R} \setminus \mathbb{Q})$, se sigue que $\mathbb{R} \setminus \mathbb{Q}$ no puede ser numerable, puesto que si lo fuera, dado que $\mathbb{Q}$ es numerable, también lo seria $\mathbb{R}$, y ya hemos visto que no es así.
+
 
 
 ## Intervalos anidados (1)

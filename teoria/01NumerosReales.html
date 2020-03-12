@@ -3752,6 +3752,8 @@ n-1 \leq z &lt; n
 
 <p>Obsérvese que ni la suma ni el producto de dos números irracionales tienen porqué ser números irracionales. (Por ejemplo \(\sqrt{2} \cdot \sqrt{2} = 2\))</p>
 
+<p>Es importante observar que, la representación decimal de los números irracionales constará siempre de un número ilimitado de cifras que no se repiten de forma periódica, puesto que como es sabido, una represdntación decimal con un número limitado de cifras o que se repitan periódicamente siempre corresponde a un número racional</p>
+
 </article></slide><slide class=""><hgroup><h2>Más consecuencias del axioma del supremo.</h2></hgroup><article  id="más-consecuencias-del-axioma-del-supremo.">
 
 <p><l class="prop"><strong>Proposición. \(\mathbb{Q}\) es denso en \(\mathbb{R}\)</strong></l></p>
@@ -3842,7 +3844,7 @@ f(n) =
 
 <p><l class="prop"> <strong>Proposición</strong> </l></p>
 
-<p>El conjunto de los números naturales, \(\mathbb{N}\) es infinito.</p>
+<p>El conjunto de los números naturales, \(\mathbb{N}\), es infinito.</p>
 
 <div class="dem">
 <p>Es suficiente demostrar que para todo \(m \in \mathbb{N}\) no puede existir una aplicación inyectiva de \(\mathbb{N}\) en \(N_m\), puesto que, de ser así, no podrá existir una aplicación biyectiva entre esos dos conjuntos y, por lo tanto \(\mathbb{N}\) no será un conjunto finito.</p>
@@ -3898,16 +3900,34 @@ f \left(\dfrac{m}{n} \right) = \dfrac{1}{2}(m+n-2)(m+n-1)+m
 
 <p><strong>Demostración</strong></p>
 
-<p>Demostraremos que el intervalo abierto \((0,1) \subset \mathbb{R}\) no es numerable y, por lo tanto, el conjunto \(\mathbb{R}\) no podrá ser numerable.</p>
-
-<p>Supongamos que si, que \((0,1)\) es numerable. Es decir que podemos disponer estos números, en su representación decimal, de manera que uno sea el primero, otro el segundo , y así sucesivamente: \[
+<p>Demostraremos que el intervalo abierto \((0,1) \subset \mathbb{R}\) no es numerable y, por lo tanto, el conjunto \(\mathbb{R}\) no podrá ser numerable. Supongamos que si, que \((0,1)\) es numerable. Es decir que podemos disponer estos números, en su representación decimal, de manera que uno sea el primero, otro el segundo, y así sucesivamente: \[
 a_1 = 0.a_{11}a_{12}a_{13} \ldots a_{1n} \ldots \\
-a_2 = 0.a_{21}a_{22}a_{23} \ldots a_{2n} \ldots \\
+a_2 = 0.a_{21}a_{22}a_{23} \ldots a_{2n} \ldots \\
 a_3 = 0.a_{31}a_{32}a_{33} \ldots a_{3n} \ldots \\
 \ldots\\
 a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 \ldots
-\] Consideremos ahora el número \(a=0.b_1b_2b_3 \ldots b_n \ldots\), en el que cada \(b_k=a_{kk}\), si \(a_{kk} \neq 8\), y \(b_k = 0\), si \(a_{kk} = 8\). El número \(a\) no está en la lista de números anterior, puesto que si ocupase el lugar \(k\) diferiria del correspondiente \(a_k\) en la cifra que ocupa el lugar \(k\) de este número.</p>
+\] Consideremos ahora el número \(a=0.b_1b_2b_3 \ldots b_n \ldots\), en el que cada \(b_k=a_{kk}+1\), si \(a_{kk} \neq 8\), y \(b_k = 0\), si \(a_{kk} = 8\). El número \(a\) no está en la lista de números anterior, puesto que si ocupase el lugar \(k\) diferiria del correspondiente \(a_k\) precisamente en la cifra que ocupa el lugar \(k\).</p>
+
+</article></slide><slide class=""><hgroup><h2>El conjunto de los números irracionales no es numerable</h2></hgroup><article  id="el-conjunto-de-los-números-irracionales-no-es-numerable">
+
+<p><l class="prop"> <strong>Proposición</strong> </l></p>
+
+<p>La reunión de dos conjuntos finitos es un conjunto finito.</p>
+
+<p>La reunión de dos conjuntos numerables es numerable.</p>
+
+<p>La reunión de dos conjuntos contables es contable.</p>
+
+<p><l class="prop"> <strong>Proposición</strong></p>
+
+<p>El conjunto de los numeros irracionales no es numerable.</p>
+
+<div class="dem">
+
+<p><strong>Demostración</strong></p>
+
+<p>Dado que \(\mathbb{R} = \mathbb{Q} \cup (\mathbb{R} \setminus \mathbb{Q})\), se sigue que \(\mathbb{R} \setminus \mathbb{Q}\) no puede ser numerable, puesto que si lo fuera, dado que \(\mathbb{Q}\) es numerable, también lo seria \(\mathbb{R}\), y ya hemos visto que no es así.</p>
 
 </article></slide><slide class=""><hgroup><h2>Intervalos anidados (1)</h2></hgroup><article  id="intervalos-anidados-1">
 
