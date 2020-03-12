@@ -27,7 +27,7 @@ Por consiguiente, los números reales que no son racionales, es decir los númer
 
 Siendo así, ¿cómo podemos utilizar estos números con infinitas cifras decimales? La respuesta viene de la mano del concepto de **sucesión** y de **límite**. 
 
-Cómo hemos demostrado, dado un número irracional y una precisión, siempre es posible determinar un racional que diste del irracional dado menos que dicha precisión. Es lo que hacemos cuando tomamos $\pi$ como $3.14$ o $3.1415$, $\ldots$
+Cómo hemos demostrado, dado un número irracional y una precisión, siempre es posible determinar un racional que diste del irracional dado menos que dicha precisión, es decir, si $r \in \mathbb{R} \setminus \mathbb{Q}$, para todo $\epsilon >0$, existe $q \in \mathbb{Q}$ tal que $|r-q|< \epsilon$  Es lo que hacemos cuando tomamos $\pi$ como $3.14$ o $3.1415$, $\ldots$
 
 ## Ejemplos
 
@@ -212,13 +212,13 @@ El límite de una sucesión, si existe, és único.
 
 **Demostración**
 
-Supongamos que no, que $a_1$ y que $a_2$ son los dos límites de la sucessión ${a_n}_{n\in  \mathbb{N}}$. En tonces, dado un $\epsilon >0$ existen $n_1$ y $n_2$ tales que 
+Supongamos que no, que $l_1$ y que $l_2$ son los dos límites de la sucessión ${a_n}_{n\in  \mathbb{N}}$. Entonces, dado un $\epsilon >0$ existen $n_1$ y $n_2$ tales que 
 $$
-|a_n-a_1| <\dfrac{\epsilon}{2}  \quad \text{ y } \quad  |a_n-a_2| <\dfrac{\epsilon}{2}
+|a_n-l_1| <\dfrac{\epsilon}{2}  \quad \text{ y } \quad  |a_n-l_2| <\dfrac{\epsilon}{2}
 $$
 para todo $n>n1$, para la primera desigualdad y para todo $n>n_2$, para la segunda.
 
-Ahora $|a_1-a_2| = |a_1-a_n +a_n -a_2| \leq |a_1-a_n| + |a_n -a_2| < \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon$, siempre que $n>n_1$ y $n>n_2$. Por lo tanto, para todo $\epsilon >0$ es $|a_1-a_2| <\epsilon$ y esto sólo puede ocurrir si $|a_1-a_2| =0$, es decir si $a_1 = a_2$.
+Ahora $|l_1-l_2| = |l_1-a_n +a_n -l_2| \leq |l_1-a_n| + |a_n -l_2| < \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon$, siempre que $n>n_1$ y $n>n_2$. Por lo tanto, para todo $\epsilon >0$ es $|l_1-l_2| <\epsilon$ y esto sólo puede ocurrir si $|l_1-l_2| =0$, es decir si $l_1 = l_2$.
 
 ## Propiedades de los límites (2).
 
