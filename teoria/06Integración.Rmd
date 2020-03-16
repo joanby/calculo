@@ -831,3 +831,257 @@ for k in range(1,10):
 </div>
 
 # Propiedades de las integrales
+
+## Introducción
+
+En esta sección vamos a estudiar un conjunto de propiedades relacionadas con la integrabilidad de funciones. Dichas propiedades "a grosso modo" son las siguientes:
+
+* Separación de una integral de un intervalo en dos subintervalos.
+* Linealidad de la integral.
+* Producto y cociente de funciones integrables son también integrables.
+* Monotonía y continuidad de funciones.
+* Ver la relación entre la monotonia y continuidad de funciones y la integrabilidad.
+* La integral conserva las desigualdades entre funciones.
+* Teorema de la media para integrales: ver cómo se puede escribir la integral de una función como el producto de la longitud del intervalo de integración por un cierto valor real. También generalizaremos dicho resultado.
+
+## Separación de una integral en un intervalo
+
+<l class="prop">Teorema: </l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada y sea $c\in (a,b)$ de tal forma que $a<c<b$. Entonces, $f$ es integrable en $[a,b]$ si, y sólo si, $f$ es integrable en $[a,c]$ y $[c,b]$ y, en este caso:
+$$
+\int_a^b f = \int_a^c f+\int_c^b f.
+$$
+
+<l class="observ">Observación:</l>
+Una consecuencia del teorema anterior es que si $f$ es integrable en todo el intervalo $[a,b]$, lo es en cualquier subintervalo.
+
+## Separación de una integral en un intervalo
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido bastante técnico. </i>
+</div>
+</div>
+<div class="dem">
+**Demostración**
+
+Empecemos con la implicación directa:
+
+$\Rightarrow$ Como $f$ es integrable en el intervalo $[a,b]$, para todo valor de $\epsilon >0$, existirá una partición $P$ tal que $U(f,P)-L(f,P)<\epsilon$.
+
+Consideremos la siguiente partición $P'$ del intervalo $[a,b]$: $P'=P\cup \{c\}$. Como $P'$ es más fina que $P$, se verificará:
+$$
+U(f,P')-L(f,P')\leq U(f,P)-L(f,P)< \epsilon.
+$$
+A continuación consideremos las particiones $P_1$ y $P_2$ siguientes de los subintervalos $[a,c]$ y $[c,b]$, respectivamente:
+$$
+P_1 =P'\cap [a,c],\quad P_2 = P'\cap [c,b].
+$$
+</div>
+
+## Separación de una integral en un intervalo
+<div class="dem">
+
+Fijémonos que $U(f,P')=U(f,P_1)+U(f,P_2)$ y $L(f,P')=L(f,P_1)+L(f,P_2)$. Por tanto,
+$$
+U(f,P')-L(f,P')=(U(f,P_1)-L(f,P_1)) + (U(f,P_2)-L(f,P_2)) < \epsilon.
+$$
+Los valores $U(f,P_1)-L(f,P_1)$ y $U(f,P_2)-L(f,P_2)$ son valores positivos cuya suma es menor que $\epsilon$. Por tanto:
+$$
+U(f,P_1)-L(f,P_1)<\epsilon,\quad U(f,P_2)-L(f,P_2)<\epsilon.
+$$
+En resumen, dado un $\epsilon >0$, hemos hallado una partición $P_1$ del intervalo $[a,c]$ y una partición del intervalo $[c,b]$ tal que se verifican las condiciones anteriores. Dicho resultado equivale a afirmar que la función $f$ es integrable en los intervalos $[a,c]$ y $[c,b]$.
+
+
+</div>
+
+## Separación de una integral en un intervalo
+<div class="dem">
+
+A continuación, demostremos la implicación contraria:
+
+$\Leftarrow$ Supongamos ahora que $f$ es integrable en los intervalos $[a,c]$ y $[c,b]$. Sabemos que existen dos particiones $(P_n)_n$ y $(Q_n)_n$ de los intervalos $[a,c]$ y $[c,b]$, respectivamente, tales que sus diámetros tienden a cero, $\displaystyle\lim_{n\to\infty}|P_n| =0$, $\displaystyle\lim_{n\to\infty}|Q_n| =0$ y se cumple:
+$$
+\lim_{n\to\infty}U(f,P_n)  =\lim_{n\to\infty}L(f,P_n)=\int_a^c f,\quad 
+\lim_{n\to\infty}U(f,Q_n) =\lim_{n\to\infty}L(f,Q_n)=\int_c^b f.
+$$
+Consideremos la sucesión siguiente de particiones dentro del intervalo grande $[a,b]$, $P_n'$: $P_n'=P_n\cup Q_n$.
+
+Fijémonos que $U(f,P_n')=U(f,P_n)+U(f,Q_n)$ y $L(f,P_n')=L(f,P_n)+L(f,Q_n)$. Por tanto,
+$$
+\begin{array}{rl}
+\displaystyle\lim_{n\to\infty}U(f,P_n') & = \displaystyle \lim_{n\to\infty}U(f,P_n)+\lim_{n\to\infty}U(f,Q_n)=\int_a^c f+\int_c^b f,\\
+\displaystyle\lim_{n\to\infty}L(f,P_n') & = \displaystyle \lim_{n\to\infty}L(f,P_n)+\lim_{n\to\infty}L(f,Q_n)=\int_a^c f+\int_c^b f.
+\end{array}
+$$
+</div>
+
+## Separación de una integral en un intervalo
+<div class="dem">
+
+En resumen, hemos hallado una sucesión de particiones $(P_n')_n$ del intervalo $[a,b]$ tal que:
+$$
+\lim_{n\to\infty}U(f,P_n') = \lim_{n\to\infty}L(f,P_n') = \int_a^c f+\int_c^b f.
+$$
+Entonces $f$ es integrable en el intervalo $[a,b]$ y además:
+$$
+\int_a^b f = \int_a^c f+\int_c^b f.
+$$
+</div>
+
+<l class="observ">Observación: </l> dos consecuencias del teorema anterior son las siguientes:
+$$
+\int_a^a f=0,\quad \int_b^a f=-\int_a^b f.
+$$
+
+## Linealidad de la integral
+<l class="prop">Teorema:</l>
+Sean $f, g:[a,b]\longrightarrow\mathbb{R}$ dos funciones integrables en el intervalo $[a,b]$. Sean $\alpha$ y $\beta$ dos valores reales. Entonces la función $\alpha f+\beta g:[a,b]\longrightarrow \mathbb{R}$ es integrable en $[a,b]$ y además:
+$$
+\int_a^b \alpha f+\beta g =\alpha\int_a^b f+\beta\int_a^b f.
+$$
+
+## Linealidad de la integral
+
+<l class="observ">Observación: </l> el teorema anterior es equivalente a afirmar lo siguiente:
+
+(a) Si $f, g:[a,b]\longrightarrow\mathbb{R}$ son integrables en $[a,b]$, entonces $f+g$ es integrable en $[a,b]$ y además: $\displaystyle\int_a^b f+g =\int_a^b f+\int_a^b g$.
+
+(a) Si $f:[a,b]\longrightarrow\mathbb{R}$ es integrable en $[a,b]$ y $\alpha$ un valor real, entonces $\alpha f$ es integrable en $[a,b]$ y además $\displaystyle\int_a^b \alpha f=\alpha \int_a^b f$.
+
+## Linealidad de la integral
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido bastante técnico. </i>
+</div>
+</div>
+<div class="dem">
+**Demostración**
+
+Demostremos las dos propiedades de la observación:
+
+Primero veamos la demostración para la suma de funciones.
+
+Supongamos que $f,g:[a,b]\longrightarrow \mathbb{R}$ son integrables en $[a,b]$.
+
+Sea $P$ una partición del intervalo $[a,b]$. Se verifica lo siguiente:
+$$
+U(f+g,P)\leq U(f,P)+U(g,P),\quad L(f+g,P)\leq L(f,P)+L(g,P),
+$$
+ya que si $P=\{a=x_0<x_1<\cdots < x_n=b\}$, se cumple:
+$$
+\begin{array}{rl}
+U(f+g,P) & =\displaystyle \sum_{i=1}^n \sup_{x\in [x_{i-1},x_i]} (f(x)+g(x)) (x_i-x_{i-1})\leq \sum_{i=1}^n (\sup_{x\in [x_{i-1},x_i]} f(x)+\sup_{x\in [x_{i-1},x_i]} g(x)) (x_i-x_{i-1})\\ & =U(f,P)+U(g,P).
+\end{array}
+$$
+</div>
+
+
+## Linealidad de la integral
+
+<div class="dem">
+
+En la última expresión hemos usado que $\sup_{x\in [x_{i-1},x_i]} (f(x)+g(x))\leq \sup_{x\in [x_{i-1},x_i]} f(x)+\sup_{x\in [x_{i-1},x_i]} g(x)$, lo que equivale a decir que el supremo de la suma de dos funciones es menor o igual que la suma de supremos.
+
+De la misma manera:
+$$
+\begin{array}{rl}
+L(f+g,P) & =\displaystyle \sum_{i=1}^n \inf_{x\in [x_{i-1},x_i]} (f(x)+g(x)) (x_i-x_{i-1})\geq \sum_{i=1}^n (\inf_{x\in [x_{i-1},x_i]} f(x)+\inf_{x\in [x_{i-1},x_i]} g(x)) (x_i-x_{i-1})\\ & =L(f,P)+L(g,P).
+\end{array}
+$$
+En la última expresión hemos usado que $\inf_{x\in [x_{i-1},x_i]} (f(x)+g(x))\geq \inf_{x\in [x_{i-1},x_i]} f(x)+\inf_{x\in [x_{i-1},x_i]} g(x)$, lo que equivale a decir que el ínfimo de la suma de dos funciones es mayor o igual que la suma de ínfimos.
+
+Como $f$ y $g$ son integrables en $[a,b]$, existirá una sucesión de particiones $(P_n)_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$, tal que 
+$$
+\lim_{n\to\infty}U(f,P_n)=\lim_{n\to\infty}L(f,P_n)=\int_a^b f,\quad \lim_{n\to\infty}U(g,P_n)=\lim_{n\to\infty}L(g,P_n)=\int_a^b g.
+$$
+</div>
+
+
+## Linealidad de la integral
+
+<div class="dem">
+
+Entonces, se cumple lo siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\lim_{n\to \infty} U(f+g,P_n) & \leq \displaystyle\lim_{n\to \infty} U(f,P_n)+\lim_{n\to \infty} U(g,P_n)=\int_a^b f+\int_a^b g = \lim_{n\to\infty}L(f,P_n)+\lim_{n\to\infty}L(g,P_n)\\ & \displaystyle\leq \lim_{n\to \infty}L(f+g,P_n)\leq \lim_{n\to \infty}U(f+g,P_n).
+\end{array}
+$$
+Como en las desigualdades anteriores llegamos al mismo valor inicial, concluimos que las desigualdades son de hecho igualdades y se cumple:
+$$
+\lim_{n\to \infty} U(f+g,P_n)=\lim_{n\to \infty}L(f+g,P_n) = \int_a^b f+\int_a^b g.
+$$
+En resumen, hemos hallado una sucesión de particiones $(P_n)_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que se verifica las condiciones de la expresión anterior, condición que equivale a afirmar que $f+g$ es integrable en $[a,b]$ y además:
+$$
+\int_a^b f+g=\int_a^b f+\int_a^b g.
+$$
+</div>
+
+
+## Linealidad de la integral
+
+<div class="dem">
+
+En segundo lugar, veamos la demostración de la segunda parte referida a la integral de una función por un número real.
+
+Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función integrable en $[a,b]$ y $\alpha$ un valor real no nulo. (si $\alpha =0$, la condición a demostrar es trivial)
+
+Consideremos dos casos: $\alpha >0$ y $\alpha <0$.
+
+* Supongamos $\alpha >0$. Sea $P$ una partición del intervalo $[a,b]$. Se verifica:
+$$
+\begin{array}{rl}
+U(\alpha f, P) & \displaystyle =\sum_{i=1}^n \sup_{x\in [x_{i-1},x_i]} (\alpha f(x)) (x_i-x_{i-1})=\alpha \sum_{i=1}^n \sup_{x\in [x_{i-1},x_i]}  f(x) (x_i-x_{i-1})=\alpha U(f,P),\\ 
+L(\alpha f, P) & \displaystyle =\sum_{i=1}^n \inf_{x\in [x_{i-1},x_i]} (\alpha f(x)) (x_i-x_{i-1})=\alpha \sum_{i=1}^n \inf_{x\in [x_{i-1},x_i]}  f(x) (x_i-x_{i-1})=\alpha L(f,P).
+\end{array}
+$$
+En la última expresión hemos usado que $\sup_{x\in [x_{i-1},x_i]} (\alpha f(x)) =\alpha \sup_{x\in [x_{i-1},x_i]}f(x)$ y $\inf_{x\in [x_{i-1},x_i]} (\alpha f(x))=\alpha \inf_{x\in [x_{i-1},x_i]} f(x)$ ya que recordemos que $\alpha >0$.
+</div>
+
+
+## Linealidad de la integral
+
+<div class="dem">
+
+Como $f$ es integrable en $[a,b]$ existirá una sucesión de particiones $(P_n)_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que:
+$$
+\lim_{n\to\infty} U(f,P_n)=\lim_{n\to\infty} L(f,P_n)=\int_a^b f.
+$$
+Usando las propiedades de las sumas inferiores y superiores de la función $\alpha f$, podemos escribir:
+$$
+\lim_{n\to\infty}U(\alpha f,P_n)=\alpha\lim_{n\to\infty} U(f,P_n)=\alpha\lim_{n\to\infty} L(f,P_n)=\lim_{n\to\infty} L(\alpha f,P_n)=\alpha\int_a^b f.
+$$
+La expresión anterior equivale a decir que la función $\alpha f$ es integrable en $[a,b]$ y, además: $\displaystyle\int_a^b \alpha f=\alpha\int_a^b f$.
+</div>
+
+
+## Linealidad de la integral
+
+<div class="dem">
+
+* Supongamos $\alpha <0$. Sea $P$ una partición del intervalo $[a,b]$. Se verifica:
+$$
+\begin{array}{rl}
+U(\alpha f, P) & \displaystyle =\sum_{i=1}^n \sup_{x\in [x_{i-1},x_i]} (\alpha f(x)) (x_i-x_{i-1})=\alpha \sum_{i=1}^n \inf_{x\in [x_{i-1},x_i]}  f(x) (x_i-x_{i-1})=\alpha L(f,P),\\ 
+L(\alpha f, P) & \displaystyle =\sum_{i=1}^n \inf_{x\in [x_{i-1},x_i]} (\alpha f(x)) (x_i-x_{i-1})=\alpha \sum_{i=1}^n \sup_{x\in [x_{i-1},x_i]}  f(x) (x_i-x_{i-1})=\alpha U(f,P).
+\end{array}
+$$
+En la última expresión hemos usado que $\sup_{x\in [x_{i-1},x_i]} (\alpha f(x)) =\alpha \inf_{x\in [x_{i-1},x_i]}f(x)$ y $\inf_{x\in [x_{i-1},x_i]} (\alpha f(x))=\alpha \sup_{x\in [x_{i-1},x_i]} f(x)$ ya que recordemos que $\alpha <0$.
+</div>
+
+
+## Linealidad de la integral
+
+<div class="dem">
+
+Como $f$ es integrable en $[a,b]$ existirá una sucesión de particiones $(P_n)_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que:
+$$
+\lim_{n\to\infty} U(f,P_n)=\lim_{n\to\infty} L(f,P_n)=\int_a^b f.
+$$
+
+Usando las propiedades de las sumas inferiores y superiores de la función $\alpha f$, podemos escribir:
+$$
+\lim_{n\to\infty}U(\alpha f,P_n)=\alpha\lim_{n\to\infty} L(f,P_n)=\alpha\lim_{n\to\infty} U(f,P_n)=\lim_{n\to\infty} L(\alpha f,P_n)=\alpha\int_a^b f.
+$$
+La expresión anterior equivale a decir que la función $\alpha f$ es integrable en $[a,b]$ y, además: $\displaystyle\int_a^b \alpha f=\alpha\int_a^b f$.
+</div>
