@@ -411,6 +411,83 @@ $$
 $$
 3) La sucesión $\{(-1)^n\}_{n \in \mathbb{N}}$ no es ni convergente, ni divergente, puesto que a partir de cualquier lugar de la sucesión siempre encontraremos términos que valen $1$ y otros que valen $-1$
 
+
+## Sucesiones de Cauchy
+
+Parece razonable pensar que si los términos de una sucesión convergente $\{a_n\}$ se acecan al límite $a$ de la sucesión, entonces, necesariamente deben acercarse entre ellos, es decir que si $\lim a_n =a$, entonces para todo $\epsilon >0$, existe un lugar $n_0 \in \mathbb{N}$ tal que para todo $m,n \geq n_0$ es $|a_n-a_m|< \epsilon$. 
+
+Recíprocamente, si los terminos de la sucesión se aproximan entre ellos  entonces la sucesión debe ser convergente. Veremos que en $\mathbb{R}$ es así y que esta es una característica intrínseca del conjunto de números reales, es decir, existen sucesiones en $\mathbb{Q}$ tales que los términos se acercan entre ellos y, sin embargo, la sucesión no tiene límite, basta, por ejemplo pensar en las aproximaciones decimales de $\sqrt{2}$: son todos números racionales, se acercan entre ellos y, no obstante no tiene límite en $\mathbb{Q}$, puesto que ese límite, $\sqrt{2}$, no es un número real.
+
+
+## Sucesiones de Cauchy
+
+<l class="definition"> **Definición** </l>
+
+Una sucesión de números reales $\{a_n\}$, es de **Cauchy** si para cada $\epsilon >0$ existe un $n_0 \in \mathbb{N}$ tal que para todo $m,n \geq n_0$ es $|a_n - a_m| < \epsilon$
+
+<l class="prop"> **Proposición** </l>
+
+Una sucesión $\{a_n\}_{n \in \mathbb{N}}$ convergente es de Cauchy.
+
+<div class="dem"> **Demostración**
+
+Por ser $a_n$ convergente y de límite $a$, para cada $\epsilon > 0$ existe un $n_0 \in \mathbb{N}$ tal que para todo $n \geq n_0$ es $|a_n - a| < \dfrac{\epsilon}{2}$
+
+Ahora, si $n,m \geq n_0$, tendremos
+$$
+|a_n-a_m| = |a_n - a+a-a_m| \leq |a_n-a|+|a-a_m| < \dfrac{\epsilon}{2} + \dfrac{\epsilon}{2} = \epsilon
+$$
+</div>
+
+## Sucesiones de Cauchy
+
+La demostración del recíproco, que una sucesión de Cauchy en $\mathbb{R}$ es convergente,requiere del teorema de Bolzano-Weirstrass, el cual, a su vez, depende del axioma del supremo. Previamente demostraremos que una sucesión de Cauchy está acotada.
+
+<l class="prop"> **Proposición** </l>
+
+Sea $\{a_n \}_{n \in \mathbb{N}}$ una sucesión de Cauchy, entonces existe $K>0$  tal que $|a_n| \leq K$, para todo $n$. 
+
+<div class="dem"> **Demostración**
+
+Por ser $\{a_n \}$ de Cauchy y $1>0$, existe un $n_0 \in \mathbb{N}$, tal que $|a_n - a_m| <1$. Sea ahora 
+$$
+K= \max \{|a_1|,|a_2|,\ldots, |a_{n_0}|+1\}
+$$
+Está claro que si $n <n_0$, entonces $|a_n| \leq K$. Si $n \geq n_0$, entonces
+$$
+|a_n| = |a_n - a_{n_0} +a_{n_0}|\leq |a_n - a_{n_0}|+|a_{n_0}|<1+|a_{n_0}|
+$$
+por lo tanto, en cualquier caso, es $|a_n| \leq K$, para todo $n \in \mathbb{N}$.
+</div>
+
+## Sucesiones de Cauchy
+
+<l class="prop"> **Proposición** </l>
+
+En $\mathbb{R}$ toda sucesión de Cauchy tiene límite.
+
+<div class="dem"> **Demostración**
+
+Sea $\{a_n\}_{n \in \mathbb{N}} \subset \mathbb{R}$ una sucesión de Cauchy, veremos que tiene límite. Si la sucesión tiene rango finito, es decir que sólo tiene un número finito de términos diferentes, entonces debe ser constante, ya que, de otra forma, los términos no se podrían aproximar más que la menor de las diferencias en valor absoluto entre ellos. Por lo tanto, es convergente.
+
+Supongamos ahora que el rango de $\{a_n\}$ es infinito, por ser de Cauchy,está acotada. Por el teorema de Bolzano-Weirstrass, tiene un punto de acumulación, $a$. Veremos que $a= \lim_{n\rightarrow \infty}a_n$.
+
+Por ser $a$ un punto de acumulación, dado un $\epsilon >0$ existen infinitos términos, $a_k$, tales que $|a_k -a| < \dfrac{\epsilon}{2}$. Conviene observar que, esto, por si mismo, no es suficiente para asegurar que $a_n \rightarrow a$, puesto que la desigualdad no tiene porque cumplirse para todos los $a_k$ a partir de un lugar.
+
+## Sucesiuones de Cauchy
+
+<div class="dem"> **Demostración**
+
+Para obviar esta dificultad, consideremos $n_1 = \min \{k \in \mathbb{N}: |a_k -a| < \dfrac{\epsilon}{2} \}$. Nuevamente, por ser $a_n$ de Cauchy, existe $n_2$ tal que para todo $m,n\geq n_2$, es $|a_n-a_m|< \dfrac{\epsilon}{2}$. 
+
+Ahora, si $n_0 = \max(n_1,n_2)$, existe un $k \geq n_0$ tal que $|a_k -a| < \dfrac{\epsilon}{2}$. Consideremos ahora un $n\geq n_0$, tendremos que 
+$$
+|a_n -a| = |a_n -a_k +a_k -a| \leq |a_n -a_k|+|a_k -a|<\dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon
+$$
+Es decir, para todo $\epsilon >0$ existe un $n_0 \in \mathbb{N}$ tal que para todo  $n \geq n_0$ es $|a_n-a| <\epsilon$, en definitiva, $\lim_{a \rightarrow \infty} a_n = a$
+
+
+
 ## Cálculo de límites (1)
 
 Veremos en este apartado algunas estrategias para calcular limites de sucesiones reales, la mayoría, orientadas a resolver algunas de las indeterminaciones que involucran límites infinitos y que hemos explicitado al extender la recta real.
@@ -1023,7 +1100,7 @@ Por lo tanto, $\lim_{n \rightarrow \infty} \sqrt[n]{a_n} = a$
 
 ## Ejemplos
 
-<div class="example"> **1. Calcular el $\lim \sqrt[n]{a^n}+b^n$, con $a>b>0$**
+<div class="example"> **1. Calcular el $\lim \sqrt[n]{a^n+b^n}$, con $a>b>0$**
 
 Apliquemos el criterio del cociente-raíz a la sucesión $\{a^n+b^n\}$ y dividimos numerador y denominador por $a^{n+1}$:
 $$
