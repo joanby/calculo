@@ -838,8 +838,12 @@ En esta sección vamos a estudiar un conjunto de propiedades relacionadas con la
 
 * Separación de una integral de un intervalo en dos subintervalos.
 * Linealidad de la integral.
+* Composición de una función continua con una función integrable es integrable.
 * Producto y cociente de funciones integrables son también integrables.
 * Monotonía y continuidad de funciones.
+
+## Introducción
+
 * Ver la relación entre la monotonia y continuidad de funciones y la integrabilidad.
 * La integral conserva las desigualdades entre funciones.
 * Teorema de la media para integrales: ver cómo se puede escribir la integral de una función como el producto de la longitud del intervalo de integración por un cierto valor real. También generalizaremos dicho resultado.
@@ -1085,3 +1089,192 @@ $$
 $$
 La expresión anterior equivale a decir que la función $\alpha f$ es integrable en $[a,b]$ y, además: $\displaystyle\int_a^b \alpha f=\alpha\int_a^b f$.
 </div>
+
+
+## Composición de función continua con integrable
+<l class="prop">Teorema:</l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función integrable en el intervalo $[a,b]$ y $\phi:[c,d]\longrightarrow\mathbb{R}$ una función **continua** en el intervalo $[c,d]$ tal que $f([a,b])\subset [c,d]$. Entonces la función **composición** $\phi\circ f:[a,b]\longrightarrow\mathbb{R}$ definida por $\phi\circ f(x)=\phi(f(x))$ es también integrable en el intervalo $[a,b]$.
+
+
+## Composición de función continua con integrable
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> <i class="fa fa-dizzy"> Contenido muy técnico. </i></i>
+</div>
+</div>
+
+<div class="dem">
+**Demostración**
+
+Para ver que la función composición $\phi\circ f$ es integrable, bastará demostrar que para todo $\epsilon >0$, existe una partición $P$ del intervalo $[a,b]$ tal que $U(\phi\circ f,P)-L(\phi\circ f,P)<\epsilon$.
+
+Notemos primero que como la función $\phi$ es continua en un intervalo cerrado, también será uniformemente continua y también acotada en el intervalo de definición $[c,d]$. Sea $K$ una cota superior de la misma, es decir, para todo $x\in [c,d]$ se verifica que $|\phi(x)|\leq K$.
+
+Consideremos un $\epsilon >0$ arbitrario. Sea $\epsilon' =\frac{\epsilon}{b-a+2K}$. Para este $\epsilon'>0$, al ser la función $\phi$ uniformemente continua en $[c,d]$, existirá un valor $\delta >0$ que podemos suponer $\delta <\epsilon'$ (si no lo fuera, consideraríamos como nuevo $\delta$ el valor $\min\{\delta,\epsilon'\}$ y ya lo cumpliría) tal que dados $x,y\in [c,d]$, si $|x-y|<\delta$, entonces $|\phi(x)-\phi(y)|<\epsilon'$.
+
+Sea ahora el valor $\delta^2 >0$. Como $f$ es integrable en el intervalo $[a,b]$, existirá una partición $P=\{a=x_0<x_1<\cdots < x_n=b\}$ tal que $U(f,P)-L(f,P)<\delta^2$.
+</div>
+
+## Composición de función continua con integrable
+<div class="dem">
+Separemos el conjunto de índices $\{1,\ldots,2\}$ en los dos subconjuntos siguientes:
+$$
+A=\{i,\ |\ M_i(f)-m_i(f) <\delta\},\quad A^c=\{i,\ |\ M_i(f)-m_i(f) \geq\delta\},
+$$
+donde recordemos que $\displaystyle M_i(f)=\sup_{x\in [x_{i-1},x_i]}f(x)$ y $\displaystyle m_i(f)=\inf_{x\in [x_{i-1},x_i]}f(x)$.
+
+Observemos que:
+$$
+\begin{array}{rl}
+M_i(\phi\circ f)-m_i(\phi\circ f) & =\displaystyle \sup_{x\in [x_{i-1},x_i]}\phi\circ f(x)-\inf_{y\in [x_{i-1},x_i]}\phi\circ f(y)=\sup_{x\in [x_{i-1},x_i]}\phi\circ f(x)+\sup_{y\in [x_{i-1},x_i]}(-\phi\circ f(y)) \\ & = \displaystyle \sup_{x,y\in [x_{i-1},x_i]}(\phi\circ f (x)-\phi\circ f (y)),
+\end{array}
+$$
+ya que en general $-\inf S=\sup -S$, es decir, hallar el ínfimo de un conjunto cualquiera $S$ y cambiarle el signo es equivalente a hallar el supremo del conjunto $-S$ formado por los elementos del conjunto inicial cambiados de signo.
+
+
+</div>
+
+## Composición de función continua con integrable
+<div class="dem">
+Ahora bien, si $i\in A$ y $x,y\in [x_{i-1},x_i]$, entonces $|f(x)-f(y)\leq M_i(f)-m_i(f)< \delta$ y por tanto, usando la condición de continuidad uniforme de $\phi$, deducimos que $|\phi\circ f(x)-\phi\circ f(y)|<\epsilon'$. Deducimos, por tanto, que si $i\in A$, entonces 
+$M_i(\phi\circ f)-m_i (\phi\circ f)=\displaystyle \sup_{x,y\in [x_{i-1},x_i]}(\phi\circ f (x)-\phi\circ f (y))\leq \epsilon'$.
+
+En este caso, concluimos que:
+$$
+\sum_{i\in A} (M_i(\phi\circ f)-m_i (\phi\circ f)) (x_i-x_{i-1})\leq \epsilon'\sum_{i\in A} (x_i-x_{i-1}) \leq \epsilon' (b-a).
+$$
+Por otra parte, si $i\in A^c$, sólo podemos asegurar que $M_i(\phi\circ f)-m_i (\phi\circ f) \leq 2K$, por tanto,
+$$
+\sum_{i\in A^c} (M_i(\phi\circ f)-m_i (\phi\circ f)) (x_i-x_{i-1})\leq 2K\sum_{i\in A^c} (x_i-x_{i-1}).
+$$
+</div>
+
+## Composición de función continua con integrable
+<div class="dem">
+Pero recordemos que si $i\in A^c$, $\delta \leq M_i(f)-m_i(f)$, de manera que:
+$$
+\begin{array}{rl}
+\displaystyle\sum_{i\in A^c} (x_i-x_{i-1}) & \displaystyle\leq \frac{1}{\delta}\sum_{i\in A^c} (M_i(f)-m_i(f))(x_i-x_{i-1})\leq \frac{1}{\delta}\sum_{i=1}^n (M_i(f)-m_i(f))(x_i-x_{i-1})\\ & \displaystyle =\frac{1}{\delta}(U(f,P)-L(f,P))  <\frac{1}{\delta}\cdot \delta^2 =\delta <\epsilon'.
+\end{array}
+$$
+Combinando las dos últimas expresiones, deducimos que:
+$$
+\sum_{i\in A^c}(M_i(\phi\circ f)-m_i (\phi\circ f)) (x_i-x_{i-1})\leq 2K\epsilon'.
+$$
+
+Al fin, veamos como acotar la expresión $U(\phi\circ f,P)-L(\phi\circ f,P)$:
+$$
+\begin{array}{rl}
+U(\phi\circ f,P)-L(\phi\circ f,P) & =  \displaystyle \sum_{i=1}^n (M_i(\phi\circ f)-m_i (\phi\circ f)) (x_i-x_{i-1}) \\ & =\displaystyle \sum_{i\in A} (M_i(\phi\circ f)-m_i (\phi\circ f)) (x_i-x_{i-1})+ \sum_{i\in A^c} (M_i(\phi\circ f)-m_i (\phi\circ f)) (x_i-x_{i-1})\\ & < \epsilon' (b-a)+2K\epsilon' = \epsilon.
+\end{array}
+$$
+</div>
+
+## Composición de función continua con integrable
+<div class="dem">
+
+Resumamos lo que hemos realizado: dado un valor cualquiera $\epsilon >0$, hemos sido capaces de hallar una partición $P$ del intervalo $[a,b]$ tal que 
+$$
+U(\phi\circ f,P)-L(\phi\circ f,P) < \epsilon,
+$$
+condición que equivale a afirmar que la función $\phi\circ f$ es integrable en el intervalo $[a,b]$ tal como queríamos demostrar.
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Consideremos las funciones $g(x)=\sin(x^3+x^2+x)$ y $h(x)=\mathrm{e}^{x^2}$ definidas en el intervalo $[0,1]$.
+
+En un ejemplo anterior vimos que las funciones del tipo $x^k$, con $k\geq 1$ eran integrables. Por tanto, la función $f_1(x)=x^3+x^2+x$ también será integrable ya que es la suma de funciones integrables. 
+
+La función $g(x)$ es la composición de la función $f_1(x)$ con la función $\phi(x)=\sin (x)$ ya que $g(x)=(\phi\circ f_1)(x)$. Usando el teorema anterior, podemos afirmar que la función $g(x)$ es integrable en el intervalo $[0,1]$.
+
+De la misma manera, la función $h(x)$ es la composición de la función $f_2(x)=x^2$ con la función $\phi(x)=\mathrm{e}^x$ ya que $h(x)=(\phi\circ f_2)(x)$. Por tanto, usando otra vez el teorema anterior podemos decir que la función $h(x)$ también es integrable en el intervalo $[0,1]$.
+</div>
+
+## Producto y cociente de funciones y integrabilidad
+
+<l class="prop">Teorema:</l>
+Sean $f, g:[a,b]\longrightarrow\mathbb{R}$ dos funciones integrables en el intervalo $[a,b]$. Entonces la función $f\cdot g$ también es integrable en $[a,b]$. Si además existe una constante $k$ tal que $|g(x)|\geq k$, para todo valor $x\in [a,b]$, entonces la función $\frac{f}{g}$ también es integrable en $[a,b]$.
+
+## Producto y cociente de funciones y integrabilidad
+
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido bastante técnico. </i></i>
+</div>
+</div>
+
+<div class="dem">
+**Demostración**
+
+Observemos que el producto $f\cdot g$ se puede expresar de la siguiente forma:
+$$
+f\cdot g=\frac{1}{2}\left((f+g)^2-f^2-g^2\right).
+$$
+Las funciones $f^2$ y $g^2$ son integrables al ser composición de las funciones $f$ y $g$ que son integrables por hipótesis con la función $\phi(x)=x^2$ que es continua. 
+
+La función $(f+g)^2$ será integrable al ser composición de la función $f+g$ que será integrable al ser suma de integrables con la función $\phi(x)=x^2$.
+
+Por tanto, la función producto $f\cdot g=\frac{1}{2}\left((f+g)^2-f^2-g^2\right)$ será integrable ya que una combinación lineal de funciones integrables.
+</div>
+
+## Producto y cociente de funciones y integrabilidad
+
+<div class="dem">
+Para ver que la función $\frac{f}{g}$ observemos que ésta puede expresarse como $\frac{f}{g}=\frac{1}{g}\cdot f$.
+
+La función $\frac{1}{g}$ es integrable al ser composición de la función $g$ que es integrable con la función $\phi(x)=\frac{1}{x}$ definida en el dominio $|x|\geq k$, hecho que hace que sea continua ya que el denominador nunca se anularía en dicho dominio.
+
+La función $\frac{f}{g}=\frac{1}{g}\cdot f$ será integrable ya que la podemos escribir como producto de dos funciones integrables: $\frac{1}{g}$ y $f$.
+
+</div>
+
+
+## Integración y monotonía
+<l class="prop">Teorema.</l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **monótona** en el intervalo $[a,b]$. Entonces la función $f$ es integrable en dicho intervalo.
+
+<div class="dem">
+**Demostración**
+
+Supondremos que la función $f$ es creciente. El caso de que $f$ fuese decreciente se razonaría de manera análoga.
+
+Sea un valor $\epsilon >0$. Definimos el valor $\delta >0$ como $\delta = \frac{\epsilon}{f(b)-f(a)}$. Dicho valor será positivo ya que al ser $f$ creciente $f(b)>f(a)$. 
+
+A continuación, consideramos una partición $P=\{a=x_0<x_1<\cdots <x_n=b\}$ del intervalo $[a,b]$ con diámetro menor que $\delta$, $|P|<\delta$. Si hallamos el valor de $U(f,P)-L(f,P)$, obtenemos:
+$$
+U(f,P)-L(f,P) = \sum_{i=1}^n (M_i-m_i)\cdot (x_i-x_{i-1})=\sum_{i=1}^n (f(x_i)-f(x_{i-1}))\cdot (x_i-x_{i-1}),
+$$
+ya que $\displaystyle M_i=\sup_{x\in [x_{i-1},x_i]} f(x)=f(x_i)$ y $\displaystyle m_i=\inf_{x\in [x_{i-1},x_i]} f(x)=f(x_{i-1})$, al ser $f$ una función creciente el supremo y el ínfimo se alcanzan en los extremos superior e inferior, respectivamente.
+</div>
+
+## Integración y monotonía
+<div class="dem">
+
+Por tanto,
+$$
+U(f,P)-L(f,P) \leq |P|\sum_{i=1}^n (f(x_i)-f(x_{i-1}))<\delta\cdot (f(b)-f(a))<\epsilon.
+$$
+En resumen, para todo valor $\epsilon >0$, hemos sido capaces de hallar una partición $P$ del intervalo $[a,b]$ tal que $U(f,P)-L(f,P)<\epsilon$, condición que equivale a decir que $f$ es integrable en dicho intervalo.
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Cualquier polinomio $p(x)$ es integrable en cualquier intervalo de la forma $[a,b]$, con $b>a>0$. Veámoslo.
+
+Sea $p(x)=a_n x^n+\cdots +a_1 x+a_0$ un polinomio de grado $n$. 
+
+Las funciones monomio $x^k$ son funciones crecientes en los intervalos considerados. Por tanto, serán integrables.
+
+El polinomio no es más que una combinación lineal de funciones integrables. Será, por tanto, integrable.
+
+Fijémonos que nuestro razonamiento fallaría en intervalos que contuviesen el valor $0$ como por ejemplo el intervalo $[-1,1]$ ya que la función $x^2$ no es creciente en dicho intervalo al tener un mínimo en $x=0$ y, en general, esto se aplicaría a todo monomio de exponente par $x^{2k}$. Vamos a solventar este problema en la siguiente sección donde veremos que toda función contínua es integrable.
+
+</div>
+
+
+## Integrabilidad y continuidad
