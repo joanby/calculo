@@ -407,9 +407,9 @@ En cualquiera de los casos anteriores, se dice que la sucesión $\{a_n\}_{n \in 
 
 <div class="example"> **Ejemplos**
 
-1) La sucesión $\left\{\dfrac{5-n^2}{n} \right\}$, es una sucesión divergente, puesto que los números naturales no están acotados en $\mathbb{R}$ y, por lo tanto $\lim n = +\infty$.
+1) La sucesión $a_n=n$, es una sucesión divergente, puesto que los números naturales no están acotados en $\mathbb{R}$ y, por lo tanto $\lim n = +\infty$.
 
-2) La sucesión $\left\{\dfrac{5-n^2}{n}\right\}$, también es una sucesión divergente, puesto que 
+2) La sucesión de término general $a_n = \dfrac{5-n^2}{n}$, también es una sucesión divergente, puesto que 
 $$
 \lim \left(\dfrac{5-n^2}{n} \right) =\lim \left(\dfrac{5}{n} - \dfrac{n^2}{n} \right)= \lim \dfrac{5}{n}-\lim n = 0 -\infty = -\infty
 $$
@@ -655,7 +655,7 @@ $$
  $$
  2 < \lim \left( 1 + \dfrac{1}{n}\right)^n <3
  $$
-puesto que todos los términos -a a partir del primero- s´on mayores que $2$ y menores que $3$. Este límite es lo que conocemos como el número $e$
+puesto que todos los términos -a a partir del primero- son mayores que $2$ y menores que $3$. Este límite es lo que conocemos como el número $e$
 $$
  \lim \left( 1 + \dfrac{1}{n}\right)^n = e
 $$
