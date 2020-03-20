@@ -1278,3 +1278,155 @@ Fijémonos que nuestro razonamiento fallaría en intervalos que contuviesen el v
 
 
 ## Integrabilidad y continuidad
+
+<l class="prop">Teorema.</l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **continua** en el intervalo $[a,b]$. Entonces la función $f$ es integrable en dicho intervalo.
+
+<div class="dem">
+**Demostración**
+
+Al ser $f$ continua en un intervalo cerrado, será uniformemente continua. 
+
+Entonces, dado un valor $\epsilon >0$ cualquiera, siempre será posible hallar un $\delta >0$ tal que si $x,y\in [a,b]$ y $|x-y|<\delta$, se cumplirá que $|f(x)-f(y)|<\frac{\epsilon}{b-a}$.
+
+Sea $P=\{a=x_0<x_1<\cdots <x_n=b\}$ del intervalo $[a,b]$ con diámetro menor que $\delta$, $|P|<\delta$. 
+
+Al ser $f$ continua en todo el intervalo $[a,b]$, también lo será en cada uno de los subintervalos de la partición $[x_{i-1},x_i]$. Por el teorema de Weierstrass, dado un subintervalo $[x_{i-1},x_i]$, $f$ tendrá máximo y mínimo en dicho subintervalo, es decir, existirán valores $u_i,v_i\in [x_{i-1},x_i]$ tales que
+$$
+f(u_i)=m_i=\inf_{x\in [x_{i-1},x_i]} f(x),\quad f(v_i)=M_i=\sup_{x\in [x_{i-1},x_i]} f(x).
+$$
+
+</div>
+
+
+## Integrabilidad y continuidad
+<div class="dem">
+Entonces,
+$$
+U(f,P)-L(f,P)=\sum_{i=1}^n (M_i-m_i)(x_i-x_{i-1})=\sum_{i=1}^n (f(v_i)-f(u_i))(x_i-x_{i-1}).
+$$
+Ahora bien, como $u_i,v_i\in [x_{i-1},x_i]$, $|v_i-u_i|\leq x_i-x_{i-1}\leq |P| <\delta$ y por la condición de continuidad uniforme de $f$, podemos asegurar que $f(v_i)-f(u_i)<\frac{\epsilon}{b-a}$. Usando esta última condición, podemos acotar $U(f,P)-L(f,P)$ de la forma siguiente:
+$$
+U(f,P)-L(f,P) < \frac{\epsilon}{b-a}\sum_{i=1}^n (x_i-x_{i-1})=\frac{\epsilon}{b-a}\cdot (b-a)=\epsilon.
+$$
+En resumen, dado $\epsilon >0$, hemos sido capaces de hallar una partición $P$ del intervalo $[a,b]$ tal que $U(f,P)-L(f,P)<\epsilon$. Esto significa que $f$ es integrable en dicho intervalo.
+
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+En el ejemplo anterior afirmamos que cualquier polinomio $p(x)$ era integrable en los intervalos de la forma $[a,b]$, pero teníamos que imponer la condición que $b>a>0$.
+
+Gracias al teorema anterior podemos afirmar que cualquier polinomio $p(x)$ es integrable en cualquier intervalo ya que $p(x)$ es una función continua. Por ejemplo en los intervalos que contienen el cero, la función polinómica $p(x)$ sería integrable.
+</div>
+
+## Monotonía de la función integral
+<l class="prop">Proposición.</l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **integrable** en el intervalo $[a,b]$ tal que $f(x)\geq 0$, para todo valor $x\in [a,b]$. Entonces la integral de la función $f$ también es positiva: $\displaystyle\int_a^b f\geq 0$.
+
+<l class="observ">Observación.</l>
+Usando la proposición anterior podemos afirmar que si tenemos dos funciones $f,g:[a,b]\longrightarrow\mathbb{R}$ **integrables** en el intervalo $[a,b]$ tales que $f(x)\leq g(x),$ para cualquier valor $x\in [a,b]$, entonces $\displaystyle\int_a^b f\leq \int_a^b g$ ya que basta considerar la función diferencia $h(x)=f(x)-g(x)$ y aplicar la proposición a la función anterior $h(x)$ usando la linealidad de la integral provada anteriormente.
+
+
+
+## Monotonía de la función integral
+<div class="dem">
+**Demostración**
+
+Como $f(x)\geq 0$ para todo valor de $x\in [a,b]$, dada una partición cualquiera $P=\{a=x_0<x_1<\cdots <x_n=b\}$, se verifica que $L(f,P)\geq 0$ ya que:
+$$
+L(f,P)=\sum_{i=1}^n m_i\cdot (x_i-x_{i-1}),
+$$
+pero $\displaystyle m_i =\inf_{x\in [x_{i-1},x_i]} f(x)\geq 0$ al ser $f(x)\geq 0$ para todo $x\in [x_{i-1},x_i]$. Por tanto: $L(f,P)\geq 0$.
+
+A continuación, tenemos que $\displaystyle\int_a^b f\geq L(f,P)\geq 0$, tal como queríamos ver.
+</div>
+
+## Monotonía de la función integral
+A continuación veamos que la integral de una función continua que es estrictamente positiva en un punto, es también estrictamente positiva:
+
+<l class="prop">Corolario. </l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **continua** en el intervalo $[a,b]$ tal que $f(x)\geq 0$ para todo valor $x\in [a,b]$. Supongamos que existe un valor $c\in [a,b]$ tal que $f(c)>0$. Entonces $\displaystyle\int_a^b f >0$.
+
+
+## Monotonía de la función integral
+<div class="dem">
+**Demostración**
+
+Usando la proposición anterior, tendremos que $\displaystyle\int_a^b f\geq 0$ al ser $f(x)\geq 0$, para todo valor $x\in [a,b]$.
+
+Como $f$ es continua en el punto $c$, podemos encontrar un entorno de dicho punto $c$ de radio $\delta$, $[c-\delta,c+\delta]$ tal que para todo punto $x\in [c-\delta,c+\delta]$ de dicho entorno $f(x)>\frac{f(c)}{2}$. Si $c$ coincidiese con uno de los extremos del intervalo, por ejemplo si $c=a$, consideraríamos como entorno $[c,c+\delta]$ y si $c=b$, $[c-\delta,c]$.
+
+Consideremos a continuación una partición $P$ del intervalo $[a,b]$ tal que el entorno anterior coincida con uno de sus subintervalos, esto es, que existe un índice $j$ tal que $x_{j-1}=c-\delta$ y $x_j=c+\delta$.
+
+
+</div>
+
+## Monotonía de la función integral
+<div class="dem">
+En este caso, se verificará lo siguiente:
+$$
+\int_a^b f \geq L(f,P)=\sum_{i=1}^n m_i\cdot (x_i-x_{i-1}) \geq m_j (x_j-x_{j-1})=2\delta m_j,
+$$
+pero $\displaystyle m_j =\inf_{x\in [x_{j-1},x_j]} f(x)=\inf_{x\in [c-\delta,c+\delta]} f(x) >\frac{f(c)}{2}$ y deducimos por tanto:
+$$
+\int_a^b f \geq L(f,P) \geq 2\delta m_j >\delta\cdot f(c)>0,
+$$
+tal como queríamos demostrar.
+
+</div>
+
+
+## Monotonía de la función integral
+Otra de las consecuencias de la monotonía de la integral es que el valor absoluto de una integral siempre es menor que la integral del valor absoluto:
+
+<l class="prop">Teorema. </l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **integrable** en el intervalo $[a,b]$. Entonces la función $|f|$ definida por: $|f|:[a,b]\longrightarrow\mathbb{R}$, con $|f|(x)=|f(x)|$ es también integrable y además,
+$$
+\left|\int_a^b f\right|\leq \int_a^b |f|.
+$$
+
+## Monotonía de la función integral
+Antes de pasar a su demostración, necesitamos la condición siguiente que dejamos como ejercicio:
+
+<div class="exercise">
+**Ejercicio** 
+
+Sea $f:[c,d]\longrightarrow\mathbb{R}$ una función acotada. Sean 
+$$
+\overline{M}=\sup_{x\in [c,d]}|f(x)|,\ \overline{m}=\inf_{x\in [c,d]}|f(x)|,\ M=\sup_{x\in [c,d]} f(x),\ m=\inf_{x\in [c,d]} f(x).
+$$
+Demostrar que siempre se verifica lo siguiente $\overline{M}-\overline{m}\leq M-m.$
+
+</div>
+
+
+## Monotonía de la función integral
+<div class="dem">
+**Demostración**
+
+Sea $P$ una partición cualquiera del intervalo $[a,b]$. Aplicando la condición del ejercicio anterior a cualquier subintervalo de la partición anterior, podemos afirmar que:
+$$
+U(|f|,P)-L(|f|,P)\leq U(f,P)-L(f,P).
+$$
+Como $f$ es integrable en el intervalo $[a,b]$ por hipótesis, para todo valor $\epsilon >0$, podemos hallar una partición $P$ tal que $U(f,P)-L(f,P)<\epsilon$.
+
+Ahora bien, usando la condición anterior, podemos afirmar que $U(|f|,P)-L(|f|,P)\leq U(f,P)-L(f,P)<\epsilon$. Hemos probado que para todo valor $\epsilon >0$, existe una partición $P$ del intervalo $[a,b]$ tal que $$U(|f|,P)-L(|f|,P)<\epsilon$, lo que equivale a decir que la función $|f|$ es integrable en dicho intervalo.
+</div>
+
+
+## Monotonía de la función integral
+
+<div class="dem">
+Probemos la segunda condición del teorema: para todo valor $x\in [a,b]$ se cumple lo siguiente:
+$$
+-|f(x)|\leq f(x)\leq |f(x)|.
+$$
+Si aplicamos la condición de monotonía de la integral, obtenemos:
+$$
+-\int_a^b |f|\leq \int_a^b f\leq \int_a^b |f|,
+$$
+lo que equivale a afirmar que $\displaystyle \left|\int_a^b f\right|\leq \int_a^b |f|$.
+</div>
