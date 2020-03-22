@@ -474,7 +474,7 @@ Supongamos ahora que el rango de $\{a_n\}$ es infinito, por ser de Cauchy,está 
 
 Por ser $a$ un punto de acumulación, dado un $\epsilon >0$ existen infinitos términos, $a_k$, tales que $|a_k -a| < \dfrac{\epsilon}{2}$. Conviene observar que, esto, por si mismo, no es suficiente para asegurar que $a_n \rightarrow a$, puesto que la desigualdad no tiene porque cumplirse para todos los $a_k$ a partir de un lugar.
 
-## Sucesiuones de Cauchy
+## Sucesiones de Cauchy
 
 <div class="dem"> **Demostración**
 
@@ -667,7 +667,7 @@ $$
 $$
 
 <div class="dem">**Demostración**
-Tecordemos, en primer lugar, que dado un número real $\alpha$, el mayor entero  que es menor que $\alpha$ se llama *parte entera* de $\alpha$ y se denota por $\lfloor \alpha \rfloor$.
+Recordemos, en primer lugar, que dado un número real $\alpha$, el mayor entero  que es menor que $\alpha$ se llama *parte entera* de $\alpha$ y se denota por $\lfloor \alpha \rfloor$.
 
 Consideremos, en primer lugar que $a_n \rightarrow +\infty$. Sea $\alpha_n = \lfloor a_n \rfloor$, dado que $\alpha_n \leq a_n \leq \alpha_n +1$, tendremos que 
 $$
@@ -724,13 +724,21 @@ $$
 
 Dado que $a_n \rightarrow 1$, podemos poner $a_n = 1+ \delta_n$, con $\delta_n \rightarrow 0$. Ahora, si $x_n=\delta_n b_n = (a_n-1)b_n$, tendremos que
 $$
-\lim a_n ^{b_n} = (1+\delta_n)^{b_n} = \left(1 +\dfrac{x_n}{b_n} \right)^{b_n} = e^{\lim x_n} = e^{\lim (b_n(a_n-1))}
+\lim a_n ^{b_n} =  \lim (1+\delta_n)^{b_n} = \lim \left(1 +\dfrac{x_n}{b_n} \right)^{b_n} = \left( e^{\lim x_n }\right)^{\lim b_n} = e^{\lim (b_n(a_n-1))}
 $$
 
 
 </div>
 
 ## Indeterminaciones del tipo $1^{\infty}$
+
+Para este tipo de indeterminaciones sirven cualquiera de los dos resultados anteriores:
+
+<l class="example"> Ejemplos </l>
+
+
+
+## Indeterminaciones del tipo $0^0$,$\infty^0$, y $1^{\infty}
 
 
 
