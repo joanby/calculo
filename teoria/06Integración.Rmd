@@ -830,6 +830,36 @@ for k in range(1,10):
 
 </div>
 
+## Funciones integrables. Ejemplo
+<div class="example">
+**Ejemplo: la integral de una función constante.**
+
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función constante: para todo valor de $x\in [a,b]$, $f(x)=C$.
+
+Veamos que siempre $f$ es integrable en cualquier intervalo $[a,b]$ y además $\displaystyle\int_a^b =C\cdot (b-a)$.
+
+Para ello, consideremos la sucesión de particiones siguiente del intervalo $[a,b]$:
+$$
+P_n =\left\{a=x_0< x_1 =a+\frac{b-a}{n}<\cdots < x_i =a+i\cdot\frac{b-a}{n}<\cdots< x_n=b\right\}.
+$$
+La sucesión de particiones anterior está formada por valores equiespaciados cuya diferencia entre dos valores consecutivos de $P_n$ vale: $x_{i}-x_{i-1}=\frac{b-a}{n}$.
+</div>
+
+## Funciones integrables. Ejemplo
+<div class="example">
+Calculemos a continuación $L(f,P_n)$ y $U(f,P_n)$:
+$$
+\begin{array}{rl}
+L(f,P_n) & = \displaystyle \sum_{i=1}^n m_i\cdot (x_i-x_{i-1})=C\cdot \sum_{i=1}^n\cdot (x_i-x_{i-1}) = C\cdot (b-a),\\
+U(f,P_n) & = \displaystyle \sum_{i=1}^n M_i\cdot (x_i-x_{i-1})=C\cdot \sum_{i=1}^n\cdot (x_i-x_{i-1}) = C\cdot (b-a),\\
+\end{array}
+$$
+ya que $\displaystyle m_i=\inf_{x\in [x_{i-1},x_i]} f(x) =\inf_{x\in [x_{i-1},x_i]} C=C$ y $\displaystyle M_i=\sup_{x\in [x_{i-1},x_i]} f(x) =\sup_{x\in [x_{i-1},x_i]} C=C.$
+
+Como $U(f,P_n)=L(f,P_n)$, tenemos que $\displaystyle I=\int_a^b f =\lim_{n\to\infty} U(f,P_n)=\lim_{n\to\infty} L(f,P_n)=C\cdot (b-a).$
+
+</div>
+
 # Propiedades de las integrales
 
 ## Introducción
@@ -1413,12 +1443,11 @@ U(|f|,P)-L(|f|,P)\leq U(f,P)-L(f,P).
 $$
 Como $f$ es integrable en el intervalo $[a,b]$ por hipótesis, para todo valor $\epsilon >0$, podemos hallar una partición $P$ tal que $U(f,P)-L(f,P)<\epsilon$.
 
-Ahora bien, usando la condición anterior, podemos afirmar que $U(|f|,P)-L(|f|,P)\leq U(f,P)-L(f,P)<\epsilon$. Hemos probado que para todo valor $\epsilon >0$, existe una partición $P$ del intervalo $[a,b]$ tal que $$U(|f|,P)-L(|f|,P)<\epsilon$, lo que equivale a decir que la función $|f|$ es integrable en dicho intervalo.
+Ahora bien, usando la condición anterior, podemos afirmar que $U(|f|,P)-L(|f|,P)\leq U(f,P)-L(f,P)<\epsilon$. Hemos probado que para todo valor $\epsilon >0$, existe una partición $P$ del intervalo $[a,b]$ tal que $U(|f|,P)-L(|f|,P)<\epsilon$, lo que equivale a decir que la función $|f|$ es integrable en dicho intervalo.
+
 </div>
 
-
 ## Monotonía de la función integral
-
 <div class="dem">
 Probemos la segunda condición del teorema: para todo valor $x\in [a,b]$ se cumple lo siguiente:
 $$
@@ -1430,3 +1459,462 @@ $$
 $$
 lo que equivale a afirmar que $\displaystyle \left|\int_a^b f\right|\leq \int_a^b |f|$.
 </div>
+
+
+## Teorema de la media de la integral
+En esta sección vamos a escribir la integral de una función **integrable** en un cierto intervalo $[a,b]$ como el área de un cierto rectángula cuya longitud de la base es la longitud del intervalo, $b-a$ y cuya altura es un valor que se encuentra entre el **ínfimo** y el **supremo** de la función.
+
+En la figura siguiente se indica lo que queremos decir: el àrea de la función en rojo equivale al área del rectángulo en azul.
+
+El **Teorema de la media** nos asegura precisamente esto: para cualquier función, siempre es posible encontrar un rectángulo cuya altura estará siempre entre el ínfimo y el supremo de la función cuyas áreas serán la misma.
+
+## Teorema de la media de la integral
+
+```{r,echo=FALSE,fig.align=TRUE}
+xmin=-2
+xmax=2
+ymin=0
+ymax=4
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){4-x^2}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-3*tolx,"x")
+text(toly,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+#  text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+  }
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+#  text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+text(pi,1.3,"f(x)")
+lines(c(-2,-2),c(0,8/3),col="blue")
+lines(c(-2,2),c(8/3,8/3),col="blue")
+lines(c(2,2),c(0,8/3),col="blue")
+text(-2,-0.2,"a")
+text(2,-0.2,"b")
+text(1.5,2.1,"f(x)")
+
+```
+
+
+## Teorema de la media de la integral
+<l class="prop">Teorema de la media de la integral.</l>
+Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función **integrable** en el intervalo $[a,b]$ y sea $\displaystyle m=\inf_{x\in [a,b]} f(x)$ y $\displaystyle M=\sup_{x\in [a,b]} f(x)$. Entonces siempre es posible hallar un valor $\lambda\in [m,M]$ tal que $\displaystyle \int_a^b f=\lambda\cdot (b-a)$.
+
+<l class="observ">Observación. </l>
+El valor $\lambda$ es precisamente la altura del rectángulo del que nos referíamos antes.
+Además, observar que si la función, además de ser **integrable**, es **continua**, podemos decir por el Teorema del valor intermedio que existe un valor $c\in [a,b]$ tal que $\lambda =f(c)$. Entonces, en este caso, podemos escribir la integral de $f$ en $[a,b]$ como: $\displaystyle \int_a^b f=f(c)\cdot (b-a)$.
+
+
+## Teorema de la media de la integral
+<div class="dem">
+**Demostración**
+
+Por definición de los valores $m$ (ínfimo de la función en el intervalo $[a,b]$) y $M$ (supremo de la función en el intervalo $[a,b]$), podemos afirmar que para todo valor $x\in [a,b]$ se cumple que $m\leq f(x)\leq M$.
+
+Usando la proposición relacionada con la monotonía de la integral, tenemos que:
+$$
+\int_a^b m \leq \int_a^b f\leq \int_a^b M.
+$$
+Como $m$ y $M$ son funciones constantes, vimos en su momento que $\displaystyle \int_a^b m =m\cdot (b-a)$ y $\displaystyle \int_a^b M =M\cdot (b-a)$. Por tanto,
+$$
+m\cdot (b-a)\leq \int_a^b f\leq M\cdot (b-a),\ \Rightarrow m\leq\frac{\int_a^b f}{b-a}\leq M.
+$$
+Si definimos $\lambda = \frac{\int_a^b f}{b-a}$, tenemos el resultado del Teorema.
+</div>
+
+## Teorema de la media generalizado
+<l class="prop">Teorema de la media generalizado.</l>
+Sean $f,g:[a,b]\longrightarrow \mathbb{R}$ dos funciones **integrables** en el intervalo $[a,b]$, donde suponemos que $g(x)\geq 0$ para todo valor $x\in [a,b]$ y sea $\displaystyle m=\inf_{x\in [a,b]} f(x)$ y $\displaystyle M=\sup_{x\in [a,b]} f(x)$. Entonces siempre es posible hallar un valor $\lambda\in [m,M]$ tal que $\displaystyle \int_a^b f\cdot g =\lambda\cdot \int_a^b g$.
+
+## Teorema de la media generalizado
+<l class="observ">Observación.</l>
+El teorema anterior generaliza el teorema de la media ya que basta considerar $g(x)=1\geq 0$ y obtenemos el Teorema de la media para integrales.
+Además, igual que pasaba con el **Teorema de la media**, observar que si la función $f$, además de ser **integrable**, es **continua**, podemos decir por el Teorema del valor intermedio que existe un valor $c\in [a,b]$ tal que $\lambda =f(c)$. Entonces, en este caso, podemos escribir la integral de $f\cdot g$ en $[a,b]$ como: $\displaystyle \int_a^b f\cdot g=f(c)\cdot \int_a^b g$.
+
+## Teorema de la media generalizado
+<div class="dem">
+**Demostración**
+
+Por definición de los valores $m$ (ínfimo de la función en el intervalo $[a,b]$) y $M$ (supremo de la función en el intervalo $[a,b]$), podemos afirmar que para todo valor $x\in [a,b]$ se cumple que $m\leq f(x)\leq M$. 
+
+Como la función $g(x)\geq 0$ para todo valor $x\in [a,b]$, multiplicando por $g(x)$ las desigualdades anteriores, obtenemos
+$m\cdot g(x)\leq f(x)\cdot g(x)\leq M\cdot g(x)$.
+
+Usando la proposición relacionada con la monotonía de la integral, tenemos que:
+$$
+m\cdot\int_a^b g\leq \int_a^b f\cdot g\leq M\cdot \int_a^b g.
+$$
+</div>
+
+## Teorema de la media generalizado
+<div class="dem">
+Si $\displaystyle \int_a^b g=0$, a partir de las desigualdades anteriores deducimos que $\displaystyle \int_a^b f\cdot g=0$ y el Teorema se cumple trivialmente.
+
+Si $\displaystyle \int_a^b g\neq 0$, definimos $\displaystyle\lambda = \frac{\int_a^b f\cdot g}{\int_a^b g}$. Por las desigualdades anteriores, $\lambda\in [m,M]$ y además por propia definición, $\displaystyle \int_a^b f\cdot g =\lambda\cdot \int_a^b g$, tal como queríamos ver.
+</div>
+
+
+
+# Teorema Fundamental del Cálculo
+
+## Introducción
+Recapitulemos lo que hemos hecho hasta el momento. 
+
+A partir de la idea intuitiva de **área** de una función hemos definido y formalizado la **integral de una función** en un intervalo estudiando posteriormente las propiedades que se derivan de dicho concepto. 
+
+Ahora bien, usando todo lo que sabemos, no sabemos o no podemos calcular el área de funciones "conocidas" como **polinomios**, **exponenciales**, **trigonométricas**, etc., recordemos por ejemplo todo el desarrollo que tuvimos que hacer para calcular el área de la función $f(x)=x^k$ en el intervalo $[0,1]$.
+
+Es decir, nos falta un método efectivo para calcular áreas de funciones. 
+
+El **Teorema Fundamental del Cálculo** nos resuelve este problema relacionando el problema de **integrar** con **derivar**. 
+
+## Introducción
+Más concretamente, consideremos una función $f:[a,b]\longrightarrow \mathbb{R}$ **integrable** en el intervalo $[a,b]$ y definamos a partir de ella la función área $F:[a,b]\longrightarrow \mathbb{R}$ como $F(x)=\int_a^x f$, ver gráfica adjunta:
+
+<div class="center">
+```{r, echo=FALSE, label=der2,fig.cap="",out.width = "550px"}
+knitr::include_graphics("Images/tfc.png",dpi=1200)
+```
+</div>
+
+## Introducción
+El **Teorema fundamental del cálculo** nos dice que la derivada de la función $F(x)$ es precisamente la función $f(x)$ sobre la que integrábamos o calculábamos el área: $F'(x)=f(x)$. 
+
+El problema es que nosotros tenemos la función $f(x)$ y queremos hallar precisamente la función que da el área $F(x)$. A la función $F(x)$ se le llama **primitiva** de la función $f(x)$ o **antiderivada** ya que si $F'(x)=f(x)$, para hallar $F(x)$ a partir de $f(x)$ hemos de realizar la operación contraria de derivar.
+
+Gracias a dicho Teorema, de cara a hallar áreas, hemos de aprender a hallar **primitivas**. En el capítulo siguiente, vamos a aprender a hallar primitivas de las funciones más conocidas.
+
+Seguidamente, vamos a formalizar el **Teorema Fundamental del Cálculo** y a demostarlo.
+
+## El Teorema Fundamental del Cálculo
+Antes de pasar a su definición, necesitamos introducir la función área $F(x)$ y ver que en general, es una función continua.
+
+<l class="prop">Teorema.</l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **integrable**, y sea la función **área** definida de la forma siguiente: $F:[a,b]\longrightarrow\mathbb{R}$, $F(x)=\int_a^x f$. Entonces $F(x)$ es continua para todo valor de $x\in [a,b]$.
+
+<l class="observ">Observación.</l>
+Como el intervalo $[a,b]$ es un intervalo cerrado y acotado, la función área $F(x)$ no sólo es continua en todo valor $x\in [a,b]$ sino que es uniformemente continua en el intervalo
+
+
+## El Teorema Fundamental del Cálculo
+<div class="dem">
+**Demostración**
+
+Sea $x\in [a,b]$ un valor cualquiera. Veamos que la función $F$ es continua en $x$.
+
+Sea $y\in [a,b]$ otro valor en el intervalo $[a,b]$. Entonces,
+$$
+F(y)-F(x)=\int_a^y f-\int_a^x f=\int_x^y f.
+$$
+Usando el Teorema de la media, podemos afirmar que existe un valor $\lambda\in [\inf f,\sup f]$ tal que:
+$\displaystyle\int_x^y f=\lambda\cdot (y-x)$. 
+
+Para ver que $F$ es continua en $x$ hemos de ver lo siguiente: para todo valor $\epsilon >0$, existe un $\delta >0$ tal que si $y\in [a,b]$ y $|x-y|<\delta$, entonces $|F(y)-F(x)|<\epsilon$.
+
+Consideremos entonces un valor $\epsilon >0$, sea $\delta =\frac{\epsilon}{|\lambda|}$. Si $y\in [a,b]$ y $|y-x|<\delta$, deducimos que $\displaystyle |F(y)-F(x)|=\left|\int_x^y f\right|=|\lambda\cdot (y-x)|<|\lambda|\cdot \delta =\epsilon$, tal como queríamos ver.
+</div>
+
+
+## El Teorema Fundamental del Cálculo
+<l class="prop">Teorema Fundamental del Cálculo. </l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **continua**, y por tanto, **integrable**, y sea la función **área** $F(x)$ definida en el Teorema anterior. Entonces la función $F$ es derivable en todo el intervalo $[a,b]$ y además, $F'(x)=f(x)$, para todo valor $x\in [a,b]$.
+
+<l class="observ">Observación.</l>
+Tal como hemos indicado anteriormente, a la función $F$ se le llama **primitiva** o **antiderivada** de la función $f$. Observar que dada una función $f$, ésta tiene infinitas **primitivas** ya que si $F$ es una de ellas, también lo es $F+C$, donde $C$ es una constante cualquiera. Efectivamente: $(F+C)'(x)=F'(x)=f(x)$.
+
+## El Teorema Fundamental del Cálculo
+<div class="dem">
+**Demostración**
+
+Sea $x$ un valor cualquiera del intervalo $[a,b]$. Si $y$ es otro valor cualquiera con $y\geq x$, el **Teorema de la media** nos dice que existe un valor $c\in (x,y)$ tal que:
+$$
+\int_x^y f = \int_a^y f-\int_a^x f = F(y)-F(x)=f(c)\cdot (y-x).
+$$
+Por tanto,
+$$
+F'(x)=\lim_{y\to x}\frac{F(y)-F(x)}{y-x}=\lim_{y\to x} \frac{f(c)\cdot (y-x)}{y-x}=\lim_{y\to x} f(c)=f(x),
+$$
+al ser $f(x)$ continua en el punto $x$. Queda por tanto, visto el Teorema.
+</div>
+
+## Regla de Barrow
+La **Regla de Barrow** nos da la expresión del **área** o la **integral** de la función $f$ en el intervalo $[a,b]$ usando el **Teorema fundamental del cálculo**:
+
+<l class="prop">Regla de Barrow. </l>
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **continua**, y por tanto, **integrable**, y sea $F:[a,b]\longrightarrow \mathbb{R}$ una **primitiva** de $f$. Entonces, el **área** de la función $f$ entre $a$ y un punto cualquiera del intervalo $x\in [a,b]$  se puede expresar como:
+$$
+\int_a^x f = F(x)-F(a).
+$$
+
+<l class="observ">Observación.</l>
+Si usamos la expresión anterior para $x=b$ obtenemos la expresión del **área** de la función $f$ entre $a$ y $b$:
+$\displaystyle\int_a^b f = F(b)-F(a).$
+
+## Regla de Barrow
+<div class="dem">
+**Demostración**
+
+Sea $\hat{F}(x)=\int_a^x f$ la primitiva dada por el **Teorema fundamental del cálculo**. 
+
+Como $\hat{F}'(x)=F'(x)=f(x)$ tenemos que $(\hat{F}-F)'(x)=\hat{F}'(x)-F'(x)=0$. Por tanto, existirá una constante $C$ tal que $F(x)-\hat{F}(x)=C$ o $F(x)=\hat{F}(x)+C$.
+
+Seguidamente, observemos que $\hat{F}(a)=\int_a^a f=0$. Por tanto, $F(a)=\hat{F}(a)+C=C$.
+
+Al fin, concluimos que:
+$$
+F(x)-F(a)=\hat{F}(x)-\hat{F}(a)=\int_a^x f,
+$$
+tal como queríamos ver.
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo: área de un polinomio**
+
+Consideremos un polinomio cualquiera $p(x)=a_n x^n+\cdots +a_1 x+a_0$ de grado $n$ definido en un intervalo cualquiera $[a,b]$.
+
+Fijarse que una primitiva de la función $x^n$ es $\frac{x^{n+1}}{n+1}$ ya que si derivamos la expresión anterior, obtenemos la función inicial: $\left(\frac{x^{n+1}}{n+1}\right)'=\frac{1}{n+1}\cdot (n+1)\cdot x^n=x^n$.
+
+Usando la linealidad de la integral, podemos hallar una primitiva de la función $p(x)$:
+$$
+F(x)=a_n\cdot \frac{x^{n+1}}{n+1}+\cdots + a_1\cdot \frac{x^2}{2}+a_0 x.
+$$
+Concretamente, consideremos el polinomio $p(x)=4-x^2$ definido en el intervalo $[-2,2]$:
+</div>
+
+## Ejemplo
+<div class="example">
+```{r,echo=FALSE,fig.align=TRUE}
+xmin=-2
+xmax=2
+ymin=0
+ymax=4
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){4-x^2}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-3*tolx,"x")
+text(toly,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+#  text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+  }
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+#  text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+text(-2,-0.25,"-2")
+text(2,-0.25,"2")
+text(1.5,2.2,"p(x)")
+
+```
+</div>
+
+## Ejemplo
+<div class="example">
+Una primitiva del polinomio anterior sería: $F(x)=-\frac{x^3}{3}+4x$. El área entre $x=-2$ y $x=2$ sería usando la regla de Barrow:
+$$
+\int_{-2}^2 p = F(2)-F(-2)=-\frac{2^3}{3}+4\cdot 2-\left(\frac{(-2)^3}{3}-4\cdot (-2)\right)=\frac{32}{3}\approx `r round(32/3,4)`.
+$$
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5B4-x%5E2%2C%7Bx%2C-2%2C2%7D%5D)
+</l>
+</div>
+
+
+## Segundo Teorema de la media
+Usando el **Teorema fundamental del cálculo** vamos a generalizar el **Teorema de la media generalizado** en el siguiente sentido:
+
+<l class="prop">Segundo Teorema de la media.</l>
+Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función integrable en $[a,b]$ y sea $g:[a,b]\longrightarrow\mathbb{R}$ una función monótona, decreciente y no negativa. Entonces, existe un valor $c\in [a,b]$ tal que:
+$$
+\int_a^b f\cdot g = g(a)\cdot\int_a^c f.
+$$
+
+## Segundo Teorema de la media
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido muy técnico. </i>
+</div>
+</div>
+
+<div class="dem">
+**Demostración**
+
+Tal como vimos en un teorema anterior, la función $F$ es una función continua.
+
+Por el Teorema de Weierstrass, la función $F$ tendrá mínimo y máximo dentro del intervalo $[a,b]$. Sea $\displaystyle m=\min_{x\in [a,b]}F(x)$ y $\displaystyle M=\max_{x\in [a,b]}F(x)$.
+
+Dada una partición $P$ cualquiera $P=\{a=x_0<x_1<\cdots <x_n=b\}$ del intervalo $[a,b]$ definimos el valor $\sigma(P)$ asociado a la partición $P$ de la forma siguiente:
+$$
+\begin{array}{rl}
+\sigma (P) = & \displaystyle\sum_{i=1}^{n} g(x_{i-1}) (F(x_i) - F(x_{i-1}))
+\\
+ = & -g(x_0)F(x_0) + g(x_0)F(x_1) - g(x_1)F(x_1) + g(x_1)F(x_2)  -
+\cdots  \\ & \displaystyle + g(x_{n-1})F(x_n)  =  \sum_{i=1}^{n-1}
+F(x_i)(g(x_{i-1}) - g(x_i)) + F(x_n)g(x_{n-1}).
+\end{array}
+$$
+</div>
+
+## Segundo Teorema de la media
+<div class="dem">
+
+Como la función $g$ es decreciente todos los términos del sumatorio anterior serán positivos y, usando que $\displaystyle m=\min_{x\in [a,b]}F(x)$ y $\displaystyle M=\max_{x\in [a,b]}F(x)$ podemos escribir que:
+$$
+\begin{array}{rl}
+\displaystyle m \sum_{i=1}^{n-1} (g(x_{i-1}) - g(x_i))  & +  m g(x_{n-1}) \leq
+\sigma (P)  \\
+ &  \displaystyle \leq M \sum_{i=1}^{n-1} (g(x_{i-1}) - g(x_i)) + M
+g(x_{n-1}),
+\end{array}
+$$
+Las sumas anteriores se simplifican de la forma siguiente:
+$$
+m g(a) \leq \sigma (P) \leq M g(a),
+$$
+y por tanto deducimos que $\sigma(P)\in [m g(a),M g(a)]$.
+</div>
+
+## Segundo Teorema de la media
+<div class="dem">
+A continuación, acotamos $\displaystyle\left| \int_a^b f(x) g(x) dx - \sigma
+(P)\right|$ de la siguiente manera:
+$$
+\begin{array}{rl}
+\displaystyle\biggl| \int_a^b f\cdot g -  \sigma (P)\biggr|  &\displaystyle  = 
+\left| \int_a^b f\cdot g  -  \sum_{i=1}^{n} g(x_{i-1})
+\int_{x_{i-1}}^{x_i} f \right| = \left|  \sum_{i=1}^{n}
+\int_{x_{i-1}}^{x_i} f\cdot g   -  \sum_{i=1}^{n}
+\int_{x_{i-1}}^{x_i} g(x_{i-1}) f  \right|  \\ & \displaystyle = \left|
+\sum_{i=1}^{n} \int_{x_{i-1}}^{x_i} f (g - g(x_{i-1})) 
+\right|.
+\end{array}
+$$
+Como $f$ es integrable, también será acotada. Sea $M_f$ el valor tal que para todo valor $x\in [a,b]$, $|f(x)|<M_f$.
+
+Como $g$ es monónota decreciente, para todo valor $x\in [x_{i-1},x_i]$, se verifia que $|g(x)-g(x_{i-1})|=g(x_{i-1})-g(x)< g(x_{i-1})-g(x_i)$. Por tanto, la última expresión se puede acotar por:
+$$
+\begin{array}{rl}
+\displaystyle\left| \int_a^b f\cdot g -  \sigma (P)\right| & \leq \displaystyle\sum_{i=1}^{n} \int_{x_{i-1}}^{x_i} |f| |g - g(x_{i-1})| \leq M_f \sum_{i=1}^n (g(x_{i-1}) - g(x_i)) (x_i-x_{i-1})\\  & \displaystyle\leq M_f\cdot |P|\sum_{i=1}^n (g(x_{i-1}) - g(x_i))=M_f\cdot |P|\cdot (g(a)-g(b)).
+\end{array}
+$$
+</div>
+
+
+## Segundo Teorema de la media
+<div class="dem">
+
+A continuación veamos que:
+$$
+mg(a)\leq \int_a^b f\cdot g\leq M g(a).
+$$
+Supongamos que la expresión anterior no es cierta, es decir, $\displaystyle \int_a^b f\cdot g\neq [mg(a),Mg(a)]$, o, lo que es lo mismo $\displaystyle \int_a^b f\cdot g\in\mathbb{R}\setminus [mg(a),Mg(a)]$. Como el conjunto $\in\mathbb{R}\setminus [mg(a),Mg(a)]$ es un conjunto abierto, existe un valor $\epsilon >0$ tal que 
+$$
+\left( \int_a^b f\cdot g-\epsilon , \int_a^b f\cdot  g + \epsilon \right) \subset \mathbb{R}\setminus [m g(a), M g(a)].
+$$
+Consideremos una partición $P'$ del intervalo $[a,b]$ tal que su diámetro cumple $|P'|< \frac{\epsilon }{2 M_f (g(a) - g(b))}$. (si $g(a)=g(b)$, $g$ sería una función constante y el resultado del teorema es trivial). Para dicha partición, tenemos que, usando un resultado anterior,
+$$
+\left| \int_a^b f\cdot g -  \sigma (P')\right|\leq M_f\cdot |P'|\cdot (g(a)-g(b))<\frac{\epsilon}{2}.
+$$
+</div>
+
+
+## Segundo Teorema de la media
+<div class="dem">
+Tenemos la situación siguiente:
+
+<div class="center">
+```{r, echo=FALSE, label=tmitjana,fig.cap="",out.width = "800px"}
+knitr::include_graphics("Images/teorema2mitjana.png",dpi=1200)
+```
+</div>
+
+
+</div>
+
+
+## Segundo Teorema de la media
+<div class="dem">
+
+Como se puede observar en la figura anterior, $\sigma(P')\not\in [m g(a),M g(a)]$, hecho que niega lo que hemos demostrado antes. Hemos llegado a una contradicción. Por tanto, 
+$$
+mg(a)\leq \int_a^b f\cdot g\leq M g(a).
+$$
+Observemos que $g(a)>0$ ya que si $g(a)=0$, como $g$ es decreciente y no negativa, $g(x)=0$ para todo valor $x\in [a,b]$ y el resultado del teorema sería trivial.
+
+Deducimos por tanto, $m\leq \frac{\int_a^b f\cdot g}{g(a)}\leq M$.
+
+Como la función $F$ es continua tal como vimos en un teorema anterior, y 
+$m\leq \frac{\int_a^b f\cdot g}{g(a)}\leq M,$ aplicando el teorema de los valores intermedios, existe un valor $c$ tal que 
+$F(c)=\frac{\int_a^b f\cdot g}{g(a)}.$
+Por tanto,
+$$
+\int_a^b f\cdot g = g(a)\cdot F(c)=g(a)\cdot \int_a^c f,
+$$
+tal como queríamos demostrar.
+</div>
+
+## Segundo Teorema de la media
+El teorema siguiente es otra versión del segundo teorema de la media:
+
+<l class="prop">Segundo Teorema de la media.</l>
+Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función integrable en $[a,b]$ y sea $g:[a,b]\longrightarrow\mathbb{R}$ una función monótona, creciente y no negativa. Entonces, existe un valor $c\in [a,b]$ tal que:
+$$
+\int_a^b f\cdot g = g(b)\cdot\int_c^b f.
+$$
+
+<div class="exercise">
+**Ejercicio**
+
+Demostrar el teorema anterior.
+
+Indicación: considerar $\tilde{g}(x)=g(b)-g(x)$ y aplicar el segundo teorema de la media.
+</div>
+
+# Técnicas de integración
+
+## Introducción
+En esta sección vamos a ver dos técnicas de integración que nos serán útiles para calcular áreas o integrales:
+
+* cambio de variable: algunas veces, cambiar de variable de integración puede simplificar los cálculos a la hora de hallar una **primitiva** de la función de integración $f$.
+
+* integración por partes: sería aplicar la fórmula de la **derivada del producto** al **cálculo de primitivas.**
+
+
+## Introducción
+
+Pero antes de introducir dichas técnicas vamos a cambiar de notación para denotar la integral de una función $f$ en un intervalo $[a,b]$. En concreto, usaremos la notación siguiente:
+$$
+\int_a^b f:=\int_a^b f(x)\, dx,
+$$
+ya que de esta manera indicamos cuál es la variable que se integra o, dicho en otros términos, cuál es la variable sobre la cual está definida la función de integración $f(x)$. 
+
+## Introducción
+
+El valor $dx$ se llama diferencial de $x$ y es para indicar precisamente cuál es la variable de integración. Por ejemplo si escribo $\displaystyle \int_a^b f(t)\, dx$, significa que integro la función $f(t)$ que está en función de una variable $t$ pero la variable sobre la que integramos es $x$ debido al $dx$. 
+
+Para que la integral anterior se pueda realizar, necesitamos saber cuál es la relación entre las variables $t$ y $x$, es decir, cuál es la función $g$ que pasa de una variable a la otra de la forma siguiente $t=g(x)$ y de esta manera la integral anterior sería: $\displaystyle \int_a^b f(g(x))\, dx$.
