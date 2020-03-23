@@ -2244,4 +2244,147 @@ $$
 
 </div>
 
+## Cálculo de áreas de figuras planas
+Sabemos que dada una función $f$ integrable en un intervalo $[a,b]$, el valor de la integral $\displaystyle\int_a^b f(x)\,dx$ es el área de $f$ entre $a$ y $b$.
 
+Ahora bien, pensemos que si la función $f$ va "por debajo" del eje de las $X$, el área será negativa por propia definición de las **sumas superiores** e **inferiores** para definir la integral. Veamos un ejemplo:
+
+<div class="example">
+**Ejemplo**
+
+Consideremos la función $f(x)=-x^2$ definida en el intervalo $[-1,1]$. Como puede observarse en el gráfico siguiente, la función anterior va por debajo del eje de las $X$ donde hemos indicado en azul el área de la misma:
+</div>
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+```{r,echo=FALSE,fig.align=TRUE}
+xmin=-1
+xmax=1
+ymin=-1
+ymax=0.5
+tolx=0.02*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=3
+f = function(x){-x^2}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.005)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,3*tolx,"x")
+text(toly,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  text(xmin+((xmax-xmin)/quantsx)*i,1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+}
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+for (i in 1:length(x)){
+  lines(c(x[i],x[i]),c(0,f(x[i])),col="blue")}
+
+```
+</div>
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+
+El valor de su integral será aplicando la regla de Barrow,
+$$
+\int_{-1}^1 (-x^2)\, dx = -\left[\frac{x^3}{3}\right]_{-1}^1 =-\left(\frac{1}{3}-\left(\frac{-1}{3}\right)\right)=-\frac{2}{3}.
+$$
+Obtenemos un valor negativo ya que como hemos indicado dicha función va por debajo del eje de las $X$.
+
+</div>
+
+¿Qué pasaría si la función tuviese zonas con valores positivos y negativos?
+En este caso se restarían las dos áreas: el área global sería la resta entre la zona donde la función $f$ es positiva y la zona donde la función $f$ es negativa.
+
+Veamos el ejemplo siguiente:
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+**Ejemplo**
+
+Consideremos la función $f(x)=\sin x-\cos x$ definida en el intervalo $\left[0,\pi\right]$ donde hemos indicado con color azul el área negativa donde la función va por debajo del eje $X$ (intervalo $\left[0,\frac{\pi}{4}\right]$) y en color rojo el área positiva donde la función va por encima del eje $X$ (intervalo $\left[\frac{\pi}{4},\pi\right]$) 
+
+```{r,echo=FALSE,fig.align='center'}
+xmin=0
+xmax=pi
+ymin=-1.5
+ymax=1.5
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=6
+f = function(x){sin(x)-cos(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-2.5*tolx,"x")
+text(toly,ymax+toly,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  ii=-2+0.5*i}
+text(xmin+((xmax-xmin)/quantsx)*1,-2*toly,expression(frac(pi,4)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*2,-2*toly,expression(frac(pi,2)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*3,-2*toly,expression(frac(3*pi,4)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*4,-2*toly,expression(pi),cex=0.75)
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  if (i==3){text(2.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*3,ymin+((ymax-ymin)/quantsy)*3,cex=0.75)}
+  else
+  {text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
+}
+lines(x,f(x),col="red")
+text(pi,1.3,"f(x)")
+xmenys=seq(from=0,to=pi/4,by=0.005)
+xmes=seq(from=pi/4,to=pi,by=0.005)
+for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(0,f(xmenys[i])),col="blue")}
+for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(0,f(xmes[i])),col="red")}
+```
+</div>
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+Teniendo en cuenta que $F(x)=-\sin x-\cos x$ es una primitiva de la función $f$ si calculamos la integral entre $0$ y $\pi$ obtenemos:
+$$
+\begin{array}{rl}
+\displaystyle\int_0^\pi f(x)\, dx & =\displaystyle\int_0^\pi \sin x-\cos x \, dx = [-\sin x-\cos x]_0^\pi =-\sin\pi-\cos\pi -(\sin 0-\cos 0))\\ & =-(-1)-(-1)=2.
+\end{array}
+$$
+¿Qué representa el valor obtenido $2$? Pues es la suma entre el área roja y el área azul. Veámoslo:
+$$
+\begin{array}{rl}
+\mathrm{Área\ roja} &\displaystyle = \int_{\frac{\pi}{4}}^\pi \sin x-\cos x \, dx = [-\sin x-\cos x]_{\frac{\pi}{4}}^\pi = -\sin\pi-\cos\pi-\left(-\sin\left(\frac{\pi}{4}\right)-\cos\left(\frac{\pi}{4}\right)\right) \\ & =-(-1)-\left(-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}\right)=1+\sqrt{2}\approx `r round(1+sqrt(2),4)`, \\
+\mathrm{Área\ azul} &\displaystyle = \int_0^{\frac{\pi}{4}} \sin x-\cos x \, dx = [-\sin x-\cos x]_0^{\frac{\pi}{4}} = -\sin\left(\frac{\pi}{4}\right)-\cos\left(\frac{\pi}{4}\right)-(\sin 0-\cos 0) \\ & =-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}-(-1)=1-\sqrt{2}\approx `r round(1-sqrt(2),4)`. \\
+\end{array}
+$$
+</div>
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+Fijémonos que el área roja es positiva mientras que la azul, es negativa. Si hacemos la suma, obtenemos el valor de la integral de la función $f$ entre $0$ y $\pi$:
+$$
+1+\sqrt{2}+(1-\sqrt{2})=2=\int_0^\pi \sin x-\cos x\, dx.
+$$
+Por tanto, si lo queremos obtener es el valor del área total, (área roja más área azul) tenemos que sumar las áreas rojas o positivas y restar las azules o negativas. En nuestro caso sería:
+$$
+1+\sqrt{2}-(1-\sqrt{2})=2\sqrt{2}.
+$$
+</div>
+
+Del ejemplo anterior, vemos que es clave hallar los valores donde $f$ se anula en el eje $X$ o hallar los ceros de $f$ ya que en dichos valores la función $f$ puede cambiar de signo y el área puede pasar de positiva a negativa o viceversa.
