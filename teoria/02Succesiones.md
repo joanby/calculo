@@ -734,7 +734,10 @@ $$
 
 Para este tipo de indeterminaciones sirven cualquiera de los dos resultados anteriores:
 
-<l class="example"> Ejemplos </l>
+<l class="example"> **Ejemplo 1** </l>
+
+Calcular $\lim_{n \rightarrow \infty} $
+
 
 
 
@@ -743,7 +746,7 @@ Para este tipo de indeterminaciones sirven cualquiera de los dos resultados ante
 
 
 
-## Sucesiones definidas en forma recurrente
+## Sucesiones definidas en forma recurrente (1)
 
 El cálculo de límites de sucesiones definidas en forma recurrente es otra de las aplicaciones interesantes de la convergencia monótona de sucesiones.
 
@@ -756,7 +759,7 @@ $$
 
 Veremos que esta sucesión es monótona decreciente y que está acotada inferiormente.
 
-## Sucesiones definidas en forma recurrente
+## Sucesiones definidas en forma recurrente (2)
 
 Veamos, en primer lugar que está acotada inferiormente. De acuerdo con la igualdad que define la sucesión, $a_n$ y $a_{n+1}$ satisfacen la ecuación de segundo grado
 $$
@@ -769,7 +772,8 @@ $$
 es decir, $a_n^2 \geq a$, para todo $n \in \mathbb{N}$. En definitiva, $\sqrt{a}$ es una cota inferior para esta sucesión.
 
 
-## Sucesiones definidas en forma recurrente
+## Sucesiones definidas en forma recurrente (3)
+
 Veamos ahora que la sucesión es decreciente:
 $$
 a_n - a_{n-1} =a_n - \dfrac{1}{2} \left(a_n + \dfrac{a}{a_n}\right) = \dfrac{1}{2} \left( \dfrac{a_n^2 -a}{a_n}\right) \geq 0
@@ -777,7 +781,7 @@ $$
 puesto que, como hemos visto, $a_n \geq a$. Por lo tanto, la sucesión $\{a_n \}_{n \in \mathbb{N}}$ es convergente.
 
 
-## Sucesiones definidas en forma recurrente
+## Sucesiones definidas en forma recurrente (4)
 
 Finalmente, usando las propiedades de los límites de sucesiones con respecto de las operaciones aritméticas, tenemos que
 
@@ -790,6 +794,24 @@ $$
 es decir, $2 L^2 = L^2 +a$ y, por lo tanto, $L=a$, dado que todos los términos de la sucesión son positivos.
 
 Los babilonios usaban esta sucesión para calcular raíces cuadradas, cerca de 2000 años antes de nuestra era.
+
+## Sucesiones definidas en forma recurrente (5)
+
+<div class="example"> **Ejemplo** 
+
+Sea $a>0$, definimos la sucesión $\{a_n \}$ de la forma $a_1= \sqrt{a}$, $a_n = \sqrt{a+a_{n-1}}$. Calcula $\lim_{n \rightarrow \infty} a_n$.
+
+La sucesión es creciente, puesto que $a_1 = \sqrt{a} < \sqrt{a+\sqrt{a}} =a_2$ y, si $a_{n-1} < a_{n}$, es decir, si $a+a_{n-2} = a_{n-1}^2 < a_n ^2 = a+ a_{n-1}$ entonces, $a + a_{n-1} = a_n^2 < a_{n+1}^2 = a + a_{n}$, es decir $a_n <a_{n+1}$.
+
+Además, la sucesión está acotada $a+1$, puesto que es  $a_n^2 =a + a_{n-1}$, es decir $a_n = a + \dfrac{a_{n-1}}{a_n} < a+1$, dado que la sucesión es creciente y, por lo tanto, $\dfrac{a_{n-1}}{a_n} <1$.
+
+Es decir, se trata de una sucesión monótona creciente y, por lo tanto, tiene límite, sea $l= \lim_{n \rightarrow \infty} a_n$. Aplicando la definición de la recurrencia y las propiedades aritméticas del límite, tendremos que
+$\lim a_n^2 =  a+ \lim a_{n-1}$, és decir $l^2 =a +l$ y por lo tanto $l$ es una de las soluciones de esta ecuación de segundo grado, como una de ellas, $\dfrac{1-\sqrt{1+4a}}{2}$, es negativa y todos los términos de la sucesión son positivos, el límite buscado será la otra solución, es decir
+$$
+l=\dfrac{1+\sqrt{1+4a}}{2}
+$$
+
+</div>
 
 
 ## Criterio del sandwich
