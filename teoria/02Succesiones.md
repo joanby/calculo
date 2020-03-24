@@ -813,6 +813,24 @@ $$
 
 </div>
 
+## Sucesiones recurrentes (6)
+
+<div class="example"> **Ejemplo**
+
+Calcular, si existe, el  $\lim_{n \rightarrow \infty} a_n$, donde $a_n$ es la sucesión definida por $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$.
+
+En primer lugar, la sucesión es decreciente, puesto que $2=a_1 \geq a_2= 1$ y, si $a_{n-1} \geq a_n$, entonces es $3-a_{n-1} \leq 3-a_n$, y por lo tanto $a_n = \frac{1}{3-a_{n-1}} \geq \frac{1}{3-a_n}= a_{n+1}$ y, en consecuencia, por el Principio de Inducción, es $a_n \geq a_{n+1}$, para todo $n \in \mathbb{N}$. 
+
+Todos los términos de la sucesión son positivos, ya que es decreciente y el primero es $2$, por lo tanto está acotada inferiormente, lo que significa que tiene límite, sea este $l$. Aplicando la propiedades aritméticas de los límites tenemos que $\lim a_n = \frac{1}{3-\lim a_{n-1}}$, es decir $l =\dfrac{1}{3-l}$, por lo que 
+$$
+\lim a_n = \dfrac{1+\sqrt{5}}{2}
+$$
+
+dado que la otra solución de la ecaución de segundo grado resultante es negativa.
+
+</div>
+}
+
 
 ## Criterio del sandwich
 
@@ -1149,3 +1167,8 @@ Por consiguiente es $\lim \dfrac{\sqrt[n]{n!}}{n}= \dfrac{1}{e}$
 
 </div>
 
+## Sucesiones recurrentes (7)
+
+Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim_{n \rightarrow \infty} a_n = \frac{3-\sqrt{5}}{2}$. El gràfico siguiente muestra los $25$ primeros téminos de esta sucesión y lo rápida que es la convergencia.
+
+![](/Users/llorenc/Desktop/github/calculo/teoria/02Succesiones_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
