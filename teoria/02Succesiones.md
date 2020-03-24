@@ -734,14 +734,21 @@ $$
 
 Para este tipo de indeterminaciones sirven cualquiera de los dos resultados anteriores:
 
-<l class="example"> **Ejemplo 1** </l>
+<div class="example"> **Ejemplo **
 
-Calcular $\lim_{n \rightarrow \infty} $
+Calcular el $\lim_{n \rightarrow \infty} \left( \dfrac{n+2}{n-3} \right) ^{\dfrac{2n-1}{5}}$
 
+Se trata de una indeterminaciópn del tipo $1^\infty$, puesto que si $a_n = \dfrac{n+2}{n-3}$ y $b_n= \dfrac{2n-1}{5}$, entonce $\lim a_n=1$ y $\lim b_n = \infty$, por lo tanto, podemos aplicar el resultado anterior, es decir calculamos el 
+$$
+\lim b_n(a_n-1)=\lim \dfrac{2n-1}{5}\cdot \left(\dfrac{n+2}{n-3} -1 \right) = \lim \dfrac{(2n-1)(n+2-n+3)}{5(n-3)}=2
+$$
+y, por lo tanto
 
+$$
+\lim_{n \rightarrow \infty} \left( \dfrac{n+2}{n-3} \right) ^{\dfrac{2n-1}{5}} = e^2
+$$
+</div>
 
-
-## Indeterminaciones del tipo $0^0$,$\infty^0$, y $1^{\infty}
 
 
 
@@ -817,6 +824,8 @@ $$
 
 </div>
 
+
+
 ## Sucesiones recurrentes (6)
 
 <div class="example"> **Ejemplo**
@@ -832,6 +841,8 @@ $$
 
 dado que la otra solución de la ecuación de segundo grado resultante es mayor que todos los términos de la sucesión, y esta es decreciente.
 </div>
+
+
 
 ## Sucesiones recurrentes (7)
 
@@ -914,7 +925,6 @@ $$
 \lim \dfrac{a_{n+1} -a_n}{b_{n+1}-b_n} = l
 $$
 Entonces existe el $\lim\dfrac{a_n}{b_n}$ y es igual a $l$.
-
 
 ## El criterio de Stolz (Demostración)
 
