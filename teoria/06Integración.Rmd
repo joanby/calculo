@@ -2388,3 +2388,285 @@ $$
 </div>
 
 Del ejemplo anterior, vemos que es clave hallar los valores donde $f$ se anula en el eje $X$ o hallar los ceros de $f$ ya que en dichos valores la función $f$ puede cambiar de signo y el área puede pasar de positiva a negativa o viceversa.
+
+
+## Cálculo de áreas de figuras planas
+Generalicemos el problema anterior: imaginemos que tenemos dos funciones $f$ y $g$ definidas en el mismo intervalo $[a,b]$ y queremos hallar el área que hay entre dichas funciones. 
+
+Veamos un ejemplo para ilustrar nuestro problema:
+
+<div class="example">
+**Ejemplo**
+
+Consideremos las funciones $f(x)=\sin x-\cos x$ (en rojo) y $g(x)=\sin x+\cos x$ (en azul) definidas en el intervalo $[0,2\pi]$ y queremos hallar el área que hay entre dichas funciones.
+
+Como observamos en el gráfico siguiente, 
+
+* para $x\in \left[0,\frac{\pi}{2}\right]$, $g(x)\geq f(x)$,
+* para $x\in \left[\frac{\pi}{2},\frac{3\pi}{2}\right]$, $g(x)\leq f(x)$,
+* para $x\in \left[\frac{3\pi}{2},2\pi\right]$, $g(x)\geq f(x)$.
+</div>
+
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+```{r,echo=FALSE,fig.align='center'}
+xmin=0
+xmax=2*pi
+ymin=-1.5
+ymax=1.5
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=6
+f = function(x){sin(x)-cos(x)}
+g = function(x){sin(x)+cos(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-2.5*tolx,"x")
+text(toly,ymax+toly,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  ii=-2+0.5*i}
+text(xmin+((xmax-xmin)/quantsx)*1,-2*toly,expression(frac(pi,2)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*2,-2*toly,expression(pi),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*3,-2*toly,expression(frac(3*pi,2)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*4,-2*toly,expression(2*pi),cex=0.75)
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  if (i==3){text(-2.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*3,ymin+((ymax-ymin)/quantsy)*3,cex=0.75)}
+  else
+  {text(-3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
+}
+lines(x,f(x),col="red")
+lines(x,g(x),col="blue")
+text(pi,1.3,"f(x)")
+text(pi,-1.3,"g(x)")
+xmenys=seq(from=pi/4,to=3*pi/4,by=0.005)
+xmes=seq(from=0,to=pi/4,by=0.005)
+xmes=c(xmes,seq(from=3*pi/4,to=2*pi,by=0.005))
+#for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(f(xmenys[i]),g(xmenys[i])),col="green")}
+#for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(g(xmes[i]),f(xmes[i])),col="green")}
+```
+</div>
+
+
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+El área que queremos hallar está en verde:
+```{r,echo=FALSE,fig.align='center'}
+xmin=0
+xmax=2*pi
+ymin=-1.5
+ymax=1.5
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=6
+f = function(x){sin(x)-cos(x)}
+g = function(x){sin(x)+cos(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-2.5*tolx,"x")
+text(toly,ymax+toly,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  ii=-2+0.5*i}
+text(xmin+((xmax-xmin)/quantsx)*1,-2*toly,expression(frac(pi,2)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*2,-2*toly,expression(pi),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*3,-2*toly,expression(frac(3*pi,2)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*4,-2*toly,expression(2*pi),cex=0.75)
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  if (i==3){text(-2.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*3,ymin+((ymax-ymin)/quantsy)*3,cex=0.75)}
+  else
+  {text(-3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
+}
+lines(x,f(x),col="red")
+lines(x,g(x),col="blue")
+text(pi,1.3,"f(x)")
+text(pi,-1.3,"g(x)")
+xmenys=seq(from=pi/4,to=3*pi/4,by=0.005)
+xmes=seq(from=0,to=pi/4,by=0.005)
+xmes=c(xmes,seq(from=3*pi/4,to=2*pi,by=0.005))
+for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(f(xmenys[i]),g(xmenys[i])),col="green")}
+for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(g(xmes[i]),f(xmes[i])),col="green")}
+```
+</div>
+
+
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+Entonces el área entre las dos funciones se expresará de la forma siguiente:
+$$
+\mathrm{Área}=\int_0^{\frac{\pi}{2}} (g(x)-f(x))\,dx +\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} (f(x)-g(x))\,dx +\int_{\frac{3\pi}{2}}^{2\pi} (g(x)-f(x))\,dx.
+$$
+Fijaos que hemos integrado la función $g(x)-f(x)$ en aquellas zonas donde $g(x)\geq f(x)$ y hemos integrado $f(x)-g(x)$ en aquellas zonas donde $f(x)\geq g(x)$ para que el área siempre se sume y sea positiva.
+
+Usando que $g(x)-f(x)=2\cos x$ y $f(x)-g(x)=-2\cos x$, el valor del área entre $f$ y $g$ será:
+$$
+\begin{array}{rl}
+ & \displaystyle\int_0^{\frac{\pi}{2}}2\cos x\,dx +\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} (-2\cos x)\,dx +\int_{\frac{3\pi}{2}}^{2\pi} 2 \cos x\,dx = [2\sin x]_0^{\frac{\pi}{2}}-[2\sin x]_{\frac{\pi}{2}}^{\frac{3\pi}{2}}+[2\sin x]_{\frac{3\pi}{2}}^{2\pi}\\ & =2-(-2-2)+2=8.
+\end{array}
+$$
+</div>
+
+## Cálculo de áreas de figuras planas
+En general para hallar el área que enmarcan dos funciones $f$ y $g$ en un intervalo $[a,b]$ hay que seguir los pasos siguientes:
+
+* Resolver la ecuación $f(x)=g(x)$ para todos los valores $x\in [a,b]$. Sean $a\leq x_1 < x_2 <\cdots < x_n \leq b$.
+
+* Mirar el signo de la diferencia de funciones $f(x)-g(x)$ en el intervalo $[x_i,x_{i+1}]$. Para ello, basta considerar un punto de dicho intervalo, por ejemplo el punto medio $x_m=\frac{x_i+x_{i+1}}{2}$ y mirar que signo tiene el valor $f(x_m)-g(x_m)$. Sea $s_i$ el valor que nos indica el signo de $f(x)-g(x)$ en dicho intervalo:
+$$
+s_i =\begin{cases}
+1, & \mbox{si } f(x)-g(x)\geq 0,\\
+-1, & \mbox{si } f(x)-g(x)\leq 0.
+\end{cases}
+$$
+
+## Cálculo de áreas de figuras planas
+El área buscada será entonces:
+$$
+\begin{array}{rl}
+\mathrm{Área}  = &  \displaystyle s_0\int_a^{x_1} (f(x)-g(x))\, dx+s_1\int_{x_1}^{x_2} (f(x)-g(x))\, dx+\cdots \\ & \displaystyle +s_n\int_{x_n}^b (f(x)-g(x))\, dx.
+\end{array}
+$$
+
+<div class="example">
+**Ejemplo anterior**
+
+En el ejemplo anterior, los valores de $x_i$ son $x_1 =\frac{\pi}{2} < x_2 =\frac{3\pi}{2}$ y los valores de $s_i$ son: $s_0 = -1$, $s_1 =1$ y $s_2 =-1$.
+</div>
+
+
+## Volúmenes de revolución
+Consideremos una función $f(x)$ definida entre dos valores $a$ y $b$ y consideremos el sólido de revolución generado por dicha función al girar alrededor del eje $X$. El volumen de dicho sólido es el siguiente:
+$$
+V_X =\pi\int_a^b f(x)^2\, dx.
+$$
+
+
+## Volúmenes de revolución
+<div class="example">
+**Ejemplo: volumen de un cono**
+
+Un cono se puede obtener generando la función $f(x)=mx$, con $m>0$ alrededor del eje $X$ para $x\in [0,b]$:
+<div class="center">
+
+```{r, echo=FALSE, label=conx,fig.cap="",out.width = "500px"}
+knitr::include_graphics("Images/conox.png",dpi=1200)
+```
+</div>
+</div>
+
+
+## Volúmenes de revolución
+<div class="example">
+El volumen de dicho cono será:
+$$
+V_X = \pi \int_0^b (mx)^2\, dx =\pi m^2\left[\frac{x^3}{3}\right]_0^b =\pi m^2\frac{b^3}{3}.
+$$
+Fijaos que el cono considerado tiene una altura de $h=b$ unidades y un radio de la base de $r=f(m)=m\cdot b$ unidades.
+
+Entonces la expresión anterior del volumen del cono puede escribirse como: $V_X =\frac{1}{3}\pi r^2 h$, que es la fórmula conocida del volumen de un cono de altura $h$ y radio de la base $r$.
+
+</div>
+
+## Volúmenes de revolución
+
+Si en lugar de girar alrededor del eje $X$, giramos alrededor del eje $Y$, el volumen del sólido de revolución generado es el siguiente:
+$$
+V_Y =2\pi\int_a^b x\cdot f(x)\, dx.
+$$
+
+## Volúmenes de revolución
+<div class="example">
+**Ejemplo: volumen de un cono**
+
+Vamos a calcular el volumen del cono del ejemplo anterior pero ahora vamos a girar la función $f(x)=mx$, con $m>0$ alrededor del eje $Y$ para $x\in [0,b]$:
+<div class="center">
+
+```{r, echo=FALSE, label=cony,fig.cap="",out.width = "500px"}
+knitr::include_graphics("Images/conoy.png",dpi=1200)
+```
+</div>
+</div>
+
+## Volúmenes de revolución
+<div class="example">
+El volumen de dicho cono será:
+$$
+V_Y = 2\pi \int_0^b x\cdot (mx)\, dx =2\pi m\left[\frac{x^3}{3}\right]_0^b =\frac{2}{3}\pi mb^3.
+$$
+El cono, como puede observase en la figura tiene una altura $h$ de $h=m\cdot b$ y un radio de la base, $r=b$. Por tanto, su volumen sería: $V =\frac{1}{3}\pi r^2 h=\frac{1}{3}\pi b^2\cdot m b=\frac{1}{3}\pi m b^3.$
+
+Observamos que las dos expresiones no coinciden. De hecho, el volumen $V_Y$, aplicando la fórmula, es el doble del volumen que uno esperaría hallar. ¿Qué ocurre?
+
+Pues que cuando giramos una figura alrededor del eje $Y$, obtenemos el volumen que hay entre la figura girada, el cono en nuestro caso y el cilindro correspondiente (ver figura siguiente):
+
+</div>
+
+
+## Volúmenes de revolución
+<div class="example">
+
+<div class="center">
+
+```{r, echo=FALSE, label=cony2,fig.cap="",out.width = "500px"}
+knitr::include_graphics("Images/conoy2.png",dpi=1200)
+```
+</div>
+</div>
+
+## Volúmenes de revolución
+<div class="example">
+Veámoslo. 
+
+El volumen del cilindro (en verde) de la figura anterior vale: $V_{\mathrm{cilindro}}=\pi r_{\mathrm{cilindro}}^2 h_{\mathrm{cilindro}}=\pi b^2\cdot mb=\pi m b^3$. 
+
+Como el volumen del cono vale $V_{\mathrm{cono}}=\frac{1}{3}\pi m b^3$, el volumen que hay entre el cilindro y el cono será:
+$$
+\pi m b^3 -\frac{1}{3}\pi m b^3=\frac{2}{3}\pi m b^3,
+$$
+que es el valor que hemos obtenido $V_Y$.
+
+</div>
+
+
+## Área de superficies de revolución
+
+Consideremos una función $f(x)$ definida entre dos valores $a$ y $b$ y consideremos el sólido de revolución generado por dicha función al girar alrededor del eje $X$. El área de la superficie generado por dicho sólido es el siguiente: 
+$$
+\mathrm{Área}_X=2\pi \int_a^b f(x)\cdot \sqrt{1+f'(x)^2}\, dx.
+$$
+Si en lugar de girar alrededor del eje $X$, queremos girar alrededor del eje $Y$, tenemos que escribir la variable $x$ en función de $y$, de la forma $x=g(y)$, la función $g$ será $f^{-1}$ y hallar los dos valores extremos $c$ y $d$ en el eje $Y$. El área de la superficie de revolución generada será, en este caso:
+$$
+\mathrm{Área}_Y=2\pi \int_c^d g(y)\cdot \sqrt{1+g'(y)^2}\, dy.
+$$
+
+## Área de superficies de revolución
+<div class="example">
+**Ejemplo del cono**
+
+Hallemos el área del cono anterior generado haciendo girar la función $f(x)=mx$ alrededor del eje $X$ para $x\in [0,b]$:
+$$
+\mathrm{Área}_X=2\pi \int_0^b mx\cdot \sqrt{1+m^2}\, dx =2\pi m\sqrt{1+m^2}\left[\frac{x^2}{2}\right]_0^b =\pi m\sqrt{1+m^2} b^2.
+$$
+Usando que la altura del cono es $h=b$ y el radio de la base, $r=bm=hm$, podemos escribir el área anterior en función de la altura del cono y del radio de la base: 
+$$
+\mathrm{Área}_X=\pi r h\sqrt{1+\left(\frac{r}{h}\right)^2}=\pi r\sqrt{r^2+h^2}.
+$$
+</div>
