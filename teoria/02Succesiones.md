@@ -786,10 +786,13 @@ puesto que, como hemos visto, $a_n \geq a$. Por lo tanto, la sucesión $\{a_n \}
 Finalmente, usando las propiedades de los límites de sucesiones con respecto de las operaciones aritméticas, tenemos que
 
 $$
-L= \lim_{n \rightarrow \infty} {a_{n+1}} = \lim_{n \rightarrow \infty} \dfrac{1}{2} \left(a_n + \dfrac{a}{a_n}\right) 
+L= \lim_{n \rightarrow \infty} {a_{n+1}} = \lim_{n \rightarrow \infty} \dfrac{1}{2} \left(a_n + \dfrac{a}{a_n}\right)
 $$
-$$= \dfrac{1}{2} \left(\lim_{n \rightarrow \infty} a_n + \dfrac{a}{\lim_n a_n}\right) = \dfrac{1}{2}\left( L +\dfrac{a}{L}\right) = \dfrac{L^2+a}{2L}
+
 $$
+= \dfrac{1}{2} \left(\lim_{n \rightarrow \infty} a_n + \dfrac{a}{\lim_n a_n}\right) = \dfrac{1}{2}\left( L +\dfrac{a}{L}\right) = \dfrac{L^2+a}{2L}
+$$
+
 
 es decir, $2 L^2 = L^2 +a$ y, por lo tanto, $L=a$, dado que todos los términos de la sucesión son positivos.
 
@@ -807,6 +810,7 @@ Además, la sucesión está acotada $a+1$, puesto que es  $a_n^2 =a + a_{n-1}$, 
 
 Es decir, se trata de una sucesión monótona creciente y, por lo tanto, tiene límite, sea $l= \lim_{n \rightarrow \infty} a_n$. Aplicando la definición de la recurrencia y las propiedades aritméticas del límite, tendremos que
 $\lim a_n^2 =  a+ \lim a_{n-1}$, és decir $l^2 =a +l$ y por lo tanto $l$ es una de las soluciones de esta ecuación de segundo grado, como una de ellas, $\dfrac{1-\sqrt{1+4a}}{2}$, es negativa y todos los términos de la sucesión son positivos, el límite buscado será la otra solución, es decir
+
 $$
 l=\dfrac{1+\sqrt{1+4a}}{2}
 $$
@@ -829,6 +833,11 @@ $$
 dado que la otra solución de la ecuación de segundo grado resultante es mayor que todos los términos de la sucesión, y esta es decreciente.
 </div>
 
+## Sucesiones recurrentes (7)
+
+Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim a_n = \frac{3-\sqrt{5}}{2}$. El gràfico siguiente muestra los $25$ primeros téminos de esta sucesión y lo rápida que es la convergencia.
+
+![](/Users/llorenc/Desktop/github/calculo/teoria/02Succesiones_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
 
 
 ## Criterio del sandwich
@@ -842,14 +851,17 @@ Si $\lim a_n =L=\lim b_n$ y $\{c_n\}_{n \in \mathbb{N}}$ es tal que $a_n \leq c_
 Por hipótesis, para cada $\epsilon >0$, existen $n_1$ i $n_2$ tales que $|a_n-L|< \epsilon$, para todo $n \geq n_1$ y $|b_n-L|< \epsilon$  , para todo $n \geq n_2$.
 
 Ahora, dado que que $a_n \leq c_n \leq b_n$, tendremos que
+
 $$
 -\epsilon < a_n -L \leq c_n -L \leq b_n -L < \epsilon
 $$
+
 para todo $n \geq n_0= \max\{n_1,n_2\}$. Por lo tanto tenemos que, para todo $n \geq n_0$ es $|c_n -L| < \epsilon$, es decir
 
 $$
 \lim_{n \rightarrow \infty} c_n =L
 $$
+
 </div>
 
 ## Ejemplo de aplicación del criterio del sandwich
@@ -1115,10 +1127,13 @@ $$
 <div class="example"> **Ejemplo 2**
 
 Calcula el límite:
+
 $$
 \lim_{n \rightarrow \infty} \sqrt[n]{\dfrac{(3+1)(3+2) \cdots (3+n)}{n!}}
 $$
+
 La sucesión dada es la sucesión de media geométricas de la sucesión de término general $a_n = \dfrac{3+n}{n}$, por consiguiente, el límite pedido es
+
 $$
 \lim_{n \rightarrow \infty} \sqrt[n]{\dfrac{(3+1)(3+2) \cdots (3+n)}{n!}} = \lim_{n \rightarrow \infty} \dfrac{n+3}{n} = 1
 $$
@@ -1131,15 +1146,19 @@ $$
 <l class="prop"> **Proposición: Criterio del cociente-raiz**  </l>
 
 Si $a_n >0$, para todo $n$,  y $\lim_{n \rightarrow \infty} \dfrac{a_{n}}{a_{n-1}} =a$, entonces 
+
 $$
 \lim_{n \rightarrow \infty} \sqrt[n]{a_n} = a
 $$
+
 <div class="dem"> **Demostración**
 
 Dado que $a_n>0$ para todo $n$, podemos tomar logaritmos y aplicar el criterio de Stolz
+
 $$
 \log \lim_{n \rightarrow \infty} \sqrt[n]{a_n} = \lim \dfrac{\log a_n}{n}= \lim \dfrac{\log a_{n} - \log a_{n-1}}{n-(n-1)}= \lim \log \left(\dfrac{a_{n}}{a_{n-1}} \right)= \log a
 $$
+
 Por lo tanto, $\lim_{n \rightarrow \infty} \sqrt[n]{a_n} = a$ 
 
 </div>
@@ -1150,6 +1169,7 @@ Por lo tanto, $\lim_{n \rightarrow \infty} \sqrt[n]{a_n} = a$
 <div class="example"> **1. Calcular el $\lim \sqrt[n]{a^n+b^n}$, con $a>b>0$**
 
 Apliquemos el criterio del cociente-raíz a la sucesión $\{a^n+b^n\}$ y dividimos numerador y denominador por $a^{n+1}$:
+
 $$
 \lim_{n \rightarrow \infty} \dfrac{a^{n+1}+b^{n+1}}{a^n+b^n}= \lim_{n \rightarrow \infty} \dfrac{a+\left(\dfrac{b}{a} \right)^n b}{1+\left(\dfrac{b}{a} \right)^n} = a
 $$
@@ -1159,15 +1179,13 @@ Puesto que $\lim_{n \rightarrow \infty} \left(\dfrac{b}{a} \right)^n =0$, al ser
 **2. Calcular el $\lim \dfrac{\sqrt[n]{n!}}{n}$.**
 
 Apliquemos el criterio del cociente raiz a la sucesión $a_n=\left\{ \dfrac{n!}{n^n}\right\}$, 
+
 $$
 \lim \dfrac{a_{n+1}}{a_n} = \lim \dfrac{(n+1)! \cdot n^n}{(n+1)^{n+1} \cdot n!} = \lim  \left(\dfrac{n}{n+1}\right)^n = \dfrac{1}{e}
 $$
+
 Por consiguiente es $\lim \dfrac{\sqrt[n]{n!}}{n}= \dfrac{1}{e}$
 
 </div>
 
-## Sucesiones recurrentes (7)
 
-Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim_{n \rightarrow \infty} a_n = \frac{3-\sqrt{5}}{2}$. El gràfico siguiente muestra los $25$ primeros téminos de esta sucesión y lo rápida que es la convergencia.
-
-![](/Users/llorenc/Desktop/github/calculo/teoria/02Succesiones_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
