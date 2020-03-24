@@ -833,7 +833,7 @@ $$
 dado que la otra solución de la ecaución de segundo grado resultante es negativa.
 
 </div>
-}
+
 
 
 ## Criterio del sandwich
