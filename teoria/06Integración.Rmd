@@ -1918,3 +1918,473 @@ ya que de esta manera indicamos cuál es la variable que se integra o, dicho en 
 El valor $dx$ se llama diferencial de $x$ y es para indicar precisamente cuál es la variable de integración. Por ejemplo si escribo $\displaystyle \int_a^b f(t)\, dx$, significa que integro la función $f(t)$ que está en función de una variable $t$ pero la variable sobre la que integramos es $x$ debido al $dx$. 
 
 Para que la integral anterior se pueda realizar, necesitamos saber cuál es la relación entre las variables $t$ y $x$, es decir, cuál es la función $g$ que pasa de una variable a la otra de la forma siguiente $t=g(x)$ y de esta manera la integral anterior sería: $\displaystyle \int_a^b f(g(x))\, dx$.
+
+## Teorema del cambio de variable
+<l class="prop">Teorema del cambio de variable.</l>
+Sea $f:\longrightarrow\mathbb{R}$ una función **continua** en el intervalo $[a,b]$ y por tanto, **integrable**. Sea $\phi$ una función de clase ${\cal C}^1$ en su intervalo de definición, es decir, una función **derivable** con función derivada continua. Supongamos el intervalo de definición de $\phi$ es $[\alpha,\beta]$, es decir $\phi:[\alpha,\beta]\longrightarrow\mathbb{R}$ con $\phi(\alpha)=a$ y $\phi(\beta)=b$ de tal forma que $\phi([\alpha,\beta])=[a,b]$. Entonces, en estas condiciones:
+$$
+\int_a^b f(x)\, dx= \int_\alpha^\beta f(\phi(t))\cdot \phi'(t)\, dt.
+$$
+
+## Teorema del cambio de variable
+<l class="observ">Observación. </l>
+El **Teorema del cambio de variable** nos permite pasar de integrar la función $f$ respecto de la variable $x$ a integrar dicha función pero respecto de una nueva variable $t$ de tal forma que la relación entre $x$ y $t$ nos la da la función $\phi$: $x=\phi(t)$.
+
+Para aplicar el teorema anterior en la práctica, lo que hacemos es lo siguiente: 
+
+* Escribimos $x=\phi(t)$ la relación entre las variables. Si tenemos $t=\phi^{-1}(x)$, no hace falta obtener la relación $x=\phi(t)$.
+
+## Teorema del cambio de variable
+
+* Hallamos la relación entre los "diferenciales" (diferencial de $x$, $dx$ y diferencial de $t$, $dt$): 
+  * Si tenemos la relación $x=\phi(t)$, la relación entre diferenciales es $dx=\phi'(t)dt$.
+  * Si tenemos la relación $t=\phi^{-1}(x)$, la relación entre diferenciales es $dx=\frac{dt}{\phi^{-1'}(x)}$, asegurándose que la parte de la derecha sólo dependa de $t$.
+* Miramos cómo cambian los extremos de integración, es decir para $x=a$, hallamos el valor de $t$ correspondiente:
+$a=\phi(\alpha)$ y para $x=b$, hacemos lo mismo, $b=\phi(\beta)$.
+
+## Teorema del cambio de variable
+* Por último escribimos la integral a hallar en función de la nueva variable $t$ usando los cambios anteriores:
+$$
+\int_a^b f(x)\, dx= \int_\alpha^\beta f(\phi(t))\cdot \phi'(t)\, dt.
+$$
+
+Muchas veces integrar respecto la variable $t$ es mucho más sencillo que integrar respecto la variable original $x$. 
+
+Hallar la variable $t$ que permite simplificar o hacer más sencilla la integral es todo un arte y necesita de mucha práctica.
+
+## Teorema del cambio de variable
+<div class="dem">
+**Demostración**
+
+Sea $F$ una primitiva de la función $f$ en $[a,b]$. Veamos, aplicando la regla de la cadena, que la función $F\circ \phi$ es una primitiva de la función $(f\circ \phi)\cdot \phi'$:
+$$
+(F\circ \phi)'(t)=F'(\phi(t))\cdot \phi'(t)=f(\phi(t))\cdot \phi'(t).
+$$
+Usando la regla de Barrow, podemos escribir:
+$$
+\int_\alpha^\beta f(\phi(t))\cdot \phi'(t)\, dt = (F\circ \phi)(\beta)-(F\circ\phi)(\alpha)=F(\phi(\beta))-F(\phi(\alpha))=F(b)-F(a)=\int_a^b f(x)\,dx,
+$$
+tal como queríamos demostrar.
+
+</div>
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Nos piden hallar la integral siguiente: $\displaystyle\int_{-1}^4 (2x+3)^5\, dx$.
+
+Una manera de realizar dicha integral es desarrollar la expresión $(2x+3)^5$ usando el binomio de Newton e integrar cada término.
+Dicho método es muy tedioso ya que comporta mucho cálculo aumentando la probabilidad de que nos equivoquemos.
+
+Hagamos el siguiente cambio de variable $t=2x+3$. Fijaos que escrito de esta manera, hemos dado $t$ en función de $x$ y no $x$ en función de $t$ tal como está escrito en el teorema anterior. El valor de $\phi(t)$ será pues:
+$$
+t=2x+3,\ \Rightarrow x=\frac{t-3}{2}=\phi(t).
+$$
+
+De todas formas, de cara al cálculo de la integral, no es necesario realizar el paso anterior. 
+
+Los pasos a realizar serían los siguientes:
+
+* Relación entre los diferenciales: como $t=2x+3$, $dt=(2x+3)' dx=2dx$, y, por tanto, $dx=\frac{dt}{2}$.
+* Cambio en los extremos de integración: para $x=-1$, el valor de $t$ será: $t=2\cdot (-1)+3=1$ y para $x=4$, el valor de $t$ será: $t=2\cdot 4+3=11$.
+
+</div>
+
+
+## Ejemplo
+<div class="example">
+* La integral en función de la nueva variable $t$ será:
+$$
+\int_{-1}^4 (2x+3)^5\, dx = \int_1^{11} t^5\cdot \frac{1}{2}\, dt=\frac{1}{2}\int_1^{11} t^5\, dt.
+$$
+Ahora ya hemos puesto la integral a calcular con respecto la nueva variable $t$. 
+
+Observamos que ha valido la pena el cambio ya que integrar la función $t^5$ es mucho más sencillo que integrar la función $(2x+3)^5$. 
+
+Como ya hemos indicado en un ejemplo anterior, una primitiva de la función $t^5$ es $\frac{t^6}{6}$. La integral valdrá entonces aplicando la regla de Barrow:
+$$
+\frac{1}{2}\int_1^{11} t^5\, dt =\frac{1}{2}\left[\frac{t^6}{6}\right]_{1}^{11}=\frac{1}{2}\left(\frac{11^6}{6}-\frac{1^6}{6}\right)=147630.
+$$
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5B%282x%2B3%29%5E5%2C%7Bx%2C-1%2C4%7D%5D)
+</l>
+</div>
+
+## Integración por partes
+
+Supongamos que podemos escribir nuestra función de integración $f(x)$ de la siguiente manera: $f(x)=u(x)\cdot v'(x)$, es decir, como el producto de una función $u(x)$ por la derivada de otra función $v(x)$.
+
+La técnica de **integración por partes** nos permite escribir la integral de la función anterior pero en lugar de integrar $u(x)\cdot v'(x)$, integrar $u'(x)\cdot v(x)$, es decir, cambiando *los papeles* de las funciones $u(x)$ y $v(x)$. 
+
+Muchas veces es más sencillo integrar $u'(x)\cdot v(x)$ que integrar $u(x)\cdot v'(x)$ y de ahí su aplicación.
+
+La demostración de dicha técnica está basada como veremos en la fórmula de derivación del producto.
+
+## Integración por partes
+<l class="prop">Teorema de integración por partes.</l>
+Sean $u,v:[a,b]\longrightarrow\mathbb{R}$ dos funciones de clase ${\cal C}^1$ (es decir, derivables con derivada continua) en el intervalo $[a,b]$. Entonces:
+$$
+\int_a^b u(x)\cdot v'(x)\, dx=(u(b)\cdot v(b)-u(a)\cdot v(a))-\int_a^b u'(x)\cdot v(x)\, dx.
+$$
+
+## Integración por partes
+<l class="observ">Observación.</l>
+La aplicación de la fórmula de integración por partes se aplica en la práctica de la siguiente manera:
+
+* Para realizar la integral $\displaystyle\int_a^b f(x)\, dx$, tenemos que descomponer  "lo que integramos", $f(x)\, dx$ en dos partes de la forma $f(x)\, dx=u(x)\cdot dv(x)$. 
+  * La parte correspondiente a $u(x)$ tiene que ser de tal forma que cuando derivemos $u(x)$, ésta se simplifique bastante. 
+  * La parte correspondiente a $dv(x)$ tiene que ser de tal forma que cuando la integremos, ésta no se complique demasiado porque pensemos que se complicará.
+  
+* Derivamos la parte que hemos llamado $u(x)$ obteniendo $u'(x)$ y integramos la parte que hemos llamado $dv(x)$ hallando $v(x)$.
+
+## Integración por partes
+* Aplicamos la fórmula de integración por partes intentando integrar $u'(x)\cdot v(x)$ en lugar de $u(x)\cdot v'(x)$:
+$$
+\int_a^b u(x)\cdot v'(x)\, dx=(u(b)\cdot v(b)-u(a)\cdot v(a))-\int_a^b u'(x)\cdot v(x)\, dx.
+$$
+
+## Integración por partes
+<div class="dem">
+**Demostración**
+
+Las funciones $(u\cdot v)'=u'\cdot v+u\cdot v'$, $u'\cdot v$ y $u\cdot v'$ son integrables al ser continuas.
+
+Una primitiva de la función $(u\cdot v)'$ es óbviamente la función $u\cdot v$. Por tanto, si aplicamos la regla de Barrow, obtenemos:
+$$
+\int_a^b (u(x)\cdot v(x))'\,dx=u(b)\cdot v(b)-u(a)\cdot v(a).
+$$
+Ahora bien, como $(u\cdot v)'=u'\cdot v+u\cdot v'$, la expresión anterior se puede escribir como:
+$$
+\int_a^b (u'(x)\cdot v(x)+u(x)\cdot v'(x))\,dx=u(b)\cdot v(b)-u(a)\cdot v(a),
+$$
+y por tanto:
+$$
+\int_a^b u(x)\cdot v'(x)\, dx = u(b)\cdot v(b)-u(a)\cdot v(a)-\int_a^b u'(x)\cdot v(x)\,dx,
+$$
+tal como queríamos ver.
+
+</div>
+
+## Integración por partes
+<div class="example">
+**Ejemplo**
+
+Nos piden hallar la integral siguiente $\displaystyle\int_0^2 x\mathrm{e}^x\, dx$.
+
+Sigamos los pasos de la integración por partes:
+
+* Tenemos que separar $x\cdot \mathrm{e}^x\,dx =u(x)\cdot dv(x)$ en dos partes. Llamaremos $u(x)=x$ ya que al derivar se simplificará y $dv(x)=\mathrm{e}^x\, dx$ ya que al integrar se quedará igual, observar que una primitiva de la función $\mathrm{e}^x$ es ella misma, $\mathrm{e}^x$.
+
+* Calculamos $u'(x)=1$ y $v(x)=\int \mathrm{e}^x\, dx = \mathrm{e}^x$.
+
+* Aplicamos la fórmula de integración por partes:
+$$
+\begin{array}{rl}
+\displaystyle\int_0^2 x\mathrm{e}^x\, dx  & \displaystyle =u(2)\cdot v(2)-u(0)\cdot v(0)-\int_0^2 u'(x)\cdot v(x)\, dx=2\cdot \mathrm{e}^2-0\cdot \mathrm{e}^0-\int_0^2 1\cdot \mathrm{e}^x\, dx \\ & =2\cdot\mathrm{e}^2-[\mathrm{e}^x]_0^2  = 2\cdot\mathrm{e}^2-(\mathrm{e}^2-1)  =\mathrm{e}^2+1\approx`r round(exp(2)+1,4)`.
+\end{array}
+$$
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5Bx+E%5Ex%2C%7Bx%2C0%2C2%7D%5D)
+</l>
+
+</div>
+
+# Aplicaciones de las integrales
+
+## Introducción
+La **teoría de integración de Riemann** que hemos visto se introdujo básicamente para poder calcular áreas de funciones reales de variable real.
+
+Sin embargo, su aplicación puede extenderse al 
+
+* cálculo de longitudes de curvas: vamos a ver cómo calcular la longitud de una curva dada por una función $y=f(x)$ entre los puntos $(a,f(a))$ y $(b,f(b))$, 
+* cálculo de áreas de figuras planas dadas en forma paramétrica: vamos a generalizar el cálculo de áreas de figuras planas cuyas ecuaciones vienen dadas por ecuaciones del tipo $x=x(t)$ e $y=y(t)$, donde $t$ es el parámetro del área y se encuentra entre dos valores $t=t_0$ y $t=t_1$. Si la figura está cerrada, suponemos que $x(t_0)=x(t_1)$ e $y(t_0)=y(t_1)$,
+
+## Introducción
+* cálculo de volúmenes de revolución: si tenemos una función $f$ definida en un intervalo $[a,b]$ y la hacemos girar respecto de los ejes coordenados $X$ e $Y$, vamos a ver cómo calcular el volumen de la figura 3D que generamos y,
+* cálculo de áreas de revolución: estamos en el mismo caso anterior pero ahora, en lugar de calcular el volumen de la figura 3D que se genera, nos planteamos cómo calcular su área de revolución.
+
+Las demostraciones de muchas fórmulas que vamos a ver en esta sección se salen de los objectivos de un primer curso de cálculo ya que son necesarios conceptos de cálculo deferencial e integral de más de una variable. Por dicho motivo, vamos a ver su expresión con algún ejemplo sin la demostración correspondiente.
+
+## Longitud de una curva
+Dada una función $y=f(x)$ **integrable** definida en el intervalo $[a,b]$, la longitud del trozo de curva que va del punto $(a,f(a))$ al punto $(b,f(b))$ es la siguiente:
+$$
+L=\int_a^b\sqrt{1+f'(x)^2}\, dx.
+$$
+Si la curva viene dada en forma paramétrica $x=x(t)$ e $y=y(t)$, la longitud de la curva que va del punto $(x(t_0),y(t_0))$ al punto $(x(t_1),y(t_1))$ viene dada por:
+$$
+L=\int_{t_0}^{t_1}\sqrt{x'(t)^2 + y'(t)^2}\, dt.
+$$
+
+## Ejemplo
+<div class="example">
+**Ejemplo**
+
+Calculemos la longitud del trozo de parábola $y=x^2$ desde el punto $(1,1)$ hasta el punto $(2,4)$:
+
+
+```{r,echo=FALSE,fig.align=TRUE}
+xmin=-2
+xmax=2
+ymin=0
+ymax=4
+tolx=0.02*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){x^2}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-3*tolx,"x")
+text(toly,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  text(xmin+((xmax-xmin)/quantsx)*i,-1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+  }
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="black")
+#text(-2,-0.2,"a")
+#text(2,-0.2,"b")
+text(1.5,1.7,expression(x^2))
+text(1,0.7,"(1,1)")
+text(2.1,3.7,"(2,4)")
+points(c(1,2),c(1,4),pch=19)
+
+x2=seq(from=1,to=2,by=0.01)
+lines(x2,f(x2),col="red")
+```
+
+
+</div>
+
+## Ejemplo
+<div class="example">
+Aplicando la fórmula, la longitud del trozo de curva vale:
+$$
+L=\int_1^2 \sqrt{1+\left(\left(x^2\right)'\right)^2}\, dx = \int_1^2\sqrt{1+(2x)^2}\, dx = \int_1^2\sqrt{1+4x^2}\, dx.
+$$
+Para hallar la integral anterior, necesitamos hallar una primitiva de la función $\sqrt{1+4x^2}$.
+
+Para calcular dicha primitiva, realizaremos el cambio de variable siguiente: $x=\frac{1}{2}\sinh t =\frac{1}{2}\cdot \frac{\mathrm{e}^t-\mathrm{e}^{-t}}{2}.$ A la expresión $\frac{\mathrm{e}^t-\mathrm{e}^{-t}}{2}$ se le llama *seno hiperbólico* y a la expresión siguiente $\cosh t=\frac{\mathrm{e}^t+\mathrm{e}^{-t}}{2}$, *coseno hiperbólico*. El nombre de *hiperbólico* viene de que el seno y el coseno hiperbólicos verifican la siguiente ecuación:
+$$
+\cosh^2 t-\sinh^2 t=1,
+$$
+para todo valor de $t$. Las funciones seno y coseno hiperbólicas verifican las propiedades cuya demostración dejamos como ejercicio:
+
+* $(\sinh t)'=\cosh t$, $(\cosh t)'=\sinh t$.
+* $\sinh^{-1}(y)=\ln (y+\sqrt{y^2+1})$, $\cosh^{-1}(y)=\ln (y\pm \sqrt{y^2-1})$.
+</div>
+
+## Ejemplo
+<div class="example">
+Las gráficas del $\sinh x$ (en azul) y del $\cosh x$ (en rojo) para $x$ entre $-2$ y $2$ se muestran a continuación:
+
+```{r,echo=FALSE,fig.align=TRUE}
+xmin=-2
+xmax=2
+ymin=-3
+ymax=3
+tolx=0.02*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){sinh(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-3*tolx,"x")
+text(toly,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  text(xmin+((xmax-xmin)/quantsx)*i,-1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+}
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="blue")
+lines(x,cosh(x),col="red")
+```
+</div>
+
+## Ejemplo
+<div class="example">
+Para escribir el valor de la integral que nos da la longitud del trozo de curva hay que ver cómo se transforma la función en la nueva variable, hallar la relación entre los diferenciales y cómo se transforman los extremos de integración:
+
+* Transformación de la función: $\sqrt{1+4x^2}=\sqrt{1+4\cdot \frac{1}{4}\sinh^2 t}=\sqrt{1+\sinh^2 t}=\sqrt{\cosh^2 t}=\cosh t$.
+* Relación entre los diferenciales: $dx=\frac{1}{2}(\sinh t)'=\frac{1}{2}\cosh t$.
+* Transformación de los extremos de integración: 
+  * si $x=1$, el valor de $t$ correspondiente cumple $1=\frac{1}{2}\sinh t$. Es decir $\sinh t=2$, de donde $t=\sinh^{-1}(2)=\ln (2+\sqrt{2^2+1})=\ln(2+\sqrt{5})$.
+  * si $x=2$, el valor de $t$ correspondiente cumple $2=\frac{1}{2}\sinh t$. Es decir $\sinh t=4$, de donde $t=\sinh^{-1}(4)=\ln (4+\sqrt{4^2+1})=\ln(4+\sqrt{17})$.
+</div>
+
+## Ejemplo
+<div class="example">
+
+El valor de la longitud será, pues,
+$$
+\begin{array}{rl}
+L & =\displaystyle \int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\cosh t\cdot \frac{1}{2}\cosh t\, dt=\frac{1}{2}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\cosh^2 t\, dt=\frac{1}{2}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})} \left(\frac{\mathrm{e}^t+\mathrm{e}^{-t}}{2}\right)^2\, dt \\ & \displaystyle =\frac{1}{8}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})} (\mathrm{e}^{2t}+\mathrm{e}^{-2t}+2)\, dt=\frac{1}{8}\left[\frac{\mathrm{e}^{2t}}{2}-\frac{\mathrm{e}^{-2t}}{2}+2t\right]_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\\ & =\frac{1}{8}\left(\frac{(4+\sqrt{17})^2}{2}-\frac{1}{2(4+\sqrt{17})^2}+2\ln(4+\sqrt{17})-\left(\frac{(2+\sqrt{5})^2}{2}-\frac{1}{2(2+\sqrt{5})^2}+2\ln(2+\sqrt{5})\right)\right) \\ & = \frac{1}{4} (4\sqrt{17}-2\sqrt{5}+\ln(4+\sqrt{17})-\ln(2+\sqrt{5}))\approx `r round((1/4)*(4*sqrt(17)-2*sqrt(5)+log(4+sqrt(17))-log(2+sqrt(5))),4)`.
+\end{array}
+$$
+
+</div>
+
+## Cálculo de áreas de figuras planas
+Sabemos que dada una función $f$ integrable en un intervalo $[a,b]$, el valor de la integral $\displaystyle\int_a^b f(x)\,dx$ es el área de $f$ entre $a$ y $b$.
+
+Ahora bien, pensemos que si la función $f$ va "por debajo" del eje de las $X$, el área será negativa por propia definición de las **sumas superiores** e **inferiores** para definir la integral. Veamos un ejemplo:
+
+<div class="example">
+**Ejemplo**
+
+Consideremos la función $f(x)=-x^2$ definida en el intervalo $[-1,1]$. Como puede observarse en el gráfico siguiente, la función anterior va por debajo del eje de las $X$ donde hemos indicado en azul el área de la misma:
+</div>
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+```{r,echo=FALSE,fig.align=TRUE}
+xmin=-1
+xmax=1
+ymin=-1
+ymax=0.5
+tolx=0.02*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=3
+f = function(x){-x^2}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.005)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,3*tolx,"x")
+text(toly,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  text(xmin+((xmax-xmin)/quantsx)*i,1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+}
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+for (i in 1:length(x)){
+  lines(c(x[i],x[i]),c(0,f(x[i])),col="blue")}
+
+```
+</div>
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+
+El valor de su integral será aplicando la regla de Barrow,
+$$
+\int_{-1}^1 (-x^2)\, dx = -\left[\frac{x^3}{3}\right]_{-1}^1 =-\left(\frac{1}{3}-\left(\frac{-1}{3}\right)\right)=-\frac{2}{3}.
+$$
+Obtenemos un valor negativo ya que como hemos indicado dicha función va por debajo del eje de las $X$.
+
+</div>
+
+¿Qué pasaría si la función tuviese zonas con valores positivos y negativos?
+En este caso se restarían las dos áreas: el área global sería la resta entre la zona donde la función $f$ es positiva y la zona donde la función $f$ es negativa.
+
+Veamos el ejemplo siguiente:
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+**Ejemplo**
+
+Consideremos la función $f(x)=\sin x-\cos x$ definida en el intervalo $\left[0,\pi\right]$ donde hemos indicado con color azul el área negativa donde la función va por debajo del eje $X$ (intervalo $\left[0,\frac{\pi}{4}\right]$) y en color rojo el área positiva donde la función va por encima del eje $X$ (intervalo $\left[\frac{\pi}{4},\pi\right]$) 
+
+```{r,echo=FALSE,fig.align='center'}
+xmin=0
+xmax=pi
+ymin=-1.5
+ymax=1.5
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=6
+f = function(x){sin(x)-cos(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-2.5*tolx,"x")
+text(toly,ymax+toly,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  ii=-2+0.5*i}
+text(xmin+((xmax-xmin)/quantsx)*1,-2*toly,expression(frac(pi,4)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*2,-2*toly,expression(frac(pi,2)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*3,-2*toly,expression(frac(3*pi,4)),cex=0.75)
+text(xmin+((xmax-xmin)/quantsx)*4,-2*toly,expression(pi),cex=0.75)
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  if (i==3){text(2.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*3,ymin+((ymax-ymin)/quantsy)*3,cex=0.75)}
+  else
+  {text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
+}
+lines(x,f(x),col="red")
+text(pi,1.3,"f(x)")
+xmenys=seq(from=0,to=pi/4,by=0.005)
+xmes=seq(from=pi/4,to=pi,by=0.005)
+for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(0,f(xmenys[i])),col="blue")}
+for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(0,f(xmes[i])),col="red")}
+```
+</div>
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+Teniendo en cuenta que $F(x)=-\sin x-\cos x$ es una primitiva de la función $f$ si calculamos la integral entre $0$ y $\pi$ obtenemos:
+$$
+\begin{array}{rl}
+\displaystyle\int_0^\pi f(x)\, dx & =\displaystyle\int_0^\pi \sin x-\cos x \, dx = [-\sin x-\cos x]_0^\pi =-\sin\pi-\cos\pi -(\sin 0-\cos 0))\\ & =-(-1)-(-1)=2.
+\end{array}
+$$
+¿Qué representa el valor obtenido $2$? Pues es la suma entre el área roja y el área azul. Veámoslo:
+$$
+\begin{array}{rl}
+\mathrm{Área\ roja} &\displaystyle = \int_{\frac{\pi}{4}}^\pi \sin x-\cos x \, dx = [-\sin x-\cos x]_{\frac{\pi}{4}}^\pi = -\sin\pi-\cos\pi-\left(-\sin\left(\frac{\pi}{4}\right)-\cos\left(\frac{\pi}{4}\right)\right) \\ & =-(-1)-\left(-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}\right)=1+\sqrt{2}\approx `r round(1+sqrt(2),4)`, \\
+\mathrm{Área\ azul} &\displaystyle = \int_0^{\frac{\pi}{4}} \sin x-\cos x \, dx = [-\sin x-\cos x]_0^{\frac{\pi}{4}} = -\sin\left(\frac{\pi}{4}\right)-\cos\left(\frac{\pi}{4}\right)-(\sin 0-\cos 0) \\ & =-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}-(-1)=1-\sqrt{2}\approx `r round(1-sqrt(2),4)`. \\
+\end{array}
+$$
+</div>
+
+## Cálculo de áreas de figuras planas
+
+<div class="example">
+Fijémonos que el área roja es positiva mientras que la azul, es negativa. Si hacemos la suma, obtenemos el valor de la integral de la función $f$ entre $0$ y $\pi$:
+$$
+1+\sqrt{2}+(1-\sqrt{2})=2=\int_0^\pi \sin x-\cos x\, dx.
+$$
+Por tanto, si lo queremos obtener es el valor del área total, (área roja más área azul) tenemos que sumar las áreas rojas o positivas y restar las azules o negativas. En nuestro caso sería:
+$$
+1+\sqrt{2}-(1-\sqrt{2})=2\sqrt{2}.
+$$
+</div>
+
+Del ejemplo anterior, vemos que es clave hallar los valores donde $f$ se anula en el eje $X$ o hallar los ceros de $f$ ya que en dichos valores la función $f$ puede cambiar de signo y el área puede pasar de positiva a negativa o viceversa.
