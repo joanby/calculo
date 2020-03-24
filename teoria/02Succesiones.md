@@ -823,13 +823,12 @@ En primer lugar, la sucesión es decreciente, puesto que $2=a_1 \geq a_2= 1$ y, 
 
 Todos los términos de la sucesión son positivos, ya que es decreciente y el primero es $2$, por lo tanto está acotada inferiormente, lo que significa que tiene límite, sea este $l$. Aplicando la propiedades aritméticas de los límites tenemos que $\lim a_n = \frac{1}{3-\lim a_{n-1}}$, es decir $l =\dfrac{1}{3-l}$, por lo que 
 $$
-\lim a_n = \dfrac{1+\sqrt{5}}{2}
+\lim a_n = \dfrac{3-\sqrt{5}}{2}
 $$
 
-dado que la otra solución de la ecaución de segundo grado resultante es negativa.
-
+dado que la otra solución de la ecuación de segundo grado resultante es mayor que todos los términos de la sucesión, y esta es decreciente.
 </div>
-}
+
 
 
 ## Criterio del sandwich
