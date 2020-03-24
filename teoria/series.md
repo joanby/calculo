@@ -40,3 +40,6 @@ $$
 a+ar+ar^2 \ldots + ar^n + \ldots = \lim_{n \rightarrow \infty} S_n = \dfrac{a}{1-r}
 $$
 
+## Series numèricas
+
+
