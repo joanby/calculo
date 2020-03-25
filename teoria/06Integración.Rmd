@@ -2670,3 +2670,261 @@ $$
 \mathrm{Área}_X=\pi r h\sqrt{1+\left(\frac{r}{h}\right)^2}=\pi r\sqrt{r^2+h^2}.
 $$
 </div>
+
+# Integración impropia
+
+## Introducción
+Las integrales que hemos visto hasta ahora están definidas en intervalos cerrados y acotados de la forma $[a,b]$.
+
+En esta sección vamos a generalizar la definición de integral de una función a intervalos de la forma $[a,\infty)$, $(-\infty,b]$ o incluso $(-\infty,\infty)$.
+
+También vamos a considerar intervalos semiabiertos de la forma $(a,b]$, $[a,b)$ donde la función $f$ tenga una asíntota vertical en $x=a$ o $x=b$, respectivamente.
+
+
+## Introducción
+Vayamos por partes, ¿cómo se realizará dicha generalización? Pues usando el concepto de límite:
+
+* para funciones $f$ definidas en intervalos de la forma $[a,\infty)$, $(-\infty,b]$, definiremos $\displaystyle\int_a^\infty f(x)\, dx$ o $\displaystyle\int_{-\infty}^b f(x)\, dx$ de la siguiente forma:
+$$
+\int_a^\infty f(x)\, dx =\lim_{t\to\infty}\int_a^t f(x)\, dx,\quad \int_{-\infty}^b f(x)\, dx=\lim_{t\to -\infty}\int_{t}^b f(x)\, dx.
+$$
+
+## Introducción
+
+A este tipo de integración se le denomina **integración impropia de primera especie** y se necesita que la función $f$ sea integrable en todo intervalo cerrado de la forma $[a,t]$ ($t>a$) o $[t,b]$ ($t<b$), respectivamente, para que tenga sentido realizar los límites correspondientes.
+
+Si el límite anterior existe, diremos que la **integral impropia** es **convergente**. En caso contrario, diremos que es **divergente**
+
+## Introducción
+```{r,echo=FALSE,fig.align=TRUE}
+xmin=0
+xmax=50
+ymin=0
+ymax=1
+tolx=0.02*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){1/(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmax/16,to=xmax,by=0.01)
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,3*tolx,"x")
+text(3*tolx,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+#  text(xmin+((xmax-xmin)/quantsx)*i,1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+}
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+#  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col="blue",lty=2)
+for (i in 1:length(x)){
+  lines(c(x[i],x[i]),c(0,f(x[i])),col="blue")}
+text(xmax/16,-toly,expression(a))
+text(45,-toly,expression(x %->% infinity))
+
+```
+
+## Introducción
+
+* para funciones $f$ definidas en intervalos de la forma $[a,b)$ o $(a,b]$, en donde $f$ tiene una asíntota vertical en $x=a$ o $x=b$, respectivamente, definiremos $\displaystyle\int_a^b f(x)\, dx$ o $\displaystyle\int_{a}^b f(x)\, dx$ de la siguiente forma:
+$$
+\int_a^b f(x)\, dx =\lim_{t\to b^{-}}\int_a^t f(x)\, dx,\quad \int_{a}^b f(x)\, dx=\lim_{t\to a^+}\int_{t}^b f(x)\, dx.
+$$
+
+## Introducción
+A este tipo de integración se le denomina **integración impropia de segunda especie** y se necesita que la función $f$ sea integrable en todo intervalo cerrado de la forma $[a,t]$ ($a<t<b$) o $[t,b]$ ($a<t<b$), respectivamente, para que tenga sentido realizar los límites correspondientes.
+
+Si el límite anterior existe, diremos que la **integral impropia** es **convergente**. En caso contrario, diremos que es **divergente**
+
+
+## Introducción
+```{r,echo=FALSE,fig.align=TRUE}
+xmin=0
+xmax=1
+ymin=0
+ymax=100
+tolx=0.02*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){1/(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=tolx/100,to=xmax/2,by=0.0001)
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-150*tolx,"x")
+text(3*tolx,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  #  text(xmin+((xmax-xmin)/quantsx)*i,1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+}
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col="blue",lty=2)
+for (i in 1:length(x)){
+  lines(c(x[i],x[i]),c(0,f(x[i])),col="blue")}
+text(xmax/2,-toly,expression(b))
+text(tolx/2,-toly,expression(x %->% a))
+
+```
+
+
+## Introducción
+
+* para funciones $f$ definidas en intervalos de la forma $(-\infty,\infty)$ o $(a,b)$, en donde $f$ tiene una asíntota vertical en $x=a$ y $x=b$,  definiremos $\displaystyle\int_{-\infty}^\infty f(x)\, dx$ o $\displaystyle\int_{a}^b f(x)\, dx$ de la siguiente forma:
+$$
+\begin{array}{rl}
+\displaystyle \int_{-\infty}^\infty f(x)\, dx  & =\displaystyle\lim_{t\to -\infty}\int_t^c f(x)\, dx + \lim_{t\to \infty}\int_c^t f(x)\, dx,\\ 
+\displaystyle\int_{a}^b f(x)\, dx & =\displaystyle\lim_{t\to a^+}\int_{t}^c f(x)\, dx + \lim_{t\to b^-}\int_{c}^t f(x)\, dx,
+\end{array}
+$$
+donde $c\in (-\infty,\infty)$ o $c\in (a,b)$.
+
+## Introducción
+A este tipo de integración se le denomina **integración impropia de tercera especie** y se necesita que la función $f$ sea integrable en todo intervalo cerrado de la forma $[t,c]$ ($t<c$), $[c,t]$ ($c<t$) o $[t,c]$ ($t<c$), $[c,t]$ ($c<t$) respectivamente, para que tenga sentido realizar los límites correspondientes.
+
+Si los dos límites anteriores existen, diremos que la **integral impropia** es convergente. En caso contrario, diremos que es divergente.
+
+## Introducción
+```{r,echo=FALSE,fig.align=TRUE}
+xmin=-10
+xmax=10
+ymin=0
+ymax=2
+tolx=0.02*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){1/(1+x^2)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-150*tolx,"x")
+text(3*tolx,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  #  text(xmin+((xmax-xmin)/quantsx)*i,1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+}
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col="blue",lty=2)
+for (i in 1:length(x)){
+  lines(c(x[i],x[i]),c(0,f(x[i])),col="blue")}
+text(xmax,-toly,expression(x %->% infinity))
+text(xmin,-toly,expression(x %->% -infinity))
+```
+
+
+## Introducción
+```{r,echo=FALSE,fig.align=TRUE}
+xmin=0
+xmax=1
+ymin=0
+ymax=100
+tolx=0.02*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){1/(x*(1-x))}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.001)
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-150*tolx,"x")
+text(3*tolx,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  #  text(xmin+((xmax-xmin)/quantsx)*i,1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+}
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col="blue",lty=2)
+for (i in 1:length(x)){
+  lines(c(x[i],x[i]),c(0,f(x[i])),col="blue")}
+text(xmax,-toly,expression(x %->% b))
+text(xmin,-toly,expression(x %->% a))
+```
+
+## Integrales impropias de primera especie
+La definición formal de **integral impropia de primera especie** es la siguiente:
+
+<l class="definition">Definición de integral impropia de primera especie.</l>
+Sea $f:[a,\infty]\longrightarrow \mathbb{R}$ una función tal que es integrable en todo intervalo cerrado y acotado de la forma $[a,t]$ con $t>a$. En este caso, definimos la función $F$ como:
+$$
+F(t)=\int_a^t f(x)\, dx.
+$$
+Sea $\displaystyle L=\lim_{t\to\infty} F(t)$. Entonces:
+
+## Integrales impropias de primera especie
+* si $L$ no existe, diremos que la **integral impropia** $\displaystyle\int_a^\infty f(x)\, dx$ no existe en **sentido impropio**.
+* si $L=\infty$, diremos que la **integral impropia** existe, pero no es **convergente** y escribiremos $\displaystyle\int_a^\infty f(x)\, dx=\infty$.
+* si $L\in\mathbb{R}$, diremos que la **integral impropia** converge hacia $L$ y escribiremos $\displaystyle\int_a^\infty f(x)\, dx=L$.
+
+
+## Integrales impropias de primera especie
+<div class="example">
+**Ejemplo**
+
+Consideremos la familia de funciones siguiente: $f(x)=\frac{1}{x^p}$ con $p$ un valor real cualquiera definidas en el intervalo $[1,\infty)$. Queremos estudiar la convergencia de la **integral impropia** $\displaystyle\int_1^\infty f(x)\, dx=\int_1^\infty \frac{1}{x^p}\, dx$ en función del parámetro $p$.
+
+Para ello, consideramos un valor $t>1$ y calculamos la integral $\displaystyle\int_1^t f(x)\, dx=\int_1^t \frac{1}{x^p}\, dx$. Usando que la función $\frac{1}{(1-p)x^{p-1}}$ es una primitiva de $f(x)=\frac{1}{x^p}$, si $p\neq 1$, la integral vale:
+$$
+\int_1^t \frac{1}{x^p}\, dx =\left[\frac{1}{(1-p)x^{p-1}}\right]_1^t =\frac{1}{(1-p)}\left(\frac{1}{t^{p-1}}-1\right).
+$$
+Para $p=1$, una primitiva de la función $f(x)=\frac{1}{x}$ es $\ln x$. La integral será en este caso:
+$$
+\int_1^t \frac{1}{x}\, dx= [\ln x]_1^t =\ln t.
+$$
+</div>
+
+## Integrales impropias de primera especie
+<div class="example">
+Para estudiar la convergencia de la integral impropia $\displaystyle\int_1^\infty f(x)\, dx=\int_1^\infty \frac{1}{x^p}\, dx$, hemos de calcular el límite cuando $t\to\infty$ de las integrales calculadas anteriormente.
+
+Así, si $p\neq 1$, el límite vale:
+$$
+\lim_{t\to\infty} \int_1^t \frac{1}{x^p}\, dx =\lim_{t\to\infty} \frac{1}{(1-p)}\left(\frac{1}{t^{p-1}}-1\right).
+$$
+Llegados a este punto, nos fijamos que el límite anterior será finito si el exponente de $t$ en el denominador, $p-1$, es positivo, ya que de esta forma $\frac{1}{t^{p-1}}\to 0$. Si en cambio, el exponente $p-1$ es negativo, el límite anterior será infinito. Es decir:
+$$
+\lim_{t\to\infty} \int_1^t \frac{1}{x^p}\, dx =\begin{cases}\frac{1}{p-1}, &\mbox{si }p-1>0,\\
+\infty, & \mbox{si }p-1< 0.
+\end{cases}
+$$
+Falta estudiar el caso $p=1$:
+$$
+\lim_{t\to\infty} \int_1^t \frac{1}{x}\, dx =\lim_{t\to\infty}\ln t=\infty.
+$$
+</div>
+
+## Integrales impropias de primera especie
+<div class="example">
+En resumen, el valor de la integral impropia $\displaystyle\int_1^\infty f(x)\, dx=\int_1^\infty \frac{1}{x^p}\, dx$ es el siguiente:
+$$
+\int_1^\infty f(x)\, dx=\int_1^\infty \frac{1}{x^p}\, dx =\begin{cases}\frac{1}{p-1}, & \mbox{si }p>1,\\
+\infty, & \mbox{si }p\leq 1.\end{cases}
+$$
+</div>
