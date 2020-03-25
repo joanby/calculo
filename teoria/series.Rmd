@@ -163,7 +163,9 @@ entonces si $\displaystyle{\sum_{n=1}^{\infty}|a_n|} < \infty$, para todo $\epsi
 ## Convergencia condicional
 
 El recíproco no es cierto: una seria puede ser convergente sin ser absolutamente convergente. 
-Es el caso de la serie $\displaystyle{\sum \dfrac{(-1)^n}{n}}$ es convergente, en tanto que la serie de valores absolutos  es la serie armónica que ya hemos visto que era divergente.  
+Es el caso de la serie $\displaystyle{\sum \dfrac{(-1)^n}{n}}$ que, como demostraremos más adelante, es convergente, en tanto que la serie de valores absolutos  es la serie armónica que ya hemos visto que era divergente.  
 
 Una serie convergente que no sea absolutamente convergente recibe le nombre de **condicionalmente convergente**
 
+
+## Series de términos positivos
