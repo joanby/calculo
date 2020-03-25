@@ -2928,3 +2928,140 @@ $$
 \infty, & \mbox{si }p\leq 1.\end{cases}
 $$
 </div>
+
+## Criterios de convergencia
+A continuación vamos a dar un conjunto de criterios para saber si una **integral impropia de primera especie** es convergente o no sin necesidad de calcular el valor de las integrales $\displaystyle\int_a^t f(x)\, dx$ y sin necesidad de calcular el límite correspondiente.
+
+En primer lugar, necesitamos el siguiente lema previo:
+
+<l class="prop">Lema.</l>
+Sea $g:[a,\infty)\longrightarrow\mathbb{R}$ una función monótona creciente. Entonces:
+
+* si $g$ no está acotada, $\displaystyle\lim_{x\to\infty} g(x)=\infty$ y 
+* si $g$ está acotada, sea $M=\sup\{g(x),\ |\ x\in [a,\infty)\}$. Entonces $\displaystyle \lim_{x\to\infty} g(x)=M$.
+
+## Criterios de convergencia
+<div class="dem">
+**Demostración**
+
+* Supongamos que $g$ no está acotada. Veamos que $\displaystyle\lim_{x\to\infty} g(x)=\infty$, o dicho en otros términos, hemos de ver que para todo valor $C>0$, existe un valor $M_C>a$ tal que si $x>M_C>a$, entonces $g(x)>C$.
+
+Consideremos pues un valor $C>0$, como $g$ no está acotada, existe un valor $M_C>a$ tal que $g(M_C)>C$. Sea $x>M_C$, al ser $g$ creciente $g(x)\geq g(M_C)>C$, tal como queríamos ver.
+
+* Supongamos que $g$ está acotada y sea $M=\sup\{g(x),\ |\ x\in [a,\infty)\}$. Veamos que $\displaystyle \lim_{x\to\infty} g(x)=M$, o, dicho en otros términos, hemos de ver que para todo $\epsilon >0$, existe un valor $M_\epsilon >a$ tal que si $x>M_\epsilon >a$, entonces $|g(x)-M| = M-g(x)<\epsilon$.
+
+Sea $\epsilon >0$, entonces $M-\epsilon < M$, como $M$ es el supremo del conjunto $\{g(x),\ |\ x\in [a,\infty)\}$, y teniendo en cuenta que el supremo es la menor de las cotas inferiores, el valor $M-\epsilon$ no puede ser cota inferior del conjunto $\{g(x),\ |\ x\in [a,\infty)\}$. En este caso, existe un valor $M_\epsilon >a$ tal que $g(M_\epsilon)>M-\epsilon$, o, lo que es lo mismo, $M-g(M_\epsilon) <\epsilon$. Sea ahora un valor $x>M_\epsilon  >a$, como $g$ es creciente, $g(x)\geq g(M_\epsilon)$ y, por tanto, $M-g(x)\leq M-g(M_\epsilon)<\epsilon$.
+
+En resumen, dado un valor $\epsilon >0$, hemos hallado un valor $M_\epsilon >a$ tal que si $x>M_\epsilon$, $M-g(x)<\epsilon$, lo que significa que $\displaystyle \lim_{x\to\infty} g(x)=M$.
+</div>
+
+## Criterios de convergencia
+La proposición siguiente nos dice que si $f$ es positiva y la función $\displaystyle F(t)=\int_a^t f(x)\,dx$ está acotada, la **integral impropia** correspondiente es **convergente**:
+
+<l class="prop">Proposición.</l>
+Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función positiva, $f(x)\geq 0$, para todo valor $x\geq a$. Entonces, la **integral impropia** $\displaystyle\int_a^\infty f(x)\, dx$ es **convergente** si, y sólo si, la función $\displaystyle F(t)=\int_a^t f(x)\,dx$ está **acotada.**
+
+
+## Criterios de convergencia
+<div class="dem">
+**Demostración**
+
+Al fer $f(x)\geq 0$, usando la propiedad de monotonía de la integral, tenemos que $F(t)\geq 0$ y es creciente ya que si $t_1 >t_2$,
+$$
+F(t_1)=\int_a^{t_1} f(x)\,dx = \int_a^{t_2} f(x)\,dx + \int_{t_2}^{t_1} f(x)\,dx\geq \int_a^{t_2} f(x)\,dx = F(t_2).
+$$
+Usando el lema anterior, $\displaystyle\lim_{t\to\infty}F(t)=\int_a^\infty f(x)\, dx$ existirá si, y sólo si, $F(t)$ está acotada, tal como queríamos ver.
+</div>
+
+## Criterios de convergencia
+Veamos el criterio de convergencia por comparación:
+
+<l class="prop">Proposición.</l>
+Sean $f, g:[a,\infty)\longrightarrow\mathbb{R}$ funciones positivas, tal que, $f(x)\geq g(x)\geq 0$, para todo valor $x\geq a$. Entonces, 
+$$
+\int_a^\infty g(x)\, dx \leq \int_a^\infty f(x).
+$$
+En particular, si $\displaystyle\int_a^\infty f(x)\, dx$ **converge**, también lo hace $\displaystyle\int_a^\infty g(x)\, dx$ y si la integral $\displaystyle\int_a^\infty g(x)\, dx$ **diverge**, también lo hace la integral $\displaystyle\int_a^\infty f(x)\, dx$.
+
+## Criterios de convergencia
+<div class="dem">
+**Demostración**
+
+Sea $t>a$, como $g(x)\leq f(x)$, usando la propiedad de monotonía de la integral tenemos que $\displaystyle G(t)=\int_a^t g(x)\, dx\leq F(t)=\int_a^t f(x)\, dx$. 
+
+Entonces si $\displaystyle\int_a^\infty f(x)\, dx$ converge, por el lema anterior, $F(t)$ está acotada y por la desigualdad anterior, $G(t)$ también estará acotada. Por último, aplicando el lema otra vez, $\displaystyle\int_a^\infty g(x)\, dx$ converge.
+
+En cambio si $\displaystyle\int_a^\infty g(x)\, dx$ diverge, por el lema anterior $G(t)$ no está acotada y por la desigualdad anterior, $F(t)$ no está acotada tampoco y aplicando el lema otra vez $\displaystyle\int_a^\infty f(x)\, dx$ diverge.
+</div>
+
+## Criterios de convergencia
+<div class="example">
+**Ejemplo**
+
+Consideramos la función $f(x)=\frac{1}{1+x^n}$, con $n\in\mathbb{N}$ un número natural, y $x\in [1,\infty)$. 
+Veamos que la integral impropia $\displaystyle\int_1^\infty \frac{1}{1+x^n}\, dx$ es convergente.
+
+Si $n\geq 2$, como $\frac{1}{1+x^n}\leq \frac{1}{x^n}$, si $x>1$, como vimos anteriormente que la integral impropia $\displaystyle \frac{1}{x^n}\, dx$ es convergente si $n\geq 2$, la integral impropia $\displaystyle\int_1^\infty \frac{1}{1+x^n}\, dx$ también será convergente.
+
+Si $n=1$, miramos la convergencia directamente calculando el límite correspondiente:
+$$
+\int_1^\infty\frac{1}{1+x}\, dx=\lim_{t\to\infty}\int_1^t\frac{1}{1+x}\, dx=\lim_{t\to\infty}\left[\ln (1+x)\right]_1^t =\lim_{t\to\infty}(\ln(1+t)-\ln 2)=\infty.
+$$
+</div>
+
+
+## Criterios de convergencia
+<l class="prop">Proposición: criterio de comparación por cociente.</l>
+Sean $f,g:[a,\infty)\longrightarrow\mathbb{R}$ dos funciones positivas, $f(x)\geq 0$, $g(x)\geq 0$, para todo $x\geq a$. Si $\displaystyle\lim_{x\to\infty}\frac{f(x)}{g(x)}=L\neq 0$, entonces las integrales $\displaystyle\int_a^\infty f(x)\, dx$ y $\displaystyle\int_a^\infty g(x)\, dx$ tienen el mismo carácter, es decir, una es convergente si, y sólo si, la otra también es convergente.
+
+
+## Criterios de convergencia
+<div class="dem">
+**Demostración**
+
+Como $f(x),g(x)\geq 0$ para todo valor $x\geq a$, tendremos que $\frac{f(x)}{g(x)}\geq 0$ y, por tanto, el límite $\displaystyle\lim_{x\to\infty}\frac{f(x)}{g(x)}=L\geq 0$ y al ser $L\neq 0$, concluimos que $L>0$.
+
+
+Como $\displaystyle\lim_{x\to\infty}\frac{f(x)}{g(x)}=L\neq 0$, dado cualquier valor $\epsilon >0$, existe un valor $M_\epsilon >a$ tal que si $x>M_\epsilon$, $\left|\frac{f(x)}{g(x)}-L\right|<\epsilon$.
+
+Sea $\epsilon =\frac{L}{2}>0$. Para este $\epsilon$, existe un valor $M_\epsilon >0$ tal que $x>M_\epsilon$, $\left|\frac{f(x)}{g(x)}-L\right|<\frac{L}{2}$. La condición anterior es equivalente a:
+$$
+-\frac{L}{2} < \frac{f(x)}{g(x)}-L <\frac{L}{2},\ \Rightarrow \frac{L}{2}<\frac{f(x)}{g(x)}<\frac{3L}{2}.
+$$
+
+</div>
+
+## Criterios de convergencia
+<div class="dem">
+Tenemos por un lado que si $x>M_\epsilon$ que $f(x)<\frac{3L}{2}g(x)$. Por una proposición anterior, si $\displaystyle\int_a^\infty g(x)\, dx$ es convergente, tambien lo será $\displaystyle\int_a^\infty f(x)\, dx$.
+
+Por otro lado, tenemos que si $x>M_\epsilon$ que $g(x) < \frac{2}{L} f(x)$. Aplicando otra vez la proposición anterior, si $\displaystyle\int_a^\infty f(x)\, dx$ es convergente, tambien lo será $\displaystyle\int_a^\infty g(x)\, dx$.
+</div>
+
+
+## Criterios de convergencia
+<div class="example">
+**Ejemplo**
+
+Consideremos la función $f(x)=\frac{p_n(x)}{q_m(x)}$, donde $p_n(x)$ y $q_m(x)$ son dos polinomios de grados $n$ y $m$ respectivamente, definida en $[a,\infty)$ donde suponemos que $q_m(x)\neq 0$, para todo valor $x\in [a,\infty)$.
+
+La suposición anterior es para que la función $f$ no tenga ninguna asíntota vertical ya que es este caso, la integral impropia $\displaystyle\int_a^\infty f(x)\, dx$ no sería de primera especie sino de tercera.
+
+Suponemos que $p_n(x)=a_n x^n+\cdots$ y $q_m(x)=b_m x^m+\cdots$. 
+
+Sea $g(x)=x^{n-m}$. Si hacemos el límite del cociente $\frac{f(x)}{g(x)}$, obtenemos:
+$$
+\lim_{x\to\infty}\frac{f(x)}{g(x)}=\lim_{x\to\infty}\frac{\frac{p_n(x)}{q_m(x)}}{x^{n-m}} = \lim_{x\to\infty}\frac{p_n(x)}{x^{n-m}\cdot q_m(x)}=\lim_{x\to\infty}\frac{a_n x^n+\cdots}{b_m x^n +\cdots}=\frac{a_n}{b_m}\neq 0.
+$$
+Por tanto, las integrales impropias $\displaystyle \int_a^\infty\frac{p_n(x)}{q_m(x)}\, dx$ y $\displaystyle\int_a^\infty x^{n-m}\, dx$ tienen el mismo carácter.
+</div>
+
+
+## Criterios de convergencia
+<div class="example">
+En un ejemplo anterior vimos que la integral impropia $\displaystyle\int_a^\infty x^{n-m}\, dx$ es convergente si, y sólo si, $m-n>1$ o $m>n+1$. 
+
+Por tanto, la integral impropia que nos ocupa $\displaystyle \int_a^\infty\frac{p_n(x)}{q_m(x)}\, dx$ será convergente si la diferencia de grados entre el denominador y el numerador es mayor o igual que $2$, es decir $m-n\geq 2$.
+
+Por ejemplo, podemos afirmar que la integral impropia siguiente $\displaystyle \int_1^\infty \frac{x^3+x^2+x+1}{x^m+1}\,dx$ es convergente para todo valor de $m\geq 5$ y si $m\leq 4$, será divergente.
+</div>
