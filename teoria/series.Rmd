@@ -79,6 +79,6 @@ que ya hemos visto que es convergente si $|r|<1$.
 
 Ejemplo 2: La **serie armónica**, $\displaystyle{\sum_{n=1}^{\infty}}\dfrac{1}{n}$, generada por la sucesión $\left\{\dfrac{1}{n} \right\}_{n \in \mathbb{N}}$.
 
-Se trata de una serie divergente
+Se trata de una serie que no es convergente. 
 
 

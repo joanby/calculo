@@ -1031,6 +1031,24 @@ $$
 Ya que $\lim_{n \rightarrow \infty} \log\left(\dfrac{n}{n-1}\right)^n = \log e =1$.
 
 
+## Criterio de Stolz: Ejemplo 4
+
+<div class="example"> 
+**Calcular el $\lim_{n \rightarrow \infty} \sqrt[n]{n+2}$**
+
+En primer lugar, tenemos que $\sqrt[n]{n+2} = (n+2)^{\frac{1}{n}}$, dado que las dos sucesiones son de términos positivos, podemos tomar logaritmos, $\log(n+2)^{\frac{1}{n}} = \dfrac{1}{n} \log(n+2)$ con lo cual reducimos el cálculo del limite propuesto al de $\lim \dfrac{\log(n+2)}{n}$, se trata de una indeterminación del tipo $\dfrac{\infty}{\infty}$. 
+
+Al ser $n$ creciente y no acotada, podemos aplicar el criterio de Stolz, para obtener
+$$
+\lim \dfrac{\log(n+2)}{n} = \lim \dfrac{\log(n+2)- \log(n+1)}{n+2-(n+1)}= \lim \dfrac{n+2}{n+1} =1
+$$
+Por lo que 
+$$
+\lim_{n \rightarrow \infty} \sqrt[n]{n+2}= e
+$$
+
+
+
 
 ## Aplicaciones del criterio de Stolz
 
