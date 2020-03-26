@@ -142,3 +142,30 @@ Es suficiente considerar la condición de Cauchy con $m=n+1$, en este caso resul
 </div>
 
 Es importante tener en cuenta que esta és una condición **necesaria** pero no suficiente, como evidencia el caso de la seria armónica, que es divergente aunque $\lim_{n \rightarrow \infty}  \dfrac{1}{n}=0$
+
+
+## Convergencia condicional
+
+<l class="prop"> **Proposición** </l>
+
+Si $\displaystyle{\sum_{n=1}^{\infty}|a_n|}$ es convergente entonces $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es convergente.
+
+<div class="dem"> **Demostración**
+
+Dado que si $m>n$, entonces 
+$$
+|a_{n+1}+ a_{n+2}+ \cdots + a_{m}| \leq |a_{n+1}|+ |a_{n+2}|+ \cdots + |a_{m}|
+$$
+entonces si $\displaystyle{\sum_{n=1}^{\infty}|a_n|} < \infty$, para todo $\epsilon >0$ existe $n_0$ tal que para todo $n,m \in \mathbb{N}$ tal que $m \geq n \geq n_0$, entonces $|a_{n+1}|+ |a_{n+2}|+ \cdots + |a_{m}| < \epsilon$ y, por lo tanto será $|a_{n+1}+ a_{n+2}+ \cdots + a_{m}| < \epsilon$.
+
+</div>
+
+## Convergencia condicional
+
+El recíproco no es cierto: una seria puede ser convergente sin ser absolutamente convergente. 
+Es el caso de la serie $\displaystyle{\sum \dfrac{(-1)^n}{n}}$ que, como demostraremos más adelante, es convergente, en tanto que la serie de valores absolutos  es la serie armónica que ya hemos visto que era divergente.  
+
+Una serie convergente que no sea absolutamente convergente recibe le nombre de **condicionalmente convergente**
+
+
+## Series de términos positivos
