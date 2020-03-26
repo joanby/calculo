@@ -3065,3 +3065,400 @@ Por tanto, la integral impropia que nos ocupa $\displaystyle \int_a^\infty\frac{
 
 Por ejemplo, podemos afirmar que la integral impropia siguiente $\displaystyle \int_1^\infty \frac{x^3+x^2+x+1}{x^m+1}\,dx$ es convergente para todo valor de $m\geq 5$ y si $m\leq 4$, será divergente.
 </div>
+
+## Criterios de convergencia
+<l class="observ">Observación.</l>
+En el caso en que $\displaystyle\lim_{x\to\infty}\frac{f(x)}{g(x)}=0$, podemos afirmar lo siguiente:
+
+* si $\displaystyle\int_a^\infty g(x)\, dx$ es convergente, también lo es $\displaystyle\int_a^\infty f(x)\, dx$.
+* si $\displaystyle\int_a^\infty f(x)\, dx$ es divergente, también lo es $\displaystyle\int_a^\infty g(x)\, dx$.
+
+<div class="exercise">
+**Ejercicio**
+
+Demostrar las dos afirmaciones anteriores.
+</div>
+
+## Criterios de convergencia
+<l class="prop">Proposición. Criterio de convergencia de Cauchy.</l>
+Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función tal que para todo $t>a$, la función $f$ es integrable en el intervalo $[a,t]$. Entonces las afirmaciones siguientes son equivalentes:
+
+1. La integral impropia $\displaystyle\int_a^\infty f(x)\, dx$ converge.
+
+2. Existe un valor $L\in\mathbb{R}$ tal que para todo valor de $\epsilon >0$, existe un valor $M_\epsilon >a$ tal que si $t\geq M_\epsilon$, entonces $\displaystyle\left|\int_a^\infty f(x)\, dx-L\right|<\epsilon$.
+
+3. Existe un valor $N\in\mathbb{R}$ tal que si $(t_n)_n$ es una sucesión que tiende a infinito, $t_n\to\infty$ con $t_n>a$ para todo $n$, entonces $\displaystyle F(t_n)=\int_a^{t_n} f(x)\, dx\to N$.
+
+## Criterios de convergencia
+<ol start="4">
+  <li>Para todo valor $\epsilon >0$, existe un $b>a$ tal que si $b_2\geq b_1\geq b$, entonces $\displaystyle\left|\int_{b_1}^{b_2}f(x)\,dx\right|<\epsilon$.</li>
+</ol>
+
+
+<div class="dem">
+**Demostración**
+
+Demostraremos lo siguiente:
+$$
+1.\Leftrightarrow 3. \Leftrightarrow 2. \Rightarrow 4. \Rightarrow 3.
+$$
+Fijaos que si demostramos lo anterior, podemos deducir que $i\Rightarrow j$ para todo $i,j\in \{1,2,3,4\}$.
+
+$1.\Leftrightarrow 3. \Leftrightarrow 2.$ Estas implicaciones son triviales ya que son simplemente aplicar la definición del límite a $\displaystyle \lim_{t\to\infty} \int_a^t f(x)\, dx =L$ en el apartado 2. o $\displaystyle \lim_{t\to\infty} \int_a^t f(x)\, dx =N$ en el apartado 3.
+
+
+
+</div>
+
+
+## Criterios de convergencia
+
+<div class="dem">
+$2. \Rightarrow 4.$ Tenemos que para todo $\epsilon >0$, existe un valor $M_\epsilon >a$ tal que si $t\geq M_\epsilon$, entonces $\displaystyle\left|\int_a^\infty f(x)\, dx-L\right|<\frac{\epsilon}{2}$.
+
+Sea $b=M_\epsilon$. Si $b_2\geq b_1\geq b$, tenemos que:
+$$
+\left|\int_{b_1}^{b_2}f(x)\,dx\right|=\left|\int_{a}^{b_2}f(x)\,dx-\int_{a}^{b_1}f(x)\,dx\right|\leq \left|\int_{a}^{b_2}f(x)\,dx-L\right|+\left|L-\int_{a}^{b_1}f(x)\,dx\right|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon.
+$$
+$4. \Rightarrow 3.$ Consideremos una sucesión $(t_n)_n$ con $t_n >a$ tal que $t_n\to\infty$. Sabemos que, dado un valor $\epsilon >0$, existe un $b>a$ tal que si $b_2\geq b_1\geq b$, entonces $\displaystyle\left|\int_{b_1}^{b_2}f(x)\,dx\right|<\epsilon$.
+
+Como $t_n\to\infty$, dado este $\epsilon >0$ y este $b>a$, existe un $n_0\in\mathbb{N}$ tal que si $n\geq n_0$, entonces $t_n\geq b$.
+
+
+
+</div>
+
+
+## Criterios de convergencia
+
+<div class="dem">
+Sean ahora $n,m\geq n_0$, entonces como $t_n,t_m\geq b$, 
+$$
+|F(t_n)-F(t_m)|=\left|\int_a^{t_n}f(x)\,dx-\int_a^{t_m} f(x)\, dx\right|=\left|\int_{t_n}^{t_m}f(x)\,dx\right|<\epsilon.
+$$
+En pocas palabras, la sucesión $(F(t_n))_n$ es una sucesión de Cauchy y por tanto, convergente, que es lo que nos dice el apartado 3.
+
+</div>
+
+## Criterios de convergencia
+<div class="example">
+**Ejemplo**
+
+Vamos a estudiar si la integral impropia siguiente $\displaystyle\int_1^\infty\sin(x^2)\, dx$ es convergente usando el criterio de convergencia de Cauchy, concretamente el apartado 4. Es decir, veremos que dado un $\epsilon >0$, existe un valor $b>1$ tal que si $b_1,b_2\geq b$, entonces $\displaystyle\left|\int_{b_1}^{b_2}f(x)\,dx\right|=\left|\int_{b_1}^{b_2}\sin(x^2)\,dx\right|<\epsilon$.
+
+En primer lugar, "arreglemos un poco" la integral $\displaystyle \int_{b_1}^{b_2}\sin(x^2)\,dx$. 
+
+Si hacemos el cambio de variable $t=x^2$, tenemos que 
+
+* la relación entre los diferenciales es: $dt=2xdx$, de donde $dx=\frac{dt}{2x}=\frac{1}{2\sqrt{t}}\cdot dt$ ya que si $t=x^2$, $x=\sqrt{t}$ (pensad que, como $x\geq 1>0$, $x$ siempre será positivo y existirá su raíz cuadrada) y
+* los extremos de integración son los siguientes en función de la nueva variable $t$:
+  * para $x=b_1$, $t=x^2=b_1^2$ y
+  * para $x=b_2$, $t=x^2=b_2^2$.
+
+
+</div>
+
+
+## Criterios de convergencia
+<div class="example">
+La integral en función de la nueva variable $t$ será:
+$$
+\int_{b_1}^{b_2}\sin(x^2)\,dx =\int_{b_1^2}^{b_2^2}\sin t \frac{1}{2\sqrt{t}}\, dt.
+$$
+
+A continuación aplicamos la técnica de integración por partes a la integral anterior en función de la variable $t$ con:
+$$
+\begin{array}{ll}
+u & =\frac{1}{2\sqrt{t}},\ \Rightarrow du=-\frac{1}{4}t^{-\frac{3}{2}}dt, \\
+dv & = \sin t\, dt,\ \Rightarrow v=\int\sin t \,dt = -\cos t.
+\end{array}
+$$
+La integral nos quedarà:
+$$
+\int_{b_1^2}^{b_2^2}\sin t \frac{1}{2\sqrt{t}}\, dt =\left[\frac{1}{2\sqrt{t}}\cdot (-\cos t)\right]_{b_1^2}^{b_2^2}-\frac{1}{4}\int_{b_1^2}^{b_2^2} \cos t\cdot t^{-\frac{3}{2}}\, dt= \frac{\cos(b_1^2)}{2 b_1}-\frac{\cos(b_2^2)}{2 b_2}-\frac{1}{4}\int_{b_1^2}^{b_2^2}\frac{\cos t}{t^{\frac{3}{2}}}\, dt.
+$$
+Entonces, usando la propiedad de monotonía de la integral,
+$$
+\left|\int_{b_1}^{b_2}\sin(x^2)\,dx\right|\leq \left|\frac{\cos(b_1^2)}{2 b_1}\right|+\left|\frac{\cos(b_2^2)}{2 b_2}\right|+\frac{1}{4}\left|\int_{b_1^2}^{b_2^2}\frac{1}{t^{\frac{3}{2}}}\, dt\right|.
+$$
+</div>
+
+
+## Criterios de convergencia
+<div class="example">
+A continuación, vamos a acotar los tres términos de la expresión anterior.
+
+Intuitivamente, se ve que podemos hacer los términos tan pequeños como se quiera ya que fijarse que si hacemos tender $b_1, b_2$ hacia infinito, los términos anteriores tienden a cero. Formalicemos dicha intuición.
+
+Sea $\epsilon >0$ un valor cualquiera. Existe un valor $b'$ tal que si $b\geq b'$, entonces $\frac{1}{2b}< \frac{\epsilon}{3}$ porque $\displaystyle\lim_{b\to\infty}\frac{1}{2b}=0$.
+
+Por tanto, si $b_1,b_2\geq b'$, 
+$$
+\left|\frac{\cos(b_1^2)}{2 b_1}\right|\leq \frac{1}{2b_1}<\frac{\epsilon}{3},\quad \left|\frac{\cos(b_2^2)}{2 b_2}\right|\leq \frac{1}{2b_2}<\frac{\epsilon}{3}
+$$
+Por último, en un ejemplo anterior vimos que la integral impropia $\displaystyle\int_1^\infty \frac{1}{t^{\frac{3}{2}}}\, dt$ es convergente. Por tanto, aplicando el apartado 4. del criterio de Cauchy, existe un valor $b''$ tal que si $b_2\geq b_1\geq b''$ y, por tanto, $b_2^2\geq b_1^2\geq b_1\geq b''$, entonces $\displaystyle \left|\int_{b_1^2}^{b_2^2}\frac{1}{t^{\frac{3}{2}}}\, dt\right|<\frac{4\epsilon}{3}$.
+</div>
+
+
+## Criterios de convergencia
+<div class="example">
+Sea $b=\max\{b',b''\}$. Si $b_1,b_2\geq b$, se cumple lo siguiente:
+$$
+\left|\int_{b_1}^{b_2}\sin(x^2)\,dx\right|\leq \left|\frac{\cos(b_1^2)}{2 b_1}\right|+\left|\frac{\cos(b_2^2)}{2 b_2}\right|+\frac{1}{4}\left|\int_{b_1^2}^{b_2^2}\frac{1}{t^{\frac{3}{2}}}\, dt\right|<\frac{\epsilon}{3}+\frac{\epsilon}{3}+\frac{1}{4}\cdot\frac{4\epsilon}{3}=\epsilon.
+$$
+En resumen, dado un $\epsilon >0$, hemos hallado un $b>1$ tal que si $b_1,b_2\geq b$, entonces $\displaystyle\left|\int_{b_1}^{b_2}\sin(x^2)\,dx\right|<\epsilon$.
+
+Esta última condición es el apartado 4. del criterio de Cauchy. Concluimos, por tanto, que la integral impropia $\displaystyle\int_1^\infty \sin(x^2)\,dx$ es convergente.
+</div>
+
+
+<div class="exercise">
+**Ejercicio**
+
+Ver que la integral impropia $\displaystyle\int_1^\infty \cos(x^2)\,dx$ es convergente.
+
+</div>
+
+
+## Criterios de convergencia
+<l class="prop">Teorema: criterio integral de convergencia de una serie de números.</l>
+Sea $(a_n)_n$ una sucesión de números reales positiva y decreciente, $a_n\geq 0$, $a_{n+1}\leq a_n$, para todo $n$. Sea $f:[1,\infty)\longrightarrow\mathbb{R}$ una función positiva y decreciente, $f(x)\geq 0$ y $f(x)\geq f(y)$, para todo $x, y\in [1,\infty)$ con $x<y$ tal que $f(n)=a_n$, para todo $n$, es decir, el valor de $f$ en los naturales es precisamente el valor de la sucesión anterior $(a_n)_n$. Entonces, la serie $\displaystyle\sum_{n=1}^\infty a_n$ y la integral impropia $\displaystyle\int_1^\infty f(x)\, dx$ tienen el mismo carácter, es decir, una es convergente si, y sólo si, la otra lo es y viceversa.
+
+## Criterios de convergencia
+```{r,echo=FALSE,fig.align=TRUE}
+xmin=0
+xmax=10
+ymin=0
+ymax=1
+tolx=0.02*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=10
+quantsy=4
+f = function(x){1/x}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.001)
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-150*tolx,"x")
+text(3*tolx,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+  text(xmin+((xmax-xmin)/quantsx)*i,-1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+}
+
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx/2,tolx/2),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+  #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+
+for (i in 1:quantsx){
+  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(0,f(xmin+((xmax-xmin)/quantsx)*i)),lty=3)
+  lines(c(xmin+((xmax-xmin)/quantsx)*i,xmin+((xmax-xmin)/quantsx)*(i+1)),c(f(xmin+((xmax-xmin)/quantsx)*(i+1)),f(xmin+((xmax-xmin)/quantsx)*(i+1))),lty=3)
+  points(xmin+((xmax-xmin)/quantsx)*i,f(xmin+((xmax-xmin)/quantsx)*i),cex=1,pch=19)
+}
+
+text(tolx+xmin+((xmax-xmin)/quantsx)*1,f(xmin+((xmax-xmin)/quantsx)*1)+toly,expression(a[1]))
+text(xmin+((xmax-xmin)/quantsx)*2,f(xmin+((xmax-xmin)/quantsx)*2)+toly,expression(a[2]))
+text(xmin+((xmax-xmin)/quantsx)*3,f(xmin+((xmax-xmin)/quantsx)*3)+toly,expression(a[3]))
+text(xmin+((xmax-xmin)/quantsx)*4,f(xmin+((xmax-xmin)/quantsx)*4)+toly,expression(a[4]))
+text(xmin+((xmax-xmin)/quantsx)*5,f(xmin+((xmax-xmin)/quantsx)*5)+toly,expression(a[5]))
+text(xmin+((xmax-xmin)/quantsx)*6,f(xmin+((xmax-xmin)/quantsx)*6)+toly,expression(a[6]))
+text(xmin+((xmax-xmin)/quantsx)*7,f(xmin+((xmax-xmin)/quantsx)*7)+toly,expression(a[7]))
+text(xmin+((xmax-xmin)/quantsx)*8,f(xmin+((xmax-xmin)/quantsx)*8)+toly,expression(a[8]))
+text(xmin+((xmax-xmin)/quantsx)*9,f(xmin+((xmax-xmin)/quantsx)*9)+toly,expression(a[9]))
+text(xmin+((xmax-xmin)/quantsx)*10,f(xmin+((xmax-xmin)/quantsx)*10)+toly,expression(a[10]))
+
+text(1.6,0.85,expression(f(x)))
+```
+
+
+## Criterios de convergencia
+<div class="dem">
+**Demostración**
+
+Si observamos el gráfico anterior podemos escribir lo siguiente:
+$$
+a_2+\cdots + a_n\leq \int_1^n f(x)\, dx\leq a_1+\cdots +a_{n-1}.
+$$
+O, escrito en otros términos,
+$$
+\sum_{i=1}^n a_i -a_1 \leq \int_1^n f(x)\, dx\leq\sum_{i=1}^{n-1} a_i.
+$$
+Veamos que si la serie $\displaystyle\sum_{n=1}^\infty a_n$ es convergente, también lo es la integral impropia $\displaystyle \int_1^\infty f(x)\, dx$.
+
+Si la serie $\displaystyle\sum_{n=1}^\infty a_n$ es convergente, entonces la sucesión de las sumas parciales $\displaystyle S_n = \sum_{i=1}^n a_i$ es convergente y, por tanto, estará acotada: existe un $K>0$ tal que $S_n\leq K$, para todo $n$.
+
+
+</div>
+
+
+## Criterios de convergencia
+<div class="dem">
+Para ver que la integral impropia $\displaystyle \int_1^\infty f(x)\, dx$ es convergente, como $f(x)\geq 0$, basta ver que la función $\displaystyle F(t)=\int_a^t f(x)\, dx$ está acotada.
+
+Sea $t>1$, por la propiedad arquimediana de los números reales, existe un natural $n\in\mathbb{R}$ tal que $n>t$. Entonces:
+$$
+F(t)=\int_a^t f(x)\, dx \leq \int_a^n f(x)\, dx\leq \sum_{i=1}^{n-1} a_i=S_{n-1}\leq K.
+$$
+Entonces $F(t)$ está acotada y, por tanto, la integral impropia $\displaystyle \int_1^\infty f(x)\, dx$ es convergente.
+
+
+</div>
+
+
+## Criterios de convergencia
+<div class="dem">
+
+Veamos la tesis inversa, supongamos que la integral impropia $\displaystyle \int_1^\infty f(x)\, dx$ es convergente y veamos que la serie  $\displaystyle\sum_{n=1}^\infty a_n$ es convergente. 
+
+Como la serie es de números positivos, para ver que es convergente, basta demostrar que la sucesión de las sumas parciales está acotada.
+
+Como la integral impropia $\displaystyle \int_1^\infty f(x)\, dx$ es convergente, significa que $F(t)$ está acotada, es decir, existe un $M>0$ tal que $F(t)\leq M$ para todo $t$.
+
+Sea $n$ un natural cualquiera. Usando una desigualdad anterior, podemos escribir:
+$$
+S_n -a_1\leq \int_1^n f(x)\, dx = F(n)\leq M,
+$$
+de donde deducimos que $S_n\leq M+a_1$, para todo valor de $n$. Concluimos que las sumas parciales están acotadas y, por tanto, la serie $\displaystyle\sum_{n=1}^\infty a_n$ es convergente.
+
+
+</div>
+
+## Criterios de convergencia
+<div class="example">
+**Ejemplo**
+
+Vamos estudiar el carácter de la serie siguiente $\displaystyle\sum_{n=2}^\infty\frac{1}{n\ln^p n}$ según los valores de $p$.
+
+Aplicando el criterio anterior, estudiar el carácter de la serie anterior, es equivalente a estudiar el carácter de la siguiente integral impropia $\displaystyle\int_2^\infty \frac{1}{x\ln^p x}\, dx$:
+$$
+\lim_{t\to\infty}\int_2^t \frac{1}{x\ln^p x}\, dx.
+$$
+Para realizar la integral anterior, consideramos el siguiente cambio de variable $u=\ln x$. 
+
+* la relación entre los diferenciales es: $du=\frac{dx}{x}$ y 
+* los extremos de integración en la nueva variable $u$ son los siguientes:
+  * para $x=2$, $u=\ln 2$ y
+  * para $x=t$, $u=\ln t$.
+
+</div>
+
+
+## Criterios de convergencia
+<div class="example">
+El valor del límite anterior será en la nueva variable $u$:
+$$
+\lim_{t\to\infty}\int_{\ln 2}^{\ln t}\frac{1}{u^p}\, du =\lim_{s\to\infty}\int_{\ln 2}^s \frac{1}{u^p}\, du.
+$$
+La integral impropia $\displaystyle\int_{\ln 2}^\infty\frac{1}{u^p}\, du$ ya fue estudiada anteriormente y vimos que era convergente si, y sólo si, $p>1$. Por tanto, la serie anterior será convergente si, y sólo si, $p>1$.
+</div>
+
+## Criterios de convergencia
+El concepto de **convergencia absoluta** es importante para estudiar la convergencia de integrales impropias que van cambiando de signo:
+
+<l class="definition">Convergencia absoluta.</l>
+Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función tal que para todo $t>a$, la función es integrable en el intervalo $[a,t]$. Entonces diremos que la integral impropia $\displaystyle\int_a^\infty f(x)\,dx$ es **absolutamente convergente** si la integral impropia $\displaystyle\int_a^\infty |f(x)|\,dx$ es convergente.
+
+
+## Criterios de convergencia
+La proposición siguiente nos dice que la **convergencia absoluta** implica la **convergencia**:
+
+<l class="prop">Proposición.</l>
+Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función tal que para todo $t>a$, la función es integrable en el intervalo $[a,t]$. Entonces si la integral impropia $\displaystyle\int_a^\infty f(x)\,dx$ es **absolutamente convergente**, entonces es convergente.
+
+<div class="dem">
+**Demostración**
+
+Teniendo en cuenta que para $b_1,b_2>a$, 
+$$
+\left|\int_{b_1}^{b_2}f(x)\, dx\right|\leq \int_{b_1}^{b_2}|f(x)|\, dx,
+$$
+si aplicamos el apartado 4. del criterio de Cauchy de convergencia, la proposición se demuestra fácilmente.
+</div>
+
+
+## Criterios de convergencia
+Los **criterios de convergencia de Leibnitz** y de **Abel-Dirichlet** son claves para estudiar la convergencia de integrales impropias cuya función puede cambiar de signo.
+
+
+## Criterios de convergencia
+<l class="prop">Teorema. Criterio de convergencia de Leibnitz.</l>
+Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función tal que para todo $t>a$, la función es integrable en el intervalo $[a,t]$. Sean $a_1<a_2<\cdots < a_n <\cdots$ las raíces reales simples de la función $f$ en el intervalo $[a,\infty)$, es decir $f(a_i)=0$, $i=1,2,\ldots$ y el signo de $f$ en el intervalo $(a_i,a_{i+1})$ y en el intervalo $(a_{i+1},a_{i+2})$ es distinto.
+Suponiendo que $a_n\to \infty$, definimos $\displaystyle b_n =\int_{a_n}^{a_{n+1}} f(x)\, dx$, para $n=1,2,\ldots$ Los valores $b_n$ son valores alternados y, por tanto, la serie $\displaystyle\sum_{n=1}^\infty b_n$ es una serie alternada. Si $\displaystyle\lim_{n\to \infty}b_n =0$ y $|b_n|\geq |b_{n+1}|$, para todo $n$, la integral impropia $\displaystyle\int_a^\infty f(x)\, dx$ es convergente.
+
+
+## Criterios de convergencia
+<div class="dem">
+**Demostración**
+
+Por el criterio de Leibnitz de convergencia de series alternadas, la serie alternada $\displaystyle\sum_{n=1}^\infty b_n$ es convergente.
+
+Sea un valor $b>a$. Sea $n$ el natural tal que $b\in (a_{n},a_{n+1})$. Entonces,
+$$
+\int_a^b f(x)\, dx =\int_a^{a_1} f(x)\, dx+\sum_{i=1}^{n-1}\int_{a_i}^{a_{i+1}} f(x)\, dx+\int_{a_n}^b f(x)\, dx =\int_a^{a_1} f(x)\, dx + S_{n-1} +\int_{a_n}^b f(x)\, dx,
+$$
+donde $S_n$ es la suma parcial de la serie $\displaystyle\sum_{n=1}^\infty b_n$.
+
+
+
+
+</div>
+
+## Criterios de convergencia
+<div class="dem">
+El tercer sumando de la igualdad anterior tiende a cero ya que:
+$$
+\left|\int_{a_n}^b f(x)\, dx\right|\leq \int_{a_n}^b |f(x)|\, dx \leq \int_{a_n}^{a_{n+1}} |f(x)|\, dx = |b_n|,
+$$
+y como la serie $\displaystyle \sum_{n=1}^\infty b_n$ es convergente, entonces $\displaystyle\lim_{n\to\infty}|b_n|=0$.
+
+Sea $\displaystyle S=\sum_{n=1}^\infty b_n$, entonces,
+$$
+\lim_{b\to\infty} \int_a^b f(x)\, dx =\int_a^{a_1} f(x)\, dx +\lim_{n\to\infty} S_{n-1}+\lim_{n\to\infty} \int_{a_n}^b f(x)\, dx=\int_a^{a_1} f(x)\, dx +S.
+$$
+Entonces la integral $\displaystyle\int_a^\infty f(x)\, dx$ es convergente tal como queríamos demostrar.
+</div>
+
+## Criterios de convergencia
+<div class="example">
+**Ejemplo**
+
+Estudiemos la convergencia de la integral impropia $\displaystyle\int_1^\infty \frac{\sin x}{x}\, dx$.
+
+En este caso, los ceros de la función $f(x)=\frac{\sin x}{x}$ en el intervalo $[1,\infty)$ son $\pi< 2\pi<\cdots <n\pi<\cdots$, con $n\in\mathbb{N}$.
+
+Los valores $b_n$ son los siguientes $\displaystyle b_n =\int_{n\pi}^{(n+1)\pi}\frac{\sin x}{x}\,dx$.
+
+Veamos que $\displaystyle\lim_{n\to\infty}|b_n|=0$:
+$$
+0\leq |b_n|=\left|\int_{n\pi}^{(n+1)\pi}\frac{\sin x}{x}\,dx\right|\leq \int_{n\pi}^{(n+1)\pi}\frac{1}{x}\, dx =[\ln x]_{n\pi}^{(n+1)\pi}=\ln ((n+1)\pi)-\ln(n\pi)=\ln\left(\frac{n+1}{n}\right).
+$$
+Como $\displaystyle\lim_{n\to\infty}\ln\left(\frac{n+1}{n}\right)=0$, por el criterio del sandwitz, $\displaystyle\lim_{n\to\infty}|b_n|=0$.
+</div>
+
+## Criterios de convergencia
+<div class="example">
+A continuación, veamos que $|b_n|\geq |b_{n+1}|$. Recordemos el valor de $|b_n|$:
+$$
+|b_n|= \left|\int_{n\pi}^{(n+1)\pi}\frac{\sin x}{x}\,dx\right|.
+$$
+En la integral anterior, hacemos el cambio siguiente: $t=x+\pi$.
+
+* la relación entre los diferenciales es: $dt=dx$ y
+* los nuevos extremos de integración son:
+  * para $x=n\pi$, $t=n\pi +\pi = (n+1)\pi$ y
+  * para $x=(n+1)\pi$, $t=(n+1)\pi +\pi = (n+2)\pi$.
+  
+El valor de $|b_n|$ será en la nueva variable $t$:
+$$
+|b_n|=\left|\int_{(n+1)\pi}^{(n+2)\pi}\frac{\sin (t-\pi)}{t-\pi}\,dt\right|=\int_{(n+1)\pi}^{(n+2)\pi}\frac{|\sin t|}{t-\pi}\, dt\geq \int_{(n+1)\pi}^{(n+2)\pi}\frac{|\sin t|}{t}\, dt = |b_{n+1}|.
+$$
+
+</div>
+
+## Criterios de convergencia
+<div class="example">
+Por el criterio de Leibnitz de series alternadas, la serie $\displaystyle \sum_{n=1}^\infty b_n$ es convergente y por el criterio de convergencia de Leitnitz, la integral impropia $\displaystyle\int_1^\infty \frac{\sin x}{x}\, dx$ también será convergente.
+</div>
