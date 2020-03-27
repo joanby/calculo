@@ -1921,7 +1921,7 @@ Para que la integral anterior se pueda realizar, necesitamos saber cuál es la r
 
 ## Teorema del cambio de variable
 <l class="prop">Teorema del cambio de variable.</l>
-Sea $f:\longrightarrow\mathbb{R}$ una función **continua** en el intervalo $[a,b]$ y por tanto, **integrable**. Sea $\phi$ una función de clase ${\cal C}^1$ en su intervalo de definición, es decir, una función **derivable** con función derivada continua. Supongamos el intervalo de definición de $\phi$ es $[\alpha,\beta]$, es decir $\phi:[\alpha,\beta]\longrightarrow\mathbb{R}$ con $\phi(\alpha)=a$ y $\phi(\beta)=b$ de tal forma que $\phi([\alpha,\beta])=[a,b]$. Entonces, en estas condiciones:
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **continua** en el intervalo $[a,b]$ y por tanto, **integrable**. Sea $\phi$ una función de clase ${\cal C}^1$ en su intervalo de definición, es decir, una función **derivable** con función derivada continua. Supongamos el intervalo de definición de $\phi$ es $[\alpha,\beta]$, es decir $\phi:[\alpha,\beta]\longrightarrow\mathbb{R}$ con $\phi(\alpha)=a$ y $\phi(\beta)=b$ de tal forma que $\phi([\alpha,\beta])=[a,b]$. Entonces, en estas condiciones:
 $$
 \int_a^b f(x)\, dx= \int_\alpha^\beta f(\phi(t))\cdot \phi'(t)\, dt.
 $$
@@ -2241,6 +2241,10 @@ $$
 L & =\displaystyle \int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\cosh t\cdot \frac{1}{2}\cosh t\, dt=\frac{1}{2}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\cosh^2 t\, dt=\frac{1}{2}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})} \left(\frac{\mathrm{e}^t+\mathrm{e}^{-t}}{2}\right)^2\, dt \\ & \displaystyle =\frac{1}{8}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})} (\mathrm{e}^{2t}+\mathrm{e}^{-2t}+2)\, dt=\frac{1}{8}\left[\frac{\mathrm{e}^{2t}}{2}-\frac{\mathrm{e}^{-2t}}{2}+2t\right]_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\\ & =\frac{1}{8}\left(\frac{(4+\sqrt{17})^2}{2}-\frac{1}{2(4+\sqrt{17})^2}+2\ln(4+\sqrt{17})-\left(\frac{(2+\sqrt{5})^2}{2}-\frac{1}{2(2+\sqrt{5})^2}+2\ln(2+\sqrt{5})\right)\right) \\ & = \frac{1}{4} (4\sqrt{17}-2\sqrt{5}+\ln(4+\sqrt{17})-\ln(2+\sqrt{5}))\approx `r round((1/4)*(4*sqrt(17)-2*sqrt(5)+log(4+sqrt(17))-log(2+sqrt(5))),4)`.
 \end{array}
 $$
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5BSqrt%5B1%2B%282x%29%5E2%5D%2C%7Bx%2C1%2C2%7D%5D)
+</l>
 
 </div>
 
@@ -2391,6 +2395,30 @@ Del ejemplo anterior, vemos que es clave hallar los valores donde $f$ se anula e
 
 
 ## Cálculo de áreas de figuras planas
+<div class="example">
+El cálculo de las integrales anteriores en `Wolfram Alpha` se puede ver en los enlaces siguientes:
+
+* $\displaystyle\int_0^\pi \sin x-\cos x \, dx$:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5BSin%5Bx%5D-Cos%5Bx%5D%2C%7Bx%2C0%2CPi%7D%5D)
+</l>
+
+
+* Área roja: $\displaystyle\int_{\frac{\pi}{4}}^\pi \sin x-\cos x \, dx$:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5BSin%5Bx%5D-Cos%5Bx%5D%2C%7Bx%2CPi%2F4%2CPi%7D%5D)
+</l>
+
+* Área azul: $\displaystyle\int_0^{\frac{\pi}{4}} \sin x-\cos x \, dx$:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5BSin%5Bx%5D-Cos%5Bx%5D%2C%7Bx%2C0%2CPi%2F4%7D%5D)
+</l>
+</div>
+
+
+
+
+## Cálculo de áreas de figuras planas
 Generalicemos el problema anterior: imaginemos que tenemos dos funciones $f$ y $g$ definidas en el mismo intervalo $[a,b]$ y queremos hallar el área que hay entre dichas funciones. 
 
 Veamos un ejemplo para ilustrar nuestro problema:
@@ -2522,6 +2550,12 @@ $$
  & \displaystyle\int_0^{\frac{\pi}{2}}2\cos x\,dx +\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} (-2\cos x)\,dx +\int_{\frac{3\pi}{2}}^{2\pi} 2 \cos x\,dx = [2\sin x]_0^{\frac{\pi}{2}}-[2\sin x]_{\frac{\pi}{2}}^{\frac{3\pi}{2}}+[2\sin x]_{\frac{3\pi}{2}}^{2\pi}\\ & =2-(-2-2)+2=8.
 \end{array}
 $$
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5B2+Cos%5Bx%5D%2C%7Bx%2C0%2CPi%2F2%7D%5D-Integrate%5B2+Cos%5Bx%5D%2C%7Bx%2CPi%2F2%2C3Pi%2F2%7D%5D%2BIntegrate%5B2+Cos%5Bx%5D%2C%7Bx%2C3Pi%2F2%2C2Pi%7D%5D)
+</l>
+
+
 </div>
 
 ## Cálculo de áreas de figuras planas
@@ -2583,6 +2617,10 @@ Fijaos que el cono considerado tiene una altura de $h=b$ unidades y un radio de 
 
 Entonces la expresión anterior del volumen del cono puede escribirse como: $V_X =\frac{1}{3}\pi r^2 h$, que es la fórmula conocida del volumen de un cono de altura $h$ y radio de la base $r$.
 
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Pi+Integrate%5B%28m+x%29%5E2%2C%7Bx%2C0%2Cb%7D%5D)
+</l>
 </div>
 
 ## Volúmenes de revolución
@@ -2643,6 +2681,12 @@ $$
 $$
 que es el valor que hemos obtenido $V_Y$.
 
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=2+Pi+Integrate%5Bx+%28m+x%29%2C%7Bx%2C0%2Cb%7D%5D)
+</l>
+
+
 </div>
 
 
@@ -2669,6 +2713,10 @@ Usando que la altura del cono es $h=b$ y el radio de la base, $r=bm=hm$, podemos
 $$
 \mathrm{Área}_X=\pi r h\sqrt{1+\left(\frac{r}{h}\right)^2}=\pi r\sqrt{r^2+h^2}.
 $$
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=2+Pi+Integrate%5Bm+x++Sqrt%5B1%2Bm%5E2%5D%2C%7Bx%2C0%2Cb%7D%5D)
+</l>
 </div>
 
 # Integración impropia
@@ -2927,6 +2975,10 @@ $$
 \int_1^\infty f(x)\, dx=\int_1^\infty \frac{1}{x^p}\, dx =\begin{cases}\frac{1}{p-1}, & \mbox{si }p>1,\\
 \infty, & \mbox{si }p\leq 1.\end{cases}
 $$
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5B1%2Fx%5Ep%2C%7Bx%2C1%2CInfinity%7D%5D)
+</l>
 </div>
 
 ## Criterios de convergencia
@@ -3007,6 +3059,11 @@ Si $n=1$, miramos la convergencia directamente calculando el límite correspondi
 $$
 \int_1^\infty\frac{1}{1+x}\, dx=\lim_{t\to\infty}\int_1^t\frac{1}{1+x}\, dx=\lim_{t\to\infty}\left[\ln (1+x)\right]_1^t =\lim_{t\to\infty}(\ln(1+t)-\ln 2)=\infty.
 $$
+
+El cálculo de la integral en `Wolfram Alpha` para $n=1$ se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5B1%2F%281%2Bx%29%2C%7Bx%2C1%2CInfinity%7D%5D+)
+</l>
 </div>
 
 
@@ -3064,6 +3121,11 @@ En un ejemplo anterior vimos que la integral impropia $\displaystyle\int_a^\inft
 Por tanto, la integral impropia que nos ocupa $\displaystyle \int_a^\infty\frac{p_n(x)}{q_m(x)}\, dx$ será convergente si la diferencia de grados entre el denominador y el numerador es mayor o igual que $2$, es decir $m-n\geq 2$.
 
 Por ejemplo, podemos afirmar que la integral impropia siguiente $\displaystyle \int_1^\infty \frac{x^3+x^2+x+1}{x^m+1}\,dx$ es convergente para todo valor de $m\geq 5$ y si $m\leq 4$, será divergente.
+
+El cálculo de la integral en `Wolfram Alpha` para $m=5$ se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5B%28x%5E3%2Bx%5E2%2Bx%2B1%29%2F%281%2Bx%5E5%29%2C%7Bx%2C1%2CInfinity%7D%5D+)
+</l>
 </div>
 
 ## Criterios de convergencia
@@ -3209,6 +3271,11 @@ $$
 En resumen, dado un $\epsilon >0$, hemos hallado un $b>1$ tal que si $b_1,b_2\geq b$, entonces $\displaystyle\left|\int_{b_1}^{b_2}\sin(x^2)\,dx\right|<\epsilon$.
 
 Esta última condición es el apartado 4. del criterio de Cauchy. Concluimos, por tanto, que la integral impropia $\displaystyle\int_1^\infty \sin(x^2)\,dx$ es convergente.
+
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5BSin%5Bx%5E2%5D%2C%7Bx%2C1%2CInfinity%7D%5D+)
+</l>
 </div>
 
 
@@ -3353,6 +3420,11 @@ $$
 \lim_{t\to\infty}\int_{\ln 2}^{\ln t}\frac{1}{u^p}\, du =\lim_{s\to\infty}\int_{\ln 2}^s \frac{1}{u^p}\, du.
 $$
 La integral impropia $\displaystyle\int_{\ln 2}^\infty\frac{1}{u^p}\, du$ ya fue estudiada anteriormente y vimos que era convergente si, y sólo si, $p>1$. Por tanto, la serie anterior será convergente si, y sólo si, $p>1$.
+
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5B1%2F%28x+Log%5Bx%5D%5Ep%29%2C%7Bx%2C2%2CInfinity%7D%5D+)
+</l>
 </div>
 
 ## Criterios de convergencia
@@ -3436,6 +3508,9 @@ $$
 0\leq |b_n|=\left|\int_{n\pi}^{(n+1)\pi}\frac{\sin x}{x}\,dx\right|\leq \int_{n\pi}^{(n+1)\pi}\frac{1}{x}\, dx =[\ln x]_{n\pi}^{(n+1)\pi}=\ln ((n+1)\pi)-\ln(n\pi)=\ln\left(\frac{n+1}{n}\right).
 $$
 Como $\displaystyle\lim_{n\to\infty}\ln\left(\frac{n+1}{n}\right)=0$, por el criterio del sandwitz, $\displaystyle\lim_{n\to\infty}|b_n|=0$.
+
+
+
 </div>
 
 ## Criterios de convergencia
@@ -3461,4 +3536,320 @@ $$
 ## Criterios de convergencia
 <div class="example">
 Por el criterio de Leibnitz de series alternadas, la serie $\displaystyle \sum_{n=1}^\infty b_n$ es convergente y por el criterio de convergencia de Leitnitz, la integral impropia $\displaystyle\int_1^\infty \frac{\sin x}{x}\, dx$ también será convergente.
+
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5BSin%5Bx%5D%2Fx%2C%7Bx%2C1%2CInfinity%7D%5D)
+</l>
+</div>
+
+
+## Criterios de convergencia
+<l class="prop">Teorema. Criterio de Abel-Dirichlet.</l>
+Sea $g:[a,\infty)\longrightarrow\mathbb{R}$ una función con derivada continua a trozos donde suponemos que la función $g'$ es absolutamente integrable en $[a,\infty)$. Además suponemos que $\displaystyle\lim_{x\to\infty} g(x)=0$. 
+
+Sea $s:[a,\infty)\longrightarrow\mathbb{R}$ una función integrable en todo intervalo de la forma $[a,t]$ con $t>a$. Sea $S$ una primitiva de la función $s$, por ejemplo $\displaystyle S(t)=\int_a^t s(x)\, dx$. Suponemos que la función $S(t)$ está acotada en el intervalo $[a,\infty)$.
+
+Bajo las condiciones anteriores, la integral impropia $\displaystyle\int_a^\infty g(x)\cdot s(x)\, dx$ es convergente.
+
+## Criterios de convergencia
+<div class="dem">
+**Demostración** 
+
+La idea de la demostración es aplicar el apartado 4. del criterio de Cauchy de convergencia.
+
+Supongamos que $|S(t)|\leq C$ para todo $t\in [a,\infty)$. 
+
+Sea $[b_1,b_2]$ un intervalo cerrado con $b_2>b_1>a$. Integrando por partes la función $g(x)\cdot s(x)$, 
+
+* con $u=g(x)$, y, por tanto, $du=g'(x)\,dx$ y
+* $dv=s(x)\,dx$ y, por tanto, $v=S(x)$, obtenemos:
+$$
+\begin{array}{rl}
+\displaystyle\int_{b_1}^{b_2} g(x)\cdot s(x)\, dx & =  \displaystyle[g(x)\cdot S(x)]_{b_1}^{b_2}-\int_{b_1}^{b_2} g'(x)\cdot S(x)\, dx \\ &  =\displaystyle g(b_2)\cdot S(b_2)-g(b_1)\cdot S(b_1)-\int_{b_1}^{b_2} g'(x)\cdot S(x)\, dx.
+\end{array}
+$$
+
+</div>
+
+
+## Criterios de convergencia
+<div class="dem">
+Veamos a continuación que los términos anteriores tienden a cero cuando $b_1,b_2\to \infty$:
+
+* $|g(b_2)\cdot S(b_2)-g(b_1)\cdot S(b_1)|\leq 2C\max{|g(b_1)|,|g(b_2)|}$.
+Como $\displaystyle \lim_{x\to\infty} g(x)=0$, tendremos que $\displaystyle\lim_{b_1,b_2\to\infty} 2C\max{|g(b_1)|,|g(b_2)|}=0$ y, por el criterio del sandwitz, $\displaystyle\lim_{b_1,b_2\to\infty} |g(b_2)\cdot S(b_2)-g(b_1)\cdot S(b_1)|=0$.
+
+* $\displaystyle\left|\int_{b_1}^{b_2} g'(x)\cdot S(x)\, dx\right|\leq C\cdot \int_{b_1}^{b_2} |g'(x)|\, dx$ que también tiende a cero ya que la función $g'$ es absolutamente integrable.
+
+Una vez establecidas las bases de la demostración, pasemos a la formalización de la misma.
+
+
+</div>
+
+
+## Criterios de convergencia
+<div class="dem">
+Sea $\epsilon >0$. Como $g'$ es absolutamente integrable, aplicando el apartado 4. del criterio de Cauchy, tenemos que existe un valor $b'>a$ tal que si $b_1,b_2\geq b'$, entonces $\displaystyle \int_{b_1}^{b_2} |g'(x)|\, dx<\frac{\epsilon}{2C}$.
+
+Como $\displaystyle\lim_{b_1,b_2\to\infty} |g(b_2)\cdot S(b_2)-g(b_1)\cdot S(b_1)|=0$, dado el valor $\epsilon >0$ anterior, existe un valor $b''$  tal que si $b_1,b_2\geq b''$, $|g(b_2)\cdot S(b_2)-g(b_1)\cdot S(b_1)|<\frac{\epsilon}{2}$.
+
+Sea $b=\max\{b',b''\}>a$. Sean $b_1,b_2\geq b$. Usando los cálculos anteriores, tenemos que:
+$$
+\left|\int_{b_1}^{b_2} g(x)\cdot s(x)\, dx\right|\leq |g(b_2)\cdot S(b_2)-g(b_1)\cdot S(b_1)|+C\cdot \left|\int_{b_1}^{b_2} |g'(x)|\, dx \right|<\frac{\epsilon}{2}+C\cdot\frac{\epsilon}{2C}=\epsilon.
+$$
+En resumen, dado un valor $\epsilon >0$, hemos sido capaces de hallar un $b>a$ tal que si $b_1,b_2\geq b$ entonces $\displaystyle \left|\int_{b_1}^{b_2} g(x)\cdot s(x)\, dx\right|<\epsilon$. La condición anterior es el apartado 4. del criterio de Cauchy de convergencia. Concluimos, por tanto, que la integral impropia $\displaystyle\int_a^\infty g(x)\cdot s(x)\, dx$ es convergente.
+</div>
+
+## Criterios de convergencia
+<div class="example">
+**Ejemplo**
+
+Estudiemos el carácter de la integral impropia siguiente: $\displaystyle\int_1^\infty \frac{x}{1+x^2}\sin(2x)\, dx$.
+
+Para ello, vamos a aplicar el criterio de Abel-Dirichlet con $g(x)=\frac{x}{1+x^2}$ y $s(x)=\sin(2x)$. Veamos que las funciones anteriores verifican las hipótesis del teorema anterior:
+
+* $g'(x)=\frac{1+x^2-2x^2}{(1+x^2)^2}=\frac{1-x^2}{(1+x^2)^2}$. Dicha función es absolutamente integrable ya que si aplicamos el criterio de comparación por cociente considerando la función $\frac{1}{x^2}$ obtenemos:
+$$
+\lim_{x\to\infty}\frac{\frac{1-x^2}{(1+x^2)^2}}{\frac{1}{x^2}}=\lim_{x\to\infty}\frac{x^2-x^4}{(1+x^2)^2}=-1,
+$$
+y por tanto, la integral impropia $\displaystyle\int_1^\infty g'(x)\, dx=\int_1^\infty \frac{1-x^2}{(1+x^2)^2}\, dx$ y la integral impropia $\displaystyle\int_1^\infty \frac{1}{x^2}\, dx$ tienen el mismo carácter. 
+</div>
+
+
+## Criterios de convergencia
+<div class="example">
+En un ejemplo anterior ya vimos que la integral impropia $\displaystyle\int_1^\infty \frac{1}{x^2}\, dx$ era convergente. Por tanto, la integral impropia $\displaystyle\int_1^\infty g'(x)\, dx=\int_1^\infty \frac{1-x^2}{(1+x^2)^2}\, dx$ también lo será.
+
+* Una primitiva de la función $s(x)=\sin (2x)$ es la siguiente: $S(x)=-\frac{1}{2}\cos (2x)$ ya que $S'(x)=-\frac{1}{2}(-2\sin(2x))=\sin(2x)=s(x)$. Dicha primitiva está acotada por $C=\frac{1}{2}$ ya que: $|S(x)|\leq\frac{1}{2}=C$.
+
+Usando el criterio de Abel-Dirichlet podemos afirmar que la integral impropia $\displaystyle\int_1^\infty \frac{x}{1+x^2}\sin(2x)\, dx$ es convergente.
+
+
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5B%28x%2F%281%2Bx%5E2%29%29+Sin%5B2x%5D%2C%7Bx%2C1%2CInfinity%7D%5D)
+</l>
+</div>
+
+## Técnicas de integración en la integración impropia
+Los dos teoremas siguientes nos dicen que la técnica de integración por cambio de variable y por partes siguen siendo válidas en el caso de la integración impropia.
+
+## Integración por cambio de variable en una integral impropia
+
+<l class="prop">Teorema. Cambio de variable en una integral impropia.</l>
+Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función **acotada** en el intervalo $[a,\infty)$ e **integrable** en todo intervalo de la forma $[a,t]$ con $t>a$. Sea $\phi$ una función de clase ${\cal C}^1$ en su intervalo de definición, es decir, una función **derivable** con función derivada continua. Supongamos el intervalo de definición de $\phi$ es $[\alpha,\beta]$, es decir $\phi:[\alpha,\beta]\longrightarrow\mathbb{R}$ con $\phi(\alpha)=a$ y $\displaystyle\lim_{s\to\beta}\phi(s)=\infty$ de tal forma que $\phi([\alpha,\beta])=[a,\infty)$. Entonces, en estas condiciones:
+$$
+\int_a^\infty f(x)\, dx= \int_\alpha^\beta f(\phi(t))\cdot \phi'(t)\, dt,
+$$
+con la condición de que al menos una de las dos integrales anteriores exista.
+
+## Integración por cambio de variable en una integral impropia
+<div class="example">
+**Ejemplo**
+
+Consideremos la siguiente integral impropia $\displaystyle\int_1^\infty \frac{x}{1+x^4}\, dx$.
+
+Para resolverla, nos planteamos el siguiente cambio de variable $t=x^2$:
+
+* la relación entre los diferenciales es la siguiente: $dt=2x\,dx$, de donde $x\,dx=\frac{1}{2}\,dt$.
+* los extremos de integración en la variable $t$ serán los siguientes:
+  * para $x=1$, $t=1^2=1$ y 
+  * para $x\to\infty$, $t=x^2\to \infty$.
+
+
+</div>
+
+## Integración por cambio de variable en una integral impropia
+<div class="example">
+La integral impropia será la siguiente en la nueva variable $t$:
+$$
+\begin{array}{rl}
+\displaystyle\int_1^\infty \frac{x}{1+x^4}\, dx & =\displaystyle\frac{1}{2}\int_1^\infty \frac{1}{1+t^2}\, dt=\frac{1}{2}\lim_{s\to\infty}\int_1^s \frac{1}{1+t^2}\, dt =\frac{1}{2}\lim_{s\to\infty}[\arctan t]_1^s \\ & \displaystyle =\frac{1}{2}\lim_{s\to\infty}(\arctan s-\arctan 1)=\frac{1}{2}\left(\frac{\pi}{2}-\frac{\pi}{4}\right)=\frac{\pi}{8}.
+\end{array}
+$$
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5Bx%2F%281%2Bx%5E4%29%2C%7Bx%2C1%2CInfinity%7D%5D)
+</l>
+
+</div>
+
+<l class="observ">Observación.</l>
+A partir del ejemplo anterior, podemos observar que el valor de $\beta$ en el teorema anterior puede "ser" $\infty$.
+
+
+## Integración por partes en una integral impropia
+<l class="prop">Teorema. Integración por partes en una integral impropia.</l>
+Sean $u,v:[a,\infty)\longrightarrow\mathbb{R}$ dos funciones **acotadas** y de clase ${\cal C^1}$ en $[a,\infty)$. Entonces:
+$$
+\int_a^\infty u(x)\cdot v'(x)\, dx=\lim_{t\to\infty}u(t)\cdot v(t)-u(a)\cdot v(a)-\int_a^\infty u'(x)\cdot v(x)\, dx,
+$$
+con el convenio de que si existen dos de los tres límites anteriores, existe el otro y se calcula según la expresión anterior.
+
+
+## Integración por partes en una integral impropia
+<div class="example">
+**Ejemplo**
+
+Vamos a calcular la siguiente integral impropia $\displaystyle\int_0^\infty x^3\cdot\mathrm{e}^{-x^2}\, dx$.
+
+Para calcularla, la separaremos de la forma siguiente:
+
+* $u=x^2$ y, por tanto, $du=2x\, dx$,
+* $dv=x\cdot\mathrm{e}^{-x^2}\,dx$ y, por tanto, $v=\int x\cdot\mathrm{e}^{-x^2}\,dx=-\frac{1}{2}\mathrm{e}^{-x^2}$.
+
+Si aplicamos la técnica de integración por partes, obtenemos:
+$$
+\int_0^\infty x^3\cdot\mathrm{e}^{-x^2}\, dx =-\frac{1}{2}\lim_{t\to\infty}t^2\cdot \mathrm{e}^{-t^2}+\frac{1}{2}\cdot 0^2\cdot \mathrm{e}^{0^2}+\int_0^\infty x\cdot \mathrm{e}^{-x^2}\, dx.
+$$
+A continuación calculemos el límite $\displaystyle \lim_{t\to\infty}t^2\cdot \mathrm{e}^{-t^2}$ usando la Regla de l'Hôpital:
+$$
+\lim_{t\to\infty}t^2\cdot \mathrm{e}^{-t^2}=\lim_{t\to\infty}\frac{t^2}{\mathrm{e}^{t^2}}=\lim_{t\to\infty}\frac{2t}{2t\cdot \mathrm{e}^{t^2}}=\lim_{t\to\infty}\frac{1}{\mathrm{e}^{t^2}}=\frac{1}{\infty}=0.
+$$
+</div>
+
+## Integración por partes en una integral impropia
+<div class="example">
+
+
+La integral que nos quedaba se puede calcular de la forma siguiente usando que la función $-\frac{1}{2}\mathrm{e}^{-x^2}$ es una primitiva de $x\cdot \mathrm{e}^{-x^2}$:
+$$
+\int_0^\infty x\cdot \mathrm{e}^{-x^2}\, dx =\lim_{t\to\infty}\int_0^t x\cdot \mathrm{e}^{-x^2}\, dx=\lim_{t\to\infty}\left[-\frac{1}{2}\mathrm{e}^{-x^2}\right]_0^t =-\frac{1}{2}\lim_{t\to\infty}(\mathrm{e}^{-t^2}-1)=\frac{1}{2}.
+$$
+El valor de la integral impropia inicial, será, por tanto:
+$$
+\int_0^\infty x^3\cdot\mathrm{e}^{-x^2}\, dx =\frac{1}{2}.
+$$
+
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5Bx%5E3+E%5E%28-x%5E2%29%2C%7Bx%2C0%2CInfinity%7D%5D)
+</l>
+</div>
+
+## Integrales impropias de segunda especie
+Recordemos la definición de una integral impropia de segunda especie:
+
+<l class="definition">Definición de integral impropia de segunda especie.</l>
+Sea $f:(a,b]:\longrightarrow\mathbb{R}$ una función **integrable** en todo intervalo de la forma $[t,b]$, con $a<t\leq b$. Si existe el límite siguiente $\displaystyle\lim_{t\to a^+}\int_t^b f(x)\, dx$, diremos que la **integral impropia** $\displaystyle\int_a^b f(x)\, dx$ existe. Si el límite anterior es finito de valor $L$, diremos que la **integral impropia** es **convergente** y escribiremos $\displaystyle\int_a^b f(x)\, dx=L$. En caso en que la integral no converja, diremos que es **divergente**.
+
+
+## Integrales impropias de segunda especie
+<l class="observ">Observación.</l>
+Tiene sentido considerar la integral impropia de segunda especie cuando la función $f$ tiene una asíntota vertical en el extremo de la izquierda $x=a$. Si tuviese una asíntota vertical en el extremo derecho $x=b$, podríamos definir de manera parecida la integral impropia de segunda especie con el límite siguiente: $\displaystyle\lim_{t\to b^-}\int_a^t f(x)\, dx$
+
+
+## Integrales impropias de segunda especie
+<div class="example">
+**Ejemplo**
+
+Estudiemos la convergencia de la integral de segunda especie $\displaystyle\int_0^1\frac{1}{x^p}\, dx$ con $p>0$. 
+
+Fijémonos que en este caso la función $\frac{1}{x^p}$ tiene una asíntota vertical en $x=0$.
+
+El límite a calcular es el siguiente:
+$$
+\lim_{t\to 0^+}\int_t^1\frac{1}{x^p}\, dx=\lim_{t\to 0^+}\left[\frac{x^{1-p}}{(1-p)}\right]_t^1 =\frac{1}{1-p}\left(\lim_{t\to 0^+} x^{1-p}-1\right)=\begin{cases} \frac{1}{p-1}, & \mbox{si }0<p<1, \\
+\infty, & \mbox{si } p>1.\end{cases}
+$$
+Falta estudiar el caso $p=1$:
+$$
+\lim_{t\to 0^+}\int_t^1\frac{1}{x}\, dx=\lim_{t\to 0^+}[\ln x]_t^1 =\lim_{t\to 0^+}(-\ln t)=\infty.
+$$
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5B1%2Fx%5Ep%2C%7Bx%2C0%2C1%7D%5D)
+</l>
+</div>
+
+## Integrales impropias de tercera especie
+Para entender el concepto de **integral impropia de tercera especie** necesitamos introducir el concepto de **punto singular**:
+
+<l class="definition">Definición de punto singular.</l>
+Sea $f$ una función definida en un intervalo $(a,b)$ donde admitimos que $a$ pueda ser un valor real o $-\infty$ y $b$ pueda ser un valor real o $b=\infty$. Diremos que un punto $c\in (a,b)$ es un **punto singular** de la función $f$ en los casos siguientes:
+
+* $c=-\infty$ o $c=\infty$.
+* si $f$ no es **integrable en el sentido ordinario** en ningún entorno de $c$, por ejemplo si $f$ tiene una **asíntota vertical** en $x=c$.
+* si $c$ coincide en alguno de los extremos $a$ o $b$ y $f$ no es integrable en el sentido ordinario en la intersección del intervalo $(a,b)$ con ningún entorno de $c$, por ejemplo, si $f$ tiene una **asíntota vertical** en $x=c$.
+
+## Integrales impropias de tercera especie
+<l class="definition">Definición de integral impropia de tercera especie.</l>
+Sea $f:(a,b)\longrightarrow\mathrm{R}$ una función real de variable real donde admitimos que $a$ pueda ser un valor real o $-\infty$ y $b$ pueda ser un valor real o $b=\infty$. Supongamos que $f$ tiene un número finito de **puntos singulares** en su dominio de definición $(a,b)$, los llamamos $c_1 < c_2<\cdots < c_n$. Si $f$ es continua a trozos en el conjunto $(a,b)\setminus\{c_1,\ldots,c_n\}$ diremos que la integral $\displaystyle\int_a^b f(x)\,dx$ es **impropia de tercera especie**.
+ 
+
+## Integrales impropias de tercera especie
+Para estudiar la **convergencia** de una integral **impropia de tercera especie**, hemos de calcular para cada intervalo $(c_i,c_{i+1})$ los límites siguientes:
+$$
+\lim_{t\to c_i^+}\int_t^{p_i}f(x)\, dx,\quad \lim_{t\to c_{i+1}^-}\int_{p_i}^t f(x)\, dx,
+$$
+donde $p_i\in (c_i,c_{i+1})$ es un valor del interior del intervalo $(c_i,c_{i+1})$, por ejemplo, si $c_i$ y $c_{i+1}$ son valores reales, su punto medio, $p_i=\frac{c_i+c_{i+1}}{2}$, y si $a\neq c_1$, hay que calcular aparte el límite $\displaystyle \displaystyle \lim_{t\to c_1-}\int_a^t f(x)\, dx$ y si $c_n\neq b$, el límite $\displaystyle \lim_{t\to c_n+}\int_t^b f(x)\, dx$.
+
+
+## Integrales impropias de tercera especie
+
+Si todos los límites anteriores existen y son finitos, diremos que la **integral impropia de tercera especie** converge y su valor es:
+$$
+\int_a^b f(x)\, dx = \int_a^{c_1}f(x)\, dx+\sum_{i=1}^{n-1}\int_{c_i}^{c_{i+1}}f(x)\, dx+\int_{c_n}^b f(x)\, dx,
+$$
+
+## Integrales impropias de tercera especie
+donde 
+$$
+\begin{array}{rl}
+\displaystyle\int_a^{c_1}f(x)\, dx & =\displaystyle \lim_{t\to c_1-}\int_a^t f(x)\, dx, \\
+\displaystyle\int_{c_i}^{c_{i+1}}f(x)\, dx & = \displaystyle \lim_{t\to c_i^+}\int_t^{p_i}f(x)\, dx+\lim_{t\to c_{i+1}^-}\int_{p_i}^t f(x)\, dx, \\
+\displaystyle\int_{c_n}^{b}f(x)\, dx & =\displaystyle \lim_{t\to c_n+}\int_t^b f(x)\, dx.
+\end{array}
+$$
+
+## Integrales impropias de tercera especie
+<div class="example">
+**Ejemplo**
+
+Nos planteamos estudiar la convergencia de la integral impropia $\displaystyle\int_0^\infty\frac{\cos x}{\sqrt{x}}\, dx$.
+
+En primer lugar, observamos que hay dos puntos singulares: $c_1 =0$ y $c_2=\infty$. Consideramos $p_1=\frac{\pi}{2}\in (0,\infty)$ un punto dentro del intervalo $(c_1,c_2)$.
+
+Para estudiar la convergencia de la integral impropia de tercera especie, hemos de estudiar los límites siguientes:
+$$
+\lim_{t\to 0^+}\int_t^{\frac{\pi}{2}}\frac{\cos x}{\sqrt{x}}\, dx,\quad \lim_{t\to \infty}\int_{\frac{\pi}{2}}^\infty\frac{\cos x}{\sqrt{x}}\, dx.
+$$
+Para resolver el primer límite usamos la integración por partes con:
+
+* $u=\cos x$ y, por tanto, $du=-\sin x\, dx$ y
+* $dv=\frac{1}{\sqrt{x}}\,dx=x^{-\frac{1}{2}}\, dx$ y, por tanto, $v=2\cdot x^{\frac{1}{2}}=2\sqrt{x}$.
+
+
+</div>
+
+
+## Integrales impropias de tercera especie
+<div class="example">
+El primer límite será:
+$$
+\lim_{t\to 0^+}\int_t^{\frac{\pi}{2}}\frac{\cos x}{\sqrt{x}}\, dx =\lim_{t\to 0^+} \left([2\sqrt{x}\cos x]_t^{\frac{\pi}{2}}+2\int_t^{\frac{\pi}{2}}\sqrt{x}\sin x\, dx\right)=2\int_0^{\frac{\pi}{2}}\sqrt{x}\sin x \, dx.
+$$
+La integral anterior ya no es impropia y existe, por tanto, el primer límite existe y tiene un valor real.
+
+Para ver si el segundo límite existe, aplicamos el criterio de Abel-Dirichlet con:
+
+* $g(x)=\frac{1}{\sqrt{x}}$. El valor de $g'(x)$ vale: $g'(x)=-\frac{1}{2}\cdot x^{-\frac{3}{2}}$ y en un ejemplo anterior vimos que la integral impropia de primera especie $\displaystyle\int_{\frac{\pi}{2}}^\infty |g'(x)|\, dx=\frac{1}{2}\int_{\frac{\pi}{2}}^\infty\frac{1}{x^{\frac{3}{2}}}\, dx$ era convergente.
+
+* $s(x)=\cos x$. Una primitiva de la función anterior es $S(x)=\sin x$ que está acotada por $1$.
+
+Por el criterio de Abel-Dirichlet, el segundo límite existe y, por tanto, concluimos que la integral impropia de tercera especie $\displaystyle\int_0^\infty\frac{\cos x}{\sqrt{x}}\, dx$ es convergente.
+
+</div>
+
+
+## Integrales impropias de tercera especie
+<div class="example">
+
+El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5BCos%5Bx%5D%2FSqrt%5Bx%5D%2C%7Bx%2C0%2CInfinity%7D%5D)
+</l>
+donde vemos que el valor de la integral es $\sqrt{\frac{\pi}{2}}$.
+
 </div>
