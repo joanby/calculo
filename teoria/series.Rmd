@@ -171,6 +171,10 @@ Una serie convergente que no sea absolutamente convergente recibe le nombre de *
 ## Series de términos positivos
 
 
+## Primer criterio de comparación
+
+
+
 
 
 
