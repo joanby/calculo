@@ -1,0 +1,293 @@
+---
+title: "Tema 7 - Cálculo de Primitivas"
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ''
+output: 
+  ioslides_presentation:
+    widescreen: true
+    css: Mery_style.css
+    logo: Images/calculus.gif
+    fig_caption: yes
+---
+<script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
+#reticulate::py_install("sympy")
+```
+
+
+# Introducción
+
+## Introducción al cálculo de primitivas
+En el tema anterior, vimos que para calcular la **integral definida** de una función $f$ integrable en un cierto intervalo $[a,b]$, es fundamental saber calcular una **primitiva** $F$ de dicha función ya que dicha integral, usando la **regla de Barrow**, se puede escribir de la siguiente forma:
+$$
+\int_a^b f(x)\, dx = F(b)-F(a).
+$$
+
+En este tema, vamos a dar las técnicas para calcular **primitivas** de las funciones más usuales como pueden ser funciones **polinómicas**, **racionales**, **trigonométricas**, funciones definidas como la raíz cuadrada de un polinomio hasta de grado 2, etc.
+
+## Introducción al cálculo de primitivas
+Recordad que dada una función $f:[a,b]\longrightarrow\mathbb{R}$ definida en un intervalo $[a,b]$, una **primitiva** es una función $F:[a,b]\longrightarrow\mathbb{R}$ definida en el mismo intervalo tal que $F'(x)=f(x)$. 
+
+Ésta es la razón que la **primitiva** de una función también se llame **antiderivada** ya que hallar **primitivas** es la operación **inversa** respecto a la operación de **derivar**. Si **derivar** es equivalente a dar un paso hacia delante, hallar una **primitiva** es dar un paso hacia atrás.
+
+Recordemos que, dada una función $f$, existen una multitud de **primitivas** de la misma: dada una **primitiva** $F(x)$ de la misma, la función $F(x)+C$ donde $C$ es una constante cualquiera es también otra primitiva ya que si $F'(x)=f(x)$, también se cumple que $(F(x)+C)'=f(x)$.
+
+## Introducción al cálculo de primitivas
+A hallar una **primitiva** de una función $f$ también se conoce como hallar una **integral indefinida** de dicha función y lo denotaremos por:
+$$
+\int f(x)\, dx = F(x)+C,
+$$
+sin escribir los extremos de integración y añadiendo una constante cualquiera $C$ para poder de manifiesto que, como hemos indicado antes, existen una multitud de primitivas.
+
+## Introducción al cálculo de primitivas
+Supongamos que para una función $f$ particular, nos dan una **primitiva** $F$. Es decir $F'(x)=f(x)$ o $\displaystyle\int f(x)\, dx=F(x)+C$. 
+
+Entonces, si en lugar de considerar la función $f$ consideramos la función siguiente $f(g(x))\cdot g'(x)$, donde $g(x)$ es una función cualquiera, tenemos que una **primitiva** de dicha función es $(F\circ g)(x)=F(g(x))$ ya que usando la regla de la cadena 
+$$
+(F\circ g)'(x)=F'(g(x))\cdot g'(x)=f(g(x))\cdot g'(x),
+$$
+como queríamos ver.
+
+## Introducción al cálculo de primitivas
+Es decir, si $\displaystyle\int f(x)\,dx =F(x)+C$, entonces $\displaystyle\int f(g(x))\cdot g'(x)\,dx = F(g(x))+C$.
+
+En resumen, si somos capaces de hallar una **primitiva** para una cierta función $f$, somos capaces de hallar una **primitiva** para toda la familia de funciones $f(g(x))\cdot g'(x)$, donde $g(x)$ es una función cualquiera.
+
+Hagamos un ejemplo ilustrativo.
+
+## Introducción al cálculo de primitivas
+<div class="example">
+**Ejemplo**
+
+En el capítulo anterior, vimos que una primitiva de la función monomio $f(x)=x^n$, con $n\geq 1$ natural era $F(x)=\frac{x^{n+1}}{n+1}+C$:
+$$
+\int x^n\, dx = \frac{x^{n+1}}{n+1}+C.
+$$
+
+La comprobación es muy fácil.
+
+Usando lo que hemos dicho anteriormente, tenemos que una primitiva de la función $g(x)^n\cdot g'(x)$, donde $g$ es una función cualquiera, es $\frac{g(x)^{n+1}}{n+1}+C$:
+$$
+\int g(x)^n\cdot g'(x)\, dx = \frac{g(x)^{n+1}}{n+1}+C.
+$$
+</div>
+
+## Introducción al cálculo de primitivas
+<div class="example">
+Por ejemplo, si consideramos $g(x)=\sin x$, podemos escribir: $\displaystyle \int \sin^n x\cdot \cos x\, dx =\frac{\sin^{n+1}x}{n+1}+C$.
+
+Si consideramos $g(x)=4x^2+2$, podemos escribir: $\displaystyle \int (4x+2)^n \cdot 4\, dx =\frac{(4x+2)^{n+1}}{n+1}+C$.
+
+Si consideramos $g(x)=\ln x$, podemos escribir: $\displaystyle \int \frac{(\ln x)^n}{x} \, dx =\frac{(\ln x)^{n+1}}{n+1}+C$.
+
+Y así sucesivamente, eligiendo la función $g$ que queramos.
+</div>
+
+En resumen, cualquier fórmula de cálculo de **primitivas** de una cierta función $f$, equivale a tener un conjunto de fórmulas de cálculo de **primitivas** de la familia de funciones $f(g(x))\cdot g'(x)$, para cualquier función $g$.
+
+## Introducción al cálculo de primitivas
+Hemos de pensar que para la mayoría de las funciones no se puede hallar una **primitiva** usando las técnicas explicadas en este capítulo. 
+
+Es decir, dada una función $f:[a,b]\longrightarrow\mathbb{R}$ **integrable**, una función **primitiva** sería 
+$$
+F(x)=\int_a^x f(t)\, dt.
+$$
+El problema es que, en general, no podemos hallar una expresión de $F(x)$ en términos de funciones conocidas.
+Se tienen que usar técnicas de **análisis numérico** para hallar la integral definida correspondiente.
+
+# Integrales inmediatas
+
+## Integrales inmediatas
+Vamos a dar una lista de **integrales indefinidas** que serán la base para el cálculo de las demás. 
+
+Les llamaremos **integrales inmediatas** ya que para ver su veracidad, basta derivar la expresión correspondiente y ver que el resultado de la derivada es la función que integramos.
+
+En cada fila, vamos a considerar aparte de la **integral inmediata** correspondiente, la versión de dicha integral usando una función cualquiera $g(x)$ tal como hemos comentado en la introducción.
+
+## Integrales inmediatas
+<div class="center">
+|| || 
+|:---:|:---:|
+|$\displaystyle\int x^n\, dx = \frac{x^{n+1}}{n+1}+C,\ n\neq -1$ | $\displaystyle\int g(x)^n\cdot g'(x)\, dx = \frac{g(x)^{n+1}}{n+1}+C,\ n\neq -1$
+|$\displaystyle\int \frac{1}{x}\, dx =\ln |x|+C$|$\displaystyle\int \frac{g'(x)}{g(x)}\, dx =\ln |g(x)|+C$|
+|$\displaystyle \int a^x dx = {a^x \over \ln a} + C, \; a> 0,\; a\not = 1$|$\displaystyle \int a^{g(x)}\cdot g'(x) dx = {a^{g(x)} \over \ln a} + C, \; a> 0,\; a\not = 1$|
+|$\displaystyle \int e^x dx = e^x + C$|$\displaystyle \int e^{g(x)}\cdot g'(x) dx = e^{g(x)} + C$|
+|$\displaystyle \int \sin x dx = -\cos x +C$|$\displaystyle \int \sin (g(x))\cdot g'(x) dx = -\cos (g(x)) +C$|
+</div>
+
+## Integrales inmediatas
+<div class="center">
+|| || 
+|:---:|:---:|
+|$\displaystyle \int \cos x dx = \sin x + C$|$\displaystyle \int \cos (g(x))\cdot g'(x) dx = \sin (g(x)) + C$|
+|$\displaystyle \int {dx \over \cos^2 x } = \tan x + C$|$\displaystyle \int {g'(x) dx \over \cos^2 (g(x)) } = \tan (g(x)) + C$|
+|$\displaystyle \int {dx \over\sin^2 x } = -\cot x + C$|$\displaystyle \int {g'(x)dx \over\sin^2 (g(x)) } = -\cot (g(x)) + C$|
+|$\displaystyle \int {dx \over 1+x^2} = \arctan x + C$|$\displaystyle \int {g'(x)dx \over 1+g(x)^2} = \arctan (g(x)) + C$|
+|$\displaystyle \int {dx \over \sqrt{1-x^2} }= \arcsin x + C$|$\displaystyle \int {g'(x)dx \over \sqrt{1-g(x)^2} }= \arcsin (g(x)) + C$|
+</div>
+
+# Integración de funciones racionales
+
+## Introducción
+En esta sección vamos a aprender técnicas para calcular **integrales indefinidas** de funciones racionales, es decir, funciones del tipo $\frac{P(x)}{Q(x)}$ donde $P(x)$ y $Q(x)$ son polinomios a coeficientes reales.
+
+Distinguiremos dos casos:
+
+* Supongamos que el grado del polinomio $P(x)$ es mayor o igual que el grado del polinomio $Q(x)$: $\mathrm{grado}(P)\geq \mathrm{grado}(Q)$.
+
+En este caso, hemos de dividir el polinomio $P(x)$ entre el polinomio $Q(x)$ obteniendo un cociente $C(x)$ y un resto $R(x)$, donde $\mathrm{grado}(R) < \mathrm{grado}(Q)$. 
+
+## Caso en que el grado del numerador es mayor o igual que el del denominador
+La relación entre los cuatro polinomios anteriores es la siguiente:
+$$
+P(x)=Q(x)\cdot C(x)+R(x).
+$$
+Si dividimos la expresión anterior por el polinomio $Q(x)$, obtenemos:
+$$
+\frac{P(x)}{Q(x)}=C(x)+\frac{R(x)}{Q(x)},
+$$
+y podemos escribir la integral indefinida de la función racional $\frac{P(x)}{Q(x)}$ como:
+$$
+\int \frac{P(x)}{Q(x)}\, dx=\int C(x)\, dx+\int \frac{R(x)}{Q(x)}\, dx.
+$$
+
+## Caso en que el grado del numerador es mayor o igual que el del denominador
+La integral indefinida $\displaystyle\int C(x)\, dx$ es sencilla de calcular ya que se trata de la integral indefinida de un polinomio que se puede escribir como la suma de integrales de monomios de la forma $\displaystyle\int x^k\, dx$ multiplicadas por constantes. Las integrales $\displaystyle \int x^k\, dx$ valen $\frac{x^{k+1}}{k+1}+C$ como está indicado en la tabla de integrales inmediatas.
+
+
+## Caso en que el grado del numerador es mayor o igual que el del denominador
+La integral restante $\displaystyle \int \frac{R(x)}{Q(x)}\, dx$ se trata de una integral racional con la particularidad de que el grado del denominador es menor que el grado del numerado que sería el segundo caso a considerar.
+
+En resumen, dada una integral racional, siempre podemos suponer que el grado del denominador es menor estricto que el grado del numerador ya que, en caso contrario, realizaríamos la operación indicada y estaríamos en este caso.
+
+
+
+## Caso en que el grado del numerador es menor que el del denominador
+* Supongamos que el grado del polinomio $P(x)$ es menor estrictamente que el grado del polinomio $Q(x)$: $\mathrm{grado}(P)< \mathrm{grado}(Q)$.
+
+Supondremos además que el polinomio $Q(x)$ del denominador es mónico, es decir, el coeficiente correspondiente al término principal o del monomio de mayor grado vale 1. Si éste no fuera el caso, dividimos todos los términos por dicho coeficiente y "sacamos" fuera de la integral dicho coeficiente. 
+
+## Caso en que el grado del numerador es menor que el del denominador
+Más concretamente, supongamos que $Q(x)=C x^q+\cdots$, donde $q$ es el grado del denominador $Q(x)$. En este caso hacemos lo siguiente:
+$$
+\int \frac{P(x)}{Q(x)}\, dx =\frac{1}{C}\int \frac{P(x)}{\frac{Q(x)}{C}}\, dx,
+$$
+y ahora el polinomio $\frac{Q(x)}{C}$ sería mónico. Por tanto, si no lo fuera, realizamos la operación indicada anteriormente y ya estaríamos en el caso en que el denominador es mónico.
+
+## Caso en que el grado del numerador es menor que el del denominador
+Seguidamente, descomponemos el denominador $Q(x)$ de la siguiente manera:
+$$
+\begin{array}{rl}
+Q(x)= & (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ & ((x-b_1)^2+c_1^2)^{m_1}\cdot ((x-b_2)^2+c_2^2)^{m_2}\cdots ((x-b_l)^2+c_l^2)^{m_l},
+\end{array}
+$$
+donde $a_1, \ldots, a_k$ serían las raíces reales de multiplicidad $n_1,\ldots, n_k$, respectivamente y los términos $((x-b_1)^2+c_1^2),\ldots,((x-b_l)^2+c_l^2)$ representan los términos de las raíces no reales de multiplicidad $m_1\ldots,m_l$, respectivamente.
+
+## Descomposición de la fracción racional
+En primer lugar, supongamos que estamos en el caso en que las multiplicidades de los términos correspondientes a las raíces no reales son simples, es decir, suponemos que $m_1=\cdots =m_l=1$.
+
+A continuación, descomponemos la fracción racional $\frac{P(x)}{Q(x)}$ de la siguiente manera:
+$$
+\begin{array}{rl}
+\frac{P(x)}{Q(x)} = & \frac{A_{11}}{x-a_1}+\frac{A_{12}}{(x-a_1)^2}+\cdots +\frac{A_{1n_1}}{(x-a_1)^{n_1}}+\cdots +\frac{A_{k1}}{x-a_k}+\frac{A_{k2}}{(x-a_k)^2}+\cdots +\frac{A_{kn_k}}{(x-a_k)^{n_k}}+\\ & \frac{B_1x+C_1}{((x-b_1)^2+c_1^2)}+\cdots + \frac{B_l x+C_l}{((x-b_l)^2+c_l^2)}
+\end{array}
+$$
+hallando los coeficientes $A_{ij}$, $B_i$ y $C_i$ correspondientes.
+
+## Descomposición de la fracción racional
+Para hallar dichos coeficientes hemos de sumar la parte de la derecha de la igualdad anterior reduciendo a común denominador y nos quedará una igualdad del tipo:
+$$
+\frac{P(x)}{Q(x)}=\frac{H(x)}{Q(x)},
+$$
+donde los coeficientes del polinomio $H(x)$ dependen de los coeficientes $A_{ij}$, $B_i$ y $C_i$. 
+A continuación, para $k=1,\ldots, \mathrm{grado\ } P$, igualamos los coeficientes de $x^k$ del polinomio $P(x)$ y del polinomio $H(x)$. 
+
+Al final nos saldrá un sistema de ecuaciones lineal en los coeficientes $A_{ij}$, $B_i$ y $C_i$ que tendremos que resolver.
+
+## Descomposición de la integral indefinida
+Una vez hallados los coeficientes $A_{ij}$, $B_i$ y $C_i$, descomponemos la integral racional $\displaystyle\int\frac{P(x)}{Q(x)}\, dx$ de la siguiente manera:
+$$
+\begin{array}{rl}
+\displaystyle\int\frac{P(x)}{Q(x)}\, dx = & \displaystyle A_{11}\int\frac{1}{x-a_1}\, dx+\cdots +A_{1n1}\int \frac{1}{(x-a_1)^{n_1}}\, dx + \\ & \displaystyle +\cdots +A_{k1}\int \frac{1}{x-a_k}\, dx +\cdots +A_{kn_k}\int \frac{1}{(x-a_k)^{n_k}}\, dx+\\ & \displaystyle + \int \frac{B_1x+C_1}{((x-b_1)^2+c_1^2)}\, dx+\cdots + \int\frac{B_l x+C_l}{((x-b_l)^2+c_l^2)}\, dx.
+\end{array}
+$$
+
+## Cálculo de las integrales indefinidas de la descomposición
+Hemos reducido el problema a hallar integrales indefinidas del tipo:
+$$
+\int \frac{1}{(x-a)^i}\, dx,\quad \int\frac{Bx+D}{(x-b)^2+c^2}\, dx,
+$$
+para $i=1,2,\ldots$
+
+## Cálculo de las integrales indefinidas de la descomposición
+El valor de las integrales indefinidas del tipo $\displaystyle\int \frac{1}{(x-a)^i}\, dx$ es el siguiente:
+
+* si $i=1$: $\displaystyle\int \frac{1}{(x-a)}\, dx=\ln |x-a|+C$, ver la segunda fila de la tabla de integrales inmediatas con $g(x)=x-a$.
+
+## Cálculo de las integrales indefinidas de la descomposición
+* si $i\geq 2$: 
+$$
+\begin{array}{rl}
+\displaystyle\int \frac{1}{(x-a)^i}\, dx & =  \displaystyle \int (x-a)^{-i}\, dx =\frac{(x-a)^{-i+1}}{-i+1}+C \\ & \displaystyle =\frac{1}{(1-i)\cdot (x-a)^{i-1}}+C,
+\end{array}
+$$ 
+ver la primera fila de la tabla de integrales inmediatas con $g(x)=x-a$.
+
+## Cálculo de las integrales indefinidas de la descomposición
+El cálculo de las integrales del tipo $\displaystyle \int\frac{Bx+D}{(x-b)^2+c^2}\, dx$ es el siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\int\frac{Bx+D}{(x-b)^2+c^2}\, dx & \displaystyle =\frac{B}{2}\int \frac{2x+\frac{2D}{B}}{(x-b)^2+c^2}\, dx\\  & =\displaystyle \frac{B}{2}\int \frac{2(x-b)+2b+\frac{2D}{B}}{(x-b)^2+c^2}\, dx \\ & \displaystyle = \frac{B}{2}\int \frac{2(x-b)}{(x-b)^2+c^2}\, dx +\frac{B}{2}\int \frac{2b+\frac{2D}{B}}{(x-b)^2+c^2}\, dx
+\end{array}
+$$
+
+## Cálculo de las integrales indefinidas de la descomposición
+La primera de la integrales anteriores $\displaystyle \frac{B}{2}\int \frac{2(x-b)}{(x-b)^2+c^2}\, dx$ es inmediata, ver segunda fila de la tabla de integrales inmediatas, con $g(x)=(x-b)^2+c^2$:
+$$
+\frac{B}{2}\int \frac{2(x-b)}{(x-b)^2+c^2}\, dx =\frac{B}{2}\ln |(x-b)^2+c^2|+C
+$$
+
+## Cálculo de las integrales indefinidas de la descomposición
+El cálculo de la segunda integral es el siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\frac{B}{2}\int \frac{2b+\frac{2D}{B}}{(x-b)^2+c^2}\, dx  & \displaystyle =B\left(b+\frac{D}{B}\right)\int  \frac{1}{(x-b)^2+c^2}\, dx\\ & \displaystyle =\frac{B b+D}{c^2}\int \frac{1}{\left(\frac{x-b}{c}\right)^2+1}\, dx\\ & \displaystyle =\frac{B b+D}{c} \int \frac{\frac{1}{c}}{\left(\frac{x-b}{c}\right)^2+1}\, dx
+\end{array}
+$$
+
+## Cálculo de las integrales indefinidas de la descomposición
+La integral $\displaystyle \int \frac{\frac{1}{c}}{\left(\frac{x-b}{c}\right)^2+1}\, dx$ es inmediata, ver novena fila de la tabla de integrales inmediatas con $g(x)=\frac{x-b}{c}$:
+$$
+\int \frac{\frac{1}{c}}{\left(\frac{x-b}{c}\right)^2+1}\, dx =\arctan\left(\frac{x-b}{c}\right)+C.
+$$
+
+## Cálculo de las integrales indefinidas de la descomposición
+En resumen:
+$$
+\int\frac{Bx+D}{(x-b)^2+c^2}\, dx = \frac{B}{2}\ln |(x-b)^2+c^2|+\frac{(B b+D)}{c}\arctan\left(\frac{x-b}{c}\right)+C.
+$$
+
+## Método de Ostrogradski
+Falta estudiar el caso en que algún $m_i >1$, donde $i$ puede ser $i=1,\ldots,l$. 
+
+En este caso, aplicaremos el llamado **Método de Ostrogradski**. 
+
+Recordemos que tenemos que hallar la integral indefinida $\displaystyle \int\frac{P(x)}{Q(x)}\, dx$ donde suponemos que $\mathrm{grado\ }P<\mathrm{\ grado\ }Q$.
+
+## Método de Ostrogradski
+Dicho método consiste en descomponer la integral indefinida a calcular de la siguiente manera:
+$$
+\int\frac{P(x)}{Q(x)}\, dx = \frac{R(x)}{Q_1(x)}+\int\frac{T(x)}{Q_2(x)}\, dx,
+$$
+donde $Q_1(x)=\mathrm{mcd}(Q(x),Q'(x)$, es decir, el máximo común divisor entre los polinomios $Q(x)$ y su derivada $Q'(x)$ y $Q_2 =\frac{Q(x)}{Q_1(x)}$ es el cociente que resulta de dividir el polinomio $Q(x)$ por el polinomio $Q_1(x)$.
+
+## Método de Ostrogradski
+Los polinomios $R(x)$ y $T(x)$ son polinomios de grados $\mathrm{grado\ }Q_1-1$ y $\mathrm{grado\ }Q_2-1$, respectivamente cuyos coeficientes se tienen que hallar derivando la descomposición anterior:
+$$
+\frac{P(x)}{Q(x)} =\frac{R'(x)\cdot Q_1(x)-R(x)\cdot Q_1'(x)}{Q_1(x)^2}+\frac{T(x)}{Q_2(x)}.
+$$
+
+Si volvemos a aplicar el método propuesto al cálculo de la integral racional $\displaystyle\int\frac{T(x)}{Q_2(x)}\, dx$, los posibles exponentes $m_i$ serán como máximo todos $1$ que es el caso que se ha analizado.
