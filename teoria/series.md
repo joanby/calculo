@@ -201,6 +201,7 @@ Sea $x>0$, la serie $\sum_{n=1}^{\infty}  \dfrac{1}{x+n}$ es divergente puesto q
 
 
 
+
 ## La serie armónica generalizada
 
 La serie armónica generalizada es la serie generada por la sucesión $\left\{ \dfrac{1}{n^{\alpha}}\right\}$, es decir $\displaystyle{\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}}$
