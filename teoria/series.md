@@ -61,9 +61,12 @@ $\displaystyle{\sum_{n=1}^{\infty}a_n}$ y también $\displaystyle{\sum a_n}$ son
 Una serie $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es **convergente** si su sucesión de sumas parciales $S_n$ tiene límite, en cuyo caso, dicho límite recibe el nombre de **suma** de la serie.
 
 
-Una serie **divergente** es aquella para la que $S_n$ no tiene límite finito y se denota por $\displaystyle{\sum_{n=1}^{\infty}a_n} = \infty$ 
+ Si $\lim S_n = \infty$, la serie es  **divergente**  y se denota por
+$\displaystyle{\sum_{n=1}^{\infty}a_n} = \infty$ 
 
-Una serie **absolutamente convergente** es aquella tal que la serie de valores absolutos $\displaystyle{\sum_{n=1}^{\infty}|a_n| < \infty}$ es convergente.
+Si la sucesión de sumas parciales no tiene límite, entonces la serie es **oscilante**
+
+Una serie **absolutamente convergente** es aquella tal que la serie de valores absolutos  es convergente, i.e. si $\displaystyle{\sum_{n=1}^{\infty}|a_n| < \infty}$
 
 
 
@@ -105,7 +108,7 @@ $$
 |S_m-S_n| = |a_{n+1}+a_{n+2}+ \cdots + a_m| < \epsilon
 $$
 </div>
-De este resultado se deducetambién que la convergencia de una serie no depende de cualquier número finito de sus primeros términos.
+De este resultado se deduce también que la convergencia de una serie no depende de un número finito de sus primeros términos.
 
 ## Corolario: La serie armònica es divergente
 
@@ -143,10 +146,10 @@ Es importante tener en cuenta que esta és una condición **necesaria** pero no 
 
 <l class="prop"> **Proposición** </l>
 
-Sean $\sum a_n$ y $\sum b_n$ dos series convergentes, entonces
+Sean $\sum a_n$ y $\sum b_n$ dos series convergentes (divergentes), entonces
 
-1. La serie suma de las dos $\sum(a_n+b_n)$ es convergente.
-2. Si $\lambda$ es un número real, entonces la serie $\sum \lambda a_n$ es convergente.
+1. La serie suma de las dos $\sum(a_n+b_n)$ es convergente (divergente).
+2. Si $\lambda$ es un número real, entonces la serie $\sum \lambda a_n$ es convergente (divergente).
 
 <div class="dem"> **Demostración**
 
@@ -156,15 +159,29 @@ Sean $\sum a_n$ y $\sum b_n$ dos series convergentes, entonces
 
 </div>
 
+Estas propiedades, en general, no son válidas para series oscilantes.
+
+
+
 ## Propiedades de las series convergentes.
 
-En general, la propiedad asociativa de la suma no es válida para series, como muestra el ejemplo de la serie 
-$$
-\sum_{n=1}^{\infty} (-1)^n = -1+1-1+1- \cdots +1-1+ \cdots
-$$ 
-se trata claramente de una serie no convergente puesto que el término general no tiene límite, de hecho a este tipo de series se les llama **oscilantes**. Por el contrario, si agrupamos de dos en dos sus términos, nos encontramos con la serie constante igual a $0$, que si es convergente.
+<l class="prop"> **Proposición. (Propiedad asociativa)** 
 
-Veremos, más adelante, que para las series que todos sus términos son positivos, si que se pueden agrupar términos sin que el carácter de la serie no varie.
+En una serie convergente (divergente) se pueden sustituir varios términos consecutivos por su suma efectuada sin que varie el carácter de la serie.
+
+<div class="dem"> **Demostración**
+
+Si asociamos términos de la serie $a_1 + a_2+a_3 + \cdots + a_n+ \cdots$ de la forma $(a_1 + a_2+a_3 + \cdots + a_i)+(a_{i+1} + \cdots +a_j) + (a_{j+1}+ \cdots + a_k) \cdots$, entonces resulta que la sucesión de sumas parciales de la segunda está contenida en la primera, es decir,
+$$
+S'_1 = S_i; \quad S'_2=S_j; \quad S'_3=S_k
+$$
+y, por lo tanto si $S_n$ es convergente (divergente), también lo es $S'_n$.
+
+</div>
+
+La propiedad asociativa de la suma no es válida para series oscilantes
+
+
 
 ## Convergencia condicional
 
@@ -200,12 +217,13 @@ Sea $\sum a_n$ es una serie de términos positivos  y $S_n= a_1+a_2+ \cdots + a_
 Entonces $\sum a_n$ es convergente, si, y sólo si, $S_n$ es una sucesión acotada superiormente.
 
 <div class="dem"> **Demostración**
+
 Por ser $\sum a_n$ de términos positivos, la sucesión $S_n$ es creciente, es decir $S_n \leq S_{n+1}$, para todo $n$. Por el teorema de la convergencia monótona, $S_n$ es convergente si, y sólo sí, es una sucesión acotada.
 </div>
 
 Aplicaremos este resultado para establecer criterios de comparación para establecer la convergencias o divergencia de series de términos positivos.
 
-## Series de términos positivos: propiedad asociativa.
+## Series de términos positivos
 
 
 
@@ -234,7 +252,7 @@ Sea $x>0$, la serie $\sum_{n=1}^{\infty}  \dfrac{1}{x+n}$ es divergente puesto q
 
 ## La serie armónica generalizada
 
-La serie armónica generalizada es la serie generada por la sucesión $\left\{ \dfrac{1}{n^{\alpha}}\right\}$, es decir $\displaystyle{\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}}$
+La serie armónica generalizada es la serie generada por la sucesión $\dfrac{1}{n^{\alpha}}$, es decir, la serie $\displaystyle{\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}}$
 
 <l class="prop"> **Proposición** </l>
 
