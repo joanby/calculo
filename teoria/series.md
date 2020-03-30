@@ -104,8 +104,8 @@ Que la serie sea convergente quiere decir que la sucesión de umas parciales $S_
 $$
 |S_m-S_n| = |a_{n+1}+a_{n+2}+ \cdots + a_m| < \epsilon
 $$
-
 </div>
+De este resultado se deducetambién que la convergencia de una serie no depende de cualquier número finito de sus primeros términos.
 
 ## Corolario: La serie armònica es divergente
 
@@ -139,6 +139,32 @@ Es suficiente considerar la condición de Cauchy con $m=n+1$, en este caso resul
 
 Es importante tener en cuenta que esta és una condición **necesaria** pero no suficiente, como evidencia el caso de la seria armónica, que es divergente aunque $\lim_{n \rightarrow \infty}  \dfrac{1}{n}=0$
 
+## Propiedades de las series convergentes.
+
+<l class="prop"> **Proposición** </l>
+
+Sean $\sum a_n$ y $\sum b_n$ dos series convergentes, entonces
+
+1. La serie suma de las dos $\sum(a_n+b_n)$ es convergente.
+2. Si $\lambda$ es un número real, entonces la serie $\sum \lambda a_n$ es convergente.
+
+<div class="dem"> **Demostración**
+
+1. Si $S_n = a_1 + \cdots+a_n$ y $T_n=b_1+ \cdots + b_n$ son las respectivas sumas parciales respectivas de las series $\sum a_n$ y $\sum b_n$,  entonces $S_n+T_n$ es la sucesión de las sumas parciales de la serie suma, dado que tanto $S_n$ como $T_n$ son convergentes, también lo será $S_n+T_n$ y, por la tanto la serie $\sum(a_n+b_n)$ es convergente.
+
+2. Dado que $S_n$ és convergente, también lo será $\lambda S_n$, la sucesión de sumas parciales de $\sum \lambda a_n$.
+
+</div>
+
+## Propiedades de las series convergentes.
+
+En general, la propiedad asociativa de la suma no es válida para series, como muestra el ejemplo de la serie 
+$$
+\sum_{n=1}^{\infty} (-1)^n = -1+1-1+1- \cdots +1-1+ \cdots
+$$ 
+se trata claramente de una serie no convergente puesto que el término general no tiene límite, de hecho a este tipo de series se les llama **oscilantes**. Por el contrario, si agrupamos de dos en dos sus términos, nos encontramos con la serie constante igual a $0$, que si es convergente.
+
+Veremos, más adelante, que para las series que todos sus términos son positivos, si que se pueden agrupar términos sin que el carácter de la serie no varie.
 
 ## Convergencia condicional
 
@@ -166,7 +192,7 @@ Una serie convergente que no sea absolutamente convergente recibe le nombre de *
 
 ## Series de términos positivos
 
-Una clase particularmente interesante de series son lase de términos positivos, és decir aquellas series $\sum a_n$ tales que $a_n \geq 0$, para todo $n$. Para estas series tenemos el siguien resultado:
+Una clase particularmente interesante de series son las de términos positivos, és decir aquellas series $\sum a_n$ tales que $a_n \geq 0$, para todo $n$. Para estas series tenemos el siguien resultado:
 
 <l class="prop"> **Proposición**
 
@@ -178,6 +204,10 @@ Por ser $\sum a_n$ de términos positivos, la sucesión $S_n$ es creciente, es d
 </div>
 
 Aplicaremos este resultado para establecer criterios de comparación para establecer la convergencias o divergencia de series de términos positivos.
+
+## Series de términos positivos: propiedad asociativa.
+
+
 
 ## Criterio de comparación de primera especie.
 
