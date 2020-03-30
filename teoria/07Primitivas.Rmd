@@ -291,3 +291,315 @@ $$
 $$
 
 Si volvemos a aplicar el método propuesto al cálculo de la integral racional $\displaystyle\int\frac{T(x)}{Q_2(x)}\, dx$, los posibles exponentes $m_i$ serán como máximo todos $1$ que es el caso que se ha analizado.
+
+# Integrales trigonométricas
+
+## Introducción
+En esta sección vamos a aprender a calcular integrales indefinidas que involucren funciones trigonométricas básicas como $\sin x$, $\cos x$ y $\tan x$:
+
+* $\displaystyle \int \sin^m x\cos^n x\, dx$, donde $m$ y $n$ son números naturales.
+* $\displaystyle \int \tan^n x\, dx,\ \int \cot^n x$ donde $n$ es un número natural.
+* $\displaystyle \int \sin (m x)\cos (n x)\, dx$, donde $m$ y $n$ son números naturales.
+* $\displaystyle \int R(\sin x, \cos x)\, dx$ donde $R(\sin x,\cos x)$ quiere decir una función racional en las variables $\sin x$ y $\cos x$ como por ejemplo $R(\sin x,\cos x)=\frac{\sin^2+\cos x+1}{\cos^2 x-\cos x-1}$.
+
+## Introducción
+Recordemos las identidades trigonométricas que usaremos en el cálculo de las integrales anteriores:
+
+* El seno del ángulo doble: $\sin (2x)=2\sin x\cos x$.
+* El coseno del ángulo doble: $\cos (2x)=\cos^2 x-\sin^2 x=2\cos^2 x-1=1-2\sin^2 x$. De las identidades anteriores tenemos que $\sin^2 x=\frac{1}{2}(1-\cos (2x)),\ \cos^2 x=\frac{1}{2}(1+\cos (2x))$.
+* Relación entre el coseno y la tangente: $1+\tan^2 x=\frac{1}{\cos^2 x}$, o, si se quiere $\tan^2 x=\sec^2 x-1$ o, $\cot^2 x=\csc^2x -1$.
+
+## Introducción
+
+* Fórmulas que transforman productos en sumas:
+$$
+\begin{array}{rl}
+\sin x\cos y & = \frac{1}{2}(\sin (x+y)+\sin (x-y)),\\
+\cos x\cos y & = \frac{1}{2}(\cos (x+y)+\cos (x-y)),\\
+\sin x\sin y & = \frac{1}{2}(\cos (x-y)-\cos (x+y)).
+\end{array}
+$$
+Las expresiones anteriores se pueden generalizar:
+$$
+\begin{array}{rl}
+\sin(m x)\cos (ny) & = \frac{1}{2}(\sin (mx+ny)+\sin (mx-ny)),\\
+\cos(m x)\cos (ny) & = \frac{1}{2}(\cos (mx+ny)+\cos (mx-ny)),\\
+\sin(m x)\sin (ny) & = \frac{1}{2}(\cos (mx-ny)-\cos (mx+ny)),
+\end{array}
+$$
+donde $m$ y $n$ son números naturales.
+
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+En esta sección vamos a explicar cómo calcular el siguiente tipo de integrales inmediatas $\displaystyle\int \sin^m x\cos^n x\, dx$, con $n$ y $m$ números naturales.
+
+Vamos a distinguir los casos siguientes:
+
+* 1: Uno de los números $n$ o $m$ es cero. En este caso, distinguimos los subcasos siguientes:
+  * 1.1: $m$ impar. En este caso, existe un natural $m'$ tal que $m=2m'+1$. La integral indefinida a calcular sería:
+$$
+\int\sin^{2m'+1}x\, dx =\int (\sin^2 x)^{m'}\sin x\, dx=\int (1-\cos^2 x)^{m'}\sin x\, dx.
+$$
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+A continuación, si desarrollamos la expresión $(1-\cos^2 x)^{m'}$ nos quedará una suma de integrales de la forma $\displaystyle\int \cos^j x\sin x\, dx$, con $j$ natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con $g(x)=\cos x$:
+$$
+\int \cos^j x\sin x\, dx =-\int \cos^j x (-\sin x)\, dx = -\frac{\cos^{j+1}x}{(j+1)}+C.
+$$
+  
+  * 1.2: $n$ impar. En este caso, existe un natural $n'$ tal que $n=2n'+1$. Este caso es parecido al anterior:
+$$
+\int\cos^{2n'+1}x\, dx =\int (\cos^2 x)^{n'}\cos x\, dx=\int (1-\sin^2 x)^{n'}\cos x\, dx.
+$$
+
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+A continuación, si desarrollamos la expresión $(1-\sin^2 x)^{n'}$ nos quedará una suma de integrales de la forma $\displaystyle\int \sin^j x\cos x\, dx$, con $j$ natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con $g(x)=\sin x$:
+$$
+\int \sin^j x\cos x\, dx =\frac{\sin^{j+1}x}{(j+1)}+C.
+$$
+
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+  * 1.3 $n$ par. En este caso, existe un natural $n'$ tal que $n=2n'$. El cálculo de la integral es el siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\int \cos^{2n'} x\, dx & =\displaystyle \int (cos^2 x)^{n'}\, dx  = \int\left(\frac{1+\cos(2x)}{2}\right)^{n'}\, dx
+\\ & = \displaystyle \frac{1}{2^{m'+1}}\int (1+\cos t)^{m'}\, dt,
+\end{array}
+$$
+donde en la última igualdad hemos hecho el cambio de variable $t=2x$. 
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+Seguidamente si desarrollamos $(1+\cos t)^{m'}$ nos van saliento integrales del tipo $\displaystyle \int \cos^j x\, dx$ donde si $j$ es impar, ya las hemos estudiado en el apartado 1.2 y si $j$ es par, hemos reducido el exponente a la mitad. En el peor de los casos nos saldría la integral $\displaystyle\int\cos^2 x\,dx$ que se resolvería de la forma siguiente:
+$$
+\begin{array}{rl}
+\displaystyle \int\cos^2 x\, dx & \displaystyle  = \frac{1}{2}\int (1+\cos (2x))\, dx = \frac{1}{2}\left(x+\frac{\sin(2x)}{2}\right)+C \\ & \displaystyle  =\frac{1}{2}x+\frac{1}{4}\sin (2x)+C
+\end{array}
+$$
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+
+  * 1.4 $m$ par. En este caso, existe un natural $m'$ tal que $m=2m'$. El cálculo de la integral es el siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\int \sin^{2n'} x\, dx & =\displaystyle \int (sin^2 x)^{n'}\, dx  = \int\left(\frac{1-\cos(2x)}{2}\right)^{n'}\, dx
+\\ & = \displaystyle \frac{1}{2^{m'+1}}\int (1-\cos t)^{m'}\, dt,
+\end{array}
+$$
+donde en la última igualdad hemos hecho el cambio de variable $t=2x$.  Seguidamente si desarrollamos $(1+\cos t)^{m'}$ nos van saliento integrales del tipo $\displaystyle \int \cos^j x\, dx$ que ya están estudiadas en los apartados 1.2 y 1.3.
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+* 2: Uno de los números $n$ o $m$ es par y el otro, $impar$. 
+  * 2.1: $m$ es impar y $n$ es par. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'+1$ y $n=2n'$. Para resolver la integral inmediata, hacemos lo siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\int \sin^{2m'+1}x\cos^{2n'}x\, dx & \displaystyle =\int (\sin^2 x)^{m'}\cos^{2n'} x \sin x\, dx \\ & \displaystyle =\int (1-\cos^2 x)^{m'}\cos^{2n'}x \sin x\, dx.
+\end{array}
+$$
+Seguidamente si desarrollamos $(1-\cos^2 x)^{m'}$ nos van saliento integrales del tipo $\displaystyle \int \cos^j x\sin x\, dx$, que son inmediatas, ver apartado 1.1.
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+
+  * 2.2: $m$ par y $n$ impar. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'$ y $n=2n'+1$. Para resolver la integral inmediata, hacemos lo siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\int \sin^{2m'}x\cos^{2n'+1}x\, dx & \displaystyle =\int \sin^{2m'}x (\cos^2 x)^{n'} x \cos x\, dx \\ & \displaystyle =\int \sin^{2m'}x (1-\sin^2 x)^{n'} \cos x\, dx.
+\end{array}
+$$
+Seguidamente si desarrollamos $(1-\sin^2 x)^{m'}$ nos van saliento integrales del tipo $\displaystyle \int \sin^j x\cos x\, dx$ que son inmediatas, ver apartado 1.2.
+
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+* 3: Las dos potencias $m$ y $n$ son pares. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'$ y $n=2n'$. Para resolver la integral inmediata, hacemos lo siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\int \sin^{2m'}x\cos^{2n'}x\, dx & \displaystyle =\int (\sin^2 x)^{m'}\cos^{2n'} x \, dx \\ & \displaystyle =\int \left(\frac{1-\cos(2x)}{2}\right)^{m'}\cdot\left(\frac{1+\cos (2x)}{2}\right)^{n'}\, dx \\ & \displaystyle =\frac{1}{2^{m'+n'+1}}\int (1-\cos t)^{m'}\cdot (1+\cos t)^{n'}\, dt
+\end{array}
+$$
+En la última igualdad hemos hecho el cambio de variable $t=2x$. 
+
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+Si desarrollamos las expresiones $(1-\cos t)^{m'}\cdot (1+\cos t)^{n'}$ nos quedarán sumas de integrales del tipo $\displaystyle \int \cos^j t\, dx$ que ya han sido estudiadas en los apartados 1.2 y 1.3. 
+
+* 4: Las dos potencias $m$ y $n$ son impares. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'+1$ y $n=2n'+1$. Para resolver la integral inmediata, hacemos lo siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\int \sin^{2m'+1}x\cos^{2n'+1}x\, dx & \displaystyle =\int \sin^{2m'+1}x (\cos^2 x)^{n'} \cos x\, dx \\ & \displaystyle =\int \sin^{2m'+1}x (1-\sin^2 x)^{n'} \cos x\, dx.
+\end{array}
+$$
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+A continuación, si desarrollamos la expresión $(1-\sin^2 x)^{n'}$ nos quedará una suma de integrales de la forma $\displaystyle\int \sin^j x\cos x\, dx$, con $j$ natural. Dichas integrales son inmediatas, ver apartado 1.2.
+
+
+## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
+Vamos a ver cómo se calculan las integrales indefinidas del tipo $\displaystyle\int \tan^n x\, dx$ y $\displaystyle\int\cot^n x\, dx$.
+
+En primer lugar, calculemos las integrales anteriores para $n=1$ y $n=2$.
+
+La integral $\displaystyle\int\tan x\, dx=\int\frac{\sin x}{\cos x}\, dx =-\int\frac{-\sin x}{\cos x}\, dx$ es inmediata y corresponde a la segunda fila de la tabla de integrales inmediatas con $g(x)=\cos x$:
+$$
+\int\tan x\, dx =-\ln |cos x|+C.
+$$
+
+## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
+La integral $\displaystyle\int\cot x\, dx=\int\frac{\cos x}{\sin x}\, dx$ es inmediata y corresponde a la segunda fila de la tabla de integrales inmediatas con $g(x)=\sin x$:
+$$
+\int\cot x\, dx =\ln |sin x|+C.
+$$
+
+Usando que la derivada de la función $\tan x$ vale $(\tan x)'=\frac{1}{\cos^2 x}=1+\tan^2 x$, la integral indefinida $\displaystyle\int \tan^2 x\, dx$ es sencilla de calcular:
+
+## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
+$$
+\begin{array}{rl}
+\displaystyle\int \tan^2 x\, dx  & =\displaystyle\int (1+\tan^2 x-1)\, dx = \int (1+\tan^2 x)\, dx-\int 1\, dx \\ & \displaystyle =\tan x-x+C.
+\end{array}
+$$
+De la misma manera, la integral de $\displaystyle\int \cot^2 x\, dx$ se puede calcular usando que $(\cot x)'=-\frac{1}{\sin^2 x}=-(1+\cot^2 x)$:
+$$
+\begin{array}{rl}
+\displaystyle\int \cot^2 x\, dx  & \displaystyle =-\int -(1+\cot^2 x-1)\, dx = -\int -(1+\cot^2 x)\, dx - \int 1\, dx \\ & \displaystyle =-\cot x-x+C.
+\end{array}
+$$
+
+## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
+Sea un $n\geq 3$ natural. La integral indefinida $\displaystyle\int tan^n x\, dx$ se calcularía de la forma siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\int\tan^n x\, dx & \displaystyle = \int\tan^{n-2} x (1+\tan^2 x-1)\, dx \\ & \displaystyle = \int\tan^{n-2} x (1+\tan^2 x)\, dx-\int \tan^{n-2} x\, dx
+\end{array}
+$$
+
+## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
+La integral $\displaystyle \int\tan^{n-2} x (1+\tan^2 x)\, dx$ es inmediata y corresponde a la primera fila de la tabla de integrales inmediatas con $g(x)=\tan x$:
+$$
+\int\tan^{n-2} x (1+\tan^2 x)\, dx =\frac{\tan^{n-1} x}{n-1}+C.
+$$
+En resumen, hemos reducido el cálculo de la integral $\displaystyle\int \tan^n x\, dx$ al cálculo de la integral $\displaystyle\int \tan^{n-2} x\, dx$. 
+
+## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
+Aplicando la técnica anterior unas $\frac{n}{2}$ veces, llegaríamos a la integral $\displaystyle\int \tan x\, dx$ o $\displaystyle\int\tan^2 x\, dx$ dependiendo de la paridad de $n$. El valor de dichas integrales ya ha sido calculado.
+
+Para calcular $\displaystyle\int \cot^n x\, dx$, usamos una técnica parecida:
+$$
+\begin{array}{rl}
+\displaystyle\int\cot^n x\, dx & \displaystyle = -\int\cot^{n-2} x (-1-\cot^2 x+1)\, dx \\ & \displaystyle = -\int\cot^{n-2} x (-1-\cot^2 x)\, dx-\int \cot^{n-2} x\, dx
+\end{array}
+$$
+
+## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
+La integral $\displaystyle \int\cot^{n-2} x (-1-\cot^2 x)\, dx$ es inmediata y corresponde a la primera fila de la tabla de integrales inmediatas con $g(x)=\cot x$:
+$$
+\int\cot^{n-2} x (-1-\cot^2 x)\, dx =\frac{\cot^{n-1} x}{n-1}+C.
+$$
+En resumen, hemos reducido el cálculo de la integral $\displaystyle\int \cot^n x\, dx$ al cálculo de la integral $\displaystyle\int \cot^{n-2} x\, dx$. 
+
+## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
+Aplicando la técnica anterior unas $\frac{n}{2}$ veces, llegaríamos a la integral $\displaystyle\int \cot x\, dx$ o $\displaystyle\int\cot^2 x\, dx$ dependiendo de la paridad de $n$. El valor de dichas integrales ya ha sido calculado.
+
+## Integrales indefinidas de $\sin(mx)\cos(nx)$
+Para resolver dichas integrales consideraremos 3 casos:
+
+* $\displaystyle\int\sin(mx)\sin(nx)\, dx$. Usando la fórmula que transforma el producto de funciones trigonométricas en sumas, obtenemos lo siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\int\sin(mx)\sin(nx)\, dx &  =\displaystyle  \frac{1}{2}\int (\cos((m-n)x)-\cos((m+n)x))\, dx\\
+& = \displaystyle \frac{1}{2}\left(\frac{\sin((m-n)x)}{m-n}-\frac{\sin((m+n)x)}{m+n}\right)+C,
+\end{array}
+$$
+si $m\neq n$.
+
+## Integrales indefinidas de $\sin(mx)\cos(nx)$
+Si $m=n$:
+$$
+\int\sin^2(nx)\, dx   = \frac{1}{2}\int (1-\cos(2nx))\, dx
+ =  \frac{1}{2}\left(x-\frac{\sin (2nx)}{2n}\right)+C.
+$$
+
+* $\displaystyle\int\sin(mx)\cos(nx)\, dx$. Usando la fórmula que transforma el producto de funciones trigonométricas en sumas, obtenemos lo siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\int\sin(mx)\cos(nx)\, dx &  =\displaystyle  \frac{1}{2}\int (\sin((m-n)x)+\sin((m+n)x))\, dx\\
+& = \displaystyle \frac{1}{2}\left(-\frac{\cos((m-n)x)}{m-n}-\frac{\cos((m+n)x)}{m+n}\right)+C,
+\end{array}
+$$
+si $m\neq n$.
+
+## Integrales indefinidas de $\sin(mx)\cos(nx)$
+Si $m=n$:
+$$
+\int\sin(nx)\cos(nx)\, dx   = \frac{1}{2}\int \sin(2nx)\, dx
+ =  -\frac{1}{4n}\cos (2nx)+C.
+$$
+
+* $\displaystyle\int\cos(mx)\cos(nx)\, dx$. Usando la fórmula que transforma el producto de funciones trigonométricas en sumas, obtenemos lo siguiente:
+$$
+\begin{array}{rl}
+\displaystyle\int\cos(mx)\cos(nx)\, dx &  =\displaystyle  \frac{1}{2}\int (\cos((m-n)x)+\cos((m+n)x))\, dx\\
+& = \displaystyle \frac{1}{2}\left(\frac{\sin((m-n)x)}{m-n}+\frac{\sin((m+n)x)}{m+n}\right)+C,
+\end{array}
+$$
+si $m\neq n$.
+
+## Integrales indefinidas de $\sin(mx)\cos(nx)$
+Si $m=n$:
+$$
+\int\cos^2(nx)\, dx   = \frac{1}{2}\int (1+\cos(2nx))\, dx
+ =  \frac{1}{2}\left(x+\frac{\sin (2nx)}{2n}\right)+C.
+$$
+
+## Integrales indefinidas de $R(\sin x, \cos x)$
+En esta sección, vamos a dar un método para resolver integrales trigonométricas racionales del tipo $R(\sin x,\cos x)=\frac{P(\sin x,\cos x)}{Q(\sin x,\cos x)}$ donde $P$ y $Q$ son dos polinomios en las variable $\sin x$ y $\cos x$.
+
+Para resolver este tipo de integrales, hemos de realizar el cambio de variable general $t=\tan\left(\frac{x}{2}\right)$.
+
+Veamos cómo se transforman $\sin x$ y $\cos x$ como funciones de $t$.
+
+En primer lugar, usando que $1+\tan^2\left(\frac{x}{2}\right)=\frac{1}{\cos^2\left(\frac{x}{2}\right)}$, deducimos que
+$\cos^2\left(\frac{x}{2}\right)=\frac{1}{1+\tan^2\left(\frac{x}{2}\right)}=\frac{1}{1+t^2}$.
+
+## Integrales indefinidas de $R(\sin x, \cos x)$
+A continuación, usando que $\cos^2\left(\frac{x}{2}\right)=\frac{1+\cos x}{2}=\frac{1}{1+t^2}$, deducimos que 
+$\cos x=\frac{1-t^2}{1+t^2}$.
+
+De la misma manera, $\sin x=2\sin\left(\frac{x}{2}\right)\cos \left(\frac{x}{2}\right)=2\tan\left(\frac{x}{2}\right)\cos^2\left(\frac{x}{2}\right)=\frac{2t}{1+t^2}$.
+
+La relación entre los diferenciales será la siguiente:
+$$
+dt = \frac{1}{2\cos^2 \left(\frac{x}{2}\right)}\, dx=\frac{\left(1+\tan^2\left(\frac{x}{2}\right)\right)}{2}dx = \frac{1+t^2}{2}dx,\ \Rightarrow dx=\frac{2 dt}{1+t^2}.
+$$
+
+## Integrales indefinidas de $R(\sin x, \cos x)$
+Después de realizar el cambio, la integral indefinida nos quedará, en función de la nueva variable $t$:
+$$
+\int R(\sin x,\cos x)\, dx = \int R\left(\frac{2t}{1+t^2},\frac{1-t^2}{1+t^2}\right)\frac{2 dt}{1+t^2}.
+$$
+Se trata de la integral indefinida de una función racional en $t$ que ya hemos estudiado.
+
+El cambio que hemos propuesto nos sirve para resolver cualquier integral racional en $\sin x$ y $\cos x$. 
+
+## Integrales indefinidas de $R(\sin x, \cos x)$
+El problema es que la integral racional que nos sale, en muchas ocasiones, tiene el término $(1+t^2)^k$ con $k\geq 2$ en el denominador. Esto obliga a que tengamos que aplicar el método de Ostrogradski haciendo que el cálculo de la integral sea muy tedioso.
+
+En algunas ocasiones, si la función $R$ verifica una cierta condición, podemos realizar otro cambio para transformar nuestra integral $\displaystyle \int R(\sin x,\cos x)\, dx$ en una integral racional más simple. Veamos a continuación en qué casos podemos hacer estos cambios más sencillos indicando dichos cambios.
+
+## Integrales indefinidas de $R(\sin x, \cos x)$
+
+* Supongamos que la función $R$ es par en las variables $\sin x$ y $\cos x$: $R(\sin x, \cos x)=R(-\sin x, -\cos x)$.
+Entonces, sólo nos pueden salir potencias pares en $\sin x$ y $\cos x$.
+
+En este caso hacemos el cambio $t=\tan x$, con $\cos^2 x=\frac{1}{1+t^2}$, $\sin^2 x=\frac{t}{1+t^2}$, $dx=\frac{dt}{1+t^2}$.
+
+* Supongamos que la función $R$ es impar en la variable $\sin x$: $R(\sin x, \cos x)=-R(-\sin x, \cos x)$.
+Entonces, sólo nos pueden salir potencias impares en $\sin x$.
+
+En este caso hacemos el cambio $t=\cos x$, con $\sin x = \sqrt{1-t^2}$, $dx=-\frac{dt}{\sqrt{1-t^2}}$.
+
+## Integrales indefinidas de $R(\sin x, \cos x)$
+* Supongamos que la función $R$ es impar en la variable $\cos x$: $R(\sin x, \cos x)=-R(\sin x, -\cos x)$.
+Entonces, sólo nos pueden salir potencias impares en $\cos x$.
+
+En este caso hacemos el cambio $t=\sin x$, con $\cos x = \sqrt{1-t^2}$, $dx=\frac{dt}{\sqrt{1-t^2}}$.
