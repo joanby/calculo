@@ -149,7 +149,7 @@ Es importante tener en cuenta que esta és una condición **necesaria** pero no 
 Sean $\sum a_n$ y $\sum b_n$ dos series convergentes (divergentes), entonces
 
 1. La serie suma de las dos $\sum(a_n+b_n)$ es convergente (divergente).
-2. Si $\lambda$ es un número real, entonces la serie $\sum \lambda a_n$ es convergente (divergente).
+2. Si $\lambda \neq 0$ es un número real, entonces la serie $\sum \lambda a_n$ es convergente (divergente).
 
 <div class="dem"> **Demostración**
 
@@ -223,9 +223,6 @@ Por ser $\sum a_n$ de términos positivos, la sucesión $S_n$ es creciente, es d
 
 Aplicaremos este resultado para establecer criterios de comparación para establecer la convergencias o divergencia de series de términos positivos.
 
-## Series de términos positivos
-
-
 
 ## Criterio de comparación de primera especie.
 
@@ -278,3 +275,35 @@ $$
 1+\dfrac{1}{2^{\alpha -1}}+\dfrac{1}{4^{\alpha -1}}+\dfrac{1}{8^{\alpha -1}}+ \ldots 
 $$
 por lo tanto, al estar acotada superiormente por una serie convergente, la serie armónica generalizada es convergente, si $\alpha > 1$.
+
+## Corolario del criterio de comparación
+
+<l class="prop"> **Corolario**
+
+Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos  
+
+1. Si para todo $n \geq n_0$ es $\dfrac{a_n}{b_n} \leq \lambda$, donde $\lambda$ es un número real positivo y si $\sum b_n$ es convergent, entonces $\sum a_n$ es convergente.
+2. Si para todo $n \geq n_0$ es $\dfrac{a_n}{b_n} \geq \lambda$, donde $\lambda$ es un número real positivo y $\sum b_n$ es divergente, entonces $\sum a_n$ es divergente.
+
+<div class="dem"> **Demostración**
+
+1. Al ser $a_n \leq \lambda b_n$ y ser $\sum  \lambda b_n$ convergente, resultará, por el criterio de comparación, que $\sum a_n$ es convergente.
+
+2. Análogamente, dado que $\sum b_n$ es divergente, también lo será $\sum  \lambda b_n$, por lo que los téminos de $\sum a_n$ estan minorados por los de una serie divergente y, por lo tanto, también será divergente.
+
+</div>
+
+## Criterio de comparción de segunda especie
+
+<l class="prop"> **Proposición** </l>
+
+Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos,
+
+1. Si para todo $n \geq n_0$ es $\dfrac{a_{n+1}}{a_n} \leq \dfrac{b_{n+1}}{b_n}$ y $\sum b_n$ es convergente, entonces $\sum a_n$ es convergente.
+
+2. Si para todo $n \geq n_0$ es $\dfrac{a_{n+1}}{a_n} \geq \dfrac{b_{n+1}}{b_n}$ y $\sum b_n$ es divergente, entonces $\sum a_n$ es divergente.
+
+<div class="dem"> **Demostración**
+
+Es fácil comprobar, en el primer caso, que $a_{n_0 + p} \leq \dfrac{a_{n_0}}{b_{n_0}}b_{n_0 + p}$, por lo que de acuerdo con el corolario anterior, si $\sum b_n$ es convergente, también lo será $\sum a_n$. Razonamientos análogos permiten demostrar el segundo punto.
+</div>
