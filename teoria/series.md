@@ -271,7 +271,7 @@ Si $\alpha \leq 1$ entonces dado que  $\dfrac{1}{n^{\alpha}} \geq \dfrac{1}{n}$,
 
 Sea ahora  $\alpha >1$. Trataremos de acotar los términos de la sucesión que genera la serie armónica generalizada por los términos de una sucesión que genere una serie convergente, en particular por una serie geométrica de razón $\dfrac{1}{2^{\alpha-1}}$. Para cualquier $k \in \mathbb{N}$ existe un $p \in \mathbb{N}$ tal que $2^p \leq k < 2^{p+1}$, por lo que será $\dfrac{1}{2^{p+1}} < \dfrac{1}{k} \leq \dfrac{1}{2^p}$, por lo tanto si sustituimos los términos de la sucesión armónica generalizada $\dfrac{1}{k}$ por el correspondiente $\dfrac{1}{2^p}$, tal que $\dfrac{1}{k} \leq \dfrac{1}{2^p}$, entonces tendremos la serie
 $$
-1+\dfrac{1}{2^{\alpha}}+\dfrac{1}{2^{\alpha}}+\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}+ \dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}} + \ldots
+1+\left(\dfrac{1}{2^{\alpha}}+\dfrac{1}{2^{\alpha}}\right)+\left(\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}\right)+ \left(\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}\right) + \ldots
 $$
 es decir, la serie geométrica de razón $\dfrac{1}{2^{\alpha -1}}$:
 $$
