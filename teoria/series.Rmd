@@ -65,9 +65,12 @@ $\displaystyle{\sum_{n=1}^{\infty}a_n}$ y también $\displaystyle{\sum a_n}$ son
 Una serie $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es **convergente** si su sucesión de sumas parciales $S_n$ tiene límite, en cuyo caso, dicho límite recibe el nombre de **suma** de la serie.
 
 
-Una serie **divergente** es aquella para la que $S_n$ no tiene límite finito y se denota por $\displaystyle{\sum_{n=1}^{\infty}a_n} = \infty$ 
+ Si $\lim S_n = \infty$, la serie es  **divergente**  y se denota por
+$\displaystyle{\sum_{n=1}^{\infty}a_n} = \infty$ 
 
-Una serie **absolutamente convergente** es aquella tal que la serie de valores absolutos $\displaystyle{\sum_{n=1}^{\infty}|a_n| < \infty}$ es convergente.
+Si la sucesión de sumas parciales no tiene límite, entonces la serie es **oscilante**
+
+Una serie **absolutamente convergente** es aquella tal que la serie de valores absolutos  es convergente, i.e. si $\displaystyle{\sum_{n=1}^{\infty}|a_n| < \infty}$
 
 
 
@@ -108,8 +111,8 @@ Que la serie sea convergente quiere decir que la sucesión de umas parciales $S_
 $$
 |S_m-S_n| = |a_{n+1}+a_{n+2}+ \cdots + a_m| < \epsilon
 $$
-
 </div>
+De este resultado se deduce también que la convergencia de una serie no depende de un número finito de sus primeros términos.
 
 ## Corolario: La serie armònica es divergente
 
@@ -143,6 +146,46 @@ Es suficiente considerar la condición de Cauchy con $m=n+1$, en este caso resul
 
 Es importante tener en cuenta que esta és una condición **necesaria** pero no suficiente, como evidencia el caso de la seria armónica, que es divergente aunque $\lim_{n \rightarrow \infty}  \dfrac{1}{n}=0$
 
+## Propiedades de las series convergentes.
+
+<l class="prop"> **Proposición** </l>
+
+Sean $\sum a_n$ y $\sum b_n$ dos series convergentes (divergentes), entonces
+
+1. La serie suma de las dos $\sum(a_n+b_n)$ es convergente (divergente).
+2. Si $\lambda$ es un número real, entonces la serie $\sum \lambda a_n$ es convergente (divergente).
+
+<div class="dem"> **Demostración**
+
+1. Si $S_n = a_1 + \cdots+a_n$ y $T_n=b_1+ \cdots + b_n$ son las respectivas sumas parciales respectivas de las series $\sum a_n$ y $\sum b_n$,  entonces $S_n+T_n$ es la sucesión de las sumas parciales de la serie suma, dado que tanto $S_n$ como $T_n$ son convergentes, también lo será $S_n+T_n$ y, por la tanto la serie $\sum(a_n+b_n)$ es convergente.
+
+2. Dado que $S_n$ és convergente, también lo será $\lambda S_n$, la sucesión de sumas parciales de $\sum \lambda a_n$.
+
+</div>
+
+Estas propiedades, en general, no son válidas para series oscilantes.
+
+
+
+## Propiedades de las series convergentes.
+
+<l class="prop"> **Proposición. (Propiedad asociativa)** 
+
+En una serie convergente (divergente) se pueden sustituir varios términos consecutivos por su suma efectuada sin que varie el carácter de la serie.
+
+<div class="dem"> **Demostración**
+
+Si asociamos términos de la serie $a_1 + a_2+a_3 + \cdots + a_n+ \cdots$ de la forma $(a_1 + a_2+a_3 + \cdots + a_i)+(a_{i+1} + \cdots +a_j) + (a_{j+1}+ \cdots + a_k) \cdots$, entonces resulta que la sucesión de sumas parciales de la segunda está contenida en la primera, es decir,
+$$
+S'_1 = S_i; \quad S'_2=S_j; \quad S'_3=S_k
+$$
+y, por lo tanto si $S_n$ es convergente (divergente), también lo es $S'_n$.
+
+</div>
+
+La propiedad asociativa de la suma no es válida para series oscilantes
+
+
 
 ## Convergencia condicional
 
@@ -170,9 +213,42 @@ Una serie convergente que no sea absolutamente convergente recibe le nombre de *
 
 ## Series de términos positivos
 
+Una clase particularmente interesante de series son las de términos positivos, és decir aquellas series $\sum a_n$ tales que $a_n \geq 0$, para todo $n$. Para estas series tenemos el siguien resultado:
 
-## Primer criterio de comparación
+<l class="prop"> **Proposición**
 
+Sea $\sum a_n$ es una serie de términos positivos  y $S_n= a_1+a_2+ \cdots + a_n$ su sucesión de sumas parciales.
+Entonces $\sum a_n$ es convergente, si, y sólo si, $S_n$ es una sucesión acotada superiormente.
+
+<div class="dem"> **Demostración**
+
+Por ser $\sum a_n$ de términos positivos, la sucesión $S_n$ es creciente, es decir $S_n \leq S_{n+1}$, para todo $n$. Por el teorema de la convergencia monótona, $S_n$ es convergente si, y sólo sí, es una sucesión acotada.
+</div>
+
+Aplicaremos este resultado para establecer criterios de comparación para establecer la convergencias o divergencia de series de términos positivos.
+
+## Series de términos positivos
+
+
+
+## Criterio de comparación de primera especie.
+
+<l class="prop"> **Proposición. (Criterio de comparación de primera especie)** </l>
+
+Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos tales que $a_n \leq b_n$ para todo $n$. Entonces,
+si $\sum b_n$ es convergente, $\sum a_n$ es convergente. Por otra parte, si $\sum a_n$ es divergente, entonces $\sum b_n$ es divergente.
+
+<div class="dem"> **Demostración**
+Si $S_n$ indica la sucesión de sumas parciales de $\sum a_n$ y $T_n$ la de la serie $\sum b_n$, entonces por ser la dos de términos positivos y $a_n \leq b_n$, resultará que $S_n \leq T_n$ y, por lo tanto si $T_n$ está acotada superiormente, es decir si $\sum b_n$ es convergente, también estará acotada superiormente la sucesión $S_n$ y, es decir, $\sum a_n$ es convergente. Argumentos similares sirven para demostrar que si $\sum a_n$ es divergente, entonces también lo es $\sum b_n$.
+
+</div>
+
+<div class="example"> **Ejemplo**
+
+Sea $x>0$, la serie $\sum_{n=1}^{\infty}  \dfrac{1}{x+n}$ es divergente puesto que existe $p \in \mathbb{N}$ tal que $p>x$, por lo que los términos de dicha serie estarán acotados inferiormente por los de la serie $\sum_{n=1}^{\infty} \dfrac{1}{p+n}$ es decir, por los términos de la serie armónica a partir del que ocupa el lugar $p$ y, por lo tanto, es divergente.
+
+
+</div>
 
 
 
@@ -180,7 +256,7 @@ Una serie convergente que no sea absolutamente convergente recibe le nombre de *
 
 ## La serie armónica generalizada
 
-La serie armónica generalizada es la serie generada por la sucesión $\left\{ \dfrac{1}{n^{\alpha}}\right\}$, es decir $\displaystyle{\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}}$
+La serie armónica generalizada es la serie generada por la sucesión $\dfrac{1}{n^{\alpha}}$, es decir, la serie $\displaystyle{\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}}$
 
 <l class="prop"> **Proposición** </l>
 
@@ -197,11 +273,9 @@ Si $\alpha \leq 1$ entonces dado que  $\dfrac{1}{n^{\alpha}} \geq \dfrac{1}{n}$,
 
 <div class="dem"> **Demostración (Continuación)**
 
-Sea ahora  $\alpha >1$. 
-
-Trataremos de acotar los términos de la sucesión que genera la serie armónica generalizada por los términos de una sucesión que genere una serie convergente, en particular por una serie geométrica de razón $\dfrac{1}{2^{\alpha-1}}$. Para cualquier $k \in \mathbb{N}$ existe un $p \in \mathbb{N}$ tal que $2^p \leq k < 2^{p+1}$, por lo que será $\dfrac{1}{2^{p+1}} < \dfrac{1}{k} \leq \dfrac{1}{2^p}$, por lo tanto si sustituimos los términos de la sucesión armónica generalizada $\dfrac{1}{k}$ por el correspondiente $\dfrac{1}{2^p}$, tal que $\dfrac{1}{k} \leq \dfrac{1}{2^p}$, entonces tendremos la serie
+Sea ahora  $\alpha >1$. Trataremos de acotar los términos de la sucesión que genera la serie armónica generalizada por los términos de una sucesión que genere una serie convergente, en particular por una serie geométrica de razón $\dfrac{1}{2^{\alpha-1}}$. Para cualquier $k \in \mathbb{N}$ existe un $p \in \mathbb{N}$ tal que $2^p \leq k < 2^{p+1}$, por lo que será $\dfrac{1}{2^{p+1}} < \dfrac{1}{k} \leq \dfrac{1}{2^p}$, por lo tanto si sustituimos los términos de la sucesión armónica generalizada $\dfrac{1}{k}$ por el correspondiente $\dfrac{1}{2^p}$, tal que $\dfrac{1}{k} \leq \dfrac{1}{2^p}$, entonces tendremos la serie
 $$
-1+\dfrac{1}{2^{\alpha}}+\dfrac{1}{2^{\alpha}}+\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}+ \dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}} + \ldots
+1+\left(\dfrac{1}{2^{\alpha}}+\dfrac{1}{2^{\alpha}}\right)+\left(\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}+\dfrac{1}{4^{\alpha}}\right)+ \left(\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}+\dfrac{1}{8^{\alpha}}\right) + \ldots
 $$
 es decir, la serie geométrica de razón $\dfrac{1}{2^{\alpha -1}}$:
 $$
