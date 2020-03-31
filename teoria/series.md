@@ -130,7 +130,7 @@ $$
 
 ## Condición necesaria
 
-<l class="prop"> **Corolario (Condición suficiente de convergencia)** </l>
+<l class="prop"> **Corolario (Condición necesaria de convergencia)** </l>
 
 Si la serie $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es convergente, entonces $\lim_{n \rightarrow \infty}  a_n = 0$
 
@@ -140,7 +140,7 @@ Es suficiente considerar la condición de Cauchy con $m=n+1$, en este caso resul
 
 </div>
 
-Es importante tener en cuenta que esta és una condición **necesaria** pero no suficiente, como evidencia el caso de la seria armónica, que es divergente aunque $\lim_{n \rightarrow \infty}  \dfrac{1}{n}=0$
+Es importante tener en cuenta que esta és una condición **necesaria** pero no suficiente, como evidencia el caso de la serie armónica, que es divergente aunque $\lim_{n \rightarrow \infty}  \dfrac{1}{n}=0$
 
 ## Propiedades de las series convergentes.
 
@@ -201,7 +201,7 @@ entonces si $\displaystyle{\sum_{n=1}^{\infty}|a_n|} < \infty$, para todo $\epsi
 
 ## Convergencia condicional
 
-El recíproco no es cierto: una seria puede ser convergente sin ser absolutamente convergente. 
+El recíproco no es cierto: una serie puede ser convergente sin ser absolutamente convergente. 
 Es el caso de la serie $\displaystyle{\sum \dfrac{(-1)^n}{n}}$ que, como demostraremos más adelante, es convergente, en tanto que la serie de valores absolutos  es la serie armónica que ya hemos visto que era divergente.  
 
 Una serie convergente que no sea absolutamente convergente recibe le nombre de **condicionalmente convergente**
