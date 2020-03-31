@@ -282,7 +282,7 @@ por lo tanto, al estar acotada superiormente por una serie convergente, la serie
 
 Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos  
 
-1. Si para todo $n \geq n_0$ es $\dfrac{a_n}{b_n} \leq \lambda$, donde $\lambda$ es un número real positivo y si $\sum b_n$ es convergent, entonces $\sum a_n$ es convergente.
+1. Si para todo $n \geq n_0$ es $\dfrac{a_n}{b_n} \leq \lambda$, donde $\lambda$ es un número real positivo y si $\sum b_n$ es convergente, entonces $\sum a_n$ es convergente.
 2. Si para todo $n \geq n_0$ es $\dfrac{a_n}{b_n} \geq \lambda$, donde $\lambda$ es un número real positivo y $\sum b_n$ es divergente, entonces $\sum a_n$ es divergente.
 
 <div class="dem"> **Demostración**
@@ -307,3 +307,23 @@ Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos,
 
 Es fácil comprobar, en el primer caso, que $a_{n_0 + p} \leq \dfrac{a_{n_0}}{b_{n_0}}b_{n_0 + p}$, por lo que de acuerdo con el corolario anterior, si $\sum b_n$ es convergente, también lo será $\sum a_n$. Razonamientos análogos permiten demostrar el segundo punto.
 </div>
+
+## Criterios clásicos de convergencia para series de términos positivos
+
+Los criterios de comparación que acabamos de ver, usados con las series armónicas y geométricas, se convierten en potentes instrumentos para determinar la convergencia de series de términos positivos. Las proposiciones que siguen son ejemplos de esta afirmación.
+
+<l class="prop"> **Proposición**
+
+Sea $\sum a_n$ una seria de términos positivos. 
+
+1. Si para un $\alpha>1$ tal que  existe el $\lim n^{\alpha} a_n$, entonces la serie es convergente. 
+
+2. Si existe el $\lim n \cdot a_n$ y es estrictamente positivo, entonces la serie diverge.
+
+## Criterios clásicos
+
+<div class="dem"> **Demostración**
+
+1. Que existe el $\lim n^{\alpha} a_n$ quiere decir que la sucesión $n^{\alpha} a_n$ está acotada por un número positivo $M$, es decir que $a_n \leq M \cdot \dfrac{1}{n^{\alpha}}$, por lo que, envirtud del corolario anterior, la  serie $\sum a_n$ es convergente por estar acotada por una armónica con $\alpha >1$.
+
+2. Si el $\lim n \cdot a_n$ existe y es positivo, podemos determinar una constante positiva $M$ tal que $na_n>M$ para todo $n>n_0$ y, por lo tanto, $a_n$ está minorada por una serie divergente. (Determinación de M: Sea $L = \lim n\cdot a_n$, dado que $L>0$, existe un $n_0$ tal que para todo $n >n_0$, es $L- n \cdot a_n <\dfrac{L}{2}$, por lo que $n \cdot a_n > \dfrac{L}{2}=M$
