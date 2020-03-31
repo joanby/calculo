@@ -371,7 +371,9 @@ Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \dfrac{a_{n+1}
 
 3. Si $\lambda =1$, el criterio no decide.
 
-<div class="dem"> **Demostració**
+<div class="dem"> **Demostración**
+
+
 
 </div>
 
@@ -388,7 +390,7 @@ Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \left(1 -\dfra
 
 3. Si $\lambda =1$, el criterio no decide.
 
-<div class="dem"> **Demostració**
+<div class="dem"> **Demostración**
 
 </div>
 
