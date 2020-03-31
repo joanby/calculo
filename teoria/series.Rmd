@@ -316,9 +316,9 @@ Es fácil comprobar, en el primer caso, que $a_{n_0 + p} \leq \dfrac{a_{n_0}}{b_
 
 Los criterios de comparación que acabamos de ver, usados con las series armónicas y geométricas, se convierten en potentes instrumentos para determinar la convergencia de series de términos positivos. Las proposiciones que siguen son ejemplos de esta afirmación.
 
-<l class="prop"> **Proposición**
+<l class="prop"> **Proposición (Criterio de Pringsheim)**
 
-Sea $\sum a_n$ una seria de términos positivos. 
+Sea $\sum a_n$ una serie de términos positivos. 
 
 1. Si para un $\alpha>1$ tal que  existe el $\lim n^{\alpha} a_n$, entonces la serie es convergente. 
 
@@ -331,3 +331,74 @@ Sea $\sum a_n$ una seria de términos positivos.
 1. Que existe el $\lim n^{\alpha} a_n$ quiere decir que la sucesión $n^{\alpha} a_n$ está acotada por un número positivo $M$, es decir que $a_n \leq M \cdot \dfrac{1}{n^{\alpha}}$, por lo que, envirtud del corolario anterior, la  serie $\sum a_n$ es convergente por estar acotada por una armónica con $\alpha >1$.
 
 2. Si el $\lim n \cdot a_n$ existe y es positivo, podemos determinar una constante positiva $M$ tal que $na_n>M$ para todo $n>n_0$ y, por lo tanto, $a_n$ está minorada por una serie divergente. (Determinación de M: Sea $L = \lim n\cdot a_n$, dado que $L>0$, existe un $n_0$ tal que para todo $n >n_0$, es $L- n \cdot a_n <\dfrac{L}{2}$, por lo que $n \cdot a_n > \dfrac{L}{2}=M$
+
+</div>
+<div class="example"> **Ejemplo**
+
+ La serie $\sum \dfrac{\sqrt[3]{n}}{\sqrt{n^3-n+1}}$ es convergente, puesto que la diferencia de grados entre el denominador y el numerador  es $\dfrac{3}{2} - \dfrac{1}{3} = \dfrac{7}{6}$, por lo que $\lim \left(n^{\frac{7}{6}} \cdot \dfrac{\sqrt[3]{n}}{\sqrt{n^3-n+1}}\right) = 1$, y con $\dfrac{7}{6} >1$.
+
+</div>
+
+## Criterios clásicos: Criterio de Cauchy (o de la raíz)
+
+<l class="prop"> **Proposición** </l>
+
+Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \sqrt[n]{a_n} = \lambda$. Entonces
+
+1. Si $\lambda < 1$, la serie es convergente.
+
+2. Si $\lambda > 1$ la serie es divergente.
+
+3. Si $\lambda =1$, el criterio no decide.
+
+<div class="dem"> **Demostración**
+
+1. Dado que $\lambda <1$, tenemos que es posible tomar un $\epsilon>0$ tal que  $\epsilon < 1- \lambda$, entonces existe un $n_0$ tal que $\sqrt[n]{a_n} - \lambda < \epsilon$, es decir, que $a_n <(\epsilon + \lambda)^n$, dado que $\epsilon + \lambda <1$ los términos de $a_n$ estan mayorados por una geométrica de zazón menor que 1 y, por lo tanto, será convergente.
+
+2. Un razonamiento similar, permite ver que, en este caso, los términos de $a_n$ estan minorados por los de una divergente.
+
+</div>
+
+## Ejemplos
+
+
+
+## Criterios clásicos: Criterio de d'Alembert
+
+<l class="prop"> **Proposición** </l>
+
+Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \dfrac{a_{n+1}}{a_n} = \lambda$. Entonces
+
+1. Si $\lambda < 1$, la serie es convergente.
+
+2. Si $\lambda > 1$ la serie es divergente.
+
+3. Si $\lambda =1$, el criterio no decide.
+
+<div class="dem"> **Demostració**
+
+</div>
+
+## Ejemplos
+
+
+## Criterios clásicos: Criterio de Raabe </l>
+
+Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \left(1 -\dfrac{a_{n+1}}{a_n}\right) = \lambda$. Entonces
+
+1. Si $\lambda < 1$, la serie es divergente
+
+2. Si $\lambda > 1$ la serie esconvergente
+
+3. Si $\lambda =1$, el criterio no decide.
+
+<div class="dem"> **Demostració**
+
+</div>
+
+## Ejemplos
+
+
+
+
+
