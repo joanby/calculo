@@ -603,3 +603,165 @@ En este caso hacemos el cambio $t=\cos x$, con $\sin x = \sqrt{1-t^2}$, $dx=-\fr
 Entonces, sólo nos pueden salir potencias impares en $\cos x$.
 
 En este caso hacemos el cambio $t=\sin x$, con $\cos x = \sqrt{1-t^2}$, $dx=\frac{dt}{\sqrt{1-t^2}}$.
+
+
+# Integrales que contienen $\sqrt{ax^2+bx+c}$
+
+## Introducción
+En esta sección vamos a estudiar la integral indefinida de un conjunto de funciones que contienen la raíz cuadrada de un polinomio de segundo grado $\sqrt{ax^2+bx+c}$.
+
+Concretamente, las integrales indefinidas que nos planteamos tienen la forma siguiente: $\displaystyle\int\frac{P(x)}{\sqrt{ax^2+bx+c}}\, dx$, donde $P(x)$ es un polinomio en la variable $x$.
+
+Vamos a realizar el estudio del cálculo de la integral indefinida correspondiente dependiendo del signo del término principal $a$ y de si el polinomio $ax^2+bx+c$ tiene o no raíces reales.
+
+
+
+## Caso $a>0$ y $b^2-4ac>0$
+En este caso, la ecuación $a x^2+bx +c=0$ tiene dos raíces reales.
+
+En primer lugar, "arreglamos" el término $\sqrt{ax^2+bx+c}$ de la siguiente manera:
+$$
+\begin{array}{rl}
+\sqrt{ax^2+bx+c} & =\sqrt{a}\sqrt{x^2+\frac{b}{a}x+\frac{c}{a}}=\sqrt{a}\sqrt{\left(x+\frac{b}{2a}\right)^2+\frac{c}{a}-\frac{b^2}{4a^2}}\\ & = \sqrt{a}\sqrt{\left(x+\frac{b}{2a}\right)^2-\frac{b^2-4ac}{4a^2}}=\sqrt{\frac{b^2-4ac}{4a}}\sqrt{y^2-1},
+\end{array}
+$$
+con $y=\frac{2a}{\sqrt{b^2-4 a c}}\left(x+\frac{b}{2a}\right)$.
+
+## Caso $a>0$ y $b^2-4ac>0$
+A continuación, nos planteamos el cambio de variable siguiente: $y=\sec t=\frac{1}{\cos t}$, o si se quiere:
+$$
+\frac{2a}{\sqrt{b^2-4 a c}}\left(x+\frac{b}{2a}\right)=\sec t=\frac{1}{\cos t}.
+$$
+
+La relación entre los diferenciales es la siguiente:
+$$
+\frac{2a}{\sqrt{b^2-4 a c}}\, dx=\frac{\sin t}{\cos^2 t}\, dt,\ \Rightarrow dx=\frac{\sqrt{b^2-4 a c}}{2a}\cdot \frac{\sin t}{\cos^2 t}\, dt.
+$$
+
+## Caso $a>0$ y $b^2-4ac>0$
+El término $\sqrt{a x^2+bx+c}$ se nos transforma en función de la variable $t$ en:
+$$
+\begin{array}{rl}
+\sqrt{a x^2+bx+c} & = \sqrt{\frac{b^2-4ac}{4a}}\sqrt{\frac{1}{\cos^2 t}-1}=\sqrt{\frac{b^2-4ac}{4a}}\frac{\sin t}{\cos t}\\ & =\sqrt{\frac{b^2-4ac}{4a}} \tan t.
+\end{array}
+$$
+
+## Caso $a>0$ y $b^2-4ac>0$
+De esta manera, hemos transformado la integral indefinida que contiene el término $\sqrt{a x^2+bx+c}$ en una integral racional en $\sin t$, $\cos t$, $\displaystyle\int R(\sin t,\cos t)\, dx$, que ya han sido estudiadas:
+$$
+\int\frac{P(x)}{\sqrt{ax^2+bx+c}}\, dx =\frac{1}{\sqrt{a}}\int \frac{P\left(\frac{\sqrt{b^2-4ac}}{2a\cos t}-\frac{b}{2a}\right)}{ \cos t}\, dt
+$$
+
+
+## Caso $a>0$ y $b^2-4ac<0$
+En este caso, la ecuación $a x^2+bx +c=0$ no tiene raíces reales.
+
+El "arreglo" del término $\sqrt{ax^2+bx+c}$ será, en este caso:
+$$
+\begin{array}{rl}
+\sqrt{ax^2+bx+c} & =\sqrt{a}\sqrt{x^2+\frac{b}{a}x+\frac{c}{a}}=\sqrt{a}\sqrt{\left(x+\frac{b}{2a}\right)^2+\frac{c}{a}-\frac{b^2}{4a^2}}\\ & = \sqrt{a}\sqrt{\left(x+\frac{b}{2a}\right)^2+\frac{4 a c-b^2}{4a^2}}=\sqrt{\frac{4 a c-b^2}{4a}}\sqrt{y^2+1},
+\end{array}
+$$
+con $y=\frac{2a}{\sqrt{4 a c-b^2}}\left(x+\frac{b}{2a}\right)$.
+
+## Caso $a>0$ y $b^2-4ac<0$
+A continuación, nos planteamos el cambio de variable siguiente: $y=\tan t$, o si se quiere:
+$$
+\frac{2a}{\sqrt{4 a c-b^2}}\left(x+\frac{b}{2a}\right)=\tan t.
+$$
+
+La relación entre los diferenciales es la siguiente:
+$$
+\frac{2a}{\sqrt{4 a c-b^2}}\, dx=\frac{1}{\cos^2 t}\, dt,\ \Rightarrow dx=\frac{\sqrt{4 a c-b^2}}{2a}\cdot \frac{1}{\cos^2 t}\, dt.
+$$
+
+## Caso $a>0$ y $b^2-4ac<0$
+El término $\sqrt{a x^2+bx+c}$ se nos transforma en función de la variable $t$ en:
+$$
+\sqrt{a x^2+bx+c}  = \sqrt{\frac{4 a c-b^2}{4a}} \sqrt{\tan^2 t+1}=\sqrt{\frac{4 a c-b^2}{4a}}\frac{1}{\cos t}.
+$$
+
+De esta manera, hemos transformado la integral indefinida que contiene el término $\sqrt{a x^2+bx+c}$ en una integral racional en $\sin t$, $\cos t$, $\displaystyle\int R(\sin t,\cos t)\, dx$, que ya han sido estudiadas:
+$$
+\int\frac{P(x)}{\sqrt{ax^2+bx+c}}\, dx =\frac{1}{\sqrt{a}}\int \frac{P\left(\frac{\sqrt{4ac-b^2}\tan t}{2a}-\frac{b}{2a}\right)}{ \cos t}\, dt.
+$$
+
+## Caso $a<0$ y $b^2-4ac>0$
+En este caso, la ecuación $a x^2+bx +c=0$ tiene dos raíces reales.
+
+El "arreglo" del término $\sqrt{ax^2+bx+c}$ será, en este caso:
+$$
+\begin{array}{rl}
+\sqrt{ax^2+bx+c} & =\sqrt{-a}\sqrt{-x^2-\frac{b}{a}x-  \frac{c}{a}}=\sqrt{-a}\sqrt{-\left(x+\frac{b}{2a}\right)^2-\frac{c}{a}+\frac{b^2}{4a^2}}\\ & = \sqrt{-a}\sqrt{-\left(x+\frac{b}{2a}\right)^2+\frac{b^2-4 a c}{4a^2}}=\sqrt{\frac{4 a c-b^2}{4a}}\sqrt{1-y^2},
+\end{array}
+$$
+con $y=\frac{2|a|}{\sqrt{b^2-4 a c}}\left(x+\frac{b}{2a}\right)=\frac{-2 a}{\sqrt{b^2-4 a c}}\left(x+\frac{b}{2a}\right)$.
+
+## Caso $a<0$ y $b^2-4ac>0$
+A continuación, nos planteamos el cambio de variable siguiente: $y=\sin t$, o si se quiere:
+$$
+\frac{-2 a}{\sqrt{b^2-4 a c}}\left(x+\frac{b}{2a}\right) =\sin t.
+$$
+
+La relación entre los diferenciales es la siguiente:
+$$
+\frac{-2 a}{\sqrt{b^2-4 a c}}\, dx=\cos t\, dt,\ \Rightarrow dx=-\frac{\sqrt{b^2-4ac}}{2a}\cdot \cos t\, dt.
+$$
+
+## Caso $a<0$ y $b^2-4ac > 0$
+El término $\sqrt{a x^2+bx+c}$ se nos transforma en función de la variable $t$ en:
+$$
+\sqrt{a x^2+bx+c}  = \sqrt{\frac{4 a c-b^2}{4a}} \sqrt{1-\sin^2 t}=\sqrt{\frac{4 a c-b^2}{4a}} \cos t.
+$$
+
+De esta manera, hemos transformado la integral indefinida que contiene el término $\sqrt{a x^2+bx+c}$ en una integral racional en $\sin t$, $\cos t$, $\displaystyle\int R(\sin t,\cos t)\, dx$, que ya han sido estudiadas:
+$$
+\int\frac{P(x)}{\sqrt{ax^2+bx+c}}\, dx =-\frac{1}{\sqrt{-a}}\int P\left(-\frac{\sqrt{b^2-4ac}\sin t}{2a}-\frac{b}{2a}\right)\, dt.
+$$
+
+
+## Caso $a<0$ y $b^2-4ac < 0$
+En este caso, la ecuación $a x^2+bx +c=0$ no tiene raíces reales.
+
+Este caso no tendría sentido considerarlo ya que para todo valor $x\in\mathbb{R}$ real, $ax^2+bx+c<0$. Por tanto, el dominio de la función $\sqrt{ax^2+bx+c}$ sería el conjunto vacío, $\emptyset$.
+
+## Otras integrales indefinidas que contienen $\sqrt{ax^2+bx+c}$
+Veamos otras integrales indefinidas donde se pueden aplicar las técnicas de integración vistas en esta sección.
+
+Para calcular la integral indefinida del tipo $\displaystyle\int\frac{dx}{(e x+f)\sqrt{a x^2+b x+c}}\, dx$, donde $a,b,c,e$ y $f$ son constantes, podemos considerar el cambio siguiente:  $t=\frac{1}{e x+f}$.
+
+## Otras integrales indefinidas que contienen $\sqrt{ax^2+bx+c}$
+La relación entre los diferenciales es el siguiente: $dt=-\frac{e}{(ex+f)^2}\,dx=-e t^2\, dx$. Por tanto, $dx=-\frac{1}{e t^2}\, dt$. Entonces la integral en la nueva variable $t$ sería:
+$$
+\int\frac{dx}{(d x+e)\sqrt{a x^2+b x+c}} =-\int \frac{dt}{\sqrt{(a f^2-b e f+c e^2) t^2+(b e-2 a f)t+a}}.
+$$
+La última integral sería del tipo que hemos estudiado antes.
+
+## Otras integrales indefinidas que contienen $\sqrt{ax^2+bx+c}$
+
+Para calcular una integral indefinida del tipo $\displaystyle\int\sqrt{ax^2+bx+c}\, dx$, podemos realizar los cambios indicados en esta sección y quedarán transformadas en integrales trigonométricas del tipo $\displaystyle\int R(\sin x,\cos x)\, dx$ que ya han sido estudiadas.
+
+# Integración de otras funciones racionales
+
+## Introducción
+En esta sección nos planteamos el cálculo de integrales indefinidas del tipo 
+$$
+\int R\left(x,\left(\frac{ax+b}{cx+e}\right)^{r_1},\left(\frac{ax+b}{cx+e}\right)^{r_2},\ldots, \left(\frac{ax+b}{cx+e}\right)^{r_k}\right)\, dx,
+$$
+donde $R$ es una función racional en las variables $x$, $\left(\frac{ax+b}{cx+e}\right)^{r_1},\ldots,\left(\frac{ax+b}{cx+e}\right)^{r_k}$, y los valores $r_i$ son valores racionales de la forma $r_i=\frac{p_i}{q_i}$, $i=1,\ldots,k$.
+
+## Cambio de variable
+Para el cálculo de integrales de este tipo, consideramos el cambio de variable siguiente: $t^n =\frac{ax+b}{cx+e}$, donde $n$ es el mínimo común múltiplo de los denominadores de los valores $r_i$: $n=\mathrm{mcm}(q_1,\ldots,q_k)$.
+
+La relación entre los diferenciales es la siguiente:
+$$
+m t^{m-1}\, dt = \frac{ae-bc}{(cx+e)^2}\, dx\ \Rightarrow dx=\frac{(ae-bc) m t^{m-1}}{(c t^m-a)^2}\, dt.
+$$
+Sean los números naturales $\alpha_i = \frac{m p_i}{q_i}$, $i=1,\ldots, k$. Dichos números son naturales ya que como $m$ és múltiplo de $p_i$, $\frac{m}{q_i}\in\mathbb{N}$.
+
+## Cambio de variable
+El valor de la integral a calcular en la nueva variable $t$ sería:
+$$
+\int R\left(\frac{e t^m-b}{a-c t^m},t^{\alpha_1},t^{\alpha_2},\ldots, t^{\alpha_k}\right)\frac{(ae-bc) m t^{m-1}}{(c t^m-a)^2}\, dt.
+$$
+Se trataría de una integral racional en la variable $t$ y, por tanto, ya las sabemos resolver ya que han sido estudiadas anteriormente.
