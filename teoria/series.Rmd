@@ -361,6 +361,8 @@ Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \sqrt[n]{a_n} 
 
 ## Ejemplos
 
+Ejemplo 1. 
+
 
 
 ## Criterios clásicos: Criterio de d'Alembert
@@ -395,6 +397,23 @@ $$
 Ejemplo 2. 
 
 
+## La serie de recíprocos de la sucesión de Fibonacci.
+
+<div class="example"> **Ejemplo**
+
+La serie, $\sum b_n$ generada por la sucesión de recíprocos de la serie de Fibonacci es convergente. 
+
+Sea $a_n$ la sucesión de Fibonacci, es decir $a_1=a_0=0$, $a_{n+1}=a_n+a_{n-1}$, entonces $b_n= \dfrac{1}{a_n}$. Ahora 
+$$
+\dfrac{b_{n+1}}{b_n}= \dfrac{a_n}{a_{n+1}}= \dfrac{a_{n-1}+a_{n-2}}{a_{n}+a_{n-1}}
+$$
+es decir, $\dfrac{b_{n+1}}{b_n}$ está entre $\dfrac{a_{n-1}}{a_n}$ y $\dfrac{a_{n-2}}{a_{n-1}}$. Las dos primeras fracciones de este tipo son $\dfrac{1}{2}$ y $\dfrac{2}{3}$, por lo que todos los cocientes $\dfrac{b_{n+1}}{b_n}$ estan entre estas dos fracciones, es decir $\dfrac{1}{2}< \dfrac{b_{n+1}}{b_n}<\dfrac{2}{3}<1$,
+por lo que 
+$$
+\lim \dfrac{b_{n+1}}{b_n} \leq  \dfrac{2}{3}<1
+$$
+y, de acuerdo con el criterio de d'Alembert la serie es convergente.
+
 ## Criterios clásicos: Criterio de Raabe </l>
 
 Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim n \cdot \left(1 -\dfrac{a_{n+1}}{a_n}\right) = \lambda$. Entonces
@@ -427,6 +446,11 @@ Razonamientos similares sirven para demostrar el criterio cuando $\lambda < 1$.
 </div>
 
 ## Ejemplos
+
+<div class="example"> **Ejemplos**
+
+Ejemplo 1.
+
 
 
 ## Suma de las series hipergeométricas.
@@ -473,3 +497,4 @@ $$
 \sum_{n=1}^{\infty} \dfrac{1}{n(n+1)} =  \dfrac{a_1 \gamma}{\gamma - (\alpha + \beta)} = \dfrac{\dfrac{1}{2} \cdot 2}{1+0}=1
 $$
 
+## Series telescópicas
