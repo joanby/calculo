@@ -365,7 +365,7 @@ Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \sqrt[n]{a_n} 
 
 ## Criterios clásicos: Criterio de d'Alembert
 
-<l class="prop"> **Proposición** </l>
+<l class="prop"> **Proposición (Criterio de d'Alembert)** </l>
 
 Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \dfrac{a_{n+1}}{a_n} = \lambda$. Entonces
 
@@ -377,11 +377,22 @@ Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \dfrac{a_{n+1}
 
 <div class="dem"> **Demostración**
 
+1. Supongamos que $\lambda <1$, sea $0 <\epsilon <1- \lambda$, entonces $M=\lambda + \epsilon < 1$ y existe $n_0$ tal que para todo $n>n_0$ es $\dfrac{a_{n+1}}{a_n} - \lambda < \epsilon$, es decir $\dfrac{a_{n+1}}{a_n} <M =\dfrac{M^{n+1}}{M^n}$ y, de acuerdo con el criterio de comparación de segunda especie, dado que $\sum M^n$ és una serie geométrica de razón menor que $1$, la serie dada es convergente.
 
+2. Razonamientos similares permiten demostrar que si $\lambda >1$ la serie es divergente.
 
 </div>
 
 ## Ejemplos
+
+<div class="example"> **Ejemplos**
+
+Ejemplo 1. La serie $\sum \dfrac{n!}{n^n}$ es convergente, puesto que
+$$
+\lim \dfrac{a_{n+1}}{a_n} = \lim \dfrac{(n+1)! \cdot n^n}{(n+1)^{n+1}\cdot n!} = \lim \left( \dfrac{n}{n+1}\right)^n = \dfrac{1}{e} < 1
+$$
+
+Ejemplo 2. 
 
 
 ## Criterios clásicos: Criterio de Raabe </l>
