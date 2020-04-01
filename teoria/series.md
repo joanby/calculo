@@ -447,3 +447,14 @@ $$
 \sum_{n=1}^{\infty} a_n = \lim S_n = \dfrac{a_1 \gamma}{\gamma - (\alpha + \beta)}
 $$
 
+## Series hipergeométricas: Ejemplo.
+
+<div class="Example"> 
+Calcular la suma de la serie $\sum \dfrac{1}{n(n+1)}$, caso que sea convergente
+
+Puesto que $\dfrac{a_{n+1}}{a_n}= \dfrac{n(n+1)}{(n+1)(n+2)}= \dfrac{n}{n+2}$, se trata de una serie hipergeométrica con $\alpha = 1$, $\beta = 0$ y $\gamma =2$. Dado que $\alpha + \beta = 1 + 0 < 2 = \gamma$, la serie es convergente. Su suma
+es
+$$
+\sum_{n=1}^{\infty} \dfrac{1}{n(n+1)} =  \dfrac{a_1 \gamma}{\gamma - (\alpha + \beta)} = \dfrac{\dfrac{1}{2} \cdot 2}{1+0}=1
+$$
+
