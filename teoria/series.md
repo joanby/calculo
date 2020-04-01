@@ -382,7 +382,7 @@ Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \dfrac{a_{n+1}
 
 ## Criterios clásicos: Criterio de Raabe </l>
 
-Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \left(1 -\dfrac{a_{n+1}}{a_n}\right) = \lambda$. Entonces
+Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim n \cdot \left(1 -\dfrac{a_{n+1}}{a_n}\right) = \lambda$. Entonces
 
 1. Si $\lambda < 1$, la serie es divergente
 
@@ -390,8 +390,25 @@ Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \left(1 -\dfra
 
 3. Si $\lambda =1$, el criterio no decide.
 
+Este criterio se usa cuando el de la raiz o el de d'Alembert no deciden, es decir, cuando el correspondiente límite es 1.
+
+## Demostración del criterio de Raabe
+
 <div class="dem"> **Demostración**
 
+1. Supongamos $\lambda >1$, entonces $\epsilon= \dfrac{\lambda -1}{2}>0$ por lo que existe $n_0$ tal que para todo $n>n_0$ es 
+$$
+-\epsilon < \dfrac{n \cdot a_n -n \cdot a_{n+1}}{a_n} - \lambda < \epsilon
+$$
+es decir que, $\dfrac{n \cdot a_n -n \cdot a_{n+1}}{a_n} > \lambda - \epsilon = 1 + \epsilon$. En definitiva, para todo $n  >  n_0$ es $(n-1)a_n -na_{n+1} > a_n \epsilon$.
+
+Para simplificar, podemos prescindir ahora de los $n_0$ primeros términos. Sumamos hasta $n$ las desigualdades anteriores, para obtener $a_1 -na_n \geq \epsilon S_{n-1}$, es decir que las sumas parciales estan acotadas por $\dfrac{a_1}{\epsilon}$, puesto que
+$$
+S_{n-1} < \dfrac{a_1-na_n}{\epsilon}< \dfrac{a_1}{\epsilon}
+$$
+Por lo que la serie será convergente.
+
+Razonamientos similares sirven para demostrar el criterio cuando $\lambda < 1$.
 </div>
 
 ## Ejemplos
