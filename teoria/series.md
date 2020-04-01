@@ -390,7 +390,14 @@ $$
 \lim \dfrac{a_{n+1}}{a_n} = \lim \dfrac{(n+1)! \cdot n^n}{(n+1)^{n+1}\cdot n!} = \lim \left( \dfrac{n}{n+1}\right)^n = \dfrac{1}{e} < 1
 $$
 
-Ejemplo 2. 
+Ejemplo 2. Este criterio no permite determinar la convergencia o divergencia de la serie de término general
+$$
+a_n= \dfrac{n!}{(a+1)(a+2) \cdots (a+n)}
+$$
+donde $a$ es un número real positivo. En efecto
+$$
+\lim \dfrac{a_{n+1}}{a_n} = \lim \dfrac{(n+1)! \cdot(a+1)(a+2) \cdots (a+n)}{n! \cdot (a+1)(a+2) \cdots (a+(n+1))}= \lim \dfrac{n+1}{a+n+1}=1
+$$
 
 
 ## La serie de recíprocos de la sucesión de Fibonacci.
