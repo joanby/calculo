@@ -414,6 +414,36 @@ Razonamientos similares sirven para demostrar el criterio cuando $\lambda < 1$.
 ## Ejemplos
 
 
+## Suma de las series hipergeométricas.
 
+<l class="definicion"> **Definición**
 
+$\sum a_n$ es una serie **hipergeométrica** si para todo $n \in \mathbb{N}$ se verifica que 
+$$
+\dfrac{a_{n+1}}{a_n} = \dfrac{\alpha n + \beta}{\alpha n + \gamma}
+$$
+donde $\alpha$, $\beta$ y $\gamma$ son números reales tales que  $\alpha \neq 0$ y $\alpha+\beta < \gamma$
+
+El criterio de Raabe permite comprobar que este tipo de series son convergentes, puesto que 
+$$
+\lim n \left(1- \dfrac{a_{n+1}}{a_n}\right)= \lim n  \left(1-  \dfrac{\alpha n + \beta}{\alpha n + \gamma} \right) = \lim \dfrac{n \gamma-n\beta}{\alpha n+\beta}= \dfrac{\gamma - \beta}{\alpha}
+$$
+y, por hipótesis, $\dfrac{\gamma - \beta}{\alpha} >1$, por lo que la serie es convergente.
+
+## Suma de las series hipergeométricas.
+
+Veamos ahora cual es la suma de una serie hipergeométrica.
+
+Dado que $a_{k+1}(\alpha k + \gamma) = a_k(\alpha k + \beta)$ para todo $k=1,\ldots,n$, sumando miembro a miembro las $n$ igualdades, tendremos 
+$$
+S_n(\alpha + \beta) = (S_n - a_1) \gamma + a_n(n \alpha + \beta)
+$$
+por lo que 
+$$
+S_n =\dfrac{a_1 \gamma -a_n (n \alpha + \beta)}{\gamma - (\alpha + \beta)}
+$$
+Ahora dado que, por ser $\sum a_n$ convergente es $\lim n a_n = \lim a_n = 0$, resulta que
+$$
+\sum_{n=1}^{\infty} a_n = \lim S_n = \dfrac{a_1 \gamma}{\gamma - (\alpha + \beta)}
+$$
 
