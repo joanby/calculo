@@ -452,7 +452,15 @@ Razonamientos similares sirven para demostrar el criterio cuando $\lambda < 1$.
 
 <div class="example"> **Ejemplos**
 
-Ejemplo 1.
+Ejemplo 1. Hemos visto que el criteri de d'Alembert no servia para determinar la convergencia de la serie $a_n= \dfrac{n!}{(a+1)(a+2) \cdots (a+n)}$, puesto que el $\lim \dfrac{a_{n+1}}{a_n} = \lim \dfrac{n+1}{a+n+1}=1$. Veamos si el criterio de Raabe aporta més información:
+$$
+\lim n \cdot \left(1 - \dfrac{a_{n+1}}{a_n}\right) = \lim n \cdot \left(1 -  \dfrac{n+1}{a+n+1}\right) = \lim \dfrac{na}{a+n+1}=a
+$$
+Por lo tanto, si $a>1$ la serie es convergente. Si $a<1$ la serie es divergente. Si $a=1$ nos queda la serie
+$$
+\sum \dfrac{n!}{(n+1)!} = \sum \dfrac{1}{n+1}
+$$
+que es divergente.
 
 
 
