@@ -495,10 +495,9 @@ Sea $\sum (-1)^{n+1} a_n$ una serie alternada tal que la sucesión $a_n$ es decr
 <div class="dem"> **Demostración**
 
 $$
-S_{2n}= a_1-a_2+a_3-a_4 \cdots +a_{2n-2}+a_{2n-1}+a_{2n} = a_1-(a_2-a_3)-(a_4-a_5)- \cdots -(a_{2n-2}-a_{2n-1})-a_{2n}
+S_{2n} = a_1-a_2+a_3+a_4 \cdots +a_{2n-2}+a_{2n-1}-a_{2n}=a_1-(a_2-a_3)-(a_4-a_5)- \cdots -(a_{2n-2}-a_{2n-1})-a_{2n}
 $$
-
-
+Dado que la sucesión es decreciente cada término $a_k - a_{k+1} \geq 0$ , por lo que $S_{2n} \leq a_1$. Además $S_{2n+2}-S_{2n}= a_{2n+1} - a_{2n+2} \geq 0$, es decir $S_{2n}$ es monótona creciente y está acotada superiormente, por lo existirá el $L =\lim S_{2n}$.
 
 
 
