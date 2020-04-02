@@ -361,12 +361,17 @@ Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \sqrt[n]{a_n} 
 
 ## Ejemplos
 
+<div class="example">
 Ejemplo 1. La serie $\sum \left( \dfrac{n+1}{3n-1} \right)^{2n-1}$ es convergente, puesto que 
 $$
 \lim \sqrt[n]{\left(\dfrac{n+1}{3n-1}\right)^{2n-1}}  = \lim \left(\dfrac{n+1}{3n-1}\right)^{\dfrac{2n-1}{n}} = \left(\dfrac{1}{3}\right)^2 =\dfrac{1}{9} <1
 $$
 
-
+Ejemplo 2. La serie $\sum \left( \dfrac{an+1}{an} \right)^{n^2}$ es convergente si $a<0$, puesto que 
+$$
+\lim \sqrt[n]{\left(\dfrac{an+1}{an}\right)^{n^2}}  = \lim \left(\dfrac{an+1}{an}\right)^n = e^{\lim n\left( 1-  \dfrac{an+1}{an}\right)} = e^{\frac{1}{a}} 
+$$
+y $e^{\frac{1}{a}}<1$ ssi $a<0$
 
 ## Criterios clásicos: Criterio de d'Alembert
 
@@ -411,7 +416,7 @@ $$
 
 <div class="example"> **Ejemplo**
 
-La serie, $\sum b_n$ generada por la sucesión de recíprocos de la serie de Fibonacci es convergente. 
+Ejemplo 3. La serie, $\sum b_n$ generada por la sucesión de recíprocos de la serie de Fibonacci es convergente. 
 
 Sea $a_n$ la sucesión de Fibonacci, es decir $a_1=a_0=0$, $a_{n+1}=a_n+a_{n-1}$, entonces $b_n= \dfrac{1}{a_n}$. Ahora 
 $$
@@ -423,6 +428,8 @@ $$
 \lim \dfrac{b_{n+1}}{b_n} \leq  \dfrac{2}{3}<1
 $$
 y, de acuerdo con el criterio de d'Alembert la serie es convergente.
+
+</div>
 
 ## Criterios clásicos: Criterio de Raabe </l>
 
@@ -457,9 +464,9 @@ Razonamientos similares sirven para demostrar el criterio cuando $\lambda < 1$.
 
 ## Ejemplos
 
-<div class="example"> **Ejemplos**
+<div class="example"> **Ejemplo**
 
-Ejemplo 1. Hemos visto que el criteri de d'Alembert no servia para determinar la convergencia de la serie $a_n= \dfrac{n!}{(a+1)(a+2) \cdots (a+n)}$, puesto que el $\lim \dfrac{a_{n+1}}{a_n} = \lim \dfrac{n+1}{a+n+1}=1$. Veamos si el criterio de Raabe aporta més información:
+Ejemplo. Hemos visto que el criterio de d'Alembert no servia para determinar la convergencia de la serie $a_n= \dfrac{n!}{(a+1)(a+2) \cdots (a+n)}$, puesto que el $\lim \dfrac{a_{n+1}}{a_n} = \lim \dfrac{n+1}{a+n+1}=1$. Veamos si el criterio de Raabe aporta més información:
 $$
 \lim n \cdot \left(1 - \dfrac{a_{n+1}}{a_n}\right) = \lim n \cdot \left(1 -  \dfrac{n+1}{a+n+1}\right) = \lim \dfrac{na}{a+n+1}=a
 $$
@@ -516,3 +523,11 @@ $$
 $$
 
 ## Series telescópicas
+
+<l class="definicion"> **Definición**
+
+Una serie $\sum a_n$ es telecópica si existe una sucesión de término general $b_n$ tal que  para todo $n$ es
+$$
+a_n = b_n-b_{n+1}
+$$
+
