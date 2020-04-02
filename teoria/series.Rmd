@@ -361,7 +361,10 @@ Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \sqrt[n]{a_n} 
 
 ## Ejemplos
 
-Ejemplo 1. 
+Ejemplo 1. La serie $\sum \left( \dfrac{n+1}{3n-1} \right)^{2n-1}$ es convergente, puesto que 
+$$
+\lim \sqrt[n]{\left(\dfrac{n+1}{3n-1}\right)^{2n-1}}  = \lim \left(\dfrac{n+1}{3n-1}\right)^{\dfrac{2n-1}{n}} = \left(\dfrac{1}{3}\right)^2 =\dfrac{1}{9} <1
+$$
 
 
 
