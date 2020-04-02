@@ -472,6 +472,10 @@ $$
 $$
 que es divergente.
 
+## Series de términos no necesariamente positivos
+
+
+
 
 
 ## Suma de las series hipergeométricas.
@@ -526,4 +530,31 @@ Una serie $\sum a_n$ es telecópica si existe una sucesión de término general 
 $$
 a_n = b_n-b_{n+1}
 $$
+<l class ="prop"> **Proposición** </l>
 
+Si $\sum a_n = \sum (b_n - b_{n+1})$, entonces la serie es convergente si, y sólo sí, la sucesión {b_n} es convergente. En cuyo caso $\sum a_n = b_1 - \lim b_n$
+
+<div class="dem"> **Demostración**
+
+Evidente, a partir del hecho que
+$$
+S_n = a_1+a_2+ \cdots+a_n = (b_1-b_2)+(b_2-b_3)+ \cdots+ (b_{n-2}-b_{n-1}+(b_{n-1}-b_n)=b_1 -b_n
+$$
+</div>
+
+## Series telescópicas: Ejemplos.
+
+<div class="example"> **Ejemplos**
+
+Ejemplo 1. La serie $\sum \dfrac{1}{(n+1)(n+2)}$ es telecópica, puesto que, como es fácil comprobar
+$$
+ \dfrac{1}{(n+1)(n+2)} =\dfrac{1}{n+1} - \dfrac{1}{n+2}
+$$
+dado que $\lim \dfrac{1}{n+2} =0$ i el primer término de la sucesión $\dfrac{1}{n+1}$ es $\dfrac{1}{2}$, tenemos que 
+$$
+\sum \dfrac{1}{(n+1)(n+2)} = \dfrac{1}{2}
+$$
+Ejemplo 2. La serie $\sum \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right)$, con $a > 1$, es telescópica. Dado que $\lim \dfrac{1}{a^{n+1}}=0$, la serie es convergente y su suma es 
+$$
+\sum \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right) = \dfrac{1}{a}
+$$
