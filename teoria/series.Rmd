@@ -480,6 +480,28 @@ que es divergente.
 
 
 
+## Series alternadas
+
+<l class="definición"> **Definición** </l>
+
+Una **serie alternada** es una serie de la forma $\sum_{n=1}^{\infty} (-1)^n a_n$, con $a_n \geq 0$ para todo $n \in \mathbb{N}$.
+
+Si $\sum a_n$ es convergente, entonces $\sum (-1)^n a_n$ es absolutamente convergente, en tanto que una serie alternada convergente tal que la correspondiente serie de valores absolutos no sea convergente, será una serie condicionalmente convergente.
+
+Una de las propiedades que hace particularmente interesantes las series alternadas es que, bajo ciertas condiciones, para este tipo de series la condición necesaria de convergencia es también suficiente, tal y como se estipula en la proposición següiente.
+
+## Series alternadas: Criterio de Leibniz
+
+<l class="prop"> **Proposición (Criterio de Leibniz)**
+
+Sea $\sum (-1)^{n+1} a_n$ una serie alternada tal que la sucesión $a_n$ es decreciente, es decir que para todo $n$ es $a_n \geq a_{n+1}$. Entonces $\sum (-1)^{n+1} a_n$ es convergente si, y sólo si, $\lim a_n =0$
+
+<div class="dem"> **Demostración**
+
+
+
+
+
 
 
 ## Suma de las series hipergeométricas.
