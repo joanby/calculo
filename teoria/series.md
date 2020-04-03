@@ -585,6 +585,29 @@ $$
 $$
 </div>
 
+
+## Suma de series aritmético-geométricas
+
+Sea $\sum na_n$ una serie aritmético-geométrica, és decir $\sum a_n$ es una serie geométrica. Sea $r$ la razón de esta serie, es decir $\sum a_n=a \sum r^n$, con $a>0$. Tenemos que el término general de la suma parcial enésima de la serie dada es $S_n = a(r+2r^2+3r^3+4r^4 + \cdots +(n-1) r^{n-1}+ nr^n)$, por otra parte $rS_n = a(r^2+2r^3+3r^4+4r^5 + \cdots +(n-1) r^n+ nr^{n+1}$, es decir
+$$
+S_n-rS_n= a(r+r^2+r^3 + \cdots+r^n+n r^{n+1})
+$$
+Ahora, $(1-r) \lim S_n = \dfrac{a}{1-r}$, por lo que $\sum nr^na= \dfrac{a}{(1-r^2)}$. 
+
+En el caso general, hay que iterar este procedimiento hasta llegar a una serie geométrica.
+
+## Suma de series aritmético-geométricas
+
+<div class="example"> **Ejemplo**
+
+Ejemplo 1. Sumar la serie $\sum (-1)^{n+1}\dfrac{n}{5^n}$.
+
+Se trata de una serie aritmético-geométrica con $r=-\dfrac{1}{5}$. Por lo que 
+$$
+\sum (-1)^{n+1}\dfrac{n}{5^n} =\dfrac{\dfrac{1}{5}}{\left(1+\dfrac{1}{5}\right)^2}=\dfrac{5}{36}
+$$
+
+
 ## Series telescópicas
 
 <l class="definicion"> **Definición**
