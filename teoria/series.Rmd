@@ -501,9 +501,22 @@ Sea $\sum (-1)^{n+1} a_n$ una serie alternada tal que la sucesión $a_n$ es decr
 $$
 S_{2n} = a_1-a_2+a_3+a_4 \cdots +a_{2n-2}+a_{2n-1}-a_{2n}=a_1-(a_2-a_3)-(a_4-a_5)- \cdots -(a_{2n-2}-a_{2n-1})-a_{2n}
 $$
-Dado que la sucesión es decreciente cada término $a_k - a_{k+1} \geq 0$ , por lo que $S_{2n} \leq a_1$. Además $S_{2n+2}-S_{2n}= a_{2n+1} - a_{2n+2} \geq 0$, es decir $S_{2n}$ es monótona creciente y está acotada superiormente, por lo existirá el $L =\lim S_{2n}$.
+Dado que la sucesión es decreciente, tenemos que  $a_k - a_{k+1} \geq 0$ , por lo que $S_{2n} \leq a_1$. Además $S_{2n+2}-S_{2n}= a_{2n+1} - a_{2n+2} \geq 0$, es decir $S_{2n}$ es monótona creciente y está acotada superiormente, por lo existirá el $L =\lim S_{2n}$.
 
+Análogamente, se demuestra que la sucesión $S_{2n+1}$ es decreciente y acotada inferiormente. Su límite es tambien $L$, puesto que $\lim S_{2n+1} - \lim S_{2n}=\lim (S_{2n+1} - S_{2n})= \lim a_{2n+1}= 0$ 
 
+Finalmente $\lim S_n= L$, puesto que $S_{2n} \leq S_n \leq S_{2n+1}$ y, por lo tanto, $\sum (-1)^{n+1} a_n$ es convergente.
+
+</div>
+
+## Series alternadas: Ejemplos
+
+<div class="example"> **Ejemplos**
+
+Ejemplo 1. La serie $\sum \dfrac{(-1)^{n+1}}{n}$ es convergente, puesto que satisface las condiciones del criterio de Leibniz:
+la sucesión de término general $\dfrac{1}{n}$ es decreciente y su límite es $0$. Como ya se ha mencionado, se trata de un ejemplo de serie condicionalmente convergente, puesto que la serie de valores absolutos es la serie armónica, que ya sabemos que es divergente. 
+
+</div>
 
 
 ## Suma de las series hipergeométricas.
