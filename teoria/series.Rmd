@@ -516,6 +516,13 @@ Finalmente $\lim S_n= L$, puesto que $S_{2n} \leq S_n \leq S_{2n+1}$ y, por lo t
 Ejemplo 1. La serie $\sum \dfrac{(-1)^{n+1}}{n}$ es convergente, puesto que satisface las condiciones del criterio de Leibniz:
 la sucesión de término general $\dfrac{1}{n}$ es decreciente y su límite es $0$. Como ya se ha mencionado, se trata de un ejemplo de serie condicionalmente convergente, puesto que la serie de valores absolutos es la serie armónica, que ya sabemos que es divergente. 
 
+Ejemplo 2. La serie $\sum (-1)^n e^{-n}$ es convergente, dado que satisface la condiciones del criterio de Leibniz, es decir, $\lim e^{-n} =0$ y $e^{-n} \geq e^{-(n+1)}$. Se trata de una serie absolutamente convergente, puesto que $\lim \sqrt[n]{e^{-n}}= e^{-1} <1$. Obsérvese que esta serie es una serie geomètrica de razón $-e^(-1)$, y por lo tanto su suma es 
+$$
+\sum (-1)^n e^{-n} = \dfrac{-1}{1+e}
+$$
+
+Ejemplo 3. La serie $\sum (-1)^{n+1} \dfrac{5^n}{n+1}$ es divergente, puesto que $\lim \dfrac{5^n}{n+1} \neq 0$
+
 </div>
 
 
