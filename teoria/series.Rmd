@@ -187,28 +187,6 @@ La propiedad asociativa de la suma no es válida para series oscilantes
 
 
 
-## Convergencia condicional
-
-<l class="prop"> **Proposición** </l>
-
-Si $\displaystyle{\sum_{n=1}^{\infty}|a_n|}$ es convergente entonces $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es convergente.
-
-<div class="dem"> **Demostración**
-
-Dado que si $m>n$, entonces 
-$$
-|a_{n+1}+ a_{n+2}+ \cdots + a_{m}| \leq |a_{n+1}|+ |a_{n+2}|+ \cdots + |a_{m}|
-$$
-entonces si $\displaystyle{\sum_{n=1}^{\infty}|a_n|} < \infty$, para todo $\epsilon >0$ existe $n_0$ tal que para todo $n,m \in \mathbb{N}$ tal que $m \geq n \geq n_0$, entonces $|a_{n+1}|+ |a_{n+2}|+ \cdots + |a_{m}| < \epsilon$ y, por lo tanto será $|a_{n+1}+ a_{n+2}+ \cdots + a_{m}| < \epsilon$.
-
-</div>
-
-## Convergencia condicional
-
-El recíproco no es cierto: una serie puede ser convergente sin ser absolutamente convergente. 
-Es el caso de la serie $\displaystyle{\sum \dfrac{(-1)^n}{n}}$ que, como demostraremos más adelante, es convergente, en tanto que la serie de valores absolutos  es la serie armónica que ya hemos visto que era divergente.  
-
-Una serie convergente que no sea absolutamente convergente recibe le nombre de **condicionalmente convergente**
 
 
 ## Series de términos positivos
@@ -339,7 +317,7 @@ Sea $\sum a_n$ una serie de términos positivos.
 
 </div>
 
-## Criterios clásicos: Criterio de Cauchy (o de la raíz)
+## Criterios clásicos: Criterio de de la raíz
 
 <l class="prop"> **Proposición** </l>
 
@@ -359,7 +337,7 @@ Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \sqrt[n]{a_n} 
 
 </div>
 
-## Ejemplos
+## Criterio de la raiz: Ejemplos
 
 <div class="example">
 Ejemplo 1. La serie $\sum \left( \dfrac{n+1}{3n-1} \right)^{2n-1}$ es convergente, puesto que 
@@ -372,6 +350,25 @@ $$
 \lim \sqrt[n]{\left(\dfrac{an+1}{an}\right)^{n^2}}  = \lim \left(\dfrac{an+1}{an}\right)^n = e^{\lim n\left( 1-  \dfrac{an+1}{an}\right)} = e^{\frac{1}{a}} 
 $$
 y $e^{\frac{1}{a}}<1$ ssi $a<0$
+
+</div>
+
+## Criterio de la raiz: Ejemplos
+
+<div class="example">
+
+Ejemplo 3. Determinar el carácter de la serie $\sum \left(a+\dfrac{1}{n}\right)^n$, donde $a$ es un número real positivo.
+
+Aplicamos el criterio de la raiz:
+$$
+\lim \sqrt[n]{\left(a+\dfrac{1}{n}\right)^n}= \lim a+\dfrac{1}{n} = a
+$$
+por lo tanto, si $a<1$ la serie es convergente y si $a>1$ es divergente. Si $a=1$ el criterio no decide, pero en este caso tenemos que 
+$$
+\lim\left(1+\dfrac{1}{n}\right)^n = e \neq 0
+$$
+y, por la condicición necesaria de convergencia, la serie es divergente.
+
 
 ## Criterios clásicos: Criterio de d'Alembert
 
@@ -476,8 +473,64 @@ $$
 $$
 que es divergente.
 
-## Series de términos no necesariamente positivos
+## Criterio de condensación
 
+<l class="prop"> **Proposición**
+
+Sea $\{a_n\}$ una sucesió de términos positivos decreciente, es decir, $a_1 \geq a_2 \geq \cdots \geq 0$. Entonces las series $\sum_{n\geq 1} a_n$ y $\sum_{k \geq 1} 2^k a_{2^k}= a_1+2a_2+4a_4+ \cdots 2^ka_{2^k}+ \cdots$ tienen el mismo carácter.
+
+<div class="dem"> **Demostración**
+
+Per  $n>2^k$, com que la successió és decreixent, tenim 
+$$
+S_n \leq a_1+(a_2+a_3)+ \cdots+(a_{2^k}+\cdots+a_{2^{k+1}-1}) \leq a_1 + a_2+ \cdots + 2^k a{2^k}= T^k
+$$
+on $S_n$ es el término enésimo de la succesión de sumas parciales de $\sum a_n$ y $T_k$ el k-ésimo de la serie $\sum_{k \geq 1} 2^k a_{2^k}$.
+
+Análogament comprobaríamos que si $n>2^k$, entonces $2S_n \geq T_k$, por lo tanto las dos sucesiones son a la vez acotadas (o no acotadas), por lo que ambas seran convergentes (divergentes).
+
+</div>
+
+## Criterio de condensación: Ejemplo
+
+<div class="example"> **Ejemplo**
+
+ Sea $q \in \mathbb{N}$ fijo. Determinar el carácter de la serie $\sum \dfrac{1}{n\sqrt[q]{n}}$.
+ 
+ Dado que la sucesión es de términos positivos y decreciente, podemos aplicar el criterio de condensación. Puesto $2^k a_{2k}= 2^k \dfrac{1}{2^k\sqrt[q]{2^k}}=\left(\dfrac{1}{\sqrt[q]{2}}\right)^k$, la serie "conensada" será
+ $$
+ \sum \left(\dfrac{1}{\sqrt[q]{2}}\right)^k
+ $$
+ es decir, una setiue geométrica de razón $\dfrac{1}{\sqrt[q]{2}} < 1$ y, por lo tanto, convergente.
+ 
+
+
+
+
+
+## Series de términos no necesariamente positivos: Convergencia condicional
+
+<l class="prop"> **Proposición** </l>
+
+Si $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es absolutamente convergente entonces $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es convergente.
+
+<div class="dem"> **Demostración**
+
+Dado que si $m>n$, entonces 
+$$
+|a_{n+1}+ a_{n+2}+ \cdots + a_{m}| \leq |a_{n+1}|+ |a_{n+2}|+ \cdots + |a_{m}|
+$$
+entonces si $\displaystyle{\sum_{n=1}^{\infty}|a_n|} < \infty$, para todo $\epsilon >0$ existe $n_0$ tal que para todo $n,m \in \mathbb{N}$ tal que $m \geq n \geq n_0$, entonces $|a_{n+1}|+ |a_{n+2}|+ \cdots + |a_{m}| < \epsilon$ y, por lo tanto será $|a_{n+1}+ a_{n+2}+ \cdots + a_{m}| < \epsilon$.
+
+</div>
+
+## Convergencia condicional
+
+El recíproco no es cierto: una serie puede ser convergente sin ser absolutamente convergente. 
+
+Es el caso de la serie $\displaystyle{\sum \dfrac{(-1)^n}{n}}$ que, como demostraremos más adelante, es convergente, en tanto que la serie de valores absolutos  es la serie armónica que ya hemos visto que era divergente.  
+
+Una serie convergente que no sea absolutamente convergente recibe el nombre de **condicionalmente convergente**
 
 
 ## Series alternadas
@@ -488,7 +541,7 @@ Una **serie alternada** es una serie de la forma $\sum_{n=1}^{\infty} (-1)^n a_n
 
 Si $\sum a_n$ es convergente, entonces $\sum (-1)^n a_n$ es absolutamente convergente, en tanto que una serie alternada convergente tal que la correspondiente serie de valores absolutos no sea convergente, será una serie condicionalmente convergente.
 
-Una de las propiedades que hace particularmente interesantes las series alternadas es que, bajo ciertas condiciones, para este tipo de series la condición necesaria de convergencia es también suficiente, tal y como se estipula en la proposición següiente.
+Una de las propiedades que hace particularmente interesantes las series alternadas es que, bajo ciertas condiciones, para este tipo de series la condición necesaria de convergencia es también suficiente, tal y como se estipula en la proposición siguiente.
 
 ## Series alternadas: Criterio de Leibniz
 
@@ -516,7 +569,7 @@ Finalmente $\lim S_n= L$, puesto que $S_{2n} \leq S_n \leq S_{2n+1}$ y, por lo t
 Ejemplo 1. La serie $\sum \dfrac{(-1)^{n+1}}{n}$ es convergente, puesto que satisface las condiciones del criterio de Leibniz:
 la sucesión de término general $\dfrac{1}{n}$ es decreciente y su límite es $0$. Como ya se ha mencionado, se trata de un ejemplo de serie condicionalmente convergente, puesto que la serie de valores absolutos es la serie armónica, que ya sabemos que es divergente. 
 
-Ejemplo 2. La serie $\sum (-1)^n e^{-n}$ es convergente, dado que satisface la condiciones del criterio de Leibniz, es decir, $\lim e^{-n} =0$ y $e^{-n} \geq e^{-(n+1)}$. Se trata de una serie absolutamente convergente, puesto que $\lim \sqrt[n]{e^{-n}}= e^{-1} <1$. Obsérvese que esta serie es una serie geomètrica de razón $-e^(-1)$, y por lo tanto su suma es 
+Ejemplo 2. La serie $\sum (-1)^n e^{-n}$ es convergente, dado que satisface la condiciones del criterio de Leibniz, es decir, $\lim e^{-n} =0$ y $e^{-n} \geq e^{-(n+1)}$. Se trata de una serie absolutamente convergente, puesto que $\lim \sqrt[n]{e^{-n}}= e^{-1} <1$. Obsérvese que esta serie es una serie geomètrica de razón $-e^{-1}$, y por lo tanto su suma es 
 $$
 \sum (-1)^n e^{-n} = \dfrac{-1}{1+e}
 $$
@@ -554,7 +607,7 @@ por lo que
 $$
 S_n =\dfrac{a_1 \gamma -a_n (n \alpha + \beta)}{\gamma - (\alpha + \beta)}
 $$
-Ahora dado que, por ser $\sum a_n$ convergente es $\lim n a_n = \lim a_n = 0$, resulta que
+Ahora, por ser $\sum a_n$ convergente, es $\lim n a_n = \lim a_n = 0$, resulta que
 $$
 \sum_{n=1}^{\infty} a_n = \lim S_n = \dfrac{a_1 \gamma}{\gamma - (\alpha + \beta)}
 $$
@@ -592,13 +645,15 @@ $$
 
 ## Suma de series aritmético-geométricas
 
-Sea $\sum na_n$ una serie aritmético-geométrica, és decir $\sum a_n$ es una serie geométrica. Sea $r$ la razón de esta serie, es decir $\sum a_n=a \sum r^n$, con $a>0$. Tenemos que el término general de la suma parcial enésima de la serie dada es $S_n = a(r+2r^2+3r^3+4r^4 + \cdots +(n-1) r^{n-1}+ nr^n)$, por otra parte $rS_n = a(r^2+2r^3+3r^4+4r^5 + \cdots +(n-1) r^n+ nr^{n+1}$, es decir
+Sea $\sum na_n$ una serie aritmético-geométrica, és decir $\sum a_n$ es una serie geométrica. Sea $r$ la razón de esta serie, es decir $\sum a_n=a \sum r^n$, con $a>0$. Tenemos que la suma  de la serie dada es $S = a(r+2r^2+3r^3+4r^4 + \cdots +(n-1) r^{n-1}+ nr^n)+ \cdots$, por otra parte $rS = a(r^2+2r^3+3r^4+4r^5 + \cdots +(n-1) r^n+ nr^{n+1}+ \cdots$, es decir
 $$
-S_n-rS_n= a(r+r^2+r^3 + \cdots+r^n+n r^{n+1})
+S-rS= a(r+r^2+r^3 + \cdots+r^n+ \cdots )
 $$
-Ahora, $(1-r) \lim S_n = \dfrac{a}{1-r}$, por lo que $\sum nr^na= \dfrac{a}{(1-r)^2}$. 
+Ahora, $(1-r) S = \dfrac{a}{1-r}$, por lo que $\sum nr^na= \dfrac{a}{(1-r)^2}$. 
 
 En el caso general, hay que iterar este procedimiento hasta llegar a una serie geométrica.
+
+Veamos un ejemplo.
 
 ## Suma de series aritmético-geométricas
 
@@ -615,6 +670,7 @@ $$
 ## Suma de series aritmético-geométricas
 
 <div class="example"> **Ejemplos**
+
 Ejemplo 2. Sumar la serie $\sum (-1)^{n+1}\dfrac{n^2}{5^n}$.
 
 Se trata también de una serie aritmético-geométrica tal que $r=-\dfrac{1}{5}$. Sea $S$ su suma. Aplicando la metodología descrita obtenemos que 
@@ -653,15 +709,24 @@ $$
 
 <div class="example"> **Ejemplos**
 
-Ejemplo 1. La serie $\sum \dfrac{1}{(n+1)(n+2)}$ es telecópica, puesto que, como es fácil comprobar
+Ejemplo 1. La serie $\sum \dfrac{1}{(n+1)(n+2)}$ es telescópica, puesto que, como es fácil comprobar
 $$
  \dfrac{1}{(n+1)(n+2)} =\dfrac{1}{n+1} - \dfrac{1}{n+2}
 $$
-dado que $\lim \dfrac{1}{n+2} =0$ i el primer término de la sucesión $\dfrac{1}{n+1}$ es $\dfrac{1}{2}$, tenemos que 
+dado que $\lim \dfrac{1}{n+2} =0$ y el primer término de la sucesión $\dfrac{1}{n+1}$ es $\dfrac{1}{2}$, tenemos que 
 $$
 \sum \dfrac{1}{(n+1)(n+2)} = \dfrac{1}{2}
 $$
-Ejemplo 2. La serie $\sum \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right)$, con $a > 1$, es telescópica. Dado que $\lim \dfrac{1}{a^{n+1}}=0$, la serie es convergente y su suma es 
+Ejemplo 2. Sumar la serie $\sum \dfrac{a-1}{a^{n+1}}$, con $a>1$.
+
+Se trata de una serie telescópica, puesto $\sum \dfrac{a-1}{a^{n+1}}= \sum \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right)$. Dado que $\lim \dfrac{1}{a^{n+1}}=0$, la serie es convergente y su suma es 
 $$
-\sum \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right) = \dfrac{1}{a}
+\sum \dfrac{a-1}{a^{n+1}}=\sum \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right) = \dfrac{1}{a}
 $$
+
+
+
+
+
+
+
