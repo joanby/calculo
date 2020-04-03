@@ -598,14 +598,17 @@ En el caso general, hay que iterar este procedimiento hasta llegar a una serie g
 
 ## Suma de series aritmético-geométricas
 
-<div class="example"> **Ejemplo**
+<div class="example"> **Ejemplos**
 
 Ejemplo 1. Sumar la serie $\sum (-1)^{n+1}\dfrac{n}{5^n}$.
 
-Se trata de una serie aritmético-geométrica con $r=-\dfrac{1}{5}$. Por lo que 
+Se trata de una serie aritmético-geométrica con $r=-\dfrac{1}{5}$, es, por lo tanto convergente y
 $$
 \sum (-1)^{n+1}\dfrac{n}{5^n} =\dfrac{\dfrac{1}{5}}{\left(1+\dfrac{1}{5}\right)^2}=\dfrac{5}{36}
 $$
+Ejemplo 2. Sumar la serie $\sum (-1)^{n+1}\dfrac{n^2}{5^n}$.
+
+Se trata también de una serie aritmético-geométrica tal que $r=-\dfrac{1}{5}$. Sea $S$ su suma, Aplicando la metodología descrita obtenemos que $(1-r)S= \sum (-1)^{n+1}\dfrac{n}{5^n}$, es decir $\dfrac{6}{5}S= \dfrac{5}{36}$
 
 
 ## Series telescópicas
