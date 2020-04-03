@@ -565,12 +565,31 @@ es
 $$
 \sum_{n=1}^{\infty} \dfrac{1}{n(n+1)} =  \dfrac{a_1 \gamma}{\gamma - (\alpha + \beta)} = \dfrac{\dfrac{1}{2} \cdot 2}{1+0}=1
 $$
+</div>
+
+## Series aritmético-geométricas
+
+<l class="definicion"> **Definición**
+
+Una serie **aritmético-geométrica** es una serie de la forma $\sum P(n)a_n$, con $\sum a_n$ una serie geométrica y $P(n)$ un polinomio en $n$. 
+
+<l class=prop"> **Proposición**
+
+Una $\sum P(n)a_n$ uns serie artirmético-geométrica si la razón, $r$, de la progresión aritmética asociada verifica que $|r|<1$.
+
+<div class="dem"> **Demostración**
+
+Es suficiente aplicar el criterio de d'Alembert a la serie de valores ansolutos para obtener
+$$
+\lim \dfrac{|P(n)a_{n+1}|}{|P(n+1)a_n|}=|r|
+$$
+</div>
 
 ## Series telescópicas
 
 <l class="definicion"> **Definición**
 
-Una serie $\sum a_n$ es telecópica si existe una sucesión de término general $b_n$ tal que  para todo $n$ es
+Una serie $\sum a_n$ es telescópica si existe una sucesión de término general $b_n$ tal que  para todo $n$ es
 $$
 a_n = b_n-b_{n+1}
 $$
