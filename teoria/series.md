@@ -575,7 +575,7 @@ Una serie **aritmético-geométrica** es una serie de la forma $\sum P(n)a_n$, c
 
 <l class=prop"> **Proposición**
 
-Una $\sum P(n)a_n$ uns serie artirmético-geométrica si la razón, $r$, de la progresión aritmética asociada verifica que $|r|<1$.
+La serie aritmético-geométrica $\sum P(n)a_n$ es convergentesi la razón, $r$, de la progresión aritmética asociada verifica que $|r|<1$.
 
 <div class="dem"> **Demostración**
 
