@@ -17,7 +17,7 @@ output:
 
 ## Series numéricas
 
-Veremos en este apartado un tipo especial de sucesiones que nos permiten tratar sumas de infinitos términos cuya suma es finita. 
+Veremos en este apartado un tipo especial de sucesiones que nos permiten tratar con infinitos sumandos cuya suma es finita. 
 
 La suma de los términos de una progresión geométrica constituye uno de los ejemplos más conocidos de este tipo de sumas.
 
@@ -50,9 +50,9 @@ Llamaremos **serie** generada por una sucesión de números reales $\{a_n \}_{n 
 $$
 S_1 = a_1, \; S_2=a_1+a_2,  \ldots, S_n=a_1+a_2+ \ldots +a_n
 $$
- $\{S_n \}_{n \in \mathbb{N}}$ recibe el nombre de sucesión de las **sumas parciales** de la serie.
+ Cada uno de lpos términos de $\{S_n \}_{n \in \mathbb{N}}$ recibe el nombre**suma parcial** de la serie.
 
-$\displaystyle{\sum_{n=1}^{\infty}a_n}$ y también $\displaystyle{\sum a_n}$ son las notaciones que se usan habitualmente para denotar la serie generada por la sucesión $a_n$. 
+$\displaystyle{\sum_{n=1}^{\infty}a_n}$,  $\sum_{n \geq 1} a_n$ y también $\displaystyle{\sum a_n}$ son las notaciones que se usan habitualmente para denotar la serie generada por la sucesión $a_n$. 
 
 ## Series numéricas: Convergencia
 
@@ -103,7 +103,7 @@ $$
 
 <div class="dem"> **Demostración** 
 
-Que la serie sea convergente quiere decir que la sucesión de umas parciales $S_n$ es convergente y, por lotanto, verifica el criterio de Cauchy para sucesiones, es decir, para todo $\epsilon >0$, existe $n_0$ tal que para todo $n,m > n_0$ es $|S_m-S_n| < \epsilon$. Ahora, podemos suponer que $m>n$, por lo que $m = n+k$, para algún $k \in \mathbb{N}$. En consecuencia:
+Que la serie sea convergente quiere decir que la sucesión de umas parciales $S_n$ es convergente y, por lo tanto, verifica el criterio de Cauchy para sucesiones, es decir, para todo $\epsilon >0$, existe $n_0$ tal que para todo $n,m > n_0$ es $|S_m-S_n| < \epsilon$. Ahora, podemos suponer que $m>n$, por lo que $m = n+k$, para algún $k \in \mathbb{N}$. En consecuencia:
 $$
 |S_m-S_n| = |a_{n+1}+a_{n+2}+ \cdots + a_m| < \epsilon
 $$
@@ -187,7 +187,7 @@ La propiedad asociativa de la suma no es válida para series oscilantes
 
 ## Series de términos positivos
 
-Una clase particularmente interesante de series son las de términos positivos, és decir aquellas series $\sum a_n$ tales que $a_n \geq 0$, para todo $n$. Para estas series tenemos el siguien resultado:
+Una clase particularmente interesante de series son las de términos positivos, es decir aquellas series $\sum a_n$ tales que $a_n \geq 0$, para todo $n$. Para estas series tenemos el siguiente resultado:
 
 <l class="prop"> **Proposición**
 
@@ -199,15 +199,14 @@ Entonces $\sum a_n$ es convergente, si, y sólo si, $S_n$ es una sucesión acota
 Por ser $\sum a_n$ de términos positivos, la sucesión $S_n$ es creciente, es decir $S_n \leq S_{n+1}$, para todo $n$. Por el teorema de la convergencia monótona, $S_n$ es convergente si, y sólo sí, es una sucesión acotada.
 </div>
 
-Aplicaremos este resultado para establecer criterios de comparación para establecer la convergencias o divergencia de series de términos positivos.
+Aplicaremos este resultado para establecer criterios de comparación para determinar la convergencias o divergencia de series de términos positivos.
 
 
 ## Criterio de comparación de primera especie.
 
 <l class="prop"> **Proposición. (Criterio de comparación de primera especie)** </l>
 
-Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos tales que $a_n \leq b_n$ para todo $n$. Entonces,
-si $\sum b_n$ es convergente, $\sum a_n$ es convergente. Por otra parte, si $\sum a_n$ es divergente, entonces $\sum b_n$ es divergente.
+Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos tales que $a_n \leq b_n$ para todo $n$. Entonces, si $\sum b_n$ es convergente, $\sum a_n$ es convergente y si $\sum a_n$ es divergente, entonces $\sum b_n$ es divergente.
 
 <div class="dem"> **Demostración**
 Si $S_n$ indica la sucesión de sumas parciales de $\sum a_n$ y $T_n$ la de la serie $\sum b_n$, entonces por ser la dos de términos positivos y $a_n \leq b_n$, resultará que $S_n \leq T_n$ y, por lo tanto si $T_n$ está acotada superiormente, es decir si $\sum b_n$ es convergente, también estará acotada superiormente la sucesión $S_n$ y, es decir, $\sum a_n$ es convergente. Argumentos similares sirven para demostrar que si $\sum a_n$ es divergente, entonces también lo es $\sum b_n$.
@@ -227,7 +226,7 @@ Sea $x>0$, la serie $\sum_{n=1}^{\infty}  \dfrac{1}{x+n}$ es divergente puesto q
 
 ## La serie armónica generalizada
 
-La serie armónica generalizada es la serie generada por la sucesión $\dfrac{1}{n^{\alpha}}$, es decir, la serie $\displaystyle{\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}}$
+La serie armónica generalizada es la serie generada por la sucesión $\dfrac{1}{n^{\alpha}}$, donde $\alpha \in \mathbb{R}$, es decir, la serie $\displaystyle{\sum_{n=1}^{\infty}\frac{1}{n^{\alpha}}}$
 
 <l class="prop"> **Proposición** </l>
 
@@ -294,7 +293,7 @@ Los criterios de comparación que acabamos de ver, usados con las series armóni
 
 Sea $\sum a_n$ una serie de términos positivos. 
 
-1. Si para un $\alpha>1$ tal que  existe el $\lim n^{\alpha} a_n$, entonces la serie es convergente. 
+1. Si existe el $\lim n^{\alpha} a_n$, para un $\alpha >1$, entonces la serie es convergente. 
 
 2. Si existe el $\lim n \cdot a_n$ y es estrictamente positivo, entonces la serie diverge.
 
@@ -302,9 +301,9 @@ Sea $\sum a_n$ una serie de términos positivos.
 
 <div class="dem"> **Demostración**
 
-1. Que existe el $\lim n^{\alpha} a_n$ quiere decir que la sucesión $n^{\alpha} a_n$ está acotada por un número positivo $M$, es decir que $a_n \leq M \cdot \dfrac{1}{n^{\alpha}}$, por lo que, envirtud del corolario anterior, la  serie $\sum a_n$ es convergente por estar acotada por una armónica con $\alpha >1$.
+1. Que existe el $\lim n^{\alpha} a_n$ quiere decir que la sucesión $n^{\alpha} a_n$ está acotada por un número positivo $M$, es decir que $a_n \leq M \cdot \dfrac{1}{n^{\alpha}}$, por lo que, en virtud del corolario anterior, la  serie $\sum a_n$ es convergente por estar acotada por una armónica con $\alpha >1$.
 
-2. Si el $\lim n \cdot a_n$ existe y es positivo, podemos determinar una constante positiva $M$ tal que $na_n>M$ para todo $n>n_0$ y, por lo tanto, $a_n$ está minorada por una serie divergente. (Determinación de M: Sea $L = \lim n\cdot a_n$, dado que $L>0$, existe un $n_0$ tal que para todo $n >n_0$, es $L- n \cdot a_n <\dfrac{L}{2}$, por lo que $n \cdot a_n > \dfrac{L}{2}=M$
+2. Si el $\lim n \cdot a_n$ existe y es positivo, podemos determinar una constante positiva $M$ tal que $na_n>M$ para todo $n>n_0$ y, por lo tanto, $a_n$ está minorada por una serie divergente. (Determinación de M: Sea $L = \lim n\cdot a_n$, dado que $L>0$, existe un $n_0$ tal que para todo $n >n_0$, es $L- n \cdot a_n <\dfrac{L}{2}$, por lo que $n \cdot a_n > \dfrac{L}{2}=M$)
 
 </div>
 <div class="example"> **Ejemplo**
@@ -327,7 +326,7 @@ Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \sqrt[n]{a_n} 
 
 <div class="dem"> **Demostración**
 
-1. Dado que $\lambda <1$, tenemos que es posible tomar un $\epsilon>0$ tal que  $\epsilon < 1- \lambda$, entonces existe un $n_0$ tal que $\sqrt[n]{a_n} - \lambda < \epsilon$, es decir, que $a_n <(\epsilon + \lambda)^n$, dado que $\epsilon + \lambda <1$ los términos de $a_n$ estan mayorados por una geométrica de zazón menor que 1 y, por lo tanto, será convergente.
+1. Dado que $\lambda <1$, tenemos que es posible tomar un $\epsilon>0$ tal que  $\epsilon < 1- \lambda$, entonces existe un $n_0$ tal que $\sqrt[n]{a_n} - \lambda < \epsilon$, es decir, que $a_n <(\epsilon + \lambda)^n$, dado que $\epsilon + \lambda <1$ los términos de $a_n$ estan mayorados por una geométrica de razón menor que 1 y, por lo tanto, será convergente.
 
 2. Un razonamiento similar, permite ver que, en este caso, los términos de $a_n$ estan minorados por los de una divergente.
 
@@ -473,17 +472,17 @@ que es divergente.
 
 <l class="prop"> **Proposición**
 
-Sea $\{a_n\}$ una sucesió de términos positivos decreciente, es decir, $a_1 \geq a_2 \geq \cdots \geq 0$. Entonces las series $\sum_{n\geq 1} a_n$ y $\sum_{k \geq 1} 2^k a_{2^k}= a_1+2a_2+4a_4+ \cdots 2^ka_{2^k}+ \cdots$ tienen el mismo carácter.
+Sea $\{a_n\}$ una sucesión de términos positivos decreciente, es decir, $a_1 \geq a_2 \geq \cdots \geq 0$. Entonces las series $\sum_{n\geq 1} a_n$ y $\sum_{k \geq 1} 2^k a_{2^k}= a_1+2a_2+4a_4+ \cdots 2^ka_{2^k}+ \cdots$ tienen el mismo carácter.
 
 <div class="dem"> **Demostración**
 
-Per  $n>2^k$, com que la successió és decreixent, tenim 
+Dado que  $n>2^k$, y que la succesión es decreciente, tenemos
 $$
 S_n \leq a_1+(a_2+a_3)+ \cdots+(a_{2^k}+\cdots+a_{2^{k+1}-1}) \leq a_1 + a_2+ \cdots + 2^k a{2^k}= T^k
 $$
-on $S_n$ es el término enésimo de la succesión de sumas parciales de $\sum a_n$ y $T_k$ el k-ésimo de la serie $\sum_{k \geq 1} 2^k a_{2^k}$.
+donde $S_n$ es el término enésimo de la succesión de sumas parciales de $\sum a_n$ y $T_k$ el k-ésimo de la serie $\sum_{k \geq 1} 2^k a_{2^k}$.
 
-Análogament comprobaríamos que si $n>2^k$, entonces $2S_n \geq T_k$, por lo tanto las dos sucesiones son a la vez acotadas (o no acotadas), por lo que ambas seran convergentes (divergentes).
+Análogamente comprobaríamos que si $n>2^k$, entonces $2S_n \geq T_k$, por lo tanto las dos sucesiones son a la vez acotadas (o no acotadas), por lo que ambas seran convergentes (divergentes).
 
 </div>
 
@@ -610,10 +609,13 @@ $$
 
 ## Series hipergeométricas: Ejemplo.
 
-<div class="Example"> 
+<div class="example"> 
+
 Calcular la suma de la serie $\sum \dfrac{1}{n(n+1)}$, caso que sea convergente
 
-Puesto que $\dfrac{a_{n+1}}{a_n}= \dfrac{n(n+1)}{(n+1)(n+2)}= \dfrac{n}{n+2}$, se trata de una serie hipergeométrica con $\alpha = 1$, $\beta = 0$ y $\gamma =2$. Dado que $\alpha + \beta = 1 + 0 < 2 = \gamma$, la serie es convergente. Su suma
+Puesto que $\dfrac{a_{n+1}}{a_n}= \dfrac{n(n+1)}{(n+1)(n+2)}= \dfrac{n}{n+2}$, se trata de una serie hipergeométrica con $\alpha = 1$, $\beta = 0$ y $\gamma =2$. 
+
+Dado que $\alpha + \beta = 1 + 0 < 2 = \gamma$, la serie es convergente. Su suma
 es
 $$
 \sum_{n=1}^{\infty} \dfrac{1}{n(n+1)} =  \dfrac{a_1 \gamma}{\gamma - (\alpha + \beta)} = \dfrac{\dfrac{1}{2} \cdot 2}{1+0}=1
