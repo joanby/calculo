@@ -26,3 +26,6 @@ En lo que sigue, supondremos que son conocidos los conceptos de **función**, **
 Uno de los principales objetivos del càlculo es el estudio de propiedades de las funciones. De hecho, como se mencionó, el cálculo diferencial trata del estudio de la medida del cambio, precisamente en relaciones que vienen expresadas como funciones, principalment como funciones $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, es decir, **funciones reales de variable real**
 
 La primera cuestión que se aborda tiene que ver con los números reales, en particular cómo evaluar las funciones reales de variable real cuando la variable independiente es un número irracional. Nuevamente el concepto de límite viene a ayudar en la solución de esta cuestión.
+
+## Límite de una función.
+
