@@ -46,3 +46,4 @@ abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $x_0$, $V_{\delt
 
 ## Las dos definiciones son equivalentes.
 
+
