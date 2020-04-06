@@ -29,3 +29,11 @@ La primera cuestión que se aborda tiene que ver con los números reales, en par
 
 ## Límite de una función.
 
+<l class="definition"> **Definición** </l>
+
+Sea $f:A \subset \mathbb{R}$ una función definida sobre el conjunto $A \subset \mathbb{R}$ y sea $x_0$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite de $f(x)$ cuando $x$ tiende a $x_0$** si para todo $\epsilon >0$ existe un $\delta >0$ tal que siempre $0<|x-x_0|< \delta$, entonces es $|f(x)-L|<\epsilon$.
+
+Escribiremos $\lim_{x \rightarrow x_0}f(x) = L$, para indicar que $L \in \mathbb{R}$ es el **límite de $f(x)$ cuando $x$ tiende a $x_0$**
+
+También se puede expresar es este concepto en términos de entornos: $\lim_{x \rightarrow x_0}f(x) = L$ si para todo entorno
+abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $x_0$, $V_{\delta} (x_0)$ tal que para todo $x \in V^*_{\delta} (x_0)$ es $f(x) \in V{\epsilon}(L)$
