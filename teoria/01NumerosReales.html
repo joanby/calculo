@@ -3220,12 +3220,9 @@ text-align: center; text-decoration: none;
           </hgroup>
   </slide>
 
-<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Tema</h2></hgroup><article  id="tema">
+<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Introducción</h2></hgroup><article  id="introducción">
 
 </article></slide><slide class=""><hgroup><h2>Cálculo: Las Matemáticas del cambio</h2></hgroup><article  id="cálculo-las-matemáticas-del-cambio">
-
-<div class="important">
-<p>Importante</p></div>
 
 <p>El término <l class="important">Cálculo</l> identifica un conjunto de instrumentos matemáticos para efectuar medidas.</p>
 
@@ -3280,15 +3277,15 @@ text-align: center; text-decoration: none;
 
 <p>\[
 a=bq+r
-\] q: cociente, r: resto</p>
+\] \(q\): cociente, \(r\): resto</p>
 
-<p>Si \(r=0\), entonces decimos que \(a\) es un <strong>múltiplo</strong> de \(b\) y tambien que \(b\) es un dvisor de \(a\)</p>
+<p>Si \(r=0\), entonces decimos que \(a\) es un <strong>múltiplo</strong> de \(b\) y tambien que \(b\) es un divisor de \(a\)</p>
 
 <p>Si \(r&gt;0\) entonces \(a\) y \(b\) son <strong>primos</strong> entre si.</p>
 
 </article></slide><slide class=""><hgroup><h2>Números y medida: El conjunto \(\mathbb{Q}\) de los números racionales</h2></hgroup><article  id="números-y-medida-el-conjunto-mathbbq-de-los-números-racionales">
 
-<p>Los números racionales: \(\mathbb{Q} = \{ \dfrac{p}{q}: p,q \in \mathbb{Z}, q \neq 0 \}\)</p>
+<p>Los números racionales: \(\mathbb{Q} = \left\{ \dfrac{p}{q}: p,q \in \mathbb{Z}, q \neq 0 \right\}\)</p>
 
 <p>Suma: elemento neutro, \(0\), elemento simétrico, propiedades conmutativa y asociativa.</p>
 
@@ -3296,7 +3293,7 @@ a=bq+r
 
 </article></slide><slide class=""><hgroup><h2>El conjunto \(\mathbb{Q}\) de los números racionales</h2></hgroup><article  id="el-conjunto-mathbbq-de-los-números-racionales">
 
-<p>Orden: \[
+<p>Orden: El conjunto de los racionales está ordenado de la forma \[
 \dfrac{a}{b} \leq \dfrac{c}{d} \quad \text{ si } \quad  ad \leq bc
 \]</p>
 
@@ -3310,7 +3307,7 @@ a=bq+r
 
 </article></slide><slide class=""><hgroup><h2>El conjunto \(\mathbb{Q}\) de los números racionales</h2></hgroup><article  id="el-conjunto-mathbbq-de-los-números-racionales-1">
 
-<p>Los números racionales no son suficientes puesto hay medidas cuyo resultado no és un número racional:</p>
+<p>Los números racionales no son suficientes puesto que hay medidas cuyo resultado no és un número racional:</p>
 
 <ul>
 <li>La longitud de la diagonal de un cuadrado con el lado como unidad (\(\sqrt{2}\))</li>
@@ -3347,7 +3344,7 @@ a=bq+r
 <li><p>Conmutativa: \(a+b= b+a\), para todos los \(a,b \in \mathbb{R}\)</p></li>
 <li><p>Asociativa: \(a+(b+c) = (a+b)+c\) para todos los \(a,b,c \in \mathbb{R}\)</p></li>
 <li><p>Existe un elemento neutro, \(0 \in \mathbb{R}\), para la suma: \(a+0=a=0+a\).</p></li>
-<li><p>Para cada \(a \in \mathbb{R}\) existe un elemento \(-a \in \mathbb{R}\), simétrico de \(a\), tal que \(a+(-a)=0=(-a)+0\)</p></li>
+<li><p>Para cada \(a \in \mathbb{R}\) existe un elemento \(-a \in \mathbb{R}\), simétrico de \(a\), tal que \(a+(-a)=0=(-a)+a\)</p></li>
 </ul></li>
 </ul>
 
@@ -3381,9 +3378,9 @@ a=bq+r
 P \cup  \{ 0 \} \cup (-P) = \mathbb{R} 
 \]</p>
 
-<p>donde \(-P = \{-x: x \in \mathbb{R} \}\).</p>
+<p>donde \(-P = \{-x: x \in \mathbb{R} \}\), tales que \(P\cap (-P) = \emptyset\).</p>
 
-<p>Es decir, todo número real o està en \(P\) o és igual a \(0\) o su simétrico está en \(P\), y sólo una de estas tres opciones.</p>
+<p>Es decir, todo número real o está en \(P\) o és igual a \(0\) o su simétrico está en \(P\), y sólo una de estas tres opciones.</p>
 
 <p>Además, \(P\), satisface las propiedades:</p>
 
@@ -3433,7 +3430,7 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <p><l class="prop">Proposición</l></p>
 
 <ul>
-<li>Si \(a \in \mathbb{R}\), entonces \(a^2 \in P\),</li>
+<li>Si \(a \in \mathbb{R}\), entonces \(a^2 \in P \cup \{0\}\),</li>
 <li>\(1 \in P\),</li>
 <li>\(\mathbb{N} \subset P\).</li>
 </ul>
@@ -3488,24 +3485,6 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 
 <p><l class="important">Un error frecuente que se debe evitar es considerar que </l> \(\sqrt{a^2}=a\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Intervalos en \(\mathbb{R}\)</h2></hgroup><article  id="intervalos-en-mathbbr">
-
-<p><l class="definition">Definición</l></p>
-
-<p>Dados números reales \(a,b \in \mathbb{R}\) tales que \(a&lt;b\), el <strong>intervalo cerrado de extremos \(a\) y \(b\)</strong> es el conjunto</p>
-
-<p>\[
-[a,b] = \{x\in \mathbb{R}: a \leq x \leq b \}
-\] Por su parte, <strong>intervalo abierto de extremos \(a\) y \(b\)</strong> es el conjunto:</p>
-
-<p>\[
-(a,b) = \{x\in \mathbb{R}: a &lt; x &lt; b \}
-\] <strong>Intervalos semiabiertos:</strong></p>
-
-<p>\[
-(a,b] = \{ x \in \mathbb{R}: a&lt;x \leq b \} \quad \text{ y } \quad [a,b) = \{ x \in \mathbb{R}: a \leq x &lt; b \}
-\]</p>
-
 </article></slide><slide class=""><hgroup><h2>Valor absoluto: propiedades</h2></hgroup><article  id="valor-absoluto-propiedades">
 
 <p><l class="prop">Proposición</l></p>
@@ -3545,6 +3524,24 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 <li>\(|a| = |a-b+b| \leq |a-b| + |b|\), es decir \(|a|-|b| \leq |a-b|\). Análogamente comprobaríamos que \(|b|-|a| \leq |b-a|\).</li>
 </ul></div>
 
+</article></slide><slide class=""><hgroup><h2>Intervalos en \(\mathbb{R}\)</h2></hgroup><article  id="intervalos-en-mathbbr">
+
+<p><l class="definition">Definición</l></p>
+
+<p>Dados números reales \(a,b \in \mathbb{R}\) tales que \(a&lt;b\), el <strong>intervalo cerrado de extremos \(a\) y \(b\)</strong> es el conjunto</p>
+
+<p>\[
+[a,b] = \{x\in \mathbb{R}: a \leq x \leq b \}
+\] Por su parte, <strong>intervalo abierto de extremos \(a\) y \(b\)</strong> es el conjunto:</p>
+
+<p>\[
+(a,b) = \{x\in \mathbb{R}: a &lt; x &lt; b \}
+\] <strong>Intervalos semiabiertos:</strong></p>
+
+<p>\[
+(a,b] = \{ x \in \mathbb{R}: a&lt;x \leq b \} \quad \text{ y } \quad [a,b) = \{ x \in \mathbb{R}: a \leq x &lt; b \}
+\]</p>
+
 </article></slide><slide class=""><hgroup><h2>Observación importante sobre el valor absoluto</h2></hgroup><article  id="observación-importante-sobre-el-valor-absoluto">
 
 <p>A menudo usaremos desigualdades del estilo \[
@@ -3572,7 +3569,7 @@ x \in [a-\epsilon,a+\epsilon]
 <ol>
 <li><p><strong>Entorno abierto:</strong> Dados un punto \(a \in \mathbb{R}\) y un \(\epsilon &gt;0\), el <strong>entorno abierto</strong> de centro \(a\) y radio \(\epsilon\) es el conjunto de puntos \(V_{\epsilon}(a)=\{ x \in \mathbb{R}: |x-a|&lt;\epsilon \} = (a-\epsilon, a+\epsilon)\).</p></li>
 <li><p><strong>Entorno cerrado:</strong> Dados un punto \(a \in \mathbb{R}\) y un \(\epsilon &gt;0\), el <strong>entorno cerrado</strong> de centro \(a\) y radio \(\epsilon\) es el conjunto de puntos \(\overline{V}_{\epsilon}(a)=\{ x \in \mathbb{R}: |x-a| \leq \epsilon \} = [a-\epsilon, a+\epsilon]\).</p></li>
-<li><p><strong>Entorno reducido</strong> de un punto: un entorno abierto (cerrado) sin el punto, es decir \(V^*_{\epsilon}(a)=V_{\epsilon}(a) \setminus \{a\}\) (\(\overline{V}^*_{\epsilon}(a) \setminus \{a\}\))</p></li>
+<li><p><strong>Entorno reducido</strong> de un punto: un entorno abierto (cerrado) sin el punto, es decir \(V^*_{\epsilon}(a)=V_{\epsilon}(a) \setminus \{a\}\) \(\left(\overline{V}^*_{\epsilon}(a) = \overline{V}_{\epsilon}(a) \setminus \{a\}\right)\)</p></li>
 </ol>
 
 <p>Vecindad o bola son también nombres habituales para los entornos.</p>
@@ -3587,20 +3584,26 @@ x \in [a-\epsilon,a+\epsilon]
 <li><p>Un subconjunto \(A \subset \mathbb{R}\) está <strong>acotado</strong> si si està acotado superiormente e inferiormente.</p></li>
 </ul>
 
-<div class="example">
-<p>Ejemplos.</p>
+</article></slide><slide class=""><hgroup><h2>Conjuntos acotados: Ejemplos</h2></hgroup><article  id="conjuntos-acotados-ejemplos">
 
-<ul>
+<div class="example">
+<p><strong>Ejemplos</strong>.</p>
+
+<ol>
 <li><p>\(1\) es una cota inferior del conjunto de los números naturales.</p></li>
-<li><p>El conjunto \(A =\{q \in \mathbb{Q}\) tal que \(q^2=2 \}\) está acotado superiormente. Tambien lo está inferiormente. Obsérvese que la existencia de una cota superior supone la existencia de infinitas cotas, puesto que cualquier número mayor también será una cota superior. Análogamente para las cotas inferiores.</p></li>
-</ul></div>
+<li><p>El conjunto \(A =\{q \in \mathbb{Q}\) tal que \(q^2 \leq 2 \}\) está acotado superiormente.</p></li>
+</ol>
+
+<p>Tambien lo está inferiormente.</p>
+
+<p>Obsérvese que la existencia de una cota superior supone la existencia de infinitas cotas, puesto que cualquier número mayor también será una cota superior. Análogamente para las cotas inferiores.</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Supremos e ínfimos</h2></hgroup><article  id="supremos-e-ínfimos">
 
 <p><l class="definition">Definición</l></p>
 
 <ul>
-<li><p>El <strong>supremo</strong> de un conjunto acotado superiormente es la menor de las cotas superiores de dicho conjunto. Un conjunto puede estar acotado superiormente, pero no tener supremo.</p></li>
+<li><p>El <strong>supremo</strong> de un conjunto acotado superiormente es la menor de las cotas superiores de dicho conjunto. Un conjunto puede estar acotado superiormente, pero no tener supremo (en \(\mathbb(Q)\)).</p></li>
 <li><p>El <strong>ínfimo</strong> de un conjunto acotado inferiormente es la mayor de las cotas inferiores de dicho conjunto. Tambien puede pasar que un conjunto acotado inferiormente no tenga ínfimo.</p></li>
 </ul>
 
@@ -3608,7 +3611,7 @@ x \in [a-\epsilon,a+\epsilon]
 <p>Ejemplos.</p>
 
 <ul>
-<li>El subconjunto \(A\) de \(\mathbb{Q}\) definido por \(A =\{q \in \mathbb{Q}\) tal que \(q^2=2 \}\), está acotado superiormente, pero, como se ha demostrado no tiene supremo, puesto que este supremo deberia ser \(\sqrt{2}\) que no es un número racional.</li>
+<li>El subconjunto \(A\) de \(\mathbb{Q}\) definido por \(A =\{q \in \mathbb{Q}\) tal que \(q^2 \leq 2 \}\), está acotado superiormente, pero, como se ha demostrado no tiene supremo, puesto que este supremo deberia ser \(\sqrt{2}\) que no es un número racional.</li>
 </ul></div>
 
 </article></slide><slide class=""><hgroup><h2>Propiedades del supremo y del ínfimo</h2></hgroup><article  id="propiedades-del-supremo-y-del-ínfimo">
@@ -3618,15 +3621,15 @@ x \in [a-\epsilon,a+\epsilon]
 <p>El supremo (el ínfimo) de un conjunto, si existe, és único.</p>
 
 <div class="dem">
-<p><strong>Demostración:</strong> Supongamos que \(s_1\) y \(s_2\) son dos supremos del conjunto \(A\). Entonces, dado que \(s_1\) es supremo, es una cota superior, por lo tanto debe ser mayor que el supremo \(s_2\), es decir \(s_1 &gt; s_2\). Por otro lado, dado que \(s_2\) es supremo, es cota superior, por lo tanto debe ser mayor que el supremo \(s_1\), es decir \(s_2 &gt; s_1\). En definitiva, debe ser \(s_1=s_2\).</p></div>
+<p><strong>Demostración:</strong> Supongamos que \(s_1\) y \(s_2\) son dos supremos del conjunto \(A\). Entonces, dado que \(s_1\) es supremo, es una cota superior, por lo tanto debe ser mayor o igual que el supremo \(s_2\), es decir \(s_1 \geq s_2\). Por otro lado, dado que \(s_2\) es supremo, es cota superior, por lo tanto debe ser mayor o igual que el supremo \(s_1\), es decir \(s_2 \geq s_1\). En definitiva, debe ser \(s_1=s_2\).</p></div>
 
 <p><l class="prop"><strong>Proposición</strong></l></p>
 
 <p>Un número \(s\) es el supremo de un subconjunto no vacío \(A\) de \(\mathbb{R}\) si, y sólo si, \(s\) satisface las condiciones:</p>
 
 <ol>
-<li><p>\(s\leq a\), para todo \(a \in A\).</p></li>
-<li><p>Si \(b&lt;s\), entonces existe \(a&#39; \in A\) tal que \(b&lt;a&#39;\).</p></li>
+<li><p>Es cota superior: \(s\geq a\), para todo \(a \in A\).</p></li>
+<li><p>Es la menor de las cotas superiores: Si \(b &lt; s\), entonces existe \(a&#39; \in A\) tal que \(b&lt;a&#39;\).</p></li>
 </ol>
 
 </article></slide><slide class=""><hgroup><h2>Propiedades del supremo y del ínfimo</h2></hgroup><article  id="propiedades-del-supremo-y-del-ínfimo-1">
@@ -3638,15 +3641,15 @@ x \in [a-\epsilon,a+\epsilon]
 <div class="dem">
 <p><strong>Demostración:</strong></p>
 
-<p>Supongamos que \(s\) es una cota superior que satisface la propiedad enunciada, entonces si \(a&lt;s\), tomando \(\epsilon = s-a\), entonces \(\epsilon &gt;0\), por lo que existe un número \(a_{\epsilon}\) tal que \(a=s-\epsilon &lt; s_{\epsilon}\), es decir que \(a\) no es cota superior de \(A\), es decir \(s=\sup A\).</p>
+<p>\((\leftarrow)\)Supongamos que \(s\) es una cota superior que satisface la propiedad enunciada, entonces si \(a&lt;s\), tomando \(\epsilon = s-a\), entonces \(\epsilon &gt;0\), por lo que existe un número \(s_{\epsilon}\) tal que \(a=s-\epsilon &lt; s_{\epsilon}\), es decir que \(a\) no es cota superior de \(A\), es decir \(s=\sup A\).</p>
 
-<p>Recíprocamente, supongamos que \(s = \sup A\) y sea \(\epsilon\) un número positivo. Como \(s-\epsilon &lt;s\), \(s-\epsilon\) no es cota superior de A, por lo que debe existir \(s_{\epsilon}\) tal que \(s-\epsilon &lt; s_{\epsilon}\).</p></div>
+<p>\((\rightarrow)\) Recíprocamente, supongamos que \(s = \sup A\) y sea \(\epsilon\) un número positivo. Como \(s-\epsilon &lt;s\), \(s-\epsilon\) no es cota superior de A, por lo que debe existir \(s_{\epsilon}\) tal que \(s-\epsilon &lt; s_{\epsilon}\).</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Máximos y mínimos</h2></hgroup><article  id="máximos-y-mínimos">
 
 <p><l class="definition"><strong>Definición</strong></l></p>
 
-<p>Si el supremo de un conjunto és un elemento del conjunto, entonces recibe el nombre de <strong>máximo</strong>.</p>
+<p>Si el supremo de un conjunto es un elemento del conjunto, entonces recibe el nombre de <strong>máximo</strong>.</p>
 
 <p>Análogamente, si el ínfimo de un conjunto es un elemento del conjunto, entoces recibe el nombre de <strong>mínimo</strong></p>
 
@@ -3665,7 +3668,7 @@ x \in [a-\epsilon,a+\epsilon]
 <div class="center">
 Todo subconjunto de \(\mathbb{R}\) acotado superiormente tiene supremo.</div></div>
 
-<p>Esta es, efectivamente, una propiedad que no se satisface en \(\mathbb{Q}\), como se ha demostrado con el conjunto \(A =\{q \in \mathbb{Q}\) tal que \(q^2=2 \}\).</p>
+<p>Esta es, efectivamente, una propiedad que no se satisface en \(\mathbb{Q}\), como se ha demostrado con el conjunto \(A =\{q \in \mathbb{Q}\) tal que \(q^2 \leq 2 \}\).</p>
 
 <p>Resulta fácil comprobar que si \(s= \sup A\), entonces \(-s= \inf(-A)\), por lo que el axioma del supremo tambien implica que</p>
 
@@ -3695,6 +3698,8 @@ Todo subconjunto de \(\mathbb{R}\) acotado inferiormente tiene ínfimo.</div></d
 <li>Existe \(n \in \mathbb{N}\) tal que \(0 &lt;\dfrac{1}{n}&lt;y\).</li>
 <li>Existe \(n \in \mathbb{N}\) tal que \(n-1 &lt;z &lt; n\).</li>
 </ul>
+
+</article></slide><slide class=""><hgroup><h2>Consecuencias del axioma del supremo: Demostración.</h2></hgroup><article  id="consecuencias-del-axioma-del-supremo-demostración.">
 
 <div class="dem">
 
@@ -3727,7 +3732,7 @@ n-1 \leq z &lt; n
 \epsilon &lt; \dfrac{2-p^2}{2p+\epsilon}
 \]</p>
 
-<p>Consideremos ahora \(\epsilon = \min \{1,\dfrac{2-p^2}{2p+1}\}\), entonces es \((p+\epsilon)^2 &lt; 2\), es decir \((p+\epsilon) \in M\) y como \(\epsilon &gt;0\), esto contradice que \(p= \sup M\).</p></div>
+<p>Consideremos ahora \(\epsilon = \min \left\{1,\dfrac{2-p^2}{2p+1} \right\}\), entonces es \((p+\epsilon)^2 &lt; 2\), es decir \((p+\epsilon) \in M\) y como \(\epsilon &gt;0\), esto contradice que \(p= \sup M\).</p></div>
 
 </article></slide><slide class=""><hgroup><h2>\(\sqrt{2} \in \mathbb{R}\) (Continuación)</h2></hgroup><article  id="sqrt2-in-mathbbr-continuación">
 
@@ -3758,7 +3763,7 @@ n-1 \leq z &lt; n
 r = n.b_1b_2b_3 \ldots b_n \ldots
 \]</p>
 
-<p>Es importante observar que, la representación decimal de los números irracionales constará siempre de un número ilimitado de cifras que no se repiten de forma periódica, puesto que como es sabido, una representación decimal con un número limitado de cifras o que se repitan periódicamente siempre corresponde a un número racional</p>
+<p>Es importante observar que, la representación decimal de los números irracionales constará siempre de un número ilimitado de cifras que no se repiten de forma periódica, puesto que como es sabido, una representación decimal con un número limitado de cifras o que se repitan periódicamente siempre corresponde a un número racional.</p>
 
 </article></slide><slide class=""><hgroup><h2>Más consecuencias del axioma del supremo.</h2></hgroup><article  id="más-consecuencias-del-axioma-del-supremo.">
 
@@ -3771,7 +3776,9 @@ r = n.b_1b_2b_3 \ldots b_n \ldots
 
 <p>Supongamos que \(x&gt;0\), entonces \(y-x &gt;0\) y, por la propiedad arquimediana, existe \(n \in \mathbb{N}\) tal que \(\dfrac{1}{n} &lt;y-x\), es decir que \(ny-nx &gt;1\).</p>
 
-<p>Dado que \(nx &gt;0\), existe \(m \in \mathbb{N}\) tal que \(m-1 &lt;nx&lt;m\). \(m\) también verifica \(m&lt;ny\), ya que \(m&lt; nx+1&lt;ny\). En definitiva es \(nx&lt;m&lt;ny\) y, por lo tanto</p>
+<p>Dado que \(nx &gt;0\), existe \(m \in \mathbb{N}\) tal que \(m-1 &lt;nx&lt;m\).</p>
+
+<p>\(m\) también verifica \(m&lt;ny\), ya que \(m&lt; nx+1&lt;ny\). En definitiva es \(nx&lt;m&lt;ny\) y, por lo tanto</p>
 
 <p>\[
 x&lt;\dfrac{m}{n}&lt;y
@@ -3786,13 +3793,15 @@ x&lt;\dfrac{m}{n}&lt;y
 <div class="dem">
 <p><strong>Demostración:</strong></p>
 
-<p>Consideremos \(s \in \mathbb{R} \setminus \mathbb{Q}\) (por ejemplo \(\sqrt{2}\)), entonces, sabemos que existe un racional \(q \in \mathbb{Q}\) tal que \(\dfrac{x}{s} &lt;q &lt; \dfrac{y}{s}\). Ahora \(qs \in \mathbb{R} \setminus \mathbb{Q}\), puesto que si \(z=qs \in \mathbb{Q}\), \(s=\dfrac{z}{q}\) seria el cociente de dos racionales y, por la tanto racional. En definitiva es \(x&lt;z&lt;y\), con \(z\) irracional.</p></div>
+<p>Consideremos \(s \in \mathbb{R} \setminus \mathbb{Q}\) (por ejemplo \(\sqrt{2}\)), \(s&gt;0\), entonces, sabemos que existe un racional \(q \in \mathbb{Q}\) tal que \(\dfrac{x}{s} &lt;q &lt; \dfrac{y}{s}\). Ahora \(qs \in \mathbb{R} \setminus \mathbb{Q}\), puesto que si \(z=qs \in \mathbb{Q}\), \(s=\dfrac{z}{q}\) seria el cociente de dos racionales y, por la tanto racional. En definitiva es \(x&lt;z&lt;y\), con \(z\) irracional.</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Cardinal de un conjunto: Conjuntos infinitos.</h2></hgroup><article  id="cardinal-de-un-conjunto-conjuntos-infinitos.">
 
 <p>Esta sección está destinada a comparar el &ldquo;tamaño&rdquo; de los conjuntos de números \(\mathbb{N}\), \(\mathbb{Z}\), \(\mathbb{Q}\) y \(\mathbb{R}\). Veremos que, en tanto que los tres primeros tienen el mismo tamaño, en un sentido que se definirá, el de los números reales es mayor, es decir que hay muchos más números irracionales que racionales. Cantor fue el primero que lo descubrió, la cual cosa le supuso no pocos problemas ante la incomprensión de una buena parte de los matemáticos contemporáneos.</p>
 
-<p>Para lo que sigue, es conviente recordar que una <strong>aplicación</strong>, \(f\) de un conjunto \(A\) en otro \(B\), representada por \(f: A \rightarrow B\), es una asignación de elementos de \(B\) a elementos de \(A\). de tal manera a que cada elemento de \(A\) se le asigna un, y sólo un, elemento de \(B\).</p>
+</article></slide><slide class=""><hgroup><h2>Aplicaciones</h2></hgroup><article  id="aplicaciones">
+
+<p>Para lo que sigue, es conviente recordar que una <strong>aplicación</strong>, \(f\) de un conjunto \(A\) en otro \(B\), representada por \(f: A \rightarrow B\), es una asignación de elementos de \(B\) a elementos de \(A\), de tal manera a que cada elemento de \(A\) le corresponde uno, y sólo uno, elemento de \(B\).</p>
 
 <p>Escribiremos \(b=f(a)\), y diremos que \(b\) <em>es la imagen de</em> \(a\) por \(f\), para indicar que \(b\) es un elemento asignado a \(a\).</p>
 
@@ -3814,7 +3823,7 @@ x&lt;\dfrac{m}{n}&lt;y
 <div class="example">
 <p><strong>Ejemplo de aplicación inyectiva</strong></p>
 
-<p>Sean \(n \in \mathbb{N}\) y \(N_n\) el conjunto de los \(n\) primeros números naturales. La aplicación \(f(k)=k\) es inyectiva, pero no exhaustiva, ya que cualquier natural mayor que \(n\) no es imagen de ningún elemento de \(N_n\).</p></div>
+<p>Sean \(n \in \mathbb{N}\) y \(N_n\) el conjunto de los \(n\) primeros números naturales. La aplicación \(f(k)=k\) de \(N_n \rightarrow \mathbb{N}\) es inyectiva, pero no exhaustiva, ya que cualquier natural mayor que \(n\) no es imagen de ningún elemento de \(N_n\).</p></div>
 
 <div class="example">
 <p><strong>Ejemplo de aplicación exhaustiva</strong></p>
@@ -3834,15 +3843,15 @@ f(n) =
 
 </article></slide><slide class=""><hgroup><h2>Cardinal de un conjunto: Conjuntos infinitos.</h2></hgroup><article  id="cardinal-de-un-conjunto-conjuntos-infinitos.-2">
 
-<p><l class="definition"> <strong>Definición</strong> </l></p>
+<p><l class="definition"> <strong>Definición: Conjunto finito</strong> </l></p>
 
 <p>Sea \(N_n\) el conjunto de los \(n\) primeros números naturales. Diremos que un conjunto \(A\) tiene \(n\) elementos si existe una correspondencia uno a uno entre \(A\) y \(N_n\).</p>
 
-<p>Un conjunto <strong>finito</strong> es un conjunto con \(n\) elementos. Es decir, un conjunto \(A\) es finito si existe una aplicación inyectiva de \(A\) en el conjunto de los números naturales \(\mathbb{N}\).</p>
+<p>Un conjunto <strong>finito</strong> es un conjunto con \(n\) elementos. Es decir, un conjunto \(A\) es finito si existe una aplicación biyectiva de \(A\) en un subconjunto de números naturales de la forma \(N_n\).</p>
 
 <p>Un conjunto es <strong>infinito</strong> si no es finito.</p>
 
-<p><l class="definition"> <strong>Definición</strong> </l></p>
+<p><l class="definition"> <strong>Definición. Cardinal de un conjunto</strong> </l></p>
 
 <p>Dos conjuntos \(A\) y \(B\) tienen el mismo <strong>cardinal</strong> si existe una correspondencia uno a uno entre ellos.</p>
 
@@ -3853,11 +3862,13 @@ f(n) =
 <p>El conjunto de los números naturales, \(\mathbb{N}\), es infinito.</p>
 
 <div class="dem">
+<p>*+Demostración**</p>
+
 <p>Es suficiente demostrar que para todo \(m \in \mathbb{N}\) no puede existir una aplicación inyectiva de \(\mathbb{N}\) en \(N_m\), puesto que, de ser así, no podrá existir una aplicación biyectiva entre esos dos conjuntos y, por lo tanto \(\mathbb{N}\) no será un conjunto finito.</p>
 
 <p>Ahora, en primer lugar, cada subconjunto de \(\mathbb{N}\) de \(m\) elementos se puede poner en correspondencia uno a uno com \(N_m\), por lo tanto será suficiente considerar el propio \(N_m = \{1,2, \ldots, m\}\) como subconjunto de \(\mathbb{N}\). Una vez que hemos asignado la imagen de estos primeros \(m\) elementos de \(\mathbb{N}\) hemos agotado los elementos de \(N_m\), por consiguiente, para asignar una imagen a \(m+1 \in \mathbb{N}\) no quedará más remedio que tomar alguno de los elementos de \(N_m\) y, por lo tanto tendríamos dos naturales distintos con la misma imagen, lo que significa que la aplicación no puede ser inyectiva.</p></div>
 
-<p>La técnica aplicada en la demostración anterior, se conoce con el nombre del <strong>Principìo del palomar</strong> y resulta ser extremadamente útil en la resolución de diversos tipos de problemas.</p>
+<p>La técnica aplicada en la demostración anterior, se conoce con el nombre del <strong>Principio del palomar</strong> y resulta ser extremadamente útil en la resolución de diversos tipos de problemas.</p>
 
 </article></slide><slide class=""><hgroup><h2>Conjuntos numerables.</h2></hgroup><article  id="conjuntos-numerables.">
 
@@ -3865,14 +3876,14 @@ f(n) =
 
 <p>Hemos visto un ejemplo de una aplicación biyectiva entre los conjuntos \(\mathbb{Z}\) y \(\mathbb{N}\) y, por lo tanto tienen el mismo cardinal, aunque \(\mathbb{N} \subset \mathbb{Z}\). Conviene observar que esta es una característica de los conjuntos infinitos: pueden tener el mismo cardinal que alguno de sus subconjuntos propios.</p>
 
-<p><l class="definition"> <strong>Definición</strong></p>
+<p><l class="definition"> <strong>Definición: Conjunto numerable</strong></p>
 
 <p>Diremos que un conjunto es <strong>numerable</strong> si tiene el mismo cardinal que \(\mathbb{N}\). Diremos que un conjunto es <strong>contable</strong> si es finito o numerable.</p>
 
 <div class="example">
 <p><strong>Ejemplo</strong></p>
 
-<p>El conjunto \(\mathbb{Z}\) de los números enteros es numerable. También lo es el conjunto de los números naturales pares o el de los múltiplos de otro número natural \(k\).</p></div>
+<p>El conjunto \(\mathbb{Z}\) de los números enteros es numerable. También lo es el conjunto de los números naturales pares o el de los múltiplos de otro número natural, \(k\).</p></div>
 
 </article></slide><slide class=""><hgroup><h2>\(\mathbb{Q}\) es numerable</h2></hgroup><article  id="mathbbq-es-numerable">
 
@@ -3900,7 +3911,7 @@ f \left(\dfrac{m}{n} \right) = \dfrac{1}{2}(m+n-2)(m+n-1)+m
 
 <p><l class="prop"> <strong>Proposición</strong> </l></p>
 
-<p>El conjunto de los números reales, \(\mathbb{N}\), no es numerable.</p>
+<p>El conjunto de los números reales, \(\mathbb{R}\), no es numerable.</p>
 
 <div class="dem">
 
@@ -3913,7 +3924,7 @@ a_3 = 0.a_{31}a_{32}a_{33} \ldots a_{3n} \ldots \\
 \ldots\\
 a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 \ldots
-\] Consideremos ahora el número \(a=0.b_1b_2b_3 \ldots b_n \ldots\), en el que cada \(b_k=a_{kk}+1\), si \(a_{kk} \neq 8\), y \(b_k = 0\), si \(a_{kk} = 8\). El número \(a\) no está en la lista de números anterior, puesto que si ocupase el lugar \(k\) diferiria del correspondiente \(a_k\) precisamente en la cifra que ocupa el lugar \(k\).</p>
+\] Consideremos ahora el número \(a=0.b_1b_2b_3 \ldots b_n \ldots\), en el que cada \(b_k=a_{kk}+1\), si \(a_{kk} \neq 9\), y \(b_k = 0\), si \(a_{kk} = 9\). El número \(a\) no está en la lista de números anterior, puesto que si ocupase el lugar \(k\) diferiria del correspondiente \(a_k\) precisamente en la cifra que ocupa el lugar \(k\).</p>
 
 </article></slide><slide class=""><hgroup><h2>El conjunto de los números irracionales no es numerable</h2></hgroup><article  id="el-conjunto-de-los-números-irracionales-no-es-numerable">
 
@@ -3937,15 +3948,17 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 
 </article></slide><slide class=""><hgroup><h2>Intervalos anidados (1)</h2></hgroup><article  id="intervalos-anidados-1">
 
-<p><l class="definition"> <strong>Definición</strong> </l></p>
+<p><l class="definition"> <strong>Definición: Sucesión de intervalos anidados</strong> </l></p>
 
 <p>Una sucesión de <strong>intervalos anidados</strong> es un conjunto de intervalos cerrados y acotados de \(\mathbb{R}\), \(I_n = [a_n,b_n]\), tal que para todo \(n \in \mathbb{N}\), es \(I_{n+1} \supset I_n\) o, lo que es equivalente, tal que \(a_n \leq a_{n+1} \leq b_{n+1} \leq b_n\)</p>
 
-<p>Observación: como se verá más adelante, un conjunto indexado por los números naturales, como lo son \(\{I_n\}\), \(\{a_n\}\) y \(\{b_n\}\), recibe el nombre de <strong>sucesión</strong></p>
+<p><l div class="observ"> <strong>Observación</strong> </l></p>
+
+<p>Como se verá más adelante, un conjunto indexado por los números naturales, como lo son \(\{I_n\}\), \(\{a_n\}\) y \(\{b_n\}\), recibe el nombre de <strong>sucesión</strong></p>
 
 </article></slide><slide class=""><hgroup><h2>Intervalos anidados (2)</h2></hgroup><article  id="intervalos-anidados-2">
 
-<p><l class="proposition"> <strong>Proposición</strong> </l></p>
+<p><l class="prop"> <strong>Proposición.</strong> </l></p>
 
 <p>Sea \(\{I_n\}_{n \in \mathbb{N}}\) una sucesión de intervalos anidados de \(\mathbb{R}\). Entonces existe un \(\xi \in \mathbb{R}\) tal que \(\xi \in I_n\) para todo \(n \in \mathbb{N}\), o lo que es lo mismo, tal que \(a_n \leq \xi \leq b_n\), para todo \(n \in \mathbb{N}\)</p>
 
@@ -3954,7 +3967,7 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 
 <p>En primer lugar, veamos que \(a_k \leq b_n\) para todo \(k\) y para todo \(n\): Si \(n \leq k\), entonces \(I_k \subset I_n\) y, por lo tanto, \(a_k \leq b_k \leq b_n\). Por otra parte, si \(k &lt; n\), entonces \(I_k \supset I_n\) y, por lo tanto, \(a_k \leq a_n \leq b_n\)</p>
 
-<p>Es decir, el conjunto de extremos inferiores de los intervalos \(\{a_n: n \in \mathbb{N}\}\) está acotado superiormente por cualquiera de los \(b_n\). Sea \(\xi\) el supremo de este conjunto. Está claro que $a_n }, para todo \(n \in \mathbb{N}\), puesto que \(\xi\) es el supremo de todos los \(a_n\).</p>
+<p>Es decir, el conjunto de extremos inferiores de los intervalos \(\{a_n: n \in \mathbb{N}\}\) está acotado superiormente por cualquiera de los \(b_n\). Sea \(\xi\) el supremo de este conjunto. Está claro que \(a_n \leq \xi\), para todo \(n \in \mathbb{N}\), puesto que \(\xi\) es el supremo de todos los \(a_n\).</p>
 
 <p>Pero todos los \(b_n\) son cotas superiores de este conjunto, y el supremo es la menor de las cotas superiores, por lo que \(\xi \leq b_n\), para todo n. En definitiva es \(a_n \leq \xi \leq b_n\), para todo \(n \in \mathbb{N}\) o, lo que es lo mismo, \(\xi \in I_n\) para todo \(n \in \mathbb{N}\).</p></div>
 
@@ -3968,7 +3981,7 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 
 <p><strong>Demostración</strong></p>
 
-<p>Hemos visto en la proposición anterior que \(\xi = \sup\{a_n: n \in \mathbb{N} \}\) está en todos los \(I_n\). Igual tambien que en la proposición anterior se demuestra que \(\eta = \inf \{b_n: n \in \mathbb{N} \}\) tambien está en todos los intervalos. Sólo falta comprobar que \(\xi = \eta\). Ahora bien:</p>
+<p>Hemos visto en la proposición anterior que \(\xi = \sup\{a_n: n \in \mathbb{N} \}\) está en todos los \(I_n\). Un razonamiento similar al de la proposición anterior se demuestra que \(\eta = \inf \{b_n: n \in \mathbb{N} \}\) tambien está en todos los intervalos. Sólo falta comprobar que \(\xi = \eta\). Ahora bien:</p>
 
 <p>Dado que \(\eta \leq b_n\) y que \(\xi\geq a_n\), para todo \(n\), tenemos que \(0 \leq \eta - \xi \leq b_n -a_n\), para todo \(n\), por lo tanto \(0 \leq \eta - \xi \leq \inf\{b_n-a_n: n \in \mathbb{N}\}=0\), es decir que \[
 \xi = \eta

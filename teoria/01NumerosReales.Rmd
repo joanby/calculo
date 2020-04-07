@@ -15,13 +15,9 @@ reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
 #reticulate::py_install("sympy")
 ```
 
-# Tema
+# Introducción
 
 ## Cálculo: Las Matemáticas del cambio
-
-<div class="important">
-Importante
-</div>
 
 El término <l class="important">Cálculo</l> identifica un conjunto de instrumentos matemáticos para efectuar medidas.
 
@@ -77,16 +73,16 @@ Dados dos números enteros $a$ y $b$, existen otros dos enteros $q$ y $r$, con $
 $$
 a=bq+r
 $$
-q: cociente, r: resto
+$q$: cociente, $r$: resto
 
-Si $r=0$, entonces decimos que $a$ es un **múltiplo** de $b$ y tambien que $b$ es un dvisor de $a$
+Si $r=0$, entonces decimos que $a$ es un **múltiplo** de $b$ y tambien que $b$ es un divisor de $a$
 
 Si $r>0$  entonces $a$ y $b$ son **primos** entre si.
 
 
 ## Números y medida: El conjunto $\mathbb{Q}$ de los números racionales
 
-Los números racionales: $\mathbb{Q} = \{ \dfrac{p}{q}: p,q \in \mathbb{Z}, q \neq 0 \}$
+Los números racionales: $\mathbb{Q} = \left\{ \dfrac{p}{q}: p,q \in \mathbb{Z}, q \neq 0 \right\}$
 
 Suma: elemento neutro, $0$, elemento simétrico, propiedades conmutativa y asociativa.
 
@@ -96,7 +92,7 @@ Producto: elemento neutro, $1$, elemento simétrico (para todo número diferente
 ## El conjunto $\mathbb{Q}$ de los números racionales
 
 
-Orden: 
+Orden: El conjunto de los racionales está ordenado de la forma
 $$
 \dfrac{a}{b} \leq \dfrac{c}{d} \quad \text{ si } \quad  ad \leq bc
 $$
@@ -111,7 +107,7 @@ Es suficiente considerar $p=a+c$ y $q=b+d$.
 
 ## El conjunto $\mathbb{Q}$ de los números racionales
 
-Los números racionales no son suficientes puesto hay medidas cuyo resultado no és un número racional:
+Los números racionales no son suficientes puesto que hay medidas cuyo resultado no és un número racional:
 
 * La longitud de la diagonal de un cuadrado con el lado como unidad ($\sqrt{2}$)
 * La longitud de una circunferencia tomando el diámetro como unidad ($\pi$)
@@ -149,7 +145,7 @@ Supondremos la existencia de un conjunto $\mathbb{R}$ de números en el que hay 
 
       + Existe un elemento neutro, $0 \in \mathbb{R}$,  para la suma: $a+0=a=0+a$.
       
-      + Para cada $a \in \mathbb{R}$ existe un elemento $-a \in \mathbb{R}$, simétrico de $a$, tal que $a+(-a)=0=(-a)+0$
+      + Para cada $a \in \mathbb{R}$ existe un elemento $-a \in \mathbb{R}$, simétrico de $a$, tal que $a+(-a)=0=(-a)+a$
 
 
 ## Los números reales: $\mathbb{R}$
@@ -186,9 +182,9 @@ $$
 P \cup  \{ 0 \} \cup (-P) = \mathbb{R} 
 $$
 
-donde $-P = \{-x: x \in \mathbb{R}  \}$. 
+donde $-P = \{-x: x \in \mathbb{R}  \}$, tales que $P\cap (-P) = \emptyset$. 
 
-Es decir, todo número real o està en $P$ o és igual a $0$ o su simétrico está en $P$, y sólo una de estas  tres opciones.
+Es decir, todo número real o está en $P$ o és igual a $0$ o su simétrico está en $P$, y sólo una de estas  tres opciones.
 
 
 
@@ -239,7 +235,7 @@ Obsérvese que  $a \in P$ es equivalente a decir que $a > 0$. De ahí que a los 
 
 <l class="prop">Proposición</l>
 
-  * Si $a \in \mathbb{R}$, entonces $a^2 \in P$,
+  * Si $a \in \mathbb{R}$, entonces $a^2 \in P \cup \{0\}$,
   * $1 \in P$,
   * $\mathbb{N} \subset P$.
 
@@ -290,27 +286,6 @@ Así $|-3|=3$ y $|45|=45$, es decir $|a| = a$, si $a \geq 0$ y, si $a <0$, enton
 
 <l class="important">Un error frecuente que se debe evitar es considerar que </l> $\sqrt{a^2}=a$.
 
-## Intervalos en $\mathbb{R}$
-
-<l class="definition">Definición</l>  
-
-Dados números reales $a,b \in \mathbb{R}$ tales que $a<b$, el **intervalo cerrado de extremos $a$ y $b$** es el conjunto 
-
-$$
-[a,b] = \{x\in \mathbb{R}: a \leq x \leq b \}
-$$
-Por su parte, **intervalo abierto de extremos $a$ y $b$** es el conjunto:
-
-$$
-(a,b) = \{x\in \mathbb{R}: a < x < b \}
-$$
-**Intervalos semiabiertos:**
-
-$$
-(a,b] = \{ x \in \mathbb{R}: a<x \leq b \} \quad \text{ y } \quad [a,b) = \{ x \in \mathbb{R}: a \leq x < b \}
-$$
-
-
 ## Valor absoluto: propiedades
 
 <l class="prop">Proposición</l>
@@ -320,7 +295,6 @@ $$
   * $|ab|= |a||b|$, para toda $a,b \in \mathbb{R}$.
   * Si $c \geq 0$, entonces $|a| \leq c$, si y sólo si $-c \leq a \leq c$
   * $-|a| \leq a \leq  |a|$, para todo $a \in \mathbb{R}$. 
-
 
 ## Desigualdad triangular
 
@@ -346,6 +320,30 @@ es decir, $|a+b| \leq |a| + |b|$.
   
 
 </div>
+
+## Intervalos en $\mathbb{R}$
+
+<l class="definition">Definición</l>  
+
+Dados números reales $a,b \in \mathbb{R}$ tales que $a<b$, el **intervalo cerrado de extremos $a$ y $b$** es el conjunto 
+
+$$
+[a,b] = \{x\in \mathbb{R}: a \leq x \leq b \}
+$$
+Por su parte, **intervalo abierto de extremos $a$ y $b$** es el conjunto:
+
+$$
+(a,b) = \{x\in \mathbb{R}: a < x < b \}
+$$
+**Intervalos semiabiertos:**
+
+$$
+(a,b] = \{ x \in \mathbb{R}: a<x \leq b \} \quad \text{ y } \quad [a,b) = \{ x \in \mathbb{R}: a \leq x < b \}
+$$
+
+
+
+
 
 ## Observación importante  sobre el valor absoluto
 
@@ -379,12 +377,9 @@ Las consideraciones anteriores llevan a la siguiente
 
 2) **Entorno cerrado:** Dados  un punto $a \in \mathbb{R}$ y un $\epsilon >0$, el **entorno cerrado** de centro $a$ y radio $\epsilon$ es el conjunto de puntos $\overline{V}_{\epsilon}(a)=\{ x \in \mathbb{R}: |x-a| \leq \epsilon \} = [a-\epsilon, a+\epsilon]$. 
 
-3) **Entorno reducido** de un punto: un entorno abierto (cerrado) sin el punto, es decir $V^*_{\epsilon}(a)=V_{\epsilon}(a) \setminus \{a\}$ ($\overline{V}^*_{\epsilon}(a)  \setminus \{a\}$)
+3) **Entorno reducido** de un punto: un entorno abierto (cerrado) sin el punto, es decir $V^*_{\epsilon}(a)=V_{\epsilon}(a) \setminus \{a\}$ $\left(\overline{V}^*_{\epsilon}(a) = \overline{V}_{\epsilon}(a)  \setminus \{a\}\right)$
 
-Vecindad o bola son también  nombres habituales para los entornos.
-
-
-
+Vecindad o bola son también nombres habituales para los entornos.
 
 
 
@@ -398,11 +393,18 @@ Vecindad o bola son también  nombres habituales para los entornos.
   
   * Un subconjunto $A \subset \mathbb{R}$ está **acotado** si si està acotado superiormente e inferiormente.
   
-<div class="example">Ejemplos.
-
-  * $1$ es una cota inferior del conjunto de los números naturales.
   
-  * El conjunto $A =\{q \in \mathbb{Q}$ tal que $q^2=2 \}$ está acotado superiormente. Tambien lo está inferiormente. Obsérvese que la existencia de una cota superior  supone la existencia de infinitas cotas, puesto que cualquier número mayor también será una cota superior. Análogamente para las cotas inferiores.
+## Conjuntos acotados: Ejemplos
+  
+<div class="example"> **Ejemplos**.
+
+  1) $1$ es una cota inferior del conjunto de los números naturales.
+  
+  2) El conjunto $A =\{q \in \mathbb{Q}$ tal que $q^2 \leq 2 \}$ está acotado superiormente. 
+  
+Tambien lo está inferiormente. 
+  
+Obsérvese que la existencia de una cota superior  supone la existencia de infinitas cotas, puesto que cualquier número mayor también será una cota superior. Análogamente para las cotas inferiores.
 
 </div>
 
@@ -410,13 +412,13 @@ Vecindad o bola son también  nombres habituales para los entornos.
 
 <l class="definition">Definición</l> 
 
-  * El **supremo** de un conjunto acotado superiormente es la menor de las cotas superiores de dicho conjunto. Un conjunto puede estar acotado superiormente, pero no tener supremo.
+  * El **supremo** de un conjunto acotado superiormente es la menor de las cotas superiores de dicho conjunto. Un conjunto puede estar acotado superiormente, pero no tener supremo (en $\mathbb(Q)$).
   
   * El **ínfimo** de un conjunto acotado inferiormente es la mayor de las cotas inferiores de dicho conjunto. Tambien puede pasar que un conjunto acotado inferiormente no tenga ínfimo.
 
 <div class="example">Ejemplos.
 
-  * El subconjunto  $A$ de $\mathbb{Q}$ definido por $A =\{q \in \mathbb{Q}$ tal que $q^2=2 \}$, está acotado superiormente, pero, como se ha demostrado no tiene supremo, puesto que este supremo deberia ser $\sqrt{2}$ que no es un número racional.
+  * El subconjunto  $A$ de $\mathbb{Q}$ definido por $A =\{q \in \mathbb{Q}$ tal que $q^2 \leq 2 \}$, está acotado superiormente, pero, como se ha demostrado no tiene supremo, puesto que este supremo deberia ser $\sqrt{2}$ que no es un número racional.
 </div>
 
 ## Propiedades del supremo y del ínfimo
@@ -427,7 +429,7 @@ El supremo  (el ínfimo) de un conjunto, si existe, és único.
 
 <div class="dem">
 **Demostración:**
-Supongamos que $s_1$ y $s_2$ son dos supremos del conjunto $A$. Entonces, dado que $s_1$ es supremo, es una cota superior, por lo tanto debe ser mayor que el supremo $s_2$, es decir $s_1 > s_2$. Por otro lado, dado que $s_2$ es supremo, es cota superior, por lo tanto debe ser mayor que el supremo $s_1$, es decir $s_2 > s_1$. En definitiva, debe ser $s_1=s_2$.
+Supongamos que $s_1$ y $s_2$ son dos supremos del conjunto $A$. Entonces, dado que $s_1$ es supremo, es una cota superior, por lo tanto debe ser mayor o igual que el supremo $s_2$, es decir $s_1 \geq s_2$. Por otro lado, dado que $s_2$ es supremo, es cota superior, por lo tanto debe ser mayor o igual que el supremo $s_1$, es decir $s_2 \geq s_1$. En definitiva, debe ser $s_1=s_2$.
  
 </div>
 
@@ -435,9 +437,9 @@ Supongamos que $s_1$ y $s_2$ son dos supremos del conjunto $A$. Entonces, dado q
 
 Un número $s$ es el supremo de un subconjunto no vacío $A$ de $\mathbb{R}$ si, y sólo si, $s$ satisface las condiciones:
 
-  a) $s\leq a$, para todo $a \in A$.
+  a) Es cota superior: $s\geq a$, para todo $a \in A$.
   
-  b) Si $b<s$, entonces existe $a' \in A$ tal que $b<a'$.
+  b) Es la menor de las cotas superiores: Si $b < s$, entonces existe $a' \in A$ tal que $b<a'$.
 
 
 ## Propiedades del supremo y del ínfimo
@@ -449,9 +451,9 @@ Una cota superior $s$ de un subconjunto no vacío $A$ de $\mathbb{R}$, es el sup
 <div class="dem">
 **Demostración:**
 
-Supongamos que $s$ es una cota superior que satisface la propiedad enunciada, entonces si $a<s$, tomando $\epsilon = s-a$, entonces $\epsilon >0$, por lo que existe un número $a_{\epsilon}$ tal que $a=s-\epsilon < s_{\epsilon}$, es decir que $a$ no es cota superior de $A$, es decir $s=\sup A$.
+$(\leftarrow)$Supongamos que $s$ es una cota superior que satisface la propiedad enunciada, entonces si $a<s$, tomando $\epsilon = s-a$, entonces $\epsilon >0$, por lo que existe un número $s_{\epsilon}$ tal que $a=s-\epsilon < s_{\epsilon}$, es decir que $a$ no es cota superior de $A$, es decir $s=\sup A$.
 
-Recíprocamente, supongamos que $s = \sup A$ y sea $\epsilon$ un número positivo. Como $s-\epsilon <s$, $s-\epsilon$ no es cota superior de A, por lo que debe existir $s_{\epsilon}$
+$(\rightarrow)$ Recíprocamente, supongamos que $s = \sup A$ y sea $\epsilon$ un número positivo. Como $s-\epsilon <s$, $s-\epsilon$ no es cota superior de A, por lo que debe existir $s_{\epsilon}$
 tal que $s-\epsilon < s_{\epsilon}$.
 
 </div>
@@ -460,7 +462,7 @@ tal que $s-\epsilon < s_{\epsilon}$.
 
 <l class="definition">**Definición**</l>
 
-Si el supremo de un conjunto és un elemento del conjunto, entonces recibe el nombre de **máximo**.
+Si el supremo de un conjunto es un elemento del conjunto, entonces recibe el nombre de **máximo**.
 
 Análogamente, si el ínfimo de un conjunto es un elemento del conjunto, entoces recibe el nombre de **mínimo**
 
@@ -482,7 +484,7 @@ Sin embargo no lo es del conjunto $\{x \in \mathbb{R}: x < 2 \}$, del que sigue 
   </div>
 </div>
 
-Esta es, efectivamente, una propiedad que no se satisface en $\mathbb{Q}$, como se ha demostrado con el conjunto $A =\{q \in \mathbb{Q}$ tal que $q^2=2 \}$.
+Esta es, efectivamente, una propiedad que no se satisface en $\mathbb{Q}$, como se ha demostrado con el conjunto $A =\{q \in \mathbb{Q}$ tal que $q^2 \leq 2 \}$.
 
 Resulta fácil comprobar que si $s= \sup A$, entonces $-s= \inf(-A)$, por lo que el axioma del supremo tambien implica que
 
@@ -498,6 +500,7 @@ Resulta fácil comprobar que si $s= \sup A$, entonces $-s= \inf(-A)$, por lo que
 <l class="prop"> **Proposición. (Propiedad arquimediana)** </l>
 
 El conjunto $\mathbb{N}$ de los números naturales no está acotado superiormente en $\mathbb{R}$.
+
 
 <div class="dem">
 **Demostración:**
@@ -515,6 +518,8 @@ Sean $y,z$ reales positivos. Entonces:
   * Existe $n \in \mathbb{N}$ tal que $z<ny$.
   * Existe $n \in \mathbb{N}$ tal que $0 <\dfrac{1}{n}<y$.
   * Existe $n \in \mathbb{N}$ tal que $n-1 <z < n$.
+  
+## Consecuencias del axioma del supremo: Demostración.
 
 <div class="dem">
 **Demostración:**
@@ -549,7 +554,7 @@ $$
 \epsilon < \dfrac{2-p^2}{2p+\epsilon}
 $$
 
-Consideremos ahora $\epsilon = \min \{1,\dfrac{2-p^2}{2p+1}\}$, entonces 
+Consideremos ahora $\epsilon = \min \left\{1,\dfrac{2-p^2}{2p+1} \right\}$, entonces 
 es $(p+\epsilon)^2 < 2$, es decir $(p+\epsilon) \in M$ y como $\epsilon >0$, esto contradice que $p= \sup M$. 
 
 </div>
@@ -592,7 +597,7 @@ $$
 r = n.b_1b_2b_3 \ldots b_n \ldots
 $$
 
-Es importante observar que, la representación decimal de los números irracionales constará siempre de un número ilimitado de cifras que no se repiten de forma periódica, puesto que como es sabido, una representación decimal con un número limitado de cifras o que se repitan periódicamente siempre corresponde a un número racional
+Es importante observar que, la representación decimal de los números irracionales constará siempre de un número ilimitado de cifras que no se repiten de forma periódica, puesto que como es sabido, una representación decimal con un número limitado de cifras o que se repitan periódicamente siempre corresponde a un número racional.
 
 
 
@@ -609,7 +614,9 @@ $x<q<y$. Es decir, entre dos números reales siempre hay un número racional.
 
 Supongamos que $x>0$, entonces $y-x >0$ y, por la propiedad arquimediana, existe $n \in \mathbb{N}$ tal que $\dfrac{1}{n} <y-x$, es decir que $ny-nx >1$.
 
-Dado que $nx >0$, existe $m \in \mathbb{N}$ tal que $m-1 <nx<m$. $m$ también verifica $m<ny$, ya que $m< nx+1<ny$. En definitiva es $nx<m<ny$ y, por lo tanto
+Dado que $nx >0$, existe $m \in \mathbb{N}$ tal que $m-1 <nx<m$. 
+
+$m$ también verifica $m<ny$, ya que $m< nx+1<ny$. En definitiva es $nx<m<ny$ y, por lo tanto
 
 $$
 x<\dfrac{m}{n}<y
@@ -627,7 +634,7 @@ Si $x,y \in \mathbb{R}$, con $x<y$, entonces existe un número irracional z (es 
 <div class="dem">
 **Demostración:**
 
-Consideremos $s \in \mathbb{R} \setminus \mathbb{Q}$ (por ejemplo $\sqrt{2}$), entonces, sabemos que existe un racional $q \in \mathbb{Q}$ tal que $\dfrac{x}{s} <q < \dfrac{y}{s}$. Ahora $qs \in \mathbb{R} \setminus \mathbb{Q}$, puesto que si $z=qs \in \mathbb{Q}$, $s=\dfrac{z}{q}$ seria el cociente de dos racionales y, por la tanto racional. En definitiva es $x<z<y$, con $z$ irracional.
+Consideremos $s \in \mathbb{R} \setminus \mathbb{Q}$ (por ejemplo $\sqrt{2}$), $s>0$, entonces, sabemos que existe un racional $q \in \mathbb{Q}$ tal que $\dfrac{x}{s} <q < \dfrac{y}{s}$. Ahora $qs \in \mathbb{R} \setminus \mathbb{Q}$, puesto que si $z=qs \in \mathbb{Q}$, $s=\dfrac{z}{q}$ seria el cociente de dos racionales y, por la tanto racional. En definitiva es $x<z<y$, con $z$ irracional.
 
 </div>
 
@@ -636,7 +643,9 @@ Consideremos $s \in \mathbb{R} \setminus \mathbb{Q}$ (por ejemplo $\sqrt{2}$), e
 
 Esta sección está destinada a comparar el "tamaño" de los conjuntos de números $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ y $\mathbb{R}$. Veremos que, en tanto que los tres primeros tienen el mismo tamaño, en un sentido que se definirá, el de los números reales es mayor, es decir que hay muchos más números irracionales que racionales. Cantor fue el primero que lo descubrió, la cual cosa le supuso no pocos problemas ante la incomprensión de una buena parte de los matemáticos contemporáneos.
 
-Para lo que sigue, es conviente recordar que una **aplicación**, $f$ de un conjunto $A$ en otro $B$, representada por $f: A \rightarrow B$, es una asignación de elementos de $B$ a elementos de $A$. de tal manera a que cada elemento de $A$ se le asigna un, y sólo un, elemento de $B$. 
+## Aplicaciones 
+
+Para lo que sigue, es conviente recordar que una **aplicación**, $f$ de un conjunto $A$ en otro $B$, representada por $f: A \rightarrow B$, es una asignación de elementos de $B$ a elementos de $A$, de tal manera a que cada elemento de $A$ le corresponde uno, y sólo uno, elemento de $B$. 
 
 Escribiremos $b=f(a)$, y diremos que $b$ *es la imagen de* $a$ por $f$, para indicar que $b$ es un elemento asignado a $a$. 
 
@@ -661,7 +670,7 @@ $f: \mathbb{N} \rightarrow \mathbb{N}$ definida por $f(n) = 2n$ es una aplicaci�
 
 <div class="example"> **Ejemplo de aplicación inyectiva**
 
-Sean $n \in \mathbb{N}$ y $N_n$ el conjunto de los $n$ primeros números naturales. La aplicación $f(k)=k$ es inyectiva, pero no exhaustiva, ya que cualquier natural  mayor que $n$ no es  imagen de ningún elemento de $N_n$.
+Sean $n \in \mathbb{N}$ y $N_n$ el conjunto de los $n$ primeros números naturales. La aplicación $f(k)=k$ de $N_n \rightarrow \mathbb{N}$ es inyectiva, pero no exhaustiva, ya que cualquier natural  mayor que $n$ no es  imagen de ningún elemento de $N_n$.
 </div>
 
 <div class="example"> **Ejemplo de aplicación exhaustiva**
@@ -687,15 +696,15 @@ es una aplicación biyectiva.
 
 ## Cardinal de un conjunto: Conjuntos infinitos.
 
-<l class="definition"> **Definición** </l>
+<l class="definition"> **Definición: Conjunto finito** </l>
 
 Sea $N_n$ el conjunto de los $n$ primeros números naturales. Diremos que un conjunto $A$ tiene $n$ elementos si existe una correspondencia uno a uno entre $A$ y $N_n$.
 
-Un conjunto **finito** es un conjunto con $n$ elementos. Es decir, un conjunto $A$ es finito si existe una aplicación inyectiva de $A$ en el conjunto de los números naturales $\mathbb{N}$.
+Un conjunto **finito** es un conjunto con $n$ elementos. Es decir, un conjunto $A$ es finito si existe una aplicación biyectiva de $A$ en un subconjunto de números naturales de la forma $N_n$.
 
 Un conjunto es **infinito** si no es finito. 
 
-<l class="definition"> **Definición** </l>
+<l class="definition"> **Definición. Cardinal de un conjunto** </l>
 
 Dos conjuntos $A$ y $B$ tienen el mismo **cardinal** si existe una correspondencia uno a uno entre ellos. 
 
@@ -705,7 +714,7 @@ Dos conjuntos $A$ y $B$ tienen el mismo **cardinal** si existe una correspondenc
 
 El conjunto de los números naturales, $\mathbb{N}$, es infinito.
 
-<div class="dem"> 
+<div class="dem"> *+Demostración**
 
 Es suficiente demostrar que para todo $m \in \mathbb{N}$ no puede existir una aplicación inyectiva de $\mathbb{N}$ en $N_m$, puesto que, de ser así, no podrá existir una aplicación biyectiva entre esos dos conjuntos y, por lo tanto $\mathbb{N}$ no será un conjunto finito.
 
@@ -713,7 +722,7 @@ Ahora, en primer lugar, cada subconjunto de $\mathbb{N}$ de $m$ elementos se pue
 
 </div>
 
-La técnica aplicada en la demostración anterior, se conoce con el nombre del **Principìo del palomar** y resulta ser extremadamente útil en la resolución de diversos tipos de problemas.
+La técnica aplicada en la demostración anterior, se conoce con el nombre del **Principio del palomar** y resulta ser extremadamente útil en la resolución de diversos tipos de problemas.
 
 ## Conjuntos numerables.
 
@@ -721,13 +730,13 @@ Está claro que dos conjuntos finitos con el mismo número de elementos tienen e
 
 Hemos visto un ejemplo de una aplicación biyectiva entre los conjuntos $\mathbb{Z}$ y $\mathbb{N}$ y, por lo tanto tienen el mismo cardinal, aunque $\mathbb{N} \subset \mathbb{Z}$. Conviene observar que esta es una característica de los conjuntos infinitos: pueden tener el mismo cardinal que alguno de sus subconjuntos propios.
 
-<l class="definition"> **Definición**
+<l class="definition"> **Definición: Conjunto numerable**
 
 Diremos que un conjunto es **numerable** si tiene el mismo cardinal que $\mathbb{N}$. Diremos que un conjunto es **contable** si es finito o numerable.
 
 <div class="example"> **Ejemplo** 
 
-El conjunto $\mathbb{Z}$ de los números enteros es numerable. También lo es el conjunto de los números naturales pares o el de los múltiplos de otro número natural $k$.
+El conjunto $\mathbb{Z}$ de los números enteros es numerable. También lo es el conjunto de los números naturales pares o el de los múltiplos de otro número natural, $k$.
 </div>
 
 ## $\mathbb{Q}$ es numerable
@@ -764,7 +773,7 @@ knitr::include_graphics("Images/cantor.png",dpi=1200)
 
 <l class="prop"> **Proposición** </l>
 
-El conjunto de los números reales, $\mathbb{N}$, no es numerable.
+El conjunto de los números reales, $\mathbb{R}$, no es numerable.
 
 <div class="dem"> **Demostración**
 
@@ -777,7 +786,7 @@ a_3 = 0.a_{31}a_{32}a_{33} \ldots a_{3n} \ldots \\
 a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 \ldots
 $$
-Consideremos ahora el número $a=0.b_1b_2b_3 \ldots b_n \ldots$, en el que cada $b_k=a_{kk}+1$, si $a_{kk} \neq 8$, y $b_k = 0$, si $a_{kk} = 8$. El número $a$ no está en la lista de números anterior, puesto que si ocupase el lugar $k$ diferiria del correspondiente $a_k$ precisamente en la cifra que ocupa el lugar $k$. 
+Consideremos ahora el número $a=0.b_1b_2b_3 \ldots b_n \ldots$, en el que cada $b_k=a_{kk}+1$, si $a_{kk} \neq 9$, y $b_k = 0$, si $a_{kk} = 9$. El número $a$ no está en la lista de números anterior, puesto que si ocupase el lugar $k$ diferiria del correspondiente $a_k$ precisamente en la cifra que ocupa el lugar $k$. 
 
 ## El conjunto de los números irracionales no es numerable
 
@@ -801,15 +810,17 @@ Dado que $\mathbb{R} = \mathbb{Q} \cup (\mathbb{R} \setminus \mathbb{Q})$, se si
 
 ## Intervalos anidados (1)
 
-<l class="definition"> **Definición** </l>
+<l class="definition"> **Definición: Sucesión de intervalos anidados** </l>
 
 Una sucesión de **intervalos anidados** es un conjunto de intervalos cerrados y acotados de $\mathbb{R}$, $I_n = [a_n,b_n]$, tal que para todo $n \in \mathbb{N}$, es $I_{n+1} \supset I_n$ o, lo que es equivalente, tal que $a_n \leq a_{n+1} \leq b_{n+1} \leq b_n$
 
-Observación: como se verá más adelante, un conjunto indexado por los números naturales, como lo son $\{I_n\}$, $\{a_n\}$ y $\{b_n\}$, recibe el nombre de **sucesión**
+<l div class="observ"> **Observación** </l>
+
+Como se verá más adelante, un conjunto indexado por los números naturales, como lo son $\{I_n\}$, $\{a_n\}$ y $\{b_n\}$, recibe el nombre de **sucesión**
 
 ## Intervalos anidados (2)
 
-<l class="proposition"> **Proposición** </l>
+<l class="prop"> **Proposición.** </l>
 
 Sea $\{I_n\}_{n \in \mathbb{N}}$ una sucesión de intervalos anidados de $\mathbb{R}$. Entonces existe un $\xi \in \mathbb{R}$ tal que $\xi \in I_n$ para todo $n \in \mathbb{N}$, o lo que es lo mismo, tal que $a_n \leq \xi \leq b_n$, para todo $n \in  \mathbb{N}$
 
@@ -817,7 +828,7 @@ Sea $\{I_n\}_{n \in \mathbb{N}}$ una sucesión de intervalos anidados de $\mathb
 
 En primer lugar, veamos que $a_k \leq b_n$ para todo $k$ y para todo $n$: Si $n \leq k$, entonces $I_k \subset I_n$ y, por lo tanto, $a_k \leq b_k \leq b_n$. Por otra parte, si $k < n$, entonces $I_k \supset I_n$ y, por lo tanto, $a_k \leq a_n \leq b_n$
 
-Es decir, el conjunto de extremos inferiores de los intervalos $\{a_n: n \in \mathbb{N}\}$ está acotado superiormente por cualquiera de los $b_n$. Sea $\xi$ el supremo de este conjunto. Está claro que $a_n \leq \xi}, para todo $n \in \mathbb{N}$, puesto que  $\xi$ es el supremo de todos los $a_n$.
+Es decir, el conjunto de extremos inferiores de los intervalos $\{a_n: n \in \mathbb{N}\}$ está acotado superiormente por cualquiera de los $b_n$. Sea $\xi$ el supremo de este conjunto. Está claro que $a_n \leq \xi$, para todo $n \in \mathbb{N}$, puesto que  $\xi$ es el supremo de todos los $a_n$.
 
 Pero todos los $b_n$ son cotas superiores de este conjunto, y el supremo es la menor de las cotas superiores, por lo que $\xi \leq b_n$, para todo n. En definitiva es $a_n \leq \xi \leq b_n$, para todo $n \in \mathbb{N}$ o, lo que es lo mismo, $\xi \in I_n$ para todo $n \in \mathbb{N}$.
 
@@ -834,7 +845,7 @@ Sea $I_n = [a_n,b_n]$ una sucesión de intervalos anidados tales que $\inf\{b_n-
 
 <div class="dem"> **Demostración**
 
-Hemos visto en la proposición anterior que $\xi = \sup\{a_n: n \in \mathbb{N} \}$ está en todos los $I_n$. Igual tambien que en la proposición anterior se demuestra que $\eta = \inf \{b_n: n \in \mathbb{N} \}$ tambien está en todos los intervalos. Sólo falta comprobar que $\xi = \eta$. Ahora bien:
+Hemos visto en la proposición anterior que $\xi = \sup\{a_n: n \in \mathbb{N} \}$ está en todos los $I_n$. Un razonamiento similar al de la proposición anterior se demuestra que $\eta = \inf \{b_n: n \in \mathbb{N} \}$ tambien está en todos los intervalos. Sólo falta comprobar que $\xi = \eta$. Ahora bien:
 
 Dado que $\eta \leq b_n$ y que $\xi\geq a_n$, para todo $n$, tenemos que $0 \leq \eta - \xi \leq b_n -a_n$, para todo $n$, por lo tanto $0 \leq \eta - \xi \leq \inf\{b_n-a_n: n \in \mathbb{N}\}=0$, es decir que
 $$
