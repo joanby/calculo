@@ -870,7 +870,7 @@ Obsérvese que la definición anterior también se puede hacer en términos de l
 
 **Ejemplo 2.** Sea $A=\{c\} \cup [a,b]$, donde $c \in \mathbb{R} \setminus [a,b]$. Entonces $c$ no es un punto de acumulación de $A$, en tanto que todos los puntos del intervalo $[a,b]$ lo son. De hecho los puntos del intervalo cerrado $[a,b]$ son los únicos puntos de acumulación del intervalo.
 
-**Ejemplo 3.** El conjunto $\mathbb{N}$ de los números naturales no tiene puntos de acumulación: $n$ es el único natural en el intervalo abierto $(n-1,n+1)$, 
+**Ejemplo 3.** El conjunto $\mathbb{N}$ de los números naturales no tiene puntos de acumulación: $n$ es el único natural en el intervalo abierto $(n-1,n+1)$. 
 </div>
 
 
