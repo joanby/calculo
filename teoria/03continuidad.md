@@ -23,32 +23,37 @@ Uno de los principales objetivos del càlculo es el estudio de propiedades de la
 
 La primera cuestión que se aborda tiene que ver con los números reales, en particular cómo evaluar las funciones reales de variable real cuando la variable independiente es un número irracional. Nuevamente el concepto de límite viene a ayudar en la solución de esta cuestión.
 
-## Límite de una función: Definición 1.
+## Límite de una función: Definición.
 
-<l class="definition"> **Definición 1** </l>
+<l class="definition"> **Definición** </l>
 
 Sea $f:A \subset \mathbb{R}$ una función definida sobre el conjunto $A \subset \mathbb{R}$ y sea $x_0$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite de $f(x)$ cuando $x$ tiende a $x_0$** si para toda sucesión $\{x_n\}_{n \in \mathbb{N}}$ de puntos de $A$ tal que $\lim_{n \rightarrow \infty}x_n = x_0$ es $\lim_{n \rightarrow \infty}f(x_n)=L$.
 
-Escribiremos, momentáneamente, $\lim^1_{x \rightarrow x_0}f(x)=L$, para indicar el límite de $f(x)$ cuando $x$ tiende a $x_0$, de acuerdo con esta definición.
+Escribiremos, $\lim_{x \rightarrow x_0}f(x)=L$, para indicar el límite de $f(x)$ cuando $x$ tiende a $x_0$. 
+
+**Observación.** Igual que hemos hecho con las sucesiones y los números irracionales, con esta definción convertimos el problema de evaluar una función en un punto irracional en el de calcular el límite de una sucesión. 
+
+## Límite de una función en un punto: Ejemplos.
+
+<div class="example"> **Ejemplos**
 
 
+## Caracterización del límite funcional: propiedad $\epsilon-\delta$.
+
+<l class="prop"> **Proposición** </l>
+
+Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función definida sobre el conjunto $A \subset \mathbb{R}$ y sea $x_0$ un punto de acumulación de $A$. entonces son equivalentes las tres afirmaciones siguientes:
+
+  a) $\lim_{x \rightarrow x_0}f(x)=L$
+  
+  b) Para todo $\epsilon >0$ existe un $\delta >0$ tal que siempre $0<|x-x_0|< \delta$, entonces es $|f(x)-L|<\epsilon$.
+
+  c) Para todo entorno abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $x_0$, $V_{\delta} (x_0)$ tal que para todo $x \in V^*_{\delta} (x_0)$ es $f(x) \in V_{\epsilon}(L)$, donde $V^*_{\delta}= $V_{\delta} \stminus \{x_0\}$, es decir el entorno reducido de $x_0$ y radio $\delta$
 
 
+## Caracterización del límite funcional: propiedad $\epsilon-\delta$.
 
-## Límite de una función.Definición 2.
-
-<l class="definition"> **Definición 2** </l>
-
-Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función definida sobre el conjunto $A \subset \mathbb{R}$ y sea $x_0$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el límite de $f(x)$ cuando $x$ tiende a $x_0$ si para todo $\epsilon >0$ existe un $\delta >0$ tal que siempre $0<|x-x_0|< \delta$, entonces es $|f(x)-L|<\epsilon$.
-
-Escribiremos $\lim^*_{x \rightarrow x_0}f(x) = L$, para indicar que $L \in \mathbb{R}$ es el límite de $f(x)$ cuando $x$ tiende a $x_0$, de acuerdo con esta definición.
-
-
-También se puede expresar el $\lim^*$ en términos de entornos: $\lim^*_{x \rightarrow x_0}f(x) = L$ si para todo entorno
-abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $x_0$, $V_{\delta} (x_0)$ tal que para todo $x \in V^*_{\delta} (x_0)$ es $f(x) \in V_{\epsilon}(L)$
-
-
-## Las dos definiciones son equivalentes.
+<div class="dem"> **Demostración**
 
 Sea $x_n$ una sucesión de puntos distintos de $x_0$, tal que $x_n \rightarrow x_0$.
 
