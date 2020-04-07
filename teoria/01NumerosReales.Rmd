@@ -967,6 +967,10 @@ $$
 [![Ejemplo de serie de Taylor](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=taylor+series+arctan%281%2F%281%2Bx%5E6%29%29+at+x+%3D+pi%2F4)
 </div>
 
+<div class="center">
+[![Ejemplo de decimal periódico](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=6%2F7+with+48+decimals)
+</div>
+
 
 ## Apartat/trans2
 
