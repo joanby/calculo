@@ -854,13 +854,17 @@ $$
 
 ## Puntos de acumulación
 
-Veremos en el apartado de funciones que, a menudo, tenemos una función definida en todos los puntos próximos a uno dado, pero que no lo está es ese punto. Tal sería el caso, por ejemplo de la función $f(x)= \frac{\sin x}{x}$: no está definida en el punto $0$, pero si lo está en todos los puntos de cualquier entorno rediucido del $0$. Para tratar este tipo de situaciones será útil lo que sigue.
+Veremos en el apartado de funciones que, a menudo, tenemos una función definida en todos los puntos próximos a uno dado, pero que no lo está es ese punto. Tal sería el caso, por ejemplo de la función $f(x)= \frac{\sin x}{x}$: no está definida en el punto $0$, pero si lo está en todos los puntos de cualquier entorno reducido del $0$. Para tratar este tipo de situaciones será útil lo que sigue.
 
-<l class="definition"> **Definición** </l>
+<l class="definition"> **Definición: Punto de acumulación** </l>
 
 Sean $A$ y $\xi$ un subconjunto y un punto de $\mathbb{R}$ respectivamente. $\xi$ es un **punto de acumulación** de $A$, si en todo entorno abierto de $\xi$ hay puntos de $A$ diferentes de $\xi$. 
 
-Obsérvese que la definición anterior también se puede hacer en términos de los **entornos reducidos** de un punto, es decir del conjunto de puntos del entorno diferentes del centro: Un punto  $\xi$ es de acumulación del conjunto $A$ si en todo entorno reducido del punto $\xi$ hay puntos de $A$
+Obsérvese que la definición anterior también se puede hacer en términos de los **entornos reducidos** de un punto, es decir del conjunto de puntos del entorno diferentes del centro: Un punto  $\xi$ es de acumulación del conjunto $A$ si en todo entorno reducido del punto $\xi$ hay puntos de $A$ç
+
+## Puntos de acumulación: Ejemplos.
+
+<div class="example"> **Ejemplos**
 
 
 ## Puntos de acumulación: Caracterización
@@ -871,16 +875,16 @@ $\xi \in \mathbb{R}$ es un punto de acumulación de $A$ si, y sólo si, en cada 
 
 <div class="dem"> **Demostración **
 
-Supongamos que dado un $\epsilon >0$, en el entorno de $\xi$ definido por $(\xi - \epsilon, \xi+\epsilon)$ hay sólo un número finito de puntos de A: $\{a_1, \ldots, a_k\}$ distintos de $\xi$. Sea ahora $\delta = \inf\{ |a_i-\xi|: i=1,\ldots,k\}$. Es evidente que si $x$ es un punto del entorno abierto $(\xi-\delta,\xi+\delta)$, entonces es $|x-\epsilon|<\delta$, por lo que no puede ser uno de los $a_i$ y, por lo tanto, este seria un entorno de $\xi$ sin puntos de $A$ diferentes de $\xi$, lo que contradice que $\xi$ sea un punto de acumulación de $A$.
+Supongamos que dado un $\epsilon >0$, en el entorno de $\xi$ definido por $(\xi - \epsilon, \xi+\epsilon)$ hay sólo un número finito de puntos de A: $\{a_1, \ldots, a_k\}$ distintos de $\xi$. Sea ahora $\delta = \inf\{ |a_i-\xi|: i=1,\ldots,k\}$. Es evidente que si $x$ es un punto del entorno abierto $(\xi-\delta,\xi+\delta)$, entonces es $|x-\xi|<\delta$, por lo que no puede ser uno de los $a_i$ y, por lo tanto, este seria un entorno de $\xi$ sin puntos de $A$ diferentes de $\xi$, lo que contradice que $\xi$ sea un punto de acumulación de $A$.
 
 El recíproco es inmediato.
 
 </div>
 
 
-## Teorema de Bolzano-Weirstrass
+## Teorema de Bolzano-Weierstrass
 
-<l class="prop"> **Proposición: Teorema de Bolzano-Weirstrass**
+<l class="prop"> **Proposición: Teorema de Bolzano-Weierstrass**
 
 Todo conjunto de números reales infinito y acotado tiene un punto de acumulación.
 
@@ -890,19 +894,19 @@ Sea $A\subset \mathbb{R}$ infinito y acotado, veremos que tiene un punto de acum
 
 Por estar $A$ acotado, es decir que existe $K>0$ tal que  $|a|<K$ para todo $a \in A$, es $A \subset [-K,K]$. 
 
-Por tener $A$ infinitos puntos, en al menos uno de los intervalos $[-K,0]$ y $[0,K]$ hay infinitos puntos de $A$. Sea $I_1 =[a_1,b_1]$ esta mitad. (Si los hay en los dos, nos quedamos con el de la izquierda, por ejemplo), Observen que $|b_1-a_1|=\dfrac{K}{2}$. 
+Por tener $A$ infinitos puntos, en al menos uno de los intervalos $[-K,0]$ y $[0,K]$ hay infinitos puntos de $A$. Sea $I_1 =[a_1,b_1]$ esta mitad. (Si los hay en los dos, nos quedamos con el de la izquierda, por ejemplo). Conviene observar que $|b_1-a_1|=\dfrac{K}{2}$. 
 
 Dado que en $I_1 =[a_1,b_1]$ hay infinitos puntos de $A$, podemos repetir el proceso y determinar así un intervalo $I_2 = [a_2,b_2]$, que seria una de las dos mitades $[a_1, \frac{a_1+b_1}{2}]$ o $[\frac{a_1+b_1}{2},b_1]$,  con infinitos puntos de $A$ y tal que $I_2 \subset I_1$ y que $b_2-a_2= \dfrac{b_1 - a_1}{2}= \dfrac{K}{2^2}$. 
 
 </div>
 
-## Teorema de Bolzano-Weirstrass (cont.)
+## Teorema de Bolzano-Weierstrass (cont.)
 
 <div class="dem"> **Demostración**
 
 Reiterando este proceso, construiremos una sucesión $I_n$ de intervalos anidados $I_n$, tal que $I_{n+1} \subset I_n$ y $b_n-a_n = \dfrac{K}{2^n}$. 
 
-Además,  el $\inf \{\dfrac{k}{2^n}: n \in \mathbb{N} \}$, existe puesto que se trata de un conjunto acotado inferiormente por $0$. Este ínfimo no puede ser positivo, puesto que si existe $0 < r <\dfrac{1}{2^n}$ para todo $n \in \mathbb{N}$, resultaria que tendria que ser $2^n < \dfrac{1}{r}$, o lo que es lo mismo, $n \log 2 <-\log r$ y, por lo tanto, $n < -\dfrac{\log r}{\log 2}$, lo que significaría que los números naturales estan acotados en $\mathbb{R}$ y ya hemos visto que no puede ser.
+Además,  el $\inf \left\{\dfrac{k}{2^n}: n \in \mathbb{N} \right\}$, existe puesto que se trata de un conjunto acotado inferiormente por $0$. Este ínfimo no puede ser positivo, puesto que si existe $0 < r <\dfrac{1}{2^n}$ para todo $n \in \mathbb{N}$, resultaria que tendria que ser $2^n < \dfrac{1}{r}$, o lo que es lo mismo, $n \log 2 <-\log r$ y, por lo tanto, $n < -\dfrac{\log r}{\log 2}$, lo que significaría que los números naturales estan acotados en $\mathbb{R}$ y ya hemos visto que no puede ser.
 
 Ahora, por el principio de los intervalos anidados, tendremos que hay un solo punto $\xi$ que está en todos los intervalos. $\xi$ es el punto de acumulación buscado, puesto que por ser $\xi$ el infimo de los $b_n$ y el supremo de los $a_n$, dado un $\epsilon >0$, existe un $n \in \mathbb{N}$ tal que $\xi-\epsilon \leq a_n \leq \xi \leq b_n \leq \xi+ \epsilon$, y, por lo tanto, cualquier entorno de $\xi$ contiene infinitos puntos de $A$.
 
@@ -915,7 +919,7 @@ A menudo será conveniente considerar conjuntos como $\{ x \in \mathbb{R}: x \ge
 $$
 \{ x \in \mathbb{R}: x \geq a \} = [a,+\infty) \quad  \text{ y } \quad \{ x \in \mathbb{R}: x \leq a \} = (-\infty,a]
 $$
-<l class="definition">**Definición** </l>
+<l class="definition">**Definición: Recta real ampliada.** </l>
 
 Llamamos **recta real ampliada**, $\overline{\mathbb{R}}$ al conjunto resultante de añadir los símbolos $-\infty$ y $+\infty$ al conjunto de los números reales, es decir
 
@@ -932,21 +936,21 @@ $$
 $$
 También es posible extender las operaciones aritméticas a $- \infty$ y $+\infty$. Lo hacemos en la forma que indican las tablas siguientes:
 
-|           |           |              |
-|:----------------:|:-----------------:|:-------------------:|
-| $x+(+\infty) = +\infty$ | | $x+(-\infty) = -\infty$ |  
-| $x-(+\infty) = -\infty$ | | $x-(-\infty) = +\infty$ |
-| $x \cdot (+\infty) = +\infty$, si $x>0$| | $x \cdot (+\infty) = -\infty$, si $x<0$ |
-| $x \cdot (-\infty) = -\infty$, si $x>0$| | $x \cdot (-\infty) = +\infty$, si $x<0$ |
+|           |           |              
+|:----------------:|:-----------------:|
+| $x+(+\infty) = +\infty$ |  $x+(-\infty) = -\infty$ |  
+| $x-(+\infty) = -\infty$ |  $x-(-\infty) = +\infty$ |
+| $x \cdot (+\infty) = +\infty$, si $x>0$|  $x \cdot (+\infty) = -\infty$, si $x<0$ |
+| $x \cdot (-\infty) = -\infty$, si $x>0$|  $x \cdot (-\infty) = +\infty$, si $x<0$ |
 
 
 ## Operaciones aritméticas en la recta real ampliada
 
-|           |           |              |
-|:----------------:|:-----------------:|:-------------------:|
-| $\dfrac{x}{+\infty} =0$| | $\dfrac{x}{-\infty} =0$ | 
-| $(+\infty) + (+\infty) = +\infty$ |  | $(-\infty) + (-\infty)= -\infty$ |
-| $(+\infty) \cdot (+\infty) = +\infty$ | |$(+\infty) \cdot  (-\infty) = -\infty$ |
+|           |           |              
+|:----------------:|:-----------------:
+| $\dfrac{x}{+\infty} =0$|  $\dfrac{x}{-\infty} =0$ | 
+| $(+\infty) + (+\infty) = +\infty$ |  $(-\infty) + (-\infty)= -\infty$ |
+| $(+\infty) \cdot (+\infty) = +\infty$ | $(+\infty) \cdot  (-\infty) = -\infty$ |
 $(-\infty) \cdot (-\infty) = +\infty$ |
 
 Obsérvese que las operaciones siguientes tienen un resultado indeterminado:

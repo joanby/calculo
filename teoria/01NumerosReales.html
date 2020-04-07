@@ -3989,13 +3989,19 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 
 </article></slide><slide class=""><hgroup><h2>Puntos de acumulación</h2></hgroup><article  id="puntos-de-acumulación">
 
-<p>Veremos en el apartado de funciones que, a menudo, tenemos una función definida en todos los puntos próximos a uno dado, pero que no lo está es ese punto. Tal sería el caso, por ejemplo de la función \(f(x)= \frac{\sin x}{x}\): no está definida en el punto \(0\), pero si lo está en todos los puntos de cualquier entorno rediucido del \(0\). Para tratar este tipo de situaciones será útil lo que sigue.</p>
+<p>Veremos en el apartado de funciones que, a menudo, tenemos una función definida en todos los puntos próximos a uno dado, pero que no lo está es ese punto. Tal sería el caso, por ejemplo de la función \(f(x)= \frac{\sin x}{x}\): no está definida en el punto \(0\), pero si lo está en todos los puntos de cualquier entorno reducido del \(0\). Para tratar este tipo de situaciones será útil lo que sigue.</p>
 
-<p><l class="definition"> <strong>Definición</strong> </l></p>
+<p><l class="definition"> <strong>Definición: Punto de acumulación</strong> </l></p>
 
 <p>Sean \(A\) y \(\xi\) un subconjunto y un punto de \(\mathbb{R}\) respectivamente. \(\xi\) es un <strong>punto de acumulación</strong> de \(A\), si en todo entorno abierto de \(\xi\) hay puntos de \(A\) diferentes de \(\xi\).</p>
 
-<p>Obsérvese que la definición anterior también se puede hacer en términos de los <strong>entornos reducidos</strong> de un punto, es decir del conjunto de puntos del entorno diferentes del centro: Un punto \(\xi\) es de acumulación del conjunto \(A\) si en todo entorno reducido del punto \(\xi\) hay puntos de \(A\)</p>
+<p>Obsérvese que la definición anterior también se puede hacer en términos de los <strong>entornos reducidos</strong> de un punto, es decir del conjunto de puntos del entorno diferentes del centro: Un punto \(\xi\) es de acumulación del conjunto \(A\) si en todo entorno reducido del punto \(\xi\) hay puntos de \(A\)ç</p>
+
+</article></slide><slide class=""><hgroup><h2>Puntos de acumulación: Ejemplos.</h2></hgroup><article  id="puntos-de-acumulación-ejemplos.">
+
+<div class="example">
+
+<p><strong>Ejemplos</strong></p>
 
 </article></slide><slide class=""><hgroup><h2>Puntos de acumulación: Caracterización</h2></hgroup><article  id="puntos-de-acumulación-caracterización">
 
@@ -4006,13 +4012,13 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 <div class="dem">
 <p><strong>Demostración </strong></p>
 
-<p>Supongamos que dado un \(\epsilon &gt;0\), en el entorno de \(\xi\) definido por \((\xi - \epsilon, \xi+\epsilon)\) hay sólo un número finito de puntos de A: \(\{a_1, \ldots, a_k\}\) distintos de \(\xi\). Sea ahora \(\delta = \inf\{ |a_i-\xi|: i=1,\ldots,k\}\). Es evidente que si \(x\) es un punto del entorno abierto \((\xi-\delta,\xi+\delta)\), entonces es \(|x-\epsilon|&lt;\delta\), por lo que no puede ser uno de los \(a_i\) y, por lo tanto, este seria un entorno de \(\xi\) sin puntos de \(A\) diferentes de \(\xi\), lo que contradice que \(\xi\) sea un punto de acumulación de \(A\).</p>
+<p>Supongamos que dado un \(\epsilon &gt;0\), en el entorno de \(\xi\) definido por \((\xi - \epsilon, \xi+\epsilon)\) hay sólo un número finito de puntos de A: \(\{a_1, \ldots, a_k\}\) distintos de \(\xi\). Sea ahora \(\delta = \inf\{ |a_i-\xi|: i=1,\ldots,k\}\). Es evidente que si \(x\) es un punto del entorno abierto \((\xi-\delta,\xi+\delta)\), entonces es \(|x-\xi|&lt;\delta\), por lo que no puede ser uno de los \(a_i\) y, por lo tanto, este seria un entorno de \(\xi\) sin puntos de \(A\) diferentes de \(\xi\), lo que contradice que \(\xi\) sea un punto de acumulación de \(A\).</p>
 
 <p>El recíproco es inmediato.</p></div>
 
-</article></slide><slide class=""><hgroup><h2>Teorema de Bolzano-Weirstrass</h2></hgroup><article  id="teorema-de-bolzano-weirstrass">
+</article></slide><slide class=""><hgroup><h2>Teorema de Bolzano-Weierstrass</h2></hgroup><article  id="teorema-de-bolzano-weierstrass">
 
-<p><l class="prop"> <strong>Proposición: Teorema de Bolzano-Weirstrass</strong></p>
+<p><l class="prop"> <strong>Proposición: Teorema de Bolzano-Weierstrass</strong></p>
 
 <p>Todo conjunto de números reales infinito y acotado tiene un punto de acumulación.</p>
 
@@ -4023,18 +4029,18 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 
 <p>Por estar \(A\) acotado, es decir que existe \(K&gt;0\) tal que \(|a|&lt;K\) para todo \(a \in A\), es \(A \subset [-K,K]\).</p>
 
-<p>Por tener \(A\) infinitos puntos, en al menos uno de los intervalos \([-K,0]\) y \([0,K]\) hay infinitos puntos de \(A\). Sea \(I_1 =[a_1,b_1]\) esta mitad. (Si los hay en los dos, nos quedamos con el de la izquierda, por ejemplo), Observen que \(|b_1-a_1|=\dfrac{K}{2}\).</p>
+<p>Por tener \(A\) infinitos puntos, en al menos uno de los intervalos \([-K,0]\) y \([0,K]\) hay infinitos puntos de \(A\). Sea \(I_1 =[a_1,b_1]\) esta mitad. (Si los hay en los dos, nos quedamos con el de la izquierda, por ejemplo). Conviene observar que \(|b_1-a_1|=\dfrac{K}{2}\).</p>
 
 <p>Dado que en \(I_1 =[a_1,b_1]\) hay infinitos puntos de \(A\), podemos repetir el proceso y determinar así un intervalo \(I_2 = [a_2,b_2]\), que seria una de las dos mitades \([a_1, \frac{a_1+b_1}{2}]\) o \([\frac{a_1+b_1}{2},b_1]\), con infinitos puntos de \(A\) y tal que \(I_2 \subset I_1\) y que \(b_2-a_2= \dfrac{b_1 - a_1}{2}= \dfrac{K}{2^2}\).</p></div>
 
-</article></slide><slide class=""><hgroup><h2>Teorema de Bolzano-Weirstrass (cont.)</h2></hgroup><article  id="teorema-de-bolzano-weirstrass-cont.">
+</article></slide><slide class=""><hgroup><h2>Teorema de Bolzano-Weierstrass (cont.)</h2></hgroup><article  id="teorema-de-bolzano-weierstrass-cont.">
 
 <div class="dem">
 <p><strong>Demostración</strong></p>
 
 <p>Reiterando este proceso, construiremos una sucesión \(I_n\) de intervalos anidados \(I_n\), tal que \(I_{n+1} \subset I_n\) y \(b_n-a_n = \dfrac{K}{2^n}\).</p>
 
-<p>Además, el \(\inf \{\dfrac{k}{2^n}: n \in \mathbb{N} \}\), existe puesto que se trata de un conjunto acotado inferiormente por \(0\). Este ínfimo no puede ser positivo, puesto que si existe \(0 &lt; r &lt;\dfrac{1}{2^n}\) para todo \(n \in \mathbb{N}\), resultaria que tendria que ser \(2^n &lt; \dfrac{1}{r}\), o lo que es lo mismo, \(n \log 2 &lt;-\log r\) y, por lo tanto, \(n &lt; -\dfrac{\log r}{\log 2}\), lo que significaría que los números naturales estan acotados en \(\mathbb{R}\) y ya hemos visto que no puede ser.</p>
+<p>Además, el \(\inf \left\{\dfrac{k}{2^n}: n \in \mathbb{N} \right\}\), existe puesto que se trata de un conjunto acotado inferiormente por \(0\). Este ínfimo no puede ser positivo, puesto que si existe \(0 &lt; r &lt;\dfrac{1}{2^n}\) para todo \(n \in \mathbb{N}\), resultaria que tendria que ser \(2^n &lt; \dfrac{1}{r}\), o lo que es lo mismo, \(n \log 2 &lt;-\log r\) y, por lo tanto, \(n &lt; -\dfrac{\log r}{\log 2}\), lo que significaría que los números naturales estan acotados en \(\mathbb{R}\) y ya hemos visto que no puede ser.</p>
 
 <p>Ahora, por el principio de los intervalos anidados, tendremos que hay un solo punto \(\xi\) que está en todos los intervalos. \(\xi\) es el punto de acumulación buscado, puesto que por ser \(\xi\) el infimo de los \(b_n\) y el supremo de los \(a_n\), dado un \(\epsilon &gt;0\), existe un \(n \in \mathbb{N}\) tal que \(\xi-\epsilon \leq a_n \leq \xi \leq b_n \leq \xi+ \epsilon\), y, por lo tanto, cualquier entorno de \(\xi\) contiene infinitos puntos de \(A\).</p></div>
 
@@ -4042,7 +4048,7 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 
 <p>A menudo será conveniente considerar conjuntos como \(\{ x \in \mathbb{R}: x \geq a \}\) o \(\{x \in \mathbb{R}: x \leq a \}\), donde \(a\) indica un número real. Para referirnos a estos conjuntos es útil introducir los símbolos más infinito, \(+ \infty\), y menos infinito, \(- \infty\), tales que, para todo número real \(x\) es \(-\infty &lt; x &lt; +\infty\). Siendo así, podemos escribir \[
 \{ x \in \mathbb{R}: x \geq a \} = [a,+\infty) \quad  \text{ y } \quad \{ x \in \mathbb{R}: x \leq a \} = (-\infty,a]
-\] <l class="definition"><strong>Definición</strong> </l></p>
+\] <l class="definition"><strong>Definición: Recta real ampliada.</strong> </l></p>
 
 <p>Llamamos <strong>recta real ampliada</strong>, \(\overline{\mathbb{R}}\) al conjunto resultante de añadir los símbolos \(-\infty\) y \(+\infty\) al conjunto de los números reales, es decir</p>
 
@@ -4061,22 +4067,18 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 <table class = 'rmdtable'>
 <tr class="odd">
 <td align="center">\(x+(+\infty) = +\infty\)</td>
-<td align="center"></td>
 <td align="center">\(x+(-\infty) = -\infty\)</td>
 </tr>
 <tr class="even">
 <td align="center">\(x-(+\infty) = -\infty\)</td>
-<td align="center"></td>
 <td align="center">\(x-(-\infty) = +\infty\)</td>
 </tr>
 <tr class="odd">
 <td align="center">\(x \cdot (+\infty) = +\infty\), si \(x&gt;0\)</td>
-<td align="center"></td>
 <td align="center">\(x \cdot (+\infty) = -\infty\), si \(x&lt;0\)</td>
 </tr>
 <tr class="even">
 <td align="center">\(x \cdot (-\infty) = -\infty\), si \(x&gt;0\)</td>
-<td align="center"></td>
 <td align="center">\(x \cdot (-\infty) = +\infty\), si \(x&lt;0\)</td>
 </tr>
 </table>
@@ -4086,22 +4088,18 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 <table class = 'rmdtable'>
 <tr class="odd">
 <td align="center">\(\dfrac{x}{+\infty} =0\)</td>
-<td align="center"></td>
 <td align="center">\(\dfrac{x}{-\infty} =0\)</td>
 </tr>
 <tr class="even">
 <td align="center">\((+\infty) + (+\infty) = +\infty\)</td>
-<td align="center"></td>
 <td align="center">\((-\infty) + (-\infty)= -\infty\)</td>
 </tr>
 <tr class="odd">
 <td align="center">\((+\infty) \cdot (+\infty) = +\infty\)</td>
-<td align="center"></td>
 <td align="center">\((+\infty) \cdot (-\infty) = -\infty\)</td>
 </tr>
 <tr class="even">
 <td align="center">\((-\infty) \cdot (-\infty) = +\infty\)</td>
-<td align="center"></td>
 <td align="center"></td>
 </tr>
 </table>
