@@ -27,7 +27,7 @@ Uno de los principales objetivos del càlculo es el estudio de propiedades de la
 
 La primera cuestión que se aborda tiene que ver con los números reales, en particular cómo evaluar las funciones reales de variable real cuando la variable independiente es un número irracional. Nuevamente el concepto de límite viene a ayudar en la solución de esta cuestión.
 
-## Límite de una función: Definición.
+## Límite de una función en un punto: Definición.
 
 <l class="definition"> **Definición** </l>
 
@@ -42,7 +42,10 @@ Escribiremos, $\lim_{x \rightarrow x_0}f(x)=L$, para indicar el límite de $f(x)
 <div class="example"> **Ejemplos**
 
 
-## Caracterización del límite funcional: propiedad $\epsilon-\delta$.
+</div>
+
+
+## Caracterización del límite: propiedad $\epsilon-\delta$.
 
 <l class="prop"> **Proposición** </l>
 
@@ -50,22 +53,24 @@ Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función definida sobre 
 
   a) $\lim_{x \rightarrow x_0}f(x)=L$
   
-  b) Para todo $\epsilon >0$ existe un $\delta >0$ tal que siempre $0<|x-x_0|< \delta$, entonces es $|f(x)-L|<\epsilon$.
+  b) Para todo $\epsilon >0$ existe un $\delta >0$ tal que siempre que $0<|x-x_0|< \delta$, entonces es $|f(x)-L|<\epsilon$.
 
-  c) Para todo entorno abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $x_0$, $V_{\delta} (x_0)$ tal que para todo $x \in V^*_{\delta} (x_0)$ es $f(x) \in V_{\epsilon}(L)$, donde $V^*_{\delta}= $V_{\delta} \stminus \{x_0\}$, es decir el entorno reducido de $x_0$ y radio $\delta$
+  c) Para todo entorno abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $x_0$, $V_{\delta} (x_0)$ tal que para todo $x \in V^*_{\delta} (x_0)$ es $f(x) \in V_{\epsilon}(L)$, donde $V^*_{\delta}= V_{\delta} \setminus \{x_0\}$, es decir el entorno reducido de $x_0$ y radio $\delta$
 
 
 ## Caracterización del límite funcional: propiedad $\epsilon-\delta$.
 
 <div class="dem"> **Demostración**
 
-Sea $x_n$ una sucesión de puntos distintos de $x_0$, tal que $x_n \rightarrow x_0$.
+ Veamos en primer lugar que 2) $\implies$ 1). Sea $x_n$ una sucesión de puntos distintos de $x_0$, tal que $x_n \rightarrow x_0$.
 
 Supongamos que para todo $\epsilon >0$ existe $\delta >0$ tal que si $|x - x_0|< \delta$, entonces $|f(x)-L|<\epsilon$. 
 
 Dado que $\delta >0$, existe $n_0$ tal que para todo $n > n_0$ es $|x_n - x_0|<\delta$, por lo tanto será $|f(x_n) - L| < \epsilon$, para todo $n > n_0$, por lo que, efectivamente, $f(x_n) \rightarrow L$.
 
-Para demostrar el recíproco, es decir que si $\lim^1_{x \rightarrow x_0} f(x) = L$ entonces $\lim^*_{x \rightarrow x_0}f(x) =L$, es conveniente observar que $\lim^*f(x) \neq L$ equivale a que exista $\epsilon >0$ tal que para todo $\delta >0$ existe $x_{\delta}$ tal que $|x_{\delta} -x_0| < \delta$ y $|f(x_{\delta}) - L|\geq \epsilon$, es decir que podemos encontrar puntos próximos a $x_0$ tales que su imagen por $f$ no se acerca a $L$.
+Demostraremos el recíproco, por contraposición, para demostrar que 1) implica 2), veremos que la negación de 2) implica la negación de 1), es decir usamos el hecho que $a \implies b  \equiv \lnot b \implies \lnot a$.
+
+si $\lim^1_{x \rightarrow x_0} f(x) = L$ entonces $\lim_{x \rightarrow x_0}f(x) =L$, es conveniente observar que $\lim^*f(x) \neq L$ equivale a que exista $\epsilon >0$ tal que para todo $\delta >0$ existe $x_{\delta}$ tal que $|x_{\delta} -x_0| < \delta$ y $|f(x_{\delta}) - L|\geq \epsilon$, es decir que podemos encontrar puntos próximos a $x_0$ tales que su imagen por $f$ no se acerca a $L$.
 
 
 ## Las dos definiciones son equivalentes
