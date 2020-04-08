@@ -338,7 +338,8 @@ que es lo que se quería demostrar.
   
   c) Hemos demostrado, en el apartado anterior que si $\lim a_n = 0$ y $b_n$ está acotada, entonces $\lim a_nb_n=0$.
   Veamos, ahora, que si $\lim {a_n} =a \neq 0$, entonces $\dfrac{1}{a_n}$ está acotada, en particular, existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$,  $\dfrac{1}{|a_n|} < \dfrac{2}{|a|}$: Dado que $\epsilon=\dfrac{|a|}{2} >0$, existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$, es $|a|-|a_n| \leq |a-a_n| < \dfrac{|a|}{2}$, de donde $-|a_n| < -|a|+ \dfrac{|a|}{2} = -  \dfrac{|a|}{2}$, es decir que $|a_n|> \dfrac{|a|}{2}$, para todo $n > n_1$. Por lo tanto es $\dfrac{1}{|a_n|}< \dfrac{2}{|a|}$, para todo $n >n_1$. Ahora
-$$\displaystyle{\dfrac{1}{a}-\dfrac{1}{a_n}} = \displaystyle{\dfrac{a_n -a}{aa_n}}= \dfrac{1}{aa_n}(a_n -a)
+$$
+\displaystyle{\dfrac{1}{a}-\dfrac{1}{a_n}} = \displaystyle{\dfrac{a_n -a}{aa_n}}= \dfrac{1}{aa_n}(a_n -a)
 $$
 Tenemos, pues, el producto de una sucesión acotada por una que tiene límite $0$, puesto que $\lim(a_n-a)=0$, es decir que $\lim \left(\dfrac{1}{a_n} - \dfrac{1}{a}\right)=0$, en definitiva: $\lim \dfrac{1}{a_n} = \dfrac{1}{a}$
 
