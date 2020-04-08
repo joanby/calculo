@@ -55,7 +55,7 @@ aproximan el número $\pi$
 
 ## Sucesiones
 
-<l class="definition"> **Definición**</l>
+<l class="definition"> **Definición: Sucesión**</l>
 
 Una **sucesión** $\{a_n \}_{n \in \mathbb{N}}$ de números reales es un conjunto de números reales ordenado según un subíndice que recorre los números naturales. Dicho de una manera más formal, una sucesión de números reales es la imagen de una aplicación del conjunto $\mathbb{N}$ en los reales $\mathbb{R}$.
 
@@ -126,13 +126,13 @@ De tal manera que si $x_1 = x_2=1$, sus términos son:
 $$
 1,1,2,3,5,8,13,21,34, \ldots 
 $$
-**Ejemplo 8.** La sucesión, también recurrente, $x_1=c>0$, $x_{n+1}=\dfrac{1}{2}(x_n + \dfrac{a}{x_n})$, donde $a$ es un nombre real positivo.
+**Ejemplo 8.** La sucesión, también recurrente, $x_1=c>0$, $x_{n+1}=\dfrac{1}{2} \left(x_n + \dfrac{a}{x_n}\right)$, donde $a$ es un nombre real positivo.
 
 </div>
 
 ## Subsucesión de una dada
 
-<l class="definition"> **Definición** </l>
+<l class="definition"> **Definición: Subsucesión de una dada** </l>
 
 Sean $\{a_n\}$ una sucesión y $n_1 <n_2< \ldots <n_k < \ldots$ una colección -infinita- de números naturales, entonces la sucesión $\{a_{n_k}\}$ recibe el nombre de **subsucesión** de la sucesión dada.
 
@@ -146,7 +146,11 @@ b) La sucesión $\{n+5\}$ lo es de la sucesión $\{n\}_{n \in \mathbb{N}}$.
 c) La sucesión $\{\frac{1}{2},1,\frac{1}{4},\frac{1}{3}, \ldots ,\frac{1}{n+1},\frac{1}{n}, \ldots \}$, no es una subsucesión de la sucesión $\{\frac{1}{n}\}_{n \in \mathbb{N}}$. (¿Por qué?).
 d) Tampoco lo es $\{1,2,3, \ldots, 234501\}$ respecto de la sucesión  $\{n\}_{n \in \mathbb{N}}$.  (¿Por qué?).
 
-## Límite de una sucesión
+
+
+#  Límite de una sucesión
+
+## Introducción
 
 Hemos visto que dado un número irracional, siempre podemos encontrar un racional tan cerca como se quiera, es decir que fijada una precisión con la que se necesite representar el irracional, es posible determinar un racional que lo represente con dicha precisión, es decir, si $r$ es el irracional, $q$ el racional y $\epsilon$ la precisión, entonces $|r-q| < \epsilon$. Por otra parte, una precisión menor incluye todos los racionales de mayor precisión. 
 
@@ -155,7 +159,7 @@ Esta es la idea queda formalizada con la noción de límite, que exponemos a con
 ## Límite de una sucesión
 
 
-<l class="definition">**Definición**</l>
+<l class="definition">**Definición: Límite de una sucesión**</l>
 
  
 Dada una sucesión $\{a_n\}_{n \in \mathbb{N}}$ de números reales, el número real $a$ és el **límite de la sucesión** dada si para cada $\epsilon > 0$ existe un lugar $n_0$, a partir del cual todos los términos de la sucesión distan de $a$ menos que $\epsilon$, es decir, si para todo $n \geq n_0$ es $|a_n -a|< \epsilon$
@@ -166,13 +170,13 @@ $$
 \lim_{n \rightarrow \infty} a_{n} = a \quad \text{ o }  \quad a_n \rightarrow a
 $$
 
-Dicho de otra forma, $\lim_{n \rightarrow \infty} a_{n} = a$, si para cada $\epsilon >0$, existe un término de la sucesión $a_{n_0}$ tal que, a partir de el, todos los términos de la sucesión estan en el intervalo $(a-\epsilon, a+\epsilon)$.
+Dicho de otra forma, $\lim_{n \rightarrow \infty} a_{n} = a$, si para cada $\epsilon >0$, existe un término de la sucesión $a_{n_0}$ tal que, a partir de él, todos los términos de la sucesión estan en el intervalo $(a-\epsilon, a+\epsilon)$.
 
 ## Ejemplos
 
 <div class="example">
 
-**Ejemplo 1.** La propiedad arquimediana implica que $\displaystyle{\lim_{n \rightarrow \infty}\dfrac{1}{n} = 0}$
+**Ejemplo 1.** La propiedad arquimediana implica que $\displaystyle{\lim_{n \rightarrow \infty}\dfrac{1}{n} = 0}$,
 
 puesto que para cada $\epsilon >0$, existe un número natural $n_0$ tal que $0<\dfrac{1}{n_0}< \epsilon$, por lo tanto, dado que para todo $n \geq n_0$, es $\dfrac{1}{n} \leq \dfrac{1}{n_0} < \epsilon$, que es lo que había que demostrar.
 
@@ -190,13 +194,15 @@ Ahora, como sabemos que dado un $\epsilon > 0$  existe $n_0 \in \mathbb{N}$ tal 
 
 ## Observaciones
 
+<div class="observ"> **Observaciones**
+
 1. De una sucesión con límite diremos que es <l class="important">**convergente**</l>
 
-1. Téngase en cuenta que  $\epsilon$  determina el lugar a partir del cual los términos de la sucesión satisfacen  $|a_n - a|<\epsilon$.  Un cambio en  $\epsilon$ sólo cambia el lugar a partir del cual se satisface la desigualdad. Por eso no deben sorprenderse si alguna vez aparece un  $\epsilon$  multiplicado o dividido por una constante. La única restricción es que la expresión resultante en función de  $\epsilon$  pueda hacerse tan pequeña como se desee, es decir que una expresión del tipo $\epsilon +K$  no sirve.
+1. Hay que tener en cuenta que  $\epsilon$  determina el lugar a partir del cual los términos de la sucesión satisfacen  $|a_n - a|<\epsilon$.  Un **cambio en  $\epsilon$** sólo cambia el lugar a partir del cual se satisface la desigualdad. Por eso no debe sorprender si alguna vez aparece un  **$\epsilon$  multiplicado o dividido por una constante**. La única restricción es que la expresión resultante en función de  $\epsilon$  pueda hacerse tan pequeña como se desee, es decir que una expresión del tipo $\epsilon +K$  no sirve.
 
-2. La existencia o no del límite de una sucesión no depende de los primeros términos de la misma, es decir sólo depende del comportamiento final de los términos de la sucesión. Es decir, si se remplaza qualquier número finito de términos de una sucesión, la sucesión resultante seguirá teniendo límite o no, según lo tuviera o no la sucesión original.
+2. La **existencia o no del límite** de una sucesión no depende de los primeros términos de la misma, es decir sólo depende del **comportamiento final** de los términos de la sucesión. Es decir, si se remplaza qualquier número finito de términos de una sucesión, la sucesión resultante seguirá teniendo límite o no, según lo tuviera o no la sucesión original.
 
-
+</div>
 
 ## Propiedades de los límites de sucesiones (1).
 
@@ -208,13 +214,13 @@ El límite de una sucesión, si existe, és único.
 
 **Demostración**
 
-Supongamos que no, que $l_1$ y que $l_2$ son los dos límites de la sucessión ${a_n}_{n\in  \mathbb{N}}$. Entonces, dado un $\epsilon >0$ existen $n_1$ y $n_2$ tales que 
+Supongamos que no, que $l_1$ y que $l_2$ son los dos límites de la sucessión $\{a_n\}_{n\in  \mathbb{N}}$. Entonces, dado un $\epsilon >0$ existen $n_1$ y $n_2$ tales que 
 $$
 |a_n-l_1| <\dfrac{\epsilon}{2}  \quad \text{ y } \quad  |a_n-l_2| <\dfrac{\epsilon}{2}
 $$
-para todo $n>n1$, para la primera desigualdad y para todo $n>n_2$, para la segunda.
+para todo $n>n_1$, para la primera desigualdad y para todo $n>n_2$, para la segunda.
 
-Ahora $|l_1-l_2| = |l_1-a_n +a_n -l_2| \leq |l_1-a_n| + |a_n -l_2| < \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon$, siempre que $n>n_1$ y $n>n_2$. Por lo tanto, para todo $\epsilon >0$ es $|l_1-l_2| <\epsilon$ y esto sólo puede ocurrir si $|l_1-l_2| =0$, es decir si $l_1 = l_2$.
+Ahora $|l_1-l_2| = |l_1-a_n +a_n -l_2| \leq |l_1-a_n| + |a_n -l_2| < \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon$, siempre que $n>n_0 = \max\{n_1,n_2\}$. Por lo tanto, para todo $\epsilon >0$ es $|l_1-l_2| <\epsilon$ y esto sólo puede ocurrir si $|l_1-l_2| =0$, es decir si $l_1 = l_2$.
 
 ## Propiedades de los límites (2).
 
@@ -249,7 +255,7 @@ Toda sucesión convergente esta acotada. Es decir, si existe el $\lim_{n \righta
 
 **Demostración.**
 
-Sea $a=\lim_{n \rightarrow \infty}a_n$. Dado que $1>0$,  existe $n_0$ tal que para todo $n \geq n_0$ es $|a_n -a|<1$. Ahora $|a_n| -|a| <|a_n - a|<1$, es decir, $|a_n| < |a|+1$, para todo $n\leq n_0$.
+Sea $a=\lim_{n \rightarrow \infty}a_n$. Dado que $\epsilon = 1>0$,  existe $n_0$ tal que para todo $n \geq n_0$ es $|a_n -a|<1$. Ahora $|a_n| -|a| <|a_n - a|<1$, es decir, $|a_n| < |a|+1$, para todo $n\geq n_0$.
 Sea $K= \max \{|a_1|, |a_2|, \ldots |a_{n_0-1}|, 1+|a| \}$. 
 
 Con esta elección de $K$, está claro que $|a_n| < K$ para todo $n \in \mathbb{N}$.
@@ -269,7 +275,7 @@ Dadas dos sucesiones $\{a_n\}_{n\in \mathbb{N}}$ y $\{b_n\}_{n \in \mathbb{N}}$,
 
   3) Si $a_n \neq 0$ para todo $n \in \mathbb{N}$, entonces $\dfrac{1}{\{a_n\}_{n \in \mathbb{N}}} = \displaystyle{ \left\{\dfrac{1}{a_n}\right\}}_{n \in \mathbb{N}}$
 
-En realidad, para poder definir la inversa de una sucesión, no es necesario que todos los términos sean diferentes de $0$, es suficiente que sean diferentes de $0$ todos los términos a partir de una dado.
+En realidad, para poder definir la inversa de una sucesión, no es necesario que todos los términos sean diferentes de $0$, es suficiente que sean diferentes de $0$ todos los términos a partir de uno dado.
 
 ## Límites y operaciones (1).
 
@@ -279,7 +285,7 @@ Si $a_n \rightarrow a$ y $b_n \rightarrow b$, entonces
 
   a) $a_n+b_n \rightarrow a+b$.
   b) $a_nb_n \rightarrow ab$.
-  c) Si $b \neq  0$, entonces $\dfrac{a_n}{b_n} \rightarrow \dfrac{a}{b}$
+  c) Si $b \neq  0$, entonces $\dfrac{a_n}{b_n} \rightarrow \dfrac{a}{b}$.
   d) Si $a_n \leq b_n$, entonces $a \leq b$.
 
 
@@ -293,7 +299,7 @@ Si $a_n \rightarrow a$ y $b_n \rightarrow b$, entonces
 $$|(a_n + b_n) - (a+b)| = |(a_n -a)+(b_n-b)| \leq |a_n -a|+|b_n - b| < \dfrac{\epsilon}{2}+ \dfrac{\epsilon}{2} = \epsilon 
 $$
 
-  b) En Primer lugar, si uno de los dos límites es $0$ entonces el producto también tiene límite $0$, puesto que, por ser $\{a_n\}$ convergente, está acotada, es decir, existe un $K>0$  tal que $|a_n| <K$ para todo $n$ a partir de un cierto $n_1$. Puesto que $\lim b_n =b=0$, tenemos que, para cada, $\epsilon  >0$ existe $n_2$ tal que, para todo $n>n_2$ es $|b_n|<\dfrac{\epsilon}{K}$. Por lo tanto $|a_nb_n - a\cdot0|=|a_n||b_n|<K\dfrac{\epsilon}{K}=\epsilon$.
+  b) En primer lugar, si uno de los dos límites es $0$ entonces el producto también tiene límite $0$, puesto que, por ser $\{a_n\}$ convergente, está acotada, es decir, existe un $K>0$  tal que $|a_n| <K$ para todo $n$ a partir de un cierto $n_1$. Puesto que $\lim b_n =b=0$, tenemos que, para cada, $\epsilon  >0$ existe $n_2$ tal que, para todo $n>n_2$ es $|b_n|<\dfrac{\epsilon}{K}$. Por lo tanto $|a_nb_n - a\cdot0|=|a_n||b_n|<K\dfrac{\epsilon}{K}=\epsilon$.
   
 </div>
 
@@ -303,7 +309,7 @@ $$
 
 **Demostración**
 
-Si $b\neq 0$, por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, está acotada, es decir,existen $K>0$ i $n_1 \in \mathbb{N}$ tal que $|a_n| < K$, para todo $n>n_1$.
+Si $b\neq 0$, por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, está acotada, es decir, existen $K>0$ i $n_1 \in \mathbb{N}$ tal que $|a_n| < K$, para todo $n>n_1$.
 Sea $M= \max\{|a|, K \}$.
 Por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, existe $n_2  \in \mathbb{N}$
 tal que $|a_n-a|< \dfrac{\epsilon}{2K}$ para todo $n>n_2$.
@@ -326,13 +332,13 @@ que es lo que se quería demostrar.
 
 **Demostración**
   
-  c) Veamos, en primer lugar que si $\lim {a_n} =a \neq 0$, entonces existe $n_0 \in \mathbb{N}$ tal que para todo $n >n_1$,  $|a_n| > \dfrac{|a|}{2}$. Dado que $\dfrac{|a|}{2} >0$, existe $n_0 \in \mathbb{N}$ tal que para todo $n >n_1$, es $|a|-|a_n| \leq |a-a_n| < \dfrac{|a|}{2}$, en definitiva es $-|a_n| < -|a|+ \dfrac{|a|}{2} = -  \dfrac{|a|}{2}$ . En definitiva hemos visto que $|a_n|> \dfrac{|a|}{2}$, para todo $n > n_1$.
+  c) Veamos, en primer lugar, que si $\lim {a_n} =a \neq 0$, entonces existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$,  $|a_n| > \dfrac{|a|}{2}$. Dado que $\epsilon=\dfrac{|a|}{2} >0$, existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$, es $|a|-|a_n| \leq |a-a_n| < \dfrac{|a|}{2}$, en definitiva es $-|a_n| < -|a|+ \dfrac{|a|}{2} = -  \dfrac{|a|}{2}$ . En definitiva hemos visto que $|a_n|> \dfrac{|a|}{2}$, para todo $n > n_1$.
   
-Ahora, si $\lim {a_n} =a \neq 0$, tenemos, por una parte que existen $\epsilon >0$ y $n_2$ tal que para todo $n > n_2$ es $|a_n-a|< \dfrac{ \epsilon}{2} $
+Ahora, si $\lim {a_n} =a \neq 0$, tenemos, por una parte que existen $\epsilon >0$ y $n_2$ tal que para todo $n > n_2$ es $|a_n-a|< \dfrac{ \epsilon}{2}$
 
-Dado que ${a_n}_{n \in \mathbb{N}}$ tiene límite diferente de $0$, existe $n_1$ tal que $|a_n|$ para todo $n>n_1$ tal que $|a_n| > \dfrac{|a|}{2}$, es decir  $\displaystyle{ \left|\dfrac{1}{a_n}\right|} <  \dfrac{2}{|a|}$
+Dado que $\{a_n\}_{n \in \mathbb{N}}$ tiene límite diferente de $0$, existe $n_1$ tal que $|a_n|$ para todo $n>n_1$ tal que $|a_n| > \dfrac{|a|}{2}$, es decir  $\displaystyle{ \left|\dfrac{1}{a_n}\right|} <  \dfrac{2}{|a|}$
 
-Finalmente $\displaystyle{\left|\dfrac{1}{a}-\dfrac{1}{a_n}\right|} = \displaystyle{ \left|\dfrac{a_n -a}{aa_n} \right|} < \dfrac{\epsilon}{2} \dfrac{2|a|}{|a|}=\epsilon$
+Finalmente, si $n>n_0= \max\{n_1,n_2\}$, $\displaystyle{\left|\dfrac{1}{a}-\dfrac{1}{a_n}\right|} = \displaystyle{ \left|\dfrac{a_n -a}{aa_n} \right|} < \dfrac{\epsilon}{2} \dfrac{2|a|}{|a|}=\epsilon$
 
 
 
@@ -354,7 +360,7 @@ Si $\{a_n\}_{n\in \mathbb{N}}$ es una sucesión de términos positivos tal que $
 
 <div class="dem">**Demostración**
 
-Dado que $a_n \rightarrow a$, resulta que $\lim \dfrac{a}{a_n} =1$, por consiguiente, como para cada $\epsilon >0 $ es $e^{\epsilon} >1$ y $e^{-\epsilon} <1$, existirá un $n_0 \in \mathbb{N}$, tal que para todo $n \geq n_0$ es
+Dado que $a_n \rightarrow a$, resulta que $\lim \dfrac{a}{a_n} =1$, por consiguiente, como para cada $\epsilon >0$ es $e^{\epsilon} >1$ y $e^{-\epsilon} <1$, existirá un $n_0 \in \mathbb{N}$, tal que para todo $n \geq n_0$ es
 $$
 e^{-\epsilon} < \dfrac{a}{a_n} < e^{\epsilon}
 $$
@@ -387,13 +393,13 @@ $$
 
 ## Límites infinitos. Sucesiones divergentes.
 
-<l class="definition"> **Definición** </l>
+<l class="definition"> **Definición: Sucesiones divergentes** </l>
 
 Sea $\{a_n\}_{n \in \mathbb{N}}$ una sucesión
 
 a) Si para todo $K>0$ existe un $n_0 \in \mathbb{N}$ tal que para todo $n \geq n_0$ es $a_n >K$, se dice que el límite de la sucesión $a_n$ es $+\infty$, $\lim a_n = + \infty$.
 
-b) Si para todo $K > 0$ existe $n_0 \in \mathbb{N}$ tal que para todo  $n \geq n_0$ es $-a_n >K$, se dice que el límite de la sucesión $a_n$ es $-\infty$, $\lim a_n = - \infty$.
+b) Si para todo $K > 0$ existe $n_0 \in \mathbb{N}$ tal que para todo  $n \geq n_0$ es $a_n <-K$, se dice que el límite de la sucesión $a_n$ es $-\infty$, $\lim a_n = - \infty$.
 
 c) Si para todo $K>0$ existe un $n_0 \in \mathbb{N}$ tal que para todo $n \geq n_0$ es $|a_n| >K$, se dice que el límite de la sucesión $a_n$ es $\infty$, $\lim a_n = \infty$.
 
@@ -414,14 +420,14 @@ $$
 
 ## Sucesiones de Cauchy
 
-Parece razonable pensar que si los términos de una sucesión convergente $\{a_n\}$ se acecan al límite $a$ de la sucesión, entonces, necesariamente deben acercarse entre ellos, es decir que si $\lim a_n =a$, entonces para todo $\epsilon >0$, existe un lugar $n_0 \in \mathbb{N}$ tal que para todo $m,n \geq n_0$ es $|a_n-a_m|< \epsilon$. 
+Parece razonable pensar que si los términos de una sucesión convergente $\{a_n\}$ se *acercan* al límite $a$ de la sucesión, entonces, necesariamente deben acercarse entre ellos, es decir que si $\lim a_n =a$, entonces para todo $\epsilon >0$, existe un lugar $n_0 \in \mathbb{N}$ tal que para todo $m,n \geq n_0$ es $|a_n-a_m|< \epsilon$. 
 
-Recíprocamente, si los terminos de la sucesión se aproximan entre ellos  entonces la sucesión debe ser convergente. Veremos que en $\mathbb{R}$ es así y que esta es una característica intrínseca del conjunto de números reales, es decir, existen sucesiones en $\mathbb{Q}$ tales que los términos se acercan entre ellos y, sin embargo, la sucesión no tiene límite, basta, por ejemplo pensar en las aproximaciones decimales de $\sqrt{2}$: son todos números racionales, se acercan entre ellos y, no obstante no tiene límite en $\mathbb{Q}$, puesto que ese límite, $\sqrt{2}$, no es un número real.
+Recíprocamente, si los terminos de la sucesión se aproximan entre ellos  entonces la sucesión debe ser convergente. Veremos que en $\mathbb{R}$ es así y que esta es una característica intrínseca del conjunto de números reales, es decir, existen sucesiones en $\mathbb{Q}$ tales que los términos se acercan entre ellos y, sin embargo, la sucesión no tiene límite, basta, por ejemplo pensar en las aproximaciones decimales de $\sqrt{2}$: son todos números racionales, se acercan entre ellos y, no obstante no tiene límite en $\mathbb{Q}$, puesto que ese límite, $\sqrt{2}$, no es un número racional.
 
 
 ## Sucesiones de Cauchy
 
-<l class="definition"> **Definición** </l>
+<l class="definition"> **Definición: Sucesión de Cauchy** </l>
 
 Una sucesión de números reales $\{a_n\}$, es de **Cauchy** si para cada $\epsilon >0$ existe un $n_0 \in \mathbb{N}$ tal que para todo $m,n \geq n_0$ es $|a_n - a_m| < \epsilon$
 
@@ -441,15 +447,17 @@ $$
 
 ## Sucesiones de Cauchy
 
-La demostración del recíproco, que una sucesión de Cauchy en $\mathbb{R}$ es convergente,requiere del teorema de Bolzano-Weirstrass, el cual, a su vez, depende del axioma del supremo. Previamente demostraremos que una sucesión de Cauchy está acotada.
+La demostración del recíproco, que una sucesión de Cauchy en $\mathbb{R}$ es convergente, requiere del teorema de Bolzano-Weierstrass, el cual, a su vez, depende del axioma del supremo. Previamente demostraremos que una sucesión de Cauchy está acotada.
 
 <l class="prop"> **Proposición** </l>
 
-Sea $\{a_n \}_{n \in \mathbb{N}}$ una sucesión de Cauchy, entonces existe $K>0$  tal que $|a_n| \leq K$, para todo $n$. 
+Sea $\{a_n \}_{n \in \mathbb{N}}$ una sucesión de Cauchy, entonces existe $K>0$  tal que $|a_n| \leq K$, para todo $n$.
+
+## Sucesiones de Cauchy 
 
 <div class="dem"> **Demostración**
 
-Por ser $\{a_n \}$ de Cauchy y $1>0$, existe un $n_0 \in \mathbb{N}$, tal que $|a_n - a_m| <1$. Sea ahora 
+Por ser $\{a_n \}$ de Cauchy y $\epsilon=1>0$, existe un $n_0 \in \mathbb{N}$, tal que $|a_n - a_m| <1$. Sea ahora 
 $$
 K= \max \{|a_1|,|a_2|,\ldots, |a_{n_0}|+1\}
 $$
@@ -460,7 +468,7 @@ $$
 por lo tanto, en cualquier caso, es $|a_n| \leq K$, para todo $n \in \mathbb{N}$.
 </div>
 
-## Sucesiones de Cauchy
+## Las sucesiones de Cauchy en $\mathbb{R}$ sonconvergentes 
 
 <l class="prop"> **Proposición** </l>
 
@@ -468,9 +476,11 @@ En $\mathbb{R}$ toda sucesión de Cauchy tiene límite.
 
 <div class="dem"> **Demostración**
 
-Sea $\{a_n\}_{n \in \mathbb{N}} \subset \mathbb{R}$ una sucesión de Cauchy, veremos que tiene límite. Si la sucesión tiene rango finito, es decir que sólo tiene un número finito de términos diferentes, entonces debe ser constante, ya que, de otra forma, los términos no se podrían aproximar más que la menor de las diferencias en valor absoluto entre ellos. Por lo tanto, es convergente.
+Sea $\{a_n\}_{n \in \mathbb{N}} \subset \mathbb{R}$ una sucesión de Cauchy, veremos que tiene límite. Si la sucesión tiene rango finito, es decir que sólo tiene un número finito de términos diferentes, entonces, a partir de un cierto término, debe ser constante, ya que, de otra forma, los términos no se podrían aproximar más que la menor de las diferencias en valor absoluto entre ellos. Por lo tanto, es convergente.
 
-Supongamos ahora que el rango de $\{a_n\}$ es infinito, por ser de Cauchy,está acotada. Por el teorema de Bolzano-Weirstrass, tiene un punto de acumulación, $a$. Veremos que $a= \lim_{n\rightarrow \infty}a_n$.
+Supongamos ahora que el rango de $\{a_n\}$ es infinito, por ser de Cauchy, está acotada. 
+
+Por el teorema de Bolzano-Weierstrass, tiene un punto de acumulación, $a$. Veremos que $a= \lim_{n\rightarrow \infty}a_n$.
 
 Por ser $a$ un punto de acumulación, dado un $\epsilon >0$ existen infinitos términos, $a_k$, tales que $|a_k -a| < \dfrac{\epsilon}{2}$. Conviene observar que, esto, por si mismo, no es suficiente para asegurar que $a_n \rightarrow a$, puesto que la desigualdad no tiene porque cumplirse para todos los $a_k$ a partir de un lugar.
 
@@ -480,19 +490,19 @@ Por ser $a$ un punto de acumulación, dado un $\epsilon >0$ existen infinitos t�
 
 Para obviar esta dificultad, consideremos $n_1 = \min \{k \in \mathbb{N}: |a_k -a| < \dfrac{\epsilon}{2} \}$. Nuevamente, por ser $a_n$ de Cauchy, existe $n_2$ tal que para todo $m,n\geq n_2$, es $|a_n-a_m|< \dfrac{\epsilon}{2}$. 
 
-Ahora, si $n_0 = \max(n_1,n_2)$, existe un $k \geq n_0$ tal que $|a_k -a| < \dfrac{\epsilon}{2}$. Consideremos ahora un $n\geq n_0$, tendremos que 
+Ahora, si $n_0 = \max\{n_1,n_2\}$, existe un $k \geq n_0$ tal que $|a_k -a| < \dfrac{\epsilon}{2}$. Consideremos ahora un $n\geq n_0$, tendremos que 
 $$
 |a_n -a| = |a_n -a_k +a_k -a| \leq |a_n -a_k|+|a_k -a|<\dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon
 $$
-Es decir, para todo $\epsilon >0$ existe un $n_0 \in \mathbb{N}$ tal que para todo  $n \geq n_0$ es $|a_n-a| <\epsilon$, en definitiva, $\lim_{a \rightarrow \infty} a_n = a$
+Es decir, para todo $\epsilon >0$ existe un $n_0 \in \mathbb{N}$ tal que para todo  $n \geq n_0$ es $|a_n-a| <\epsilon$, en definitiva, $\lim_{n \rightarrow \infty} a_n = a$
 
-
+# Cálculo de límites
 
 ## Cálculo de límites (1)
 
 Veremos en este apartado algunas estrategias para calcular limites de sucesiones reales, la mayoría, orientadas a resolver algunas de las indeterminaciones que involucran límites infinitos y que hemos explicitado al extender la recta real.
 
-<l class="prop"> Límite del cociente de dos polinomios Indeterminación del tipo $\dfrac{\infty}{\infty}$: </l>
+<l class="prop"> Límite del cociente de dos polinomios. Indeterminación del tipo $\dfrac{\infty}{\infty}$: </l>
 $$
 \lim \dfrac{P(n)}{Q(n)}=\lim \dfrac{a_hn^h+a_{h-1}n^{h-1}+ \ldots + a_1n+a_0}{b_kn^k+b_{k-1}n^{k-1}+ \ldots +b_1n+b_0}
 $$
@@ -516,14 +526,14 @@ $$
 
 ## Cálculo de límites (3)
 
-<l class="example"> **Ejemplos** </l>
+<div class="example"> **Ejemplos** 
 
 1. $\lim \dfrac{3n^4-4n^3-5}{2n^5+5n^3-2n} = 0$
 2. $\lim \dfrac{2n^3+4n+1}{3n^3+2n^2}= \dfrac{2}{3}$
 3. $\lim \dfrac{3n^5+4n^4+2n}{7n^4+2n^3+n^2+5n}= \infty$
 4. $\lim \dfrac{\sqrt{3n^2-1}-\sqrt{n}}{n+1}= \sqrt{3}$
 
-
+</div>
 
 ## Cálculo de límites (4)
 
@@ -531,7 +541,7 @@ $$
 
 En estos casos es conveniente multiplicar y dividir por el conjugado de la expresión dada.
 
-<l class="example"> **Ejemplo**
+<div class="example"> **Ejemplo**
 
  $\lim (\sqrt{n^2-n+4}-\sqrt{n^2+2})$
 
@@ -539,21 +549,21 @@ $= \lim \dfrac{(\sqrt{n^2-n+4}-\sqrt{n^2+2})(\sqrt{n^2-n+4}+\sqrt{n^2+2})}{\sqrt
 
 $= \lim \dfrac{n^2-n+4-n^2-2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = \lim \dfrac{-n+2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = -\dfrac{1}{2}$
 
-
+</div>
 
 
 ## Sucesiones monótonas
 
 Una clase importante de sucesiones son las llamadas **monótonas**:
 
-<l class="definicion"> **Definición** </l> 
+<l class="definition"> **Definición: Sucesiones monótonas** </l> 
 
 1. Una sucesión de números reales $\{a_n\}_{n \in \mathbb{N}}$ és **creciente** si existe un $n_0 \in \mathbb{N}$ tal que para todo $n \geq n_0$ es $a_n \leq a_{n+1}$.
 
-2. Una sucesión és **decreciente** si $a_n \geq a_{n+1}$, para todo $n \geq n_0$
+2. Una sucesión és **decreciente** si $a_n \geq a_{n+1}$, para todo $n \geq n_0$.
 2. Una sucesión **monótona** es una sucesión que es creciente o decreciente.
-3. Una sucesión és **estrictamente creciente** si $a_n < a_{n+1}$, para todo $n \geq n_0$
-4. Una sucesión es **estrictamente decreciente** si $a_n > a_{n+1}$, para todo $n \geq n_0$
+3. Una sucesión és **estrictamente creciente** si $a_n < a_{n+1}$, para todo $n \geq n_0$.
+4. Una sucesión es **estrictamente decreciente** si $a_n > a_{n+1}$, para todo $n \geq n_0$.
 
 
 ## Convergencia de las sucesiones monótonas
@@ -565,9 +575,9 @@ b) Una sucesión monótona decreciente acotada inferiormente es convergente.
 
 <div class="dem"> **Demostración**
 
-Supongamos que $\{a_n\}_{n \in \mathbb{N}}$ ser acotada tiene supremo, sea $a= \sup \{a_n: n\in \mathbb{N} \}$. Veamos que $a= \lim _{n \rightarrow \infty} a_n$.
+Por ser $\{a_n\}_{n \in \mathbb{N}}$ acotada tiene supremo, sea $a= \sup \{a_n: n\in \mathbb{N} \}$. Veamos que $a= \lim _{n \rightarrow \infty} a_n$.
 
-Sea ahora $\epsilon >0$, $a - \epsilon$ no es cota superior, por lo que existe algún $n_0$ tal que $a - \epsilon < a_{n_0}$, dado que la sucesión és monótona creciente será $a-\epsilon <a_{n_0}\leq n$, para todo $n \geq n_0$. En definitiva es
+Sea ahora $\epsilon >0$, $a - \epsilon$ no es cota superior, por lo que existe algún $n_0$ tal que $a - \epsilon < a_{n_0}$, dado que la sucesión és monótona creciente será $a-\epsilon <a_{n_0}\leq a_n$, para todo $n \geq n_0$. En definitiva es $a-a_n>\epsilon, es decir 
 $$
 0 \leq |a-a_n| < \epsilon
 $$
@@ -576,10 +586,9 @@ para todo $n \geq n_{0}$, es decir
 $$
 \lim _{n \rightarrow \infty} a_n = a
 $$
-</div>
 
 Consideraciones similares sirven para el caso de sucesiones decrecientes.
-
+</div>
 
 ## Ejemplos: **El número $e$**
 
@@ -598,7 +607,10 @@ $$
 $$
 + \cdots+ \dfrac{n(n-1) \cdots 2 \cdot 1}{n!}\dfrac{1}{n^n}
 $$
-si ahora dividimos por las respectivas potencias de los términos de los numeradores, obtenemos:
+
+## Ejemplos: **El número $e$**
+
+Si ahora dividimos por las respectivas potencias de los términos de los numeradores, obtenemos:
 
 $$
 a_n= 1+1+\dfrac{1}{2!}\left( 1 -\dfrac{1}{n}\right)+\dfrac{1}{3!}\left( 1 - \dfrac{1}{n}\right)\left( 1 - \dfrac{2}{n}\right)
@@ -620,25 +632,29 @@ $$
  + \dfrac{1}{(n+1)!}\left(1 -\dfrac{1}{n+1}\right)\left(1-\dfrac{2}{n+1}\right) \cdots \left( 1 - \dfrac{n}{n+1}\right)
 $$
 
-Si ahora comparamos término a término $a_n$ y $a_{n+1}$ veremos que en el segundo aparece un término positivo más y que cada uno de los restantes son menores o iguales en $a_n$ que los de $a_{n+1}. Por lo tanto la sucesión es creciente:
+## Ejemplos: **El número $e$**
+
+Si ahora comparamos término a término $a_n$ y $a_{n+1}$ veremos que en el segundo aparece un término positivo más y que cada uno de los restantes son menores o iguales en $a_n$ que los de $a_{n+1}$. Por lo tanto la sucesión es creciente:
 $$
 a_1 \leq a_2 \leq \ldots \leq a_{n-1} \leq a_n \leq \ldots
 $$
-
+Veamos ahora que la sucesión $\{a_n\}_{n \in \mathbb{N}}$ está acotada.
 
 ## Ejemplos: **El número $e$**
 
-Veamos ahora que la sucesión $\{a_n\}_{n \in \mathbb{N}}$ está acotada.
 
 Por una parte, tenemos que para $k = 1, 2 ,\ldots n$, es $(1-\frac{k}{n} )<1$. Por la otra, se puede demostrar por inducción que $2^{k-1} \leq k!$, por lo tanto es $\frac{1}{k!} \leq \frac{1}{2^{k-1}}$. En definitiva, para $n >1$, se verifica que
 $$
 2 <a_n <1+1+ \dfrac{1}{2}+\dfrac{1}{2^2}+ \cdots +\dfrac{1}{2^{n-1}}
 $$
+
+## Ejemplos: **El número $e$**
+
 Por otra parte,
 $$  
 \dfrac{1}{2}+\dfrac{1}{2^2}+ \cdots +\dfrac{1}{2^{n-1}} = 1 - \dfrac{1}{2^{n-1}} <1
 $$
- puesto que se trata de la suma de los $n$ primerostérminos de una progresión geométrica de razón $\frac{1}{2}$. 
+ puesto que se trata de la suma de los $n$ primeros términos de una progresión geométrica de razón $\frac{1}{2}$. Veremos la demostraqción de esta fórmula en el tema de series.
  
  
 ## Ejemplos: **El número $e$**
@@ -651,7 +667,7 @@ $$
  $$
  2 < \lim \left( 1 + \dfrac{1}{n}\right)^n <3
  $$
-puesto que todos los términos -a a partir del primero- son mayores que $2$ y menores que $3$. Este límite es lo que conocemos como el número $e$
+puesto que todos los términos, a  partir del primero, son mayores que $2$ y menores que $3$. Este límite es lo que conocemos como el número $e$
 $$
  \lim \left( 1 + \dfrac{1}{n}\right)^n = e
 $$
@@ -666,16 +682,19 @@ $$
 \lim \left( 1 + \dfrac{1}{a_n}\right)^{a_n} = e
 $$
 
-<div class="dem">**Demostración**
-Recordemos, en primer lugar, que dado un número real $\alpha$, el mayor entero  que es menor que $\alpha$ se llama *parte entera* de $\alpha$ y se denota por $\lfloor \alpha \rfloor$.
+## Otros límites relacionados con el número $e$
 
-Consideremos, en primer lugar que $a_n \rightarrow +\infty$. Sea $\alpha_n = \lfloor a_n \rfloor$, dado que $\alpha_n \leq a_n \leq \alpha_n +1$, tendremos que 
+<div class="dem">**Demostración**
+
+Recordemos, en primer lugar, que dado un número real $\beta$, el mayor entero  que es menor que $\beta$ se llama *parte entera* de $\beta$ y se denota por $\lfloor \beta \rfloor$.
+
+Consideremos, en primer lugar que $a_n \rightarrow +\infty$. Sea $\beta_n = \lfloor a_n \rfloor$, dado que $\beta_n \leq a_n \leq \beta_n +1$, tendremos que 
 $$
-1 + \dfrac{1}{\alpha_n +1} \leq 1+ \dfrac{1}{a_n} \leq1+ \dfrac{1}{\alpha_n}
+1 + \dfrac{1}{\beta_n +1} \leq 1+ \dfrac{1}{a_n} \leq 1+ \dfrac{1}{\beta_n}
 $$
 y, por lo tanto,
 $$
-\left(1 + \dfrac{1}{\alpha_n +1} \right)^{\alpha_n} \leq \left( 1+ \dfrac{1}{a_n}\right)^{a_n} \leq \left( 1+ \dfrac{1}{\alpha_n} \right)^{\alpha_n +1}
+\left(1 + \dfrac{1}{\beta_n +1} \right)^{\beta_n} \leq \left(1 + \dfrac{1}{\beta_n +1} \right)^{a_n} \leq \left( 1+ \dfrac{1}{a_n}\right)^{a_n} \leq \left( 1+ \dfrac{1}{a_n}\right)^{a_n +1} \leq \left( 1+ \dfrac{1}{\beta_n} \right)^{\beta_n +1}
 $$
 </div>
 
@@ -687,8 +706,9 @@ Ahora, dado que cada $\alpha_n$ es un número natural y que
 $$ 
 \left(1 + \dfrac{1}{\alpha_n +1} \right)^{\alpha_n} =\dfrac{\left(1 + \dfrac{1}{\alpha_n +1} \right)^{\alpha_n +1}}{1 + \dfrac{1}{\alpha_n +1} } \quad \text{ y } \left( 1+ \dfrac{1}{\alpha_n} \right)^{\alpha_n +1} = \left( 1+ \dfrac{1}{\alpha_n} \right)^{\alpha_n}\left( 1+ \dfrac{1}{\alpha_n} \right)
 $$
-resulta que las dos sucesiones son subsucesiones de la sucesión $\left( 1+ \dfrac{1}{n} \right)^{n}$
-y, por lo tanto, las dos tienen el mismo límite: $e$. En defintiva:
+resulta que las dos sucesiones son subsucesiones de la sucesión $\left( 1+ \dfrac{1}{n} \right)^{n}$ dividida y multiplicada, respectivamente, por sucesiones que tiene límite $1$ y, por lo tanto, las dos tienen el mismo límite: $e$.
+
+En definitiva:
 $$
 \lim \left( 1 + \dfrac{1}{a_n}\right)^{a_n} = e
 $$
@@ -706,7 +726,7 @@ $$
 $$
 <div class="dem"> **Demostración**
 
-Sea $b_n = \dfrac{a_n}{x_n}$. Con esta notación tendremos que
+Sea $b_n = \dfrac{a_n}{x_n}$. Como $b_n \rightarrow \infty$, con esta notación tendremos que
 $$
 \lim \left( 1 + \dfrac{x_n}{a_n}\right)^{a_n} = \left( \lim \left( 1 + \dfrac{1}{b_n}\right)^{b_n} \right)^{x_n} = e^{\lim x_n} = e^x
 $$
@@ -724,7 +744,7 @@ $$
 
 Dado que $a_n \rightarrow 1$, podemos poner $a_n = 1+ \delta_n$, con $\delta_n \rightarrow 0$. Ahora, si $x_n=\delta_n b_n = (a_n-1)b_n$, tendremos que
 $$
-\lim a_n ^{b_n} =  \lim (1+\delta_n)^{b_n} = \lim \left(1 +\dfrac{x_n}{b_n} \right)^{b_n} = \left( e^{\lim x_n }\right)^{\lim b_n} = e^{\lim (b_n(a_n-1))}
+\lim a_n ^{b_n} =  \lim (1+\delta_n)^{b_n} = \lim \left(1 +\dfrac{x_n}{b_n} \right)^{b_n} = e^{\lim x_n } = e^{\lim (b_n(a_n-1))}
 $$
 
 
@@ -774,18 +794,18 @@ a_n^2-2a_{n+1}a_n +a = 0
 $$
 De esta ecuación sabemos que tiene, por lo menos una solución real, por lo que su discriminante deberá ser positivo, es decir
 $$
-4a_n^2 -4a \geq 0
+4a_{n+1}^2 -4a \geq 0
 $$
-es decir, $a_n^2 \geq a$, para todo $n \in \mathbb{N}$. En definitiva, $\sqrt{a}$ es una cota inferior para esta sucesión.
+es decir, $a_{n+1}^2 \geq a$, para todo $n \in \mathbb{N}$. En definitiva, $\sqrt{a}$ es una cota inferior para esta sucesión.
 
 
 ## Sucesiones definidas en forma recurrente (3)
 
 Veamos ahora que la sucesión es decreciente:
 $$
-a_n - a_{n-1} =a_n - \dfrac{1}{2} \left(a_n + \dfrac{a}{a_n}\right) = \dfrac{1}{2} \left( \dfrac{a_n^2 -a}{a_n}\right) \geq 0
+a_n - a_{n+1} =a_n - \dfrac{1}{2} \left(a_n + \dfrac{a}{a_n}\right) = \dfrac{1}{2} \left( \dfrac{a_n^2 -a}{a_n}\right) \geq 0
 $$
-puesto que, como hemos visto, $a_n \geq a$. Por lo tanto, la sucesión $\{a_n \}_{n \in \mathbb{N}}$ es convergente.
+puesto que, como hemos visto, $a_n \geq a$, para todo $n>2$. Por lo tanto, la sucesión $\{a_n \}_{n \in \mathbb{N}}$ es convergente, por ser decreciente y acotada inferiormente.
 
 
 ## Sucesiones definidas en forma recurrente (4)
@@ -801,7 +821,7 @@ $$
 $$
 
 
-es decir, $2 L^2 = L^2 +a$ y, por lo tanto, $L=a$, dado que todos los términos de la sucesión son positivos.
+es decir, $2 L^2 = L^2 +a$ y, por lo tanto, $L=\sqrt{a}$, dado que todos los términos de la sucesión son positivos.
 
 Los babilonios usaban esta sucesión para calcular raíces cuadradas, cerca de 2000 años antes de nuestra era.
 
@@ -811,9 +831,9 @@ Los babilonios usaban esta sucesión para calcular raíces cuadradas, cerca de 2
 
 Sea $a>0$, definimos la sucesión $\{a_n \}$ de la forma $a_1= \sqrt{a}$, $a_n = \sqrt{a+a_{n-1}}$. Calcula $\lim_{n \rightarrow \infty} a_n$.
 
-La sucesión es creciente, puesto que $a_1 = \sqrt{a} < \sqrt{a+\sqrt{a}} =a_2$ y, si $a_{n-1} < a_{n}$, es decir, si $a+a_{n-2} = a_{n-1}^2 < a_n ^2 = a+ a_{n-1}$ entonces, $a + a_{n-1} = a_n^2 < a_{n+1}^2 = a + a_{n}$, es decir $a_n <a_{n+1}$.
+La sucesión es creciente, puesto que $a_1 = \sqrt{a} < \sqrt{a+\sqrt{a}} =a_2$ y, si $a_{n-1} < a_{n}$, entonces, $a + a_{n-1} = a_n^2 < a_{n+1}^2 = a + a_{n}$, es decir $a_n <a_{n+1}$.
 
-Además, la sucesión está acotada $a+1$, puesto que es  $a_n^2 =a + a_{n-1}$, es decir $a_n = a + \dfrac{a_{n-1}}{a_n} < a+1$, dado que la sucesión es creciente y, por lo tanto, $\dfrac{a_{n-1}}{a_n} <1$.
+Además, la sucesión está acotada por $a+1$, puesto que es  $a_n^2 =a + a_{n-1}$, es decir $a_n = a + \dfrac{a_{n-1}}{a_n} < a+1$, dado que la sucesión es creciente y, por lo tanto, $\dfrac{a_{n-1}}{a_n} <1$.
 
 Es decir, se trata de una sucesión monótona creciente y, por lo tanto, tiene límite, sea $l= \lim_{n \rightarrow \infty} a_n$. Aplicando la definición de la recurrencia y las propiedades aritméticas del límite, tendremos que
 $\lim a_n^2 =  a+ \lim a_{n-1}$, és decir $l^2 =a +l$ y por lo tanto $l$ es una de las soluciones de esta ecuación de segundo grado, como una de ellas, $\dfrac{1-\sqrt{1+4a}}{2}$, es negativa y todos los términos de la sucesión son positivos, el límite buscado será la otra solución, es decir
@@ -846,10 +866,36 @@ dado que la otra solución de la ecuación de segundo grado resultante es mayor 
 
 ## Sucesiones recurrentes (7)
 
-Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim a_n = \frac{3-\sqrt{5}}{2}$. El gràfico siguiente muestra los $25$ primeros téminos de esta sucesión y lo rápida que es la convergencia.
+<div class="example"> 
+Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim a_n = \frac{3-\sqrt{5}}{2}$. El gràfico siguiente muestra los $25$ primeros términos de esta sucesión y lo rápida que es la convergencia.
 
 ![](/Users/llorenc/Desktop/github/calculo/teoria/02Succesiones_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
 
+</div>
+
+## Sucesiones recurrentes (8)
+
+
+```python
+from sympy import * 
+
+import math  
+import matplotlib.pyplot as plt
+
+l=((3.-math.sqrt(5.))/2.)
+
+a=[0,2]+list(range(2, 26))
+
+#an=2
+for k in range(25):
+  a[k+1]=1/(3.-a[k])
+  # print(a[k])
+
+#print(l)
+fig = plt.figure()
+ax = plt.axes()
+ax.plot(range(26), a)
+```
 
 ## Criterio del sandwich
 
@@ -897,7 +943,7 @@ $$
 
 Calcular el límite: ${\displaystyle \lim_{n \rightarrow \infty} \sum_{k=1}^n \dfrac{1}{ \sqrt {n^2+k}} = \lim_{n \rightarrow \infty} \left(\dfrac{1}{\sqrt{n^2+1}}+ \dfrac{1}{\sqrt{n^2+2}}+ \cdots+\dfrac{1}{\sqrt{n^2+n}}\right)}$
 
-Aplicamos el criterio del sandwich. Puesto que, para todo $kn \in \{1,2, \ldots, n\}$, tenemos
+Aplicamos el criterio del sandwich. Puesto que, para todo $k \in \{1,2, \ldots, n\}$, tenemos
 $$
 \dfrac{1}{\sqrt{n^2+n}} \leq \dfrac{1}{\sqrt{n^2+k}} \leq \dfrac{1}{\sqrt{n^2+1}}
 $$
@@ -935,7 +981,7 @@ Dado un $\epsilon >0$ existe un $N(\epsilon)$ tal que para todo $n>N(\epsilon)$ 
 $$
 l-\epsilon < \dfrac{a_{n+1} - a_n}{b_{n+1}-b_n} <l+\epsilon
 $$
-es decir,
+es decir, como $b_n$ es creciente, 
 
 $$
 (l-\epsilon)(b_{n+1}-b_n) < a_{n+1} - a_n <(l+\epsilon)(b_{n+1}-b_n)
@@ -943,7 +989,7 @@ $$
 
 Sea ahora $k>N(\epsilon)$, 
 $$
-(l-\epsilon) \sum_{i=N(\epsilon)}^k (b_{n+1}-b_n) < \sum_{i=N(\epsilon)}^k (a_{n+1} - a_n) <(l+\epsilon)\sum_{i=N(\epsilon)}^k (b_{n+1}-b_n)
+(l-\epsilon) \sum_{n=N(\epsilon)}^k (b_{n+1}-b_n) < \sum_{n=N(\epsilon)}^k (a_{n+1} - a_n) <(l+\epsilon)\sum_{n=N(\epsilon)}^k (b_{n+1}-b_n)
 $$
 
 se trata de sumas telescópicas, por lo que se reduciran a 
@@ -989,7 +1035,7 @@ Calcular el límite
 $$
 \lim \dfrac{1^2+2^2+ \cdots + n^2}{n^3}
 $$
-</div>
+
 
 En primer lugar, $n^3$ es una sucesión creciente y no está acotada, por lo tanto se puede aplicar el criterio de Stolz:
 $$
@@ -998,7 +1044,7 @@ $$
 $$
 = \lim \dfrac{(n+1)^2}{(n^3+3n^2+3n+1)-n^3} = \lim \dfrac{n^2+2n+1}{3n^2+3n+1}=\dfrac{1}{3}
 $$
-
+</div>
 
 ## Criterio de Stolz: Ejemplo 2
 
@@ -1006,7 +1052,7 @@ $$
 
 **Calcular el límite de la sucesión de término general  $\dfrac{1}{\sqrt{n}}\left( \dfrac{1}{\sqrt{1}}+ \dfrac{1}{\sqrt{2}}+ \cdots+ \dfrac{1}{\sqrt{n}} \right)$ **
 
-Mediante el criterio de Stolz, con $a_n= \left( \dfrac{1}{\sqrt{1}}+ \dfrac{1}{\sqrt{2}}+ \cdots+ \dfrac{1}{\sqrt{n}} \right)$ y $b_n= \dfrac{1}{\sqrt{n}}$ tenemos
+Mediante el criterio de Stolz, con $a_n= \left( \dfrac{1}{\sqrt{1}}+ \dfrac{1}{\sqrt{2}}+ \cdots+ \dfrac{1}{\sqrt{n}} \right)$ y $b_n= \sqrt{n}$ tenemos
 $$
 \lim_{n \rightarrow \infty} \dfrac{a_n - a_{n-1}}{b_n - b_{n-1}} = \lim_{n \rightarrow \infty} \dfrac{\dfrac{1}{\sqrt{n}}}{\sqrt{n}-\sqrt{n-1}}=\lim_{n \rightarrow \infty} \dfrac{\sqrt{n}+\sqrt{n-1}}{\sqrt{n}(n-(n-1))}=\lim_{n \rightarrow \infty} \dfrac{\sqrt{n}+\sqrt{n-1}}{\sqrt{n}} = 2
 $$
@@ -1040,11 +1086,11 @@ En primer lugar, tenemos que $\sqrt[n]{n+2} = (n+2)^{\frac{1}{n}}$, dado que las
 
 Al ser $n$ creciente y no acotada, podemos aplicar el criterio de Stolz, para obtener
 $$
-\lim \dfrac{\log(n+2)}{n} = \lim \dfrac{\log(n+2)- \log(n+1)}{n+2-(n+1)}= \lim \dfrac{n+2}{n+1} =1
+\lim \dfrac{\log(n+2)}{n} = \lim \dfrac{\log(n+2)- \log(n+1)}{n-(n-1)}= \lim \log \dfrac{n+2}{n+1} =0
 $$
 Por lo que 
 $$
-\lim_{n \rightarrow \infty} \sqrt[n]{n+2}= e
+\lim_{n \rightarrow \infty} \sqrt[n]{n+2}= e^0=1
 $$
 
 
@@ -1092,7 +1138,7 @@ $$
 \lim_{n \rightarrow \infty} \dfrac{\log (n!)}{n}
 $$
 
-Dado que $\log (n!) = \log (1\cdot 2\cdot 3\cdots n)= \log (1)+ \log (2) + \log3) + \cdots \log(n)$, la sucesión dada es la sucesión de medias aritméticas de $a_n = \log (n)$, por lo tanto, el límite pedido es
+Dado que $\log (n!) = \log (1\cdot 2\cdot 3\cdots n)= \log (1)+ \log (2) + \log(3) + \cdots \log(n)$, la sucesión dada es la sucesión de medias aritméticas de $a_n = \log (n)$, por lo tanto, el límite pedido es
 $$
 \lim_{n \rightarrow \infty} \dfrac{\log (n!)}{n} =  \lim_{n \rightarrow \infty} \log (n) = + \infty
 $$
@@ -1143,7 +1189,7 @@ Calcula el límite:
 $$
 \lim_{n \rightarrow \infty} \sqrt[n]{\dfrac{3}{2} \cdot \dfrac{6}{8} \cdots \dfrac{n^2+2}{2n^2}}
 $$
-La sucesión dada es la sucesión de medias geométricas de la sucesión $a_n \dfrac{2^2+2}{2n^2}$, por lo tanto el límite pedido es
+La sucesión dada es la sucesión de medias geométricas de la sucesión $a_n = \dfrac{n^2+2}{2n^2}$, por lo tanto el límite pedido es
 $$
 \lim_{n \rightarrow \infty} \sqrt[n]{\dfrac{3}{2} \cdot \dfrac{6}{8} \cdots \dfrac{n^2+2}{2n^2}} = \lim_{n \rightarrow \infty} \dfrac{n^2+2}{2n^2} = \dfrac{1}{2}
 $$
@@ -1194,25 +1240,32 @@ Por lo tanto, $\lim_{n \rightarrow \infty} \sqrt[n]{a_n} = a$
 
 ## Ejemplos
 
-<div class="example"> **1. Calcular el $\lim \sqrt[n]{a^n+b^n}$, con $a>b>0$**
+<div class="example"> **Ejemplo**
 
-Apliquemos el criterio del cociente-raíz a la sucesión $\{a^n+b^n\}$ y dividimos numerador y denominador por $a^{n+1}$:
+**Calcular el $\lim \sqrt[n]{a^n+b^n}$, con $a>b>0$**
+
+Apliquemos el criterio del cociente-raíz a la sucesión $\{a^n+b^n\}$ y dividimos numerador y denominador por $a^{n}$:
 
 $$
-\lim_{n \rightarrow \infty} \dfrac{a^{n+1}+b^{n+1}}{a^n+b^n}= \lim_{n \rightarrow \infty} \dfrac{a+\left(\dfrac{b}{a} \right)^n b}{1+\left(\dfrac{b}{a} \right)^n} = a
+\lim \sqrt[n]{a^n+b^n}=\lim_{n \rightarrow \infty} \dfrac{a^{n+1}+b^{n+1}}{a^n+b^n}= \lim_{n \rightarrow \infty} \dfrac{a+\left(\dfrac{b}{a} \right)^n b}{1+\left(\dfrac{b}{a} \right)^n} = a
 $$
 
 Puesto que $\lim_{n \rightarrow \infty} \left(\dfrac{b}{a} \right)^n =0$, al ser $a >b$.
 
-**2. Calcular el $\lim \dfrac{\sqrt[n]{n!}}{n}$.**
+</div>
+
+## Ejemplos
+
+<div class="example"> **Ejemplo**
+
+**Calcular el $\lim \dfrac{\sqrt[n]{n!}}{n}$.**
 
 Apliquemos el criterio del cociente raiz a la sucesión $a_n=\left\{ \dfrac{n!}{n^n}\right\}$, 
 
 $$
-\lim \dfrac{a_{n+1}}{a_n} = \lim \dfrac{(n+1)! \cdot n^n}{(n+1)^{n+1} \cdot n!} = \lim  \left(\dfrac{n}{n+1}\right)^n = \dfrac{1}{e}
+\lim \dfrac{\sqrt[n]{n!}}{n}=\lim \dfrac{a_{n+1}}{a_n} = \lim \dfrac{(n+1)! \cdot n^n}{(n+1)^{n+1} \cdot n!} = \lim  \left(\dfrac{n}{n+1}\right)^n = \dfrac{1}{e}
 $$
 
-Por consiguiente es $\lim \dfrac{\sqrt[n]{n!}}{n}= \dfrac{1}{e}$
 
 </div>
 
