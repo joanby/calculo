@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #reticulate::py_install("sympy")
 ```
 
-# Tema
+# Introducción
 
 ## Sucesiones
 

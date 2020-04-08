@@ -13,7 +13,7 @@ output:
 
 
 
-# Tema
+# Introducción
 
 ## Sucesiones
 
