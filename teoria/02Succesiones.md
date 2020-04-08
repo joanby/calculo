@@ -13,9 +13,9 @@ output:
 
 
 
-# Introducción
+# Sucesiones
 
-## Sucesiones
+## Introducción
 
 Como hemos visto, el conjunto de los números reales incluye todos los números racionales, es decir, todos los números que tengan un número finito de cifras en su desarrollo decimal. De hecho, también incluye algunos con un número infinito de cifras decimales como seria el caso de los decimales periódicos.
 
@@ -285,7 +285,7 @@ Si $a_n \rightarrow a$ y $b_n \rightarrow b$, entonces
 
   a) $a_n+b_n \rightarrow a+b$.
   b) $a_nb_n \rightarrow ab$.
-  c) Si $b \neq  0$, entonces $\dfrac{a_n}{b_n} \rightarrow \dfrac{a}{b}$.
+  c) Si $a \neq  0$, entonces $\dfrac{b_n}{a_n} \rightarrow \dfrac{b}{a}$.
   d) Si $a_n \leq b_n$, entonces $a \leq b$.
 
 
@@ -332,15 +332,14 @@ que es lo que se quería demostrar.
 
 **Demostración**
   
-  c) Veamos, en primer lugar, que si $\lim {a_n} =a \neq 0$, entonces existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$,  $|a_n| > \dfrac{|a|}{2}$. Dado que $\epsilon=\dfrac{|a|}{2} >0$, existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$, es $|a|-|a_n| \leq |a-a_n| < \dfrac{|a|}{2}$, en definitiva es $-|a_n| < -|a|+ \dfrac{|a|}{2} = -  \dfrac{|a|}{2}$ . En definitiva hemos visto que $|a_n|> \dfrac{|a|}{2}$, para todo $n > n_1$.
-  
-Ahora, si $\lim {a_n} =a \neq 0$, tenemos, por una parte que existen $\epsilon >0$ y $n_2$ tal que para todo $n > n_2$ es $|a_n-a|< \dfrac{ \epsilon}{2}$
+  c) Hemos demostrado, en el apartado anterior que si $\lim a_n = 0$ y $b_n$ está acotada, entonces $\lim a_nb_n=0$.
+  Veamos, ahora, que si $\lim {a_n} =a \neq 0$, entonces $\dfrac{1}{a_n}$ está acotada, en particular, existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$,  $\dfrac{1}{|a_n|} < \dfrac{2}{|a|}$: Dado que $\epsilon=\dfrac{|a|}{2} >0$, existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$, es $|a|-|a_n| \leq |a-a_n| < \dfrac{|a|}{2}$, de donde $-|a_n| < -|a|+ \dfrac{|a|}{2} = -  \dfrac{|a|}{2}$, es decir que $|a_n|> \dfrac{|a|}{2}$, para todo $n > n_1$. Por lo tanto es $\dfrac{1}{|a_n|}< \dfrac{2}{|a|}$, para todo $n >n_1$. Ahora
+$$\displaystyle{\dfrac{1}{a}-\dfrac{1}{a_n}} = \displaystyle{\dfrac{a_n -a}{aa_n}}= \dfrac{1}{aa_n}(a_n -a)
+$$
+Tenemos, pues, el producto de una sucesión acotada por una que tiene límite $0$, puesto que $\lim(a_n-a)=0$, es decir que $\lim \left(\dfrac{1}{a_n} - \dfrac{1}{a}\right)=0$, en definitiva: $\lim \dfrac{1}{a_n} = \dfrac{1}{a}$
 
-Dado que $\{a_n\}_{n \in \mathbb{N}}$ tiene límite diferente de $0$, existe $n_1$ tal que $|a_n|$ para todo $n>n_1$ tal que $|a_n| > \dfrac{|a|}{2}$, es decir  $\displaystyle{ \left|\dfrac{1}{a_n}\right|} <  \dfrac{2}{|a|}$
-
-Finalmente, si $n>n_0= \max\{n_1,n_2\}$, $\displaystyle{\left|\dfrac{1}{a}-\dfrac{1}{a_n}\right|} = \displaystyle{ \left|\dfrac{a_n -a}{aa_n} \right|} < \dfrac{\epsilon}{2} \dfrac{2|a|}{|a|}=\epsilon$
-
-
+Finalmente $\lim \dfrac{b_n}{a_n} =\lim( b_n) \left( \dfrac{1}{a_n}\right) = \lim b_n \lim \dfrac{1}{a_n}= \dfrac{b}{a}$
+</div>
 
 ## Límites y operaciones (5).
 
@@ -360,7 +359,7 @@ Si $\{a_n\}_{n\in \mathbb{N}}$ es una sucesión de términos positivos tal que $
 
 <div class="dem">**Demostración**
 
-Dado que $a_n \rightarrow a$, resulta que $\lim \dfrac{a}{a_n} =1$, por consiguiente, como para cada $\epsilon >0$ es $e^{\epsilon} >1$ y $e^{-\epsilon} <1$, existirá un $n_0 \in \mathbb{N}$, tal que para todo $n \geq n_0$ es
+Dado que $a_n \rightarrow a$, resulta que $\lim \dfrac{a}{a_n} =1$, por consiguiente, como para cada $\epsilon >0$ es $e^{\epsilon} >1$, resulta que, por ser $e^{\epsilon}-1>0$, existe $n_1$ tal que para todo $n>n_1$ es $\dfrac{a}{a_n}-1 < e^{\epsilon} - 1$, es decir que $\dfrac{a}{a_n} < e^{\epsilon}$. Por otra parte, al ser $e^{-\epsilon} <1$ y, por lo tanto $1-e^{-\epsilon}>0$  existirá un $n_2$, tal que para todo $n \geq n_2$ es $1-\dfrac{a}{a_n} < 1- e^{-\epsilon}$ es decir $-\dfrac{a}{a_n} < - e^{-\epsilon}$. Si ahora consideramos $n_0=\max\{n_1,n_2\}$, tenemos que para todo $n>n_0$ es
 $$
 e^{-\epsilon} < \dfrac{a}{a_n} < e^{\epsilon}
 $$
@@ -698,7 +697,7 @@ $$
 $$
 </div>
 
-## Otros límites relacionados con el número $e$ (2)
+## Otros límites relacionados con el número $e$
 
 <div class="dem"> **Demostración** (Continuación)
 
@@ -716,7 +715,7 @@ $$
 </div>   
 
 
-## Otros límites relacionados con el número $e$ (2)
+## Otros límites relacionados con el número $e$ 
 
 <l class="prop"> **Proposición** </l>
 
@@ -732,7 +731,7 @@ $$
 $$
 </div>
 
-## Otros límites relacionados con el número $e$ (3)
+## Otros límites relacionados con el número $e$ 
 
 <l class="prop"> **Proposición** </l>
 
