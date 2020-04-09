@@ -895,11 +895,11 @@ Los babilonios usaban esta sucesión para calcular raíces cuadradas, cerca de 2
 
 <div class="example"> **Ejemplo** 
 
-Sea $a>0$, definimos la sucesión $\{a_n \}$ de la forma $a_1= \sqrt{a}$, $a_n = \sqrt{a+a_{n-1}}$. Calcula $\lim_{n \rightarrow \infty} a_n$.
+Sea $a \geq1$, definimos la sucesión $\{a_n \}$ de la forma $a_1= \sqrt{a}$, $a_n = \sqrt{a+a_{n-1}}$. Calcula $\lim_{n \rightarrow \infty} a_n$.
 
 La sucesión es creciente, puesto que $a_1 = \sqrt{a} < \sqrt{a+\sqrt{a}} =a_2$ y, si $a_{n-1} < a_{n}$, entonces, $a + a_{n-1} = a_n^2 < a_{n+1}^2 = a + a_{n}$, es decir $a_n <a_{n+1}$.
 
-Además, la sucesión está acotada por $a+1$, puesto que es  $a_n^2 =a + a_{n-1}$, es decir $a_n = a + \dfrac{a_{n-1}}{a_n} < a+1$, dado que la sucesión es creciente y, por lo tanto, $\dfrac{a_{n-1}}{a_n} <1$.
+Además, la sucesión está acotada por $a+1$, puesto que es  $a_n^2 =a + a_{n-1}$, es decir $a_n = \dfrac{a}{a_n} + \dfrac{a_{n-1}}{a_n} < a+1$, dado que la sucesión es creciente y, por lo tanto, $\dfrac{a_{n-1}}{a_n} <1$ y también $a_n > a_1 \geq 1$.
 
 Es decir, se trata de una sucesión monótona creciente y, por lo tanto, tiene límite, sea $l= \lim_{n \rightarrow \infty} a_n$. Aplicando la definición de la recurrencia y las propiedades aritméticas del límite, tendremos que
 $\lim a_n^2 =  a+ \lim a_{n-1}$, és decir $l^2 =a +l$ y por lo tanto $l$ es una de las soluciones de esta ecuación de segundo grado, como una de ellas, $\dfrac{1-\sqrt{1+4a}}{2}$, es negativa y todos los términos de la sucesión son positivos, el límite buscado será la otra solución, es decir
@@ -918,7 +918,7 @@ $$
 
 Calcular, si existe, el  $\lim_{n \rightarrow \infty} a_n$, donde $a_n$ es la sucesión definida por $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$.
 
-En primer lugar, la sucesión es decreciente, puesto que $2=a_1 \geq a_2= 1$ y, si $a_{n-1} \geq a_n$, entonces es $3-a_{n-1} \leq 3-a_n$, y por lo tanto $a_n = \frac{1}{3-a_{n-1}} \geq \frac{1}{3-a_n}= a_{n+1}$ y, en consecuencia, por el Principio de Inducción, es $a_n \geq a_{n+1}$, para todo $n \in \mathbb{N}$. 
+La sucesión es decreciente, puesto que $2=a_1 \geq a_2= 1$ y, si $a_{n-1} \geq a_n$, entonces es $3-a_{n-1} \leq 3-a_n$, y por lo tanto $a_n = \frac{1}{3-a_{n-1}} \geq \frac{1}{3-a_n}= a_{n+1}$ y, en consecuencia, por el Principio de Inducción, es $a_n \geq a_{n+1}$, para todo $n \in \mathbb{N}$. 
 
 Todos los términos de la sucesión son positivos, ya que es decreciente y el primero es $2$, por lo tanto está acotada inferiormente, lo que significa que tiene límite, sea este $l$. Aplicando la propiedades aritméticas de los límites tenemos que $\lim a_n = \frac{1}{3-\lim a_{n-1}}$, es decir $l =\dfrac{1}{3-l}$, por lo que 
 $$
