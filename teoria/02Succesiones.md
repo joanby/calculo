@@ -935,26 +935,7 @@ dado que la otra solución de la ecuación de segundo grado resultante es mayor 
 <div class="example"> 
 Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim a_n = \frac{3-\sqrt{5}}{2}$. El gràfico siguiente muestra los $25$ primeros términos de esta sucesión y lo rápida que es la convergencia.
 
-<!--  ```{python, echo = FALSE} -->
-<!-- from sympy import * -->
-
-<!-- import math -->
-<!-- import matplotlib.pyplot as plt -->
-
-<!-- l=((3.-math.sqrt(5.))/2.) -->
-
-<!-- a=[0,2]+list(range(2, 26)) -->
-
-<!-- #an=2 -->
-<!-- for k in range(25): -->
-<!--   a[k+1]=1/(3.-a[k]) -->
-<!--   # print(a[k]) -->
-
-<!-- #print(l) -->
-<!-- fig = plt.figure() -->
-<!-- ax = plt.axes() -->
-<!-- ax.plot(range(26), a) -->
-<!-- ``` -->
+ ![](02Succesiones_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
 
 </div>
 
@@ -962,6 +943,8 @@ Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim a_n 
 
 
 ```python
+### reticulate::py_install("sympy")
+# import sympy  
 from sympy import *
 
 import math
