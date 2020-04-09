@@ -1025,8 +1025,7 @@ $$
 $$
 \div
 
-## Ejemplo 2 de aplicación del criterio del sandwich
-
+## Ejemplo 2 de aplicación del criterio del sandwich.
 <div class="example"> **Ejemplo**
 
 Calcular el límite: ${\displaystyle \lim_{n \rightarrow \infty} \sum_{k=1}^n \dfrac{1}{ \sqrt {n^2+k}} = \lim_{n \rightarrow \infty} \left(\dfrac{1}{\sqrt{n^2+1}}+ \dfrac{1}{\sqrt{n^2+2}}+ \cdots+\dfrac{1}{\sqrt{n^2+n}}\right)}$
@@ -1046,8 +1045,7 @@ $$
 \lim_{n \rightarrow \infty} \sum_{k=1}^n \dfrac{1}{\sqrt{n^2+k}} =1
 $$
 
-
-
+<div>
 
 
 ## El criterio de Stolz
@@ -1164,6 +1162,7 @@ $$
 $$
 Ya que $\lim_{n \rightarrow \infty} \log\left(\dfrac{n}{n-1}\right)^n = \log e =1$.
 
+</div>
 
 ## Criterio de Stolz: Ejemplo 4
 
@@ -1181,7 +1180,7 @@ $$
 \lim_{n \rightarrow \infty} \sqrt[n]{n+2}= e^0=1
 $$
 
-
+</div>
 
 
 ## Aplicaciones del criterio de Stolz
