@@ -13,8 +13,8 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-reticulate::use_python("/opt/anaconda3/bin/python")
-reticulate::py_install("sympy")
+ reticulate::use_python("/opt/anaconda3/bin/python")
+ reticulate::py_install("sympy")
 ```
 
 # Sucesiones
@@ -58,6 +58,48 @@ En general, dado un $\epsilon$, es decir, una precisión, podemos asegurar que, 
 
 </div>
 
+## Ejemplos
+
+<div class="example">
+Para generar los 15 primeros términos de la sucesión anterior en `python` haríamos lo siguiente:
+
+```python
+import math
+def trun_n_d(n,d):
+    s=repr(n).split('.')
+    if (len(s)==1):
+        return int(s[0])
+    return float(s[0]+'.'+s[1][:d])
+x=math.sqrt(2)
+n=15
+for i in range(1,n):
+   print "%.15f" % (trun_n_d(x,i))
+```
+
+</div>
+
+## Ejemplos
+
+<div class="example">
+
+```
+## 1.400000000000000
+## 1.410000000000000
+## 1.414000000000000
+## 1.414200000000000
+## 1.414210000000000
+## 1.414213000000000
+## 1.414213500000000
+## 1.414213560000000
+## 1.414213562000000
+## 1.414213562300000
+## 1.414213562370000
+## 1.414213562373000
+## 1.414213562373000
+## 1.414213562373090
+```
+
+</div>
 
 
 ## Ejemplos 
@@ -75,15 +117,51 @@ aproximan el número $\pi$
 
 </div>
 
-## Ejemplo
+## Ejemplos 
 
 <div class="example">
 
-**Ejemplo 2.** Análogamente, las sucesivas aproximaciones decimales del número $\pi$:
+**Ejemplo 2.** 
+
+Análogamente, las sucesivas aproximaciones decimales del número $\pi$:
 $$
 3,3.1,3.14,3.141,3.1415,3.14159, \ldots
 $$
 aproximan el número $\pi$
+
+De hecho, podemos calcular los 15 primeros términos de la sucesión anterior en `python` con este código:
+
+```python
+x=math.pi
+n=15
+for i in range(1,n):
+   print "%.15f" % (trun_n_d(x,i))
+```
+</div>
+
+## Ejemplos 
+
+<div class="example">
+
+```
+## 3.100000000000000
+## 3.140000000000000
+## 3.141000000000000
+## 3.141500000000000
+## 3.141590000000000
+## 3.141592000000000
+## 3.141592600000000
+## 3.141592650000000
+## 3.141592653000000
+## 3.141592653500000
+## 3.141592653580000
+## 3.141592653589000
+## 3.141592653589700
+## 3.141592653589790
+```
+
+</div>
+
 
 
 
@@ -164,6 +242,20 @@ $$
 1,1,2,3,5,8,13,21,34, \ldots 
 $$
 **Ejemplo 8.** La sucesión, también recurrente, $x_1=c>0$, $x_{n+1}=\dfrac{1}{2} \left(x_n + \dfrac{a}{x_n}\right)$, donde $a$ es un nombre real positivo.
+
+</div>
+
+## Ejemplos de sucesiones
+
+<div class="example"> **Ejemplo**
+La expresión explícita de la sucesión anterior puede verse en el enlace siguiente de `Wolfram Alpha`
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=x%281%29%3Dc+and+x%28n%2B1%29%3D%281%2F2%29*%28x%28n%29%2Ba%2Fx%28n%29%29%2C)
+</l>
+
+<l class="center">
+Para $c=\frac{1}{4}$ y $a=10$, el gráfico de la sucesión definida anteriormente es el siguiente: 
+![](CorreccionsTema2Arnau_files/figure-html/unnamed-chunk-5-1.png)<!-- --> </l>
 
 </div>
 
@@ -605,6 +697,68 @@ $$
 
 </div>
 
+## Cálculo de límites (3)
+
+<div class="example"> 
+Los límites anteriores se resolverían en `python` de la forma siguiente:
+
+```python
+from sympy import *
+from sympy.abc import n
+limit_seq((3*n**4-4*n**3-5) / (2*n**5+5*n**3-2*n),n)
+```
+
+```
+## 0
+```
+
+```python
+limit_seq((2*n**3+4*n+1) / (3*n**3+2*n**2),n)
+```
+
+```
+## 2/3
+```
+
+</div>
+
+
+## Cálculo de límites (3)
+
+<div class="example"> 
+
+```python
+limit_seq((3*n**5+4*n**4+2*n) / (7*n**4+2*n**3+n**2+5*n),n)
+```
+
+```
+## oo
+```
+
+```python
+limit_seq(((3.*n**2.-1.)**0.5-n**0.5)/(n+1.),n)
+```
+
+```
+## 1.73205080756888
+```
+</div>
+
+
+## Cálculo de límites (3)
+
+<div class="example"> 
+Los límites anteriores en `Wolfram Alpha` se pueden ver en los enlaces siguientes:
+
+* $\lim \dfrac{3n^4-4n^3-5}{2n^5+5n^3-2n} = 0$: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit+of+%283+n%5E4-4+n%5E3-5%29%2F%282+n%5E5%2B5+n%5E3-2+n%29%2C+when+n+tends+to+infinity)
+
+* $\lim \dfrac{2n^3+4n+1}{3n^3+2n^2}= \dfrac{2}{3}$: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit+of+%282+n%5E3%2B+4n+%2B1%29%2F%283+n%5E3%2B2+n%5E2%29%2C+when+n+tends+to+infinity)
+
+* $\lim \dfrac{3n^5+4n^4+2n}{7n^4+2n^3+n^2+5n}= \infty$: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit+of+%283n%5E5%2B4+n%5E4%2B+2n%29%2F%287+n%5E4%2B2n%5E3%2Bn%5E2%2B5n%29%2C+when+n+tends+to+infinity)
+
+* $\lim \dfrac{\sqrt{3n^2-1}-\sqrt{n}}{n+1}= \sqrt{3}$: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit+of+%28Sqrt%5B3+n%5E2-1%5D-Sqrt%5Bn%5D%29%2F%28n%2B1%29%2C+when+n+tends+to+infinity)
+</div>
+
 ## Cálculo de límites (4)
 
 <l class="prop"> Indeterminaciones del tipo $\infty -\infty$
@@ -618,6 +772,23 @@ En estos casos es conveniente multiplicar y dividir por el conjugado de la expre
 $= \lim \dfrac{(\sqrt{n^2-n+4}-\sqrt{n^2+2})(\sqrt{n^2-n+4}+\sqrt{n^2+2})}{\sqrt{n^2-n+4}+\sqrt{n^2+2}}$
 
 $= \lim \dfrac{n^2-n+4-n^2-2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = \lim \dfrac{-n+2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = -\dfrac{1}{2}$
+
+</div>
+
+## Cálculo de límites (4)
+
+<div class="example"> 
+El límite anterior se resolvería en `python` de la forma siguiente:
+
+```python
+limit_seq(((n**2-n+4.)**(0.5))-((n**2+2.)**(0.5)),n)
+```
+
+```
+## -oo
+```
+
+y el límite resuelto en `Wolfram Alpha` se puede ver en el enlace siguiente: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit+of+Sqrt%5Bn%5E2-n%2B4%5D-Sqrt%5Bn%5E2%2B2%5D+when+n+tends+to+infinity)
 
 </div>
 
@@ -965,9 +1136,6 @@ ax.plot(range(26), a)
 ## Sucesiones recurrentes (8)
 
 ```{python, echo = TRUE, eval = FALSE }
-### reticulate::py_install("sympy")
-# import sympy  
-from sympy import *
 
 import math
 import matplotlib.pyplot as plt
@@ -1040,6 +1208,13 @@ por consiguiente:
 $$
 \dfrac{n}{\sqrt{n^2+n}} \leq \sum_{k=1}^n \dfrac{1}{\sqrt{n^2+k}} \leq \dfrac{n}{\sqrt{n^2+1}}
 $$
+
+</div>
+
+## Ejemplo 2 de aplicación del criterio del sandwich.
+
+<div class="example"> **Ejemplo**
+
 Ahora, es fácil comprobar que ${\displaystyle \lim_{n \rightarrow \infty} \dfrac{n}{\sqrt{n^2+n}} =1= \lim_{n \rightarrow \infty} \dfrac{n}{\sqrt{n^2+1}}}$.
 
 Por lo tanto
@@ -1047,8 +1222,12 @@ $$
 \lim_{n \rightarrow \infty} \sum_{k=1}^n \dfrac{1}{\sqrt{n^2+k}} =1
 $$
 
-<div>
 
+El cálculo del límite anterior puede verse en el enlace siguiente de `Wolfram Alpha`
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit%5BSum%5B1%2FSqrt%5Bn%5E2%2Bk%5D%2C%7Bk%2C1%2Cn%7D%5D%2Cn-%3EInfinity%5D)
+</l>
+</div>
 
 ## El criterio de Stolz
 
@@ -1062,7 +1241,12 @@ Entonces existe el $\lim\dfrac{a_n}{b_n}$ y es igual a $l$.
 
 ## El criterio de Stolz (Demostración)
 
- **Contenido muy técnico**
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido muy técnico. </i>
+</div>
+</div>
+
 <div class="dem">**Demostración**
 
 Dado un $\epsilon >0$ existe un $N(\epsilon)$ tal que para todo $n>N(\epsilon)$ es
@@ -1181,7 +1365,11 @@ Por lo que
 $$
 \lim_{n \rightarrow \infty} \sqrt[n]{n+2}= e^0=1
 $$
-
+El cálculo del límite anterior puede verse en el enlace siguiente de `Wolfram Alpha`
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit%28n%2B2%29%5E%281%2Fn%29%2Cn-%3EInfinity%5D)
+</l>
+</div>
 </div>
 
 
@@ -1231,6 +1419,11 @@ Dado que $\log (n!) = \log (1\cdot 2\cdot 3\cdots n)= \log (1)+ \log (2) + \log(
 $$
 \lim_{n \rightarrow \infty} \dfrac{\log (n!)}{n} =  \lim_{n \rightarrow \infty} \log (n) = + \infty
 $$
+El cálculo del límite anterior puede verse en el enlace siguiente de `Wolfram Alpha`
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit%5BLog%5Bn%21%5D%2Fn%2Cn-%3EInfinity%5D)
+</l>
+
 
 </div>
 
@@ -1247,6 +1440,11 @@ Es suficiente observar que $\dfrac{2}{n}+\dfrac{3}{2n}+ \cdots \dfrac{n+1}{n^2}=
 $$
 \lim_{n \rightarrow \infty} \left(\dfrac{2}{n}+\dfrac{3}{2n}+ \cdots \dfrac{n+1}{n^2} \right) = \lim \sum_{k=2}^{n+1} \dfrac{k}{(k-1)n} = \lim_{n \rightarrow \infty} \dfrac{n+1}{n} = 1.
 $$
+El cálculo del límite anterior puede verse en el enlace siguiente de `Wolfram Alpha`
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit%5BSum%5Bk%2F%28%28k-1%29+n%29%2C%7Bk%2C2%2Cn%2B1%7D%5D%2Cn-%3EInfinity%5D)
+</l>
+
 </div>
 
 
@@ -1282,6 +1480,11 @@ La sucesión dada es la sucesión de medias geométricas de la sucesión $a_n = 
 $$
 \lim_{n \rightarrow \infty} \sqrt[n]{\dfrac{3}{2} \cdot \dfrac{6}{8} \cdots \dfrac{n^2+2}{2n^2}} = \lim_{n \rightarrow \infty} \dfrac{n^2+2}{2n^2} = \dfrac{1}{2}
 $$
+El cálculo del límite anterior puede verse en el enlace siguiente de `Wolfram Alpha`
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit%5B%28Product%5B%28i%5E2%2B2%29%2F%282+i%5E2%29%2C%7Bi%2C1%2Cn%7D%5D%29%5E%281%2Fn%29%2Cn-%3EInfinity%5D)
+</l>
+
 </div>
 
 
@@ -1301,6 +1504,10 @@ $$
 \lim_{n \rightarrow \infty} \sqrt[n]{\dfrac{(3+1)(3+2) \cdots (3+n)}{n!}} = \lim_{n \rightarrow \infty} \dfrac{n+3}{n} = 1
 $$
 
+El cálculo del límite anterior puede verse en el enlace siguiente de `Wolfram Alpha`
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit%5B%28Product%5B%28i%2B3%29%2C%7Bi%2C1%2Cn%7D%5D%2Fn%21%29%5E%281%2Fn%29%2Cn-%3EInfinity%5D)
+</l>
 
 </div>
 
@@ -1341,6 +1548,10 @@ $$
 
 Puesto que $\lim_{n \rightarrow \infty} \left(\dfrac{b}{a} \right)^n =0$, al ser $a >b$.
 
+El cálculo del límite anterior para $a=2$ y $b=5$ puede verse en el enlace siguiente de `Wolfram Alpha`
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit%5B%282%5En%2B5%5En%29%5E%281%2Fn%29%2Cn-%3EInfinity%5D)
+</l>
 </div>
 
 ## Ejemplos
@@ -1355,6 +1566,10 @@ $$
 \lim \dfrac{\sqrt[n]{n!}}{n}=\lim \dfrac{a_{n+1}}{a_n} = \lim \dfrac{(n+1)! \cdot n^n}{(n+1)^{n+1} \cdot n!} = \lim  \left(\dfrac{n}{n+1}\right)^n = \dfrac{1}{e}
 $$
 
+El cálculo del límite anterior puede verse en el enlace siguiente de `Wolfram Alpha`
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit%5B%28n%21%29%5E%281%2Fn%29%2Fn%2Cn-%3EInfinity%5D)
+</l>
 
 </div>
 
