@@ -23,11 +23,25 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Como hemos visto, el conjunto de los números reales incluye todos los números racionales, es decir, todos los números que tengan un número finito de cifras en su desarrollo decimal. De hecho, también incluye algunos con un número infinito de cifras decimales como seria el caso de los decimales periódicos.
 
+<div class="center">
+Ejemplo de decimal periódico: [![Ejemplo de decimal periódico](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=6%2F7+with+48+decimals)
+</div>
+
 Por consiguiente, los números reales que no son racionales, es decir los números **irracionales** tienen una cantidad infinita de cifras en su desarrollo decimal, tal seria el caso de, por ejemplo, $\sqrt{2}$, $\pi$ o $e$.  
+
+<div class="center">
+Ejemplos de números irracionales: [![Ejemplo de irracional](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=%E2%88%9A2+with+48+decimals)[![Ejemplo de irracional](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=%CF%80+with+48+decimals)
+</div>
+
+
+
+## Introducción
 
 Siendo así, ¿cómo podemos utilizar estos números con infinitas cifras decimales? La respuesta viene de la mano del concepto de **sucesión** y de **límite**. 
 
 Cómo hemos demostrado, dado un número irracional y una precisión, siempre es posible determinar un racional que diste del irracional dado menos que dicha precisión, es decir, si $r \in \mathbb{R} \setminus \mathbb{Q}$, para todo $\epsilon >0$, existe $q \in \mathbb{Q}$ tal que $|r-q|< \epsilon$  Es lo que hacemos cuando tomamos $\pi$ como $3.14$ o $3.1415$, $\ldots$
+
+En lo que sigue, veremos cómo podemos tratar con los números irracionales a partir de sus aproximaciones racionales.
 
 ## Ejemplos
 
@@ -175,7 +189,7 @@ d) Tampoco lo es $\{1,2,3, \ldots, 234501\}$ respecto de la sucesión  $\{n\}_{n
 
 ## Introducción
 
-Hemos visto que dado un número irracional, siempre podemos encontrar un racional tan cerca como se quiera, es decir que fijada una precisión con la que se necesite representar el irracional, es posible determinar un racional que lo represente con dicha precisión, es decir, si $r$ es el irracional, $q$ el racional y $\epsilon$ la precisión, entonces $|r-q| < \epsilon$. Por otra parte, una precisión menor incluye todos los racionales de mayor precisión. 
+Hemos visto que dado un número irracional, siempre podemos encontrar un racional tan cerca como se quiera, es decir que fijada una precisión con la que se necesite representar el irracional, es posible determinar un racional que lo represente con dicha precisión, es decir, si $r$ es el irracional, $q$ el racional y $\epsilon$ la precisión, entonces $|r-q| < \epsilon$. Por otra parte, una precisión menor, es decir para un $\epsilon$ más grande, incluye todos los racionales de precisión mayor, es decirlos que corresponden a un $\epsilon$ menor.
 
 Esta es la idea queda formalizada con la noción de límite, que exponemos a continuación.
 
@@ -221,7 +235,7 @@ Ahora, como sabemos que dado un $\epsilon > 0$  existe $n_0 \in \mathbb{N}$ tal 
 
 1. De una sucesión con límite diremos que es <l class="important">**convergente**</l>
 
-1. Hay que tener en cuenta que  $\epsilon$  determina el lugar a partir del cual los términos de la sucesión satisfacen  $|a_n - a|<\epsilon$.  Un **cambio en  $\epsilon$** sólo cambia el lugar a partir del cual se satisface la desigualdad. Por eso no debe sorprender si alguna vez aparece un  **$\epsilon$  multiplicado o dividido por una constante**. La única restricción es que la expresión resultante en función de  $\epsilon$  pueda hacerse tan pequeña como se desee, es decir que una expresión del tipo $\epsilon +K$  no sirve.
+1. Hay que tener en cuenta que $\epsilon$  determina el lugar a partir del cual los términos de la sucesión satisfacen  $|a_n - a|<\epsilon$.  Un **cambio en  $\epsilon$** sólo cambia el lugar a partir del cual se satisface la desigualdad. Por eso no debe sorprender si alguna vez aparece un  **$\epsilon$  multiplicado o dividido por una constante**. La única restricción es que la expresión resultante en función de  $\epsilon$  pueda hacerse tan pequeña como se desee, es decir que una expresión del tipo $\epsilon +K$  no sirve.
 
 2. La **existencia o no del límite** de una sucesión no depende de los primeros términos de la misma, es decir sólo depende del **comportamiento final** de los términos de la sucesión. Es decir, si se remplaza qualquier número finito de términos de una sucesión, la sucesión resultante seguirá teniendo límite o no, según lo tuviera o no la sucesión original.
 
@@ -312,35 +326,66 @@ Si $a_n \rightarrow a$ y $b_n \rightarrow b$, entonces
   d) Si $a_n \leq b_n$, entonces $a \leq b$.
 
 
-## Límites y operaciones (2).
+## Límites y operaciones (2)
+
+Para demostrar la proposición anterior, será útil el lema siguiente:
+
+<l class="prop"> **Lema**
+
+Si $\lim a_n =0$ i $b_n$ está acotada, entonces $\lim a_nb_n =0$.
+
+<div class="dem"> **Demostración**
+
+Por ser $b_n$ acotada, existe $K>0$ y $n_1$ tal que, para todo $n>n_1$ es $|b_n|>K$.
+
+Por ser $\lim a_n =0$, para todo $\epsilon >0$ existe $n_2$ tal que para todo $n>n_2$ es $|a_n|<\dfrac{\epsilon}{K}$.
+
+Sea $n_0 = \max\{n_1, n_2\}$, tendremos que, para todo $n > n_0$ es
+$$
+|a_nb_n|=|a_n||b_n| < \dfrac{\epsilon}{K} K = \epsilon
+$$
+por lo tanto, $\lim a_nb_n =0$
+
+</div>
+
+## Límites y operaciones (3).
 
 <div class="dem">
 
 **Demostración**
 
-  a) Dado un $\epsilon >0$, existen $n_1,n_2 \in \mathbb{N}$, tales que $|a_1 -a|< \dfrac{\epsilon}{2}$ si $n>n_1$ y $|b_n -b|< \dfrac{\epsilon}{2}$ si $n>n_2$. Entonces, si $n \geq \max\{n_1,n_2\}$, tendremos que: 
+P1. $\lim (a_n +b_n) = \lim a_n + \lim b_n$. 
+  
+  Dado un $\epsilon >0$, existen $n_1,n_2 \in \mathbb{N}$, tales que $|a_1 -a|< \dfrac{\epsilon}{2}$ si $n>n_1$ y $|b_n -b|< \dfrac{\epsilon}{2}$ si $n>n_2$. Entonces, si $n \geq \max\{n_1,n_2\}$, tendremos que: 
 $$|(a_n + b_n) - (a+b)| = |(a_n -a)+(b_n-b)| \leq |a_n -a|+|b_n - b| < \dfrac{\epsilon}{2}+ \dfrac{\epsilon}{2} = \epsilon 
 $$
 
-  b) En primer lugar, si uno de los dos límites es $0$ entonces el producto también tiene límite $0$, puesto que, por ser $\{a_n\}$ convergente, está acotada, es decir, existe un $K>0$  tal que $|a_n| <K$ para todo $n$ a partir de un cierto $n_1$. Puesto que $\lim b_n =b=0$, tenemos que, para cada, $\epsilon  >0$ existe $n_2$ tal que, para todo $n>n_2$ es $|b_n|<\dfrac{\epsilon}{K}$. Por lo tanto $|a_nb_n - a\cdot0|=|a_n||b_n|<K\dfrac{\epsilon}{K}=\epsilon$.
+P2. $\lim (a_n b_n) = \lim a_n \lim b_n$.
+  
+  En primer lugar, si uno de los dos límites es $0$ entonces el producto también tiene límite $0$, puesto que, por ser las dos sucesiones convergentes, estan acotadas, y de acuerdo con el lema el producto tendrá límite $0$.
+  
+Supongamos, pues que los dos límites son diferentes de $0$
   
 </div>
 
-## Límites y operaciones (3)
+## Límites y operaciones (4)
 
 <div class="dem">
 
 **Demostración**
 
-Si $b\neq 0$, por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, está acotada, es decir, existen $K>0$ i $n_1 \in \mathbb{N}$ tal que $|a_n| < K$, para todo $n>n_1$.
+P2. (continuación) Por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, está acotada, es decir, existen $K>0$ i $n_1 \in \mathbb{N}$ tal que $|a_n| < K$, para todo $n>n_1$.
 Sea $M= \max\{|a|, K \}$.
-Por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, existe $n_2  \in \mathbb{N}$
+Por ser $\lim a_n = a$ convergente, existe $n_2  \in \mathbb{N}$
 tal que $|a_n-a|< \dfrac{\epsilon}{2K}$ para todo $n>n_2$.
-Por ser $\{b_n \}_{n \in \mathbb{N}}$ convergente, existe $n_3 \in \mathbb{N}$
+Por ser $\lim b_n =b\neq 0$, existe $n_3 \in \mathbb{N}$
 tal que $|b_n-b|< \dfrac{\epsilon}{2|b|}$ para todo $n>n_3$.
 
-Ahora, si $n \geq \max \{n_1,n_2,n_3\}$, será $|a_nb_n -ab| = |a_nb_n +a_nb -a_nb-ab| =|a_n(b_n-b) + b(a_n-a)|$
+Ahora, si $n \geq \max \{n_1,n_2,n_3\}$, será 
 
+$$
+|a_nb_n -ab| = |a_nb_n +a_nb -a_nb-ab| =|a_n(b_n-b) + b(a_n-a)|
+$$
 $$
 \leq |a_n||b_n-b| + |b||a_n-a| \leq K\dfrac{\epsilon}{2K} + |b|\dfrac{\epsilon}{2|b|} = \epsilon
 $$
@@ -349,33 +394,35 @@ que es lo que se quería demostrar.
 </div>
 
 
-## Límites y operaciones (4).
+## Límites y operaciones (5).
 
 <div class="dem">
 
 **Demostración**
   
-  c) Hemos demostrado, en el apartado anterior que si $\lim a_n = 0$ y $b_n$ está acotada, entonces $\lim a_nb_n=0$.
-  Veamos, ahora, que si $\lim {a_n} =a \neq 0$, entonces $\dfrac{1}{a_n}$ está acotada, en particular, existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$,  $\dfrac{1}{|a_n|} < \dfrac{2}{|a|}$: Dado que $\epsilon=\dfrac{|a|}{2} >0$, existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$, es $|a|-|a_n| \leq |a-a_n| < \dfrac{|a|}{2}$, de donde $-|a_n| < -|a|+ \dfrac{|a|}{2} = -  \dfrac{|a|}{2}$, es decir que $|a_n|> \dfrac{|a|}{2}$, para todo $n > n_1$. Por lo tanto es $\dfrac{1}{|a_n|}< \dfrac{2}{|a|}$, para todo $n >n_1$. Ahora
+  P3.  Veamos, en primer lugar, que si $\lim {a_n} =a \neq 0$, entonces $\dfrac{1}{a_n}$ está acotada, en particular, existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$,  $\dfrac{1}{|a_n|} < \dfrac{2}{|a|}$: Dado que $\epsilon=\dfrac{|a|}{2} >0$, existe $n_1 \in \mathbb{N}$ tal que para todo $n >n_1$, es $|a|-|a_n| \leq |a-a_n| < \dfrac{|a|}{2}$, de donde $-|a_n| < -|a|+ \dfrac{|a|}{2} = -  \dfrac{|a|}{2}$, es decir que $|a_n|> \dfrac{|a|}{2}$, para todo $n > n_1$. Por lo tanto es $\dfrac{1}{|a_n|}< \dfrac{2}{|a|}$, para todo $n >n_1$. 
+  
+Ahora
 $$
 \displaystyle{\dfrac{1}{a}-\dfrac{1}{a_n}} = \displaystyle{\dfrac{a_n -a}{aa_n}}= \dfrac{1}{aa_n}(a_n -a)
 $$
-Tenemos, pues, el producto de una sucesión acotada por una que tiene límite $0$, puesto que $\lim(a_n-a)=0$, es decir que $\lim \left(\dfrac{1}{a_n} - \dfrac{1}{a}\right)=0$, en definitiva: $\lim \dfrac{1}{a_n} = \dfrac{1}{a}$
+Tenemos, pues, el producto de una sucesión acotada por una que tiene límite $0$, puesto que $\lim(a_n-a)=0$ y, por lo tanto, $\lim \left(\dfrac{1}{a_n} - \dfrac{1}{a}\right)=0$, en definitiva: $\lim \dfrac{1}{a_n} = \dfrac{1}{a}$
 
 Finalmente $\lim \dfrac{b_n}{a_n} =\lim( b_n) \left( \dfrac{1}{a_n}\right) = \lim b_n \lim \dfrac{1}{a_n}= \dfrac{b}{a}$
 </div>
 
-## Límites y operaciones (5).
+## Límites y operaciones (6).
 
 <div class="dem">
 
-  d) En primer lugar, veamos que si $\lim_{n \rightarrow \infty} a_n =a$ y $a_n \geq 0$ para todo $n \in \mathbb{N}$, entonces $a \geq 0$. Supongamos que no, que $a<0$, entonces $\epsilon = -a > 0$, entonces, existe $n_0 \in \mathbb{N}$ tal que $|a_n-a|< \epsilon = -a$ para todo $n \geq n_0$, entonces tendríamos que $a<a_n-a<-a$, lo que signicaría que $a_n < 0$, lo cual contradice la hipótesis, por lo tanto debe ser $a \geq 0$.
+  P4. En primer lugar, veamos que si $\lim_{n \rightarrow \infty} a_n =a$ y $a_n \geq 0$ para todo $n \in \mathbb{N}$, entonces $a \geq 0$. Supongamos que no, que $a<0$, entonces $\epsilon = -a > 0$, entonces, existe $n_0 \in \mathbb{N}$ tal que $|a_n-a|< \epsilon = -a$ para todo $n \geq n_0$, entonces tendríamos que $a<a_n-a<-a$, lo que signicaría que $a_n < 0$, lo cual contradice la hipótesis, por lo tanto debe ser $a \geq 0$.
 
-Ahora, si $a_n \leq b_n$, entonces $b_n - a_n \geq 0$ y, por lo tanto $b-a = \lim (b_n - a_n) \geq 0$
+Ahora, si $a_n \leq b_n$, entonces $b_n - a_n \geq 0$ y, por lo tanto $b-a = \lim (b_n - a_n) = \lim b_n - \lim a_n \geq 0$, y por lo tanto $a = \lim a_n \leq \lim b_n =b$.
+
 
 </div>
 
-## Límites y operaciones (6)
+## Límites y operaciones (7)
 
 <l class="prop">**Proposición**</l>
 
@@ -394,7 +441,7 @@ $$
 </div>
 
 
-## Límites y operaciones (7)
+## Límites y operaciones (8)
 
 <l class="prop">**Proposición**</l>
 
@@ -892,7 +939,7 @@ dado que la otra solución de la ecuación de segundo grado resultante es mayor 
 <div class="example"> 
 Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim a_n = \frac{3-\sqrt{5}}{2}$. El gràfico siguiente muestra los $25$ primeros términos de esta sucesión y lo rápida que es la convergencia.
 
-```{python, echo = FALSE}
+# ```{python, echo = FALSE}
 from sympy import * 
 
 import math  
