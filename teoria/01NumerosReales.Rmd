@@ -1000,7 +1000,7 @@ $$
 $$\int_0^1 x\ dx `r 2+2`$$
 
 
-```{python, echo = FALSE, eval= FALSE}
+```{python, echo = FALSE}
 ### reticulate::py_install("sympy")
 # import sympy  
 from sympy import * 
