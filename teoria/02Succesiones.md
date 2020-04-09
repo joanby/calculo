@@ -40,6 +40,25 @@ En general, dado un $\epsilon$, es decir, una precisión, podemos asegurar que, 
 
 </div>
 
+
+
+## Ejemplos 
+
+<div class="example">
+
+**Ejemplo 2.** 
+
+Análogamente, las sucesivas aproximaciones decimales del número $\pi$:
+$$
+3,3.1,3.14,3.141,3.1415,3.14159, \ldots
+$$
+aproximan el número $\pi$
+
+
+</div>
+
+## Ejemplo
+
 <div class="example">
 
 **Ejemplo 2.** Análogamente, las sucesivas aproximaciones decimales del número $\pi$:
