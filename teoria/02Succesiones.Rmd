@@ -1427,7 +1427,7 @@ El cálculo del límite anterior puede verse en el enlace siguiente de `Wolfram 
 
 </div>
 
-## Criterio de media aritmética: Ejemplos 
+## Criterio de media aritmética: Ejemplos
 
 <div class="example"> **Ejemplo 3**
 
