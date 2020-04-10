@@ -31,11 +31,24 @@ Los números reales, $\mathbb{R}$, proporcionan la base para expresar los result
 
 Los números naturales $\mathbb{N} =  \{1,2,3, \ldots ,n, \ldots \}$
 
-Suma de números naturales: propiedades conmutativa y asociativa
+**Suma de números naturales:** 
 
-Producto de números naturales: elemento neutro, $1$, propiedades conmutativa y asociativa.
+PC. Propiedad conmutativa: $m+n =n+m$, para todo $m,n \in \mathbb{N}$
 
-Distributiva del producto respecto de la suma.
+PA. Propiedad asociativa: $m+(n+p) = (m+n)+p$, para todo $m,n,p \in \mathbb{N}$
+
+## Números y medida: El conjunto $\mathbb{N}$ de los números naturales
+
+**Producto de números naturales:**
+
+EN. Elemento neutro, $1$:  $n \times 1 = 1 \times n =n$, para todo $n \in \mathbb{N}$.
+
+PC. Propiedad conmutativa: $n \times m = m \times n$, para todo $m,n \in \mathbb{N}$.
+
+PA. Propiedad asociativa: $n\times (m \times p) = (n \times m)\times p$, para todo $m,n,p \in \mathbb{N}$
+
+PD. Propiedad distributiva del producto respecto de la suma: $m \times (n+p) = m\times n +m\times p$, para todo $m,n,p \in \mathbb{N}$.
+
 
 ## El conjunto $\mathbb{N}$ de los números naturales.
 
@@ -67,11 +80,28 @@ Supongamos que es cierto para $n=k-1$, es decir que $2^{k-2} \leq (k-1)!$, enton
 
 Los números enteros $\mathbb{Z} = \{ \ldots ,-n, \ldots -3,-2,-1,0,1,2,3, \ldots , n \ldots\}$
 
-Suma: elemento neutro, $0$, elemento simétrico, propiedades conmutativa y asociativa.
+**Suma:**
 
-Producto: elemento neutro, $1$, propiedades conmutativa y asociativa.
+EN. Elemento neutro, $0$: $a+0=0+a=a$, para todo $a \in $\mathbb{Z}$
 
-Distributiva del producto respecto de la suma.
+ES. Elemento simétrico, $-a$: $a +(-a) = -a+a = 0$, $a \in $\mathbb{Z}$.
+
+PC. Propiedad conmutativa:  $a+b =b+a$, para todo $a,b \in \mathbb{Z}$
+
+PA. Propiedad asociativa: $a+(b+c) = (a+b)+c$, para todo $a,b,c \in \mathbb{Z}$
+
+
+## Números y medida: El conjunto $\mathbb{Z}$ de los números enteros
+
+**Producto:**
+
+EN. Elemento neutro, $1$:  $a \times 1 = 1 \times a =a$, para todo $a \in \mathbb{Z}$.
+
+PC. Propiedad conmutativa $a \times b = b \times a$, para todo $a,b \in \mathbb{Z}$.
+
+PA. Propiedada asociativa: $a\times (b \times c) = a \times b)\times c$, para todo $a,b,c \in \mathbb{Z}$
+
+PD. Distributiva del producto respecto de la suma: $a \times (b+c) = a\times b +a \times c$, para todo $a,b,c \in \mathbb{Z}$.
 
 ## El conjunto $\mathbb{Z}$ de los números enteros
 
@@ -84,7 +114,7 @@ a=bq+r
 $$
 $q$: cociente, $r$: resto
 
-Si $r=0$, entonces decimos que $a$ es un **múltiplo** de $b$ y tambien que $b$ es un divisor de $a$
+Si $r=0$, entonces decimos que $a$ es un **múltiplo** de $b$ y tambien que $b$ es un **divisor** de $a$
 
 Si $r>0$  entonces $a$ y $b$ son **primos** entre si.
 
@@ -93,9 +123,31 @@ Si $r>0$  entonces $a$ y $b$ son **primos** entre si.
 
 Los números racionales: $\mathbb{Q} = \left\{ \dfrac{p}{q}: p,q \in \mathbb{Z}, q \neq 0 \right\}$
 
-Suma: elemento neutro, $0$, elemento simétrico, propiedades conmutativa y asociativa.
 
-Producto: elemento neutro, $1$, elemento simétrico (para todo número diferente de $0$), propiedades conmutativa y asociativa.
+**Suma:**
+
+EN. Elemento neutro, $0$: $p+0=0+p=p$, para todo $p \in $\mathbb{Q}$
+
+ES. Elemento simétrico, $-p$: $p +(-p) = -p+p = 0$, $p \in $\mathbb{Q}$.
+
+PC. Propiedad conmutativa:  $p+q =q+p$, para todo $p,q \in \mathbb{Q}$
+
+PA. Propiedad asociativa: $p+(q+r) = (p+q)+r$, para todo $p,q,r \in \mathbb{Q}$
+
+
+## Números y medida: El conjunto $\mathbb{Q}$ de los números racionales
+
+**Producto:**
+
+EN. Elemento neutro, $1$:  $p \cdot 1 = 1 \cdot p =p$, para todo $p \in \mathbb{Q}$.
+
+ES. Elemento simétrico, $\dfrac{1}{p}$. $p \cdot \dfrac{1}{p} = \dfrac{1}{p} \cdot p =1$, para todo $p \in Q$, $p \neq 0$
+
+PC. Propiedad conmutativa $p \cdot q = q \cdot p$, para todo $p,q \in \mathbb{Q}$.
+
+PA. Propiedada asociativa: $p\cdot (q \cdot r) = p \cdot q)\cdot r$, para todo $p,q,r \in \mathbb{Q}$
+
+PD. Distributiva del producto respecto de la suma: $p \cdot (q+r) = p \cdot q + p \cdot r$, para todo $p,q,r \in \mathbb{Q}$.
 
 
 ## El conjunto $\mathbb{Q}$ de los números racionales
@@ -103,16 +155,17 @@ Producto: elemento neutro, $1$, elemento simétrico (para todo número diferente
 
 Orden: El conjunto de los racionales está ordenado de la forma
 $$
-\dfrac{a}{b} \leq \dfrac{c}{d} \quad \text{ si } \quad  ad \leq bc
+\dfrac{p}{q} \leq \dfrac{r}{s} \quad \text{ si } \quad  p\cdot  s \leq p \cdot r
 $$
 
-Se trata de un orden denso: Dados dos números racionales tales que $\dfrac{a}{b} < \dfrac{c}{d}$, entonces existen números racionales $\dfrac{p}{q}$ tales que 
+Se trata de un orden denso: Dados dos números racionales tales que $\dfrac{p}{q} < \dfrac{r}{s}$, entonces existen números racionales $\dfrac{m}{n}$ tales que 
 
 $$
-\dfrac{a}{b} < \dfrac{p}{q} < \dfrac{c}{d}
+\dfrac{p}{q} < \dfrac{m}{n} < \dfrac{r}{s}
 $$
 
-Es suficiente considerar $p=a+c$ y $q=b+d$.
+Es suficiente considerar $m=p+r$ y $n=q+s$.
+
 
 ## El conjunto $\mathbb{Q}$ de los números racionales
 
@@ -121,6 +174,11 @@ Los números racionales no son suficientes puesto que hay medidas cuyo resultado
 * La longitud de la diagonal de un cuadrado con el lado como unidad ($\sqrt{2}$)
 * La longitud de una circunferencia tomando el diámetro como unidad ($\pi$)
 
+<div class="center">
+```{r, echo=FALSE, label=irr,fig.cap="",out.width = "600px"}
+knitr::include_graphics("Images/sqrt2pi.png",dpi=1200)
+```
+</div>
 
 ## La raiz cuadrada de 2 no es un número racional, $\sqrt{2} \notin \mathbb{Q}$
 
