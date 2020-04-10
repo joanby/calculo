@@ -3666,13 +3666,15 @@ x \in [a-\epsilon,a+\epsilon]
 <p><strong>Ejemplos</strong>.</p>
 
 <ol>
-<li><p>\(1\) es una cota inferior del conjunto de los números naturales.</p></li>
-<li><p>El conjunto \(A =\{q \in \mathbb{Q}\) tal que \(q^2 \leq 2 \}\) está acotado superiormente.</p></li>
-</ol>
+<li><p>\(1\) es una cota inferior del conjunto de los números naturales. Veremos más adelante que este conjunto no está acotado superiormente en \(\mathbb{R}\).</p></li>
+<li><p>El conjunto \(A =\{q \in \mathbb{Q}\) tal que \(q^2 \leq 2 \}\) está acotado superiormente. Tambien lo está inferiormente.</p></li>
+<li><p>El conjunto \(\{ y \mathbb{R}: y=x^2+3\}\) esta acotado inferiormente por \(3\). No lo está superiormente.</p></li>
+</ol></div>
 
-<p>Tambien lo está inferiormente.</p>
+<div class="observ">
+<p><strong>Observación</strong></p>
 
-<p>Obsérvese que la existencia de una cota superior supone la existencia de infinitas cotas, puesto que cualquier número mayor también será una cota superior. Análogamente para las cotas inferiores.</p></div>
+<p>La existencia de una cota superior supone la existencia de infinitas cotas, puesto que cualquier número mayor que una cota superior también será una cota superior. Análogamente para las cotas inferiores: cualquier número menor que una cota inferior es también una cota inferior.</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Supremos e ínfimos</h2></hgroup><article  id="supremos-e-ínfimos">
 
@@ -3778,7 +3780,6 @@ Todo subconjunto de \(\mathbb{R}\) acotado inferiormente tiene ínfimo.</div></d
 </article></slide><slide class=""><hgroup><h2>Consecuencias del axioma del supremo: Demostración.</h2></hgroup><article  id="consecuencias-del-axioma-del-supremo-demostración.">
 
 <div class="dem">
-
 <p><strong>Demostración:</strong></p>
 
 <ul>
@@ -3789,7 +3790,7 @@ Todo subconjunto de \(\mathbb{R}\) acotado inferiormente tiene ínfimo.</div></d
 
 <p>\[
 n-1 \leq z &lt; n
-\]</p>
+\]</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Consecuencias del Ax. del supremo: \(\sqrt{2} \in \mathbb{R}\).</h2></hgroup><article  id="consecuencias-del-ax.-del-supremo-sqrt2-in-mathbbr.">
 
@@ -3808,7 +3809,7 @@ n-1 \leq z &lt; n
 \epsilon &lt; \dfrac{2-p^2}{2p+\epsilon}
 \]</p>
 
-<p>Consideremos ahora \(\epsilon = \min \left\{1,\dfrac{2-p^2}{2p+1} \right\}\), entonces es \((p+\epsilon)^2 &lt; 2\), es decir \((p+\epsilon) \in M\) y como \(\epsilon &gt;0\), esto contradice que \(p= \sup M\).</p></div>
+<p>Consideremos ahora \(\epsilon = \min \left\{1,\dfrac{2-p^2}{2p+1} \right\}\), entonces tenemos que \(\epsilon &lt; \dfrac{2-p^2}{2p+1} &lt; \dfrac{2-p^2}{2p+\epsilon}\), por lo tanto es \((p+\epsilon)^2 &lt; 2\), es decir \((p+\epsilon) \in M\) y como \(\epsilon &gt;0\), esto contradice que \(p= \sup M\).</p></div>
 
 </article></slide><slide class=""><hgroup><h2>\(\sqrt{2} \in \mathbb{R}\) (Continuación)</h2></hgroup><article  id="sqrt2-in-mathbbr-continuación">
 
@@ -3817,7 +3818,7 @@ n-1 \leq z &lt; n
 
 <p>Supongamos ahora que \(p^2&gt;2\). Veremos que existe \(\epsilon &gt;0\) tal que \((p-\epsilon)^2 &gt;2\), por lo que \(p\) tampoco podrá ser el supremo de \(M\). Ahora, si \((p-\epsilon)^2 &gt;2\), debe ser \(p^2-2p\epsilon+\epsilon^2&gt;2\), es decir, \(p^2-2 &gt; \epsilon(2p -\epsilon)\), es decir \[
 \epsilon &lt; \dfrac{p^2-2}{2p-\epsilon}
-\] Si ahora consideramos \(\epsilon = \frac{p^2 -2}{2p}\), está claro que para este \(\epsilon &gt;0\) es \((p-\epsilon)^2 &gt;2\), y por lo tanto \(p\) tampoco puede ser el supremo de \(M\) si \(p^2 &gt;2\).</p>
+\] Si ahora consideramos \(\epsilon = \frac{p^2 -2}{2p}\), está claro que para este \(\epsilon &gt;0\) es \(\epsilon = \dfrac{p^2 -2}{2p}&gt; \dfrac{p^2-2}{2p-\epsilon}\), es decir que \((p-\epsilon)^2 &gt;2\), y por lo tanto \(p\) tampoco puede ser el supremo de \(M\) si \(p^2 &gt;2\).</p>
 
 <p>En definitiva, sólo queda la opción que el supremo \(p\) del conjunto \(M\), sea tal que \(p^2=2\), es decir que \(\sqrt{2}\) és un número real.</p></div>
 
@@ -3831,7 +3832,7 @@ n-1 \leq z &lt; n
 
 <p>Este nombre indica que estos números no se pueden expresar como el cociente -la razón- de dos enteros.</p>
 
-<p>Obsérvese que ni la suma ni el producto de dos números irracionales tienen porqué ser números irracionales. (Por ejemplo \(\sqrt{2} \cdot \sqrt{2} = 2\))</p>
+<p>Conviene observar que ni la suma ni el producto de dos números irracionales tienen porqué ser números irracionales. (Por ejemplo \(\sqrt{2} \cdot \sqrt{2} = 2\))</p>
 
 </article></slide><slide class=""><hgroup><h2>Los números irracionales (2)</h2></hgroup><article  id="los-números-irracionales-2">
 
