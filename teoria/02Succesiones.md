@@ -10,6 +10,7 @@ output:
     logo: Images/calculus.gif
     widescreen: yes
 ---
+<script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
 
 
 
@@ -777,11 +778,11 @@ $= \lim \dfrac{n^2-n+4-n^2-2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = \lim \dfrac{-n+2}{\
 El límite anterior se resolvería en `python` de la forma siguiente:
 
 ```python
-limit_seq(((n**2-n+4.)**(0.5))-((n**2+2.)**(0.5)),n)
+limit_seq(((n**2-n+4)**(0.5))-((n**2+2)**(0.5)),n)
 ```
 
 ```
-## -oo
+-0.500000000000000
 ```
 
 y el límite resuelto en `Wolfram Alpha` se puede ver en el enlace siguiente: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit+of+Sqrt%5Bn%5E2-n%2B4%5D-Sqrt%5Bn%5E2%2B2%5D+when+n+tends+to+infinity)
@@ -939,9 +940,9 @@ $$
 
 <div class="dem"> **Demostración** (Continuación)
 
-Ahora, dado que cada $\alpha_n$ es un número natural y que 
+Ahora, dado que cada $\beta_n$ es un número natural y que 
 $$ 
-\left(1 + \dfrac{1}{\alpha_n +1} \right)^{\alpha_n} =\dfrac{\left(1 + \dfrac{1}{\alpha_n +1} \right)^{\alpha_n +1}}{1 + \dfrac{1}{\alpha_n +1} } \quad \text{ y } \left( 1+ \dfrac{1}{\alpha_n} \right)^{\alpha_n +1} = \left( 1+ \dfrac{1}{\alpha_n} \right)^{\alpha_n}\left( 1+ \dfrac{1}{\alpha_n} \right)
+\left(1 + \dfrac{1}{\beta_n +1} \right)^{\beta_n} =\dfrac{\left(1 + \dfrac{1}{\beta_n +1} \right)^{\beta_n +1}}{1 + \dfrac{1}{\beta_n +1} } \quad \text{ y } \left( 1+ \dfrac{1}{\beta_n} \right)^{\beta_n +1} = \left( 1+ \dfrac{1}{\beta_n} \right)^{\beta_n}\left( 1+ \dfrac{1}{\beta_n} \right)
 $$
 resulta que las dos sucesiones son subsucesiones de la sucesión $\left( 1+ \dfrac{1}{n} \right)^{n}$ dividida y multiplicada, respectivamente, por sucesiones que tiene límite $1$ y, por lo tanto, las dos tienen el mismo límite: $e$.
 
@@ -1106,7 +1107,7 @@ dado que la otra solución de la ecuación de segundo grado resultante es mayor 
 <div class="example"> 
 Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim a_n = \frac{3-\sqrt{5}}{2}$. El gràfico siguiente muestra los $25$ primeros términos de esta sucesión y lo rápida que es la convergencia.
 
- ![](02Succesiones_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+ <img src="02Succesiones_files/figure-html/unnamed-chunk-1-1.png" width="720" />
 
 </div>
 
@@ -1251,9 +1252,7 @@ $$
 
 ## Criterio de Stolz. (Demostración)
 
-**Contenido muy técnico**
-
-<div class="dem">**Demostración (continuación)**
+<div class="dem">
 
 Dividimos ahora por $b_{k+1}>0$, y obtenemos
 
