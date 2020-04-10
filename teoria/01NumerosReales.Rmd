@@ -751,17 +751,39 @@ $f: \mathbb{N} \rightarrow \mathbb{N}$ definida por $f(n) = 2n$ es una aplicaci�
 ## Ejemplos de aplicaciones
 
 
-
 <div class="example"> **Ejemplo de aplicación inyectiva**
 
-Sean $n \in \mathbb{N}$ y $N_n$ el conjunto de los $n$ primeros números naturales. La aplicación $f(k)=k$ de $N_n \rightarrow \mathbb{N}$ es inyectiva, pero no exhaustiva, ya que cualquier natural  mayor que $n$ no es  imagen de ningún elemento de $N_n$.
+**Ejemplo 1. **Sean $n \in \mathbb{N}$ y $N_n$ el conjunto de los $n$ primeros números naturales. La aplicación $f(k)=k$ de $N_n \rightarrow \mathbb{N}$ es inyectiva, pero no exhaustiva, ya que cualquier natural  mayor que $n$ no es  imagen de ningún elemento de $N_n$.
+
+**Ejemplo 2.**
 </div>
+
+<div class="center">
+```{r, echo=FALSE, label=iny,fig.cap="",out.width = "500px"}
+knitr::include_graphics("Images/inyectiva.png",dpi=1200)
+```
+</div>
+
+<div class="example"> Es inyectiva porque no hay dos elementos de $\cal{B}$ que sean imagen del mismo elemento de $\cal{A}$. No es exhaustiva porque hay un elemento de $\cal{B}$ que no es imagen de ninguno de $\cal{A}$.
+
+## Ejemplos de aplicaciones
 
 <div class="example"> **Ejemplo de aplicación exhaustiva**
 
 La aplicación $h: \mathbb{Z} \rightarrow \mathbb{N}$, definida por $h(n)=|n|$, es una aplicación exhaustiva, pero no inyectiva, puesto que $h(n)=h(-n)$.
 
+**Otro ejemplo** es el que viene representado por el esquema:
 </div>
+
+<div class="center">
+```{r, echo=FALSE, label=exh,fig.cap="",out.width = "500px"}
+knitr::include_graphics("Images/exhaustiva.png",dpi=1200)
+```
+</div>
+<div class="example"> Se trata de una aplicación exhaustiva porque todos los elementos de $\cal{B}$ son imagen de alguno de $\cal{A}$, pero hay dos pares de elementos de $\cal{A}$ que tienen la misma imagen.
+</div>
+
+## Ejemplos de aplicaciones
 
 <div class="example"> **Ejemplo de aplicación biyectiva**
 
@@ -776,6 +798,11 @@ $$
 es una aplicación biyectiva.
 </div>
 
+<div class="center">
+```{r, echo=FALSE, label=biy,fig.cap="",out.width = "500px"}
+knitr::include_graphics("Images/biyectiva.png",dpi=1200)
+```
+</div>
 
 
 ## Cardinal de un conjunto: Conjuntos infinitos.
@@ -798,7 +825,7 @@ Dos conjuntos $A$ y $B$ tienen el mismo **cardinal** si existe una correspondenc
 
 El conjunto de los números naturales, $\mathbb{N}$, es infinito.
 
-<div class="dem"> *+Demostración**
+<div class="dem"> **Demostración**
 
 Es suficiente demostrar que para todo $m \in \mathbb{N}$ no puede existir una aplicación inyectiva de $\mathbb{N}$ en $N_m$, puesto que, de ser así, no podrá existir una aplicación biyectiva entre esos dos conjuntos y, por lo tanto $\mathbb{N}$ no será un conjunto finito.
 
