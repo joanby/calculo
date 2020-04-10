@@ -1275,6 +1275,12 @@ $$
 
 ## Criterio de Stolz. (Demostración)
 
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido muy técnico. </i>
+</div>
+</div>
+
 <div class="dem">
 
 Dividimos ahora por $b_{k+1}>0$, y obtenemos
