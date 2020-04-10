@@ -66,7 +66,7 @@ entonces $A = \mathbb{N}$.
 
 Todo subconjunto de números naturales no vacío tiene primer elemento.
 
-## Principio de inducción: Ejemplos.
+## Principio de inducción: **Ejemplos**
 
 <div class="example"> **Ejemplos**
 
@@ -296,7 +296,9 @@ Obsérvese que  $a \in P$ es equivalente a decir que $a > 0$. De ahí que a los 
   
   3. Si $a=b$ o $b=c$, el resultado es inmediato. Si los tres son diferentes, entonces si $b-a$ y $c-b$,estan en $P$, su suma $(b-a)+(c-b)=c-a$ también está en $P$, es decir $a \leq c$.
 
-</dem>
+</div>
+
+
 
 ## Más propiedades del orden en los números reales
 
@@ -414,22 +416,31 @@ $$
 
 ## Observación importante  sobre el valor absoluto
 
+<div class="observ"> 
 A menudo usaremos desigualdades del estilo 
+
+</div>
+
 $$
 |x-a|\leq \epsilon
 $$
+<div class="observ"> 
 De acuerdo con la definición de valor absoluto, esta desigualdad equivale a las dos desigualdades
+
+</div>
 $$
 -\epsilon \leq x-a \leq \epsilon
 $$
+<div class="observ"> 
 y también
-
+</div>
 $$
 a-\epsilon \leq x \leq a+ \epsilon
 $$
 
+<div class="observ"> 
 o, lo que es lo mismo,
-
+</div>
 $$
 x \in [a-\epsilon,a+\epsilon]
 $$
@@ -461,7 +472,7 @@ Vecindad o bola son también nombres habituales para los entornos.
   * Un subconjunto $A \subset \mathbb{R}$ está **acotado** si si està acotado superiormente e inferiormente.
   
   
-## Conjuntos acotados: Ejemplos
+## Conjuntos acotados: **Ejemplos**
   
 <div class="example"> **Ejemplos**.
 
@@ -483,7 +494,7 @@ Obsérvese que la existencia de una cota superior  supone la existencia de infin
   
   * El **ínfimo** de un conjunto acotado inferiormente es la mayor de las cotas inferiores de dicho conjunto. Tambien puede pasar que un conjunto acotado inferiormente no tenga ínfimo.
 
-<div class="example">Ejemplos.
+<div class="example"> **Ejemplos**
 
   * El subconjunto  $A$ de $\mathbb{Q}$ definido por $A =\{q \in \mathbb{Q}$ tal que $q^2 \leq 2 \}$, está acotado superiormente, pero, como se ha demostrado no tiene supremo, puesto que este supremo deberia ser $\sqrt{2}$ que no es un número racional.
 </div>
@@ -533,7 +544,7 @@ Si el supremo de un conjunto es un elemento del conjunto, entonces recibe el nom
 
 Análogamente, si el ínfimo de un conjunto es un elemento del conjunto, entoces recibe el nombre de **mínimo**
 
-<div class="example">Ejemplos
+<div class="example"> **Ejemplos**
 
 $2$ es un máximo del conjunto $\{x \in \mathbb{R}: x \leq 2 \}$. 
 
@@ -801,10 +812,28 @@ Hemos visto un ejemplo de una aplicación biyectiva entre los conjuntos $\mathbb
 
 Diremos que un conjunto es **numerable** si tiene el mismo cardinal que $\mathbb{N}$. Diremos que un conjunto es **contable** si es finito o numerable.
 
-<div class="example"> **Ejemplo** 
 
-El conjunto $\mathbb{Z}$ de los números enteros es numerable. También lo es el conjunto de los números naturales pares o el de los múltiplos de otro número natural, $k$.
+
+## Conjuntos contables
+
+<l class="prop"> **Proposición**
+
+Si $A$ es contable y $B \subset A$, entonces $B$ es contable.
+
+<div class="dem"> **Demostración**
+
+La aplicación $i: B \rightarrow A$ que envia cada elemento a si mismo es inyectiva, por lo tanto el cardinal de $B$ es a lo sumo el de $A$.
+
 </div>
+<div class="example"> **Ejemplos** 
+
+1.El conjunto $\mathbb{Z}$ de los números enteros es numerable. 
+
+2. También lo es el conjunto de los números naturales pares y, más en general, el de los múltiplos de un número natural, $k$.
+
+3. Si $A$ es un conjunto numerable y $f:A \rightarrow B$ es una aplicación, entonces $f(A)$ es numerable, puesto que $f(A)$ tiene a lo sumo (caso que f sea inyectiva) tantos elementos como $A$
+</div>
+
 
 ## $\mathbb{Q}$ es numerable
 
@@ -929,7 +958,7 @@ Sean $A$ y $\xi$ un subconjunto y un punto de $\mathbb{R}$ respectivamente. $\xi
 
 Obsérvese que la definición anterior también se puede hacer en términos de los **entornos reducidos** de un punto, es decir del conjunto de puntos del entorno diferentes del centro: Un punto  $\xi$ es de acumulación del conjunto $A$ si en todo entorno reducido del punto $\xi$ hay puntos de $A$ç
 
-## Puntos de acumulación: Ejemplos.
+## Puntos de acumulación: **Ejemplos**
 
 <div class="example"> **Ejemplos**
 

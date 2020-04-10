@@ -3271,7 +3271,7 @@ text-align: center; text-decoration: none;
 
 <p>Todo subconjunto de números naturales no vacío tiene primer elemento.</p>
 
-</article></slide><slide class=""><hgroup><h2>Principio de inducción: Ejemplos.</h2></hgroup><article  id="principio-de-inducción-ejemplos.">
+</article></slide><slide class=""><hgroup><h2>Principio de inducción: <strong>Ejemplos</strong></h2></hgroup><article  id="principio-de-inducción-ejemplos">
 
 <div class="example">
 
@@ -3475,16 +3475,13 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 </ol>
 
 <div class="dem">
-
 <p><strong>Demostración:</strong></p>
 
 <ol>
 <li><p>Obviamente \(a-a=0 \in P \cup \{ 0\}\).</p></li>
 <li><p>Si \(a-b\) y \(b-a\) estan los dos en \(P \cup \{ 0\}\), dado que un número y su simétrico no pueden estar a la vez en \(P\), la única posibilidad que queda es que sean iguales, es decir que \(a-b=b-a=0\).</p></li>
 <li><p>Si \(a=b\) o \(b=c\), el resultado es inmediato. Si los tres son diferentes, entonces si \(b-a\) y \(c-b\),estan en \(P\), su suma \((b-a)+(c-b)=c-a\) también está en \(P\), es decir \(a \leq c\).</p></li>
-</ol>
-
-<p></dem></p>
+</ol></div>
 
 </article></slide><slide class=""><hgroup><h2>Más propiedades del orden en los números reales</h2></hgroup><article  id="más-propiedades-del-orden-en-los-números-reales">
 
@@ -3605,17 +3602,29 @@ P \cup  \{ 0 \} \cup (-P) = \mathbb{R}
 
 </article></slide><slide class=""><hgroup><h2>Observación importante sobre el valor absoluto</h2></hgroup><article  id="observación-importante-sobre-el-valor-absoluto">
 
-<p>A menudo usaremos desigualdades del estilo \[
+<div class="observ">
+<p>A menudo usaremos desigualdades del estilo</p></div>
+
+\[
 |x-a|\leq \epsilon
-\] De acuerdo con la definición de valor absoluto, esta desigualdad equivale a las dos desigualdades \[
+\]
+
+<div class="observ">
+<p>De acuerdo con la definición de valor absoluto, esta desigualdad equivale a las dos desigualdades</p></div>
+
+\[
 -\epsilon \leq x-a \leq \epsilon
-\] y también</p>
+\]
+
+<div class="observ">
+<p>y también</p></div>
 
 <p>\[
 a-\epsilon \leq x \leq a+ \epsilon
 \]</p>
 
-<p>o, lo que es lo mismo,</p>
+<div class="observ">
+<p>o, lo que es lo mismo,</p></div>
 
 <p>\[
 x \in [a-\epsilon,a+\epsilon]
@@ -3645,7 +3654,7 @@ x \in [a-\epsilon,a+\epsilon]
 <li><p>Un subconjunto \(A \subset \mathbb{R}\) está <strong>acotado</strong> si si està acotado superiormente e inferiormente.</p></li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Conjuntos acotados: Ejemplos</h2></hgroup><article  id="conjuntos-acotados-ejemplos">
+</article></slide><slide class=""><hgroup><h2>Conjuntos acotados: <strong>Ejemplos</strong></h2></hgroup><article  id="conjuntos-acotados-ejemplos">
 
 <div class="example">
 <p><strong>Ejemplos</strong>.</p>
@@ -3669,7 +3678,7 @@ x \in [a-\epsilon,a+\epsilon]
 </ul>
 
 <div class="example">
-<p>Ejemplos.</p>
+<p><strong>Ejemplos</strong></p>
 
 <ul>
 <li>El subconjunto \(A\) de \(\mathbb{Q}\) definido por \(A =\{q \in \mathbb{Q}\) tal que \(q^2 \leq 2 \}\), está acotado superiormente, pero, como se ha demostrado no tiene supremo, puesto que este supremo deberia ser \(\sqrt{2}\) que no es un número racional.</li>
@@ -3715,7 +3724,7 @@ x \in [a-\epsilon,a+\epsilon]
 <p>Análogamente, si el ínfimo de un conjunto es un elemento del conjunto, entoces recibe el nombre de <strong>mínimo</strong></p>
 
 <div class="example">
-<p>Ejemplos</p>
+<p><strong>Ejemplos</strong></p>
 
 <p>\(2\) es un máximo del conjunto \(\{x \in \mathbb{R}: x \leq 2 \}\).</p>
 
@@ -3941,10 +3950,26 @@ f(n) =
 
 <p>Diremos que un conjunto es <strong>numerable</strong> si tiene el mismo cardinal que \(\mathbb{N}\). Diremos que un conjunto es <strong>contable</strong> si es finito o numerable.</p>
 
-<div class="example">
-<p><strong>Ejemplo</strong></p>
+</article></slide><slide class=""><hgroup><h2>Conjuntos contables</h2></hgroup><article  id="conjuntos-contables">
 
-<p>El conjunto \(\mathbb{Z}\) de los números enteros es numerable. También lo es el conjunto de los números naturales pares o el de los múltiplos de otro número natural, \(k\).</p></div>
+<p><l class="prop"> <strong>Proposición</strong></p>
+
+<p>Si \(A\) es contable y \(B \subset A\), entonces \(B\) es contable.</p>
+
+<div class="dem">
+<p><strong>Demostración</strong></p>
+
+<p>La aplicación \(i: B \rightarrow A\) que envia cada elemento a si mismo es inyectiva, por lo tanto el cardinal de \(B\) es a lo sumo el de \(A\).</p></div>
+
+<div class="example">
+<p><strong>Ejemplos</strong></p>
+
+<p>1.El conjunto \(\mathbb{Z}\) de los números enteros es numerable.</p>
+
+<ol>
+<li><p>También lo es el conjunto de los números naturales pares y, más en general, el de los múltiplos de un número natural, \(k\).</p></li>
+<li>Si \(A\) es un conjunto numerable y \(f:A \rightarrow B\) es una aplicación, entonces \(f(A)\) es numerable, puesto que \(f(A)\) tiene a lo sumo (caso que f sea inyectiva) tantos elementos como \(A\)</li>
+</ol></div>
 
 </article></slide><slide class=""><hgroup><h2>\(\mathbb{Q}\) es numerable</h2></hgroup><article  id="mathbbq-es-numerable">
 
@@ -4058,7 +4083,7 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 
 <p>Obsérvese que la definición anterior también se puede hacer en términos de los <strong>entornos reducidos</strong> de un punto, es decir del conjunto de puntos del entorno diferentes del centro: Un punto \(\xi\) es de acumulación del conjunto \(A\) si en todo entorno reducido del punto \(\xi\) hay puntos de \(A\)ç</p>
 
-</article></slide><slide class=""><hgroup><h2>Puntos de acumulación: Ejemplos.</h2></hgroup><article  id="puntos-de-acumulación-ejemplos.">
+</article></slide><slide class=""><hgroup><h2>Puntos de acumulación: <strong>Ejemplos</strong></h2></hgroup><article  id="puntos-de-acumulación-ejemplos">
 
 <div class="example">
 <p><strong>Ejemplos</strong></p>
