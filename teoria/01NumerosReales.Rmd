@@ -70,11 +70,18 @@ Todo subconjunto de números naturales no vacío tiene primer elemento.
 
 <div class="example"> **Ejemplos**
 
-Demostrar que para todo $n\in \mathbb{N}$ se verifica que $2^{n-1}\leq n!$.
+**Ejemplo 1**. Demuestra que para todo $n\in \mathbb{N}$ se verifica que $2^{n-1}\leq n!$.
 
 Efectivamente: para $n=1$ tenemos que $1=2^0 \leq 2 =2!$.
 Supongamos que es cierto para $n=k-1$, es decir que $2^{k-2} \leq (k-1)!$, entonces $2^{k-1} = 2\cdot 2^{k-2} \leq 2 \cdot (k-1)! \leq k\cdot(k-1)! =k!$, puesto que $2\leq k$. En definitiva es  $2^{n-1}\leq n!$ para todo $n \in \mathbb{N}$
 
+**Ejemplo 2**. Demuestra que, para todo $n \in \mathbb{N}$ se verifica que $\displaystyle{\sum_{k=1}^n k = \frac{n(n+1)}{2}}$.
+
+En primer lugar, para $k=1$ la igualdad se verifica puesto que las dos expresiones son iguales a $1$. Supongamos que es cierta hasta $n-1$ es decir que $\displaystyle{\sum_{k=1}^{n-1} k = \frac{(n-1)n}{2}}$, entonces
+$$
+\sum_{k=1}^n k = \frac{n(n+1)}{2} = n+\sum_{k=1}^{n-1} k = n+  \frac{(n-1)n}{2}= \frac{2n+n^2-n}{2} = \frac{n(n+1)}{2}
+$$
+Por lo tanto la igualdad es cierta para todo $n \in \mathbb{N}$
 
 ## Números y medida: El conjunto $\mathbb{Z}$ de los números enteros
 
@@ -99,7 +106,7 @@ EN. Elemento neutro, $1$:  $a \times 1 = 1 \times a =a$, para todo $a \in \mathb
 
 PC. Propiedad conmutativa $a \times b = b \times a$, para todo $a,b \in \mathbb{Z}$.
 
-PA. Propiedada asociativa: $a\times (b \times c) = a \times b)\times c$, para todo $a,b,c \in \mathbb{Z}$
+PA. Propiedad asociativa: $a\times (b \times c) = a \times b)\times c$, para todo $a,b,c \in \mathbb{Z}$
 
 PD. Distributiva del producto respecto de la suma: $a \times (b+c) = a\times b +a \times c$, para todo $a,b,c \in \mathbb{Z}$.
 
@@ -145,7 +152,7 @@ ES. Elemento simétrico, $\dfrac{1}{p}$. $p \cdot \dfrac{1}{p} = \dfrac{1}{p} \c
 
 PC. Propiedad conmutativa $p \cdot q = q \cdot p$, para todo $p,q \in \mathbb{Q}$.
 
-PA. Propiedada asociativa: $p\cdot (q \cdot r) = p \cdot q)\cdot r$, para todo $p,q,r \in \mathbb{Q}$
+PA. Propiedad asociativa: $p\cdot (q \cdot r) = p \cdot q)\cdot r$, para todo $p,q,r \in \mathbb{Q}$
 
 PD. Distributiva del producto respecto de la suma: $p \cdot (q+r) = p \cdot q + p \cdot r$, para todo $p,q,r \in \mathbb{Q}$.
 
