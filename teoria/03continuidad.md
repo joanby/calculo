@@ -13,13 +13,17 @@ output:
 
 
 
-# Tema
+# Introducción
 
-## Funciones reales de variable real.
+##Funciones reales de variable real.##
 
-Supondremos que son conocidos los conceptos de **función**, **rango** y **dominio**, así como los términos **variable independiente** y **dependiente**. Tambien suponemos que  son conocidas las funciones elementales como las polinómicas $f(x)= P_n(x) = a_nx^n+a_{n-1}x^{n-1}+ \cdots + a_1x+a_0$, la exponencial $f(x)=e^x$,  las trigonométricas $f(x)=\sin(x)$, $f(x)=\cos(x)$, $f(x) =\tan(x)$, entre otras. 
+Supondremos que son conocidos los conceptos de **función**, en tanto que una **aplicación** entre conjuntos de números. En particular, non concentraremos en **funciones reales de variable real**, es decir en funciones $f:\mathbb{R} \rightarrow \mathbb{R}$.
 
-Uno de los principales objetivos del càlculo es el estudio de propiedades de las funciones. De hecho, como se mencionó, el cálculo diferencial trata del estudio de la medida del cambio, precisamente en relaciones que vienen expresadas como funciones, principalment como funciones $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, es decir, **funciones reales de variable real**
+Tambien suponemos conocidos los cenceptos de **rango** y **dominio** de una función, así como los términos **variable independiente** y **dependiente**. 
+
+Aunque seran tratadas  las funciones elementales como las polinómicas $f(x)= P_n(x) = a_nx^n+a_{n-1}x^{n-1}+ \cdots + a_1x+a_0$, la exponencial $f(x)=e^x$,  las trigonométricas $f(x)=\sin(x)$, $f(x)=\cos(x)$, $f(x) =\tan(x)$, entre otras. 
+
+Uno de los principales objetivos del càlculo es el estudio de propiedades de las funciones. De hecho, como se mencionó, el cálculo diferencial trata del estudio de la medida del cambio, precisamente en relaciones que vienen expresadas como funciones, principalment como **funciones reales de variable real**
 
 La primera cuestión que se aborda tiene que ver con los números reales, en particular cómo evaluar las funciones reales de variable real cuando la variable independiente es un número irracional. Nuevamente el concepto de límite viene a ayudar en la solución de esta cuestión.
 
