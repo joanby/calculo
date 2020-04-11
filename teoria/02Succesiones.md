@@ -421,7 +421,7 @@ Para demostrar la proposición anterior, será útil el lema siguiente:
 
 <l class="prop"> **Lema**
 
-Si $\lim a_n =0$ i $b_n$ está acotada, entonces $\lim a_nb_n =0$.
+Si $\lim a_n =0$ y $b_n$ está acotada, entonces $\lim a_nb_n =0$.
 
 <div class="dem"> **Demostración**
 
