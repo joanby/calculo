@@ -334,7 +334,7 @@ Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos,
 
 <div class="dem"> **Demostración**
 
-En primer lugar si $\dfrac{a_{n+1}}{a_n} \leq \dfrac{b_{n+1}}{b_n}$, entonces $a_{n_0 + p} \leq \dfrac{a_{n_0}}{b_{n_0}}b_{n_0 + p}$. 
+En primer lugar veamos que si $\dfrac{a_{n+1}}{a_n} \leq \dfrac{b_{n+1}}{b_n}$, entonces $a_{n_0 + p} \leq \dfrac{a_{n_0}}{b_{n_0}}b_{n_0 + p}$. 
 
 En efecto:
 $$
@@ -347,10 +347,10 @@ $$
 \ldots \quad \ldots 
 $$
 $$
-\dfrac{a_{n_0+(p-2)}}{a_{n_0+(p-1)}}  \leq \dfrac{b_{n_0+(p-2)}}{b_{n_0+(p-1)}}
+\dfrac{a_{n_0+(p-1)}}{a_{n_0+(p-2)}}  \leq \dfrac{b_{n_0+(p-1)}}{b_{n_0+(p-2)}}
 $$
 $$
-\dfrac{a_{n_0+(p-1)}}{a_{n_0+p}}  \leq \dfrac{b_{n_0+(p-1)}}{b_{n_0+p}}
+\dfrac{a_{n_0+p}}{a_{n_0+(p-1)}}  \leq \dfrac{b_{n_0+p}}{b_{n_0+(p-1)}}
 $$
 </div>
 
