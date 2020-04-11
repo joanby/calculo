@@ -316,24 +316,53 @@ Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos, entonces
 
 </div>
 
-<!-- ## Criterio de comparación de segunda especie -->
+## Criterio de comparación de segunda especie
 
-<!-- <l class="prop"> **Proposición** </l> -->
+<l class="prop"> **Proposición** </l>
 
-<!-- Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos, -->
+Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos,
 
-<!-- 1. Si para todo $n \geq n_0$ es $\dfrac{a_{n+1}}{a_n} \leq \dfrac{b_{n+1}}{b_n}$ y $\sum b_n$ es convergente, entonces $\sum a_n$ es convergente. -->
+1. Si para todo $n \geq n_0$ es $\dfrac{a_{n+1}}{a_n} \leq \dfrac{b_{n+1}}{b_n}$ y $\sum b_n$ es convergente, entonces $\sum a_n$ es convergente.
 
-<!-- 2. Si para todo $n \geq n_0$ es $\dfrac{a_{n+1}}{a_n} \geq \dfrac{b_{n+1}}{b_n}$ y $\sum b_n$ es divergente, entonces $\sum a_n$ es divergente. -->
+2. Si para todo $n \geq n_0$ es $\dfrac{a_{n+1}}{a_n} \geq \dfrac{b_{n+1}}{b_n}$ y $\sum b_n$ es divergente, entonces $\sum a_n$ es divergente.
 
-<!-- ## Criterio de comparación de segunda especie -->
+## Criterio de comparación de segunda especie
 
-<!-- <div class="dem"> **Demostración** -->
+<div class="dem"> **Demostración**
 
-<!-- Es fácil comprobar, en el primer caso, que $a_{n_0 + p} \leq \dfrac{a_{n_0}}{b_{n_0}}b_{n_0 + p}$, por lo que de acuerdo con el corolario anterior con $\lambda = \dfrac{a_{n_0}}{b_{n_0}}$, si $\sum b_n$ es convergente, también lo será $\sum a_n$.  -->
+En primer lugar si $\dfrac{a_{n+1}}{a_n} \leq \dfrac{b_{n+1}}{b_n}$, entonces $a_{n_0 + p} \leq \dfrac{a_{n_0}}{b_{n_0}}b_{n_0 + p}$. 
 
-<!-- Razonamientos análogos permiten demostrar el segundo punto. -->
-<!-- </div> -->
+En efecto:
+$$
+\dfrac{a_{n_0+1}}{a_{n_0}}  \leq  \dfrac{b_{n_0+1}}{b_{n_0}}
+$$
+$$
+\dfrac{a_{n_0+2}}{a_{n_0+1}}  \leq \dfrac{b_{n_0+2}}{b_{n_0+1}}
+$$
+$$
+\ldots \quad \ldots 
+$$
+$$
+\dfrac{a_{n_0+(p-2)}}{a_{n_0+(p-1)}}  \leq \dfrac{b_{n_0+(p-2)}}{b_{n_0+(p-1)}}
+$$
+$$
+\dfrac{a_{n_0+(p-1)}}{a_{n_0+p}}  \leq \dfrac{b_{n_0+(p-1)}}{b_{n_0+p}}
+$$
+</div>
+
+## Criterio de comparación de segunda especie
+
+<div class="dem"> 
+
+
+Multiplicando miembro a miembro estas desigualdades, obtenemos el resultado esperado, es decir que $a_{n_0 + p} \leq \dfrac{a_{n_0}}{b_{n_0}}b_{n_0 + p}$
+
+Por lo tanto, tenemos $\dfrac{a_n}{b_n} \leq \lambda$ con $\lambda = \dfrac{a_{n_0}}{b_{n_0}}$ y, de acuerdo con el lema anterior, tenemos que  si $\sum b_n$ es convergente, también lo será $\sum a_n$.
+
+Razonamientos análogos permiten demostrar el segundo punto.
+</div>
+
+
 
 ## Criterios clásicos de convergencia para series de términos positivos
 
@@ -526,7 +555,7 @@ Este criterio se usa cuando el de la raiz o el de d'Alembert no deciden, es deci
 
 <div class="dem"> **Demostración**
 
-1. Supongamos $\lambda >1$, entonces $\epsilon= \dfrac{\lambda -1}{2}>0$ por lo que existe $n_0$ tal que para todo $n>n_0$ es 
+ Supongamos $\lambda >1$, entonces $\epsilon= \dfrac{\lambda -1}{2}>0$ por lo que existe $n_0$ tal que para todo $n>n_0$ es 
 $$
 -\epsilon < \dfrac{n \cdot a_n -n \cdot a_{n+1}}{a_n} - \lambda < \epsilon
 $$
@@ -538,7 +567,7 @@ S_{n} < \dfrac{a_1-na_{n+1}}{\epsilon}< \dfrac{a_1}{\epsilon}
 $$
 Por lo que la serie será convergente.
 
-2. Razonamientos similares sirven para demostrar el criterio cuando $\lambda < 1$.
+ Razonamientos similares sirven para demostrar el criterio cuando $\lambda < 1$.
 </div>
 
 ## Ejemplo
@@ -616,11 +645,11 @@ El recíproco no es cierto: una serie puede ser convergente sin ser absolutament
 Es el caso de la serie $\displaystyle{\sum \dfrac{(-1)^n}{n}}$ que, como demostraremos más adelante, es convergente, en tanto que la serie de valores absolutos es la serie armónica que ya hemos visto que era divergente.  
 
 
-<div class="definition"> **Definición.**
+<l class="definition"> **Definición.** </l>
 
 Una serie convergente que no sea absolutamente convergente recibe el nombre de **condicionalmente convergente**
 
-</div>
+
 
 ## Series alternadas
 
@@ -665,7 +694,7 @@ la sucesión de término general $\dfrac{1}{n}$ es decreciente y su límite es $
 
 **Ejemplo 2**. La serie $\sum_{n=1}^{\infity} (-1)^n e^{-n}$ es convergente, dado que satisface la condiciones del criterio de Leibniz, es decir, $\lim e^{-n} =0$ y $e^{-n} \geq e^{-(n+1)}$. Se trata de una serie absolutamente convergente, puesto que $\lim \sqrt[n]{e^{-n}}= e^{-1} <1$. Conviene  observar que esta serie es una serie geomètrica de razón $-e^{-1}$, y por lo tanto su suma es 
 $$
-\sum_m_{n=1}^{\infity} (-1)^n e^{-n} = \dfrac{-1}{1+e}
+\sum_{n=1}^{\infty} (-1)^n e^{-n} = \dfrac{-1}{1+e}
 $$
 
 **Ejemplo 3**. La serie $\sum (-1)^{n+1} \dfrac{5^n}{n+1}$ es divergente, puesto que $\lim \dfrac{5^n}{n+1} \neq 0$
