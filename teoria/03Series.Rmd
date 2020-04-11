@@ -767,6 +767,7 @@ $$
 
 ## Series telescópicas: Ejemplos.
 
+
 <div class="example"> **Ejemplos** 
 
 **Ejemplo 1**. La serie $\sum_{n \geq 1} \dfrac{1}{(n+1)(n+2)}$ es telescópica, puesto que, como es fácil comprobar
