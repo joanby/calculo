@@ -1107,7 +1107,7 @@ dado que la otra solución de la ecuación de segundo grado resultante es mayor 
 <div class="example"> 
 Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim a_n = \frac{3-\sqrt{5}}{2}$. El gràfico siguiente muestra los $25$ primeros términos de esta sucesión y lo rápida que es la convergencia.
 
- ![](02Succesiones_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+ <img src="02Succesiones_files/figure-html/unnamed-chunk-1-1.png" width="720" />
 
 </div>
 

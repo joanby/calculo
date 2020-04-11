@@ -46,6 +46,15 @@ $$
 a+ar+ar^2 \ldots + ar^n + \ldots = \lim_{n \rightarrow \infty} S_n = \dfrac{a}{1-r}
 $$
 
+## Series numéricas
+
+
+En el siguiente link, `Wolfram Alpha` nos da información sobre la serie geométrica, en particular, el valor de su suma:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=sum+a*r%5En+from+n%3D0+to+infinity)
+</l>
+
+
 ## Series numèricas
 
 <l class="definition"> **Definición. Serie numérica** </l>
@@ -238,7 +247,7 @@ Argumentos similares sirven para demostrar que si $\sum a_n$ es divergente, ento
 
 </div>
 
-## ## Criterio de comparación de primera especie
+## Criterio de comparación de primera especie
 
 <div class="example"> **Ejemplo**
 
@@ -280,6 +289,16 @@ $$
 por lo tanto, al estar acotada superiormente por una serie convergente, la serie armónica generalizada es convergente, si $\alpha > 1$.
 
 </div>
+
+## La serie armónica generalizada
+En el siguiente link, `Wolfram Alpha` nos da información sobre la serie armónica generalizada:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=sum+1%2Fn%5Ealpha+from+n%3D1+to+infinity)
+</l>
+
+Como se puede observar, nos dice que si $\alpha >1$, la serie es convergente, de hecho, nos dice si $\mathrm{Re}(\alpha)>1$ ya que trata el valor $\alpha$ como un [número complejo](https://es.wikipedia.org/wiki/N%C3%BAmero_complejo) y $\mathrm{Re}(\alpha)>1$ significa la parte real del mismo.
+
+Relaciona la serie anterior con la famosa [Función zeta de Riemann](https://es.wikipedia.org/wiki/Funci%C3%B3n_zeta_de_Riemann) relacionada con la distribución de los **números primos**.
 
 ## Corolario del criterio de comparación
 
@@ -462,6 +481,46 @@ $$
 \lim_{n \rightarrow \infty} \dfrac{b_{n+1}}{b_n} \leq  \dfrac{2}{3}<1
 $$
 y, de acuerdo con el criterio de d'Alembert la serie es convergente.
+
+</div>
+
+## La serie de recíprocos de la sucesión de Fibonacci.
+<div class="example">
+El gráfico de los recíprocos de la serie de Fibonacci se puede observar en el gráfico siguiente:
+
+```{r,echo=FALSE}
+f=c(1,1,2,3)
+n=25
+for (i in 5:n){
+  k=length(f)
+  aux=f[k]+f[k-1]
+  f=c(f,aux)
+}
+
+plot(1/f,pch=19,col="red",xlab="n",ylab=expression(1/a[n]))
+```
+
+
+</div>
+
+
+## La serie de recíprocos de la sucesión de Fibonacci.
+<div class="example">
+El gráfico de las sumas parciales $S_n=\sum_{k=0}^n \frac{1}{a_k}$ generada por los recíprocos de la serie de Fibonacci se puede observar en el gráfico siguiente:
+
+```{r,echo=FALSE,fig.height=4.25}
+plot(cumsum(1/f),pch=19,col="red",xlab="n",ylab=expression(S[n]))
+```
+
+
+</div>
+
+## La serie de recíprocos de la sucesión de Fibonacci.
+<div class="example">
+En el siguiente link, `Wolfram Alpha` nos calcula aproximadamente la suma anterior $\sum_{k=0}^\infty \frac{1}{a_k}$:
+<l class="center">
+[![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Sum%5B1%2FFibonacci%5Bn%5D%2C+%7Bn%2C+1%2C+Infinity%7D%5D)
+</l>
 
 </div>
 
