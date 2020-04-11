@@ -697,7 +697,7 @@ Dado que la sucesión es decreciente, tenemos que  $a_k - a_{k+1} \geq 0$ , por 
 
 Análogamente, se demuestra que la sucesión $S_{2n+1}$ es decreciente y acotada inferiormente. Su límite es tambien $L$, puesto que $\lim S_{2n+1} - \lim S_{2n}=\lim (S_{2n+1} - S_{2n})= \lim a_{2n+1}= 0$. 
 
-Finalmente $\lim S_n= L$, puesto que $S_{2n} \leq S_n \leq S_{2n+1}$ y, por lo tanto, $\sum (-1)^{n+1} a_n$ es convergente.
+Finalmente $\lim S_n= L$, puesto que para todo $n$ existe $m$, tal que $2m \leq n <2m+1$, y por lo tanto, $S_{2m} \leq S_n \leq S_{2m+1}$ , en definitiva,  $\sum (-1)^{n+1} a_n$ es convergente.
 
 </div>
 
