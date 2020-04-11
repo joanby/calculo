@@ -44,7 +44,7 @@ $$
 
 ## Series numèricas
 
-<l class="definition"> **Definición** </l>
+<l class="definition"> **Definición: Serie numérica** </l>
 
 Llamaremos **serie** generada por una sucesión de números reales $\{a_n \}_{n \in \mathbb{N}}$ a la sucesión 
 $$
@@ -56,7 +56,7 @@ $\displaystyle{\sum_{n=1}^{\infty}a_n}$,  $\sum_{n \geq 1} a_n$ y también $\dis
 
 ## Series numéricas: Convergencia
 
-<l class="definition"> **Definición** </l>
+<l class="definition"> **Definición: Convergencia de una serie** </l>
 
 Una serie $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es **convergente** si su sucesión de sumas parciales $S_n$ tiene límite, en cuyo caso, dicho límite recibe el nombre de **suma** de la serie.
 
@@ -94,7 +94,7 @@ Má adelante veremos que esta serie es convergente si $\alpha >1$
 
 ## Series convergentes.
 
-<l class="prop"> **Proposición (Criterio de Cauchy para series numéricas)** </l>
+<l class="prop"> **Proposición. Criterio de Cauchy para series numéricas.** </l>
 
 La serie $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es convergente si para todo $\epsilon > 0$ existe $n_0 \in \mathbb{N}$ tal que para todo $n \geq n_0$ y todo $k \in \mathbb{N}$ es 
 $$
@@ -130,7 +130,7 @@ $$
 
 ## Condición necesaria
 
-<l class="prop"> **Corolario (Condición necesaria de convergencia)** </l>
+<l class="prop"> **Corolario. Condición necesaria de convergencia.** </l>
 
 Si la serie $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es convergente, entonces $\lim_{n \rightarrow \infty}  a_n = 0$
 
@@ -144,7 +144,7 @@ Es importante tener en cuenta que esta és una condición **necesaria** pero no 
 
 ## Propiedades de las series convergentes.
 
-<l class="prop"> **Proposición** </l>
+<l class="prop"> **Proposición: Suma de series** </l>
 
 Sean $\sum a_n$ y $\sum b_n$ dos series convergentes (divergentes), entonces
 
@@ -165,7 +165,7 @@ Estas propiedades, en general, no son válidas para series oscilantes.
 
 ## Propiedades de las series convergentes.
 
-<l class="prop"> **Proposición. (Propiedad asociativa)** 
+<l class="prop"> **Proposición. Propiedad asociativa** 
 
 En una serie convergente (divergente) se pueden sustituir varios términos consecutivos por su suma efectuada sin que varie el carácter de la serie.
 
@@ -189,7 +189,7 @@ La propiedad asociativa de la suma no es válida para series oscilantes
 
 Una clase particularmente interesante de series son las de términos positivos, es decir aquellas series $\sum a_n$ tales que $a_n \geq 0$, para todo $n$. Para estas series tenemos el siguiente resultado:
 
-<l class="prop"> **Proposición**
+<l class="prop"> **Proposición: Condición necesaria y suficiente de convergencia**
 
 Sea $\sum a_n$ es una serie de términos positivos  y $S_n= a_1+a_2+ \cdots + a_n$ su sucesión de sumas parciales.
 Entonces $\sum a_n$ es convergente, si, y sólo si, $S_n$ es una sucesión acotada superiormente.
@@ -204,7 +204,7 @@ Aplicaremos este resultado para establecer criterios de comparación para determ
 
 ## Criterio de comparación de primera especie.
 
-<l class="prop"> **Proposición. (Criterio de comparación de primera especie)** </l>
+<l class="prop"> **Proposición. Criterio de comparación de primera especie** </l>
 
 Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos tales que $a_n \leq b_n$ para todo $n$. Entonces, si $\sum b_n$ es convergente, $\sum a_n$ es convergente y si $\sum a_n$ es divergente, entonces $\sum b_n$ es divergente.
 
@@ -255,7 +255,7 @@ por lo tanto, al estar acotada superiormente por una serie convergente, la serie
 
 ## Corolario del criterio de comparación
 
-<l class="prop"> **Corolario**
+<l class="prop"> **Corolario.**
 
 Sean $\sum a_n$ y $\sum b_n$ dos series de términos positivos  
 
@@ -289,7 +289,7 @@ Es fácil comprobar, en el primer caso, que $a_{n_0 + p} \leq \dfrac{a_{n_0}}{b_
 
 Los criterios de comparación que acabamos de ver, usados con las series armónicas y geométricas, se convierten en potentes instrumentos para determinar la convergencia de series de términos positivos. Las proposiciones que siguen son ejemplos de esta afirmación.
 
-<l class="prop"> **Proposición (Criterio de Pringsheim)**
+<l class="prop"> **Proposición. Criterio de Pringsheim**
 
 Sea $\sum a_n$ una serie de términos positivos. 
 
@@ -314,7 +314,7 @@ Sea $\sum a_n$ una serie de términos positivos.
 
 ## Criterios clásicos: Criterio de de la raíz
 
-<l class="prop"> **Proposición** </l>
+<l class="prop"> **Proposición. Criterio de la raíz** </l>
 
 Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \sqrt[n]{a_n} = \lambda$. Entonces
 
@@ -367,7 +367,7 @@ y, por la condicición necesaria de convergencia, la serie es divergente.
 
 ## Criterios clásicos: Criterio de d'Alembert
 
-<l class="prop"> **Proposición (Criterio de d'Alembert)** </l>
+<l class="prop"> **Proposición. Criterio de d'Alembert.** </l>
 
 Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim \dfrac{a_{n+1}}{a_n} = \lambda$. Entonces
 
@@ -423,7 +423,9 @@ y, de acuerdo con el criterio de d'Alembert la serie es convergente.
 
 </div>
 
-## Criterios clásicos: Criterio de Raabe </l>
+## Criterios clásicos. Criterio de Raabe </l>
+
+<l class="prop"> **Proposición. Criterio de Raabe** </l>
 
 Sea $\sum a_n$ una sucesión de términos positivos tal que $\lim n \cdot \left(1 -\dfrac{a_{n+1}}{a_n}\right) = \lambda$. Entonces
 
@@ -470,7 +472,7 @@ que es divergente.
 
 ## Criterio de condensación
 
-<l class="prop"> **Proposición**
+<l class="prop"> **Proposición. Criterio de condensación**
 
 Sea $\{a_n\}$ una sucesión de términos positivos decreciente, es decir, $a_1 \geq a_2 \geq \cdots \geq 0$. Entonces las series $\sum_{n\geq 1} a_n$ y $\sum_{k \geq 1} 2^k a_{2^k}= a_1+2a_2+4a_4+ \cdots 2^ka_{2^k}+ \cdots$ tienen el mismo carácter.
 
@@ -505,7 +507,7 @@ Análogamente comprobaríamos que si $n>2^k$, entonces $2S_n \geq T_k$, por lo t
 
 ## Series de términos no necesariamente positivos: Convergencia condicional
 
-<l class="prop"> **Proposición** </l>
+<l class="prop"> **Proposición. Convergencia absoluta** </l>
 
 Si $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es absolutamente convergente entonces $\displaystyle{\sum_{n=1}^{\infty}a_n}$ es convergente.
 
@@ -530,7 +532,7 @@ Una serie convergente que no sea absolutamente convergente recibe el nombre de *
 
 ## Series alternadas
 
-<l class="definición"> **Definición** </l>
+<l class="definition"> **Definición. Serie alternada** </l>
 
 Una **serie alternada** es una serie de la forma $\sum_{n=1}^{\infty} (-1)^n a_n$, con $a_n \geq 0$ para todo $n \in \mathbb{N}$.
 
@@ -540,7 +542,7 @@ Una de las propiedades que hace particularmente interesantes las series alternad
 
 ## Series alternadas: Criterio de Leibniz
 
-<l class="prop"> **Proposición (Criterio de Leibniz)**
+<l class="prop"> **Proposición. Criterio de Leibniz.**
 
 Sea $\sum (-1)^{n+1} a_n$ una serie alternada tal que la sucesión $a_n$ es decreciente, es decir que para todo $n$ es $a_n \geq a_{n+1}$. Entonces $\sum (-1)^{n+1} a_n$ es convergente si, y sólo si, $\lim a_n =0$
 
@@ -576,7 +578,7 @@ Ejemplo 3. La serie $\sum (-1)^{n+1} \dfrac{5^n}{n+1}$ es divergente, puesto que
 
 ## Suma de las series hipergeométricas.
 
-<l class="definicion"> **Definición**
+<l class="definition"> **Definición. Serie hipergeométrica.**
 
 $\sum a_n$ es una serie **hipergeométrica** si para todo $n \in \mathbb{N}$ se verifica que 
 $$
@@ -609,7 +611,7 @@ $$
 
 ## Series hipergeométricas: Ejemplo.
 
-<div class="example"> 
+<div class="example"> **Ejemplo**
 
 Calcular la suma de la serie $\sum \dfrac{1}{n(n+1)}$, caso que sea convergente
 
@@ -624,11 +626,11 @@ $$
 
 ## Series aritmético-geométricas
 
-<l class="definicion"> **Definición**
+<l class="definition"> **Definición: serie aritmético-geométrica.**
 
 Una serie **aritmético-geométrica** es una serie de la forma $\sum P(n)a_n$, con $\sum a_n$ una serie geométrica y $P(n)$ un polinomio en $n$. 
 
-<l class=prop"> **Proposición**
+<l class="prop"> **Proposición. Covergencia de las series aritmético-geométricas.**
 
 La serie aritmético-geométrica $\sum P(n)a_n$ es convergentesi la razón, $r$, de la progresión aritmética asociada verifica que $|r|<1$.
 
@@ -685,13 +687,13 @@ $$
 
 ## Series telescópicas
 
-<l class="definicion"> **Definición**
+<l class="definition"> **Definición. Serie telescópica.** </l>
 
 Una serie $\sum a_n$ es telescópica si existe una sucesión de término general $b_n$ tal que  para todo $n$ es
 $$
 a_n = b_n-b_{n+1}
 $$
-<l class ="prop"> **Proposición** </l>
+<l class ="prop"> **Proposición. Convergencia de las series telescópicas.** </l>
 
 Si $\sum a_n = \sum (b_n - b_{n+1})$, entonces la serie es convergente si, y sólo sí, la sucesión {b_n} es convergente. En cuyo caso $\sum a_n = b_1 - \lim b_n$
 
@@ -705,7 +707,7 @@ $$
 
 ## Series telescópicas: Ejemplos.
 
-<div class="example"> **Ejemplos**
+<div class="example"> **Ejemplos** 
 
 Ejemplo 1. La serie $\sum \dfrac{1}{(n+1)(n+2)}$ es telescópica, puesto que, como es fácil comprobar
 $$
@@ -721,7 +723,7 @@ Se trata de una serie telescópica, puesto $\sum \dfrac{a-1}{a^{n+1}}= \sum \lef
 $$
 \sum \dfrac{a-1}{a^{n+1}}=\sum \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right) = \dfrac{1}{a}
 $$
-
+</div>
 
 
 
