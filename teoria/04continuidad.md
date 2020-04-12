@@ -60,23 +60,35 @@ puesto que para cualquier sucesión $x_n  \rightarrow c$ es obvio que $f(x_n) = 
 **Ejemplo 2.** Análogamente si ahora es $f(x) = \dfrac{1}{x}$ y $c \neq 0$, entonces 
 
 $$
-\lim_{x \rightarrow c} \dfrac{1}{x} = \dfrac{1}{c}
+\lim_{x \rightarrow c} \dfrac{1}{x} = \dfrac{1}{c},
 $$
 puesto que si $x_n \rightarrow c$, entonces $\dfrac{1}{x} \rightarrow \dfrac{1}{c}$
 
 </div>
 
-## Límite de una función en un punto: Ejemplos.
+## Límite de una función en un punto: Ejemplos
 
 <div class="example"> **Ejemplos**
 
 **Ejemplo 3.** Si $f(x) = P_n(x) = a_n x^n + a_{n-1}x^{n-1}+ \cdots + a_1 x + a_0$, entonces para todo $c \in \mathbb{R}$ es
 $$
-\lim_{x \rightarrow c}P_n(x) = P_n(c) = a_n c^n + a_{n-1}c^{n-1}+ \cdots + a_1 c + a_0
+\lim_{x \rightarrow c}P_n(x) = P_n(c) = a_n c^n + a_{n-1}c^{n-1}+ \cdots + a_1 c + a_0,
 $$
 como se deduce fácilmente de las propiedades aritméticas de los límites de sucesiones.
 
-**Ejemplo 4.** Más interesante és el caso $\lim_{x \rightarrow 1} \dfrac{x^5-2x^3+1}{x-1}$, puesto que, en principio, para $x=1$ la función no está definida al anularse el denominador, es decir que el dominio de la función es $\mathbb{R}\setminus\{1\}$ y, por lo tanto, $1$ es un punto de acumulación del dominio.
+**Ejemplo 4.** Igualmente, si $P_n(x)$ y $Q_m(x)$ són polinomios tales que $P_n(x_0) \ne 0$ y $Q_m(x_0) \ne 0$, entonces 
+$$
+\lim_{x \rightarrow x_0} \dfrac{P_n(x)}{Q_m(x)} = \dfrac{P_n(x_0)}{Q_m(x_0)}.
+$$
+**Ejemplo 5.** Si $f(x) = e^x$, entonces $\lim_{x \rightarrow x_0} e^x = e^{x_0}$ puesto que, como hemos demostrado, si $x_n \rightarrow x_0$, entonces $e^{x_n} \rightarrow e^{x_0}$.
+</div>
+
+
+## Límite de una función en un punto: Ejemplos
+
+<div class="example"> **Ejemplos**
+
+**Ejemplo 6.** Más interesante és el caso $\lim_{x \rightarrow 1} \dfrac{x^5-2x^3+1}{x-1}$, puesto que, en principio, para $x=1$ la función no está definida al anularse el denominador, es decir que el dominio de la función es $\mathbb{R}\setminus\{1\}$ y, por lo tanto, $1$ es un punto de acumulación del dominio.
 
 Ahora bien, dado que el numerador también se anula en este punto, podemos simplificar la fracción por $x-1$, con lo que nos queda que $\dfrac{x^5-2x^3+1}{x-1} = x^4+x^3-x^2-x$, y por lo tanto, $\lim _{x \rightarrow 1} \dfrac{x^5-2x^3+1}{x-1} = \lim _{x \rightarrow 1} x^4+x^3-x^2-x = 0$. 
 </div>
@@ -94,7 +106,7 @@ Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función definida sobre 
   c) Para todo entorno abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $x_0$, $V_{\delta} (x_0)$ tal que para todo $x \in V^*_{\delta} (x_0)$ es $f(x) \in V_{\epsilon}(L)$, donde $V^*_{\delta}= V_{\delta} \setminus \{x_0\}$, es decir el entorno reducido de $x_0$ y radio $\delta$
 
 
-## Caracterización del límite funcional: propiedad $\epsilon-\delta$.
+## Caracterización del límite: propiedad $\epsilon-\delta$
 
 <div class="dem"> **Demostración**
 
@@ -122,7 +134,7 @@ Finalmente, en lo que se refiere al tercer apartado, es suficiente tener en cuen
 
 </div>
 
-## Ejemplo de la propiedad $\epsilon-\delta$.
+## Ejemplo de la propiedad $\epsilon-\delta$
 
 <div class="example"> **Ejemplo**
 
@@ -143,7 +155,7 @@ Ahora, dado un $\epsilon >0$ bastaá tomar $\delta = \min \left\{\dfrac{1}{2}c, 
 </div>
 
 
-##  Ejemplo de la propiedad $\epsilon-\delta$.
+##  Ejemplo de la propiedad $\epsilon-\delta$
 
 <div class="example"> **Ejemplo**
 
@@ -159,7 +171,7 @@ $$
 $$
 que era lo que queríamos demostrar.
 
-## Sobre la propiedad $\epsilon-\delta$.
+## Sobre la propiedad $\epsilon-\delta$
 
 <l class="observ"> **Observaciones** </l>
 
@@ -169,7 +181,7 @@ que era lo que queríamos demostrar.
 
 **3.** Los ejemplos anteriores también pueden producir la impresión, equivocada, que es más conveniente usar la primera definición de límite que la propiedad $\epsilon-\delta$, pero veremos que, en ocasiones, resulta más conveniente esta última que la primera.
 
-
+## Propiedades del límite funcional
 
 
 
