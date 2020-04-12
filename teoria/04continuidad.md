@@ -181,6 +181,12 @@ que era lo que queríamos demostrar.
 
 **3.** Los ejemplos anteriores también pueden producir la impresión, equivocada, que es más conveniente usar la primera definición de límite que la propiedad $\epsilon-\delta$, pero veremos que, en ocasiones, resulta más conveniente esta última que la primera.
 
+## La propiedad $epsilon-\delta$
+
+<div class="center">
+<img src="Images/epsilondelta" width="500px" />
+</div>
+
 ## Propiedades del límite funcional
 
 
