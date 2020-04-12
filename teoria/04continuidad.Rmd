@@ -185,11 +185,11 @@ que era lo que queríamos demostrar.
 
 **3.** Los ejemplos anteriores también pueden producir la impresión, equivocada, que es más conveniente usar la primera definición de límite que la propiedad $\epsilon-\delta$, pero veremos que, en ocasiones, resulta más conveniente esta última que la primera.
 
-## La propiedad $epsilon-\delta$
+## La propiedad $\epsilon-\delta$
 
 <div class="center">
-```{r, echo=FALSE, label=ed,fig.cap="",out.width = "500px"}
-knitr::include_graphics("Images/epsilondelta",dpi=1200)
+```{r, echo=FALSE, label=edelta,fig.cap="",out.width = "600px"}
+knitr::include_graphics("Images/epsilondelta.png",dpi=1200)
 ```
 </div>
 
