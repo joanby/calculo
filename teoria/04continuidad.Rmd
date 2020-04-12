@@ -189,7 +189,7 @@ que era lo que queríamos demostrar.
 
 <div class="center">
 ```{r, echo=FALSE, label=edelta,fig.cap="",out.width = "600px"}
-knitr::include_graphics("Images/epsilondelta.png",dpi=1200)
+knitr::include_graphics("Images/epdel0.png",dpi=1200)
 ```
 </div>
 

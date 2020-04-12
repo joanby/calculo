@@ -184,7 +184,7 @@ que era lo que queríamos demostrar.
 ## La propiedad $\epsilon-\delta$
 
 <div class="center">
-<img src="Images/epsilondelta.png" width="600px" />
+<img src="Images/epdel0.png" width="600px" />
 </div>
 
 ## Propiedades del límite funcional
