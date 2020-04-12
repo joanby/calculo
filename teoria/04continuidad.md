@@ -108,7 +108,7 @@ Dado que $\delta >0$, existe $n_0$ tal que para todo $n > n_0$ es $|x_n - x_0|<\
 
 ## Las dos definiciones son equivalentes
 
-<div class="dem"> **Demostración**
+<div class="dem">
 
 Demostramos la otra implicación por contraposición, es decir usando la equivalencia $b \implies a \equiv \lnot a \implies \lnot b$. 
 
@@ -121,6 +121,54 @@ Consideremos ahora la sucesión de números positivos $\frac{1}{n}$, y los corre
 Finalmente, en lo que se refiere al tercer apartado, es suficiente tener en cuenta que que $|x-x_0| < \delta$ si, y sólo si,  $x \in V_{\delta}(x_0)$.
 
 </div>
+
+## Ejemplo de la propiedad $\epsilon-\delta$.
+
+<div class="example"> **Ejemplo**
+
+
+Si $f(x)=\dfrac{1}{x}$, dado un punto $c>0$, tenemos para $x>0$, 
+$$
+\left|\dfrac{1}{x} -\dfrac{1}{c}\right|= \left|\dfrac{1}{cx}(c-x)\right| = \dfrac{1}{cx}|c-x|
+$$
+Ahora, si $x$ es tal que $|x-c| <\dfrac{1}{2}c$, de tal manera que $\dfrac{1}{2}<x<\dfrac{3}{2}$, por lo que $0 < \dfrac{1}{cx} <  \dfrac{2}{c^2} \quad \text{ para } |x-c|< \dfrac{1}{2}c$.
+Por lo tanto, para estos valores de $x$ tenemos que
+$$
+\left|\dfrac{1}{x} -\dfrac{1}{c}\right| \leq \dfrac{2}{c^2} |x-c|
+$$
+
+
+Ahora, dado un $\epsilon >0$ bastaá tomar $\delta = \min \left\{\dfrac{1}{2}c, \dfrac{1}{2}c^2 \epsilon \right\}$ para tener asegurado que si $|x -c|<\delta$, entonces $\left|\dfrac{1}{x} -\dfrac{1}{c}\right| < \epsilon$.
+
+</div>
+
+
+##  Ejemplo de la propiedad $\epsilon-\delta$.
+
+<div class="example"> **Ejemplo**
+
+Veamos que $\lim_{x \rightarrow 2} \dfrac{x^3-4}{x^2+1}= \dfrac{4}{5}$
+$$
+\left|\dfrac{x^3-4}{x^2+1} -  \dfrac{4}{5}\right|= \left|\dfrac{5x^3-20-4x^2-4}{5(x^2+1)}\right| = \dfrac{|5x^2+6x+12|}{5(x^2+1)}|x-2|
+$$
+Ahora, si $|x-2|<1$, o equivalentemente, si $0<x<3$, tendremos que $\dfrac{|5x^2+6x+12|}{5(x^2+1)} \leq \dfrac{15}{2}$, puesto que el numerador es menor o igual que $15$ y el numerador mayor o igual que $2$. 
+
+Si para un $\epsilon >0$ tomamos $\delta = \min \left\{1, \dfrac{2}{15} \epsilon \right\}$, tendremos que si $|x-2| < \delta$, entonces 
+$$
+\left|\dfrac{x^3-4}{x^2+1} -  \dfrac{4}{5}\right| < \epsilon
+$$
+que era lo que queríamos demostrar.
+
+## Sobre la propiedad $\epsilon-\delta$.
+
+<l class="observ"> **Observaciones** </l>
+
+**1.** La propiedad $\epsilon -\delta$, significa que dada una precisión cualquiera, $\epsilon$, para el resultado, $L$, podemos determinar la precisión, $\delta$, con la que hay que tomar la aproximación, $x$ de $c$, para tener asegurada la precisión requerida para $L$.
+
+**2.** Los ejemplos anteriores muestran que $\delta$ puede depender de $\epsilon$, por lo que sería más apropiado escribir $\delta(\epsilon)$, lo que no se acostumbra a hacer para evitar complicar la notación en exceso, lo cual no és óbice para olvidar esta dependencia.
+
+**3.** Los ejemplos anteriores también pueden producir la impresión, equivocada, que es más conveniente usar la primera definición de límite que la propiedad $\epsilon-\delta$, pero veremos que, en ocasiones, resulta más conveniente esta última que la primera.
+
 
 
 
