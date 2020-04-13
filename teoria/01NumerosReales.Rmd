@@ -454,18 +454,29 @@ $$
 
 ## Entornos abiertos y cerrados
 
-Las consideraciones anteriores llevan a la siguiente
+Las consideraciones anteriores llevan a las siguientes
+
+<l class="definition"> **Definiciones** </l>
+
+ **Entorno abierto:** Dados  un punto $a \in \mathbb{R}$ y un $\epsilon >0$, el **entorno abierto** de centro $a$ y radio $\epsilon$ es el conjunto de puntos $V_{\epsilon}(a)=\{ x \in \mathbb{R}: |x-a|<\epsilon \} = (a-\epsilon, a+\epsilon)$. 
+
+ **Entorno cerrado:** Dados  un punto $a \in \mathbb{R}$ y un $\epsilon >0$, el **entorno cerrado** de centro $a$ y radio $\epsilon$ es el conjunto de puntos $\overline{V}_{\epsilon}(a)=\{ x \in \mathbb{R}: |x-a| \leq \epsilon \} = [a-\epsilon, a+\epsilon]$. 
+
+
+## Entornos abiertos y cerrados
+
 
 <l class="definition"> **Definición** </l>
 
-1) **Entorno abierto:** Dados  un punto $a \in \mathbb{R}$ y un $\epsilon >0$, el **entorno abierto** de centro $a$ y radio $\epsilon$ es el conjunto de puntos $V_{\epsilon}(a)=\{ x \in \mathbb{R}: |x-a|<\epsilon \} = (a-\epsilon, a+\epsilon)$. 
-
-2) **Entorno cerrado:** Dados  un punto $a \in \mathbb{R}$ y un $\epsilon >0$, el **entorno cerrado** de centro $a$ y radio $\epsilon$ es el conjunto de puntos $\overline{V}_{\epsilon}(a)=\{ x \in \mathbb{R}: |x-a| \leq \epsilon \} = [a-\epsilon, a+\epsilon]$. 
-
-3) **Entorno reducido** de un punto: un entorno abierto (cerrado) sin el punto, es decir $V^*_{\epsilon}(a)=V_{\epsilon}(a) \setminus \{a\}$ $\left(\overline{V}^*_{\epsilon}(a) = \overline{V}_{\epsilon}(a)  \setminus \{a\}\right)$
+ **Entorno reducido** de un punto: un entorno abierto (cerrado) sin el punto, es decir $V^*_{\epsilon}(a)=V_{\epsilon}(a) \setminus \{a\}$ $\left(\overline{V}^*_{\epsilon}(a) = \overline{V}_{\epsilon}(a)  \setminus \{a\}\right)$
 
 Vecindad o bola son también nombres habituales para los entornos.
 
+<div class="center">
+```{r, echo=FALSE, label=vecin,fig.cap="Entorno de un punto",out.width = "700px"}
+knitr::include_graphics("Images/vecindad.png",dpi=1200)
+```
+</div>
 
 
 ## Conjuntos acotados
