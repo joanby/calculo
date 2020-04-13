@@ -367,11 +367,26 @@ Recíprocamente, si $\{a_{n_k}\}$ es una subsucesión de $\{a_n\}$ y esta es con
 2. La sucesión $\{1,-1,1,-1, \ldots\}=\{(-1)^n\}$, no es convergente, puesto que las subsucesiones $\{1,1,1, \ldots \}$ y $\{-1,-1,-1, \ldots \}$ tienen límites diferentes, $1$ y $-1$, respectivamente.
 </div>
 
+## Propiedades de los límites (3)
+
+<l class="prop"> **Corolario del Teorema de Bolzano-Weierstrass.**
+
+Toda sucesión de rango infinito tiene una subsucesión convergente.
+
+<div class="dem">
+
+Por ser la sucesión $\{a_n\}$ de rango infinito, tiene un punto de acumulación, sea $L$ éste. Veamos que existe una subsucesión de la dada que tiene límite $L$.
+
+Ahora, para cada $\epsilon >0$ existe $k_0 \in \mathbb{N}$ tal que $\dfrac{1}{k} < \epsilon$, para todo $k \geq k_0$ 
+
+Para cada $k \geq k_0$ en el entorno $V^*_{\frac{1}{k}}(L)$ hay infinitos puntos de la sucesión, por ser $\dfrac{1}{k}>0$. Sea $n_k$ el primero de los índices de estos infinitos elementos, diferente de los que ya hemos escogido, lo cual es factible, dado que en cada entorno hay infinitos términos de la sucesión. Es $|L-a_{n_k}| <\dfrac{1}{k} <\epsilon$ para todo $k \geq k_0$. De esta forma tenemos una subsucesión $\{a_{n_k}\}$ de la dada tal que para todo $\epsilon>0$ es  
+$$
+|L-a_{n_k}| <\epsilon
+$$
+lo que significa que $\lim a_{n_k} = L$, que es lo que queríamos demostrar.
 
 
-
-
-## Propiedades de los límites (3).
+## Propiedades de los límites (4).
 
 <l class="prop">**Proposición** </l>
 
@@ -627,7 +642,7 @@ $$
 por lo tanto, en cualquier caso, es $|a_n| \leq K$, para todo $n \in \mathbb{N}$.
 </div>
 
-## Las sucesiones de Cauchy en $\mathbb{R}$ sonconvergentes 
+## Las sucesiones de Cauchy en $\mathbb{R}$ son convergentes 
 
 <l class="prop"> **Proposición** </l>
 
@@ -1107,7 +1122,7 @@ dado que la otra solución de la ecuación de segundo grado resultante es mayor 
 <div class="example"> 
 Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim a_n = \frac{3-\sqrt{5}}{2}$. El gràfico siguiente muestra los $25$ primeros términos de esta sucesión y lo rápida que es la convergencia.
 
- <img src="02Succesiones_files/figure-html/unnamed-chunk-1-1.png" width="720" />
+ ![](02Succesiones_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
 
 </div>
 
