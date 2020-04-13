@@ -3296,9 +3296,9 @@ text-align: center; text-decoration: none;
 
 <p><strong>Suma:</strong></p>
 
-<p>EN. Elemento neutro, \(0\): \(a+0=0+a=a\), para todo $a \(\mathbb{Z}\)</p>
+<p>EN. Elemento neutro, \(0\): \(a+0=0+a=a\), para todo \(a \in \mathbb{Z}\)</p>
 
-<p>ES. Elemento simétrico, \(-a\): \(a +(-a) = -a+a = 0\), $a \(\mathbb{Z}\).</p>
+<p>ES. Elemento simétrico, \(-a\): \(a +(-a) = -a+a = 0\), \(a \in \mathbb{Z}\).</p>
 
 <p>PC. Propiedad conmutativa: \(a+b =b+a\), para todo \(a,b \in \mathbb{Z}\)</p>
 
@@ -3336,9 +3336,9 @@ a=bq+r
 
 <p><strong>Suma:</strong></p>
 
-<p>EN. Elemento neutro, \(0\): \(p+0=0+p=p\), para todo $p \(\mathbb{Q}\)</p>
+<p>EN. Elemento neutro, \(0\): \(p+0=0+p=p\), para todo \(p \in \mathbb{Q}\)</p>
 
-<p>ES. Elemento simétrico, \(-p\): \(p +(-p) = -p+p = 0\), $p \(\mathbb{Q}\).</p>
+<p>ES. Elemento simétrico, \(-p\): \(p +(-p) = -p+p = 0\), \(p \in \mathbb{Q}\).</p>
 
 <p>PC. Propiedad conmutativa: \(p+q =q+p\), para todo \(p,q \in \mathbb{Q}\)</p>
 
@@ -3350,7 +3350,7 @@ a=bq+r
 
 <p>EN. Elemento neutro, \(1\): \(p \cdot 1 = 1 \cdot p =p\), para todo \(p \in \mathbb{Q}\).</p>
 
-<p>ES. Elemento simétrico, \(\dfrac{1}{p}\). \(p \cdot \dfrac{1}{p} = \dfrac{1}{p} \cdot p =1\), para todo \(p \in Q\), \(p \neq 0\)</p>
+<p>ES. Elemento simétrico, \(\dfrac{1}{p}\). \(p \cdot \dfrac{1}{p} = \dfrac{1}{p} \cdot p =1\), para todo \(p \in \mathbb{Q}\), \(p \neq 0\)</p>
 
 <p>PC. Propiedad conmutativa \(p \cdot q = q \cdot p\), para todo \(p,q \in \mathbb{Q}\).</p>
 
@@ -4112,14 +4112,13 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 <p>Sea \(I_n = [a_n,b_n]\) una sucesión de intervalos anidados tales que \(\inf\{b_n-a_n: n \in \mathbb{N}\}=0\). Entoces existe un único punto \(\xi\) que está en todos los intervalos \(I_n\).</p>
 
 <div class="dem">
-
 <p><strong>Demostración</strong></p>
 
 <p>Hemos visto en la proposición anterior que \(\xi = \sup\{a_n: n \in \mathbb{N} \}\) está en todos los \(I_n\). Un razonamiento similar al de la proposición anterior se demuestra que \(\eta = \inf \{b_n: n \in \mathbb{N} \}\) tambien está en todos los intervalos. Sólo falta comprobar que \(\xi = \eta\). Ahora bien:</p>
 
 <p>Dado que \(\eta \leq b_n\) y que \(\xi\geq a_n\), para todo \(n\), tenemos que \(0 \leq \eta - \xi \leq b_n -a_n\), para todo \(n\), por lo tanto \(0 \leq \eta - \xi \leq \inf\{b_n-a_n: n \in \mathbb{N}\}=0\), es decir que \[
 \xi = \eta
-\]</p>
+\] Por lo tanto este es el único punto que está en todos los intervalos, puesto que cualquier punto \(x\) que esté en todos los intervalos es mayor que todos \(a_n\) y menor que todos los \(b_n\) y, por lo tanto seria \(\xi \leq x \leq \eta\).</p></div>
 
 </article></slide><slide class=""><hgroup><h2>Puntos de acumulación</h2></hgroup><article  id="puntos-de-acumulación">
 
@@ -4129,7 +4128,7 @@ a_m = 0.a_{m1}a_{m2}a_{m3} \ldots a_{mn} \ldots\\
 
 <p>Sean \(A\) y \(\xi\) un subconjunto y un punto de \(\mathbb{R}\) respectivamente. \(\xi\) es un <strong>punto de acumulación</strong> de \(A\), si en todo entorno abierto de \(\xi\) hay puntos de \(A\) diferentes de \(\xi\).</p>
 
-<p>Obsérvese que la definición anterior también se puede hacer en términos de los <strong>entornos reducidos</strong> de un punto, es decir del conjunto de puntos del entorno diferentes del centro: Un punto \(\xi\) es de acumulación del conjunto \(A\) si en todo entorno reducido del punto \(\xi\) hay puntos de \(A\)ç</p>
+<p>Obsérvese que la definición anterior también se puede hacer en términos de los <strong>entornos reducidos</strong> de un punto, es decir del conjunto de puntos del entorno diferentes del centro: Un punto \(\xi\) es de acumulación del conjunto \(A\) si en todo entorno reducido del punto \(\xi\) hay puntos de \(A\).</p>
 
 </article></slide><slide class=""><hgroup><h2>Puntos de acumulación: <strong>Ejemplos</strong></h2></hgroup><article  id="puntos-de-acumulación-ejemplos">
 

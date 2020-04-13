@@ -89,9 +89,9 @@ Los números enteros $\mathbb{Z} = \{ \ldots ,-n, \ldots -3,-2,-1,0,1,2,3, \ldot
 
 **Suma:**
 
-EN. Elemento neutro, $0$: $a+0=0+a=a$, para todo $a \in $\mathbb{Z}$
+EN. Elemento neutro, $0$: $a+0=0+a=a$, para todo $a \in \mathbb{Z}$
 
-ES. Elemento simétrico, $-a$: $a +(-a) = -a+a = 0$, $a \in $\mathbb{Z}$.
+ES. Elemento simétrico, $-a$: $a +(-a) = -a+a = 0$, $a \in \mathbb{Z}$.
 
 PC. Propiedad conmutativa:  $a+b =b+a$, para todo $a,b \in \mathbb{Z}$
 
@@ -133,9 +133,9 @@ Los números racionales: $\mathbb{Q} = \left\{ \dfrac{p}{q}: p,q \in \mathbb{Z},
 
 **Suma:**
 
-EN. Elemento neutro, $0$: $p+0=0+p=p$, para todo $p \in $\mathbb{Q}$
+EN. Elemento neutro, $0$: $p+0=0+p=p$, para todo $p \in \mathbb{Q}$
 
-ES. Elemento simétrico, $-p$: $p +(-p) = -p+p = 0$, $p \in $\mathbb{Q}$.
+ES. Elemento simétrico, $-p$: $p +(-p) = -p+p = 0$, $p \in \mathbb{Q}$.
 
 PC. Propiedad conmutativa:  $p+q =q+p$, para todo $p,q \in \mathbb{Q}$
 
@@ -148,7 +148,7 @@ PA. Propiedad asociativa: $p+(q+r) = (p+q)+r$, para todo $p,q,r \in \mathbb{Q}$
 
 EN. Elemento neutro, $1$:  $p \cdot 1 = 1 \cdot p =p$, para todo $p \in \mathbb{Q}$.
 
-ES. Elemento simétrico, $\dfrac{1}{p}$. $p \cdot \dfrac{1}{p} = \dfrac{1}{p} \cdot p =1$, para todo $p \in Q$, $p \neq 0$
+ES. Elemento simétrico, $\dfrac{1}{p}$. $p \cdot \dfrac{1}{p} = \dfrac{1}{p} \cdot p =1$, para todo $p \in \mathbb{Q}$, $p \neq 0$
 
 PC. Propiedad conmutativa $p \cdot q = q \cdot p$, para todo $p,q \in \mathbb{Q}$.
 
@@ -991,6 +991,9 @@ Dado que $\eta \leq b_n$ y que $\xi\geq a_n$, para todo $n$, tenemos que $0 \leq
 $$
 \xi = \eta
 $$
+Por lo tanto este es el único punto que está en todos los intervalos, puesto que cualquier punto $x$ que esté en todos  los intervalos es mayor que todos $a_n$ y menor que todos los $b_n$ y, por lo tanto seria $\xi \leq x \leq \eta$.
+
+</div>
 
 ## Puntos de acumulación
 
@@ -1000,7 +1003,7 @@ Veremos en el apartado de funciones que, a menudo, tenemos una función definida
 
 Sean $A$ y $\xi$ un subconjunto y un punto de $\mathbb{R}$ respectivamente. $\xi$ es un **punto de acumulación** de $A$, si en todo entorno abierto de $\xi$ hay puntos de $A$ diferentes de $\xi$. 
 
-Obsérvese que la definición anterior también se puede hacer en términos de los **entornos reducidos** de un punto, es decir del conjunto de puntos del entorno diferentes del centro: Un punto  $\xi$ es de acumulación del conjunto $A$ si en todo entorno reducido del punto $\xi$ hay puntos de $A$ç
+Obsérvese que la definición anterior también se puede hacer en términos de los **entornos reducidos** de un punto, es decir del conjunto de puntos del entorno diferentes del centro: Un punto  $\xi$ es de acumulación del conjunto $A$ si en todo entorno reducido del punto $\xi$ hay puntos de $A$.
 
 ## Puntos de acumulación: **Ejemplos**
 
@@ -1058,6 +1061,7 @@ Además,  el $\inf \left\{\dfrac{k}{2^n}: n \in \mathbb{N} \right\}$, existe pue
 Ahora, por el principio de los intervalos anidados, tendremos que hay un solo punto $\xi$ que está en todos los intervalos. $\xi$ es el punto de acumulación buscado, puesto que por ser $\xi$ el infimo de los $b_n$ y el supremo de los $a_n$, dado un $\epsilon >0$, existe un $n \in \mathbb{N}$ tal que $\xi-\epsilon \leq a_n \leq \xi \leq b_n \leq \xi+ \epsilon$, y, por lo tanto, cualquier entorno de $\xi$ contiene infinitos puntos de $A$.
 
 </div>
+
 
 
 ## Recta real ampliada
