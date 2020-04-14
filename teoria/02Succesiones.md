@@ -371,11 +371,11 @@ Recíprocamente, si $\{a_{n_k}\}$ es una subsucesión de $\{a_n\}$ y esta es con
 
 <l class="prop"> **Corolario del Teorema de Bolzano-Weierstrass.**
 
-Toda sucesión de rango infinito tiene una subsucesión convergente.
+Toda sucesión de rango infinito y acotada tiene una subsucesión convergente.
 
 <div class="dem">
 
-Por ser la sucesión $\{a_n\}$ de rango infinito, tiene un punto de acumulación, sea $L$ éste. Veamos que existe una subsucesión de la dada que tiene límite $L$.
+Por ser la sucesión $\{a_n\}$ de rango infinito y acotada, tiene un punto de acumulación, sea $L$ éste. Veamos que existe una subsucesión de la dada que tiene límite $L$.
 
 Ahora, para cada $\epsilon >0$ existe $k_0 \in \mathbb{N}$ tal que $\dfrac{1}{k} < \epsilon$, para todo $k \geq k_0$ 
 
