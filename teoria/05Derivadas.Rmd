@@ -17,10 +17,10 @@ reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
 #reticulate::py_install("sympy")
 ```
 
-# Derivada de una función en un valor del dominio de la misma
+# Derivada de una función en un punto del dominio de la misma
 
 ## Introducción
-La derivada de una función nace de formalizar la noción de **recta tangente** en un valor $x_0$ para una función $f(x)$.
+La derivada de una función sirve para formalizar la noción de **recta tangente** en un punto $x_0$ para una función $f(x)$.
 
 En el gráfico siguiente, podemos observar un ejemplo del dibujo de una función junto con la recta tangente en un punto $x_0$ de su dominio.
 
@@ -52,7 +52,7 @@ knitr::include_graphics("Images/Derivada1.png",dpi=1200)
 
 Consideremos la figura anterior.
 
-La pendiente de una recta recordemos que se define como la tangente del ángulo con el eje X. 
+La pendiente de una recta recordemos que se define como la tangente del ángulo con el eje de las $x$. 
 
 Hemos dibujado una función $f(x)$ que pasa por el punto $(x_0,f(x_0))$ junto con una recta secante que pasa por el punto. 
 
@@ -63,7 +63,10 @@ Otro punto de dicha recta dado un valor $h$ sería $(x_0+h,f(x_0+h))$. Intuitiva
 La pendiente de la recta secante como puede observarse es la tangente del ángulo $\alpha$ que vale $\frac{f(x_0+h)-f(x_0)}{h}$.
 Entonces, la definición de derivada de $f(x)$ en $x=x_0$ es la siguiente:
 
-<l class="definition"> Definición de derivada en un punto </l>
+
+## Definición de derivada de una función en un punto
+<l class="definition"> Definición de derivada en un punto. </l>
+
 Sea $f:(a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$. Diremos que $f$ es **derivable** en $x_0$ o que **existe la derivada de $f$ en $x_0$** cuando existe el límite siguiente:
 $$
 \lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h},
@@ -71,19 +74,21 @@ $$
 y, en caso en que exista, llamaremos a dicho límite **derivada de la función $f$ en $x_0$** escrita matemáticamente como $f'(x_0)$.
 
 ## Definición de derivada de una función en un punto
-<l class="observ">Observación: </l>
-la derivada de una función es un propiedad **local**, es decir, está definida en un punto $x_0$ del dominio.
+<l class="observ">Observación. </l>
+
+La derivada de una función es un propiedad **local**, es decir, está definida en un punto $x_0$ del dominio.
 
 Cuando, haciendo un abuso del lenguaje, se dice que la función $f$ es **derivable**, se quiere decir que dicha función es derivable en todos los puntos del dominio de la misma.
 
 ## Definición de derivada de una función en un punto
 
-<l class="observ">Observación: </l>
+<l class="observ">Observación. </l>
+
 La derivada de una función $f$ en un punto de su dominio $x_0$ se puede expresar también de la forma siguiente:
 $$
 \lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}.
 $$
-Para ver la expresión anterior, basta considerar el cambio de variable siguiente $x=x_0+h$, de donde $h=x-x_0$ y aplicar la definición de derivada.
+Para comprobar la afirmación anterior, basta considerar el cambio de variable siguiente $x=x_0+h$, de donde $h=x-x_0$ y aplicar la definición de derivada.
 
 Fijaos que decir que $h$ tiende a cero es equivalente a decir que $x$ tiende a $x_0$.
 
@@ -101,6 +106,8 @@ $$
 
 </div>
 
+
+## Ejemplos
 
 <div class="example">
 **Derivada del monomio de grado $n$**
@@ -189,14 +196,16 @@ La gráfica del valor absoluto en `Wolfram Alpha` se muestra en el enlace siguie
 
 ## Derivabilidad implica continuidad
 
-<l class="prop"> Teorema:</l> sea $f$ una función real de variable real y sea $x_0$ un valor del dominio de $f$. Si $f$ es derivable en $x_0$, entonces $f$ es continua en $x_0$.
+<l class="prop"> Teorema.</l> 
+
+Sea $f$ una función real de variable real y sea $x_0$ un punto del dominio de $f$. Si $f$ es derivable en $x_0$, entonces $f$ es continua en $x_0$.
 
 
 ## Derivabilidad implica continuidad
 <div class="dem">
 **Demostración.**
 
-Definimos la función siguiente en un entorno de valor $x_0$:
+Definimos la función siguiente en un entorno de punto $x_0$:
 $$
 g(x)=\begin{cases}
 \frac{f(x)-f(x_0)}{x-x_0}, & \mbox{si }x\neq x_0,\\
@@ -219,6 +228,7 @@ tal como queríamos ver.
 
 ## La derivada de la suma es suma de derivadas
 <l class="prop">Proposición.</l>
+
 Sean $f$ y $g$ dos funciones reales de variable real y sea $x_0$ un valor del dominio de $f$ y de $g$. Si $f$ y $g$ son derivables en $x_0$, también lo es la función suma $f+g$, y se verifica que: $(f+g)'(x_0)=f'(x_0)+g'(x_0)$.
 
 <div class="dem">
@@ -233,7 +243,8 @@ $$
 
 ## La derivada de una función por una constante es la constante por la derivada de la función
 <l class="prop">Proposición.</l>
-Sea $k\in\mathbb{R}$ un valor real, $f$ una función real de variable real y $x_0$ un valor del dominio de $f$. Entonce si $f$ es derivable en $x_0$, también lo es $k\cdot f$ y se verifica que: $(k\cdot f)'(x_0)=k\cdot f'(x_0)$.
+
+Sea $k\in\mathbb{R}$ un valor real, $f$ una función real de variable real y $x_0$ un punto del dominio de $f$. Entonce si $f$ es derivable en $x_0$, también lo es $k\cdot f$ y se verifica que: $(k\cdot f)'(x_0)=k\cdot f'(x_0)$.
 
 <div class="dem">
 **Demostración:**
@@ -248,7 +259,8 @@ $$
 
 ## La derivada del producto de funciones
 <l class="prop">Proposición.</l>
-Sean $f$ y $g$ dos funciones reales de variable real y sea $x_0$ un valor del dominio de $f$ y de $g$. Si $f$ y $g$ son derivables en $x_0$, también lo es la función producto $f\cdot g$, y se verifica que: $(f\cdot g)'(x_0)=f'(x_0)\cdot g(x_0)+f(x_0)\cdot g'(x_0)$.
+
+Sean $f$ y $g$ dos funciones reales de variable real y sea $x_0$ un punto del dominio de $f$ y de $g$. Si $f$ y $g$ son derivables en $x_0$, también lo es la función producto $f\cdot g$, y se verifica que: $(f\cdot g)'(x_0)=f'(x_0)\cdot g(x_0)+f(x_0)\cdot g'(x_0)$.
 
 <div class="dem">
 **Demostración:**
@@ -262,7 +274,8 @@ $$
 
 ## La derivada del cociente de funciones
 <l class="prop">Proposición.</l>
-Sean $f$ y $g$ dos funciones reales de variable real y sea $x_0$ un valor del dominio de $f$ y de $g$ tal que $g'(x_0)\neq 0$. Si $f$ y $g$ son derivables en $x_0$, también lo es la función cociente $\frac{f}{g}$, y se verifica que: $\left(\frac{f}{g}\right)'(x_0)=\frac{f'(x_0)\cdot g(x_0)-f(x_0)\cdot g'(x_0)}{g(x_0)^2}$.
+
+Sean $f$ y $g$ dos funciones reales de variable real y sea $x_0$ un punto del dominio de $f$ y de $g$ tal que $g'(x_0)\neq 0$. Si $f$ y $g$ son derivables en $x_0$, también lo es la función cociente $\frac{f}{g}$, y se verifica que: $\left(\frac{f}{g}\right)'(x_0)=\frac{f'(x_0)\cdot g(x_0)-f(x_0)\cdot g'(x_0)}{g(x_0)^2}$.
 
 <div class="dem">
 **Demostración:**
@@ -277,7 +290,9 @@ $$
 
 ## Derivada de la función inversa
 <l class="prop">Proposición.</l>
-Sea $f$ una función real de variable real y $x_0$ un valor del dominio de $f$. Suponemos que $f$ es derivable en $x_0$ y que $f'(x_0)\neq 0$. Supongamos que $f$ admite inversa $g$, es decir, existe una función $g$ tal que $g\circ f=\mathrm{Id}$, es decir, para cualquier valor $x$ del dominio de $f$, se cumple que $g(f(x))=x$. Además, suponemos que $g$ es continua en $f(x_0)$. Entonces $g$ es derivable en $f(x_0)$ y se verifica que $g'(f(x_0))=\frac{1}{f'(x_0)}$.
+
+Sea $f$ una función real de variable real y $x_0$ un punto del dominio de $f$. Suponemos que $f$ es derivable en $x_0$ y que $f'(x_0)\neq 0$. Supongamos que $f$ admite inversa $g$, es decir, existe una función $g$ tal que $g\circ f=\mathrm{Id}$, es decir, para cualquier valor $x$ del dominio de $f$, se cumple que $g(f(x))=x$. Además, suponemos que $g$ es continua en $f(x_0)$. Entonces $g$ es derivable en $f(x_0)$ y se verifica que 
+$$g'(f(x_0))=\frac{1}{f'(x_0)}.$$
 
 ## Derivada de la función inversa
 <div class="dem">
@@ -286,7 +301,7 @@ Sea $f$ una función real de variable real y $x_0$ un valor del dominio de $f$. 
 El valor de $g'(f(x_0))$ es:
 $g'(f(x_0))  = \displaystyle\lim_{y\to f(x_0)}\frac{g(y)-g(f(x_0))}{y-f(x_0)}.$
 
-Para el cálculo del límite anterior, hacemos el cambio de variable siguiente: $y=f(x)$, o $x=g(y)$. Como $y$ tiende a $f(x_0)$, tendremos con la variable nueva que $f(x)$ tiende a $f(x_0)$ pero como $g$ es continua en $f(x_0)$, deducimos que $g(f(x))=x$ tiende a $g(f(x_0))=x_0$. En resumen, el límite anterior puede escribirse como:
+Para el cálculo del límite anterior, hacemos el cambio de variable siguiente: $y=f(x)$, o lo que es lo mismo, $x=g(y)$. Como $y$ tiende a $f(x_0)$, tendremos con la variable nueva que $f(x)$ tiende a $f(x_0)$ pero como $g$ es continua en $f(x_0)$, deducimos que $g(f(x))=x$ tiende a $g(f(x_0))=x_0$. En resumen, el límite anterior puede escribirse como:
 $$
 g'(f(x_0)) =\lim_{x\to x_0}\frac{g(f(x))-g(f(x_0))}{f(x)-f(x_0)}=\lim_{x\to x_0}\frac{x-x_0}{f(x)-f(x_0)} = \frac{1}{\displaystyle\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}}=\frac{1}{f'(x_0)}.
 $$
@@ -362,8 +377,10 @@ La derivada de la función $\tan x$ en `Wolfram Alpha` se muestra en el enlace s
 
 ##  Derivada de la función compuesta. Regla de la cadena
 <l class="prop">Proposición.</l>
-Sean $f$ y $g$ dos funciones reales de variable real. Sea $x_0$ un valor del dominio de $f$ tal que $f(x_0)$ es del dominio de $g$. Supongamos que $g$ es derivable en $f(x_0)$ y $f$ es derivable en $x_0$. Entonces la función compuesta $g\circ f$ es derivable en $x_0$ y se verifica que:
-$(g\circ f)'(x_0)=g'(f(x_0))\cdot f'(x_0)$. 
+
+Sean $f$ y $g$ dos funciones reales de variable real. Sea $x_0$ un punto del dominio de $f$ tal que $f(x_0)$ es del dominio de $g$. Supongamos que $g$ es derivable en $f(x_0)$ y $f$ es derivable en $x_0$. Entonces la función compuesta $g\circ f$ es derivable en $x_0$ y se verifica que:
+
+$$(g\circ f)'(x_0)=g'(f(x_0))\cdot f'(x_0).$$
 
 
 ##  Derivada de la función compuesta. Regla de la cadena
@@ -429,19 +446,25 @@ La derivada de la función $h(x)$ en `Wolfram Alpha` se muestra en el enlace sig
 
 ## Tablas de derivadas
 
-Si vais a [tablas de derivadas](https://www.google.com/search?tbm=isch&sxsrf=ACYBGNQqojnjJv8BaCiJGV99iyRexZsPcg%3A1578831703469&source=hp&biw=2560&bih=1268&ei=Vw8bXsXVGoKkgweJ7qO4Bw&q=tablas+de+derivadas&oq=tablas+de+der&gs_l=img.3.0.35i39j0l5j0i5i30l4.5860.8647..10003...2.0..0.70.862.13......0....1..gws-wiz-img.....10..35i362i39j0i131.bUJ_Ou6rWlA) y escribís "tablas de derivadas" en la casilla de búsqueda, encontraréis un montón de tablas de derivadas para las funciones más usadas.
+Si vais al enlace siguiente [tablas de derivadas](https://www.google.com/search?tbm=isch&sxsrf=ACYBGNQqojnjJv8BaCiJGV99iyRexZsPcg%3A1578831703469&source=hp&biw=2560&bih=1268&ei=Vw8bXsXVGoKkgweJ7qO4Bw&q=tablas+de+derivadas&oq=tablas+de+der&gs_l=img.3.0.35i39j0l5j0i5i30l4.5860.8647..10003...2.0..0.70.862.13......0....1..gws-wiz-img.....10..35i362i39j0i131.bUJ_Ou6rWlA) y escribís "tablas de derivadas" en la casilla de búsqueda, encontraréis un montón de tablas de derivadas para las funciones más usadas.
 
 
 # Teoremas de derivación
 
-## Relación de la derivación con los extremos relativos de una función
+## Derivación y extremos
 
 <l class="definition"> Definición de máximo relativo de una función.</l>
-Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ tiene un **máximo relativo** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$, tal que para todo valor $x$ de este entorno, es decir, $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, se cumple que $f(x)\leq f(x_0)$. Si la condición anterior se verifica para cualquier valor $x\in (a,b)$, diremos que $f$ tiene un **máximo absoluto** en el punto $x_0$.
 
-## Relación de la derivación con los extremos relativos de una función
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un valor del dominio de $f$. Diremos que $f$ tiene un **máximo relativo** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$, tal que para todo valor $x$ de este entorno, es decir, $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, se cumple que $f(x)\leq f(x_0)$. 
+
+Si la condición anterior se verifica para cualquier punto $x\in (a,b)$, diremos que $f$ tiene un **máximo absoluto** en el punto $x_0$.
+
+## Derivación y extremos
 <l class="definition"> Definición de mínimo relativo de una función.</l>
-Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ tiene un **mínimo relativo** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$, tal que para todo valor $x$ de este entorno, es decir, $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, se cumple que $f(x)\geq f(x_0)$. Si la condición anterior se verifica para cualquier valor $x\in (a,b)$, diremos que $f$ tiene un **mínimo absoluto** en el punto $x_0$.
+
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un valor del dominio de $f$. Diremos que $f$ tiene un **mínimo relativo** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$, tal que para todo punto $x$ de este entorno, es decir, $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, se cumple que $f(x)\geq f(x_0)$. 
+
+Si la condición anterior se verifica para cualquier valor $x\in (a,b)$, diremos que $f$ tiene un **mínimo absoluto** en el punto $x_0$.
 
 Los puntos donde $f$ presente un **máximo** o un **mínimo** **relativos** o **absolutos** se denominan **extremos relativos** o **absolutos** de la función.
 
@@ -530,14 +553,15 @@ text(pi,1.3,"f(x)")
 </div>
 
 
-## Relación de la derivación con los extremos relativos de una función
-<l class="prop">Teorema:</l>
-Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$ que sea **extremo relativo** de la función. Entonces si $f$ es **derivable** en el punto $x_0$, se verifica que $f'(x_0)=0$.
+## Derivación y extremos
+<l class="prop">Teorema.</l>
+
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un valor del dominio de $f$ que sea **extremo relativo** de la función. Entonces si $f$ es **derivable** en el punto $x_0$, se verifica que $f'(x_0)=0$.
 
 Intuitivamente, el teorema anterior nos dice que si la función $f$ tiene un comportamiento **suave** en el extremo $x_0$, la recta tangente en este punto tiene que ser **horizontal**, es decir, su pendiente tiene que ser nula, tal como podemos observar en los extremos del ejemplo anterior. 
 
 
-## Relación de la derivación con los extremos relativos de una función
+## Derivación y extremos
 
 <div class="dem">
 **Demostración**
@@ -560,14 +584,14 @@ Supongamos que $g(x_0)>0$. Como la función $g$ es continua en $x_0$, por el teo
 
 </div>
 
-## Relación de la derivación con los extremos relativos de una función
+## Derivación y extremos
 
 <div class="dem">
 **Demostración**
 
 Es decir, para todo $x\in (x_0-\delta,x_0+\delta)$, $g(x)=\frac{f(x)-f(x_0)}{x-x_0}>0$.
 
-Esto es equivalente a decir que el numerador y el denominador de la fracción anterior tienen el mismo signo o, dicho en otras palabras:
+Esto es equivalente a decir que el numerador y el denominador de la fracción anterior tienen el mismo signo, dicho en otras palabras:
 
 * si $x\in (x_0-\delta,x_0+\delta)$ y $x>x_0$, entonces $f(x) > f(x_0)$ y,
 * si $x\in (x_0-\delta,x_0+\delta)$ y $x<x_0$, entonces $f(x) < f(x_0)$.
@@ -575,19 +599,16 @@ Esto es equivalente a decir que el numerador y el denominador de la fracción an
 Las condiciones anteriores contradicen el hecho que $x_0$ sea un extremo ya que hemos encontrado valores en un entorno del mismo que superan $f(x_0)$ y valores del mismo entorno que son menores que $f(x_0)$. 
 En conclusión, llegamos a una contradicción al suponer que $g(x_0)=f'(x_0)>0$.
 
-
-
-</div>
-
 <div class="exercise">
 **Ejercicio**
 
 Suponer que $g(x_0)=f'(x_0)<0$ y ver que se llega a una contradicción razonando de manera similar.
 </div>
+</div>
 
 
 
-## Relación de la derivación con los extremos relativos de una función
+## Derivación y extremos
 
 <div class="dem">
 **Demostración**
@@ -595,7 +616,9 @@ Suponer que $g(x_0)=f'(x_0)<0$ y ver que se llega a una contradicción razonando
 Al no poder ser que $f'(x_0)>$ ni $f'(x_0)<0$, necesariamente $f'(x_0)=0$ tal como queríamos demostrar.
 </div>
 
-</l class="observ"> Observación: </l> el recíproco del teorema anterior es falso. Es decir, el hecho que $f'(x_0)$ sea 0, no implica que $x_0$ sea un **extremo relativo** de la función.
+<l class="observ"> Observación. </l> 
+
+El recíproco del teorema anterior es falso. Es decir, el hecho que $f'(x_0)$ sea $0$, no implica que $x_0$ sea un **extremo relativo** de la función.
 
 <div class="example">
 **Ejemplo**
@@ -609,7 +632,7 @@ Vemos que $f'(0)=0$. En cambio $f$ no tiene ningún extremo en este punto tal co
 
 
 
-## Relación de la derivación con los extremos relativos de una función
+## Derivación y extremos
 <div class="example">
 **Ejemplo**
 ```{r,echo=FALSE,fig.align='center'}
@@ -645,7 +668,7 @@ text(pi,1.3,"f(x)")
 
 </div>
 
-## Relación de la derivación con los extremos relativos de una función
+## Derivación y extremos
 <div class="example">
 **Ejemplo**
 
@@ -659,7 +682,7 @@ def f(x):
 
 </div>
 
-## Relación de la derivación con los extremos relativos de una función
+## Derivación y extremos
 <div class="example">
 **Ejemplo**
 
@@ -669,7 +692,7 @@ for x in [-0.2,-0.1,0.1,0.2]:
 ```
 </div>
 
-## Relación de la derivación con los extremos relativos de una función
+## Derivación y extremos
 <div class="example">
 **Ejemplo**
 
@@ -684,14 +707,17 @@ El gráfico de la función anterior puede verse en `Wolfram Alpha` en el enlace 
 
 </div>
 
-## Relación de la derivación con el crecimiento de una función
-<l class="definition">Definición de crecimiento de una función: </l>
-Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ es **estrictamente creciente** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$ tal que para todo $x$ de dicho entorno diferente de $x_0$, o si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, con $x\neq x_0$, se verifica que el cociente siguiente es positivo: $\frac{f(x)-f(x_0)}{x-x_0}>0$.
+## Derivación y extremos
+<l class="definition">Definición de crecimiento de una función. </l>
 
-<l class="observ">Observación: </l> la definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)>f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)<f(x_0)$. Ver gráfico siguiente.
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un valor del dominio de $f$. Diremos que $f$ es **estrictamente creciente** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$ tal que para todo $x$ de dicho entorno diferente de $x_0$, o si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, con $x\neq x_0$, se verifica que el cociente siguiente es positivo: $\frac{f(x)-f(x_0)}{x-x_0}>0$.
+
+<l class="observ">Observación. </l> 
+
+La definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)>f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)<f(x_0)$. Ver el gráfico siguiente.
 
 
-## Relación de la derivación con el crecimiento de una función
+## Derivación y extremos
 <div class="center">
 ```{r, echo=FALSE, label=der2,fig.cap="",out.width = "650px"}
 knitr::include_graphics("Images/Derivada2.png",dpi=1200)
@@ -699,29 +725,38 @@ knitr::include_graphics("Images/Derivada2.png",dpi=1200)
 </div>
 
 
-## Relación de la derivación con el crecimiento de una función
-<l class="observ">Observación: </l> si la desigualdad anterior $\frac{f(x)-f(x_0)}{x-x_0}\geq 0$ no es estricta, se dice que $f$ es **creciente**.
+## Derivación y extremos
+<l class="definition">Definición de decrecimiento de una función. </l>
 
-<l class="definition">Definición de decrecimiento de una función: </l>
-Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Diremos que $f$ es **estrictamente decreciente** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$ tal que para todo $x$ de dicho entorno diferente de $x_0$, o si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, con $x\neq x_0$, se verifica que el cociente siguiente es negativo: $\frac{f(x)-f(x_0)}{x-x_0}<0$.
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un valor del dominio de $f$. Diremos que $f$ es **estrictamente decreciente** en el punto $x_0$ si existe un entorno de $x_0$, es decir, existe un valor $\delta >0$ tal que para todo $x$ de dicho entorno diferente de $x_0$, o si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, con $x\neq x_0$, se verifica que el cociente siguiente es negativo: $\frac{f(x)-f(x_0)}{x-x_0}<0$.
 
-## Relación de la derivación con el crecimiento de una función
-<l class="observ">Observación: </l> la definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)<f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)>f(x_0)$. Ver gráfico siguiente.
+<l class="observ">Observación. </l> 
 
-<l class="observ">Observación: </l> si la desigualdad anterior $\frac{f(x)-f(x_0)}{x-x_0}\leq 0$ no es estricta, se dice que $f$ es **decreciente**.
+La definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)<f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)>f(x_0)$. Ver gráfico siguiente.
 
-
-
-## Relación de la derivación con el crecimiento de una función
+## Derivación y extremos
 <div class="center">
 ```{r, echo=FALSE, label=der3,fig.cap="",out.width = "650px"}
 knitr::include_graphics("Images/Derivada3.png",dpi=1200)
 ```
 </div>
 
-## Relación de la derivación con el crecimiento de una función
+## Derivación y extremos
+<l class="observ">Observación. </l> 
+
+Si la desigualdad  $\frac{f(x)-f(x_0)}{x-x_0}\geq 0$ no es estricta, se dice que $f$ es **creciente**.
+
+
+<l class="observ">Observación. </l> 
+
+Si la desigualdad $\frac{f(x)-f(x_0)}{x-x_0}\leq 0$ no es estricta, se dice que $f$ es **decreciente**.
+
+
+
+## Derivación y extremos
 <l class="prop">Proposición.</l>
-Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Supongamos que $f$ es derivable en $x_0$. Entonces si $f'(x_0)>0$ o $f$ tiene **derivada positiva** en $x_0$, entonce $f$ es **estrictamente creciente** en $x_0$.
+
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un valor del dominio de $f$. Supongamos que $f$ es derivable en $x_0$. Entonces si $f'(x_0)>0$ o $f$ tiene **derivada positiva** en $x_0$, entonces $f$ es **estrictamente creciente** en $x_0$.
 
 <div class="dem">
 **Demostración**
@@ -732,7 +767,7 @@ $$
 $$
 </div>
 
-## Relación de la derivación con el crecimiento de una función
+## Derivación y extremos
 <div class="dem">
 **Demostración**
 
@@ -749,9 +784,10 @@ $$
 de donde deducimos que $\frac{f(x)-f(x_0)}{x-x_0}>0$ para todo $x$ del entorno, $x\in (x_0-\delta,x_0+\delta)$, lo que equivale a decir que $f$ es estrictamente creciente en $x_0$.
 </div>
 
-## Relación de la derivación con el crecimiento de una función
+## Derivación y extremos
 <l class="prop">Proposición.</l>
-Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del dominio de $f$. Supongamos que $f$ es derivable en $x_0$. Entonces si $f'(x_0)<0$ o $f$ tiene **derivada negativa** en $x_0$, entonce $f$ es **estrictamente decreciente** en $x_0$.
+
+Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un valor del dominio de $f$. Supongamos que $f$ es derivable en $x_0$. Entonces si $f'(x_0)<0$ o $f$ tiene **derivada negativa** en $x_0$, entonces $f$ es **estrictamente decreciente** en $x_0$.
 
 <div class="exercise">
 **Ejercicio**
@@ -795,28 +831,28 @@ for x in [-pi/2,3*pi/2]:
 
 </div>
 
-## Teorema de Rolle. Teorema del valor medio
+## Teoremas de Rolle y del valor medio
 
-Las proposiciones vistas hasta ahora nos estudian el comportamiento local de una función en un punto en términos de su crecimiento dependiendo del signo de la derivada de dicha función en dicho punto.
+Las proposiciones vistas hasta ahora nos permiten determinar el comportamiento local de una función en un punto en términos de su crecimiento dependiendo del signo de la derivada de dicha función en dicho punto.
 
-Vamos a ver dos resultados que estudian las propiedades globales de la función en todo su dominio a partir del comportamiento de la función derivada de dicha función.
+Vamos a ver dos resultados que nos permiten determinar las propiedades globales de la función en todo su dominio a partir del comportamiento de la función derivada de dicha función.
 
-El teorema de Rolle dice en pocas palabras que si una función derivable en todo su dominio coincide en los extremos del mismo, necesariamente ha de tener como mínimo un extremo. Intuitivamente, el resultado es claro ya que si suponemos por ejemplo que la función crece en su extremo izquierdo $a$, como $f(a)=f(b)$, donde $b$ es su extremo derecho, en algún momento tiene que decrecer. Por tanto, en "dicho momento", la función tendrá un extremo o un máximo en este caso:
+El teorema de Rolle dice que si los valores de una función derivable en todo el interior de un intervalo, los valores coinciden en los extremos del mismo, necesariamente ha de tener al menos un máximo o un mínimo Intuitivamente, el resultado es claro ya que si suponemos por ejemplo que la función crece en su extremo izquierdo $a$, como $f(a)=f(b)$, donde $b$ es su extremo derecho, en algún momento tiene que decrecer. Por tanto, en *dicho momento*, la función tendrá un extremo o un máximo en este caso.
 
-## Teorema de Rolle. Teorema del valor medio
+## Teoremas de Rolle y del valor medio
 <div class="center">
 ```{r, echo=FALSE, label=rolle1,fig.cap="",out.width = "650px"}
 knitr::include_graphics("Images/Rolle1.png",dpi=1200)
 ```
 </div>
 
-## Teorema de Rolle. Teorema del valor medio
-El teorema del valor medio nos dice que dada una función derivable en todo su dominio, ha de existir un punto en el que recta tangente en dicho punto sea paralela a la recta que pasa por los extremos del dominio de la función.
+## Teoremas de Rolle y del valor medio
+El teorema del valor medio dice que dada una función derivable en todo su dominio, ha de existir un punto en el que recta tangente en dicho punto sea paralela a la recta que pasa por los extremos del dominio de la función.
 
 En el gráfico siguiente la recta verde es la recta que pasa por los extremos de la función (en azul) y la recta roja es la recta tangente al punto $c$ que pertenece al dominio de la función.
 
 
-## Teorema de Rolle. Teorema del valor medio
+## Teoremas de Rolle y del valor medio
 <div class="center">
 ```{r, echo=FALSE, label=valormedio1,fig.cap="",out.width = "650px"}
 knitr::include_graphics("Images/ValorMedio1.png",dpi=1200)
@@ -825,8 +861,12 @@ knitr::include_graphics("Images/ValorMedio1.png",dpi=1200)
 
 ## Teorema de Rolle
 <l class="prop">Teorema de Rolle.</l>
-Sea $f: [a,b]\longrightarrow \mathbb{R}$ una función real de variable real (!ojo!, están incluidos los extremos del intervalo). Supongamos que $f$ es continua en todo su dominio $[a,b]$ y derivable en los puntos del interior $(a,b)$. Supongamos además que las imágenes en los extremos coinciden, es decir, $f(a)=f(b)$. Entonces existe al menos un punto $c\in (a,b)$ tal que $f'(c)=0$.
 
+Sea $f: [a,b]\longrightarrow \mathbb{R}$ una función real de variable real. Supongamos que $f$ es continua en todo su dominio $[a,b]$ y derivable en los puntos del interior $(a,b)$. Supongamos además que las imágenes en los extremos coinciden, es decir, $f(a)=f(b)$. Entonces existe al menos un punto $c\in (a,b)$ tal que $f'(c)=0$.
+
+<l class="observ">Observación.</l>
+
+En el dominio de definición de $f$ están incluidos los extremos del intervalo.
 
 ## Teorema de Rolle
 <div class="dem">
@@ -842,6 +882,7 @@ Pueden ocurrir dos casos:
 
 ## Teorema del valor medio de Cauchy
 <l class="prop">Teorema del valor medio de Cauchy.</l>
+
 Sean $f,g:[a,b]\longrightarrow \mathbb{R}$ dos funciones continuas en $[a,b]$ y derivables en $(a,b)$. Entonces, existe un punto $c\in (a,b)$ del interior del intervalo tal que:
 $$
 f'(c)\cdot (g(b)-g(a)) = g'(c)\cdot (f(b)-f(a)).
@@ -875,7 +916,8 @@ $$
 </div>
 
 ## Teorema del valor medio de Lagrange
-<l class="prop">Teorema del valor medio de Lagrange</l>
+<l class="prop">Corolario: Teorema del valor medio de Lagrange.</l>
+
 Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función continua en $[a,b]$ y derivable en $(a,b)$. Entonces, existe un punto $c\in (a,b)$ del interior del intervalo tal que:
 $$
 f(b)-f(a)=f'(c)\cdot (b-a).
@@ -890,11 +932,15 @@ Indicación: considerar $f(x)$ la función del teorema, $g(x)=x$ y aplicar el **
 </div>
 
 ## Teorema del valor medio de Lagrange
-<l class="observ">Observación:</l>
-el **teorema del valor medio de Lagrange** es equivalente a afirmar lo que hemos dicho anteriormente: si $f$ es derivable en el intervalo abierto y continua en el cerrado, existe un valor $c$ del interior del intervalo tal que $f'(c)=\frac{f(b)-f(a)}{b-a}$, es decir, la pendiente de la recta tangente en el punto $c$ coincide con la pendiente de la recta que pasa por los extremos $(a,f(a))$ y $(b,f(b))$. Es decir, la recta tangente en el punto $c$ es paralela a la recta que pasa por los extremos del intervalo de definición de la función $f$.
+<l class="observ">Observación.</l>
 
-## Resultados que se derivan de los teoremas de Rolle y del valor medio
+El **Teorema del valor medio de Lagrange** es equivalente a afirmar lo que hemos dicho anteriormente: si $f$ es derivable en el intervalo abierto y continua en el cerrado, existe un punto $c$ del interior del intervalo tal que $f'(c)=\frac{f(b)-f(a)}{b-a}$, es decir, la pendiente de la recta tangente en el punto $c$ coincide con la pendiente de la recta que pasa por los extremos $(a,f(a))$ y $(b,f(b))$. 
+
+Es decir, la recta tangente en el punto $c$ es paralela a la recta que pasa por los extremos del intervalo de definición de la función $f$.
+
+## Consecuencias de los teoremas
 <l class="prop">Corolario.</l>
+
 Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función continua en $[a,b]$ y derivable en $(a,b)$ tal que $f'(x)=0$ para todo $x\in (a,b)$. Entonces $f$ es constante.
 
 <div class="dem">
@@ -912,8 +958,9 @@ Deducimos, por tanto, que $f(x)=f(a)$, condición que equivale a que la función
 </div>
 
 
-## Resultados que se derivan de los teoremas de Rolle y del valor medio
+## Consecuencias de los teoremas
 <l class="prop">Corolario.</l>
+
 Sean $f, g:[a,b]\longrightarrow \mathbb{R}$ funciones continuas en $[a,b]$ y derivables en $(a,b)$ tal que $f'(x)=g'(x)$ para todo $x\in (a,b)$. Entonces $f(x)-g(x)$ es constante.
 
 <div class="exercise">
@@ -925,8 +972,9 @@ Indicación: aplicar el resultado que hemos visto antes a la función $h(x)=f(x)
 </div>
 
 
-## Resultados que se derivan de los teoremas de Rolle y del valor medio
+## Consecuencias de los teoremas
 <l class="prop">Corolario.</l>
+
 Sea $f:(a,b)\longrightarrow \mathbb{R}$ una función  derivable en todo punto del intervalo $(a,b)$.
 Entonces, $f$ es creciente en $(a,b)$ si, y sólo si, $f'(x)\geq 0$, para todo $x\in (a,b)$ del intervalo.
 
@@ -938,25 +986,25 @@ $\Rightarrow$ Supongamos que la función $f$ es creciente en $(a,b)$. Esto signi
 Entonces, usando que $\displaystyle f'(x_0)=\lim_{x\to x_0} \frac{f(x)-f(x_0)}{x-x_0}$, tendremos que $f'(x_0)\geq 0$, tal como queríamos ver.
 </div>
 
-## Resultados que se derivan de los teoremas de Rolle y del valor medio
+## Consecuencias de los teoremas
 
 <div class="dem">
 **Demostración**
 
 $\Leftarrow$ Supongamos ahora que $f'(x_0)\geq 0$, para todo valor $x_0\in (a,b)$ dentro del intervalo. Veamos que $f$ es creciente en $x_0$. 
 
-Sea $x>x_0$. Si aplicamos el **teorema del valor medio de Lagrange** a la función $f$ restringida al intervalo $[x_0,x]$ tenemos que existe un valor $c$ tal que: 
+Sea $x>x_0$. Si aplicamos el **teorema del valor medio de Lagrange** a la función $f$ restringida al intervalo $[x_0,x]$ tenemos que existe un punto $c$ tal que: 
 $$
 f'(c)=\frac{f(x)-f(x_0)}{x-x_0}\geq 0.
 $$
-Sea ahora $x<x_0$. Si volvemos a aplicar el el **teorema del valor medio de Lagrange** a la función $f$ restringida al intervalo $[x,x_0]$ tenemos que existe un valor $c$ tal que: 
+Sea ahora $x<x_0$. Si volvemos a aplicar el el **teorema del valor medio de Lagrange** a la función $f$ restringida al intervalo $[x,x_0]$ tenemos que existe un punto $c$ tal que: 
 $$
 f'(c)=\frac{f(x_0)-f(x)}{x_0-x}=\frac{f(x)-f(x_0)}{x-x_0}\geq 0.
 $$
 
 </div>
 
-## Resultados que se derivan de los teoremas de Rolle y del valor medio
+## Consecuencias de los teoremas
 
 <div class="dem">
 **Demostración**
@@ -966,8 +1014,9 @@ En resumen, el cociente $\frac{f(x)-f(x_0)}{x-x_0}\geq 0$ siempre es positivo, c
 De hecho, hubiera sido suficiente demostrar que el cociente anterior es positivo en un entorno de $x_0$ pero hemos demostrado más, hemos visto que dicho cociente siempre es positivo sea cual sea el valor $x\in (a,b)$ del intervalo.
 </div>
 
-## Resultados que se derivan de los teoremas de Rolle y del valor medio
+## Consecuencias de los teoremas
 <l class="prop">Corolario.</l>
+
 Sea $f:(a,b)\longrightarrow \mathbb{R}$ una función  derivable en todo punto del intervalo $(a,b)$.
 Entonces, $f$ es decreciente en $(a,b)$ si, y sólo si, $f'(x)\leq 0$, para todo $x\in (a,b)$ del intervalo.
 
@@ -983,7 +1032,7 @@ Demostrar el corolario anterior usando la misma técnica de demostración para e
 
 Consideremos la función vista anteriormente $f(x)=\sin (x)-\cos(x)$ definida en el intervalo $(-\pi,\pi)$.
 
-Como $f(-\pi)=1=f(\pi)$, aplicando el **teorema de Rolle**, sabemos que existe como mínimo un valor $c$ tal que $f'(c)=0$. De hecho, hay dos como hemos visto anteriormente: $c=-\frac{\pi}{4}$ y $c=\frac{3}{4}\pi$:
+Como $f(-\pi)=1=f(\pi)$, aplicando el **teorema de Rolle**, sabemos que existe como mínimo un punto $c$ tal que $f'(c)=0$. De hecho, hay dos como hemos visto anteriormente: $c=-\frac{\pi}{4}$ y $c=\frac{3}{4}\pi$:
 $$
 \begin{array}{rl}
 f'(x) & =\cos(x)+\sin(x),\\
@@ -991,7 +1040,7 @@ f'\left(-\frac{\pi}{4}\right) & =\cos\left(-\frac{\pi}{4}\right)+\sin\left(-\fra
 f'\left(\frac{3\pi}{4}\right) & =\cos\left(\frac{3\pi}{4}\right)+\sin\left(\frac{3\pi}{4}\right)=-\frac{\sqrt{2}}{2}+\frac{\sqrt{2}}{2}=0.
 \end{array}
 $$
-Si ahora consideramos la función anterior pero definida en el intervalo $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, tenemos que existe un valor $c$ tal que:
+Si ahora consideramos la función anterior pero definida en el intervalo $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, tenemos que existe un punto $c$ tal que:
 $$
 f'(c)=\cos(c)+\sin(c)=\frac{f\left(\frac{\pi}{2}\right)-f\left(-\frac{\pi}{2}\right)}{\frac{\pi}{2}-\left(-\frac{\pi}{2}\right)}=\frac{1-(-1)}{\pi}=\frac{2}{\pi}.
 $$
@@ -1064,29 +1113,28 @@ print('El valor de 2/pi es:{k}'.format(k=k))
 
 Una de las aplicaciones más importantes de las derivadas es su aplicación al cálculo de límites de funciones.
 
-La regla de L'Hôpital nos permite calcular límites indeterminados usando derivadas:
+La regla de L'Hôpital permite resolver indeterminaciones usando derivadas:
 
 ## Regla de L'Hôpital
 <l class="prop">Teorema: regla de L'Hôpital.</l>
-Sean $f,g:(a,b)\longrightarrow\mathbb{R}$ y sea $c\in (a,b)$ un punto interior del intervalo. Supongamos:
 
-* $f$ y $g$ son derivables en un entorno del punto $c$,
+Sean $f,g:(a,b)\longrightarrow\mathbb{R}$ dos funciones derivables en un punto $c\in (a,b)$. Supongamos:
+
 * $f(c)=g(c)=0$,
-* $g(x)\neq 0$ para todo valor $x$ del entorno de $c$ diferente de $c$,
-* $g'(x)\neq 0$, para todo valor $x$ del entorno de $c$ diferente de $c$.
+* $g(x)\neq 0$ y $g'(x)\neq 0$ para todo punto $x$ del entorno de $c$ diferente de $c$,
 
-Si se verifican las condiciones anteriores y el límite siguiente existe $\displaystyle\lim_{x\to c}\frac{f'(x)}{g'(x)}=L$ y vale $L$ ($L$ puede ser $\pm\infty$), entonces también existe el límite $\displaystyle\lim_{x\to c}\frac{f(x)}{g(x)}=L$ y vale $L$.
+Si se verifican las condiciones anteriores y el límite siguiente existe $\displaystyle\lim_{x\to c}\frac{f'(x)}{g'(x)}$ y vale $L$, entonces también existe el límite $\displaystyle\lim_{x\to c}\frac{f(x)}{g(x)}$ y vale $L$.
 
 
 ## Regla de L'Hôpital
 <div class="dem">
 **Demostración**
 
-Sea $\delta >0$ tal que $(c-\delta,c+\delta)\subseteq (a,b)$ en entorno de $c$ donde se cumplen las condiciones del teorema. 
+Sea $\delta >0$ tal que $(c-\delta,c+\delta)\subseteq (a,b)$ y donde se cumplen las condiciones del teorema. 
 
-Sea $x\in (c-\delta,c+\delta)$ un valor del entorno. Podemos afirmar que en intervalo $[c,x]$ se cumplen las hipótesis del **teorema del valor medio de Cauchy** ya que $f$ y $g$ son derivables en $(c,x)$ al serlo en todo el entorno $(c-\delta,c+\delta)$ y continuas en $[c,x]$ ya que como son derivables en todo en entorno, serán continuas y como $[c,x]\subset (c-\delta,c+\delta)$, también serán continuas en el intervalo $[c,x]$.
+Sea $x\in (c-\delta,c+\delta)$ un punto del entorno. En el intervalo $[c,x]$ se cumplen las hipótesis del **Teorema del valor medio de Cauchy**, ya que $f$ y $g$ son derivables en $(c,x)$ al serlo en todo el entorno $(c-\delta,c+\delta)$, y continuas en $[c,x]$, ya que como son derivables en todo el entorno, serán continuas y como $[c,x]\subset (c-\delta,c+\delta)$, también serán continuas en el intervalo $[c,x]$.
 
-Usando por tanto el **teorema del valor medio de Cauchy**, podemos afirmar que existe un punto $d\in (c,x)$ tal que:
+Usando por tanto el **Teorema del valor medio de Cauchy**, podemos afirmar que existe un punto $d\in (c,x)$ tal que:
 $$
 f'(d)\cdot (g(d)-g(c))=g'(d)\cdot (f(d)-f(c)).
 $$
@@ -1108,7 +1156,9 @@ por hipótesis.
 En resumen, si existe $\displaystyle \lim_{x\to c}\frac{f'(x)}{g'(x)}$, también existe el límite $\displaystyle \lim_{x\to c}\frac{f(x)}{g(x)}$ y los dos coinciden.
 </div>
 
-<l class="observ">Observación:</l> el teorema sigue siendo cierto en el caso en que $a$, $b$, $c$ o $L$ son $\pm \infty$. Es decir, si existe el límite $\displaystyle \lim_{x\to \pm\infty}\frac{f'(x)}{g'(x)}$, también existe el límite $\displaystyle \lim_{x\to \pm\infty}\frac{f(x)}{g(x)}$ y los dos coinciden y pueden tener como resultado $\pm\infty$.
+<l class="observ">Observación.</l> 
+
+El teorema sigue siendo cierto en el caso en que $a$, $b$, $c$ o $L$ son $\pm \infty$. Es decir, si existe el límite $\displaystyle \lim_{x\to \pm\infty}\frac{f'(x)}{g'(x)}$, también existe el límite $\displaystyle \lim_{x\to \pm\infty}\frac{f(x)}{g(x)}$ y los dos coinciden y pueden tener como resultado $\pm\infty$.
 
 ## Ejemplo
 <div class="example">
@@ -1147,7 +1197,7 @@ El límite anterior en `Wolfram Alpha` se muestra en el enlace siguiente:
 <div class="important">
 <i class="fa fa-exclamation-triangle"> ¡Cuidado! </i>
 </div>
-La regla de L'Hôpital sólo se puede aplicar en un sentido. Es decir, si existe el límite $\displaystyle \lim_{x\to c}\frac{f'(x)}{g'(x)}$, bajo las condiciones del Teorema anterior, existe el $\displaystyle \lim_{x\to c}\frac{f(x)}{g(x)}$ y son iguales; ahora bien, si no existe el límite $\displaystyle \lim_{x\to c}\frac{f'(x)}{g'(x)}$, no podemos decir nada acerca del límite $\displaystyle \lim_{x\to c}\frac{f(x)}{g(x)}$. Véase el ejemplo siguiente.
+La Regla de L'Hôpital sólo se puede aplicar en un sentido. Es decir, si existe el límite $\displaystyle \lim_{x\to c}\frac{f'(x)}{g'(x)}$, bajo las condiciones del teorema anterior, existe el $\displaystyle \lim_{x\to c}\frac{f(x)}{g(x)}$ y son iguales; ahora bien, si no existe el límite $\displaystyle \lim_{x\to c}\frac{f'(x)}{g'(x)}$, no podemos decir nada acerca del límite $\displaystyle \lim_{x\to c}\frac{f(x)}{g(x)}$. Véase el ejemplo siguiente.
 </div>
 
 ## Ejemplo
@@ -1157,22 +1207,22 @@ La regla de L'Hôpital sólo se puede aplicar en un sentido. Es decir, si existe
 Consideremos el límite siguiente:
 $\displaystyle\lim_{x\to 0}\frac{x^2\sin\left(\frac{1}{x}\right)}{\sin x}.$
 
-Si sustituimos $x$ por $0$ en el límite anterior obtenemos el valor $\frac{0}{0}$, pensad que $\displaystyle\lim_{x\to 0}x^2\sin\left(\frac{1}{x}\right)=0$ vale $0$ ya que es el límite de una funció que tiende a 0 ($x^2$) por una función acotada ($\sin\left(\frac{1}{x}\right)$).
+Si sustituimos $x$ por $0$ en el límite anterior obtenemos el valor $\frac{0}{0}$, pensad que $\displaystyle\lim_{x\to 0}x^2\sin\left(\frac{1}{x}\right)=0$ vale $0$ ya que es el límite de una funció que tiende a 0 ($x^2$) por una función acotada $\left(\sin\left(\frac{1}{x}\right)\right)$.
 
 Apliquemos pues la regla de l'Hôpital:
 $$
 \begin{array}{rl}
-\displaystyle\lim_{x\to 0}\frac{x^2\sin\left(\frac{1}{x}\right)}{\sin x} & \displaystyle =\lim_{x\to 0}\frac{2x\sin\left(\frac{1}{x}\right)+x^2\cdot \left(-\frac{1}{x^2}\cos\left(\frac{1}{x}\right)\right)}{\cos x}=
+\displaystyle\lim_{x\to 0}\frac{\left(x^2\sin\left(\frac{1}{x}\right)\right)'}{(\sin x)'} & \displaystyle =\lim_{x\to 0}\frac{2x\sin\left(\frac{1}{x}\right)+x^2\cdot \left(-\frac{1}{x^2}\cos\left(\frac{1}{x}\right)\right)}{\cos x}=
 \lim_{x\to 0}\frac{2x\sin\left(\frac{1}{x}\right)-\cos\left(\frac{1}{x}\right)}{\cos x} \\ & \displaystyle =\lim_{x\to 0} \frac{2x\sin\left(\frac{1}{x}\right)}{\cos x}-\lim_{x\to 0}\frac{\cos\left(\frac{1}{x}\right)}{\cos x} = 0-\lim_{x\to 0}\frac{\cos\left(\frac{1}{x}\right)}{\cos x} = -\lim_{x\to 0}\frac{\cos\left(\frac{1}{x}\right)}{\cos x}.
 \end{array}
 $$
-El límite $\displaystyle \lim_{x\to 0} \frac{2x\sin\left(\frac{1}{x}\right)}{\cos x}$ vale $0$ ya que el denominador tiende a $1$ cuando $x\to 0$ y el numerador es el límite de una función que tiende a $0$ ($2x$) por una función acotada ($\sin\left(\frac{1}{x}\right)$).
+El límite $\displaystyle \lim_{x\to 0} \frac{2x\sin\left(\frac{1}{x}\right)}{\cos x}$ vale $0$ ya que el denominador tiende a $1$ cuando $x\to 0$ y el numerador es el límite de una función que tiende a $0$ ($2x$) por una función acotada $\left(\sin\left(\frac{1}{x}\right)\right)$.
 
 </div>
 
 ## Ejemplo
 <div class="example">
-El límite anterior no existe ya que si consideramos la sucesión $x_n=\frac{1}{2\pi n}\longrightarrow 0$, si $n\to\infty$, el límite de la sucesión $\frac{\cos\left(\frac{1}{x_n}\right)}{\cos x_n}$ vale:
+El límite del cociente de derivadas no existe ya que si consideramos la sucesión $x_n=\frac{1}{2\pi n}\longrightarrow 0$, si $n\to\infty$, el límite de la sucesión $\frac{\cos\left(\frac{1}{x_n}\right)}{\cos x_n}$ vale:
 $$
 -\lim_{n\to\infty}\frac{\cos (2\pi n)}{\cos\left(\frac{1}{2\pi n}\right)}=-1.
 $$
@@ -1192,7 +1242,7 @@ $$
 $$
 El primer límite $\displaystyle \lim_{x\to 0}\frac{x}{\sin x}$ vale $1$ ya que vimos en su momento que $\displaystyle \lim_{x\to 0}\frac{\sin x}{x}=1$, por tanto, si hacemos el límite de su recíproco también será $1$: $\displaystyle \lim_{x\to 0}\frac{x}{\sin x}=1$.
 
-El segundo límite $\displaystyle \lim_{x\to 0} x\sin\left(\frac{1}{x}\right)$ vale $0$ ya que es el límite de una función que tiende a $0$ ($x$) por una función acotada ($\sin\left(\frac{1}{x}\right)$).
+El segundo límite $\displaystyle \lim_{x\to 0} x\sin\left(\frac{1}{x}\right)$ vale $0$ ya que es el límite de una función que tiende a $0$ ($x$) por una función acotada $\left(\sin\left(\frac{1}{x}\right)\right)$.
 
 </div>
 
@@ -1210,9 +1260,9 @@ El límite anterior en `Wolfram Alpha` se muestra en el enlace siguiente:
 
 ## Introducción
 
-La idea fundamental de la **fórmula de Taylor** es aproximar localmente una función en un entorno de un valor determinado por las funciones más sencillas que se conocen, los polinomios.
+La idea fundamental de la **fórmula de Taylor** es aproximar localmente una función en un entorno de un valor determinado por las funciones más manejables que se conocen, los polinomios.
 
-Dicho de manera más explícita, consideremos una función $f:(a,b)\longrightarrow\mathbb{R}$ que se puede derivar hasta un cierto orden, pongamos $n+1$, para un cierto valor $n$ natural, y sea $x_0\in (a,b)$ un valor del interior del dominio de $f$. Queremos hallar un polinomio $P_n(x)$ tal que se verifique que $f$ y $P_n$ sean "iguales" en $x_0$ hasta orden $n$:
+Dicho de manera más explícita, consideremos una función $f:(a,b)\longrightarrow\mathbb{R}$ que se puede derivar hasta un cierto orden, pongamos $n+1$, para un cierto valor $n$ natural, y sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Queremos hallar un polinomio $P_n(x)$ tal que se verifique que $f$ y $P_n$ sean "iguales" en $x_0$ hasta orden $n$:
 $$
 \lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)^n} =0,\mbox{ para }m=0,1,\ldots,n.
 $$
@@ -1272,12 +1322,14 @@ Si clicáis en la casilla *More terms* en la parte de arriba del gráfico veréi
 
 </div>
 
-<l class="observ">Observación: </l> la elección del punto $x_0$ no es arbitraria. Hemos de elegir un valor $x_0$ del que conozcamos el valor $f(x_0)$ y las derivadas de cualquier orden en $x_0$, $f^{(m)}(x_0)$, $m=1,2,\ldots$
+<l class="observ">Observación. </l> 
+
+La elección del punto $x_0$ no es arbitraria. Hemos de elegir un valor $x_0$ del que conozcamos el valor $f(x_0)$ y las derivadas de cualquier orden en $x_0$, $f^{(m)}(x_0)$, $m=1,2,\ldots$
 
 
 ## Introducción
 <div class="example">
-**Ejemplo anterior**
+**Ejemplo (continuación)**
 
 En el ejemplo anterior donde recordemos que $f(x)=\sin x$, debemos elegir un punto $x_0$ en el cual conozcamos los valores de $\sin x_0$ y $\cos x_0$ ya que si conocemos dichos valores, conoceremos $f(x_0)$ y las derivadas de cualquier orden:
 $$
@@ -1297,7 +1349,8 @@ $\cos(x_0)$|$1$|$\frac{\sqrt{3}}{2}$|$\frac{\sqrt{2}}{2}$|$\frac{1}{2}$|$0$|$-1$
 ## Cálculo del polinomio de Taylor
 El resultado siguiente nos da una expresión del polinomio de Taylor:
 
-<l class="prop">Teorema. Expresión del polinomio de Taylor o la expansión de Taylor.</l>
+<l class="prop">Teorema. Expresión del polinomio de Taylor.</l>
+
 Sea $n$ un valor natural. Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto interior del dominio de $f$. Supongamos que $f$ es derivable $n+1$ veces en $x_0$. Entonces el polinomio de Taylor de grado $n$ con **orden de contacto** con $f$ superior a $n$ en $x_0$ es el siguiente:
 $$
 \begin{array}{rl}
@@ -1337,7 +1390,7 @@ $$
 <div class="dem">
 Por hipótesis de inducción, sabemos que: $P_n^{(i)}(x_0)=f^{(i)}(x_0)$, para $i=0,\ldots,n$ ya que recordemos que $P_n(x)$ es el polinomio de Taylor de grado $n$.
 
-Para verificar que $P_{n+1}(x)$ correspondiente a la expresión anterior es el polinomio de Taylor de grado $n+1$, hay que verificar las condiciones siguientes: $P_{n+1}^{(i)}(x_0)=f^{(i)}(x_0)$, para $i=0,\ldots,n+1$.
+Para verificar que $P_{n+1}(x)$ correspondiente a la expresión anterior es el polinomio de Taylor de grado $n+1$, hay que verificar las igualdades siguientes: $P_{n+1}^{(i)}(x_0)=f^{(i)}(x_0)$, para $i=0,\ldots,n+1$.
 
 Si $i$ está entre $0$ y $n$, tenemos que:
 $$
@@ -1352,7 +1405,7 @@ ya que $n+1-i>0$ por lo que el segundo sumando será nulo y la última igualdad 
 
 ## Cálculo del polinomio de Taylor
 <div class="dem">
-Sólo falta demostrar el caso $i=n+1$. Si hacemos la derivada $n+1$-ésima del polinomio $P_{n+1}(x)$ obtenemos:
+Sólo falta demostrar el caso $i=n+1$. Si calculamos la derivada $n+1$-ésima del polinomio $P_{n+1}(x)$ obtenemos:
 $$
 P_{n+1}^{(n+1)}(x)=P_n^{(n+1)}(x)+f^{(n+1)}(x_0) = f^{(n+1)}(x_0),
 $$
@@ -1449,7 +1502,9 @@ Si váis al enlace siguiente  [![](Images/wolfram.png)](https://www.wolframalpha
 Hallar el polinomio de Taylor de grado $n$ para la misma función que el ejemplo anterior en el punto $x_0=\frac{\pi}{2}$.
 </div>
 
-<l class="definition">Definición.</l> Dada una función $f:(a,b)\longrightarrow \mathbb{R}$, $n+1$ veces derivable y dado $x_0\in (a,b)$ un punto interior del dominio de $f$, sea $P_n(x)$ el polinomio de Taylor de grado $n$ en $x_0=0$. Dicho polinomio se denomina **polinomio o expansión de MacLaurin de grado $n$ de $f$ **.
+<l class="definition">Definición.</l> 
+
+Dada una función $f:(a,b)\longrightarrow \mathbb{R}$, $n+1$ veces derivable tal que $0\in (a,b)$ y sea $P_n(x)$ el polinomio de Taylor de grado $n$ en $x_0=0$. Dicho polinomio se denomina **polinomio o expansión de MacLaurin de grado $n$ de $f$ **.
 
 En el ejemplo anterior, hemos hallado el polinomio de MacLaurin de grado $n$ de la función $f(x)=\sin x$.
 
@@ -1459,13 +1514,14 @@ En el ejemplo anterior, hemos hallado el polinomio de MacLaurin de grado $n$ de 
 
 Una vez conocido cómo hallar el **polinomio de Taylor** de una función $f(x)$ en un punto $x_0$ de su dominio, podemos usar dicho polinomio o dicha expansión para **aproximar** el valor de dicha función $f(x)$ para valores $x$ **cercanos** a $x_0$.
 
-Ahora bien, si no tenemos manera de estimar o calcular alguna **cota del error** que estamos cometiendo, dicha aproximación no tiene ningún sentido ya que sería como "ir a ciegas", es decir, no sabemos hasta qué punto el valor $P_n(x)$ aproxima bien o no el valor de $f(x)$.
+Ahora bien, si no tenemos manera de estimar o calcular alguna **cota del error** que estamos cometiendo, dicha aproximación no tiene ningún sentido ya que sería como ir a ciegas, es decir, no sabemos hasta qué punto el valor $P_n(x)$ aproxima bien o no el valor de $f(x)$.
 
 El siguiente resultado nos da una expresión que permite acotar el error cometido usando el polinomio de Taylor.
 
 ## Error en el polinomio de Taylor
 
 <l class="prop">Teorema. Error en la fórmula de Taylor. </l>
+
 Sea $f$ una función $f:(a,b)\longrightarrow \mathbb{R}$, sea $x_0\in (a,b)$ un punto interior del dominio de $f$ y supongamos que $f$ es $n+1$ veces derivable en un entorno de $x_0$. Sea $P_n(x)$ el polinomio de Taylor de grado $n$ en $x_0$. Entonces si $x$ es un punto del entorno anterior de $x_0$, se verifica:
 $$
 f(x)-P_n(x)=\frac{f^{n+1}(c)}{m\cdot n!}\cdot (x-c)^{n-m+1}\cdot (x-x_0)^m,
@@ -1474,9 +1530,12 @@ donde $c$ es un punto que está situado entre $x_0$ y $x$ (o entre $x$ y $x_0$, 
 Dicha expresión es conocida por **resto de Cauchy**.
 
 ## Error en el polinomio de Taylor
-<l class="observ">Observación:</l> a la expresión $f(x)-P_n(x)$ se le denota por $R_n(x-x_0)$, $R$ de resto.
+<l class="observ">Observación.</l> 
+
+A la expresión $f(x)-P_n(x)$ se le denota por $R_n(x-x_0)$, $R$ de resto.
 
 <l class="prop">Corolario.</l>
+
 En las condiciones del teorema anterior, considerando $m=n+1$, tenemos la expresión siguiente conocida como **resto de Lagrange**:
 $$
 f(x)-P_n(x)=\frac{f^{n+1}(c)}{(n+1)!}\cdot (x-x_0)^{n+1}.
@@ -1566,7 +1625,7 @@ P_n(x)=\sum_{i=0}^k \frac{(-1)^i x^{2i+1}}{(2i+1)!},
 $$
 con $k=\frac{n-2}{2}$, si $n$ es par y $k=\frac{n-1}{2}$, si $n$ es impar.
 
-El problema que nos planteamos es el siguiente: dado $x$ y $\mathrm{error}$ un error absoluto máximo que estamos dispuestos a cometer, calcular el valor de $P_n(x)$ tal que $|f(x)-P_n(x)=|\sin x-P_n(x)|\leq \mathrm{error}$.
+El problema que nos planteamos es el siguiente: dado $x$ y $\epsilon$ un error absoluto máximo que estamos dispuestos a cometer, calcular el valor de $P_n(x)$ tal que $|f(x)-P_n(x)=|\sin x-P_n(x)|\leq \epsilon$.
 
 El primer paso es calcular el valor de $n$. Nos fijamos a partir de la expresión de $P_n(x)$ que si $n$ es par el grado del polinomio de MacLaurin tiene grado $n-1$ ya que la potencia más alta de $x$, $2k+1$ vale $2k+1=n-1$.
 
@@ -1588,13 +1647,13 @@ $\displaystyle\max_{c\in <0,x>}\left|f^{n+1}(c)\right|\leq 1$ y la cota del erro
 $$
 |f(x)-P_n(x)|=|R_n(x)|\leq  \frac{|x|^{n+1}}{(n+1)!}.
 $$
-La $n$ buscada debe verificar: $\frac{|x|^{n+1}}{(n+1)!}\leq \mathrm{error}$.
+La $n$ buscada debe verificar: $\frac{|x|^{n+1}}{(n+1)!}\leq \epsilon$.
 
 </div>
 
 ## Ejemplo
 <div class="example">
-Como para cualquier valor de $x$ el límite $\displaystyle\lim_{n\to\infty} \frac{|x|^{n+1}}{(n+1)!}=0$, seguro que existe una $n$ tal que $\frac{|x|^{n+1}}{(n+1)!}\leq \mathrm{error}$.
+Como para cualquier valor de $x$ el límite $\displaystyle\lim_{n\to\infty} \frac{|x|^{n+1}}{(n+1)!}=0$, seguro que existe una $n$ tal que $\frac{|x|^{n+1}}{(n+1)!}\leq\epsilon$.
 
 La función siguiente nos calcula la $n$ dado $x$ y el error en `python` asegurándose que $n$ es par:
 ```{python}
@@ -1894,17 +1953,23 @@ Comprobemos que tiene efectivamente 6 cifras decimales exactas:
 ## Propiedades del desarrollo de Taylor
 La proposición siguiente es útil si queremos hallar el polinomio de Taylor de una función que puede escribirse como suma, producto o cociente de funciones donde es más fácil conocer su polinomio de Taylor:
 
-<l class="prop">Proposición.</l>
-Sean $f$, $g$ funciones reales de variable real $f,g:(a,b)\longrightarrow\mathbb{R}$ definidas en $(a,b)$ y sea $x_0\in (a,b)$ un punto del interior de su dominio. Sean $P_n(x)$ y $Q_n(x)$ los polinomios de Taylor de grado $n$ de las funciones $f$ y $g$, respectivamente en un entorno del punto $x_0$. Entonces:
 
-* El polinomio de Taylor de toda función escrita como combinación lineal de $f$ y $g$, $\lambda f+\mu g$, con $\lambda,\mu\in \mathbb{R}$ constantes reales es $\lambda P_n(x)+\mu Q_n(x)$.
-* La función producto $f\cdot g$ admite un polinomio de Taylor en el mismo entorno del punto $x_0$. Dicho polinomio de Taylor de la función $f\cdot g$ se calcula realizando el producto de los dos polinomios, $P_n(x)\cdot Q_n(x)$ y eliminando todos los términos de grado mayor o igual que $n+1$ en $(x-x_0)$.
-
+Sean $f$, $g$ funciones reales de variable real $f,g:(a,b)\longrightarrow\mathbb{R}$ definidas en $(a,b)$ y sea $x_0\in (a,b)$ un punto del interior de su dominio. Sean $P_n(x)$ y $Q_n(x)$ los polinomios de Taylor de grado $n$ de las funciones $f$ y $g$, respectivamente en un entorno del punto $x_0$. 
 
 ## Propiedades del desarrollo de Taylor
-<l class="prop">Proposición (continuación).</l>
+<l class="prop">Proposición.</l>
+
+* El polinomio de Taylor de toda función escrita como combinación lineal de $f$ y $g$, $\lambda f+\mu g$, con $\lambda,\mu\in \mathbb{R}$ constantes reales es $\lambda P_n(x)+\mu Q_n(x)$.
+
+* La función producto $f\cdot g$ admite un polinomio de Taylor en el mismo entorno del punto $x_0$. Dicho polinomio de Taylor de la función $f\cdot g$ se calcula realizando el producto de los dos polinomios, $P_n(x)\cdot Q_n(x)$ y eliminando todos los términos de grado mayor o igual que $n+1$ en $(x-x_0)$.
+
+## Propiedades del desarrollo de Taylor
+
+<l class="prop">Proposición.</l>
 
 * Si $g(x_0)\neq 0$, el cociente $\frac{f}{g}$ admite un polinomio de Taylor en este entorno. Dicho polinomio de Taylor de la función $\frac{f}{g}$ se calcula de realizar la operación $\frac{P_n(x)}{Q_n(x)}$, desarrollando esta expresión en potencias de $(x-x_0)$ y eliminando todos los términos de grado mayor o igual que $n+1$.
+
+
 
 ## Ejemplo
 <div class="example">
@@ -1958,40 +2023,40 @@ En la sección `Series representation at x = x0` da una expresión muy parecida 
 # Estudio local de una función 
 
 ## Introducción
-Dada una función real de variable real $f$, en esta sección vamos a estudiar cómo podemos **representarla gráficamente** estudiando un conjunto de características de la mismas donde la mayoría de ellas están basadas en la **función derivada**.
+Dada una función real de variable real $f$, en esta sección vamos a ver cómo podemos **representarla gráficamente** analizando un conjunto de características de la mismas, donde la mayoría de ellas están basadas en la **función derivada**.
 
 Antes de realizar dicho estudio necesitamos:
 
-* estudiar el crecimiento, decrecimento y extremos locales de la función $f$ en el caso general, es decir, estudiando las derivadas de orden superior y,
-* estudiar la concavidad y la convexidad de la función $f$ que definiremos más adelante.
+* analizar el crecimiento, decrecimento y extremos locales de la función $f$ en el caso general, es decir, estudiando las derivadas de orden superior y,
+* analizar la concavidad y la convexidad de la función $f$ que definiremos más adelante.
 
-## Estudio del crecimiento y extremos de una función
+## Crecimiento y extremos
 El teorema siguiente nos dice cuándo una función es creciente o decreciente y nos da condiciones para los extremos a partir de condiciones que tienen que verificar derivadas de orden superior de la función:
 
+## Crecimiento y extremos
 <l class="prop">Teorema. </l>
+
 Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real y sea $x_0\in (a,b)$ un punto interior del dominio de $f$. Supongamos que existe un natural $n$ tal que $f$ es derivable hasta orden $2n+2$ en un entorno de $x_0$. Entonces:
 
 * Si $f'(x_0)=f''(x_0)=\cdots =f^{(2n)}(x_0)=0$ y $f^{(2n+1)}(x_0)\neq 0$, resulta que:
   * si $f^{(2n+1)}(x_0)>0$, $f$ es creciente en $x_0$,
   * si $f^{(2n+1)}(x_0)<0$, $f$ es decreciente en $x_0$.
-  
-## Estudio del crecimiento y extremos de una función
-<l class="prop">Teorema (continuación). </l>
 
 * Si $f'(x_0)=f''(x_0)=\cdots =f^{(2n-1)}(x_0)=0$ y $f^{(2n)}(x_0)\neq 0$, resulta que:
   * si $f^{(2n)}(x_0)>0$, entonces $f$ tiene un mínimo en $x=x_0$,
   * si $f^{(2n)}(x_0)<0$, entonces $f$ tiene un máximo en $x=x_0$.
-  
-<l class="observ">Observación:</l> si aplicamos la primera parte del teorema anterior para $n=0$, tenemos un resultado conocido: si $f'(x_0)>0$, $f$ es creciente en $x_0$ y si $f'(x_0)<0$, $f$ es decreciente en $x_0$. Por tanto, la primera parte del teorema generaliza dicho resultado.
 
-## Estudio del crecimiento y extremos de una función
-<l class="observ">Observación (continuación):</l> 
+## Crecimiento y extremos
+<l class="observ">Observación.</l> 
+
+Si aplicamos la primera parte del teorema anterior para $n=0$, tenemos un resultado conocido: si $f'(x_0)>0$, $f$ es creciente en $x_0$ y si $f'(x_0)<0$, $f$ es decreciente en $x_0$. Por tanto, la primera parte del teorema generaliza dicho resultado.
+
 Respecto a la segunda parte del teorema, sabíamos que si $f$ tiene un extremo relativo en $x_0$, entonces $f'(x_0)=0$ y también sabíamos que el recíproco era falso. Esta segunda parte nos dice cuando dicho recíproco es cierto. Si lo aplicamos en el caso sencillo de que $n=1$, nos dice que si $f''(x_0)>0$, entonces $(x_0,f(x_0))$ es un mínimo relativo de $f$ y si $f''(x_0)<0$, entonces $(x_0,f(x_0))$ es un máximo relativo de $f$.
 
-## Estudio del crecimiento y extremos de una función
+## Crecimiento y extremos
 <div class="box">
 <div class="important">
-<i class="fa fa-dizzy"> Contenido técnico. </i>
+<i class="fa fa-dizzy"> Contenido bastante técnico. </i>
 </div>
 </div>
 <div class="dem">
@@ -2009,7 +2074,7 @@ $$
 
 </div>
 
-## Estudio del crecimiento y extremos de una función
+## Crecimiento y extremos
 <div class="dem">
 Por tanto:
 $$
@@ -2027,7 +2092,7 @@ $$
 
 </div>
 
-## Estudio del crecimiento y extremos de una función
+## Crecimiento y extremos
 <div class="dem">
 Probemos a continuación las tesis de la primera parte del teorema:
 
@@ -2036,7 +2101,7 @@ Probemos a continuación las tesis de la primera parte del teorema:
 * supongamos que $f^{(2n+1)}(x_0)<0$. En este caso, como $\mathrm{signo}\left(\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}}\right)=\mathrm{signo}\left(\frac{f^{(2n+1)}(x_0)}{(2n+1)!}\right)$, tendremos que $\frac{f(x)-f(x_0)}{(x-x_0)^{2n+1}} < 0$, y, como consecuencia $\frac{f(x)-f(x_0)}{(x-x_0)} < 0$ (por la misma razón que antes), condición que equivale a decir que $f$ es decreciente en $x_0$.
 </div>
 
-## Estudio del crecimiento y extremos de una función
+## Crecimiento y extremos
 <div class="dem">
 Para la demostración de la segunda parte, consideremos la expresión del polinomio de Taylor de grado $2n$ en $x_0$ junto con la expresión del resto de Lagrange:
 $$
@@ -2052,7 +2117,7 @@ $$
 $$
 </div>
 
-## Estudio del crecimiento y extremos de una función
+## Crecimiento y extremos
 <div class="dem">
 Como $R_{2n}(x-x_0)=\frac{f^{(2n+1)}(c)}{(2n+1)!}\cdot (x-x_0)^{2n+1}$, con $c\in <x,x_0>$, se verificará que:
 $$
@@ -2064,7 +2129,7 @@ $$
 $$
 </div>
 
-## Estudio del crecimiento y extremos de una función
+## Crecimiento y extremos
 <div class="dem">
 Probemos a continuación las tesis de la segunda parte del teorema:
 
@@ -2098,15 +2163,16 @@ knitr::include_graphics("Images/concava2.png",dpi=1200)
 </div>
 
 ## Concavidad y convexidad
-Demos a continuación su definición formal:
 
 <l class="definition">Definición.</l> 
+
 Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Diremos que $f$ es **convexa** si, y sólo si, dados $x_1,x_2\in (a,b)$ y $t\in [0,1]$ entonces 
 $$
 f(t\cdot x_1+(1-t)\cdot x_2)\leq t\cdot f(x_1)+(1-t)\cdot f(x_2).
 $$
 
 <l class="definition">Definición.</l> 
+
 Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Diremos que $f$ es **cóncava** si, y sólo si, dados $x_1,x_2\in (a,b)$ y $t\in [0,1]$ entonces 
 $$
 f(t\cdot x_1+(1-t)\cdot x_2)\geq t\cdot f(x_1)+(1-t)\cdot f(x_2).
@@ -2115,10 +2181,13 @@ $$
 Diremos que $f$ es **estrictamente convexa** o **estrictamente cóncava** si las desigualdades anteriores son estrictas.
 
 ## Concavidad y convexidad
+<l class="observ">Observación.</l>
+
+Las características de **concavidad** y **convexidad** están definidas para todo un intervalos y, por tanto, son **propiedades globales** de la función $f$.
 
 Gráficamente una función es convexa cuando dados dos valores cualesquiera $x_1<x_2$ dentro del dominio de la función, el trozo de la gráfica de la función entre $x_1$ y $x_2$ está **por debajo** de la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$. 
 
-Ver la figura siguiente.
+Se puede ver en la figura siguiente.
 
 ## Concavidad y convexidad
 <div class="center">
@@ -2130,7 +2199,7 @@ knitr::include_graphics("Images/convexa.png",dpi=1200)
 
 ## Concavidad y convexidad
 
-Matemáticamente, la condición anterior es equivalente a decir que para todo punto $x$ del intervalo $[x_1,x_2]$, $f(x)\leq$ imagen de $x$ por la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2)).$
+La condición anterior es equivalente a que para todo punto $x$ del intervalo $[x_1,x_2]$, $f(x)$ es menor o igual que la imagen de $x$ por la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2)).$
 
 La ecuación de la recta que une los puntos $(x_1,f(x_1))$ e $(x_2,f(x_2))$ es la siguiente:
 $$
@@ -2138,7 +2207,7 @@ y=f(x_1)+\frac{f(x_2)-f(x_1)}{x_2-x_1}\cdot (x-x_1).
 $$
 
 ## Concavidad y convexidad
-Entonces decir que $f(x)\leq$ imagen de $x$ por la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ equivale a la expresión siguiente:
+Entonces decir que $f(x)$ es menor o igual que la imagen de $x$ por la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$ equivale a la expresión siguiente:
 $$
 f(x)\leq f(x_1)+\frac{f(x_2)-f(x_1)}{x_2-x_1}\cdot (x-x_1).
 $$
@@ -2159,7 +2228,7 @@ La última desigualdad es la condición que tenemos en la definición de convexi
 ## Concavidad y convexidad
 La concavidad se razona de la misma manera, sólo se tiene que tener en cuenta que ahora dados dos valores cualesquiera $x_1<x_2$ dentro del dominio de la función, el trozo de la gráfica de la función entre $x_1$ y $x_2$ está **por encima** de la recta que une los puntos $(x_1,f(x_1))$ y $(x_2,f(x_2))$.
 
-Ver la figura siguiente.
+Se puede ver en la figura siguiente.
 
 
 ## Concavidad y convexidad
@@ -2174,6 +2243,7 @@ knitr::include_graphics("Images/concava.png",dpi=1200)
 La proposición siguiente nos dice que la recta tangente en un punto de la gráfica de una función **convexa** (**cóncava**) está por **debajo** (**encima**) de la función tal como enunciamos al introducir los conceptos de **convexidad** y **concavidad**:
 
 <l class="prop">Proposición.</l>
+
 Sea $f:(a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Suponemos que $f$ es derivable en $(a,b)$ con derivada continua. Entonces,
 
 * $f$ es **convexa** en $(a,b)$ si, y sólo si, se verifica que $f(x)\geq f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$, para todo valor $x,\hat{x}\in (a,b)$ en dicho dominio.
@@ -2181,8 +2251,9 @@ Sea $f:(a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Supo
 
 ## Concavidad y convexidad
 <l class="observ">Observación.</l>
+
 Las condiciones anteriores equivalen a decir que si $f$ es **convexa** en un intervalo $(a,b)$ y $x,\hat{x}\in (a,b)$, entonces la imagen de $f$ en $x$ es mayor que la imagen de $x$ por la recta tangente de $f$ en $\hat{x}$.
-Pensad que la recta tangente de $f$ en $\hat{x}$ tiene la ecuación siguiente: $y=f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$, por tanto, la imagen de $x$ por la recta tangente será: $y=f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$. 
+La recta tangente de $f$ en $\hat{x}$ tiene la ecuación siguiente: $y=f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$, por tanto, la imagen de $x$ por la recta tangente será: $y=f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$. 
 
 Entonces afirmar que $f(x)\geq f(\hat{x})+f'(\hat{x})\cdot (x-\hat{x})$ equivale a afirmar que la función en $x$ está por **encima** de la recta tangente en $\hat{x}$ tal como se observaba en el gráfico anterior.
 
@@ -2191,7 +2262,7 @@ En el caso de que $f$ sea **cóncava**, la observación anterior es la misma per
 ## Concavidad y convexidad
 <div class="box">
 <div class="important">
-<i class="fa fa-dizzy"> Contenido técnico. </i>
+<i class="fa fa-dizzy"> Contenido bastante técnico. </i>
 </div>
 </div>
 <div class="dem">
@@ -2266,10 +2337,11 @@ La demostración en el caso en que  $f$ sea **cóncava** se razona de manera sim
 Un punto de inflexión de una función es un punto donde a la izquierda del mismo la función tiene un tipo de convexidad (cóncava o convexa) y a la derecha, otro tipo de convexidad. Es decir, se pasa de cóncava a convexa o de convexa a cóncava:
 
 <l class="definition">Definición de punto de inflexión. </l>
+
 Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Diremos que $x_0$ es un punto de inflexión si existe un valor $\delta >0$ tal que 
  si $x\in (x_0-\delta,x_0)$, $f$ es **concava** (**convexa**) en $x$ y si $x\in (x_0,x_0+\delta)$, $f$ es **convexa** (**concava**) en $x$.
 
-Ver la figura siguiente.
+Se puede ver en la figura siguiente.
 
 ## Concavidad y convexidad
 <div class="center">
@@ -2283,6 +2355,7 @@ knitr::include_graphics("Images/inflexion.png",dpi=1200)
 El siguiente resultado caracteriza la concavidad y la convexidad de una función a partir de sus derivadas:
 
 <l class="prop">Teorema.</l>
+
 Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Supongamos que $f$ es derivable tres veces con $f'''$ continua. Entonces:
 
 * si $f''(x_0) \neq0$, entonces 
@@ -2294,20 +2367,21 @@ Sea $f:(a,b)\longrightarrow\mathbb{R}$ una función real de variable real. Sea $
 
 ## Concavidad y convexidad
 <l class="observ">Observación.</l> 
+
 Si aplicamos el teorema anterior, obtenemos que si $f''(x_0)>0$, o, equivalentemente, que $f'$ es una función creciente en $x_0$, $f$ es **convexa** en un entorno de $x_0$ y si $f''(x_0)<0$, o, equivalentemente, que $f'$ es una función decreciente en $x_0$, $f$ es **cóncava** en un entorno de $x_0$.
 
 ## Concavidad y convexidad
 
-En el gráfico que vimos al principio de la sección se muestran en verde un conjunto de rectas tangentes a una función convexa en rojo. Fijáos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va aumentando. Es decir, las rectas tangentes van "subiendo". Se empieza con rectas tangentes de pendiente negativa, se llega a la recta tangente de pendiente cero (el mínimo) y se acaba con rectas tangentes de pendiente positiva.
+En el gráfico que vimos al principio de la sección se muestran en verde un conjunto de rectas tangentes a una función convexa en rojo. Fijaos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va aumentando. Es decir, las rectas tangentes van subiendo. Se empieza con rectas tangentes de pendiente negativa, se llega a la recta tangente de pendiente cero (el mínimo) y se acaba con rectas tangentes de pendiente positiva.
 
-En el segundo gráfico que vimos al principio de la sección se muestra lo mismo pero para una función cóncava. Fijáos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va disminuyendo. Es decir, las rectas tangentes van "bajando". Se empieza con rectas tangentes de pendiente positiva, se llega a la recta tangente de pendiente cero (el máximo) y se acaba con rectas tangentes de pendiente negativa.
+En el segundo gráfico que vimos al principio de la sección se muestra lo mismo pero para una función cóncava. Fijaos que a medida que la variable $x$ aumenta, la pendiente de las rectas tangentes, es decir, la derivada va disminuyendo. Es decir, las rectas tangentes van bajando. Se empieza con rectas tangentes de pendiente positiva, se llega a la recta tangente de pendiente cero (el máximo) y se acaba con rectas tangentes de pendiente negativa.
 
 
 
 ## Concavidad y convexidad
 <div class="box">
 <div class="important">
-<i class="fa fa-dizzy"> Contenido técnico. </i>
+<i class="fa fa-dizzy"> Contenido bastante técnico. </i>
 </div>
 </div>
 <div class="dem">
@@ -2395,7 +2469,7 @@ En el enlace siguiente  [![](Images/wolfram.png)](https://www.wolframalpha.com/i
 </div>
 
 
-## Representación aproximada de funciones
+## Estudio local de una función
 
 Una de las aplicaciones más usadas del estudio de las derivadas de primer y segundo orden es la **representación aproximada de funciones**. 
 
@@ -2403,23 +2477,20 @@ Las derivadas son una herramienta muy útil para calcular las regiones donde la 
 
 Sin embargo, aparte del crecimiento y la concavidad, de cara a poder realizar una **representación aproximada de la gráfica de una función**, necesitamos estudiar otras propiedades.
 
-## Representación aproximada de funciones
+## Estudio local de una función
 Concretamente, dichas propiedades son las siguientes:
 
 * Determinación del **dominio** de la función.
 * Cálculo del conjunto formado por sus **puntos de discontinuidad**.
-* Cálculo de los **puntos de corte** con el eje de abscisas o eje $X$ y el de ordenadas o eje $Y$.
-* Estudio de las **simetrías** con respecto el eje de ordenadas o eje $Y$ y respecto con el origen $(0,0)$.
+* Cálculo de los **puntos de corte** con el eje de abscisas o eje de las $x$ y el de ordenadas o eje de las $y$.
+* Estudio de las **simetrías** con respecto el eje de ordenadas o eje de las $y$ y respecto con el origen $(0,0)$.
 * Cálculo de las posibles **asíntotas**.
 * Cálculo de los **extremos relativos**, es decir, los **máximos y mínimos** de la función así como los intervalos de **crecimiento y decrecimiento** de la misma.
 * Cálculo de los **puntos de inflexión** de la función así como los intervalos de **convexidad** y **concavidad** de la misma.
 
 
 ## Determinación del **dominio** de la función
-El **dominio** de una función es el subconjunto de $\mathbb{R}$ donde está definida:
-
-<l class="definition">Definición de dominio de una función.</l>
-Sea $f:D\subseteq\mathbb{R}\longrightarrow\mathbb{R}$ una función real de variable real. El dominio de $f$ es el conjunto $D$ de números reales donde dicha función está definida. 
+Recordemos que el **dominio** de una función es el subconjunto de $\mathbb{R}$ donde está definida.
 
 <div class="example">
 **Ejemplo**
@@ -2434,10 +2505,10 @@ Por tanto, el dominio de $f$ será el conjunto siguiente: $\mathbb{R}-\{-1,0,1\}
 </div>
 
 ## Cálculo del conjunto formado por sus **puntos de discontinuidad**
-El conjunto de **puntos de discontinuidad** de una función son aquellos puntos de su dominio en los que la función no es continua.
+Recordemos que el conjunto de **puntos de discontinuidad** de una función son aquellos puntos de su dominio en los que la función no es continua.
 
 <div class="example">
-**Ejemplo anterior**
+**Ejemplo (continuación)**
 
 En el ejemplo anterior en donde $f(x)=\frac{x^3-3 x+2}{x^3-x}$, no hay **puntos de discontinuidad** ya que los únicos puntos en los que $f$ no es continua serían aquéllos en los que el denominador se anula pero éstos no pertenecen al dominio.
 </div>
@@ -2445,13 +2516,13 @@ En el ejemplo anterior en donde $f(x)=\frac{x^3-3 x+2}{x^3-x}$, no hay **puntos 
 ## Cálculo de los **puntos de corte**
 Para calcular los **puntos de corte** de una función $f(x)$ se tienen que realizar los procedimientos siguientes:
 
-* **Puntos de corte** con el eje de abscisas o eje X. Hay que resolver la ecuación $f(x)=0$. Sean (en caso que existan) $x_1,\ldots,x_n$ sus soluciones. Entonces los puntos de corte son $(x_1,0),\ldots (x_n,0)$.
+* **Puntos de corte** con el eje de abscisas o eje de las $x$. Hay que resolver la ecuación $f(x)=0$. Sean (en caso que existan) $x_1,\ldots,x_n$ sus soluciones. Entonces los puntos de corte son $(x_1,0),\ldots (x_n,0)$.
 
-* **Punto de corte** con el eje de ordenadas o eje Y. En este caso, sólo hay un punto de corte y es el siguiente: $(0,f(0))$.
+* **Punto de corte** con el eje de ordenadas o eje de las $y$. En este caso, sólo hay un punto de corte y es el siguiente: $(0,f(0))$.
 
 ## Cálculo de los **puntos de corte** 
 <div class="example">
-**Ejemplo anterior**
+**Ejemplo (continuación)**
 
 Los puntos de corte para la función $f(x)=\frac{x^3-3 x+2}{x^3-x}$ son los siguientes:
 
@@ -2484,25 +2555,29 @@ Averiguar si una función tiene **simetrías** es muy importante de cara a reali
 
 Existen dos tipos de **simetrías**:
 
-* **Simetría** con respecto al eje de ordenadas o eje $Y$:
-
-<l class="definition">Definición de simetría con respecto al eje de ordenadas o eje $Y$.</l> 
-Dada $f$ una función real de variable real con dominio $D$, diremos que tiene simetría con respecto al eje $Y$ si para cualquier valor $x$ del dominio $D$, $-x$ también está en $D$ y además $f(-x)=f(x)$.
+* **Simetría** con respecto al eje de ordenadas o eje de las $y$.
+* **Simetría** con respecto al origen de coordenadas $(0,0)$.
 
 ## Estudio de las **simetrías**
-* **Simetría** con respecto al origen de coordenadas $(0,0)$:
+<l class="definition">Definición de simetría con respecto al eje de ordenadas o eje de las $y$.</l> 
+
+Dada $f$ una función real de variable real con dominio $D$, diremos que tiene simetría con respecto al eje $Y$ si para cualquier valor $x$ del dominio $D$, $-x$ también está en $D$ y además $f(-x)=f(x)$.
 
 <l class="definition">Definición de simetría con respecto al origen de coordenadas $(0,0)$.</l> 
+
 Dada $f$ una función real de variable real con dominio $D$, diremos que tiene simetría con respecto al origen de coordenadas $(0,0)$ si para cualquier valor $x$ del dominio $D$, $-x$ también está en $D$ y además $f(-x)=-f(x)$.
 
-<l class="observ">Observación:</l> la única función real de variable real que tiene los dos tipos de **simetrías** es la función idénticamente nula $f(x)=0$ ya que si suponemos que $f$ tiene los dos tipos de simetrías, tenemos por un lado que $f(-x)=f(x)$ y por otro, que $f(-x)=-f(x)$. 
+## Estudio de las **simetrías**
+<l class="observ">Observación:</l> 
+
+La única función real de variable real que tiene los dos tipos de **simetrías** es la función idénticamente nula $f(x)=0$ ya que si suponemos que $f$ tiene los dos tipos de simetrías, tenemos por un lado que $f(-x)=f(x)$ y por otro, que $f(-x)=-f(x)$. 
 
 En resumen $f(x)=-f(x)$, de donde deducimos que $f(x)=0$, para todo valor $x$ de su dominio.
 
 
 ## Estudio de las **simetrías**
 <div class="example">
-**Ejemplo anterior**
+**Ejemplo (continuación)**
 
 Veamos si la función $f(x)=\frac{x^3-3 x+2}{x^3-x}$ tiene algún tipo de simetría:
 
@@ -2531,13 +2606,13 @@ f(-2.)
 
 Una **asíntota** es una recta que se aproxima a la función de forma que la distancia entre dicha función y la **asíntota** tiende a cero en un límite determinado.
 
-Su determinación es clave a la hora de realizar una representación de la función ya que nos dice como se comporta dicha función en lugares "remotos".
+Su determinación es clave a la hora de realizar una representación de la función ya que nos dice como se comporta dicha función en lugares remotos.
 
 Existen tres tipos de **asíntotas**:
 
 ## Cálculo de las posibles **asíntotas**
 
-* **Asíntotas horizontales**. Diremos que la recta horizontal $y=b$ para un $b$ determinado es una **asíntota horizontal** de la función $y=f(x)$ si, y sólo si, $\displaystyle\lim_{x\to\pm \infty}f(x)=b$.
+**Asíntotas horizontales**. Diremos que la recta horizontal $y=b$ para un $b$ determinado es una **asíntota horizontal** de la función $y=f(x)$ si, y sólo si, $\displaystyle\lim_{x\to\pm \infty}f(x)=b$.
 
 Es decir, $\displaystyle\lim_{x\to\pm\infty} (f(x)-b)=0$. En este caso, se dice que la recta $y=b$ es **tangente** a la función $f(x)$ en el infinito. En la gráfica siguiente vemos una función (en verde) que tiene por un lado, cuando $x\to \infty$ la **asíntota horizontal** $y=1$ (en rojo) y, por otro, cuando $x\to -\infty$ la **asíntota horizontal** $y=-1$ (en azul).
 
@@ -2554,14 +2629,16 @@ knitr::include_graphics("Images/AsintotaHorizontal.png",dpi=1200)
 
 ## Cálculo de las posibles **asíntotas**
 
-* **Asíntotas verticales**. Diremos que la recta vertical $y=a$ para un $a$ determinado es una **asíntota vertical** de la función $y=f(x)$ si, y sólo si, $\displaystyle\lim_{x\to a}f(x)=\pm \infty$.
+**Asíntotas verticales**. Diremos que la recta vertical $y=a$ para un $a$ determinado es una **asíntota vertical** de la función $y=f(x)$ si, y sólo si, $\displaystyle\lim_{x\to a}f(x)=\pm \infty$.
 
 En este caso, se dice que la recta $x=a$ es **tangente** a la función $f(x)$ en el infinito. En la gráfica siguiente vemos una función (en verde) que tiene una asíntota vertical en $x=1$ (en rojo). Observar que:
 $$
 \lim_{x\to 1^-} f(x)=\infty, \quad\lim_{x\to 1^+} f(x)=-\infty.
 $$
 
-<l class="observ"> Observación: </l> usualmente, los posibles valores de $a$ son puntos que no pertenecen al dominio de la función $f$. Por tanto, los puntos de discontinuidad de la función son buenos candidatos para hallar dichos valores de $a$.
+<l class="observ"> Observación: </l> 
+
+Usualmente, los posibles valores de $a$ son puntos que no pertenecen al dominio de la función $f$. Por tanto, los puntos de discontinuidad de la función son buenos candidatos para hallar dichos valores de $a$.
 
 ## Cálculo de las posibles **asíntotas**
 
@@ -2575,12 +2652,12 @@ knitr::include_graphics("Images/AsintotaVertical.png",dpi=1200)
 
 ## Cálculo de las posibles **asíntotas**
 
-* **Asíntotas oblicuas**. Diremos que la recta vertical $y=m x+n$ para unos $m$ y $n$ determinados es una **asíntota oblicua** de la función $y=f(x)$ si, y sólo si, $\displaystyle\lim_{x\to \pm\infty}(f(x)-(mx+n))=0$.
+**Asíntotas oblicuas**. Diremos que la recta vertical $y=m x+n$ para unos $m$ y $n$ determinados es una **asíntota oblicua** de la función $y=f(x)$ si, y sólo si, $\displaystyle\lim_{x\to \pm\infty}(f(x)-(mx+n))=0$.
 
 En este caso, se dice que la recta $y=m x+n$ es **tangente** a la función $f(x)$ en el infinito. 
 
 ## Cálculo de las posibles **asíntotas**
-Para hallar el valor de $m$, observar que el límite $\displaystyle\lim_{x\to\pm\infty}\frac{f(x)-(mx+n)}{x}=0$ ya que el numerador tiende a $0$ y el denominador, a $\pm\infty$, y $\frac{0}{\pm\infty}=0$. Arreglando el límite anterior, obtenemos $m$:
+Para hallar el valor de $m$, observar que el límite $\displaystyle\lim_{x\to\pm\infty}\frac{f(x)-(mx+n)}{x}=0$ ya que el numerador tiende a $0$ y el denominador, a $\pm\infty$, y $\frac{0}{\pm\infty}=0$. Operando el límite anterior, obtenemos $m$:
 $$
 \begin{array}{rl}
 \displaystyle \lim_{x\to\pm\infty}\frac{f(x)-(mx+n)}{x} & =0,\displaystyle \ \Leftrightarrow \lim_{x\to\pm\infty}\left(\frac{f(x)}{x}-m-\frac{n}{x}\right)=0,\Leftrightarrow\\  \displaystyle \lim_{x\to\pm\infty}\frac{f(x)}{x}-m & =0,\Leftrightarrow\displaystyle 
@@ -2598,7 +2675,7 @@ $$
 
 
 
-En la gráfica siguiente vemos una función (en verde) que tiene la asíntota oblicua en $y=x$ (en rojo). En este caso, tendremos que los valores de $m$ y $n$ serán $m=1$ y $n=0$. Fijarse que:
+En la gráfica siguiente vemos una función (en verde) que tiene la asíntota oblicua en $y=x$ (en rojo). En este caso, tendremos que los valores de $m$ y $n$ serán $m=1$ y $n=0$. Se puede observar que:
 $$
 \lim_{x\to\infty} (f(x)-x)=0,\quad \lim_{x\to -\infty} (f(x)-x)=0.
 $$
@@ -2615,7 +2692,7 @@ knitr::include_graphics("Images/AsintotaOblicua.png",dpi=1200)
 
 ## Ejemplo
 <div class="example">
-**Ejemplo anterior**
+**Ejemplo (continuación)**
 
 Hallemos las posibles asíntotas para la función $f(x)=\frac{x^3-3 x+2}{x^3-x}$:
 
@@ -2667,9 +2744,9 @@ $$
 $$
 Entonces, la recta $x=1$ no sería una **asíntota vertical**.
 
-* Asíntotas oblicuas. Existe un "rumor" sin justificar que dice que si una función tiene **asíntotas horizontales**, entonces no tiene **asíntotas oblicuas**. La razón de dicho "rumor" es que si $\displaystyle\lim_{x\to \pm \infty}f(x)=b\neq 0$, entonces el valor de la pendiente $m$ en la posible **asíntota oblicua** sería $0$, siendo dicha asíntota una **asíntota horizontal** ya que:
+* Asíntotas oblicuas. Existe la creencia sin justificar que dice que si una función tiene **asíntotas horizontales**, entonces no tiene **asíntotas oblicuas**. La razón de dicha creencia es que si $\displaystyle\lim_{x\to \pm \infty}f(x)=b\neq 0$, entonces el valor de la pendiente $m$ en la posible **asíntota oblicua** sería $0$, siendo dicha asíntota una **asíntota horizontal** ya que:
 $\displaystyle m=\lim_{x\to\pm\infty}\frac{f(x)}{x}=\frac{b}{\pm\infty}=0.$
-Dicho razonamiento, aunque es válido la mayoría de las veces, tiene un pequeño problema en su línea argumental. No podemos asegurar que exista una función $f(x)$ donde por ejemplo pase lo siguiente: $\displaystyle\lim_{x\to +\infty}=b$ pero $\displaystyle\lim_{x\to -\infty}\frac{f(x)}{x}=m\neq 0$. Es decir, que $f(x)$ tiene una **asíntota horizontal** cuando $x$ tiende a $+\infty$ y una **asíntota oblicua** cuando $x\to -\infty$.
+Dicho razonamiento, aunque es válido la mayoría de las veces, tiene un pequeño problema en su línea argumental. No podemos asegurar que no exista una función $f(x)$ donde por ejemplo pase lo siguiente: $\displaystyle\lim_{x\to +\infty}=b$ pero $\displaystyle\lim_{x\to -\infty}\frac{f(x)}{x}=m\neq 0$. Es decir, que $f(x)$ tiene una **asíntota horizontal** cuando $x$ tiende a $+\infty$ y una **asíntota oblicua** cuando $x\to -\infty$.
 </div>
 
 ## Ejemplo
@@ -2699,18 +2776,18 @@ Recordemos que una función **crece** en una región determinada de $\mathbb{R}$
 
 Recordemos también que los **extremos relativos** de la función deben verificar que su **derivada** debe ser nula. El primer paso será, pues, calcular los ceros de la ecuación $f'(x)=0$ calculando así los candidatos a **extremos relativos**.
 
-Sean, pues, $x_1,\ldots,x_n$ los ceros de la ecuación $f'(x)=0$ o los candidatos a **extremos relativos**.
+Sean, pues, $x_1,\ldots,x_n$ los ceros de la ecuación $f'(x)=0$ que son los candidatos a **extremos relativos**.
 
 Sean tambien $y_1,\ldots, y_k$ los **puntos de discontinuidad** de la función $f(x)$.
 
-Considero el conjunto unión de los conjuntos anteriores $\{x_1,\ldots,x_n\}\cup \{y_1,\ldots,y_k\}$ y nombro $z_i$, $i=1,\ldots,k+n$ a sus elementos suponiendo éstos por orden creciente:
+Consideremos el conjunto unión de los conjuntos anteriores $\{x_1,\ldots,x_n\}\cup \{y_1,\ldots,y_k\}$ y nombremos $z_i$, $i=1,\ldots,k+n$ a sus elementos suponiendo éstos por orden creciente:
 $$
 \{x_1,\ldots,x_n\}\cup \{y_1,\ldots,y_k\} =\{z_1 < \cdots <z_{k+n}\}.
 $$
 
 ## Estudio del crecimento de la función
 
-A continuación construyo la tabla siguiente:
+A continuación construímos la tabla siguiente:
 
 <div class="center">
 |$x$| $-\infty$| | $z_1$| |$z_2$|$\ldots$| |$z_{k+n}$| |$\infty$|
@@ -2733,7 +2810,7 @@ Los **intervalos de crecimiento** de la función $f$ serán aquéllos en los que
 
 ## Ejemplo
 <div class="example">
-**Ejemplo anterior**
+**Ejemplo (continuación)**
 
 Para hallar los **extremos relativos** y los **intervalos de crecimiento y decrecimiento** de la función $\frac{x^3-3 x+2}{x^3-x}$, tal como hemos indicado, resolvemos la ecuación $f'(x)=0$.
 
@@ -2783,7 +2860,7 @@ Recordemos también que los **puntos de inflexión** deben verificar que su deri
 
 ## Concavidad y convexidad
 
-Sean $\hat{x}_1,\ldots,\hat{x}_m$ los ceros de la ecuación $f''(x)=0$ o los candidatos a los **puntos de inflexión**.
+Sean $\hat{x}_1,\ldots,\hat{x}_m$ los ceros de la ecuación $f''(x)=0$ que son los candidatos a los **puntos de inflexión**.
 
 Recordemos que $y_1,\ldots,y_k$ eran los **puntos de discontinuidad** de la función $f(x)$.
 
@@ -2794,7 +2871,7 @@ $$
 
 
 ## Concavidad y convexidad
-A continuación construyo la tabla siguiente:
+A continuación construímos la tabla siguiente:
 
 <div class="center">
 |$x$| $-\infty$| | $\hat{z}_1$| |$\hat{z}_2$|$\ldots$| |$\hat{z}_{k+m}$| |$\infty$|
@@ -2817,7 +2894,7 @@ Los **intervalos de convexidad** de la función $f$ serán aquéllos en los que 
 
 ## Ejemplo
 <div class="example">
-**Ejemplo anterior**
+**Ejemplo (continuación)**
 
 Para hallar los **puntos de inflexión** y los **intervalos de convexidad y concavidad** de la función $\frac{x^3-3 x+2}{x^3-x}$, tal como hemos indicado, resolvemos la ecuación $f''(x)=0$.
 
@@ -2827,7 +2904,7 @@ $$
 f''(x) &  = \frac{4\cdot x^2\cdot (x+1)^2-(4x+2)\cdot (2x\cdot (x+1)^2+2x^2\cdot (x+1))}{x^4\cdot (x+1)^4}\\ & =\frac{4\cdot x\cdot (x+1)-(4x+2)\cdot (2 (x+1)+2x)}{x^3\cdot (x+1)^3}=\frac{-4(3 x^2+3 x+1)}{x^3\cdot (x+1)^3}.
 \end{array}
 $$
-Para resolver la ecuación $f''(x)=0$, hemos de igualar a cero el numerador de la expresión anterior $3 x^2+3 x+1=0$, obteniendo $x=\frac{-3\pm\sqrt{9-3\cdot 4}}{6}=\frac{-3\pm\sqrt{-3}}{6}$. No tiene solución, por tanto, la función no tiene **puntos de inflexión**.
+Para resolver la ecuación $f''(x)=0$, hemos de igualar a cero el numerador de la expresión anterior $3 x^2+3 x+1=0$, obteniendo $x=\frac{-3\pm\sqrt{9-3\cdot 4}}{6}=\frac{-3\pm\sqrt{-3}}{6}$. No tiene solución real, por tanto, la función no tiene **puntos de inflexión**.
 </div>
 
 
