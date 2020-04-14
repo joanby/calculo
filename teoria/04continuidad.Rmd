@@ -218,7 +218,7 @@ El área del triángulo $ADE$ es $\frac{1}{2} \tan \alpha$
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
 
-Claramente es 
+Claramente, la relación entre estas tres áreas es la siguiente
 $$
 \frac{1}{2} \sin \alpha < \frac{1}{2} \alpha < \frac{1}{2} \tan \alpha
 $$
