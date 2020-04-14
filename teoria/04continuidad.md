@@ -193,3 +193,44 @@ que era lo que queríamos demostrar.
 
 
 
+
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
+
+<div class="center">
+
+<img src="Images/sinxx.png" width="300px" />
+</div>
+
+El área del triangulo $ABE$ es $\frac{1}{2} \sin \alpha$
+
+El área del sector circular $ABE$ es $\frac{1}{2} \alpha$
+
+El área del triángulo $ADE$ es $\frac{1}{2} \tan \alpha$
+
+
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
+
+Claramente es 
+$$
+\frac{1}{2} \sin \alpha < \frac{1}{2} \alpha < \frac{1}{2} \tan \alpha
+$$
+Dividiendo por $\frac{1}{2} \sin \alpha$ y tomando recíprocos, queda
+$$
+\cos \alpha < \dfrac{\sin \alpha}{\alpha} < 1
+$$
+Por lo tanto,
+$$
+1 = \lim_{x \rightarrow 0^+} \cos x \leq \lim_{x \rightarrow 0^+}\dfrac{\sin x}{x} \leq 1
+$$
+
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
+
+Análogamente tenemos
+$$
+1 = \lim_{x \rightarrow 0^-} \cos x \leq \lim_{x \rightarrow 0^-}\dfrac{\sin x}{x} \leq 1
+$$
+En definitiva, como los dos límites laterales existen y son iguales, resulta que
+$$
+\lim_{x \rightarrow 0}\dfrac{\sin x}{x} =1
+$$
+
