@@ -101,7 +101,7 @@ Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función definida sobre 
 
   a) $\lim_{x \rightarrow x_0}f(x)=L$
   
-  b) Para todo $\epsilon >0$ existe un $\delta >0$ tal que siempre que $0<|x-x_0|< \delta$, entonces es $|f(x)-L|<\epsilon$.
+  b) Para todo $\epsilon >0$ existe un $\delta >0$ tal que siempre que $0<|x-x_0|< \delta$, entonces es $|f(x)-L|<\epsilon$. (**Propiedad $\epsilon-\delta$**).
 
   c) Para todo entorno abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $x_0$, $V_{\delta} (x_0)$ tal que para todo $x \in V^*_{\delta} (x_0)$ es $f(x) \in V_{\epsilon}(L)$, donde $V^*_{\delta}= V_{\delta} \setminus \{x_0\}$, es decir el entorno reducido de $x_0$ y radio $\delta$
 
