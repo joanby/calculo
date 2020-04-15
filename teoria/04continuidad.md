@@ -187,10 +187,61 @@ que era lo que queríamos demostrar.
 <img src="Images/epdel0.png" width="600px" />
 </div>
 
-## Propiedades del límite funcional
+## Propiedades del límite de una función
+
+<l class="definition"> **Definición** </l>
+
+Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. $f$ **está cotada en un entorno de $c$** $V_{\delta}(c)$ si existe una constante $M \mathbb{R}$ tal que $|f(x)| \leq M$ para todo $x \in A \cap V_{\delta}(c)$.
+
+<l class="prop"> **Proposición**
+
+Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. Si $\lim _{x \rightarrow c} f(x) =L$, entonces f está acotada en un entorno de $c$.
+
+<div class="dem"> **Demostración**
+
+Dado $\epsilon=1>0$, existe $\delta$ tal que $|f(x)|-|L| \leq |f(x)-L|<1$, para todo $x \in A \cap V_{\delta}(c)$. Por consiguiente si $M= |L|+1$, es $|f(x)| < |L|+1 = M$.
+
+</div>
+
+## Propiedades del límite de una función
+
+<l class="definition"> **Definición** </l>
+
+Sean $f,g:A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de variable real. Entonces
+
+1) $f+g: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es la función definida por $(f+g)(x) = f(x)+g(x)$
+
+2)  $f \cdot g: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es la función definida por $(f\cdot g)(x) = f(x) \cdot g(x)$
+
+3) Si $g(x)\neq 0$ en un $A$, entonces $\dfrac{1}{g}:A \subset \mathbb{R} \rightarrow \mathbb{R}$ es la función definida por $\dfrac{1}{g}(x)= \dfrac{1}{g(x)}$
+
+4) Si $\lambda \in \mathbb{R}$, entonces $\lambda \cdot f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es la función definida por $(\lambda \cdot f)(x)= \lambda \cdot f(x)$.
 
 
+## Propiedades del límite de una función
 
+
+<l class="prop"> **Proposición** </l>
+
+Sean $f,g:A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de variable real y $c$ un punto de acumulñación de $A$, tales que $\lim_{x \rightarrow c} f(x) = L_1$ y $\lim_{x \rightarrow c} g(x)= L_2$. Entonces
+
+P1. $\lim_{x \rightarrow c}(f+g) = L_1+L_2$
+
+P2. $\lim_{x \rightarrow c}(f \cdot g) = L_1 \cdot L_2$
+
+P3 $\lim_{x \rightarrow c} (\lambda \cdot f) = \lambda \cdot L_1$
+
+P4. Si $L_2 \neq 0$, entonces $\lim_{x \rightarrow c} \dfrac{f}{g} = \dfrac{L_1}{L_2}$
+
+## Propiedades del límite de una función
+
+<div class="dem"> **Demostración**
+
+P1, P2 y P3 son una consecuencia inmediata de la definción de límite de una función. En e lcaso de P1, por ejemplo, tenemos que si $x_n \rightarrow c$ entonces $f(x_n) \rightarrow L_1$ y $g(x_n)=L_2$, por lo tanto, 
+$$
+\lim_{x \rightarrow c}(f+g)= \lim_{n  \rightarrow \infty} (f+g)(x_n)= \lim_{n  \rightarrow \infty} \left( f(x_n)+g(x_n) \right)= \lim_{n  \rightarrow \infty} f(x_n) + \lim_{n  \rightarrow \infty} g(x_n) = L_1+L_2 = \lim_{x \rightarrow c} f + \lim_{x \rightarrow c} g
+$$
+Por lo que se refiere a P4, tenemos que si $L_2 \neq 0$, entonces 
 
 
 
