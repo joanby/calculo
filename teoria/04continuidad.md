@@ -288,6 +288,8 @@ Supongamos, en primer lugar que $L>0$. Sea $\epsilon = \dfrac{L}{2} > 0$, entonc
 
 La demostración para el caso $L<0$ es completamente similar y se deja como ejercicio.
 
+## Límites laterales
+
 
 
 
