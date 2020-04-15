@@ -231,23 +231,69 @@ Sean $f,g:A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de v
 
 Sean $f,g:A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de variable real y $c$ un punto de acumulñación de $A$, tales que $\lim_{x \rightarrow c} f(x) = L_1$ y $\lim_{x \rightarrow c} g(x)= L_2$. Entonces
 
-P1. $\lim_{x \rightarrow c}(f+g) = L_1+L_2$
+P1. $\lim_{x \rightarrow c}(f+g)(x) = L_1+L_2$
 
-P2. $\lim_{x \rightarrow c}(f \cdot g) = L_1 \cdot L_2$
+P2. $\lim_{x \rightarrow c}(f \cdot g)(x) = L_1 \cdot L_2$
 
-P3 $\lim_{x \rightarrow c} (\lambda \cdot f) = \lambda \cdot L_1$
+P3 $\lim_{x \rightarrow c} (\lambda \cdot f)(x) = \lambda \cdot L_1$
 
-P4. Si $L_2 \neq 0$, entonces $\lim_{x \rightarrow c} \dfrac{f}{g} = \dfrac{L_1}{L_2}$
+P4. Si $L_2 \neq 0$, entonces $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = \dfrac{L_1}{L_2}$
 
 ## Propiedades del límite de una función
 
 <div class="dem"> **Demostración**
 
-P1, P2 y P3 son una consecuencia inmediata de la definción de límite de una función. En e lcaso de P1, por ejemplo, tenemos que si $x_n \rightarrow c$ entonces $f(x_n) \rightarrow L_1$ y $g(x_n)=L_2$, por lo tanto, 
+P1, P2 y P3 son una consecuencia inmediata de la definción de límite de una función. En el caso de P1, por ejemplo, tenemos que si $x_n \rightarrow c$ entonces $f(x_n) \rightarrow L_1$ y $g(x_n) \rightarrow L_2$, por lo tanto, 
+
 $$
-\lim_{x \rightarrow c}(f+g)= \lim_{n  \rightarrow \infty} (f+g)(x_n)= \lim_{n  \rightarrow \infty} \left( f(x_n)+g(x_n) \right)= \lim_{n  \rightarrow \infty} f(x_n) + \lim_{n  \rightarrow \infty} g(x_n) = L_1+L_2 = \lim_{x \rightarrow c} f + \lim_{x \rightarrow c} g
+\lim_{x \rightarrow c}(f+g)(x)= \lim_{n  \rightarrow \infty} (f+g)(x_n)= \lim_{n  \rightarrow \infty} \left( f(x_n)+g(x_n) \right)
 $$
-Por lo que se refiere a P4, tenemos que si $L_2 \neq 0$, entonces 
+
+$$=  \lim_{n  \rightarrow \infty} f(x_n) + \lim_{n  \rightarrow \infty} g(x_n) = L_1+L_2 = \lim_{x \rightarrow c} f(x) + \lim_{x \rightarrow c} g(x) 
+$$
+
+
+Por lo que se refiere a P4, tenemos que si $L_2 \neq 0$, entonces hemos demostrado, en el tema de límite de sucesiones, que para toda sucesión $x_n$ de puntos de $A$ tal que $g(x_n) \rightarrow L_2$, existe $n_0$ tal $g(x_n) \neq 0$ para todo $n \geq n_0$ y, además, $\lim_{n \rightarrow \infty}\dfrac{1}{g(x_n)} = \dfrac{1}{L_2}$ y, por lo tanto,
+$$
+\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = \dfrac{L_1}{L_2}.
+$$
+
+
+## Propiedades del límite de una función
+
+<l class="prop"> **Proposición** </l>
+
+Si para todo $x \in A$ es $a \leq f(x) \leq b$, entonces $a \leq \lim_{x \rightarrow c} f(x) \leq b$
+
+<l class="prop"> **Proposición** </l>
+
+Sean $f,g,h :A\subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $h(x) \leq f(x) \leq g(x)$, para todo $x \in A$, y
+
+que $\lim_{x \rightarrow c} g(x) =  \lim_{x \rightarrow c} h(x) = L$, entonces  
+$$
+\lim_{x \rightarrow c} f(x) = L.
+$$
+
+<div class="exercise"> **Ejercicio**
+
+Las demostraciones de estas dos proposiciones son del todo análogas a las correspondientes en el caso de límites de sucesiones y se dejan como ejercicio.
+</div>
+
+
+## Propiedades del límite de una función
+
+<l class="prop"> **Proposición**
+
+Sean $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. Si $\lim _{x \rightarrow c} f(x) = L>0$, entonces existe $\delta > 0$ tal que $f(x)>0$ para todo $x \in V^*_{\delta}(c) \cap A$.
+
+Análogamente, si Si $\lim _{x \rightarrow c} f(x) = L <0$, entonces existe $\delta > 0$ tal que $f(x)<0$ para todo $x \in V^*_{\delta}(c) \cap A$.
+
+<div class="dem"> **Demostración**
+
+Supongamos, en primer lugar que $L>0$. Sea $\epsilon = \dfrac{L}{2} > 0$, entonces, por ser $L= \lim _{x \rightarrow c} f(x)$, existe $\delta >0$ tal que $|f(x)-L|<\dfrac{L}{2}= \epsilon$, por lo tanto, tenemos que $-\dfrac{L}{2} < f(x) - L < \dfrac{L}{2}$ y por lo tanto, es $0 <\dfrac{L}{2} < f(x)$. 
+
+La demostración para el caso $L<0$ es completamente similar y se deja como ejercicio.
+
 
 
 
