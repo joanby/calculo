@@ -34,7 +34,6 @@ Usando la mismo idea, y dado que un **polígono** se puede **diseccionar** en **
 
 ## Motivación
 
-
 Sin embargo, cuando la figura es **curva**, el cálculo de su área se complica mucho. 
 Usando el mismo razonamiento que el cálculo del área de polígonos, podíamos considerar los **polígonos inscritos** y **circunscritos** como **cotas inferiores y superiores** del área de la figura a calcular.
 
@@ -57,7 +56,8 @@ knitr::include_graphics("Images/MotivacionIntegral.png",dpi=1200)
 Para  definir las áreas de los **polígonos inscritos** y **circunscritos** como aproximaciones al área de una figura **curva** cualquiera, necesitamos definir el concepto de **partición** de un intervalo que será dónde "descansarán" los polígonos anteriores.
 
 <l class="definition">Definición de partición de un intervalo.</l>
-Sea $[a,b]\subset\mathbb{R}$ un intervalo de la recta real. Una **partición** $P$ del intervalo anterior es un conjunto finito $P=\{x_0=a< x_1<\ldots,x_n=b\}$ de puntos ordenados dentro del intervalo donde el mínimo coincide con $a$ y el máximo, con $b$. A los subintervalos $[x_i,x_{i+1}]$, para $i=0,\ldots,n-1$ se le denomina subintervalos de la partición $[a,b]$:
+
+Sea $[a,b]\subset\mathbb{R}$ un intervalo de la recta real. Una **partición** $P=\{x_0=a< x_1<\ldots,x_n=b\}$ del intervalo anterior es un conjunto finito  de puntos ordenados dentro del intervalo donde el mínimo coincide con $a$ y el máximo, con $b$. A los subintervalos $[x_i,x_{i+1}]$, para $i=0,\ldots,n-1$ se le denomina subintervalos de la partición $[a,b]$:
 
 <div class="center">
 
@@ -71,6 +71,7 @@ knitr::include_graphics("Images/Particion.png",dpi=1200)
 Para aproximar cada vez más el área de la **figura curva** al área de la **colección de polígonos**, necesitamos introducir el concepto de **partición más fina** en el sentido de que cuánta más fina sea una partición, más buena será la aproximación del área de los **polígonos** que descansan sobre ella:
 
 <l class="definition">Definición de partición más fina.</l>
+
 Sea $[a,b]\subset\mathbb{R}$ un intervalo de la recta real. Sean $P$ y $P'$ dos **particiones** del intervalo $[a,b]$. Diremos que la **partición** $P'$ es más fina que la partición $P$ si $P\subseteq P'$, es decir si todos los puntos de la partición $P$ son puntos de la partición $P'$, o si se quiere decir en otros términos, si todo **subintervalo** de $P'$ está incluido en algún **subintervalo** de $P$.
 
 
@@ -99,11 +100,13 @@ $$
 El **diámetro** de una partición es una forma de medir la finura de la misma:
 
 <l class="definition">Definición de diámetro de una partición.</l>
+
 Sea $[a,b]\subset\mathbb{R}$ un intervalo de la recta real. Sea $P=\{x_0=a<x_1<\ldots <x_n\}$ una partición del intervalo. Llamaremos **diámetro** de la partición $P$ y lo denotaremos por $|P|$ a la longitud máxima de los subintervalos de la misma:
 $$
 |P|=\max_{i=1,\ldots,n} (x_i-x_{i-1}).
 $$
 
+## Partición de un intervalo
 <div class="example">
 **Ejemplo anterior**
 
@@ -116,13 +119,15 @@ Observamos que las dos particiones tienen el mismo diámetro.
 
 
 ## Partición de un intervalo
-<l class="observ">Observación. </l> 
+<l class="observ">Observación. </l>
+
 Dadas dos particiones, si $P'$ es más **fina** que $P$, se verifica que el diámetro de la más fina es menor o igual que el diámetro de la menos fina ya que ésta incluye todos los subintervalos de la más fina: $|P'|\leq |P|$.
 
 A continuación vamos a definir las **aproximaciones inferior y superior** del área de la función curva a calcular usando como **colección de polígonos** los rectángulos con base en los subintervalos de las particiones y cuyas alturas serán los valores ínfimo y supremo, respectivamente, de la función en cada subintervalo:
 
 ## Sumas inferiores y superiores
 <l class="definition">Definición de sumas inferiores y superiores.</l>
+
 Sea $[a,b]\subset\mathbb{R}$ un intervalo de la recta real. Sea $P=\{x_0=a<x_1<\ldots <x_n\}$ una partición del intervalo.
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada en dicho intervalo. Definimos para cada subintervalo $[x_{i-1},x_i]$ el valor ínfimo y supremo de la función en dicho subintervalo:
 $$
@@ -141,11 +146,12 @@ $$
 
 ## Sumas inferiores y superiores
 <l class="observ">Observación.</l>
+
 El nombre de $L$ en la notación de **suma inferior** viene del inglés "lower" y el nombre de $U$ en la **suma superior**, de "upper".
 
 En las dos figuras siguientes se puede ver un ejemplo de una partición de 6 puntos indicando los infimos $m_i$ y los supremos $M_i$ de la función representada en verde en cada subintervalo de la partición.
 
-La suma de las áreas de los rectángulos en azul sería la suma inferior $L(f,P)$ correspondiente a la partición $P$ de la función $f$ y la suma de las áreas de los rectángulo en rojo, la suma superior $U(f,P)$ correspondiente a dicha partición $P$ de la función $f$.
+La suma de las áreas de los rectángulos en azul sería la suma inferior $L(f,P)$ correspondiente a la partición $P$ de la función $f$ y la suma de las áreas de los rectángulos en rojo, la suma superior $U(f,P)$ correspondiente a dicha partición $P$ de la función $f$.
 
 ## Sumas inferiores y superiores
 <div class="center">
@@ -180,7 +186,7 @@ La función $f(x)=1-x^2$ es decreciente en el intervalo $[0,1]$ tal como muestra
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
 x=seq(from=0,to=1,by=0.01)
 f=function(x){1-x^2}
 plot(x,f(x),type="l",xlab="x",ylab="y")
@@ -205,7 +211,7 @@ El valor de la suma inferior será, pues,
 $$
 \begin{array}{rl}
 L(f,P) & =f\left(\frac{1}{3}\right)\cdot \frac{1}{3}+f\left(\frac{2}{3}\right)\cdot \frac{1}{3}+f\left(1\right)\cdot \frac{1}{3}=\left(1-\frac{1}{9}\right)\cdot \frac{1}{3}+\left(1-\frac{4}{9}\right)\cdot \frac{1}{3}+\left(1-1\right)\cdot \frac{1}{3}\\
-& = \frac{13}{27}=`r round((f(1/3)+f(2/3))/3,4)`.
+& = \frac{13}{27}\approx `r round((f(1/3)+f(2/3))/3,4)`.
 \end{array}
 $$
 </div>
@@ -220,7 +226,7 @@ El valor de la suma superior será, pues,
 $$
 \begin{array}{rl}
 U(f,P) & =f\left(0\right)\cdot \frac{1}{3}+f\left(\frac{1}{3}\right)\cdot \frac{1}{3}+f\left(\frac{2}{3}\right)\cdot \frac{1}{3}=\left(1-0\right)\cdot \frac{1}{3}+\left(1-\frac{1}{9}\right)\cdot \frac{1}{3}+\left(1-\frac{4}{9}\right)\cdot \frac{1}{3}\\
-& = \frac{22}{27}=`r round((f(0)+f(1/3)+f(2/3))/3,4)`.
+& = \frac{22}{27}\approx `r round((f(0)+f(1/3)+f(2/3))/3,4)`.
 \end{array}
 $$
 En las dos figuras siguientes, hemos dibujado en verde los rectángulos correspondientes a la suma inferior $L(f,P)$ y en rojo, los correspondientes a la suma superior $U(f,P)$. Los valores obtenidos anteriormente serían, pues, la suma de las áreas de los rectángulos en verde para $L(f,P)$ y la suma de las áreas de los rectángulos en rojo para $U(f,P)$.
@@ -228,7 +234,7 @@ En las dos figuras siguientes, hemos dibujado en verde los rectángulos correspo
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
 x=seq(from=0,to=1,by=0.01)
 f=function(x){1-x^2}
 plot(x,f(x),type="l",xlab="x",ylab="y")
@@ -236,14 +242,14 @@ abline(h=0)
 lines(c(0,0),c(0,f(0)),lty=3)
 lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
 lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
-rect(0,0,1/3,f(1/3),col="green")
-rect(1/3,0,2/3,f(2/3),col="green")
+rect(0,0,1/3,f(1/3),col="springgreen3")
+rect(1/3,0,2/3,f(2/3),col="springgreen3")
 ```
 </div>
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
 x=seq(from=0,to=1,by=0.01)
 f=function(x){1-x^2}
 plot(x,f(x),type="l",xlab="x",ylab="y")
@@ -251,9 +257,9 @@ abline(h=0)
 lines(c(0,0),c(0,f(0)),lty=3)
 lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
 lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
-rect(0,0,1/3,f(0),col="red")
-rect(1/3,0,2/3,f(1/3),col="red")
-rect(2/3,0,1,f(2/3),col="red")
+rect(0,0,1/3,f(0),col='firebrick2')
+rect(1/3,0,2/3,f(1/3),col='firebrick2')
+rect(2/3,0,1,f(2/3),col='firebrick2')
 lines(x,f(x))
 ```
 
@@ -264,17 +270,16 @@ lines(x,f(x))
 <div class="example">
 El cálculo de la suma inferior y superior en `python` es el siguiente:
 ```{python}
+import numpy as np
 def f(x):
  return(1-x**2)
 
-x = [0.,1./3.,2./3.,1.];
+x = np.linspace(0,1,num=4);
 suma_inferior = 0;
 suma_superior = 0;
 for i in range(1,len(x)):
   suma_inferior = suma_inferior+f(x[i])*(x[i]-x[i-1]);
   suma_superior = suma_superior+f(x[i-1])*(x[i]-x[i-1]);
-
-
 ```
 
 </div>
@@ -306,6 +311,7 @@ El resultado siguiente nos dice cómo se comportan las **sumas inferiores y supe
 
 ## Sumas inferiores y superiores
 <l class="prop">Proposición. </l>
+
 Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función acotada. Sean $P$ y $P'$ dos particiones del intervalo $[a,b]$. Entonces:
 
 * Si la partición $P'$ es más fina que la partición $P$, se verifica:
@@ -313,7 +319,7 @@ $$
 L(f,P')\geq L(f,P), \quad U(f,P')\leq U(f,P).
 $$
 
-* Sin necesidad de que una partición sea más fina que la otra, siempre se verifica que:
+* Siempre se verifica que:
 $$
 L(f,P)\leq U(f,P').
 $$
@@ -321,9 +327,10 @@ $$
 ## Sumas inferiores y superiores
 
 <l class="observ">Observación. </l>
+
 La proposición anterior nos dice que a medida que las **particiones** se hacen más **finas**, las **sumas inferiores van creciendo** y las **sumas superiores van disminuyendo.** 
 
-O, dicho en otros términos, cuánta más **fina** es la partición, el **área por defecto** de la función $f$ va **creciendo** y el **área por exceso** va **disminuyendo.**
+O, dicho en otros términos, cuánto más **fina** es la partición, el **área por defecto** de la función $f$ va **creciendo** y el **área por exceso** va **disminuyendo.**
 
 La segunda parte nos dice que cualquier suma superior de cualquier partición siempre supera cualquier suma inferior de otra partición cualquiera. Es decir, cualquier área por exceso siempre supera cualquier área por defecto.
 
@@ -500,7 +507,7 @@ Los dos gráficos siguientes corresponden a las sumas inferiores de las dos part
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
 x=seq(from=0,to=1,by=0.01)
 f=function(x){1-x^2}
 plot(x,f(x),type="l",xlab="x",ylab="y")
@@ -508,14 +515,14 @@ abline(h=0)
 lines(c(0,0),c(0,f(0)),lty=3)
 lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
 lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
-rect(0,0,1/3,f(1/3),col="green")
-rect(1/3,0,2/3,f(2/3),col="green")
+rect(0,0,1/3,f(1/3),col="springgreen3")
+rect(1/3,0,2/3,f(2/3),col="springgreen3")
 ```
 </div>
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
 x=seq(from=0,to=1,by=0.01)
 plot(x,f(x),type="l",xlab="x",ylab="y")
 abline(h=0)
@@ -524,14 +531,14 @@ for (i in 1:length(particio)){
   lines(c(particio[i],particio[i]),c(0,f(particio[i])))
 }
 for (i in 1:(length(particio)-1)){
-  rect(particio[i],0,particio[i+1],f(particio[i+1]),col="green")
+  rect(particio[i],0,particio[i+1],f(particio[i+1]),col="springgreen3")
 }
 ```
 </div>
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
 x=seq(from=0,to=1,by=0.01)
 f=function(x){1-x^2}
 plot(x,f(x),type="l",xlab="x",ylab="y")
@@ -539,9 +546,9 @@ abline(h=0)
 lines(c(0,0),c(0,f(0)),lty=3)
 lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
 lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
-rect(0,0,1/3,f(0),col="red")
-rect(1/3,0,2/3,f(1/3),col="red")
-rect(2/3,0,1,f(2/3),col="red")
+rect(0,0,1/3,f(0),col='firebrick2')
+rect(1/3,0,2/3,f(1/3),col='firebrick2')
+rect(2/3,0,1,f(2/3),col='firebrick2')
 lines(x,f(x))
 ```
 
@@ -549,13 +556,13 @@ lines(x,f(x))
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
 x=seq(from=0,to=1,by=0.01)
 plot(x,f(x),type="l",xlab="x",ylab="y")
 abline(h=0)
 particio = c(0,1/6,1/3,1/2,7/12,2/3,5/6,1)
 for (i in 1:(length(particio)-1)){
-  rect(particio[i],0,particio[i+1],f(particio[i]),col="red")
+  rect(particio[i],0,particio[i+1],f(particio[i]),col='firebrick2')
 }
 lines(x,f(x))
 ```
@@ -574,6 +581,7 @@ A dicho **supremo** y a dicho **ínfimo** se le conoce como **integral inferior*
 
 ## Integral superior e inferior
 <l class="definition">Definición de integral superior e inferior. </l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. Definimos **integral inferior** e **integral superior** de la función $f$ al **supremo** y al **ínfimo** de las **sumas inferiores** e **superiores** respectivamente para todas las particiones del intervalo:
 $$
 \underline{\int_a^b} f =\sup_P L(f,P),\quad \overline{\int_a^b} f =\inf_P U(f,P).
@@ -581,6 +589,7 @@ $$
 
 ## Integral superior e inferior
 <l class="observ">Observación.</l>
+
 Dada una partición cualquiera del intervalo $[a,b]$ se verifica siempre:
 $$
 L(f,P)\leq \underline{\int_a^b} f\leq \overline{\int_a^b} f \leq U(f,P).
@@ -589,14 +598,14 @@ La primera desigualdad es consecuencia de que un elemento (suma inferior de $f$ 
 
 ## Integral superior e inferior
 
-La segunda desigualdad es consecuencia de que siempre cualquier suma inferior respecto de una partición $P$ es menor que cualquier suma superior respecto de cualquier partición $P'$ no necesariamente la misma que $P$ (ver proposición anterior): $L(f,P)\leq U(f,P')$. Si consideramos ínfimos en la parte "derecha" de la desigualdad anterior, tendremos:
+La segunda desigualdad es consecuencia de que siempre cualquier suma inferior respecto de una partición $P$ es menor que cualquier suma superior respecto de cualquier partición $P'$ no necesariamente la misma que $P$ (ver proposición anterior): $L(f,P)\leq U(f,P')$. Si consideramos ínfimos en la parte derecha de la desigualdad anterior, tendremos:
 $$
 L(f,P)\leq\inf_{P'} U(f,P')=\overline{\int_a^b} f.
 $$
 
 ## Integral superior e inferior
 
-Y ahora, como $\overline{\int_a^b} f$ es un valor fijo, si consideramos supremos en la parte "izquierda" de la desigualdad anterior, tenemos:
+Y ahora, como $\overline{\int_a^b} f$ es un valor fijo, si consideramos supremos en la parte izquierda de la desigualdad anterior, tenemos:
 $$
 \underline{\int_a^b} f =\sup_P L(f,P)\leq \overline{\int_a^b} f,
 $$
@@ -609,6 +618,7 @@ Por último, la tercera desigualdad es consecuencia de que el ínfimo de un conj
 La proposición siguiente nos dice que siempre es posible hallar una partición $P$, tan **fina** como sea posible, tal que la **integral superior** e **inferior** de $f$ se puede aproximar tanto como se quiera a la **suma superior** e **inferior** de $f$ respecto la partición $P$.
 
 <l class="prop">Proposición.</l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. Entonces, para todo valor $\epsilon >0$, siempre es posible hallar un valor $\delta >0$ tal que si $P$ es una partición del intervalo $[a,b]$ con diámetro menor que $\delta$, $|P|<\delta$, entonces:
 $$
 0\leq \underline{\int_a^b} f -L(f,P)<\epsilon, \quad 0\leq U(f,P)-\overline{\int_a^b} f <\epsilon.
@@ -617,8 +627,9 @@ $$
 ## Integral superior e inferior
 
 <l class="observ">Observación.</l>
+
 La proposición anterior es equivalente a la siguiente:
-Si $(P_n)_n$ es una sucesión de particiones con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$, entonces:
+Si $\{P_n\}_n$ es una sucesión de particiones con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$, entonces:
 $$
 \lim_{n\to\infty} L(f,P_n)=\underline{\int_a^b} f,\quad \lim_{n\to\infty} U(f,P)=\overline{\int_a^b} f.
 $$
@@ -628,13 +639,14 @@ $$
 
 En estos momentos ya estamos en condiciones de definir cuándo una función acotada cualquiera será **integrable**. 
 
-La idea intuitiva es que la **integral superior** e **inferior** de la misma deben coincidir.
+La idea es que la **integral superior** e **inferior** de la misma deben coincidir.
 
-Es decir, los "límites" de las **sumas superiores** e **inferiores** cuando las particiones se hacen más y más finas deben ser los mismos:
+Es decir, los límites de las **sumas superiores** e **inferiores** cuando las particiones se hacen más y más finas deben ser los mismos:
 
 ## Funciones integrables
 
 <l class="definition">Definición de función integrable.</l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. 
 Diremos que dicha función es **integrable** si su **integral inferior** y **superior coinciden** y en este caso, llamaremos **integral de $f$ en el intervalo $[a,b]$** al valor de dichas integrales:
 $$
@@ -648,7 +660,8 @@ A continuación vamos a dar condiciones y criterios para verificar si una determ
 
 La proposición siguiente nos dice que afirmar que una función es **integrable** es equivalente a decir que podemos encontrar un **partición** del intervalo correspondiente tal que la diferencia entre la **sumas inferior** y la **superior** de dicha **partición** se puede hacer tan pequeña como se quiera: 
 
-<l class="prop"> Proposición: condición necesaria y suficiente de integrabilidad.</l>
+<l class="prop"> Proposición: condición necesaria y suficiente de integrabilidad. Criterio de Riemann</l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. Entonces $f$ es integrable si, y sólo si se verifica la condición siguiente:
 para todo valor positivo $\epsilon >0$, existe una partición $P$ del intervalo $[a,b]$ tal que $U(f,P)-L(f,P)<\epsilon$.
 
@@ -702,7 +715,11 @@ Como la condición es para todo $\epsilon >0$, necesariamente ha de cumplirse qu
 La condición anterior es difícil de aplicar en la práctica y en su lugar se usa la proposición equivalente siguiente:
 
 <l class="prop"> Proposición: condición necesaria y suficiente de integrabilidad.</l>
-Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. Sea $(P_n)_n$ una sucesión de particiones del intervalo $[a,b]$ tal que $\displaystyle\lim_{n\to\infty}|P_n|=0$, es decir, los diámetros tienden a cero.  Entonces $f$ es integrable si, y sólo si $I=\displaystyle\lim_{n\to\infty}U(f,P_n)=\lim_{n\to\infty}L(f,P_n)$ y, en este caso, $\int_a^b f=I$.
+
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. Sea $\{P_n\}_n$ una sucesión de particiones del intervalo $[a,b]$ tal que $\displaystyle\lim_{n\to\infty}|P_n|=0$, es decir, los diámetros tienden a cero.  Entonces $f$ es integrable si, y sólo si $\displaystyle\lim_{n\to\infty}U(f,P_n)=\lim_{n\to\infty}L(f,P_n)$ y, en este caso, 
+$$\lim_{n\to\infty}L(f,P_n)=\int_a^b f=\lim_{n\to\infty}U(f,P_n).$$
+
+## Funciones integrables
 
 Dicha proposición nos dice que para verificar que una función $f$ sea **integrable** en un intervalo $[a,b]$, basta hallar una sucesión de particiones $(P_n)_n$ con diámetros cada vez más pequeños y tendiendo a cero tal que el límite de las **sumas superiores** e **inferiores** tienden hacia el mismo límite siendo dicho límite el valor de la integral de la función $f$ en el intervalo $[a,b]$.
 
@@ -735,7 +752,7 @@ $$
 $$
 ya que la partición $\hat{P}_n$ es más fina que $P_n$.
 
-A partir de la condición anterior, haciendo tender $n\to\infty$, tenemos que $I=\displaystyle\lim_{n\to\infty}U(f,\hat{P}_n)=\lim_{n\to\infty}L(f,\hat{P}_n)$, tal como queríamos ver. Es decir, existe una sucesión de particiones $(\hat{P}_n)_n$ con $\displaystyle\lim_{n\to \infty}|\hat{P}_n|=0$ tal que $I=\displaystyle\lim_{n\to\infty}U(f,\hat{P}_n)=\lim_{n\to\infty}L(f,\hat{P}_n)$.
+A partir de la condición anterior, haciendo tender $n\to\infty$, tenemos que $I=\displaystyle\lim_{n\to\infty}U(f,\hat{P}_n)=\lim_{n\to\infty}L(f,\hat{P}_n)$, tal como queríamos ver. Es decir, existe una sucesión de particiones $\{\hat{P}_n\}_n$ con $\displaystyle\lim_{n\to \infty}|\hat{P}_n|=0$ tal que $I=\displaystyle\lim_{n\to\infty}U(f,\hat{P}_n)=\lim_{n\to\infty}L(f,\hat{P}_n)$.
 
 
 El valor de $I$ anterior sería el valor de la integral de $f$ en el intervalo $[a,b]$ ya que 
@@ -753,7 +770,7 @@ En resumen: $I\leq \underline{\int_a^b} f=\overline{\int_a^b} f \leq I$, lo que 
 <div class="dem">
 Hagamos la demostración de la implicación inversa:
 
-$\Leftarrow$: supongamos que existe una partición $(P_n)_n$ con $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que $I=\displaystyle\lim_{n\to\infty}U(f,P_n)=\lim_{n\to\infty}L(f,P_n)$.
+$\Leftarrow$: supongamos que existe una partición $\{P_n\}_n$ con $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que $I=\displaystyle\lim_{n\to\infty}U(f,P_n)=\lim_{n\to\infty}L(f,P_n)$.
 
 Como $\displaystyle\lim_{n\to\infty} U(f,P_n)-L(f,P_n)=0$, entonces para todo valor $\epsilon >0$, existe un valor $n_0$ tal que si $n\geq n_0$, $U(f,P_n)-L(f,P_n)<\epsilon$.
 
@@ -784,7 +801,8 @@ $$
 
 ## Funciones integrables. Ejemplo
 <div class="example">
-Como la función $f(x)=x^k$ es creciente en el intervalo $[0,1]$ tendremos que $\displaystyle \inf_{x\in [x_{i-1},x_i]}x^k =x_{i-1}^k =\left(\frac{i-1}{n}\right)^k$, $\displaystyle \sup_{x\in [x_{i-1},x_i]}x^k =x_{i}^k =\left(\frac{i}{n}\right)^k$.
+Como la función $f(x)=x^k$ es creciente en el intervalo $[0,1]$ tendremos que 
+$$\inf_{x\in [x_{i-1},x_i]}x^k =x_{i-1}^k =\left(\frac{i-1}{n}\right)^k,\quad  \sup_{x\in [x_{i-1},x_i]}x^k =x_{i}^k =\left(\frac{i}{n}\right)^k.$$
 
 Las sumas inferiores y superiores serán, por tanto,
 $$
@@ -795,20 +813,20 @@ U(f,P_n) & \displaystyle = \frac{1}{n}\sum_{i=1}^n \left(\frac{i}{n}\right)^k = 
 $$
 El valor de la diferencia entre las sumas superiores e inferiores será:
 $$
-U(f,P_n)-L(f,P_n)= \frac{1}{n^{k+1}}\left(\sum_{i=1}^n i^k -\sum_{i=1}^n (i-1)^k\right) =\frac{n^k}{n^{k+1}}.
+U(f,P_n)-L(f,P_n)= \frac{1}{n^{k+1}}\left(\sum_{i=1}^n i^k -\sum_{i=1}^n (i-1)^k\right) =\frac{n^k}{n^{k+1}}=\frac{1}{n}.
 $$
 </div>
 
 ## Funciones integrables. Ejemplo
 <div class="example">
-Como el grado de denominador es mayor que el grado del numerador, el límite de la sucesión $\frac{n^k}{n^{k+1}}$ será cero y, por tanto,
+Como el límite de la sucesión $\frac{1}{n}$ es cero,
 $\displaystyle\lim_{n\to\infty} U(f,P_n)-L(f,P_n)=0$, lo que implica que $\displaystyle \lim_{n\to\infty} U(f,P_n)=\lim_{n\to\infty} L(f,P_n)$, condición que, como ya hemos visto, equivale a afirmar que $f(x)=x^k$ es integrable en el intervalo $[0,1]$.
 
 Usando la última proposición, sabemos que el valor de la integral de la función $f(x)=x^k$ en el intervalo $[0,1]$ vale:
 $$
 \int_0^1 x^k =\lim_{n\to \infty}\frac{1}{n^{k+1}}\sum_{i=1}^n i^k.
 $$
-Los valores de la integral para $k\in\{2,\ldots, 25\}$ en `Wolfram Alpha` se muestran en el enlace siguiente:
+Los valores de la integral para $k\in\{1,\ldots, 25\}$ en `Wolfram Alpha` se muestran en el enlace siguiente:
 <l class="center">
 [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Table%5BLimit%5BSum%5Bi%5Ek%2C+%7Bi%2C+1%2C+n%7D%5D%2Fn%5E%28k+%2B+1%29%2C+n+-%3E+Infinity%5D%2C%7Bk%2C1%2C25%7D%5D)
 </l>
@@ -856,7 +874,7 @@ U(f,P_n) & = \displaystyle \sum_{i=1}^n M_i\cdot (x_i-x_{i-1})=C\cdot \sum_{i=1}
 $$
 ya que $\displaystyle m_i=\inf_{x\in [x_{i-1},x_i]} f(x) =\inf_{x\in [x_{i-1},x_i]} C=C$ y $\displaystyle M_i=\sup_{x\in [x_{i-1},x_i]} f(x) =\sup_{x\in [x_{i-1},x_i]} C=C.$
 
-Como $U(f,P_n)=L(f,P_n)$, tenemos que $\displaystyle I=\int_a^b f =\lim_{n\to\infty} U(f,P_n)=\lim_{n\to\infty} L(f,P_n)=C\cdot (b-a).$
+Como $U(f,P_n)=L(f,P_n)$, tenemos que $\displaystyle \int_a^b f =\lim_{n\to\infty} U(f,P_n)=\lim_{n\to\infty} L(f,P_n)=C\cdot (b-a).$
 
 </div>
 
@@ -864,9 +882,9 @@ Como $U(f,P_n)=L(f,P_n)$, tenemos que $\displaystyle I=\int_a^b f =\lim_{n\to\in
 
 ## Introducción
 
-En esta sección vamos a estudiar un conjunto de propiedades relacionadas con la integrabilidad de funciones. Dichas propiedades "a grosso modo" son las siguientes:
+En esta sección vamos a estudiar un conjunto de propiedades relacionadas con la integrabilidad de funciones. Dichas propiedades *grosso modo* son las siguientes:
 
-* Separación de una integral de un intervalo en dos subintervalos.
+* Aditividad respecto del intervalo.
 * Linealidad de la integral.
 * Composición de una función continua con una función integrable es integrable.
 * Producto y cociente de funciones integrables son también integrables.
@@ -874,19 +892,21 @@ En esta sección vamos a estudiar un conjunto de propiedades relacionadas con la
 
 ## Introducción
 
-* Ver la relación entre la monotonia y continuidad de funciones y la integrabilidad.
-* La integral conserva las desigualdades entre funciones.
+* Relación entre la monotonia y continuidad de funciones con integrabilidad.
+* Montonía de la integral respecto de la función.
 * Teorema de la media para integrales: ver cómo se puede escribir la integral de una función como el producto de la longitud del intervalo de integración por un cierto valor real. También generalizaremos dicho resultado.
 
-## Separación de una integral en un intervalo
+## Aditividad respecto del intervalo.
 
-<l class="prop">Teorema: </l>
+<l class="prop">Teorema.  </l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada y sea $c\in (a,b)$ de tal forma que $a<c<b$. Entonces, $f$ es integrable en $[a,b]$ si, y sólo si, $f$ es integrable en $[a,c]$ y $[c,b]$ y, en este caso:
 $$
 \int_a^b f = \int_a^c f+\int_c^b f.
 $$
 
 <l class="observ">Observación:</l>
+
 Una consecuencia del teorema anterior es que si $f$ es integrable en todo el intervalo $[a,b]$, lo es en cualquier subintervalo.
 
 ## Separación de una integral en un intervalo
@@ -915,7 +935,7 @@ $$
 ## Separación de una integral en un intervalo
 <div class="dem">
 
-Fijémonos que $U(f,P')=U(f,P_1)+U(f,P_2)$ y $L(f,P')=L(f,P_1)+L(f,P_2)$. Por tanto,
+Fijémonos  $U(f,P')=U(f,P_1)+U(f,P_2)$ y $L(f,P')=L(f,P_1)+L(f,P_2)$. Será,
 $$
 U(f,P')-L(f,P')=(U(f,P_1)-L(f,P_1)) + (U(f,P_2)-L(f,P_2)) < \epsilon.
 $$
@@ -923,7 +943,7 @@ Los valores $U(f,P_1)-L(f,P_1)$ y $U(f,P_2)-L(f,P_2)$ son valores positivos cuya
 $$
 U(f,P_1)-L(f,P_1)<\epsilon,\quad U(f,P_2)-L(f,P_2)<\epsilon.
 $$
-En resumen, dado un $\epsilon >0$, hemos hallado una partición $P_1$ del intervalo $[a,c]$ y una partición del intervalo $[c,b]$ tal que se verifican las condiciones anteriores. Dicho resultado equivale a afirmar que la función $f$ es integrable en los intervalos $[a,c]$ y $[c,b]$.
+En resumen, dado un $\epsilon >0$, hemos hallado una partición $P_1$ del intervalo $[a,c]$ y una partición $P_2$ del intervalo $[c,b]$ tal que se verifican las condiciones anteriores. Dicho resultado equivale a afirmar que la función $f$ es integrable en los intervalos $[a,c]$ y $[c,b]$.
 
 
 </div>
@@ -933,14 +953,14 @@ En resumen, dado un $\epsilon >0$, hemos hallado una partición $P_1$ del interv
 
 A continuación, demostremos la implicación contraria:
 
-$\Leftarrow$ Supongamos ahora que $f$ es integrable en los intervalos $[a,c]$ y $[c,b]$. Sabemos que existen dos particiones $(P_n)_n$ y $(Q_n)_n$ de los intervalos $[a,c]$ y $[c,b]$, respectivamente, tales que sus diámetros tienden a cero, $\displaystyle\lim_{n\to\infty}|P_n| =0$, $\displaystyle\lim_{n\to\infty}|Q_n| =0$ y se cumple:
+$\Leftarrow$ Supongamos ahora que $f$ es integrable en los intervalos $[a,c]$ y $[c,b]$. Sabemos que existen dos particiones $\{P_n\}_n$ y $\{Q_n\}_n$ de los intervalos $[a,c]$ y $[c,b]$, respectivamente, tales que sus diámetros tienden a cero, $\displaystyle\lim_{n\to\infty}|P_n| =0$, $\displaystyle\lim_{n\to\infty}|Q_n| =0$ y se cumple:
 $$
 \lim_{n\to\infty}U(f,P_n)  =\lim_{n\to\infty}L(f,P_n)=\int_a^c f,\quad 
 \lim_{n\to\infty}U(f,Q_n) =\lim_{n\to\infty}L(f,Q_n)=\int_c^b f.
 $$
-Consideremos la sucesión siguiente de particiones dentro del intervalo grande $[a,b]$, $P_n'$: $P_n'=P_n\cup Q_n$.
+Consideremos la sucesión siguiente de particiones dentro del intervalo grande $[a,b]$: $P_n'=P_n\cup Q_n$.
 
-Fijémonos que $U(f,P_n')=U(f,P_n)+U(f,Q_n)$ y $L(f,P_n')=L(f,P_n)+L(f,Q_n)$. Por tanto,
+Dado que $U(f,P_n')=U(f,P_n)+U(f,Q_n)$ y $L(f,P_n')=L(f,P_n)+L(f,Q_n)$. Será,
 $$
 \begin{array}{rl}
 \displaystyle\lim_{n\to\infty}U(f,P_n') & = \displaystyle \lim_{n\to\infty}U(f,P_n)+\lim_{n\to\infty}U(f,Q_n)=\int_a^c f+\int_c^b f,\\
@@ -952,7 +972,7 @@ $$
 ## Separación de una integral en un intervalo
 <div class="dem">
 
-En resumen, hemos hallado una sucesión de particiones $(P_n')_n$ del intervalo $[a,b]$ tal que:
+En resumen, hemos hallado una sucesión de particiones $\{P_n'\}_n$ del intervalo $[a,b]$ tal que:
 $$
 \lim_{n\to\infty}U(f,P_n') = \lim_{n\to\infty}L(f,P_n') = \int_a^c f+\int_c^b f.
 $$
@@ -962,13 +982,16 @@ $$
 $$
 </div>
 
-<l class="observ">Observación: </l> dos consecuencias del teorema anterior son las siguientes:
+<l class="observ">Observación. </l> 
+
+Dos consecuencias del teorema anterior son las siguientes:
 $$
 \int_a^a f=0,\quad \int_b^a f=-\int_a^b f.
 $$
 
 ## Linealidad de la integral
 <l class="prop">Teorema:</l>
+
 Sean $f, g:[a,b]\longrightarrow\mathbb{R}$ dos funciones integrables en el intervalo $[a,b]$. Sean $\alpha$ y $\beta$ dos valores reales. Entonces la función $\alpha f+\beta g:[a,b]\longrightarrow \mathbb{R}$ es integrable en $[a,b]$ y además:
 $$
 \int_a^b \alpha f+\beta g =\alpha\int_a^b f+\beta\int_a^b f.
@@ -976,7 +999,9 @@ $$
 
 ## Linealidad de la integral
 
-<l class="observ">Observación: </l> el teorema anterior es equivalente a afirmar lo siguiente:
+<l class="observ">Observación. </l> 
+
+El teorema anterior es equivalente a afirmar lo siguiente:
 
 (a) Si $f, g:[a,b]\longrightarrow\mathbb{R}$ son integrables en $[a,b]$, entonces $f+g$ es integrable en $[a,b]$ y además: $\displaystyle\int_a^b f+g =\int_a^b f+\int_a^b g$.
 
@@ -999,7 +1024,7 @@ Supongamos que $f,g:[a,b]\longrightarrow \mathbb{R}$ son integrables en $[a,b]$.
 
 Sea $P$ una partición del intervalo $[a,b]$. Se verifica lo siguiente:
 $$
-U(f+g,P)\leq U(f,P)+U(g,P),\quad L(f+g,P)\leq L(f,P)+L(g,P),
+U(f+g,P)\leq U(f,P)+U(g,P),\quad L(f+g,P)\geq L(f,P)+L(g,P),
 $$
 ya que si $P=\{a=x_0<x_1<\cdots < x_n=b\}$, se cumple:
 $$
@@ -1024,7 +1049,7 @@ L(f+g,P) & =\displaystyle \sum_{i=1}^n \inf_{x\in [x_{i-1},x_i]} (f(x)+g(x)) (x_
 $$
 En la última expresión hemos usado que $\inf_{x\in [x_{i-1},x_i]} (f(x)+g(x))\geq \inf_{x\in [x_{i-1},x_i]} f(x)+\inf_{x\in [x_{i-1},x_i]} g(x)$, lo que equivale a decir que el ínfimo de la suma de dos funciones es mayor o igual que la suma de ínfimos.
 
-Como $f$ y $g$ son integrables en $[a,b]$, existirá una sucesión de particiones $(P_n)_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$, tal que 
+Como $f$ y $g$ son integrables en $[a,b]$, existirá una sucesión de particiones $\{P_n\}_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$, tal que 
 $$
 \lim_{n\to\infty}U(f,P_n)=\lim_{n\to\infty}L(f,P_n)=\int_a^b f,\quad \lim_{n\to\infty}U(g,P_n)=\lim_{n\to\infty}L(g,P_n)=\int_a^b g.
 $$
@@ -1041,11 +1066,11 @@ $$
 \displaystyle\lim_{n\to \infty} U(f+g,P_n) & \leq \displaystyle\lim_{n\to \infty} U(f,P_n)+\lim_{n\to \infty} U(g,P_n)=\int_a^b f+\int_a^b g = \lim_{n\to\infty}L(f,P_n)+\lim_{n\to\infty}L(g,P_n)\\ & \displaystyle\leq \lim_{n\to \infty}L(f+g,P_n)\leq \lim_{n\to \infty}U(f+g,P_n).
 \end{array}
 $$
-Como en las desigualdades anteriores llegamos al mismo valor inicial, concluimos que las desigualdades son de hecho igualdades y se cumple:
+Como en las desigualdades anteriores llegamos al mismo valor inicial, concluimos que las desigualdades son, de hecho, igualdades y se cumple:
 $$
 \lim_{n\to \infty} U(f+g,P_n)=\lim_{n\to \infty}L(f+g,P_n) = \int_a^b f+\int_a^b g.
 $$
-En resumen, hemos hallado una sucesión de particiones $(P_n)_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que se verifica las condiciones de la expresión anterior, condición que equivale a afirmar que $f+g$ es integrable en $[a,b]$ y además:
+En resumen, hemos hallado una sucesión de particiones $\{P_n\}_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que se verifica las condiciones de la expresión anterior, condición que equivale a afirmar que $f+g$ es integrable en $[a,b]$ y además:
 $$
 \int_a^b f+g=\int_a^b f+\int_a^b g.
 $$
@@ -1077,7 +1102,7 @@ En la última expresión hemos usado que $\sup_{x\in [x_{i-1},x_i]} (\alpha f(x)
 
 <div class="dem">
 
-Como $f$ es integrable en $[a,b]$ existirá una sucesión de particiones $(P_n)_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que:
+Como $f$ es integrable en $[a,b]$ existirá una sucesión de particiones $\{P_n\}_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que:
 $$
 \lim_{n\to\infty} U(f,P_n)=\lim_{n\to\infty} L(f,P_n)=\int_a^b f.
 $$
@@ -1108,7 +1133,7 @@ En la última expresión hemos usado que $\sup_{x\in [x_{i-1},x_i]} (\alpha f(x)
 
 <div class="dem">
 
-Como $f$ es integrable en $[a,b]$ existirá una sucesión de particiones $(P_n)_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que:
+Como $f$ es integrable en $[a,b]$ existirá una sucesión de particiones $\{P_n\}_n$ con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$ tal que:
 $$
 \lim_{n\to\infty} U(f,P_n)=\lim_{n\to\infty} L(f,P_n)=\int_a^b f.
 $$
@@ -1123,6 +1148,7 @@ La expresión anterior equivale a decir que la función $\alpha f$ es integrable
 
 ## Composición de función continua con integrable
 <l class="prop">Teorema:</l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función integrable en el intervalo $[a,b]$ y $\phi:[c,d]\longrightarrow\mathbb{R}$ una función **continua** en el intervalo $[c,d]$ tal que $f([a,b])\subset [c,d]$. Entonces la función **composición** $\phi\circ f:[a,b]\longrightarrow\mathbb{R}$ definida por $\phi\circ f(x)=\phi(f(x))$ es también integrable en el intervalo $[a,b]$.
 
 
@@ -1147,7 +1173,7 @@ Sea ahora el valor $\delta^2 >0$. Como $f$ es integrable en el intervalo $[a,b]$
 
 ## Composición de función continua con integrable
 <div class="dem">
-Separemos el conjunto de índices $\{1,\ldots,2\}$ en los dos subconjuntos siguientes:
+Separemos el conjunto de índices $\{1,\ldots,n\}$ en los dos subconjuntos siguientes:
 $$
 A=\{i,\ |\ M_i(f)-m_i(f) <\delta\},\quad A^c=\{i,\ |\ M_i(f)-m_i(f) \geq\delta\},
 $$
@@ -1166,7 +1192,7 @@ ya que en general $-\inf S=\sup -S$, es decir, hallar el ínfimo de un conjunto 
 
 ## Composición de función continua con integrable
 <div class="dem">
-Ahora bien, si $i\in A$ y $x,y\in [x_{i-1},x_i]$, entonces $|f(x)-f(y)\leq M_i(f)-m_i(f)< \delta$ y por tanto, usando la condición de continuidad uniforme de $\phi$, deducimos que $|\phi\circ f(x)-\phi\circ f(y)|<\epsilon'$. Deducimos, por tanto, que si $i\in A$, entonces 
+Ahora bien, si $i\in A$ y $x,y\in [x_{i-1},x_i]$, entonces $|f(x)-f(y)|\leq M_i(f)-m_i(f)< \delta$ y por tanto, usando la condición de continuidad uniforme de $\phi$, deducimos que $|\phi\circ f(x)-\phi\circ f(y)|<\epsilon'$. Deducimos, por tanto, que si $i\in A$, entonces 
 $M_i(\phi\circ f)-m_i (\phi\circ f)=\displaystyle \sup_{x,y\in [x_{i-1},x_i]}(\phi\circ f (x)-\phi\circ f (y))\leq \epsilon'$.
 
 En este caso, concluimos que:
@@ -1225,16 +1251,13 @@ De la misma manera, la función $h(x)$ es la composición de la función $f_2(x)
 
 ## Producto y cociente de funciones y integrabilidad
 
-<l class="prop">Teorema:</l>
-Sean $f, g:[a,b]\longrightarrow\mathbb{R}$ dos funciones integrables en el intervalo $[a,b]$. Entonces la función $f\cdot g$ también es integrable en $[a,b]$. Si además existe una constante $k$ tal que $|g(x)|\geq k$, para todo valor $x\in [a,b]$, entonces la función $\frac{f}{g}$ también es integrable en $[a,b]$.
+<l class="prop">Teorema.</l>
+
+Sean $f, g:[a,b]\longrightarrow\mathbb{R}$ dos funciones integrables en el intervalo $[a,b]$. Entonces la función $f\cdot g$ también es integrable en $[a,b]$. 
+
+Si además existe una constante $k$ tal que $|g(x)|\geq k$, para todo valor $x\in [a,b]$, entonces la función $\frac{f}{g}$ también es integrable en $[a,b]$.
 
 ## Producto y cociente de funciones y integrabilidad
-
-<div class="box">
-<div class="important">
-<i class="fa fa-dizzy"> Contenido bastante técnico. </i></i>
-</div>
-</div>
 
 <div class="dem">
 **Demostración**
@@ -1264,7 +1287,11 @@ La función $\frac{f}{g}=\frac{1}{g}\cdot f$ será integrable ya que la podemos 
 
 ## Integración y monotonía
 <l class="prop">Teorema.</l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **monótona** en el intervalo $[a,b]$. Entonces la función $f$ es integrable en dicho intervalo.
+
+
+## Integración y monotonía
 
 <div class="dem">
 **Demostración**
@@ -1310,6 +1337,7 @@ Fijémonos que nuestro razonamiento fallaría en intervalos que contuviesen el v
 ## Integrabilidad y continuidad
 
 <l class="prop">Teorema.</l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **continua** en el intervalo $[a,b]$. Entonces la función $f$ es integrable en dicho intervalo.
 
 <div class="dem">
@@ -1354,12 +1382,9 @@ Gracias al teorema anterior podemos afirmar que cualquier polinomio $p(x)$ es in
 
 ## Monotonía de la función integral
 <l class="prop">Proposición.</l>
-Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **integrable** en el intervalo $[a,b]$ tal que $f(x)\geq 0$, para todo valor $x\in [a,b]$. Entonces la integral de la función $f$ también es positiva: $\displaystyle\int_a^b f\geq 0$.
 
-<l class="observ">Observación.</l>
-Usando la proposición anterior podemos afirmar que si tenemos dos funciones $f,g:[a,b]\longrightarrow\mathbb{R}$ **integrables** en el intervalo $[a,b]$ tales que $f(x)\leq g(x),$ para cualquier valor $x\in [a,b]$, entonces $\displaystyle\int_a^b f\leq \int_a^b g$ ya que basta considerar la función diferencia $h(x)=f(x)-g(x)$ y aplicar la proposición a la función anterior $h(x)$ usando la linealidad de la integral provada anteriormente.
-
-
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **integrable** en el intervalo $[a,b]$ tal que $f(x)\geq 0$, para todo valor $x\in [a,b]$. Entonces la integral de la función $f$ también es positiva: 
+$$\displaystyle\int_a^b f\geq 0.$$
 
 ## Monotonía de la función integral
 <div class="dem">
@@ -1375,10 +1400,19 @@ A continuación, tenemos que $\displaystyle\int_a^b f\geq L(f,P)\geq 0$, tal com
 </div>
 
 ## Monotonía de la función integral
+
+<l class="observ">Observación.</l>
+
+Usando la proposición anterior podemos afirmar que si tenemos dos funciones $f,g:[a,b]\longrightarrow\mathbb{R}$ **integrables** en el intervalo $[a,b]$ tales que $f(x)\leq g(x),$ para cualquier valor $x\in [a,b]$, entonces $\displaystyle\int_a^b f\leq \int_a^b g$ ya que basta considerar la función diferencia $h(x)=f(x)-g(x)$ y aplicar la proposición a la función anterior $h(x)$ usando la linealidad de la integral provada anteriormente.
+
+
+## Monotonía de la función integral
 A continuación veamos que la integral de una función continua que es estrictamente positiva en un punto, es también estrictamente positiva:
 
 <l class="prop">Corolario. </l>
-Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **continua** en el intervalo $[a,b]$ tal que $f(x)\geq 0$ para todo valor $x\in [a,b]$. Supongamos que existe un valor $c\in [a,b]$ tal que $f(c)>0$. Entonces $\displaystyle\int_a^b f >0$.
+
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **continua** en el intervalo $[a,b]$ tal que $f(x)\geq 0$ para todo valor $x\in [a,b]$. Supongamos que existe un punto $c\in [a,b]$ tal que $f(c)>0$. Entonces 
+$$\int_a^b f >0.$$
 
 
 ## Monotonía de la función integral
@@ -1413,6 +1447,7 @@ tal como queríamos demostrar.
 Otra de las consecuencias de la monotonía de la integral es que el valor absoluto de una integral siempre es menor que la integral del valor absoluto:
 
 <l class="prop">Teorema. </l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **integrable** en el intervalo $[a,b]$. Entonces la función $|f|$ definida por: $|f|:[a,b]\longrightarrow\mathbb{R}$, con $|f|(x)=|f(x)|$ es también integrable y además,
 $$
 \left|\int_a^b f\right|\leq \int_a^b |f|.
@@ -1461,14 +1496,14 @@ lo que equivale a afirmar que $\displaystyle \left|\int_a^b f\right|\leq \int_a^
 </div>
 
 
-## Teorema de la media de la integral
+## Teorema del valor medio 
 En esta sección vamos a escribir la integral de una función **integrable** en un cierto intervalo $[a,b]$ como el área de un cierto rectángula cuya longitud de la base es la longitud del intervalo, $b-a$ y cuya altura es un valor que se encuentra entre el **ínfimo** y el **supremo** de la función.
 
 En la figura siguiente se indica lo que queremos decir: el àrea de la función en rojo equivale al área del rectángulo en azul.
 
-El **Teorema de la media** nos asegura precisamente esto: para cualquier función, siempre es posible encontrar un rectángulo cuya altura estará siempre entre el ínfimo y el supremo de la función cuyas áreas serán la misma.
+El **Teorema del valor medio de la integral** nos asegura precisamente esto: para cualquier función, siempre es posible encontrar un rectángulo cuya altura estará siempre entre el ínfimo y el supremo de la función cuyas áreas serán la misma.
 
-## Teorema de la media de la integral
+## Teorema del valor medio
 
 ```{r,echo=FALSE,fig.align=TRUE}
 xmin=-2
@@ -1497,11 +1532,11 @@ for (i in 0:(quantsy)){
   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
 #  text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
-lines(x,f(x),col="red")
+lines(x,f(x),col='firebrick2')
 text(pi,1.3,"f(x)")
-lines(c(-2,-2),c(0,8/3),col="blue")
-lines(c(-2,2),c(8/3,8/3),col="blue")
-lines(c(2,2),c(0,8/3),col="blue")
+lines(c(-2,-2),c(0,8/3),col='deepskyblue3')
+lines(c(-2,2),c(8/3,8/3),col='deepskyblue3')
+lines(c(2,2),c(0,8/3),col='deepskyblue3')
 text(-2,-0.2,"a")
 text(2,-0.2,"b")
 text(1.5,2.1,"f(x)")
@@ -1509,16 +1544,19 @@ text(1.5,2.1,"f(x)")
 ```
 
 
-## Teorema de la media de la integral
+## Teorema del valor medio
 <l class="prop">Teorema de la media de la integral.</l>
+
 Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función **integrable** en el intervalo $[a,b]$ y sea $\displaystyle m=\inf_{x\in [a,b]} f(x)$ y $\displaystyle M=\sup_{x\in [a,b]} f(x)$. Entonces siempre es posible hallar un valor $\lambda\in [m,M]$ tal que $\displaystyle \int_a^b f=\lambda\cdot (b-a)$.
 
+## Teorema del valor medio
 <l class="observ">Observación. </l>
+
 El valor $\lambda$ es precisamente la altura del rectángulo del que nos referíamos antes.
 Además, observar que si la función, además de ser **integrable**, es **continua**, podemos decir por el Teorema del valor intermedio que existe un valor $c\in [a,b]$ tal que $\lambda =f(c)$. Entonces, en este caso, podemos escribir la integral de $f$ en $[a,b]$ como: $\displaystyle \int_a^b f=f(c)\cdot (b-a)$.
 
 
-## Teorema de la media de la integral
+## Teorema del valor medio
 <div class="dem">
 **Demostración**
 
@@ -1535,16 +1573,22 @@ $$
 Si definimos $\lambda = \frac{\int_a^b f}{b-a}$, tenemos el resultado del Teorema.
 </div>
 
-## Teorema de la media generalizado
-<l class="prop">Teorema de la media generalizado.</l>
-Sean $f,g:[a,b]\longrightarrow \mathbb{R}$ dos funciones **integrables** en el intervalo $[a,b]$, donde suponemos que $g(x)\geq 0$ para todo valor $x\in [a,b]$ y sea $\displaystyle m=\inf_{x\in [a,b]} f(x)$ y $\displaystyle M=\sup_{x\in [a,b]} f(x)$. Entonces siempre es posible hallar un valor $\lambda\in [m,M]$ tal que $\displaystyle \int_a^b f\cdot g =\lambda\cdot \int_a^b g$.
+## Teorema del valor medio
 
-## Teorema de la media generalizado
+<l class="prop">Corolario.</l>
+
+Sean $f,g:[a,b]\longrightarrow \mathbb{R}$ dos funciones **integrables** en el intervalo $[a,b]$, donde suponemos que $g(x)\geq 0$ para todo valor $x\in [a,b]$ y sea $\displaystyle m=\inf_{x\in [a,b]} f(x)$ y $\displaystyle M=\sup_{x\in [a,b]} f(x)$. Entonces siempre es posible hallar un valor $\lambda\in [m,M]$ tal que 
+$$\int_a^b f\cdot g =\lambda\cdot \int_a^b g.$$
+
+## Teorema del valor medio
 <l class="observ">Observación.</l>
-El teorema anterior generaliza el teorema de la media ya que basta considerar $g(x)=1\geq 0$ y obtenemos el Teorema de la media para integrales.
-Además, igual que pasaba con el **Teorema de la media**, observar que si la función $f$, además de ser **integrable**, es **continua**, podemos decir por el Teorema del valor intermedio que existe un valor $c\in [a,b]$ tal que $\lambda =f(c)$. Entonces, en este caso, podemos escribir la integral de $f\cdot g$ en $[a,b]$ como: $\displaystyle \int_a^b f\cdot g=f(c)\cdot \int_a^b g$.
 
-## Teorema de la media generalizado
+El teorema anterior generaliza el Teorema del valor medio ya que basta considerar $g(x)=1\geq 0$ y obtenemos el Teorema del valor medio para integrales.
+Además, igual que pasaba con el **Teorema del valor medio**, conviene observar que si la función $f$, además de ser **integrable**, es **continua**, podemos decir por el Teorema del valor intermedio que existe un valor $c\in [a,b]$ tal que $\lambda =f(c)$. Entonces, en este caso, podemos escribir la integral de $f\cdot g$ en $[a,b]$ como: 
+$$\int_a^b f\cdot g=f(c)\cdot \int_a^b g.$$
+
+
+## Teorema del valor medio
 <div class="dem">
 **Demostración**
 
@@ -1559,7 +1603,7 @@ m\cdot\int_a^b g\leq \int_a^b f\cdot g\leq M\cdot \int_a^b g.
 $$
 </div>
 
-## Teorema de la media generalizado
+## Teorema del valor medio
 <div class="dem">
 Si $\displaystyle \int_a^b g=0$, a partir de las desigualdades anteriores deducimos que $\displaystyle \int_a^b f\cdot g=0$ y el Teorema se cumple trivialmente.
 
@@ -1579,7 +1623,7 @@ Ahora bien, usando todo lo que sabemos, no sabemos o no podemos calcular el áre
 
 Es decir, nos falta un método efectivo para calcular áreas de funciones. 
 
-El **Teorema Fundamental del Cálculo** nos resuelve este problema relacionando el problema de **integrar** con **derivar**. 
+El **Teorema Fundamental del Cálculo** nos resuelve este problema relacionando el problema del cálculo de integrales con el de derivadas.
 
 ## Introducción
 Más concretamente, consideremos una función $f:[a,b]\longrightarrow \mathbb{R}$ **integrable** en el intervalo $[a,b]$ y definamos a partir de ella la función área $F:[a,b]\longrightarrow \mathbb{R}$ como $F(x)=\int_a^x f$, ver gráfica adjunta:
@@ -1593,9 +1637,9 @@ knitr::include_graphics("Images/tfc.png",dpi=1200)
 ## Introducción
 El **Teorema fundamental del cálculo** nos dice que la derivada de la función $F(x)$ es precisamente la función $f(x)$ sobre la que integrábamos o calculábamos el área: $F'(x)=f(x)$. 
 
-El problema es que nosotros tenemos la función $f(x)$ y queremos hallar precisamente la función que da el área $F(x)$. A la función $F(x)$ se le llama **primitiva** de la función $f(x)$ o **antiderivada** ya que si $F'(x)=f(x)$, para hallar $F(x)$ a partir de $f(x)$ hemos de realizar la operación contraria de derivar.
+El problema es que nosotros tenemos la función $f(x)$ y queremos hallar precisamente la función que da el área $F(x)$. A la función $F(x)$ se le llama **primitiva** de la función $f(x)$ o **antiderivada** ya que si $F'(x)=f(x)$, para calcular $F(x)$ a partir de $f(x)$ hemos de realizar la operación contraria de derivar.
 
-Gracias a dicho Teorema, de cara a hallar áreas, hemos de aprender a hallar **primitivas**. En el capítulo siguiente, vamos a aprender a hallar primitivas de las funciones más conocidas.
+Gracias a dicho Teorema, de cara a calcular áreas, hemos de aprender a calcular **primitivas**. En el capítulo siguiente, vamos a aprender a calcular primitivas de las funciones más conocidas.
 
 Seguidamente, vamos a formalizar el **Teorema Fundamental del Cálculo** y a demostarlo.
 
@@ -1603,9 +1647,11 @@ Seguidamente, vamos a formalizar el **Teorema Fundamental del Cálculo** y a dem
 Antes de pasar a su definición, necesitamos introducir la función área $F(x)$ y ver que en general, es una función continua.
 
 <l class="prop">Teorema.</l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **integrable**, y sea la función **área** definida de la forma siguiente: $F:[a,b]\longrightarrow\mathbb{R}$, $F(x)=\int_a^x f$. Entonces $F(x)$ es continua para todo valor de $x\in [a,b]$.
 
 <l class="observ">Observación.</l>
+
 Como el intervalo $[a,b]$ es un intervalo cerrado y acotado, la función área $F(x)$ no sólo es continua en todo valor $x\in [a,b]$ sino que es uniformemente continua en el intervalo
 
 
@@ -1619,7 +1665,7 @@ Sea $y\in [a,b]$ otro valor en el intervalo $[a,b]$. Entonces,
 $$
 F(y)-F(x)=\int_a^y f-\int_a^x f=\int_x^y f.
 $$
-Usando el Teorema de la media, podemos afirmar que existe un valor $\lambda\in [\inf f,\sup f]$ tal que:
+Usando el Teorema del valor medio, podemos afirmar que existe un valor $\lambda\in [\inf f,\sup f]$ tal que:
 $\displaystyle\int_x^y f=\lambda\cdot (y-x)$. 
 
 Para ver que $F$ es continua en $x$ hemos de ver lo siguiente: para todo valor $\epsilon >0$, existe un $\delta >0$ tal que si $y\in [a,b]$ y $|x-y|<\delta$, entonces $|F(y)-F(x)|<\epsilon$.
@@ -1630,16 +1676,18 @@ Consideremos entonces un valor $\epsilon >0$, sea $\delta =\frac{\epsilon}{|\lam
 
 ## El Teorema Fundamental del Cálculo
 <l class="prop">Teorema Fundamental del Cálculo. </l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **continua**, y por tanto, **integrable**, y sea la función **área** $F(x)$ definida en el Teorema anterior. Entonces la función $F$ es derivable en todo el intervalo $[a,b]$ y además, $F'(x)=f(x)$, para todo valor $x\in [a,b]$.
 
 <l class="observ">Observación.</l>
+
 Tal como hemos indicado anteriormente, a la función $F$ se le llama **primitiva** o **antiderivada** de la función $f$. Observar que dada una función $f$, ésta tiene infinitas **primitivas** ya que si $F$ es una de ellas, también lo es $F+C$, donde $C$ es una constante cualquiera. Efectivamente: $(F+C)'(x)=F'(x)=f(x)$.
 
 ## El Teorema Fundamental del Cálculo
 <div class="dem">
 **Demostración**
 
-Sea $x$ un valor cualquiera del intervalo $[a,b]$. Si $y$ es otro valor cualquiera con $y\geq x$, el **Teorema de la media** nos dice que existe un valor $c\in (x,y)$ tal que:
+Sea $x$ un valor cualquiera del intervalo $[a,b]$. Si $y$ es otro valor cualquiera con $y\geq x$, el **Teorema del valor medio** nos dice que existe un valor $c\in (x,y)$ tal que:
 $$
 \int_x^y f = \int_a^y f-\int_a^x f = F(y)-F(x)=f(c)\cdot (y-x).
 $$
@@ -1651,16 +1699,20 @@ al ser $f(x)$ continua en el punto $x$. Queda por tanto, visto el Teorema.
 </div>
 
 ## Regla de Barrow
-La **Regla de Barrow** nos da la expresión del **área** o la **integral** de la función $f$ en el intervalo $[a,b]$ usando el **Teorema fundamental del cálculo**:
+La **Regla de Barrow** da la expresión del **área** o la **integral** de la función $f$ en el intervalo $[a,b]$ usando el **Teorema fundamental del cálculo**:
 
 <l class="prop">Regla de Barrow. </l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **continua**, y por tanto, **integrable**, y sea $F:[a,b]\longrightarrow \mathbb{R}$ una **primitiva** de $f$. Entonces, el **área** de la función $f$ entre $a$ y un punto cualquiera del intervalo $x\in [a,b]$  se puede expresar como:
 $$
 \int_a^x f = F(x)-F(a).
 $$
 
+## Regla de Barrow
+
 <l class="observ">Observación.</l>
-Si usamos la expresión anterior para $x=b$ obtenemos la expresión del **área** de la función $f$ entre $a$ y $b$:
+
+Si se usa la expresión anterior para $x=b$, se obtiene la expresión del **área** de la función $f$ entre $a$ y $b$:
 $\displaystyle\int_a^b f = F(b)-F(a).$
 
 ## Regla de Barrow
@@ -1697,7 +1749,7 @@ Concretamente, consideremos el polinomio $p(x)=4-x^2$ definido en el intervalo $
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,fig.align=TRUE}
+```{r,echo=FALSE,fig.align='center'}
 xmin=-2
 xmax=2
 ymin=0
@@ -1724,7 +1776,7 @@ for (i in 0:(quantsy)){
   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
 #  text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
-lines(x,f(x),col="red")
+lines(x,f(x),col='firebrick2')
 text(-2,-0.25,"-2")
 text(2,-0.25,"2")
 text(1.5,2.2,"p(x)")
@@ -1734,7 +1786,7 @@ text(1.5,2.2,"p(x)")
 
 ## Ejemplo
 <div class="example">
-Una primitiva del polinomio anterior sería: $F(x)=-\frac{x^3}{3}+4x$. El área entre $x=-2$ y $x=2$ sería usando la regla de Barrow:
+Una primitiva del polinomio anterior sería: $F(x)=-\frac{x^3}{3}+4x$. El área entre $x=-2$ y $x=2$, sería usando la regla de Barrow:
 $$
 \int_{-2}^2 p = F(2)-F(-2)=-\frac{2^3}{3}+4\cdot 2-\left(\frac{(-2)^3}{3}-4\cdot (-2)\right)=\frac{32}{3}\approx `r round(32/3,4)`.
 $$
@@ -1745,19 +1797,20 @@ El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguient
 </div>
 
 
-## Segundo Teorema de la media
-Usando el **Teorema fundamental del cálculo** vamos a generalizar el **Teorema de la media generalizado** en el siguiente sentido:
+## Segundo Teorema del valor medio
+Usando el **Teorema fundamental del cálculo** vamos a generalizar el **Teorema del valor medio** en el siguiente sentido:
 
 <l class="prop">Segundo Teorema de la media.</l>
+
 Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función integrable en $[a,b]$ y sea $g:[a,b]\longrightarrow\mathbb{R}$ una función monótona, decreciente y no negativa. Entonces, existe un valor $c\in [a,b]$ tal que:
 $$
 \int_a^b f\cdot g = g(a)\cdot\int_a^c f.
 $$
 
-## Segundo Teorema de la media
+## Segundo Teorema del valor medio
 <div class="box">
 <div class="important">
-<i class="fa fa-dizzy"> Contenido muy técnico. </i>
+<i class="fa fa-dizzy"> <i class="fa fa-dizzy"> Contenido muy técnico. </i></i>
 </div>
 </div>
 
@@ -1780,7 +1833,7 @@ F(x_i)(g(x_{i-1}) - g(x_i)) + F(x_n)g(x_{n-1}).
 $$
 </div>
 
-## Segundo Teorema de la media
+## Segundo Teorema del valor medio
 <div class="dem">
 
 Como la función $g$ es decreciente todos los términos del sumatorio anterior serán positivos y, usando que $\displaystyle m=\min_{x\in [a,b]}F(x)$ y $\displaystyle M=\max_{x\in [a,b]}F(x)$ podemos escribir que:
@@ -1799,7 +1852,7 @@ $$
 y por tanto deducimos que $\sigma(P)\in [m g(a),M g(a)]$.
 </div>
 
-## Segundo Teorema de la media
+## Segundo Teorema del valor medio
 <div class="dem">
 A continuación, acotamos $\displaystyle\left| \int_a^b f(x) g(x) dx - \sigma
 (P)\right|$ de la siguiente manera:
@@ -1825,7 +1878,7 @@ $$
 </div>
 
 
-## Segundo Teorema de la media
+## Segundo Teorema del valor medio
 <div class="dem">
 
 A continuación veamos que:
@@ -1836,14 +1889,14 @@ Supongamos que la expresión anterior no es cierta, es decir, $\displaystyle \in
 $$
 \left( \int_a^b f\cdot g-\epsilon , \int_a^b f\cdot  g + \epsilon \right) \subset \mathbb{R}\setminus [m g(a), M g(a)].
 $$
-Consideremos una partición $P'$ del intervalo $[a,b]$ tal que su diámetro cumple $|P'|< \frac{\epsilon }{2 M_f (g(a) - g(b))}$. (si $g(a)=g(b)$, $g$ sería una función constante y el resultado del teorema es trivial). Para dicha partición, tenemos que, usando un resultado anterior,
+Consideremos una partición $P'$ del intervalo $[a,b]$ tal que su diámetro cumple $|P'|< \frac{\epsilon }{2 M_f (g(a) - g(b))}$, (si $g(a)=g(b)$, $g$ sería una función constante y el resultado del teorema es trivial). Para dicha partición, tenemos que, usando un resultado anterior,
 $$
 \left| \int_a^b f\cdot g -  \sigma (P')\right|\leq M_f\cdot |P'|\cdot (g(a)-g(b))<\frac{\epsilon}{2}.
 $$
 </div>
 
 
-## Segundo Teorema de la media
+## Segundo Teorema del valor medio
 <div class="dem">
 Tenemos la situación siguiente:
 
@@ -1857,7 +1910,7 @@ knitr::include_graphics("Images/teorema2mitjana.png",dpi=1200)
 </div>
 
 
-## Segundo Teorema de la media
+## Segundo Teorema del valor medio
 <div class="dem">
 
 Como se puede observar en la figura anterior, $\sigma(P')\not\in [m g(a),M g(a)]$, hecho que niega lo que hemos demostrado antes. Hemos llegado a una contradicción. Por tanto, 
@@ -1878,11 +1931,12 @@ $$
 tal como queríamos demostrar.
 </div>
 
-## Segundo Teorema de la media
+## Segundo Teorema del valor medio
 El teorema siguiente es otra versión del segundo teorema de la media:
 
-<l class="prop">Segundo Teorema de la media.</l>
-Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función integrable en $[a,b]$ y sea $g:[a,b]\longrightarrow\mathbb{R}$ una función monótona, creciente y no negativa. Entonces, existe un valor $c\in [a,b]$ tal que:
+<l class="prop">Segundo Teorema del valor medio.</l>
+
+Sea $f:[a,b]\longrightarrow \mathbb{R}$ una función integrable en $[a,b]$ y sea $g:[a,b]\longrightarrow\mathbb{R}$ una función monótona, creciente y no negativa. Entonces, existe un punto $c\in [a,b]$ tal que:
 $$
 \int_a^b f\cdot g = g(b)\cdot\int_c^b f.
 $$
@@ -1892,7 +1946,7 @@ $$
 
 Demostrar el teorema anterior.
 
-Indicación: considerar $\tilde{g}(x)=g(b)-g(x)$ y aplicar el segundo teorema de la media.
+Indicación: considerar $\tilde{g}(x)=g(b)-g(x)$ y aplicar el segundo teorema del valor medio.
 </div>
 
 # Técnicas de integración
@@ -1921,6 +1975,7 @@ Para que la integral anterior se pueda realizar, necesitamos saber cuál es la r
 
 ## Teorema del cambio de variable
 <l class="prop">Teorema del cambio de variable.</l>
+
 Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función **continua** en el intervalo $[a,b]$ y por tanto, **integrable**. Sea $\phi$ una función de clase ${\cal C}^1$ en su intervalo de definición, es decir, una función **derivable** con función derivada continua. Supongamos el intervalo de definición de $\phi$ es $[\alpha,\beta]$, es decir $\phi:[\alpha,\beta]\longrightarrow\mathbb{R}$ con $\phi(\alpha)=a$ y $\phi(\beta)=b$ de tal forma que $\phi([\alpha,\beta])=[a,b]$. Entonces, en estas condiciones:
 $$
 \int_a^b f(x)\, dx= \int_\alpha^\beta f(\phi(t))\cdot \phi'(t)\, dt.
@@ -1928,6 +1983,7 @@ $$
 
 ## Teorema del cambio de variable
 <l class="observ">Observación. </l>
+
 El **Teorema del cambio de variable** nos permite pasar de integrar la función $f$ respecto de la variable $x$ a integrar dicha función pero respecto de una nueva variable $t$ de tal forma que la relación entre $x$ y $t$ nos la da la función $\phi$: $x=\phi(t)$.
 
 Para aplicar el teorema anterior en la práctica, lo que hacemos es lo siguiente: 
@@ -1936,7 +1992,7 @@ Para aplicar el teorema anterior en la práctica, lo que hacemos es lo siguiente
 
 ## Teorema del cambio de variable
 
-* Hallamos la relación entre los "diferenciales" (diferencial de $x$, $dx$ y diferencial de $t$, $dt$): 
+* Hallamos la relación entre los diferenciales (diferencial de $x$, $dx$ y diferencial de $t$, $dt$): 
   * Si tenemos la relación $x=\phi(t)$, la relación entre diferenciales es $dx=\phi'(t)dt$.
   * Si tenemos la relación $t=\phi^{-1}(x)$, la relación entre diferenciales es $dx=\frac{dt}{\phi^{-1'}(x)}$, asegurándose que la parte de la derecha sólo dependa de $t$.
 * Miramos cómo cambian los extremos de integración, es decir para $x=a$, hallamos el valor de $t$ correspondiente:
@@ -2024,6 +2080,7 @@ La demostración de dicha técnica está basada como veremos en la fórmula de d
 
 ## Integración por partes
 <l class="prop">Teorema de integración por partes.</l>
+
 Sean $u,v:[a,b]\longrightarrow\mathbb{R}$ dos funciones de clase ${\cal C}^1$ (es decir, derivables con derivada continua) en el intervalo $[a,b]$. Entonces:
 $$
 \int_a^b u(x)\cdot v'(x)\, dx=(u(b)\cdot v(b)-u(a)\cdot v(a))-\int_a^b u'(x)\cdot v(x)\, dx.
@@ -2031,18 +2088,23 @@ $$
 
 ## Integración por partes
 <l class="observ">Observación.</l>
+
 La aplicación de la fórmula de integración por partes se aplica en la práctica de la siguiente manera:
 
-* Para realizar la integral $\displaystyle\int_a^b f(x)\, dx$, tenemos que descomponer  "lo que integramos", $f(x)\, dx$ en dos partes de la forma $f(x)\, dx=u(x)\cdot dv(x)$. 
+* Para realizar la integral $\displaystyle\int_a^b f(x)\, dx$, tenemos que descomponer el integrando, $f(x)\, dx$ en dos partes de la forma $f(x)\, dx=u(x)\cdot dv(x)$. 
   * La parte correspondiente a $u(x)$ tiene que ser de tal forma que cuando derivemos $u(x)$, ésta se simplifique bastante. 
   * La parte correspondiente a $dv(x)$ tiene que ser de tal forma que cuando la integremos, ésta no se complique demasiado porque pensemos que se complicará.
   
-* Derivamos la parte que hemos llamado $u(x)$ obteniendo $u'(x)$ y integramos la parte que hemos llamado $dv(x)$ hallando $v(x)$.
+
 
 ## Integración por partes
+* Derivamos la parte que hemos llamado $u(x)$ obteniendo $u'(x)$ y integramos la parte que hemos llamado $dv(x)$ hallando $v(x)$.
+
 * Aplicamos la fórmula de integración por partes intentando integrar $u'(x)\cdot v(x)$ en lugar de $u(x)\cdot v'(x)$:
 $$
-\int_a^b u(x)\cdot v'(x)\, dx=(u(b)\cdot v(b)-u(a)\cdot v(a))-\int_a^b u'(x)\cdot v(x)\, dx.
+\begin{array}{rl}
+\displaystyle\int_a^b u(x)\cdot v'(x)\, dx= & (u(b)\cdot v(b)-u(a)\cdot v(a))\\ &\displaystyle -\int_a^b u'(x)\cdot v(x)\, dx.
+\end{array}
 $$
 
 ## Integración por partes
@@ -2125,7 +2187,7 @@ $$
 Calculemos la longitud del trozo de parábola $y=x^2$ desde el punto $(1,1)$ hasta el punto $(2,4)$:
 
 
-```{r,echo=FALSE,fig.align=TRUE}
+```{r,echo=FALSE,fig.align='center'}
 xmin=-2
 xmax=2
 ymin=0
@@ -2161,7 +2223,7 @@ text(2.1,3.7,"(2,4)")
 points(c(1,2),c(1,4),pch=19)
 
 x2=seq(from=1,to=2,by=0.01)
-lines(x2,f(x2),col="red")
+lines(x2,f(x2),col='firebrick2')
 ```
 
 
@@ -2189,7 +2251,7 @@ para todo valor de $t$. Las funciones seno y coseno hiperbólicas verifican las 
 <div class="example">
 Las gráficas del $\sinh x$ (en azul) y del $\cosh x$ (en rojo) para $x$ entre $-2$ y $2$ se muestran a continuación:
 
-```{r,echo=FALSE,fig.align=TRUE}
+```{r,echo=FALSE,fig.align='center'}
 xmin=-2
 xmax=2
 ymin=-3
@@ -2216,8 +2278,8 @@ for (i in 0:(quantsy)){
   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
   text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
-lines(x,f(x),col="blue")
-lines(x,cosh(x),col="red")
+lines(x,f(x),col='deepskyblue3')
+lines(x,cosh(x),col='firebrick2')
 ```
 </div>
 
@@ -2226,7 +2288,7 @@ lines(x,cosh(x),col="red")
 Para escribir el valor de la integral que nos da la longitud del trozo de curva hay que ver cómo se transforma la función en la nueva variable, hallar la relación entre los diferenciales y cómo se transforman los extremos de integración:
 
 * Transformación de la función: $\sqrt{1+4x^2}=\sqrt{1+4\cdot \frac{1}{4}\sinh^2 t}=\sqrt{1+\sinh^2 t}=\sqrt{\cosh^2 t}=\cosh t$.
-* Relación entre los diferenciales: $dx=\frac{1}{2}(\sinh t)'=\frac{1}{2}\cosh t$.
+* Relación entre los diferenciales: $dx=\frac{1}{2}(\sinh t)'\, dt=\frac{1}{2}\cosh t\, dt$.
 * Transformación de los extremos de integración: 
   * si $x=1$, el valor de $t$ correspondiente cumple $1=\frac{1}{2}\sinh t$. Es decir $\sinh t=2$, de donde $t=\sinh^{-1}(2)=\ln (2+\sqrt{2^2+1})=\ln(2+\sqrt{5})$.
   * si $x=2$, el valor de $t$ correspondiente cumple $2=\frac{1}{2}\sinh t$. Es decir $\sinh t=4$, de donde $t=\sinh^{-1}(4)=\ln (4+\sqrt{4^2+1})=\ln(4+\sqrt{17})$.
@@ -2251,7 +2313,7 @@ El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguient
 ## Cálculo de áreas de figuras planas
 Sabemos que dada una función $f$ integrable en un intervalo $[a,b]$, el valor de la integral $\displaystyle\int_a^b f(x)\,dx$ es el área de $f$ entre $a$ y $b$.
 
-Ahora bien, pensemos que si la función $f$ va "por debajo" del eje de las $X$, el área será negativa por propia definición de las **sumas superiores** e **inferiores** para definir la integral. Veamos un ejemplo:
+Ahora bien, pensemos que si la función $f$ va por debajo del eje de las $X$, el área será negativa por propia definición de las **sumas superiores** e **inferiores** para definir la integral. Veamos un ejemplo:
 
 <div class="example">
 **Ejemplo**
@@ -2262,7 +2324,7 @@ Consideremos la función $f(x)=-x^2$ definida en el intervalo $[-1,1]$. Como pue
 ## Cálculo de áreas de figuras planas
 
 <div class="example">
-```{r,echo=FALSE,fig.align=TRUE}
+```{r,echo=FALSE,fig.align='center'}
 xmin=-1
 xmax=1
 ymin=-1
@@ -2289,9 +2351,9 @@ for (i in 0:(quantsy)){
   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
   text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
-lines(x,f(x),col="red")
+lines(x,f(x),col='firebrick2')
 for (i in 1:length(x)){
-  lines(c(x[i],x[i]),c(0,f(x[i])),col="blue")}
+  lines(c(x[i],x[i]),c(0,f(x[i])),col='deepskyblue3')}
 
 ```
 </div>
@@ -2351,12 +2413,12 @@ for (i in 0:(quantsy)){
   else
   {text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
 }
-lines(x,f(x),col="red")
+lines(x,f(x),col='firebrick2')
 text(pi,1.3,"f(x)")
 xmenys=seq(from=0,to=pi/4,by=0.005)
 xmes=seq(from=pi/4,to=pi,by=0.005)
-for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(0,f(xmenys[i])),col="blue")}
-for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(0,f(xmes[i])),col="red")}
+for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(0,f(xmenys[i])),col='deepskyblue3')}
+for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(0,f(xmes[i])),col='firebrick2')}
 ```
 </div>
 
@@ -2471,15 +2533,15 @@ for (i in 0:(quantsy)){
   else
   {text(-3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
 }
-lines(x,f(x),col="red")
-lines(x,g(x),col="blue")
+lines(x,f(x),col='firebrick2')
+lines(x,g(x),col='deepskyblue3')
 text(pi,1.3,"f(x)")
 text(pi,-1.3,"g(x)")
 xmenys=seq(from=pi/4,to=3*pi/4,by=0.005)
 xmes=seq(from=0,to=pi/4,by=0.005)
 xmes=c(xmes,seq(from=3*pi/4,to=2*pi,by=0.005))
-#for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(f(xmenys[i]),g(xmenys[i])),col="green")}
-#for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(g(xmes[i]),f(xmes[i])),col="green")}
+#for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(f(xmenys[i]),g(xmenys[i])),col="springgreen3")}
+#for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(g(xmes[i]),f(xmes[i])),col="springgreen3")}
 ```
 </div>
 
@@ -2521,15 +2583,15 @@ for (i in 0:(quantsy)){
   else
   {text(-3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
 }
-lines(x,f(x),col="red")
-lines(x,g(x),col="blue")
+lines(x,f(x),col="firebrick2")
+lines(x,g(x),col='deepskyblue3')
 text(pi,1.3,"f(x)")
 text(pi,-1.3,"g(x)")
 xmenys=seq(from=pi/4,to=3*pi/4,by=0.005)
 xmes=seq(from=0,to=pi/4,by=0.005)
 xmes=c(xmes,seq(from=3*pi/4,to=2*pi,by=0.005))
-for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(f(xmenys[i]),g(xmenys[i])),col="green")}
-for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(g(xmes[i]),f(xmes[i])),col="green")}
+for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(f(xmenys[i]),g(xmenys[i])),col="springgreen3")}
+for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(g(xmes[i]),f(xmes[i])),col="springgreen3")}
 ```
 </div>
 
@@ -2542,7 +2604,7 @@ Entonces el área entre las dos funciones se expresará de la forma siguiente:
 $$
 \mathrm{Área}=\int_0^{\frac{\pi}{2}} (g(x)-f(x))\,dx +\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} (f(x)-g(x))\,dx +\int_{\frac{3\pi}{2}}^{2\pi} (g(x)-f(x))\,dx.
 $$
-Fijaos que hemos integrado la función $g(x)-f(x)$ en aquellas zonas donde $g(x)\geq f(x)$ y hemos integrado $f(x)-g(x)$ en aquellas zonas donde $f(x)\geq g(x)$ para que el área siempre se sume y sea positiva.
+Se puede observar que hemos integrado la función $g(x)-f(x)$ en aquellas zonas donde $g(x)\geq f(x)$ y hemos integrado $f(x)-g(x)$ en aquellas zonas donde $f(x)\geq g(x)$ para que el área siempre se sume y sea positiva.
 
 Usando que $g(x)-f(x)=2\cos x$ y $f(x)-g(x)=-2\cos x$, el valor del área entre $f$ y $g$ será:
 $$
@@ -2730,7 +2792,8 @@ También vamos a considerar intervalos semiabiertos de la forma $(a,b]$, $[a,b)$
 
 
 ## Introducción
-Vayamos por partes, ¿cómo se realizará dicha generalización? Pues usando el concepto de límite:
+
+Vayamos por partes, ¿cómo se realizará dicha generalización? Usando el concepto de límite:
 
 * para funciones $f$ definidas en intervalos de la forma $[a,\infty)$, $(-\infty,b]$, definiremos $\displaystyle\int_a^\infty f(x)\, dx$ o $\displaystyle\int_{-\infty}^b f(x)\, dx$ de la siguiente forma:
 $$
@@ -2744,7 +2807,7 @@ A este tipo de integración se le denomina **integración impropia de primera es
 Si el límite anterior existe, diremos que la **integral impropia** es **convergente**. En caso contrario, diremos que es **divergente**
 
 ## Introducción
-```{r,echo=FALSE,fig.align=TRUE}
+```{r,echo=FALSE,fig.align='center'}
 xmin=0
 xmax=50
 ymin=0
@@ -2770,10 +2833,10 @@ for (i in 0:(quantsy)){
   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
 #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
-lines(x,f(x),col="red")
-lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col="blue",lty=2)
+lines(x,f(x),col='firebrick2')
+lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col='deepskyblue3',lty=2)
 for (i in 1:length(x)){
-  lines(c(x[i],x[i]),c(0,f(x[i])),col="blue")}
+  lines(c(x[i],x[i]),c(0,f(x[i])),col='deepskyblue3')}
 text(xmax/16,-toly,expression(a))
 text(45,-toly,expression(x %->% infinity))
 
@@ -2793,7 +2856,7 @@ Si el límite anterior existe, diremos que la **integral impropia** es **converg
 
 
 ## Introducción
-```{r,echo=FALSE,fig.align=TRUE}
+```{r,echo=FALSE,fig.align='center'}
 xmin=0
 xmax=1
 ymin=0
@@ -2819,10 +2882,10 @@ for (i in 0:(quantsy)){
   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
   #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
-lines(x,f(x),col="red")
-lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col="blue",lty=2)
+lines(x,f(x),col='firebrick2')
+lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col='deepskyblue3',lty=2)
 for (i in 1:length(x)){
-  lines(c(x[i],x[i]),c(0,f(x[i])),col="blue")}
+  lines(c(x[i],x[i]),c(0,f(x[i])),col='deepskyblue3')}
 text(xmax/2,-toly,expression(b))
 text(tolx/2,-toly,expression(x %->% a))
 
@@ -2843,10 +2906,10 @@ donde $c\in (-\infty,\infty)$ o $c\in (a,b)$.
 ## Introducción
 A este tipo de integración se le denomina **integración impropia de tercera especie** y se necesita que la función $f$ sea integrable en todo intervalo cerrado de la forma $[t,c]$ ($t<c$), $[c,t]$ ($c<t$) o $[t,c]$ ($t<c$), $[c,t]$ ($c<t$) respectivamente, para que tenga sentido realizar los límites correspondientes.
 
-Si los dos límites anteriores existen, diremos que la **integral impropia** es convergente. En caso contrario, diremos que es divergente.
+Si los dos límites anteriores existen, diremos que la **integral impropia** es **convergente**. En caso contrario, diremos que es **divergente.**
 
 ## Introducción
-```{r,echo=FALSE,fig.align=TRUE}
+```{r,echo=FALSE,fig.align='center'}
 xmin=-10
 xmax=10
 ymin=0
@@ -2872,17 +2935,17 @@ for (i in 0:(quantsy)){
   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
   #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
-lines(x,f(x),col="red")
-lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col="blue",lty=2)
+lines(x,f(x),col='firebrick2')
+lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col='deepskyblue3',lty=2)
 for (i in 1:length(x)){
-  lines(c(x[i],x[i]),c(0,f(x[i])),col="blue")}
+  lines(c(x[i],x[i]),c(0,f(x[i])),col='deepskyblue3')}
 text(xmax,-toly,expression(x %->% infinity))
 text(xmin,-toly,expression(x %->% -infinity))
 ```
 
 
 ## Introducción
-```{r,echo=FALSE,fig.align=TRUE}
+```{r,echo=FALSE,fig.align='center'}
 xmin=0
 xmax=1
 ymin=0
@@ -2908,10 +2971,10 @@ for (i in 0:(quantsy)){
   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
   #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
-lines(x,f(x),col="red")
-lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col="blue",lty=2)
+lines(x,f(x),col='firebrick2')
+lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col='deepskyblue3',lty=2)
 for (i in 1:length(x)){
-  lines(c(x[i],x[i]),c(0,f(x[i])),col="blue")}
+  lines(c(x[i],x[i]),c(0,f(x[i])),col='deepskyblue3')}
 text(xmax,-toly,expression(x %->% b))
 text(xmin,-toly,expression(x %->% a))
 ```
@@ -2920,6 +2983,7 @@ text(xmin,-toly,expression(x %->% a))
 La definición formal de **integral impropia de primera especie** es la siguiente:
 
 <l class="definition">Definición de integral impropia de primera especie.</l>
+
 Sea $f:[a,\infty]\longrightarrow \mathbb{R}$ una función tal que es integrable en todo intervalo cerrado y acotado de la forma $[a,t]$ con $t>a$. En este caso, definimos la función $F$ como:
 $$
 F(t)=\int_a^t f(x)\, dx.
@@ -2979,18 +3043,23 @@ El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguient
 <l class="center">
 [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Integrate%5B1%2Fx%5Ep%2C%7Bx%2C1%2CInfinity%7D%5D)
 </l>
+
+Se puede observar que las condiciones anteriores coinciden con las condiciones de convergencia de la serie armónica $\displaystyle \sum_{n=1}^\infty \frac{1}{n^p}$. Esto es debido, como veremos más adelante, al **Criterio integral de convergencia de una serie de números** donde se muestra que es equivalente estudiar la convergencia de una determinada integral impropia para una función $f$ a estudiar la convergencia de la serie numérica de términos $f(n)$, donde $n$ recorre los naturales.
 </div>
 
 ## Criterios de convergencia
 A continuación vamos a dar un conjunto de criterios para saber si una **integral impropia de primera especie** es convergente o no sin necesidad de calcular el valor de las integrales $\displaystyle\int_a^t f(x)\, dx$ y sin necesidad de calcular el límite correspondiente.
 
+## Criterios de convergencia
+
 En primer lugar, necesitamos el siguiente lema previo:
 
 <l class="prop">Lema.</l>
+
 Sea $g:[a,\infty)\longrightarrow\mathbb{R}$ una función monótona creciente. Entonces:
 
 * si $g$ no está acotada, $\displaystyle\lim_{x\to\infty} g(x)=\infty$ y 
-* si $g$ está acotada, sea $M=\sup\{g(x),\ |\ x\in [a,\infty)\}$. Entonces $\displaystyle \lim_{x\to\infty} g(x)=M$.
+* si $g$ está acotada, $\displaystyle \lim_{x\to\infty} g(x)=M$, donde $M=\sup\{g(x),\ |\ x\in [a,\infty)\}$.
 
 ## Criterios de convergencia
 <div class="dem">
@@ -3011,6 +3080,7 @@ En resumen, dado un valor $\epsilon >0$, hemos hallado un valor $M_\epsilon >a$ 
 La proposición siguiente nos dice que si $f$ es positiva y la función $\displaystyle F(t)=\int_a^t f(x)\,dx$ está acotada, la **integral impropia** correspondiente es **convergente**:
 
 <l class="prop">Proposición.</l>
+
 Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función positiva, $f(x)\geq 0$, para todo valor $x\geq a$. Entonces, la **integral impropia** $\displaystyle\int_a^\infty f(x)\, dx$ es **convergente** si, y sólo si, la función $\displaystyle F(t)=\int_a^t f(x)\,dx$ está **acotada.**
 
 
@@ -3028,7 +3098,8 @@ Usando el lema anterior, $\displaystyle\lim_{t\to\infty}F(t)=\int_a^\infty f(x)\
 ## Criterios de convergencia
 Veamos el criterio de convergencia por comparación:
 
-<l class="prop">Proposición.</l>
+<l class="prop">Proposición. Criterio de comparación.</l>
+
 Sean $f, g:[a,\infty)\longrightarrow\mathbb{R}$ funciones positivas, tal que, $f(x)\geq g(x)\geq 0$, para todo valor $x\geq a$. Entonces, 
 $$
 \int_a^\infty g(x)\, dx \leq \int_a^\infty f(x).
@@ -3068,7 +3139,8 @@ El cálculo de la integral en `Wolfram Alpha` para $n=1$ se puede ver en el enla
 
 
 ## Criterios de convergencia
-<l class="prop">Proposición: criterio de comparación por cociente.</l>
+<l class="prop">Proposición. Criterio de comparación por cociente.</l>
+
 Sean $f,g:[a,\infty)\longrightarrow\mathbb{R}$ dos funciones positivas, $f(x)\geq 0$, $g(x)\geq 0$, para todo $x\geq a$. Si $\displaystyle\lim_{x\to\infty}\frac{f(x)}{g(x)}=L\neq 0$, entonces las integrales $\displaystyle\int_a^\infty f(x)\, dx$ y $\displaystyle\int_a^\infty g(x)\, dx$ tienen el mismo carácter, es decir, una es convergente si, y sólo si, la otra también es convergente.
 
 
@@ -3130,6 +3202,7 @@ El cálculo de la integral en `Wolfram Alpha` para $m=5$ se puede ver en el enla
 
 ## Criterios de convergencia
 <l class="observ">Observación.</l>
+
 En el caso en que $\displaystyle\lim_{x\to\infty}\frac{f(x)}{g(x)}=0$, podemos afirmar lo siguiente:
 
 * si $\displaystyle\int_a^\infty g(x)\, dx$ es convergente, también lo es $\displaystyle\int_a^\infty f(x)\, dx$.
@@ -3143,19 +3216,21 @@ Demostrar las dos afirmaciones anteriores.
 
 ## Criterios de convergencia
 <l class="prop">Proposición. Criterio de convergencia de Cauchy.</l>
+
 Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función tal que para todo $t>a$, la función $f$ es integrable en el intervalo $[a,t]$. Entonces las afirmaciones siguientes son equivalentes:
 
 1. La integral impropia $\displaystyle\int_a^\infty f(x)\, dx$ converge.
 
 2. Existe un valor $L\in\mathbb{R}$ tal que para todo valor de $\epsilon >0$, existe un valor $M_\epsilon >a$ tal que si $t\geq M_\epsilon$, entonces $\displaystyle\left|\int_a^\infty f(x)\, dx-L\right|<\epsilon$.
 
-3. Existe un valor $N\in\mathbb{R}$ tal que si $(t_n)_n$ es una sucesión que tiende a infinito, $t_n\to\infty$ con $t_n>a$ para todo $n$, entonces $\displaystyle F(t_n)=\int_a^{t_n} f(x)\, dx\to N$.
 
 ## Criterios de convergencia
-<ol start="4">
+<ol start="3">
+  <li>Existe un valor $N\in\mathbb{R}$ tal que si $\{t_n\}_n$ es una sucesión que tiende a infinito, $t_n\to\infty$ con $t_n>a$ para todo $n$, entonces $\displaystyle F(t_n)=\int_a^{t_n} f(x)\, dx\to N$.
   <li>Para todo valor $\epsilon >0$, existe un $b>a$ tal que si $b_2\geq b_1\geq b$, entonces $\displaystyle\left|\int_{b_1}^{b_2}f(x)\,dx\right|<\epsilon$.</li>
 </ol>
 
+## Criterios de convergencia
 
 <div class="dem">
 **Demostración**
@@ -3164,7 +3239,7 @@ Demostraremos lo siguiente:
 $$
 1.\Leftrightarrow 3. \Leftrightarrow 2. \Rightarrow 4. \Rightarrow 3.
 $$
-Fijaos que si demostramos lo anterior, podemos deducir que $i\Rightarrow j$ para todo $i,j\in \{1,2,3,4\}$.
+Si demostramos lo anterior, podremos deducir que $i\Rightarrow j$ para todo $i,j\in \{1,2,3,4\}$.
 
 $1.\Leftrightarrow 3. \Leftrightarrow 2.$ Estas implicaciones son triviales ya que son simplemente aplicar la definición del límite a $\displaystyle \lim_{t\to\infty} \int_a^t f(x)\, dx =L$ en el apartado 2. o $\displaystyle \lim_{t\to\infty} \int_a^t f(x)\, dx =N$ en el apartado 3.
 
@@ -3198,7 +3273,7 @@ Sean ahora $n,m\geq n_0$, entonces como $t_n,t_m\geq b$,
 $$
 |F(t_n)-F(t_m)|=\left|\int_a^{t_n}f(x)\,dx-\int_a^{t_m} f(x)\, dx\right|=\left|\int_{t_n}^{t_m}f(x)\,dx\right|<\epsilon.
 $$
-En pocas palabras, la sucesión $(F(t_n))_n$ es una sucesión de Cauchy y por tanto, convergente, que es lo que nos dice el apartado 3.
+En pocas palabras, la sucesión $\{F(t_n)\}_n$ es una sucesión de Cauchy y por tanto, convergente, que es lo que nos dice el apartado 3.
 
 </div>
 
@@ -3208,7 +3283,7 @@ En pocas palabras, la sucesión $(F(t_n))_n$ es una sucesión de Cauchy y por ta
 
 Vamos a estudiar si la integral impropia siguiente $\displaystyle\int_1^\infty\sin(x^2)\, dx$ es convergente usando el criterio de convergencia de Cauchy, concretamente el apartado 4. Es decir, veremos que dado un $\epsilon >0$, existe un valor $b>1$ tal que si $b_1,b_2\geq b$, entonces $\displaystyle\left|\int_{b_1}^{b_2}f(x)\,dx\right|=\left|\int_{b_1}^{b_2}\sin(x^2)\,dx\right|<\epsilon$.
 
-En primer lugar, "arreglemos un poco" la integral $\displaystyle \int_{b_1}^{b_2}\sin(x^2)\,dx$. 
+En primer lugar, arreglemos un poco la integral $\displaystyle \int_{b_1}^{b_2}\sin(x^2)\,dx$. 
 
 Si hacemos el cambio de variable $t=x^2$, tenemos que 
 
@@ -3225,7 +3300,7 @@ Si hacemos el cambio de variable $t=x^2$, tenemos que
 <div class="example">
 La integral en función de la nueva variable $t$ será:
 $$
-\int_{b_1}^{b_2}\sin(x^2)\,dx =\int_{b_1^2}^{b_2^2}\sin t \frac{1}{2\sqrt{t}}\, dt.
+\int_{b_1}^{b_2}\sin(x^2)\,dx =\int_{b_1^2}^{b_2^2}\frac{1}{2\sqrt{t}} \sin t \, dt.
 $$
 
 A continuación aplicamos la técnica de integración por partes a la integral anterior en función de la variable $t$ con:
@@ -3237,7 +3312,7 @@ dv & = \sin t\, dt,\ \Rightarrow v=\int\sin t \,dt = -\cos t.
 $$
 La integral nos quedarà:
 $$
-\int_{b_1^2}^{b_2^2}\sin t \frac{1}{2\sqrt{t}}\, dt =\left[\frac{1}{2\sqrt{t}}\cdot (-\cos t)\right]_{b_1^2}^{b_2^2}-\frac{1}{4}\int_{b_1^2}^{b_2^2} \cos t\cdot t^{-\frac{3}{2}}\, dt= \frac{\cos(b_1^2)}{2 b_1}-\frac{\cos(b_2^2)}{2 b_2}-\frac{1}{4}\int_{b_1^2}^{b_2^2}\frac{\cos t}{t^{\frac{3}{2}}}\, dt.
+\int_{b_1^2}^{b_2^2}\frac{1}{2\sqrt{t}} \sin t \, dt =\left[\frac{1}{2\sqrt{t}}\cdot (-\cos t)\right]_{b_1^2}^{b_2^2}-\frac{1}{4}\int_{b_1^2}^{b_2^2} \cos t\cdot t^{-\frac{3}{2}}\, dt= \frac{\cos(b_1^2)}{2 b_1}-\frac{\cos(b_2^2)}{2 b_2}-\frac{1}{4}\int_{b_1^2}^{b_2^2}\frac{\cos t}{t^{\frac{3}{2}}}\, dt.
 $$
 Entonces, usando la propiedad de monotonía de la integral,
 $$
@@ -3278,7 +3353,7 @@ El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguient
 </l>
 </div>
 
-
+## Criterios de convergencia
 <div class="exercise">
 **Ejercicio**
 
@@ -3288,11 +3363,12 @@ Ver que la integral impropia $\displaystyle\int_1^\infty \cos(x^2)\,dx$ es conve
 
 
 ## Criterios de convergencia
-<l class="prop">Teorema: criterio integral de convergencia de una serie de números.</l>
-Sea $(a_n)_n$ una sucesión de números reales positiva y decreciente, $a_n\geq 0$, $a_{n+1}\leq a_n$, para todo $n$. Sea $f:[1,\infty)\longrightarrow\mathbb{R}$ una función positiva y decreciente, $f(x)\geq 0$ y $f(x)\geq f(y)$, para todo $x, y\in [1,\infty)$ con $x<y$ tal que $f(n)=a_n$, para todo $n$, es decir, el valor de $f$ en los naturales es precisamente el valor de la sucesión anterior $(a_n)_n$. Entonces, la serie $\displaystyle\sum_{n=1}^\infty a_n$ y la integral impropia $\displaystyle\int_1^\infty f(x)\, dx$ tienen el mismo carácter, es decir, una es convergente si, y sólo si, la otra lo es y viceversa.
+<l class="prop">Teorema. Criterio integral de convergencia de una serie numérica.</l>
+
+Sea $\{a_n\}_n$ una sucesión de números reales positiva y decreciente, $a_n\geq 0$, $a_{n+1}\leq a_n$, para todo $n$. Sea $f:[1,\infty)\longrightarrow\mathbb{R}$ una función positiva y decreciente, $f(x)\geq 0$ y $f(x)\geq f(y)$, para todo $x, y\in [1,\infty)$ con $x<y$ tal que $f(n)=a_n$, para todo $n$, es decir, el valor de $f$ en los naturales es precisamente el valor de la sucesión anterior $(a_n)_n$. Entonces, la serie $\displaystyle\sum_{n=1}^\infty a_n$ y la integral impropia $\displaystyle\int_1^\infty f(x)\, dx$ tienen el mismo carácter, es decir, una es convergente si, y sólo si, la otra lo es y viceversa.
 
 ## Criterios de convergencia
-```{r,echo=FALSE,fig.align=TRUE}
+```{r,echo=FALSE,fig.align='center'}
 xmin=0
 xmax=10
 ymin=0
@@ -3318,7 +3394,7 @@ for (i in 0:(quantsy)){
   lines(c(-tolx/2,tolx/2),ymin+rep(((ymax-ymin)/quantsy)*i,2))
   #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
-lines(x,f(x),col="red")
+lines(x,f(x),col='firebrick2')
 
 for (i in 1:quantsx){
   lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(0,f(xmin+((xmax-xmin)/quantsx)*i)),lty=3)
@@ -3349,7 +3425,7 @@ Si observamos el gráfico anterior podemos escribir lo siguiente:
 $$
 a_2+\cdots + a_n\leq \int_1^n f(x)\, dx\leq a_1+\cdots +a_{n-1}.
 $$
-O, escrito en otros términos,
+Escrito en otros términos,
 $$
 \sum_{i=1}^n a_i -a_1 \leq \int_1^n f(x)\, dx\leq\sum_{i=1}^{n-1} a_i.
 $$
@@ -3380,7 +3456,7 @@ Entonces $F(t)$ está acotada y, por tanto, la integral impropia $\displaystyle 
 
 Veamos la tesis inversa, supongamos que la integral impropia $\displaystyle \int_1^\infty f(x)\, dx$ es convergente y veamos que la serie  $\displaystyle\sum_{n=1}^\infty a_n$ es convergente. 
 
-Como la serie es de números positivos, para ver que es convergente, basta demostrar que la sucesión de las sumas parciales está acotada.
+Como la serie es de términos positivos, para ver que es convergente, basta demostrar que la sucesión de las sumas parciales está acotada.
 
 Como la integral impropia $\displaystyle \int_1^\infty f(x)\, dx$ es convergente, significa que $F(t)$ está acotada, es decir, existe un $M>0$ tal que $F(t)\leq M$ para todo $t$.
 
@@ -3430,7 +3506,8 @@ El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguient
 ## Criterios de convergencia
 El concepto de **convergencia absoluta** es importante para estudiar la convergencia de integrales impropias que van cambiando de signo:
 
-<l class="definition">Convergencia absoluta.</l>
+<l class="definition">Definición de convergencia absoluta.</l>
+
 Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función tal que para todo $t>a$, la función es integrable en el intervalo $[a,t]$. Entonces diremos que la integral impropia $\displaystyle\int_a^\infty f(x)\,dx$ es **absolutamente convergente** si la integral impropia $\displaystyle\int_a^\infty |f(x)|\,dx$ es convergente.
 
 
@@ -3438,6 +3515,7 @@ Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función tal que para todo $t>a$
 La proposición siguiente nos dice que la **convergencia absoluta** implica la **convergencia**:
 
 <l class="prop">Proposición.</l>
+
 Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función tal que para todo $t>a$, la función es integrable en el intervalo $[a,t]$. Entonces si la integral impropia $\displaystyle\int_a^\infty f(x)\,dx$ es **absolutamente convergente**, entonces es convergente.
 
 <div class="dem">
@@ -3452,11 +3530,12 @@ si aplicamos el apartado 4. del criterio de Cauchy de convergencia, la proposici
 
 
 ## Criterios de convergencia
-Los **criterios de convergencia de Leibnitz** y de **Abel-Dirichlet** son claves para estudiar la convergencia de integrales impropias cuya función puede cambiar de signo.
+Los **criterios de convergencia de Leibniz** y de **Abel-Dirichlet** son claves para estudiar la convergencia de integrales impropias cuya función puede cambiar de signo.
 
 
 ## Criterios de convergencia
-<l class="prop">Teorema. Criterio de convergencia de Leibnitz.</l>
+<l class="prop">Teorema. Criterio de convergencia de Leibniz.</l>
+
 Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función tal que para todo $t>a$, la función es integrable en el intervalo $[a,t]$. Sean $a_1<a_2<\cdots < a_n <\cdots$ las raíces reales simples de la función $f$ en el intervalo $[a,\infty)$, es decir $f(a_i)=0$, $i=1,2,\ldots$ y el signo de $f$ en el intervalo $(a_i,a_{i+1})$ y en el intervalo $(a_{i+1},a_{i+2})$ es distinto.
 Suponiendo que $a_n\to \infty$, definimos $\displaystyle b_n =\int_{a_n}^{a_{n+1}} f(x)\, dx$, para $n=1,2,\ldots$ Los valores $b_n$ son valores alternados y, por tanto, la serie $\displaystyle\sum_{n=1}^\infty b_n$ es una serie alternada. Si $\displaystyle\lim_{n\to \infty}b_n =0$ y $|b_n|\geq |b_{n+1}|$, para todo $n$, la integral impropia $\displaystyle\int_a^\infty f(x)\, dx$ es convergente.
 
@@ -3465,16 +3544,13 @@ Suponiendo que $a_n\to \infty$, definimos $\displaystyle b_n =\int_{a_n}^{a_{n+1
 <div class="dem">
 **Demostración**
 
-Por el criterio de Leibnitz de convergencia de series alternadas, la serie alternada $\displaystyle\sum_{n=1}^\infty b_n$ es convergente.
+Por el criterio de Leibniz de convergencia de series alternadas, la serie alternada $\displaystyle\sum_{n=1}^\infty b_n$ es convergente.
 
 Sea un valor $b>a$. Sea $n$ el natural tal que $b\in (a_{n},a_{n+1})$. Entonces,
 $$
 \int_a^b f(x)\, dx =\int_a^{a_1} f(x)\, dx+\sum_{i=1}^{n-1}\int_{a_i}^{a_{i+1}} f(x)\, dx+\int_{a_n}^b f(x)\, dx =\int_a^{a_1} f(x)\, dx + S_{n-1} +\int_{a_n}^b f(x)\, dx,
 $$
 donde $S_n$ es la suma parcial de la serie $\displaystyle\sum_{n=1}^\infty b_n$.
-
-
-
 
 </div>
 
@@ -3507,7 +3583,7 @@ Veamos que $\displaystyle\lim_{n\to\infty}|b_n|=0$:
 $$
 0\leq |b_n|=\left|\int_{n\pi}^{(n+1)\pi}\frac{\sin x}{x}\,dx\right|\leq \int_{n\pi}^{(n+1)\pi}\frac{1}{x}\, dx =[\ln x]_{n\pi}^{(n+1)\pi}=\ln ((n+1)\pi)-\ln(n\pi)=\ln\left(\frac{n+1}{n}\right).
 $$
-Como $\displaystyle\lim_{n\to\infty}\ln\left(\frac{n+1}{n}\right)=0$, por el criterio del sandwitz, $\displaystyle\lim_{n\to\infty}|b_n|=0$.
+Como $\displaystyle\lim_{n\to\infty}\ln\left(\frac{n+1}{n}\right)=0$, por el criterio del sandwich, $\displaystyle\lim_{n\to\infty}|b_n|=0$.
 
 
 
@@ -3535,7 +3611,7 @@ $$
 
 ## Criterios de convergencia
 <div class="example">
-Por el criterio de Leibnitz de series alternadas, la serie $\displaystyle \sum_{n=1}^\infty b_n$ es convergente y por el criterio de convergencia de Leitnitz, la integral impropia $\displaystyle\int_1^\infty \frac{\sin x}{x}\, dx$ también será convergente.
+Por el criterio de Leibniz de series alternadas, la serie $\displaystyle \sum_{n=1}^\infty b_n$ es convergente y por el criterio de convergencia de Leibniz, la integral impropia $\displaystyle\int_1^\infty \frac{\sin x}{x}\, dx$ también será convergente.
 
 El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
 <l class="center">
@@ -3546,6 +3622,7 @@ El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguient
 
 ## Criterios de convergencia
 <l class="prop">Teorema. Criterio de Abel-Dirichlet.</l>
+
 Sea $g:[a,\infty)\longrightarrow\mathbb{R}$ una función con derivada continua a trozos donde suponemos que la función $g'$ es absolutamente integrable en $[a,\infty)$. Además suponemos que $\displaystyle\lim_{x\to\infty} g(x)=0$. 
 
 Sea $s:[a,\infty)\longrightarrow\mathbb{R}$ una función integrable en todo intervalo de la forma $[a,t]$ con $t>a$. Sea $S$ una primitiva de la función $s$, por ejemplo $\displaystyle S(t)=\int_a^t s(x)\, dx$. Suponemos que la función $S(t)$ está acotada en el intervalo $[a,\infty)$.
@@ -3578,7 +3655,7 @@ $$
 Veamos a continuación que los términos anteriores tienden a cero cuando $b_1,b_2\to \infty$:
 
 * $|g(b_2)\cdot S(b_2)-g(b_1)\cdot S(b_1)|\leq 2C\max{|g(b_1)|,|g(b_2)|}$.
-Como $\displaystyle \lim_{x\to\infty} g(x)=0$, tendremos que $\displaystyle\lim_{b_1,b_2\to\infty} 2C\max{|g(b_1)|,|g(b_2)|}=0$ y, por el criterio del sandwitz, $\displaystyle\lim_{b_1,b_2\to\infty} |g(b_2)\cdot S(b_2)-g(b_1)\cdot S(b_1)|=0$.
+Como $\displaystyle \lim_{x\to\infty} g(x)=0$, tendremos que $\displaystyle\lim_{b_1,b_2\to\infty} 2C\max{|g(b_1)|,|g(b_2)|}=0$ y, por el criterio del sandwich, $\displaystyle\lim_{b_1,b_2\to\infty} |g(b_2)\cdot S(b_2)-g(b_1)\cdot S(b_1)|=0$.
 
 * $\displaystyle\left|\int_{b_1}^{b_2} g'(x)\cdot S(x)\, dx\right|\leq C\cdot \int_{b_1}^{b_2} |g'(x)|\, dx$ que también tiende a cero ya que la función $g'$ es absolutamente integrable.
 
@@ -3635,16 +3712,17 @@ El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguient
 ## Técnicas de integración en la integración impropia
 Los dos teoremas siguientes nos dicen que la técnica de integración por cambio de variable y por partes siguen siendo válidas en el caso de la integración impropia.
 
-## Integración por cambio de variable en una integral impropia
+## Cambio de variable
 
 <l class="prop">Teorema. Cambio de variable en una integral impropia.</l>
+
 Sea $f:[a,\infty)\longrightarrow\mathbb{R}$ una función **acotada** en el intervalo $[a,\infty)$ e **integrable** en todo intervalo de la forma $[a,t]$ con $t>a$. Sea $\phi$ una función de clase ${\cal C}^1$ en su intervalo de definición, es decir, una función **derivable** con función derivada continua. Supongamos el intervalo de definición de $\phi$ es $[\alpha,\beta]$, es decir $\phi:[\alpha,\beta]\longrightarrow\mathbb{R}$ con $\phi(\alpha)=a$ y $\displaystyle\lim_{s\to\beta}\phi(s)=\infty$ de tal forma que $\phi([\alpha,\beta])=[a,\infty)$. Entonces, en estas condiciones:
 $$
 \int_a^\infty f(x)\, dx= \int_\alpha^\beta f(\phi(t))\cdot \phi'(t)\, dt,
 $$
 con la condición de que al menos una de las dos integrales anteriores exista.
 
-## Integración por cambio de variable en una integral impropia
+## Cambio de variable
 <div class="example">
 **Ejemplo**
 
@@ -3660,7 +3738,7 @@ Para resolverla, nos planteamos el siguiente cambio de variable $t=x^2$:
 
 </div>
 
-## Integración por cambio de variable en una integral impropia
+## Cambio de variable
 <div class="example">
 La integral impropia será la siguiente en la nueva variable $t$:
 $$
@@ -3676,11 +3754,13 @@ El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguient
 </div>
 
 <l class="observ">Observación.</l>
-A partir del ejemplo anterior, podemos observar que el valor de $\beta$ en el teorema anterior puede "ser" $\infty$.
+
+A partir del ejemplo anterior, podemos observar que el valor de $\beta$ en el teorema anterior puede ser $\infty$.
 
 
-## Integración por partes en una integral impropia
+## Integración por partes
 <l class="prop">Teorema. Integración por partes en una integral impropia.</l>
+
 Sean $u,v:[a,\infty)\longrightarrow\mathbb{R}$ dos funciones **acotadas** y de clase ${\cal C^1}$ en $[a,\infty)$. Entonces:
 $$
 \int_a^\infty u(x)\cdot v'(x)\, dx=\lim_{t\to\infty}u(t)\cdot v(t)-u(a)\cdot v(a)-\int_a^\infty u'(x)\cdot v(x)\, dx,
@@ -3688,7 +3768,7 @@ $$
 con el convenio de que si existen dos de los tres límites anteriores, existe el otro y se calcula según la expresión anterior.
 
 
-## Integración por partes en una integral impropia
+## Integración por partes
 <div class="example">
 **Ejemplo**
 
@@ -3709,7 +3789,7 @@ $$
 $$
 </div>
 
-## Integración por partes en una integral impropia
+## Integración por partes
 <div class="example">
 
 
@@ -3732,12 +3812,15 @@ El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguient
 Recordemos la definición de una integral impropia de segunda especie:
 
 <l class="definition">Definición de integral impropia de segunda especie.</l>
+
 Sea $f:(a,b]:\longrightarrow\mathbb{R}$ una función **integrable** en todo intervalo de la forma $[t,b]$, con $a<t\leq b$. Si existe el límite siguiente $\displaystyle\lim_{t\to a^+}\int_t^b f(x)\, dx$, diremos que la **integral impropia** $\displaystyle\int_a^b f(x)\, dx$ existe. Si el límite anterior es finito de valor $L$, diremos que la **integral impropia** es **convergente** y escribiremos $\displaystyle\int_a^b f(x)\, dx=L$. En caso en que la integral no converja, diremos que es **divergente**.
 
 
 ## Integrales impropias de segunda especie
 <l class="observ">Observación.</l>
-Tiene sentido considerar la integral impropia de segunda especie cuando la función $f$ tiene una asíntota vertical en el extremo de la izquierda $x=a$. Si tuviese una asíntota vertical en el extremo derecho $x=b$, podríamos definir de manera parecida la integral impropia de segunda especie con el límite siguiente: $\displaystyle\lim_{t\to b^-}\int_a^t f(x)\, dx$
+
+Tiene sentido considerar la integral impropia de segunda especie cuando la función $f$ tiene una asíntota vertical en el extremo de la izquierda $x=a$. Si tuviese una asíntota vertical en el extremo derecho $x=b$, podríamos definir de manera parecida la integral impropia de segunda especie con el límite siguiente: 
+$$\displaystyle\lim_{t\to b^-}\int_a^t f(x)\, dx.$$
 
 
 ## Integrales impropias de segunda especie
@@ -3775,6 +3858,7 @@ Sea $f$ una función definida en un intervalo $(a,b)$ donde admitimos que $a$ pu
 
 ## Integrales impropias de tercera especie
 <l class="definition">Definición de integral impropia de tercera especie.</l>
+
 Sea $f:(a,b)\longrightarrow\mathrm{R}$ una función real de variable real donde admitimos que $a$ pueda ser un valor real o $-\infty$ y $b$ pueda ser un valor real o $b=\infty$. Supongamos que $f$ tiene un número finito de **puntos singulares** en su dominio de definición $(a,b)$, los llamamos $c_1 < c_2<\cdots < c_n$. Si $f$ es continua a trozos en el conjunto $(a,b)\setminus\{c_1,\ldots,c_n\}$ diremos que la integral $\displaystyle\int_a^b f(x)\,dx$ es **impropia de tercera especie**.
  
 
