@@ -297,7 +297,7 @@ La demostración para el caso $L<0$ es completamente similar y se deja como ejer
 ## Límites laterales
 
 
-La función $f:\mathbb{R} \setminus \{0\} \rightarrow \mathbb{R}$, $f(x) = \dfrac{x}{|x|}$, no està definida en el punto ${0}$, de hecho se trata de la función
+La función $f:\mathbb{R} \setminus \{0\} \rightarrow \mathbb{R}$, $f(x) = \dfrac{x}{|x|}$, no està definida en el punto ${0}$, de hecho, se trata de la función
 $$ 
 f(x) =
 \begin{cases}
@@ -307,16 +307,16 @@ f(x) =
 $$
 conocida como la función *signo* de $x$. 
 
-$0$ es un punto de acumulación del dominio de $F$, pero no existe el $\lim_{x \rightarrow 0} f(x)$, puesto que en todo entorno de $0$ hay puntos $x_1$ tales que $f(x_1)=1$ así como otros, $x_2$ tales que $f(x_2)=-1$. 
-
+$0$ es un punto de acumulación del dominio de $f$, pero no existe el $\lim_{x \rightarrow 0} f(x)$
 
 ## Límites laterales
 
-Entonces, si existiese un $L$ tal que para todo $\epsilon >$ existe $\delta>0$ tal que $|f(x)-L|<\epsilon$ para todo $|x| <\delta$, resultaria que para dos puntos cualesquiera $x_1$ y $x_2$ tales que $|x_1|<\delta$ i $|x_2|<\delta$, seria $|f(x_1)-f(x_2)|= |f(x_1) -L+L-f(x_2)|\leq |f(x_1) -L|+|L-f(x_2)|<2\epsilon$, pero es evidente que si $x_1 >0$ y $x_2 < 0$, entonces $|f(x_1)-f(x_2)| = 2$ y, por lo tanto, esta diferencia no se puede hacer menor que cualquier número positivo.
+No existe el $\lim_{x \rightarrow 0}f(x)$. 
 
-Sin embargo, como para todo $0<x<\delta$, es $f(x)=1$, resulta que en este caso si que tendríamos $1$ como el límite de la función $f$ cuando sólo consideremos los reales positivos como su dominio.
+En efecto, consideremos la sucesión de término general $x_n = \dfrac{(-1)^n}{n}$, entonces es $f(x_{2k})= 1$ en tanto que $f(x_{2k+1})=-1$, para todo $k \in \mathbb{N}$, es decir que la sucesión de término general $f(x_n)$ tiene dos subsucesiones con límite diferente y, por lo tanto, $f(x_n)$ no tiene límite. 
 
-Análogamente, si sólo consideramos los $-\delta < x <0$, entonces es $f(x)=-1$ y podríamos tomar $-1$ como el límite de $f$ cuando restringimos su dominio a los reales positivos.
+En definitiva no existe el $\lim_{x \rightarrow 0}f(x)$.
+
 
 ## Límites laterales 
 
@@ -327,11 +327,61 @@ Análogamente, si sólo consideramos los $-\delta < x <0$, entonces es $f(x)=-1$
 
 <l class="definition"> **Definición de límite lateral** </l>
 
-Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función real de variable real y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite lateral por la derecha** de $f$ en $c$, si para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<x-c<\delta$, entonces es $|f(x)-L| < \epsilon$. Escribiremos $L = \lim_{x \rightarrow c^+}f(x)$
+@) Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función real de variable real y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite lateral por la derecha** de $f$ en $c$, si para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<x-c<\delta$, entonces es $|f(x)-L| < \epsilon$. Escribiremos $L = \lim_{x \rightarrow c^+}f(x)$
 
-Análogamente, $L \in \mathbb{R}$ es el **límite lateral por la izquierda** de $f$ en $c$, si para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<c-x<\delta$, entonces es $|f(x)-L| < \epsilon$. Escribiremos $L = \lim_{x \rightarrow c^-}f(x)$ 
+@) Análogamente, $L \in \mathbb{R}$ es el **límite lateral por la izquierda** de $f$ en $c$, si para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<c-x<\delta$, entonces es $|f(x)-L| < \epsilon$. Escribiremos $L = \lim_{x \rightarrow c^-}f(x)$ 
 
 La condición $0<x-c<\delta$ puede ser reescrita como $x \in V^*_{\delta} (x) \cap (c, +\infty)$, así como la condición $0<c-x<\delta$ es equivalente a que $x \in V^*_{\delta} (x) \cap (-\infty, c)$
+
+## Límites laterales 
+
+<div class="example"> **Ejemplos**
+
+@) En el caso de la función *signo*, $f(x) = \dfrac{x}{|x|}$, hemos visto que  $\lim_{x \rightarrow 0^+}f(x) = 1$ y  $\lim_{x \rightarrow 0^-}f(x) = -1$.
+
+@) Sea $g:\mathbb{R} \rightarrow \mathbb{R}$, la función definida por
+$$
+g(x)=
+\begin{cases}
+x+1, & \mbox{ si } x \leq 0 \\
+x^2, & \mbox{ si } x > 0 
+\end{cases}
+$$
+Entonces $\lim_{x \rightarrow 0^+} g(x) = 1$ y $\lim_{x \rightarrow 0^-} g(x) = 0$.
+
+@) Sea $h:\mathbb{R} \rightarrow \mathbb{R}$, la función definida por
+$$
+h(x)=
+\begin{cases}
+x+1, & \mbox{ si } x \leq 0 \\
+x^2+1, & \mbox{ si } x > 0 
+\end{cases}
+$$
+Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 1$.
+
+## Gráficas de las funciones g y h
+
+## Límites laterales
+
+<l class="prop"> **Proposición**
+
+Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y sea $c$ un punto de acumulación de $A$. Entonces existe el $\lim_{x \rightarrow c}f(x)$ si, y sólo si, los dos límites laterales $\lim_{x \rightarrow c^+}f(x)$ y $\lim_{x \rightarrow c^-}f(x)$
+existen y son iguales.
+
+<div class="dem"> **Demostración**
+
+Si $\lim_{x \rightarrow c}f(x) = L$, entonces para toda sucesión $x_n$ tal que $x_n \rightarrow c$ es $f(x_n) \rightarrow L$. Ahora, si $x_n \rightarrow c$ y $x_n > c$ será igualemente $f(x_n) \rightarrow L$. Análogamente si $x_n <c$.
+
+Supongamos ahora que los dos límites laterales existen y son iguales a $L$. Sea $x_n$ tal que $x_n \rightarrow c$, entonces tres casos són posibles:1) todos los $x_n$ a partir de un lugar son tales $x_n \geq c$, 2) todos los $x_n$ a partir de un lugar son tales $x_n \geq c$, y 3) existen infinitos $x_{n_k}$ tales que $x_{n_k} \geq c$ e infinitos $x_{n_j}$ tales que $x_{n_j} \leq c$, claramente $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$.
+
+En todos los casos es $f(x_n) \rightarrow L$, en el primero por ser $\lim_{x \rightarrow c^+}f(x)$ y en el segundo por ser  $\lim_{x \rightarrow c^-}f(x)$. El el tercer caso tendríammos dos subsucesiones $f(x_{n_k})$ y $f(x_{n_j})$ con el mismo límite L y, por lo tanto es $f(x_n) \rightarrow L$, dado que $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$. En definitiva es  $\lim_{x \rightarrow c}f(x) = L$.
+
+
+
+
+
+
+
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
 
