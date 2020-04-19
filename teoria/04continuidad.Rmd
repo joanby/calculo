@@ -318,7 +318,7 @@ En efecto, consideremos la sucesión de término general $x_n = \dfrac{(-1)^n}{n
 En definitiva no existe el $\lim_{x \rightarrow 0}f(x)$.
 
 
-## Límites laterales:gráfica de la función signo
+## Límites laterales: gráfica de la función signo
 
 <div class="center">
  ```{python, echo = FALSE}
@@ -341,8 +341,8 @@ ax.spines['right'].set_color('none')
 ax.spines['bottom'].set_position('zero')
 ax.spines['top'].set_color('none')
 
-plt.xticks(np.arange(0,max(x), 1.))
-plt.yticks(np.arange(min(y), max(y), 1.))
+plt.xticks(np.arange(0,0, 1.))
+plt.yticks(np.arange(0, 0, 1.))
 
 plt.show()
 ```
@@ -416,8 +416,8 @@ ax.spines['bottom'].set_position('zero')
 ax.spines['top'].set_color('none')
 
 plt.title('g(x)')
-plt.xticks(np.arange(0,max(x), 1.))
-plt.yticks(np.arange(0, max(y), 1.))
+plt.xticks(np.arange(-1,1,2))
+plt.yticks(np.arange(-1,1,2))
 plt.show()
 ```
 </div>
