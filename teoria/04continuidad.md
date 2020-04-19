@@ -370,10 +370,34 @@ x^2+1, & \mbox{ si } x > 0
 $$
 Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 1$. y, como veremos a continuación, existe el $\lim_{x \rightarrow 0} h(x)$ y es igual a $1$.
 
-## Gráficas de las funciones g y h
+## Gráfica de la función g 
 
 <div class="center">
+ 
+ ```
+ ## ([], <a list of 0 Text xticklabel objects>)
+ ```
+ 
+ ```
+ ## ([<matplotlib.axis.YTick object at 0x10bb716d0>, <matplotlib.axis.YTick object at 0x10bb5d450>, <matplotlib.axis.YTick object at 0x10be03810>], <a list of 3 Text yticklabel objects>)
+ ```
+ 
  ![](04continuidad_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+</div>
+
+## Gráfica de la función h 
+
+<div class="center">
+ 
+ ```
+ ## ([], <a list of 0 Text xticklabel objects>)
+ ```
+ 
+ ```
+ ## ([<matplotlib.axis.YTick object at 0x10bf818d0>, <matplotlib.axis.YTick object at 0x10c003650>, <matplotlib.axis.YTick object at 0x10bfd7990>, <matplotlib.axis.YTick object at 0x10bfe5950>], <a list of 4 Text yticklabel objects>)
+ ```
+ 
+ ![](04continuidad_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
 </div>
 
 ## Límites laterales

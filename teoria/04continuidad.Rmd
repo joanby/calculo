@@ -391,7 +391,7 @@ x^2+1, & \mbox{ si } x > 0
 $$
 Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 1$. y, como veremos a continuación, existe el $\lim_{x \rightarrow 0} h(x)$ y es igual a $1$.
 
-## Gráficas de las funciones g y h
+## Gráfica de la función g 
 
 <div class="center">
  ```{python, echo = FALSE}
@@ -400,7 +400,55 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 ax = plt.gca()
+x = np.arange(0,1.5,0.005)
+y = x**2
 
+ax.plot(x, y)
+
+x = np.arange(-2,0,0.005)
+y1 = x+1
+
+ax.plot(x,y1)
+
+ax.spines['left'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['bottom'].set_position('zero')
+ax.spines['top'].set_color('none')
+
+plt.title('g(x)')
+plt.xticks(np.arange(0,max(x), 1.))
+plt.yticks(np.arange(0, max(y), 1.))
+plt.show()
+```
+</div>
+
+## Gráfica de la función h 
+
+<div class="center">
+ ```{python, echo = FALSE}
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+
+ax = plt.gca()
+x = np.arange(0,1.5,0.005)
+y = x**2+1
+
+ax.plot(x, y)
+
+x = np.arange(-2,0,0.005)
+y1 = x+1
+
+ax.plot(x,y1)
+
+ax.spines['left'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['bottom'].set_position('zero')
+ax.spines['top'].set_color('none')
+
+plt.title('h(x)')
+plt.xticks(np.arange(0,max(x), 1.))
+plt.yticks(np.arange(0, max(y), 1.))
 plt.show()
 ```
 </div>
