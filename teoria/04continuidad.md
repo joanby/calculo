@@ -315,16 +315,7 @@ En definitiva no existe el $\lim_{x \rightarrow 0}f(x)$.
 ## Límites laterales: gráfica de la función signo
 
 <div class="center">
- 
- ```
- ## []
- ```
- 
- ```
- ## []
- ```
- 
- ![](04continuidad_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+  <img src="Images/sgn1.png" width="500px" />
 </div>
 
 ## Límites laterales
@@ -373,31 +364,13 @@ Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 
 ## Gráfica de la función g 
 
 <div class="center">
- 
- ```
- ## ([], <a list of 0 Text xticklabel objects>)
- ```
- 
- ```
- ## ([<matplotlib.axis.YTick object at 0x1098b43d0>, <matplotlib.axis.YTick object at 0x109821cd0>, <matplotlib.axis.YTick object at 0x109a87b10>], <a list of 3 Text yticklabel objects>)
- ```
- 
- ![](04continuidad_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+  <img src="Images/gx.png" width="500px" />
 </div>
 
 ## Gráfica de la función h 
 
 <div class="center">
- 
- ```
- ## ([], <a list of 0 Text xticklabel objects>)
- ```
- 
- ```
- ## ([<matplotlib.axis.YTick object at 0x109adf590>, <matplotlib.axis.YTick object at 0x109cb2690>, <matplotlib.axis.YTick object at 0x109cb2c90>, <matplotlib.axis.YTick object at 0x109ca3050>], <a list of 4 Text yticklabel objects>)
- ```
- 
- ![](04continuidad_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+  <img src="Images/hx.png" width="500px" />
 </div>
 
 ## Límites laterales
@@ -460,7 +433,7 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
 
 <div class="center">
 
- <img src="Images/inversax2.png" width="400px" />
+ <img src="Images/inversax2.png" width="500px" />
 </div>
 
 
@@ -472,16 +445,7 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
 
 <div class="center">
 
- 
- ```
- ## []
- ```
- 
- ```
- ## ([<matplotlib.axis.YTick object at 0x109fd2710>, <matplotlib.axis.YTick object at 0x109fe0710>, <matplotlib.axis.YTick object at 0x109ffc150>], <a list of 3 Text yticklabel objects>)
- ```
- 
- ![](04continuidad_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+ <img src="Images/sinxx1.png" width="600px" />
 </div>
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
