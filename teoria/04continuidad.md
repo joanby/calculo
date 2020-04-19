@@ -317,11 +317,11 @@ En definitiva no existe el $\lim_{x \rightarrow 0}f(x)$.
 <div class="center">
  
  ```
- ## ([], <a list of 0 Text xticklabel objects>)
+ ## []
  ```
  
  ```
- ## ([], <a list of 0 Text yticklabel objects>)
+ ## []
  ```
  
  ![](04continuidad_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
@@ -375,11 +375,11 @@ Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 
 <div class="center">
  
  ```
- ## ([<matplotlib.axis.XTick object at 0x110c88fd0>], <a list of 1 Text xticklabel objects>)
+ ## ([], <a list of 0 Text xticklabel objects>)
  ```
  
  ```
- ## ([<matplotlib.axis.YTick object at 0x1120ef090>], <a list of 1 Text yticklabel objects>)
+ ## ([<matplotlib.axis.YTick object at 0x10f5c0f90>, <matplotlib.axis.YTick object at 0x10f36c710>, <matplotlib.axis.YTick object at 0x10f5d1c10>], <a list of 3 Text yticklabel objects>)
  ```
  
  ![](04continuidad_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
@@ -394,7 +394,7 @@ Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 
  ```
  
  ```
- ## ([<matplotlib.axis.YTick object at 0x1125399d0>, <matplotlib.axis.YTick object at 0x11251ab50>, <matplotlib.axis.YTick object at 0x112557b90>, <matplotlib.axis.YTick object at 0x11233e710>], <a list of 4 Text yticklabel objects>)
+ ## ([<matplotlib.axis.YTick object at 0x10f3cb490>, <matplotlib.axis.YTick object at 0x10f7eeb50>, <matplotlib.axis.YTick object at 0x10f7fc6d0>, <matplotlib.axis.YTick object at 0x10f7cf790>], <a list of 4 Text yticklabel objects>)
  ```
  
  ![](04continuidad_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
@@ -438,6 +438,30 @@ En todos los casos es $f(x_n) \rightarrow L$, en el primero por ser $\lim_{x \ri
 
 
 
+
+<!-- ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$ -->
+
+<!-- <div class="center"> -->
+
+<!--  ```{python, echo = FALSE} -->
+<!-- import math -->
+<!-- import numpy as np -->
+<!-- import matplotlib.pyplot as plt -->
+<!-- ax = plt.gca() -->
+<!-- x = np.linspace(-3*np.pi, 3*np.pi, 100) -->
+<!-- y = np.sin(x)/x -->
+<!-- ax.plot(x, y) -->
+<!-- ax.spines['left'].set_position('center') -->
+<!-- ax.spines['right'].set_color('none') -->
+<!-- ax.spines['bottom'].set_position('center') -->
+<!-- ax.spines['top'].set_color('none') -->
+<!-- ax.xaxis.set_ticks([]) -->
+<!-- plt.yticks(np.arange(0, 1.1, .5)) -->
+<!-- plt.title('f(x)=sin x/x') -->
+<!-- plt. -->
+<!-- plt.show() -->
+<!-- ``` -->
+<!-- </div> -->
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
 

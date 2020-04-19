@@ -341,8 +341,8 @@ ax.spines['right'].set_color('none')
 ax.spines['bottom'].set_position('zero')
 ax.spines['top'].set_color('none')
 
-plt.xticks(np.arange(0,0, 1.))
-plt.yticks(np.arange(0, 0, 1.))
+ax.xaxis.set_ticks([])
+ax.yaxis.set_ticks([])
 
 plt.show()
 ```
@@ -416,8 +416,8 @@ ax.spines['bottom'].set_position('zero')
 ax.spines['top'].set_color('none')
 
 plt.title('g(x)')
-plt.xticks(np.arange(-1,1,2))
-plt.yticks(np.arange(-1,1,2))
+plt.xticks(np.arange(0,max(x),1))
+plt.yticks(np.arange(0,max(y),1))
 plt.show()
 ```
 </div>
@@ -491,6 +491,30 @@ En todos los casos es $f(x_n) \rightarrow L$, en el primero por ser $\lim_{x \ri
 
 
 
+
+<!-- ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$ -->
+
+<!-- <div class="center"> -->
+
+<!--  ```{python, echo = FALSE} -->
+<!-- import math -->
+<!-- import numpy as np -->
+<!-- import matplotlib.pyplot as plt -->
+<!-- ax = plt.gca() -->
+<!-- x = np.linspace(-3*np.pi, 3*np.pi, 100) -->
+<!-- y = np.sin(x)/x -->
+<!-- ax.plot(x, y) -->
+<!-- ax.spines['left'].set_position('center') -->
+<!-- ax.spines['right'].set_color('none') -->
+<!-- ax.spines['bottom'].set_position('center') -->
+<!-- ax.spines['top'].set_color('none') -->
+<!-- ax.xaxis.set_ticks([]) -->
+<!-- plt.yticks(np.arange(0, 1.1, .5)) -->
+<!-- plt.title('f(x)=sin x/x') -->
+<!-- plt. -->
+<!-- plt.show() -->
+<!-- ``` -->
+<!-- </div> -->
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
 
