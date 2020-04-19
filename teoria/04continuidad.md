@@ -379,7 +379,7 @@ Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 
  ```
  
  ```
- ## ([<matplotlib.axis.YTick object at 0x10faf03d0>, <matplotlib.axis.YTick object at 0x10fa5dcd0>, <matplotlib.axis.YTick object at 0x10fcb3b10>], <a list of 3 Text yticklabel objects>)
+ ## ([<matplotlib.axis.YTick object at 0x1098b43d0>, <matplotlib.axis.YTick object at 0x109821cd0>, <matplotlib.axis.YTick object at 0x109a87b10>], <a list of 3 Text yticklabel objects>)
  ```
  
  ![](04continuidad_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
@@ -394,7 +394,7 @@ Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 
  ```
  
  ```
- ## ([<matplotlib.axis.YTick object at 0x10fd0b590>, <matplotlib.axis.YTick object at 0x10fecd690>, <matplotlib.axis.YTick object at 0x10fecdc90>, <matplotlib.axis.YTick object at 0x10febe050>], <a list of 4 Text yticklabel objects>)
+ ## ([<matplotlib.axis.YTick object at 0x109adf590>, <matplotlib.axis.YTick object at 0x109cb2690>, <matplotlib.axis.YTick object at 0x109cb2c90>, <matplotlib.axis.YTick object at 0x109ca3050>], <a list of 4 Text yticklabel objects>)
  ```
  
  ![](04continuidad_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
@@ -459,25 +459,13 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
 
 
 <div class="center">
- 
- ```
- ## (-0.1, 30)
- ```
- 
- ```
- ## []
- ```
- 
- ```
- ## []
- ```
- 
- ![](04continuidad_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+
+ <img src="Images/inversax2.png" width="400px" />
 </div>
 
 
 
-</div>
+
 
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
@@ -490,10 +478,10 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
  ```
  
  ```
- ## ([<matplotlib.axis.YTick object at 0x110113cd0>, <matplotlib.axis.YTick object at 0x11013b790>, <matplotlib.axis.YTick object at 0x11013b510>], <a list of 3 Text yticklabel objects>)
+ ## ([<matplotlib.axis.YTick object at 0x109fd2710>, <matplotlib.axis.YTick object at 0x109fe0710>, <matplotlib.axis.YTick object at 0x109ffc150>], <a list of 3 Text yticklabel objects>)
  ```
  
- ![](04continuidad_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+ ![](04continuidad_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 </div>
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$

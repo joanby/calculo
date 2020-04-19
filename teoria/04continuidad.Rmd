@@ -512,8 +512,10 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
 
 
 <div class="center">
- ```{r, echo=FALSE, label=x2,fig.cap="",out.width = "400px"}
-knitr::include_graphics("Images/inversax2",dpi=1200)
+
+ ```{r, echo=FALSE, label=inversax2,fig.cap="",out.width = "400px"}
+knitr::include_graphics("Images/inversax2.png",dpi=1200)
+```
 </div>
 
 
