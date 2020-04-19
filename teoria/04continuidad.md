@@ -315,7 +315,7 @@ En definitiva no existe el $\lim_{x \rightarrow 0}f(x)$.
 ## Límites laterales: gráfica de la función signo
 
 <div class="center">
-  <img src="Images/sgn1.png" width="500px" />
+  <img src="Images/sgn1.png" width="600px" />
 </div>
 
 ## Límites laterales
@@ -364,13 +364,13 @@ Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 
 ## Gráfica de la función g 
 
 <div class="center">
-  <img src="Images/gx.png" width="500px" />
+  <img src="Images/gx.png" width="600px" />
 </div>
 
 ## Gráfica de la función h 
 
 <div class="center">
-  <img src="Images/hx.png" width="500px" />
+  <img src="Images/hx.png" width="600px" />
 </div>
 
 ## Límites laterales

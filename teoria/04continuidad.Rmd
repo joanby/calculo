@@ -321,7 +321,7 @@ En definitiva no existe el $\lim_{x \rightarrow 0}f(x)$.
 ## Límites laterales: gráfica de la función signo
 
 <div class="center">
-  ```{r, echo=FALSE, label=sgn1,fig.cap="",out.width = "500px"}
+  ```{r, echo=FALSE, label=sgn1,fig.cap="",out.width = "600px"}
 knitr::include_graphics("Images/sgn1.png",dpi=1200)
 ```
 </div>
@@ -372,7 +372,7 @@ Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 
 ## Gráfica de la función g 
 
 <div class="center">
-  ```{r, echo=FALSE, label=gx,fig.cap="",out.width = "500px"}
+  ```{r, echo=FALSE, label=gx,fig.cap="",out.width = "600px"}
 knitr::include_graphics("Images/gx.png",dpi=1200)
 ```
 </div>
@@ -380,7 +380,7 @@ knitr::include_graphics("Images/gx.png",dpi=1200)
 ## Gráfica de la función h 
 
 <div class="center">
-  ```{r, echo=FALSE, label=hx,fig.cap="",out.width = "500px"}
+  ```{r, echo=FALSE, label=hx,fig.cap="",out.width = "600px"}
 knitr::include_graphics("Images/hx.png",dpi=1200)
 ```
 </div>
