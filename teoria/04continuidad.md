@@ -312,24 +312,37 @@ En efecto, consideremos la sucesión de término general $x_n = \dfrac{(-1)^n}{n
 En definitiva no existe el $\lim_{x \rightarrow 0}f(x)$.
 
 
-## Límites laterales 
+## Límites laterales:gráfica de la función signo
 
-[gráfica de la función signo]
-
+<div class="center">
+ 
+ ```
+ ## ([], <a list of 0 Text xticklabel objects>)
+ ```
+ 
+ ```
+ ## ([], <a list of 0 Text yticklabel objects>)
+ ```
+ 
+ ![](04continuidad_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+</div>
 
 ## Límites laterales
 
 <l class="definition"> **Definición de límite lateral** </l>
 
-@) Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función real de variable real y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite lateral por la derecha** de $f$ en $c$, si para toda sucesión $x_n$ tal que $\_n \rightarrow c$ con $x_n \geq c$, es $f(x_n)\rightarrow L$.Escribiremos $L = \lim_{x \rightarrow c^+}f(x)$. 
+@) Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función real de variable real y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite lateral por la derecha** de $f$ en $c$, si para toda sucesión $x_n$ tal que $\_n \rightarrow c$ con $x_n \geq c$, es $f(x_n)\rightarrow L$. Escribiremos 
+$$
+L = \lim_{x \rightarrow c^+}f(x)
+$$. 
 
-$\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<x-c<\delta$, entonces es $|f(x)-L| < \epsilon$. 
 
-@) Análogamente, $L \in \mathbb{R}$ es el **límite lateral por la izquierda** de $f$ en $c$, si para toda sucesión $x_n$ tal que $\_n \rightarrow c$ con $x_n \leq c$, es $f(x_n)\rightarrow L$
+@) Análogamente, $L \in \mathbb{R}$ es el **límite lateral por la izquierda** de $f$ en $c$, si para toda sucesión $x_n$ tal que $\_n \rightarrow c$ con $x_n \leq c$, es $f(x_n)\rightarrow L$. Escribiremos 
+$$
+L = \lim_{x \rightarrow c^-}f(x)
+$$.
 
-si para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<c-x<\delta$, entonces es $|f(x)-L| < \epsilon$.  \rightarrow c^-}f(x)$ 
 
-La condición $0<x-c<\delta$ puede ser reescrita como $x \in V^*_{\delta} (x) \cap (c, +\infty)$, así como la condición $0<c-x<\delta$ es equivalente a que $x \in V^*_{\delta} (x) \cap (-\infty, c)$
 
 ## Límites laterales 
 
@@ -358,6 +371,10 @@ $$
 Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 1$. y, como veremos a continuación, existe el $\lim_{x \rightarrow 0} h(x)$ y es igual a $1$.
 
 ## Gráficas de las funciones g y h
+
+<div class="center">
+ ![](04continuidad_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
+</div>
 
 ## Límites laterales
 
