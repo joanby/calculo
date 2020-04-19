@@ -354,14 +354,14 @@ plt.show()
 
 @) Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función real de variable real y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite lateral por la derecha** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \geq c$, es $f(x_n)\rightarrow L$. Escribiremos 
 $$
-L = \lim_{x \rightarrow c^+}f(x)
-$$. 
+L = \lim_{x \rightarrow c^+}f(x).
+$$
 
 
 @) Análogamente, $L \in \mathbb{R}$ es el **límite lateral por la izquierda** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \leq c$, es $f(x_n)\rightarrow L$. Escribiremos 
 $$
-L = \lim_{x \rightarrow c^-}f(x)
-$$.
+L = \lim_{x \rightarrow c^-}f(x).
+$$
 
 
 
@@ -508,14 +508,17 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
 
 <div class="example"> **Ejemplo**
 
-@) $\lim_{x \rightarrow 0} \dfrac{1}{x} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| <K$ y, por lo tanto $|f(x_n)|=\dfrac{1}{|x_n|}>K$.
+@) $\lim_{x \rightarrow 0} \dfrac{1}{x^2} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| <K$ y, por lo tanto $|f(x_n)|=\dfrac{1}{x_n^2}>K^2$.
 
 
-
-
-
-
+<div class="center">
+ ```{r, echo=FALSE, label=x2,fig.cap="",out.width = "400px"}
+knitr::include_graphics("Images/inversax2",dpi=1200)
 </div>
+
+
+
+
 
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$

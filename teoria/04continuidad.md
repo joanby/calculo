@@ -333,14 +333,14 @@ En definitiva no existe el $\lim_{x \rightarrow 0}f(x)$.
 
 @) Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función real de variable real y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite lateral por la derecha** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \geq c$, es $f(x_n)\rightarrow L$. Escribiremos 
 $$
-L = \lim_{x \rightarrow c^+}f(x)
-$$. 
+L = \lim_{x \rightarrow c^+}f(x).
+$$
 
 
 @) Análogamente, $L \in \mathbb{R}$ es el **límite lateral por la izquierda** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \leq c$, es $f(x_n)\rightarrow L$. Escribiremos 
 $$
-L = \lim_{x \rightarrow c^-}f(x)
-$$.
+L = \lim_{x \rightarrow c^-}f(x).
+$$
 
 
 
@@ -379,7 +379,7 @@ Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 
  ```
  
  ```
- ## ([<matplotlib.axis.YTick object at 0x10f2eef90>, <matplotlib.axis.YTick object at 0x10f09a710>, <matplotlib.axis.YTick object at 0x10f2ffc10>], <a list of 3 Text yticklabel objects>)
+ ## ([<matplotlib.axis.YTick object at 0x10faf03d0>, <matplotlib.axis.YTick object at 0x10fa5dcd0>, <matplotlib.axis.YTick object at 0x10fcb3b10>], <a list of 3 Text yticklabel objects>)
  ```
  
  ![](04continuidad_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
@@ -394,7 +394,7 @@ Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 
  ```
  
  ```
- ## ([<matplotlib.axis.YTick object at 0x10f0f9490>, <matplotlib.axis.YTick object at 0x10f0f9810>, <matplotlib.axis.YTick object at 0x10f52a990>, <matplotlib.axis.YTick object at 0x10f3458d0>], <a list of 4 Text yticklabel objects>)
+ ## ([<matplotlib.axis.YTick object at 0x10fd0b590>, <matplotlib.axis.YTick object at 0x10fecd690>, <matplotlib.axis.YTick object at 0x10fecdc90>, <matplotlib.axis.YTick object at 0x10febe050>], <a list of 4 Text yticklabel objects>)
  ```
  
  ![](04continuidad_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
@@ -455,10 +455,25 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
 
 <div class="example"> **Ejemplo**
 
-@) $\lim_{x \rightarrow 0} \dfrac{1}{x} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| <K$ y, por lo tanto $|f(x_n)|=\dfrac{1}{|x_n|}>K$.
+@) $\lim_{x \rightarrow 0} \dfrac{1}{x^2} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| <K$ y, por lo tanto $|f(x_n)|=\dfrac{1}{x_n^2}>K^2$.
 
 
-
+<div class="center">
+ 
+ ```
+ ## (-0.1, 30)
+ ```
+ 
+ ```
+ ## []
+ ```
+ 
+ ```
+ ## []
+ ```
+ 
+ ![](04continuidad_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+</div>
 
 
 
@@ -475,10 +490,10 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
  ```
  
  ```
- ## ([<matplotlib.axis.YTick object at 0x10f6d2310>, <matplotlib.axis.YTick object at 0x10f6f0bd0>, <matplotlib.axis.YTick object at 0x10f71d950>], <a list of 3 Text yticklabel objects>)
+ ## ([<matplotlib.axis.YTick object at 0x110113cd0>, <matplotlib.axis.YTick object at 0x11013b790>, <matplotlib.axis.YTick object at 0x11013b510>], <a list of 3 Text yticklabel objects>)
  ```
  
- ![](04continuidad_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+ ![](04continuidad_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 </div>
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
