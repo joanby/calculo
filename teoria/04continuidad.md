@@ -331,13 +331,13 @@ En definitiva no existe el $\lim_{x \rightarrow 0}f(x)$.
 
 <l class="definition"> **Definición de límite lateral** </l>
 
-@) Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función real de variable real y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite lateral por la derecha** de $f$ en $c$, si para toda sucesión $x_n$ tal que $\_n \rightarrow c$ con $x_n \geq c$, es $f(x_n)\rightarrow L$. Escribiremos 
+@) Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función real de variable real y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite lateral por la derecha** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \geq c$, es $f(x_n)\rightarrow L$. Escribiremos 
 $$
 L = \lim_{x \rightarrow c^+}f(x)
 $$. 
 
 
-@) Análogamente, $L \in \mathbb{R}$ es el **límite lateral por la izquierda** de $f$ en $c$, si para toda sucesión $x_n$ tal que $\_n \rightarrow c$ con $x_n \leq c$, es $f(x_n)\rightarrow L$. Escribiremos 
+@) Análogamente, $L \in \mathbb{R}$ es el **límite lateral por la izquierda** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \leq c$, es $f(x_n)\rightarrow L$. Escribiremos 
 $$
 L = \lim_{x \rightarrow c^-}f(x)
 $$.
@@ -379,7 +379,7 @@ Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 
  ```
  
  ```
- ## ([<matplotlib.axis.YTick object at 0x10f5c0f90>, <matplotlib.axis.YTick object at 0x10f36c710>, <matplotlib.axis.YTick object at 0x10f5d1c10>], <a list of 3 Text yticklabel objects>)
+ ## ([<matplotlib.axis.YTick object at 0x10f2eef90>, <matplotlib.axis.YTick object at 0x10f09a710>, <matplotlib.axis.YTick object at 0x10f2ffc10>], <a list of 3 Text yticklabel objects>)
  ```
  
  ![](04continuidad_files/figure-html/unnamed-chunk-2-1.png)<!-- -->
@@ -394,7 +394,7 @@ Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 
  ```
  
  ```
- ## ([<matplotlib.axis.YTick object at 0x10f3cb490>, <matplotlib.axis.YTick object at 0x10f7eeb50>, <matplotlib.axis.YTick object at 0x10f7fc6d0>, <matplotlib.axis.YTick object at 0x10f7cf790>], <a list of 4 Text yticklabel objects>)
+ ## ([<matplotlib.axis.YTick object at 0x10f0f9490>, <matplotlib.axis.YTick object at 0x10f0f9810>, <matplotlib.axis.YTick object at 0x10f52a990>, <matplotlib.axis.YTick object at 0x10f3458d0>], <a list of 4 Text yticklabel objects>)
  ```
  
  ![](04continuidad_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
@@ -433,35 +433,53 @@ Supongamos ahora que los dos límites laterales existen y son iguales a $L$. Sea
 En todos los casos es $f(x_n) \rightarrow L$, en el primero por ser $\lim_{x \rightarrow c^+}f(x)$ y en el segundo por ser  $\lim_{x \rightarrow c^-}f(x)$. El el tercer caso tendríammos dos subsucesiones $f(x_{n_k})$ y $f(x_{n_j})$ con el mismo límite L y, por lo tanto es $f(x_n) \rightarrow L$, dado que $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$. En definitiva es  $\lim_{x \rightarrow c}f(x) = L$.
 
 
+## Limites infinitos
+
+<l class="definition"> **Definición**
+
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$,
+
+@) Diremos que $\lim_{x \rightarrow c}f(x) = +\infty$, si para cada $K >0$ existe un $\delta > 0$ tal que si $x \in V^*_{\delta}(c)$ entonces es $f(x)>K$.
+
+@) Diremos que $\lim_{x \rightarrow c}f(x) = - \infty$, si para cada $K >0$ existe un $\delta > 0$ tal que si $x \in V^*_{\delta}(c)$ entonces es $f(x)< -K$
+
+<div class="exercise"> **Ejercicio** 
+
+Las definiciones anteriores también se pueden formular en términos de sucesiones así, por ejemplo, se pide comprobar que la primera definición es equivalente a
+
+$\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$ tal que $x_n \rightarrow c$ es $f(x_n) \rightarrow \infty$. 
+
+</div>
+
+## Limites infinitos: Ejemplos.
+
+<div class="example"> **Ejemplo**
+
+@) $\lim_{x \rightarrow 0} \dfrac{1}{x} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| <K$ y, por lo tanto $|f(x_n)|=\dfrac{1}{|x_n|}>K$.
 
 
 
 
 
 
-<!-- ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$ -->
+</div>
 
-<!-- <div class="center"> -->
 
-<!--  ```{python, echo = FALSE} -->
-<!-- import math -->
-<!-- import numpy as np -->
-<!-- import matplotlib.pyplot as plt -->
-<!-- ax = plt.gca() -->
-<!-- x = np.linspace(-3*np.pi, 3*np.pi, 100) -->
-<!-- y = np.sin(x)/x -->
-<!-- ax.plot(x, y) -->
-<!-- ax.spines['left'].set_position('center') -->
-<!-- ax.spines['right'].set_color('none') -->
-<!-- ax.spines['bottom'].set_position('center') -->
-<!-- ax.spines['top'].set_color('none') -->
-<!-- ax.xaxis.set_ticks([]) -->
-<!-- plt.yticks(np.arange(0, 1.1, .5)) -->
-<!-- plt.title('f(x)=sin x/x') -->
-<!-- plt. -->
-<!-- plt.show() -->
-<!-- ``` -->
-<!-- </div> -->
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
+
+<div class="center">
+
+ 
+ ```
+ ## []
+ ```
+ 
+ ```
+ ## ([<matplotlib.axis.YTick object at 0x10f6d2310>, <matplotlib.axis.YTick object at 0x10f6f0bd0>, <matplotlib.axis.YTick object at 0x10f71d950>], <a list of 3 Text yticklabel objects>)
+ ```
+ 
+ ![](04continuidad_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+</div>
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
 
