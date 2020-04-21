@@ -462,11 +462,17 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
 
 @) Anàlogamente $\lim_{x \rightarrow -\infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < K$ siempre que $x <-K$
 
-@) La función 
+@) La función $h(x) = \dfrac{1}{x}$, proporciona un interesante ejemplo de también tienen sentido los límites laterales para los límites infinitos, puesto que como es fácil comprobar $\lim_{x \rightarrow 0^+} h(x) = +\infty$ en tanto que $\lim_{x \rightarrow 0^-} h(x) = -\infty$. 
+
+@) También es fácil comprobar que $\lim_{x \rightarrow -\infty} =0 = \lim_{x \rightarrow \infty}$
 
 
+## Límites en el infinito: Gráfica de la función $\dfrac{1}{x}$
 
+<div class="center">
 
+ <img src="Images/inversx.png" width="600px" />
+</div>
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
 
