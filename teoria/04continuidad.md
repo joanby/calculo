@@ -464,7 +464,7 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
 
 @) La función $h(x) = \dfrac{1}{x}$, proporciona un interesante ejemplo de también tienen sentido los límites laterales para los límites infinitos, puesto que como es fácil comprobar $\lim_{x \rightarrow 0^+} h(x) = +\infty$ en tanto que $\lim_{x \rightarrow 0^-} h(x) = -\infty$. 
 
-@) También es fácil comprobar que $\lim_{x \rightarrow -\infty} =0 = \lim_{x \rightarrow \infty}$
+@) También es fácil comprobar que $\lim_{x \rightarrow -\infty} \dfrac{1}{x} =0 = \lim_{x \rightarrow \infty}  \dfrac{1}{x}$
 
 
 ## Límites en el infinito: Gráfica de la función $\dfrac{1}{x}$
@@ -474,7 +474,25 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
  <img src="Images/inversx.png" width="600px" />
 </div>
 
-## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
+## Infinitésimos
+
+<l class="definition"> **Definición** </l>
+
+Sea $c$ un punto de acumulación del dominio de una función $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es un **infinitésimo** en $c$ si $\lim_{x \rightarrow c}f(x) =0$.
+
+<l class="definition"> **Definición** </l>
+
+Sean $f$ y $g$ dos infinitésimos en $c$, entonces $f$ y $g$ son **equivalentes** si 
+$$
+\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}=1
+$$
+
+
+## Infinitésimos equivalentes
+
+<div class="example"> **Ejemplo**
+
+Las funciones $\sin x$ y $x$ son infinitésimos equivalentes en $x=0$
 
 <div class="center">
 
@@ -520,6 +538,7 @@ En definitiva, como los dos límites laterales existen y son iguales, resulta qu
 $$
 \lim_{x \rightarrow 0}\dfrac{\sin x}{x} =1
 $$
+Por lo tanto, $sin x$ y $x$ son infinitésimos equivalentes en $0$.
 
 
 
