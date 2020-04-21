@@ -191,7 +191,7 @@ que era lo que queríamos demostrar.
 
 <l class="definition"> **Definición** </l>
 
-Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. $f$ **está cotada en un entorno de $c$** $V_{\delta}(c)$ si existe una constante $M \mathbb{R}$ tal que $|f(x)| \leq M$ para todo $x \in A \cap V_{\delta}(c)$.
+Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. $f$ **está cotada en un entorno de $c$** $V_{\delta}(c)$ si existe una constante $M \in \mathbb{R}$ tal que $|f(x)| \leq M$ para todo $x \in A \cap V_{\delta}(c)$.
 
 <l class="prop"> **Proposición**
 
@@ -397,6 +397,8 @@ En lo que sigue,  $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es una funci�
 Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y sea $c$ un punto de acumulación de $A$. Entonces existe el $\lim_{x \rightarrow c}f(x)$ si, y sólo si, los dos límites laterales $\lim_{x \rightarrow c^+}f(x)$ y $\lim_{x \rightarrow c^-}f(x)$
 existen y son iguales.
 
+## Límites laterales
+
 <div class="dem"> **Demostración**
 
 Si $\lim_{x \rightarrow c}f(x) = L$, entonces para toda sucesión $x_n$ tal que $x_n \rightarrow c$ es $f(x_n) \rightarrow L$. Ahora, si $x_n \rightarrow c$ y $x_n > c$ será igualemente $f(x_n) \rightarrow L$. Análogamente si $x_n <c$.
@@ -428,7 +430,7 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
 
 <div class="example"> **Ejemplo**
 
-@) $\lim_{x \rightarrow 0} \dfrac{1}{x^2} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| <K$ y, por lo tanto $|f(x_n)|=\dfrac{1}{x_n^2}>K^2$.
+$\lim_{x \rightarrow 0} \dfrac{1}{x^2} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| <K$ y, por lo tanto $|f(x_n)|=\dfrac{1}{x_n^2}>K^2$.
 
 
 <div class="center">
@@ -436,6 +438,31 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
  <img src="Images/inversax2.png" width="500px" />
 </div>
 
+## Límites en el infinito
+
+El ejemplo anterior también sirve para justificar la siguiente definición:
+
+<l class="definition"> **Definición** </l>
+
+Sean $f: \mathbb{R} \rightarrow \mathbb{R}$ y $L \in \mathbb{R}$, $L = lim_{x \rightarrow \infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= \infty$ entonces $\lim_{n \rightarrow \infty} f(x_n)= L$.
+
+Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= -\infty$ entonces $\lim_{n \rightarrow \infty} f(x_n)= L$.
+
+<div class="exercise"> **Ejercicios**
+
+@) Demuestra que $L = lim_{x \rightarrow \infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x>K$ entonces $|f(x)-L|<\epsilon$.
+
+@) Demuestra que $L = lim_{x \rightarrow -\infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x<-K$ entonces $|f(x)-L|<\epsilon$.
+
+## Limites en el infinito
+
+<div class="example"> **Ejemplos**
+
+@) $\lim_{x \rightarrow \infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < K$ siempre que $x >K$
+
+@) Anàlogamente $\lim_{x \rightarrow -\infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < K$ siempre que $x <-K$
+
+@) La función 
 
 
 
