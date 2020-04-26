@@ -492,6 +492,11 @@ knitr::include_graphics("Images/inversx.png",dpi=1200)
 
 # Cálculo de límites
 
+## Cálculo de límites
+
+Dada la definición de límite de una función en un punto que hemos hecho, vinculada a la de límite de sucesiones, no debería sorprendernos que una buena parte de las técnicas exploradas para el cálculo de límites de sucesiones sean también de aplicación para el cálculo de límite de funciones.
+
+
 
 ## Infinitésimos
 
