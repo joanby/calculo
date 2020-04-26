@@ -490,11 +490,27 @@ knitr::include_graphics("Images/inversx.png",dpi=1200)
 ```
 </div>
 
+# Cálculo de límites
+
+
 ## Infinitésimos
 
 <l class="definition"> **Definición** </l>
 
 Sea $c$ un punto de acumulación del dominio de una función $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es un **infinitésimo** en $c$ si $\lim_{x \rightarrow c}f(x) =0$.
+
+<div class="example"> **Ejemplos**
+
+1. $f(x)=x$ en el punto $0$,
+2. $g(x)= \sin x$, en $x=0$ y, en general, en todos los puntos de la forma $(2k+1)\pi$, con $k \in \mathbb{N}$,
+3. $h(x) = e^x -1$ en $x=0$,
+4. $k(x)= \cos x$ en $x=\dfrac{\pi}{2}$ y, en general en todos los $x=\dfrac{(2k+1)}{2}\pi$, con $k \in \mathbb{N}$,
+5. $l(x)= \dfrac{1}{x^2}$ en $x=\pm \infty$,
+6. $p(x) = e^{\frac{1}{x}}$ en $x=\pm\infty$
+
+<div>
+
+## Infinitésimos equivalentes
 
 <l class="definition"> **Definición** </l>
 
@@ -502,6 +518,15 @@ Sean $f$ y $g$ dos infinitésimos en $c$, entonces $f$ y $g$ son **equivalentes*
 $$
 \lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}=1
 $$
+
+<div class="example"> **Ejemplos**
+
+1. $f(x)= 3x -5x^2$ y $g(x)=3x$ en $x=0$, puesto que el $\lim_{x \rightarrow 0} \frac{3x-5x^2}{3x} =1$.
+2. $h(x)= e^x -1$ y $p(x)=x$, en $x=0$, puesto que el $\lim_{x \rightarrow 0} \dfrac{e^x-1}{x}=1$.
+3. $\log (1+x)$ y $x$ son equivalentes en $x=0$, puesto que $\lim_{x \rightarrow 0} \dfrac{\log(1+x)}{x} = \lim_{x \rightarrow 0} \log(1+x)^\frac{1}{x} = \log \lim (1+x)^\frac{1}{x} = \log e =1$.
+
+
+
 
 
 ## Infinitésimos equivalentes
@@ -558,7 +583,44 @@ En definitiva, como los dos límites laterales existen y son iguales, resulta qu
 $$
 \lim_{x \rightarrow 0}\dfrac{\sin x}{x} =1
 $$
-Por lo tanto, $sin x$ y $x$ son infinitésimos equivalentes en $0$.
+Por lo tanto, $\sin x$ y $x$ son infinitésimos equivalentes en $0$.
+
+## Infinitésimos equivalentes.
+
+<l class="prop"> **Proposición** </l>
+
+Sean $f,g,h: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y sea $c$ un punto de acumulación de $a$. Supongamos, además que $f(x)$ y $g(x)$ son infinitésimos equivalentes en $x =c$. Entonces
+
+1. Existe el $\lim_{x \rightarrow c} f(x)h(x) = L$ si, y sólo si, existe el $\lim g(x)h(x)=L$. 
 
 
+2. Existe el $\lim_{x \rightarrow c} \dfrac{f(x)}{h(x)} = L$ si, y sólo si, existe el $\lim \dfrac{g(x)}{h(x)}=L$.
 
+<div class="observ"> **Observación**
+
+La proposición anterior establece que, en el cálculo de un límite, se pude substituir un infinitésimo por otro equivalente, siempre que el infinitésimo multiplique o divida a la otra función involucrada. No se puede substituir si forma parte de una suma o de una diferencia.
+
+</div>
+
+## Infinitésimos equivalentes
+
+<div class="dem"> **Demostración**
+
+1. Multiplicando y dividiendo por $g(x)$, tendremos que 
+$$
+L = \lim_{x \rightarrow c} f(x).h(x) = \lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}\dfrac{g(x)}{h(x)}= \lim_{x \rightarrow c}\dfrac{f(x)}{g(x)} \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)} = \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)}
+$$
+
+2. La demostración és análoga a la anterior.
+
+</div>
+
+<div class="example"> **Ejemplo**
+
+Cálculo del límite $\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}$
+
+Primero, usamos la equivalencia entre $3x -5x^3$ y $3x$ y, acontinuación, la que hay entre $\sin 2x$ y $2x$:
+$$
+\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}= \lim \dfrac{\sin 2x}{3x} = \dfrac{2}{3}\lim\dfrac{\sin 2x }{2x}= \dfrac{2}{3}
+$$
+</div>
