@@ -1015,7 +1015,7 @@ Para este tipo de indeterminaciones sirven cualquiera de los dos resultados ante
 
 Calcular el $\lim_{n \rightarrow \infty} \left( \dfrac{n+2}{n-3} \right) ^{\dfrac{2n-1}{5}}$
 
-Se trata de una indeterminaciópn del tipo $1^\infty$, puesto que si $a_n = \dfrac{n+2}{n-3}$ y $b_n= \dfrac{2n-1}{5}$, entonce $\lim a_n=1$ y $\lim b_n = \infty$, por lo tanto, podemos aplicar el resultado anterior, es decir calculamos el 
+Se trata de una indeterminación del tipo $1^\infty$, puesto que si $a_n = \dfrac{n+2}{n-3}$ y $b_n= \dfrac{2n-1}{5}$, entonce $\lim a_n=1$ y $\lim b_n = \infty$, por lo tanto, podemos aplicar el resultado anterior, es decir calculamos el 
 $$
 \lim b_n(a_n-1)=\lim \dfrac{2n-1}{5}\cdot \left(\dfrac{n+2}{n-3} -1 \right) = \lim \dfrac{(2n-1)(n+2-n+3)}{5(n-3)}=2
 $$

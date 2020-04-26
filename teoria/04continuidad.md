@@ -467,7 +467,7 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
 @) También es fácil comprobar que $\lim_{x \rightarrow -\infty} \dfrac{1}{x} =0 = \lim_{x \rightarrow \infty}  \dfrac{1}{x}$
 
 
-## Límites en el infinito: Gráfica de la función $\dfrac{1}{x}$
+## Límites en el infinito: Gráfica de la función $\frac{1}{x}$
 
 <div class="center">
 
@@ -479,6 +479,8 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
 ## Cálculo de límites
 
 Dada la definición de límite de una función en un punto que hemos hecho, vinculada a la de límite de sucesiones, no debería sorprendernos que una buena parte de las técnicas exploradas para el cálculo de límites de sucesiones sean también de aplicación para el cálculo de límite de funciones.
+
+Así, por ejemplo $\lim_{x \rightarrow 0}(1+x)^{\frac{1}{x}} = e$, puesto que, como hemos visto en el tema anterior, dada una sucesión $a_n$ tal que $a_n \rightarrow 0$, es $\lim (1+a_n)^{\frac{1}{a_n}}=e$, como esta igualdad es cierta para cualquier sucesión que tenga límite $0$, es $\lim_{x \rightarrow 0}(1+x)^{\frac{1}{x}} =e$.
 
 
 
@@ -513,6 +515,7 @@ $$
 1. $f(x)= 3x -5x^2$ y $g(x)=3x$ en $x=0$, puesto que el $\lim_{x \rightarrow 0} \frac{3x-5x^2}{3x} =1$.
 2. $h(x)= e^x -1$ y $p(x)=x$, en $x=0$, puesto que el $\lim_{x \rightarrow 0} \dfrac{e^x-1}{x}=1$.
 3. $\log (1+x)$ y $x$ son equivalentes en $x=0$, puesto que $\lim_{x \rightarrow 0} \dfrac{\log(1+x)}{x} = \lim_{x \rightarrow 0} \log(1+x)^\frac{1}{x} = \log \lim (1+x)^\frac{1}{x} = \log e =1$.
+4. $r(x)= 1-\cos x$ y $s(x)=\dfrac{x^2}{2}$ son infinitésimos equivalentes en $x=0$.
 
 
 
@@ -529,7 +532,7 @@ Las funciones $\sin x$ y $x$ son infinitésimos equivalentes en $x=0$
  <img src="Images/sinxx1.png" width="600px" />
 </div>
 
-## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
 
 <div class="center">
 
@@ -543,7 +546,7 @@ El área del sector circular $ABE$ es $\frac{1}{2} \alpha$
 El área del triángulo $ADE$ es $\frac{1}{2} \tan \alpha$
 
 
-## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
 
 Claramente, la relación entre estas tres áreas es la siguiente
 $$
@@ -558,7 +561,7 @@ $$
 1 = \lim_{x \rightarrow 0^+} \cos x \leq \lim_{x \rightarrow 0^+}\dfrac{\sin x}{x} \leq 1
 $$
 
-## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
 
 Análogamente tenemos
 $$
@@ -608,4 +611,24 @@ Primero, usamos la equivalencia entre $3x -5x^3$ y $3x$ y, acontinuación, la qu
 $$
 \lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}= \lim \dfrac{\sin 2x}{3x} = \dfrac{2}{3}\lim\dfrac{\sin 2x }{2x}= \dfrac{2}{3}
 $$
+</div>
+
+
+
+# Continuidad
+
+## Introducción
+
+Dada una función $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, si $x \in A$ es irracional cabe preguntarse cómo podemos evaluar f(x). Dado que podemos aproximar $x$ por raconales tanto como queramos, sería conveniente poder determinar la precisión de esta aproximación una vez que conozcamos la precisió requerida para $f(x)$. 
+
+Las funciones contínuas son precisamente las funciones para las que, una vez fijada la precisión requerida a $f(x)$, es posible determinar la precisión de $x$, para tener asegurada la precisión requerida.
+
+En lo que sigue, veremos que de esta condición tiene consecuencias muy significativas.
+
+
+
+## Funciones contínuas
+
+<div class="center">
+<img src="Images/fcont.png" width="350px" />
 </div>
