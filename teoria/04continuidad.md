@@ -482,6 +482,8 @@ Dada la definición de límite de una función en un punto que hemos hecho, vinc
 
 Así, por ejemplo $\lim_{x \rightarrow 0}(1+x)^{\frac{1}{x}} = e$, puesto que, como hemos visto en el tema anterior, dada una sucesión $a_n$ tal que $a_n \rightarrow 0$, es $\lim (1+a_n)^{\frac{1}{a_n}}=e$, como esta igualdad es cierta para cualquier sucesión que tenga límite $0$, es $\lim_{x \rightarrow 0}(1+x)^{\frac{1}{x}} =e$.
 
+Aparecen algunas técnicas nuevas, como las relacionadas con la consideración de límites laterales o la de los infinitésimos equivalentes, y algunas dejan de tener sentido, como por ejemplo, las que involucran el criterio de Stoltz.
+
 
 
 ## Infinitésimos
@@ -630,5 +632,7 @@ En lo que sigue, veremos que de esta condición tiene consecuencias muy signific
 ## Funciones contínuas
 
 <div class="center">
-<img src="Images/fcont.png" width="350px" />
+<img src="Images/fcont.png" width="300px" />
 </div>
+
+$\epsilon$ es la precisión con la queremos $f(x_0)$ y $\delta$ es la precisón para $x_0$. Es decir, $f(x_0) \in (f(x_0)-\epsilon,f(x_0)+\epsilon)$, siempre que $x_0 \in (x_0 -\delta, x_0 + \delta)$.
