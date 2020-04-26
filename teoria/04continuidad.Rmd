@@ -197,7 +197,7 @@ knitr::include_graphics("Images/epdel0.png",dpi=1200)
 
 <l class="definition"> **Definición** </l>
 
-Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. $f$ **está cotada en un entorno de $c$** $V_{\delta}(c)$ si existe una constante $M \mathbb{R}$ tal que $|f(x)| \leq M$ para todo $x \in A \cap V_{\delta}(c)$.
+Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. $f$ **está cotada en un entorno de $c$** $V_{\delta}(c)$ si existe una constante $M \in \mathbb{R}$ tal que $|f(x)| \leq M$ para todo $x \in A \cap V_{\delta}(c)$.
 
 <l class="prop"> **Proposición**
 
@@ -297,7 +297,250 @@ La demostración para el caso $L<0$ es completamente similar y se deja como ejer
 ## Límites laterales
 
 
+La función $f:\mathbb{R} \setminus \{0\} \rightarrow \mathbb{R}$, $f(x) = \dfrac{x}{|x|}$, no està definida en el punto ${0}$, de hecho, se trata de la función
+$$ 
+f(x) =
+\begin{cases}
+\;\;   1, & \mbox { si } x>0 \\
+-1, & \mbox { si } x<0
+\end{cases}
+$$
+conocida como la función *signo* de $x$. 
 
+$0$ es un punto de acumulación del dominio de $f$, pero no existe el $\lim_{x \rightarrow 0} f(x)$
+
+## Límites laterales
+
+No existe el $\lim_{x \rightarrow 0}f(x)$. 
+
+En efecto, consideremos la sucesión de término general $x_n = \dfrac{(-1)^n}{n}$, entonces es $f(x_{2k})= 1$ en tanto que $f(x_{2k+1})=-1$, para todo $k \in \mathbb{N}$, es decir que la sucesión de término general $f(x_n)$ tiene dos subsucesiones con límite diferente y, por lo tanto, $f(x_n)$ no tiene límite. 
+
+En definitiva no existe el $\lim_{x \rightarrow 0}f(x)$.
+
+
+## Límites laterales: gráfica de la función signo
+
+<div class="center">
+  ```{r, echo=FALSE, label=sgn1,fig.cap="",out.width = "600px"}
+knitr::include_graphics("Images/sgn1.png",dpi=1200)
+```
+</div>
+
+## Límites laterales
+
+<l class="definition"> **Definición de límite lateral** </l>
+
+@) Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función real de variable real y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite lateral por la derecha** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \geq c$, es $f(x_n)\rightarrow L$. Escribiremos 
+$$
+L = \lim_{x \rightarrow c^+}f(x).
+$$
+
+
+@) Análogamente, $L \in \mathbb{R}$ es el **límite lateral por la izquierda** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \leq c$, es $f(x_n)\rightarrow L$. Escribiremos 
+$$
+L = \lim_{x \rightarrow c^-}f(x).
+$$
+
+
+
+## Límites laterales 
+
+<div class="example"> **Ejemplos**
+
+@) En el caso de la función *signo*, $f(x) = \dfrac{x}{|x|}$, hemos visto que  $\lim_{x \rightarrow 0^+}f(x) = 1$ y  $\lim_{x \rightarrow 0^-}f(x) = -1$.
+
+@) Sea $g:\mathbb{R} \rightarrow \mathbb{R}$, la función definida por
+$$
+g(x)=
+\begin{cases}
+x+1, & \mbox{ si } x \leq 0 \\
+x^2, & \mbox{ si } x > 0 
+\end{cases}
+$$
+Entonces $\lim_{x \rightarrow 0^+} g(x) = 1$ y $\lim_{x \rightarrow 0^-} g(x) = 0$.
+
+@) Sea $h:\mathbb{R} \rightarrow \mathbb{R}$, la función definida por
+$$
+h(x)=
+\begin{cases}
+x+1, & \mbox{ si } x \leq 0 \\
+x^2+1, & \mbox{ si } x > 0 
+\end{cases}
+$$
+Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 1$. y, como veremos a continuación, existe el $\lim_{x \rightarrow 0} h(x)$ y es igual a $1$.
+
+## Gráfica de la función g 
+
+<div class="center">
+  ```{r, echo=FALSE, label=gx,fig.cap="",out.width = "600px"}
+knitr::include_graphics("Images/gx.png",dpi=1200)
+```
+</div>
+
+## Gráfica de la función h 
+
+<div class="center">
+  ```{r, echo=FALSE, label=hx,fig.cap="",out.width = "600px"}
+knitr::include_graphics("Images/hx.png",dpi=1200)
+```
+</div>
+
+## Límites laterales
+
+<div class="exercise"> **Ejercicios**
+
+En lo que sigue,  $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es una función real de variable real y $c$ es un punto de acumulación de $A$.
+
+@) Demuestra que $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<x-c<\delta$, entonces es $|f(x)-L| < \epsilon$. 
+
+@) Demuestra que   $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si,si para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<c-x<\delta$, entonces es $|f(x)-L| < \epsilon$.
+
+@) Demuestra que  $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (x) \cap (c, +\infty)$, entonces $f(x) \in V_{\epsilon}(L)$
+
+@) Demuestra que  $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (x) \cap (-\infty, c)$, entonces  entonces $f(x) \in V_{\epsilon}(L)$.
+
+</div>
+
+
+## Límites laterales
+
+<l class="prop"> **Proposición**
+
+Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y sea $c$ un punto de acumulación de $A$. Entonces existe el $\lim_{x \rightarrow c}f(x)$ si, y sólo si, los dos límites laterales $\lim_{x \rightarrow c^+}f(x)$ y $\lim_{x \rightarrow c^-}f(x)$
+existen y son iguales.
+
+## Límites laterales
+
+<div class="dem"> **Demostración**
+
+Si $\lim_{x \rightarrow c}f(x) = L$, entonces para toda sucesión $x_n$ tal que $x_n \rightarrow c$ es $f(x_n) \rightarrow L$. Ahora, si $x_n \rightarrow c$ y $x_n > c$ será igualemente $f(x_n) \rightarrow L$. Análogamente si $x_n <c$.
+
+Supongamos ahora que los dos límites laterales existen y son iguales a $L$. Sea $x_n$ tal que $x_n \rightarrow c$, entonces tres casos són posibles:1) todos los $x_n$ a partir de un lugar son tales que $x_n \geq c$, 2) todos los $x_n$ a partir de un lugar son tales que $x_n \leq c$, y 3) existen infinitos $x_{n_k}$ tales que $x_{n_k} \geq c$ e infinitos $x_{n_j}$ tales que $x_{n_j} \leq c$, claramente $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$.
+
+En todos los casos es $f(x_n) \rightarrow L$, en el primero por ser $\lim_{x \rightarrow c^+}f(x)$ y en el segundo por ser  $\lim_{x \rightarrow c^-}f(x)$. El el tercer caso tendríammos dos subsucesiones $f(x_{n_k})$ y $f(x_{n_j})$ con el mismo límite L y, por lo tanto es $f(x_n) \rightarrow L$, dado que $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$. En definitiva es  $\lim_{x \rightarrow c}f(x) = L$.
+
+
+## Limites infinitos
+
+<l class="definition"> **Definición**
+
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$,
+
+@) Diremos que $\lim_{x \rightarrow c}f(x) = +\infty$, si para cada $K >0$ existe un $\delta > 0$ tal que si $x \in V^*_{\delta}(c)$ entonces es $f(x)>K$.
+
+@) Diremos que $\lim_{x \rightarrow c}f(x) = - \infty$, si para cada $K >0$ existe un $\delta > 0$ tal que si $x \in V^*_{\delta}(c)$ entonces es $f(x)< -K$
+
+<div class="exercise"> **Ejercicio** 
+
+Las definiciones anteriores también se pueden formular en términos de sucesiones así, por ejemplo, se pide comprobar que la primera definición es equivalente a
+
+$\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$ tal que $x_n \rightarrow c$ es $f(x_n) \rightarrow \infty$. 
+
+</div>
+
+## Limites infinitos: Ejemplos.
+
+<div class="example"> **Ejemplo**
+
+$\lim_{x \rightarrow 0} \dfrac{1}{x^2} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| <K$ y, por lo tanto $|f(x_n)|=\dfrac{1}{x_n^2}>K^2$.
+
+
+<div class="center">
+
+ ```{r, echo=FALSE, label=inversax2,fig.cap="",out.width = "500px"}
+knitr::include_graphics("Images/inversax2.png",dpi=1200)
+```
+</div>
+
+## Límites en el infinito
+
+El ejemplo anterior también sirve para justificar la siguiente definición:
+
+<l class="definition"> **Definición** </l>
+
+Sean $f: \mathbb{R} \rightarrow \mathbb{R}$ y $L \in \mathbb{R}$, $L = lim_{x \rightarrow \infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= \infty$ entonces $\lim_{n \rightarrow \infty} f(x_n)= L$.
+
+Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= -\infty$ entonces $\lim_{n \rightarrow \infty} f(x_n)= L$.
+
+<div class="exercise"> **Ejercicios**
+
+@) Demuestra que $L = lim_{x \rightarrow \infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x>K$ entonces $|f(x)-L|<\epsilon$.
+
+@) Demuestra que $L = lim_{x \rightarrow -\infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x<-K$ entonces $|f(x)-L|<\epsilon$.
+
+## Limites en el infinito
+
+<div class="example"> **Ejemplos**
+
+@) $\lim_{x \rightarrow \infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < K$ siempre que $x >K$
+
+@) Anàlogamente $\lim_{x \rightarrow -\infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < K$ siempre que $x <-K$
+
+@) La función $h(x) = \dfrac{1}{x}$, proporciona un interesante ejemplo de también tienen sentido los límites laterales para los límites infinitos, puesto que como es fácil comprobar $\lim_{x \rightarrow 0^+} h(x) = +\infty$ en tanto que $\lim_{x \rightarrow 0^-} h(x) = -\infty$. 
+
+@) También es fácil comprobar que $\lim_{x \rightarrow -\infty} \dfrac{1}{x} =0 = \lim_{x \rightarrow \infty}  \dfrac{1}{x}$
+
+
+## Límites en el infinito: Gráfica de la función $\dfrac{1}{x}$
+
+<div class="center">
+
+ ```{r, echo=FALSE, label=inversx,fig.cap="",out.width = "600px"}
+knitr::include_graphics("Images/inversx.png",dpi=1200)
+```
+</div>
+
+# Cálculo de límites
+
+
+## Infinitésimos
+
+<l class="definition"> **Definición** </l>
+
+Sea $c$ un punto de acumulación del dominio de una función $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es un **infinitésimo** en $c$ si $\lim_{x \rightarrow c}f(x) =0$.
+
+<div class="example"> **Ejemplos**
+
+1. $f(x)=x$ en el punto $0$,
+2. $g(x)= \sin x$, en $x=0$ y, en general, en todos los puntos de la forma $(2k+1)\pi$, con $k \in \mathbb{N}$,
+3. $h(x) = e^x -1$ en $x=0$,
+4. $k(x)= \cos x$ en $x=\dfrac{\pi}{2}$ y, en general en todos los $x=\dfrac{(2k+1)}{2}\pi$, con $k \in \mathbb{N}$,
+5. $l(x)= \dfrac{1}{x^2}$ en $x=\pm \infty$,
+6. $p(x) = e^{\frac{1}{x}}$ en $x=\pm\infty$
+
+<div>
+
+## Infinitésimos equivalentes
+
+<l class="definition"> **Definición** </l>
+
+Sean $f$ y $g$ dos infinitésimos en $c$, entonces $f$ y $g$ son **equivalentes** si 
+$$
+\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}=1
+$$
+
+<div class="example"> **Ejemplos**
+
+1. $f(x)= 3x -5x^2$ y $g(x)=3x$ en $x=0$, puesto que el $\lim_{x \rightarrow 0} \frac{3x-5x^2}{3x} =1$.
+2. $h(x)= e^x -1$ y $p(x)=x$, en $x=0$, puesto que el $\lim_{x \rightarrow 0} \dfrac{e^x-1}{x}=1$.
+3. $\log (1+x)$ y $x$ son equivalentes en $x=0$, puesto que $\lim_{x \rightarrow 0} \dfrac{\log(1+x)}{x} = \lim_{x \rightarrow 0} \log(1+x)^\frac{1}{x} = \log \lim (1+x)^\frac{1}{x} = \log e =1$.
+
+
+
+
+
+## Infinitésimos equivalentes
+
+<div class="example"> **Ejemplo**
+
+Las funciones $\sin x$ y $x$ son infinitésimos equivalentes en $x=0$
+
+<div class="center">
+
+ ```{r, echo=FALSE, label=sinxx1,fig.cap="",out.width = "600px"}
+knitr::include_graphics("Images/sinxx1.png",dpi=1200)
+```
+</div>
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
 
@@ -340,4 +583,44 @@ En definitiva, como los dos límites laterales existen y son iguales, resulta qu
 $$
 \lim_{x \rightarrow 0}\dfrac{\sin x}{x} =1
 $$
+Por lo tanto, $\sin x$ y $x$ son infinitésimos equivalentes en $0$.
 
+## Infinitésimos equivalentes.
+
+<l class="prop"> **Proposición** </l>
+
+Sean $f,g,h: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y sea $c$ un punto de acumulación de $a$. Supongamos, además que $f(x)$ y $g(x)$ son infinitésimos equivalentes en $x =c$. Entonces
+
+1. Existe el $\lim_{x \rightarrow c} f(x)h(x) = L$ si, y sólo si, existe el $\lim g(x)h(x)=L$. 
+
+
+2. Existe el $\lim_{x \rightarrow c} \dfrac{f(x)}{h(x)} = L$ si, y sólo si, existe el $\lim \dfrac{g(x)}{h(x)}=L$.
+
+<div class="observ"> **Observación**
+
+La proposición anterior establece que, en el cálculo de un límite, se pude substituir un infinitésimo por otro equivalente, siempre que el infinitésimo multiplique o divida a la otra función involucrada. No se puede substituir si forma parte de una suma o de una diferencia.
+
+</div>
+
+## Infinitésimos equivalentes
+
+<div class="dem"> **Demostración**
+
+1. Multiplicando y dividiendo por $g(x)$, tendremos que 
+$$
+L = \lim_{x \rightarrow c} f(x).h(x) = \lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}\dfrac{g(x)}{h(x)}= \lim_{x \rightarrow c}\dfrac{f(x)}{g(x)} \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)} = \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)}
+$$
+
+2. La demostración és análoga a la anterior.
+
+</div>
+
+<div class="example"> **Ejemplo**
+
+Cálculo del límite $\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}$
+
+Primero, usamos la equivalencia entre $3x -5x^3$ y $3x$ y, acontinuación, la que hay entre $\sin 2x$ y $2x$:
+$$
+\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}= \lim \dfrac{\sin 2x}{3x} = \dfrac{2}{3}\lim\dfrac{\sin 2x }{2x}= \dfrac{2}{3}
+$$
+</div>
