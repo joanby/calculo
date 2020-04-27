@@ -522,6 +522,18 @@ En el segundo límite, se trata de una función que tiene límite $0$ multiplica
 
 </div>
 
+## Cálculo de límites
+
+Gráficas de la funciones $f(x)=\cos \frac{1}{x}$ y $g(x)=x \cos \frac{1}{x}$, respectivamente:
+
+<div class="center">
+
+ <div class="figure">
+ <img src="Images/limit2_3.png" alt=" " width="900px" />
+ <p class="caption"> </p>
+ </div>
+</div>
+
 
 ## Infinitésimos
 
@@ -662,7 +674,7 @@ Dada una función $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, si $x \in A$ e
 
 Las funciones contínuas son precisamente las funciones para las que, una vez fijada la precisión requerida a $f(x)$, es posible determinar la precisión de $x$, para tener asegurada la precisión requerida.
 
-En lo que sigue, veremos que de esta condición tiene consecuencias muy significativas.
+En lo que sigue, veremos que de esta condición tiene consecuencias muy notables.
 
 
 
