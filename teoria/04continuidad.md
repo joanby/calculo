@@ -488,7 +488,7 @@ Aparecen algunas técnicas nuevas, como las relacionadas con la consideración d
 
 <div class="example"> **Ejemplos**
 
-1. Calcula el $\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2}$.
+Calcula el $\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2}$.
 
 En primer lugar, la función està definida para todos los puntos $x \geq -\frac{1}{3}$, menos el punto $x=0$. Por lo tanto $x$ es un punto de acumulación del dominio y tiene sentido considerar el límite de la función en ese punto.
 
@@ -499,18 +499,28 @@ $$
 $$
 = \lim_{x \rightarrow 0}\dfrac{1+2x - (1+3x)}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})} = \lim_{x \rightarrow 0}\dfrac{-x}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})}=-\dfrac{1}{2}
 $$
-
+</div>
 
 ## Cálculo de límites
 
-La gráfica de la función corrobora el resultado obteniido:
+La gráfica de la función corrobora el resultado obtenido:
 
 <div class="center">
 
  <img src="Images/limit1.png" width="600px" />
 </div>
 
+## Cálculo de límites
 
+<div class="example"> **Ejemplos**
+
+Demuestra que no existe el $\lim_{x \rightarrow 0}  \cos \dfrac{1}{x}$ y que $\lim_{x \rightarrow 0} x \cos \dfrac{1}{x}=0$
+
+Para ver que no existe el primer límite es suficiente considerar las dos sucesiones $a_n= \dfrac{1}{2n\pi}$ y $b_n=\dfrac{1}{2n\pi + \frac{\pi}{2}}$, ambas tienden a $0$, sin embargo $\cos 2n \pi \rightarrow 1$ en tanto que $\cos 2n\pi + \frac{\pi}{2} \rightarrow 1$.
+
+En el segundo límite, se trata de una función que tiene límite $0$ multiplicada por otra que está acotada, ya que $\left|\cos \dfrac{1}{x}\right| \leq 1$, por lo tanto $\lim_{x \rightarrow 0} x \cos \dfrac{1}{x}=0$
+
+</div>
 
 
 ## Infinitésimos
