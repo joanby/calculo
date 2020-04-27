@@ -1,0 +1,16 @@
+---
+title: "Problemas de derivabilidad de funciones. Estudio local de funciones."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Realizar un estudio completo y la gráfica correspondiente de la función $f(x)=x^3-5 x^2+12$.
+1. Realizar un estudio completo y la gráfica correspondiente de la función $f(x)=\frac{x+1}{x^2+1}$.
+1. Realizar un estudio completo y la gráfica correspondiente de la función $f(x)=\ln (\cos^2 x)$.
+1. Realizar un estudio completo y la gráfica correspondiente de la función $f(x)=\frac{x^2}{x-1}$.
+
+
