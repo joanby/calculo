@@ -486,7 +486,7 @@ Aparecen algunas técnicas nuevas, como las relacionadas con la consideración d
 
 ## Cálculo de límites
 
-<div class="example"> **Ejemplos**
+<div class="example"> **Ejemplo 1**
 
 Calcula el $\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2}$.
 
@@ -512,7 +512,7 @@ La gráfica de la función corrobora el resultado obtenido:
 
 ## Cálculo de límites
 
-<div class="example"> **Ejemplos**
+<div class="example"> **Ejemplo 2**
 
 Demuestra que no existe el $\lim_{x \rightarrow 0}  \cos \dfrac{1}{x}$ y que $\lim_{x \rightarrow 0} x \cos \dfrac{1}{x}=0$
 
@@ -533,6 +533,24 @@ Gráficas de la funciones $f(x)=\cos \frac{1}{x}$ y $g(x)=x \cos \frac{1}{x}$, r
  <p class="caption"> </p>
  </div>
 </div>
+
+## Cálculo de límites
+
+<div class="example"> **Ejemplo 3**
+
+Calcula el $\lim_{x \rightarrow 1} \dfrac{\sqrt{x} -1}{x-1}$.
+
+Se trata de una indetermminación del tipo $\dfrac{0}{0}$. En este caso el cambio de variable $x = t^2$ puede ser útil, dado que 
+$$
+\lim_{x \rightarrow 1} \dfrac{\sqrt{x} -1}{x-1} = \lim_{t \rightarrow 1}\dfrac{t-1}{t^2-1}=\lim_{t \rightarrow 1}\dfrac{t-1}{(t-1)(t+1)} =\lim_{t \rightarrow 1}\dfrac{1}{t+1} = \dfrac{1}{2}
+$$
+
+</div>
+<div class="center">
+
+ <img src="Images/limit3.png" width="300px" />
+</div>
+
 
 
 ## Infinitésimos
