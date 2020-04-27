@@ -750,12 +750,12 @@ La función $\sin : \mathbb{R} \rightarrow \mathbb{R}$ es contínua para todo $x
 
 <div class="dem"> **Demostración**
 
-Hay que ver que, para cada $\epsilon >0$ existe $\delta >0$ tla que si $|x-x_0| < \delta$ entonces $|\sin x - \sin x_0|<\epsilon$.
+Hay que ver que, para cada $\epsilon >0$ existe $\delta >0$ tal que si $|x-x_0| < \delta$ entonces $|\sin x - \sin x_0|<\epsilon$.
 
-Teniendo en cuenta la igualda trigonométrica: $\sin \alpha -\sin \beta = 2 \sin \frac{\alpha - \beta}{2} \cos \frac{\alpha + \beta}{2}$
+Teniendo en cuenta la igualdad trigonométrica: $\sin \alpha -\sin \beta = 2 \sin \frac{\alpha - \beta}{2} \cos \frac{\alpha + \beta}{2}$
 tenemos 
 $$
 \sin x -\sin x_0 =2 \sin \frac{x-x_0}{2} \cos \frac{x+x_0}{2} = \frac{x-x_0}{2} \frac{\sin \frac{x-x_0}{2}}{\frac{x-x_0}{2}} \cos \dfrac{x+x_0}{2} 
 $$
-Por lo tanto, dado que $\lim\frac{\sin \frac{x-x_0}{2}}{\frac{x-x_0}{2}} =1$ y que la función $\cos x$ está acotada, tendremos que $\lim_{x \rightarrow x_0} (sin x -\sin x_0) = 0$, es decir, que para todo $\epsilon >$, existe $\delta >0$ tal que si $|x-x_0| <\delta$ entonces $|\sin x -\sin x_0|<\epsilon$, que es lo que queríamos demostrar.
+Por lo tanto, dado que $\lim\frac{\sin \frac{x-x_0}{2}}{\frac{x-x_0}{2}} =1$ y que la función $\cos x$ está acotada, tendremos que $\lim_{x \rightarrow x_0} (sin x -\sin x_0) = 0$, es decir, que para todo $\epsilon >0$, existe $\delta >0$ tal que si $|x-x_0| <\delta$ entonces $|\sin x -\sin x_0|<\epsilon$, que es lo que queríamos demostrar.
 </div>
