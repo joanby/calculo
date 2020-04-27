@@ -698,7 +698,6 @@ Las funciones contínuas son precisamente las funciones para las que, una vez fi
 En lo que sigue, veremos que de esta condición tiene consecuencias muy notables.
 
 
-
 ## Funciones contínuas
 
 <div class="center">
