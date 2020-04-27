@@ -467,7 +467,7 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
 @) También es fácil comprobar que $\lim_{x \rightarrow -\infty} \dfrac{1}{x} =0 = \lim_{x \rightarrow \infty}  \dfrac{1}{x}$
 
 
-## Límites en el infinito: Gráfica de la función $\dfrac{1}{x}$
+## Límites en el infinito: Gráfica de la función $\frac{1}{x}$
 
 <div class="center">
 
@@ -475,6 +475,52 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
 </div>
 
 # Cálculo de límites
+
+## Cálculo de límites
+
+Dada la definición de límite de una función en un punto que hemos hecho, vinculada a la de límite de sucesiones, no debería sorprendernos que una buena parte de las técnicas exploradas para el cálculo de límites de sucesiones sean también de aplicación para el cálculo de límite de funciones.
+
+Así, por ejemplo $\lim_{x \rightarrow 0}(1+x)^{\frac{1}{x}} = e$, puesto que, como hemos visto en el tema anterior, dada una sucesión $a_n$ tal que $a_n \rightarrow 0$, es $\lim (1+a_n)^{\frac{1}{a_n}}=e$, como esta igualdad es cierta para cualquier sucesión que tenga límite $0$, es $\lim_{x \rightarrow 0}(1+x)^{\frac{1}{x}} =e$.
+
+Aparecen algunas técnicas nuevas, como las relacionadas con la consideración de límites laterales o la de los infinitésimos equivalentes, y algunas dejan de tener sentido, como por ejemplo, las que involucran el criterio de Stoltz.
+
+## Cálculo de límites
+
+<div class="example"> **Ejemplos**
+
+Calcula el $\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2}$.
+
+En primer lugar, la función està definida para todos los puntos $x \geq -\frac{1}{3}$, menos el punto $x=0$. Por lo tanto $x$ es un punto de acumulación del dominio y tiene sentido considerar el límite de la función en ese punto.
+
+En segundo lugar, se trata de una indeterminación del tipo $\frac{0}{0}$, en estos casos que involucran sumas o diferencias de raícces cuadradas, es conveniente intentar resolver la indeterminación multiplicando y dividiendo por el conjugado:
+$$
+\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2} = \lim_{x \rightarrow 0}(\dfrac{\sqrt{1+2x} - \sqrt{1+3x})(\sqrt{1+2x} + \sqrt{1+3x})}{(x+2x^2)(\sqrt{1+2x} + \sqrt{1+3x})}
+$$
+$$
+= \lim_{x \rightarrow 0}\dfrac{1+2x - (1+3x)}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})} = \lim_{x \rightarrow 0}\dfrac{-x}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})}=-\dfrac{1}{2}
+$$
+</div>
+
+## Cálculo de límites
+
+La gráfica de la función corrobora el resultado obtenido:
+
+<div class="center">
+
+ <img src="Images/limit1.png" width="600px" />
+</div>
+
+## Cálculo de límites
+
+<div class="example"> **Ejemplos**
+
+Demuestra que no existe el $\lim_{x \rightarrow 0}  \cos \dfrac{1}{x}$ y que $\lim_{x \rightarrow 0} x \cos \dfrac{1}{x}=0$
+
+Para ver que no existe el primer límite es suficiente considerar las dos sucesiones $a_n= \dfrac{1}{2n\pi}$ y $b_n=\dfrac{1}{2n\pi + \frac{\pi}{2}}$, ambas tienden a $0$, sin embargo $\cos 2n \pi \rightarrow 1$ en tanto que $\cos 2n\pi + \frac{\pi}{2} \rightarrow 1$.
+
+En el segundo límite, se trata de una función que tiene límite $0$ multiplicada por otra que está acotada, ya que $\left|\cos \dfrac{1}{x}\right| \leq 1$, por lo tanto $\lim_{x \rightarrow 0} x \cos \dfrac{1}{x}=0$
+
+</div>
 
 
 ## Infinitésimos
@@ -508,6 +554,7 @@ $$
 1. $f(x)= 3x -5x^2$ y $g(x)=3x$ en $x=0$, puesto que el $\lim_{x \rightarrow 0} \frac{3x-5x^2}{3x} =1$.
 2. $h(x)= e^x -1$ y $p(x)=x$, en $x=0$, puesto que el $\lim_{x \rightarrow 0} \dfrac{e^x-1}{x}=1$.
 3. $\log (1+x)$ y $x$ son equivalentes en $x=0$, puesto que $\lim_{x \rightarrow 0} \dfrac{\log(1+x)}{x} = \lim_{x \rightarrow 0} \log(1+x)^\frac{1}{x} = \log \lim (1+x)^\frac{1}{x} = \log e =1$.
+4. $r(x)= 1-\cos x$ y $s(x)=\dfrac{x^2}{2}$ son infinitésimos equivalentes en $x=0$.
 
 
 
@@ -524,7 +571,7 @@ Las funciones $\sin x$ y $x$ son infinitésimos equivalentes en $x=0$
  <img src="Images/sinxx1.png" width="600px" />
 </div>
 
-## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
 
 <div class="center">
 
@@ -538,7 +585,7 @@ El área del sector circular $ABE$ es $\frac{1}{2} \alpha$
 El área del triángulo $ADE$ es $\frac{1}{2} \tan \alpha$
 
 
-## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
 
 Claramente, la relación entre estas tres áreas es la siguiente
 $$
@@ -553,7 +600,7 @@ $$
 1 = \lim_{x \rightarrow 0^+} \cos x \leq \lim_{x \rightarrow 0^+}\dfrac{\sin x}{x} \leq 1
 $$
 
-## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
 
 Análogamente tenemos
 $$
@@ -604,3 +651,25 @@ $$
 \lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}= \lim \dfrac{\sin 2x}{3x} = \dfrac{2}{3}\lim\dfrac{\sin 2x }{2x}= \dfrac{2}{3}
 $$
 </div>
+
+
+
+# Continuidad
+
+## Introducción
+
+Dada una función $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, si $x \in A$ es irracional cabe preguntarse cómo podemos evaluar f(x). Dado que podemos aproximar $x$ por raconales tanto como queramos, sería conveniente poder determinar la precisión de esta aproximación una vez que conozcamos la precisió requerida para $f(x)$. 
+
+Las funciones contínuas son precisamente las funciones para las que, una vez fijada la precisión requerida a $f(x)$, es posible determinar la precisión de $x$, para tener asegurada la precisión requerida.
+
+En lo que sigue, veremos que de esta condición tiene consecuencias muy significativas.
+
+
+
+## Funciones contínuas
+
+<div class="center">
+<img src="Images/fcont.png" width="300px" />
+</div>
+
+$\epsilon$ es la precisión con la queremos $f(x_0)$ y $\delta$ es la precisón para $x_0$. Es decir, $f(x_0) \in (f(x_0)-\epsilon,f(x_0)+\epsilon)$, siempre que $x_0 \in (x_0 -\delta, x_0 + \delta)$.
