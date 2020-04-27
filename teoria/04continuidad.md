@@ -405,7 +405,7 @@ Si $\lim_{x \rightarrow c}f(x) = L$, entonces para toda sucesión $x_n$ tal que 
 
 Supongamos ahora que los dos límites laterales existen y son iguales a $L$. Sea $x_n$ tal que $x_n \rightarrow c$, entonces tres casos són posibles:1) todos los $x_n$ a partir de un lugar son tales que $x_n \geq c$, 2) todos los $x_n$ a partir de un lugar son tales que $x_n \leq c$, y 3) existen infinitos $x_{n_k}$ tales que $x_{n_k} \geq c$ e infinitos $x_{n_j}$ tales que $x_{n_j} \leq c$, claramente $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$.
 
-En todos los casos es $f(x_n) \rightarrow L$, en el primero por ser $\lim_{x \rightarrow c^+}f(x)$ y en el segundo por ser  $\lim_{x \rightarrow c^-}f(x)$. El el tercer caso tendríammos dos subsucesiones $f(x_{n_k})$ y $f(x_{n_j})$ con el mismo límite L y, por lo tanto es $f(x_n) \rightarrow L$, dado que $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$. En definitiva es  $\lim_{x \rightarrow c}f(x) = L$.
+En todos los casos es $f(x_n) \rightarrow L$, en el primero por ser $\lim_{x \rightarrow c^+}f(x)$ y en el segundo por ser  $\lim_{x \rightarrow c^-}f(x)$. El el tercer caso tendríamos dos subsucesiones $f(x_{n_k})$ y $f(x_{n_j})$ con el mismo límite L y, por lo tanto es $f(x_n) \rightarrow L$, dado que $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$. En definitiva es  $\lim_{x \rightarrow c}f(x) = L$.
 
 
 ## Limites infinitos
@@ -540,7 +540,7 @@ Gráficas de la funciones $f(x)=\cos \frac{1}{x}$ y $g(x)=x \cos \frac{1}{x}$, r
 
 Calcula el $\lim_{x \rightarrow 1} \dfrac{\sqrt{x} -1}{x-1}$.
 
-Se trata de una indetermminación del tipo $\dfrac{0}{0}$. En este caso el cambio de variable $x = t^2$ puede ser útil, dado que 
+Se trata de una indeterminación del tipo $\dfrac{0}{0}$. En este caso el cambio de variable $x = t^2$ puede ser útil, dado que 
 $$
 \lim_{x \rightarrow 1} \dfrac{\sqrt{x} -1}{x-1} = \lim_{t \rightarrow 1}\dfrac{t-1}{t^2-1}=\lim_{t \rightarrow 1}\dfrac{t-1}{(t-1)(t+1)} =\lim_{t \rightarrow 1}\dfrac{1}{t+1} = \dfrac{1}{2}
 $$
@@ -584,15 +584,14 @@ $$
 1. $f(x)= 3x -5x^2$ y $g(x)=3x$ en $x=0$, puesto que el $\lim_{x \rightarrow 0} \frac{3x-5x^2}{3x} =1$.
 2. $h(x)= e^x -1$ y $p(x)=x$, en $x=0$, puesto que el $\lim_{x \rightarrow 0} \dfrac{e^x-1}{x}=1$.
 3. $\log (1+x)$ y $x$ son equivalentes en $x=0$, puesto que $\lim_{x \rightarrow 0} \dfrac{\log(1+x)}{x} = \lim_{x \rightarrow 0} \log(1+x)^\frac{1}{x} = \log \lim (1+x)^\frac{1}{x} = \log e =1$.
-4. $r(x)= 1-\cos x$ y $s(x)=\dfrac{x^2}{2}$ son infinitésimos equivalentes en $x=0$.
 
 
-
+</(div>
 
 
 ## Infinitésimos equivalentes
 
-<div class="example"> **Ejemplo**
+<l class="prop"> **Proposición** </l>
 
 Las funciones $\sin x$ y $x$ son infinitésimos equivalentes en $x=0$
 
@@ -646,6 +645,27 @@ Por lo tanto, $\sin x$ y $x$ son infinitésimos equivalentes en $0$.
 
 <l class="prop"> **Proposición** </l>
 
+$1-\cos x$ y $\dfrac{x^2}{2}$ son infinitésimos equivalentes en $x=0$.
+
+<div class="dem"> **Demostración**
+
+Es inmediata a partir de la consideración de la igualdad trigonométrica: 
+$$
+1-\cos x =\dfrac{\sin^2 x}{1+ \cos x}
+$$
+
+que se puede verificar mediante cálculos elementales. Ahora
+
+$$
+\lim_{x \rightarrow 0} \dfrac{ 1-\cos x}{\dfrac{x^2}{2}}= \lim_{x \rightarrow 0} \dfrac{\dfrac{\sin^2 x}{1+ \cos x}}{\dfrac{x^2}{2}} = \lim_{x \rightarrow 0}\dfrac{2 \sin^2 x}{x^2(1+\cos x)}= \lim_{x\rightarrow 0} \dfrac{\sin^2 x}{x^2} \lim_{x \rightarrow 0} \dfrac{2}{1+\cos x} =  1
+$$
+
+</div>
+
+## Infinitésimos equivalentes.
+
+<l class="prop"> **Proposición** </l>
+
 Sean $f,g,h: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y sea $c$ un punto de acumulación de $a$. Supongamos, además que $f(x)$ y $g(x)$ son infinitésimos equivalentes en $x =c$. Entonces
 
 1. Existe el $\lim_{x \rightarrow c} f(x)h(x) = L$ si, y sólo si, existe el $\lim g(x)h(x)=L$. 
@@ -653,7 +673,7 @@ Sean $f,g,h: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y sea $c$ un punto de 
 
 2. Existe el $\lim_{x \rightarrow c} \dfrac{f(x)}{h(x)} = L$ si, y sólo si, existe el $\lim \dfrac{g(x)}{h(x)}=L$.
 
-<div class="observ"> **Observación**
+<div class="important"> **Importante**
 
 La proposición anterior establece que, en el cálculo de un límite, se pude substituir un infinitésimo por otro equivalente, siempre que el infinitésimo multiplique o divida a la otra función involucrada. No se puede substituir si forma parte de una suma o de una diferencia.
 
@@ -672,9 +692,9 @@ $$
 
 </div>
 
-<div class="example"> **Ejemplo**
+<div class="example"> **Ejemplos**
 
-Cálculo del límite $\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}$
+*Ejemplo 1.*Cálculo del límite $\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}$
 
 Primero, usamos la equivalencia entre $3x -5x^3$ y $3x$ y, acontinuación, la que hay entre $\sin 2x$ y $2x$:
 $$
@@ -682,7 +702,25 @@ $$
 $$
 </div>
 
+## Infinitésimos equivalentes. Más ejemplos
 
+<div class="example"> **Ejemplos**
+
+*Ejemplo 2.* Calcula el $\lim_{x \rightarrow 0}\dfrac{\sqrt[3]{x^3+2x^4}}{\log (1+2x)}$.
+
+Dado que $\log(1+x)$ y $x$ son equivalentes, mediante el cambio de variable $x=2t$, vemos que también lo son $\log(1+2x)$ y $2x$. Por lo tanto,
+$$
+\lim_{x \rightarrow 0}\dfrac{\sqrt[3]{x^3+2x^4}}{\log (1+2x)} = \lim_{x \rightarrow 0} \dfrac{\sqrt[3]{x^3+2x^4}}{2x}= \dfrac{1}{2}
+$$
+
+*Ejemplo 3.* Demuestra que $\dfrac{x}{2}$ y $\sqrt{1+x}-1$ son infinitésimos equivalentes en $x=0$.
+
+Debemos demostrar que $\lim_{x \rightarrow 0}\dfrac{\dfrac{x}{2}}{\sqrt{1+x}-1}=1$. Mediante el cambio de variable $1+x =t^2$, tenemos que cuando $x \rightarrow 0$, $t \rightarrow 1$ y, por lo tanto,
+$$
+\lim_{x \rightarrow 0}\dfrac{\dfrac{x}{2}}{\sqrt{1+x}-1} = \lim_{t \rightarrow 1}\dfrac{t^2 -1}{2(t-1)} = \lim_{t \rightarrow 1} \dfrac{t+1}{2} =1.
+$$
+
+</div>
 
 # Continuidad
 
