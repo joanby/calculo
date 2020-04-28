@@ -749,7 +749,7 @@ $$
 
 ## Introducción
 
-Dada una función $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, si $x \in A$ es irracional cabe preguntarse cómo podemos evaluar f(x). Dado que podemos aproximar $x$ por raconales tanto como queramos, sería conveniente poder determinar la precisión de esta aproximación una vez que conozcamos la precisió requerida para $f(x)$. 
+Dada una función $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, si $x \in A$ es irracional cabe preguntarse cómo podemos evaluar f(x). Dado que podemos aproximar $x$ por racionales tanto como queramos, sería conveniente poder determinar la precisión de esta aproximación una vez que conozcamos la precisión requerida para $f(x)$. 
 
 Las funciones contínuas son precisamente las funciones para las que, una vez fijada la precisión requerida a $f(x)$, es posible determinar la precisión de $x$, para tener asegurada la precisión requerida.
 
@@ -787,8 +787,22 @@ $\epsilon$ es la precisión con la queremos $f(x_0)$ y $\delta$ es la precisón 
 
 2. Si $x_0$ es un punto aislado de $A$, es decir, que no es de acumulación, entonces, dado que existe una entorno de $x_0$ donde este es el único punto de $A$, para que $f$ sea contínua en $x_0$ es suficiente que $f$ esté definida en ese punto.
 
-3. El concepto de continuïdad es esencialmente **local**: una función es contínua en un punto. No hay que olvidar, pues, que la precisión $\delta$ para $x_0$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada *continuïdad uniforme*. 
+3. El concepto de continuidad es esencialmente **local**: una función es contínua en un punto. No hay que olvidar, pues, que la precisión $\delta$ para $x_0$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada *continuidad uniforme*. 
 
+
+## Funciones contínuas: Ejemplos.
+
+<div class="example"> **Ejemplos**
+
+1. Una función constante $f(x)=c$ es contínua para todo $x \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces $f(x_n) \rightarrow c$, puesto que $f(x_n)=c$, para todo $n \in \mathbb{N}$
+
+2. $g(x) = x$ es contínua para todo $x  \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces, obviamente $g(x_n)=x_n \rightarrow x_0$.
+
+3. 
+
+
+
+</div>
 
 
 ## La función $\sin x$ es contínua.
@@ -811,3 +825,5 @@ $$
 \lim_{x \rightarrow x_0} \sin x = \sin x_0.
 $$
 </div>
+
+
