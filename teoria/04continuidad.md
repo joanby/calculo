@@ -586,7 +586,7 @@ $$
 3. $\log (1+x)$ y $x$ son equivalentes en $x=0$, puesto que $\lim_{x \rightarrow 0} \dfrac{\log(1+x)}{x} = \lim_{x \rightarrow 0} \log(1+x)^\frac{1}{x} = \log \lim (1+x)^\frac{1}{x} = \log e =1$.
 
 
-</(div>
+</div>
 
 
 ## Infinitésimos equivalentes
@@ -694,7 +694,7 @@ $$
 
 <div class="example"> **Ejemplos**
 
-*Ejemplo 1.*Cálculo del límite $\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}$
+*Ejemplo 1.* Cálculo del límite $\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}$
 
 Primero, usamos la equivalencia entre $3x -5x^3$ y $3x$ y, acontinuación, la que hay entre $\sin 2x$ y $2x$:
 $$
@@ -773,10 +773,19 @@ $\epsilon$ es la precisión con la queremos $f(x_0)$ y $\delta$ es la precisón 
 
 2. $g(x) = x$ es contínua para todo $x  \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces, obviamente $g(x_n)=x_n \rightarrow x_0$.
 
-3. 
+3. $h(x)=x^2$ es contínua para todo $x \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces $x_n^2 \rightarrow x_0^2$.
 
+4. La función signo $\text{sgn}(x)$ no es contínua en $x=0$, puesto que como hemos visto no existe el $\lim_{x \rightarrow x_0} \text{sgn} (x)$, dado que $-1 = \lim_{x \rightarrow x_0^-} \text{sgn}(x) \neq \lim_{x \rightarrow x_0^+} \text{sgn}(x) =1$.
 
-
+5. La función $\psi :\mathbb{R} \rightarrow \mathbb{R}$ definida por
+$$
+\psi(x)=
+\begin{cases}
+1, \text{ si } x \in \mathbb{Q}; \\
+0, \text{ si } x \in \mathbb{R} \setminus \mathbb{Q}.
+\end{cases}
+$$
+es discontinua en todo punto $x \in \mathbb{R}$, puesto que si $x \in \mathbb{Q}$, existe una sucesión de irracionales $x_n$, tal que $x_n \rightarrow x$ y, por lo tanto $\psi(x_n)= 0$ para todo $n$, es deciir que $\psi(x_n) \rightarrow 0 \neq 1=\psi(x)$. Anàlogamente, si $x \in \mathbb{R}\setminus \mathbb{Q}$, existe una sucesión de racionales tal que $x_n \rightarrow x$ y, por lo tanto $\psi(x_n) \rightarrow 1 \neq 0=\psi(x)$
 </div>
 
 
@@ -801,4 +810,61 @@ $$
 $$
 </div>
 
+## Funciones contínuas
 
+<l class="observ"> **Observaciones** </l>
+
+1. Puede ocurrir que una función $f : A \subset \mathbb{R} \rightarrow \mathbb{R}$ no esté definida en un punto de acumulación $c$ de $A$ y, sin embargo exista el $\lim_{x \rightarrow c} f(x) = L$, entonces la función $F :A \cup \{c\} \rightarrow \mathbb{R}$ definida por
+$$
+F(x)=
+\begin{cases}
+L, \quad  \text{ si } x=c \\
+f(x), \text{ si } x \in A
+\end{cases}
+$$
+es una función contínua en $A \cup \{c\}$.
+
+2. Caso que no exista el  $\lim_{x \rightarrow c} f(x)$, entonces no es posible extender $f$ a una función contínua en $A \cup \{c\}$, puesto que sea cual sea el valor, $L$ que asignemos a la extensión $F$ en $c$, dicha función no podria ser contínua, puesto que si fuera contínua tendríamos que $\lim_{x \rightarrow c} f(x)=L$, y hemos supuesto dicho límite no existía.
+
+## Funciones contínuas
+
+<div class="example"> **Ejemplos**
+
+1. La función $f(x)= \frac{\sin x}{x}$, no está definida en $x=0$, sin embargo, dado que existe $\lim_{x \rightarrow 0} \frac{\sin x}{x} =1$, se puede extender dicha función a una función contínua definida en $x=0$, asignando en ese punto el valor del límite, es decir 
+$$
+f(0) =1 = \lim_{x \rightarrow 0} \frac{\sin x}{x} 
+$$
+
+2. Por el contrario, no es posible extender la función $h(x)= \text{sgn}(x)$ para que sea contínua en $x=0$, puesto que, como como hemos visto, no existe el $\lim_{x \rightarrow 0} \text{sgn} (x)$.
+
+3. Dado que el $\lim_{x \rightarrow 0} x \cos \frac{1}{x} = 0$, entonces la función $\varphi :\mathbb{R} \rightarrow \mathbb{R}$, definida por
+$$
+\varphi (x) =
+\begin{cases}
+0, \qquad \,  \text{ si } x=0 \\
+x \cos \frac{1}{x}, \text{ si } x \neq 0
+\end{cases}
+$$
+es una función contínua para todo $x \in \mathbb{R}$
+
+
+## Combinaciones de funciones contínuas
+
+## Composición de funciones
+
+<l class="definition"> **Definición** </l>
+
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g: B \subset \mathbb{R} \rightarrow \mathbb{R}$ tales que $f(A) \subset B$. La función compuesta de $f$ y $g$, $g \circ f$ es la función $g \circ f : A \rightarrow \mathbb{R}$ definida por
+$$
+g \circ f (x)= g(f(x))
+$$
+
+
+<l class="observ"> **Observación** </l>
+
+Por $f(A)$ se entiende el conjunto de los elementos de $\mathbb{R}$ tales que son imagen por $f$ de algún elemento de $A$, es decir
+$$
+f(A) =\{y \in \mathbb{R}: y=f(x)\text{ para algún x }\in A \}
+$$
+
+## Composició de funciones: Ejemplos.
