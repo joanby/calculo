@@ -732,6 +732,19 @@ Las funciones contínuas son precisamente las funciones para las que, una vez fi
 
 En lo que sigue, veremos que de esta condición tiene consecuencias muy notables.
 
+## Funciones contínuas.
+
+<l class="definition"> **Definición** </l>
+
+Sean $f: A\subset \mathbb{R} \rightarrow \mathbb{R}$ y $x_0 \in A$, **$f$ és contínua en $x_0$** si para cada $\epsilon >0$ existe un $\delta >0$ tal que para todo $x \in A$ que verifique que $|x-x_0|<\delta$, entonces $|f(x)-f(x_0)|< \epsilon$.
+
+Diremos que **$f$ es contínua en $A$**, si es contínua para todo $x \in A$.
+
+Dicho de otra forma, **$f$ es contínua en $x_0$** si, una vez fijada la precisión, $\epsilon$, que se requiere para $f(x_0)$, es posible determinar la precisión, $\delta$, que hay que exigir a $x_0$ para tener asegurada la precisión de $f(x_0)$.
+
+La gráfica siguiente ilustra esta definición.
+
+
 
 ## Funciones contínuas
 
@@ -740,6 +753,17 @@ En lo que sigue, veremos que de esta condición tiene consecuencias muy notables
 </div>
 
 $\epsilon$ es la precisión con la queremos $f(x_0)$ y $\delta$ es la precisón para $x_0$. Es decir, $f(x_0) \in (f(x_0)-\epsilon,f(x_0)+\epsilon)$, siempre que $x_0 \in (x_0 -\delta, x_0 + \delta)$.
+
+## Funciones contínuas
+
+<l class="observ"> **Observaciones** </l>
+
+1. Es fàcil comprobar que si $x_0$ es un punto de acumulación de $A$, entonces $f$ es contínua en $x_0$ si, y sólo sí, $\lim _{x \rightarrow x_0}f(x)=f(x_0)$.
+
+2. Si $x_0$ es un punto aislado de $A$, es decir, que no es de acumulación, entonces, dado que existe una entorno de $x_0$ donde este es el único punto de $A$, para que $f$ sea contínua en $x_0$ es suficiente que $f$ esté definida en ese punto.
+
+3. El concepto de continuïdad es esencialmente **local**: una función es contínua en un punto. No hay que olvidar, pues, que la precisión $\delta$ para $x_0$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada *continuïdad uniforme*. 
+
 
 
 ## La función $\sin x$ es contínua.
@@ -750,12 +774,15 @@ La función $\sin : \mathbb{R} \rightarrow \mathbb{R}$ es contínua para todo $x
 
 <div class="dem"> **Demostración**
 
-Hay que ver que, para cada $\epsilon >0$ existe $\delta >0$ tal que si $|x-x_0| < \delta$ entonces $|\sin x - \sin x_0|<\epsilon$.
+Hay que ver que, para cada $\epsilon >0$ existe $\delta >0$ tal que si $|x-x_0| < \delta$ entonces $|\sin x - \sin x_0|<\epsilon$, o lo que es lo mismo, dado que en su dominio no hay puntos aislados, que $\lim_{x \rightarrow x_0} \sin x = \sin x_0$
 
-Teniendo en cuenta la igualdad trigonométrica: $\sin \alpha -\sin \beta = 2 \sin \frac{\alpha - \beta}{2} \cos \frac{\alpha + \beta}{2}$
+Teniendo en cuenta la igualdad trigonométrica: $\sin \alpha -\sin \beta = 2 \sin \frac{\alpha - \beta}{2} \cos \frac{\alpha + \beta}{2}$, 
 tenemos 
 $$
 \sin x -\sin x_0 =2 \sin \frac{x-x_0}{2} \cos \frac{x+x_0}{2} = \frac{x-x_0}{2} \frac{\sin \frac{x-x_0}{2}}{\frac{x-x_0}{2}} \cos \dfrac{x+x_0}{2} 
 $$
-Por lo tanto, dado que $\lim\frac{\sin \frac{x-x_0}{2}}{\frac{x-x_0}{2}} =1$ y que la función $\cos x$ está acotada, tendremos que $\lim_{x \rightarrow x_0} (sin x -\sin x_0) = 0$, es decir, que para todo $\epsilon >0$, existe $\delta >0$ tal que si $|x-x_0| <\delta$ entonces $|\sin x -\sin x_0|<\epsilon$, que es lo que queríamos demostrar.
+Por lo tanto, dado que $\lim_{x \rightarrow x_0}\frac{\sin \frac{x-x_0}{2}}{\frac{x-x_0}{2}} =1$ y que la función $\cos x$ está acotada, tendremos que $\lim_{x \rightarrow x_0} (sin x -\sin x_0) = 0$, es decir, que
+$$
+\lim_{x \rightarrow x_0} \sin x = \sin x_0.
+$$
 </div>
