@@ -892,4 +892,12 @@ $$
 f(A) =\{y \in \mathbb{R}: y=f(x)\text{ para algún x }\in A \}
 $$
 
+## Composición de funciones
+
+<div class="center">
+```{r, echo=FALSE, label=gof,fig.cap="",out.width = "700px"}
+knitr::include_graphics("Images/gof.png",dpi=1200)
+```
+</div>
+
 ## Composició de funciones: Ejemplos.

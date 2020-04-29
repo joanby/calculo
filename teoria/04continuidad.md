@@ -867,4 +867,10 @@ $$
 f(A) =\{y \in \mathbb{R}: y=f(x)\text{ para algún x }\in A \}
 $$
 
+## Composición de funciones
+
+<div class="center">
+<img src="Images/gof.png" width="700px" />
+</div>
+
 ## Composició de funciones: Ejemplos.
