@@ -66,7 +66,7 @@ puesto que para cualquier sucesión $x_n  \rightarrow c$ es obvio que $f(x_n) = 
 $$
 \lim_{x \rightarrow c} \dfrac{1}{x} = \dfrac{1}{c},
 $$
-puesto que si $x_n \rightarrow c$, entonces $\dfrac{1}{x} \rightarrow \dfrac{1}{c}$
+puesto que si $x_n \rightarrow c$, entonces $\dfrac{1}{x_n} \rightarrow \dfrac{1}{c}$
 
 </div>
 
@@ -181,7 +181,7 @@ que era lo que queríamos demostrar.
 
 **1.** La propiedad $\epsilon -\delta$, significa que dada una precisión cualquiera, $\epsilon$, para el resultado, $L$, podemos determinar la precisión, $\delta$, con la que hay que tomar la aproximación, $x$ de $c$, para tener asegurada la precisión requerida para $L$.
 
-**2.** Los ejemplos anteriores muestran que $\delta$ puede depender de $\epsilon$, por lo que sería más apropiado escribir $\delta(\epsilon)$, lo que no se acostumbra a hacer para evitar complicar la notación en exceso, lo cual no és óbice para olvidar esta dependencia.
+**2.** Los ejemplos anteriores muestran que $\delta$ puede depender de $\epsilon$ y del punto $c$, por lo que sería más apropiado escribir $\delta(\epsilon,c)$, lo que no se acostumbra a hacer para evitar complicar la notación en exceso, lo cual no és óbice para olvidar esta dependencia.
 
 **3.** Los ejemplos anteriores también pueden producir la impresión, equivocada, que es más conveniente usar la primera definición de límite que la propiedad $\epsilon-\delta$, pero veremos que, en ocasiones, resulta más conveniente esta última que la primera.
 
@@ -229,7 +229,7 @@ Sean $f,g:A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de v
 
 <l class="prop"> **Proposición** </l>
 
-Sean $f,g:A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de variable real y $c$ un punto de acumulñación de $A$, tales que $\lim_{x \rightarrow c} f(x) = L_1$ y $\lim_{x \rightarrow c} g(x)= L_2$. Entonces
+Sean $f,g:A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de variable real y $c$ un punto de acumulación de $A$, tales que $\lim_{x \rightarrow c} f(x) = L_1$ y $\lim_{x \rightarrow c} g(x)= L_2$. Entonces
 
 P1. $\lim_{x \rightarrow c}(f+g)(x) = L_1+L_2$
 
@@ -305,20 +305,20 @@ f(x) =
 -1, & \mbox { si } x<0
 \end{cases}
 $$
-conocida como la función *signo* de $x$. 
+conocida como la función *signo* de $x$, que se acostumbra a indicar por $\text{sgn}(x)$
 
-$0$ es un punto de acumulación del dominio de $f$, pero no existe el $\lim_{x \rightarrow 0} f(x)$
+$0$ es un punto de acumulación del dominio de $f$, pero no existe el $\lim_{x \rightarrow 0} \text{sgn}(x)$
 
 ## Límites laterales
 
-No existe el $\lim_{x \rightarrow 0}f(x)$. 
+No existe el $\lim_{x \rightarrow 0}\text{sgn}(x)$. 
 
-En efecto, consideremos la sucesión de término general $x_n = \dfrac{(-1)^n}{n}$, entonces es $f(x_{2k})= 1$ en tanto que $f(x_{2k+1})=-1$, para todo $k \in \mathbb{N}$, es decir que la sucesión de término general $f(x_n)$ tiene dos subsucesiones con límite diferente y, por lo tanto, $f(x_n)$ no tiene límite. 
+En efecto, consideremos la sucesión de término general $x_n = \dfrac{(-1)^n}{n}$, entonces es $\text{sgn}(x_{2k})= 1$ en tanto que $\text{sgn}(x_{2k+1})=-1$, para todo $k \in \mathbb{N}$, es decir que la sucesión de término general $\text{sgn}(x_n)$ tiene dos subsucesiones con límite diferente y, por lo tanto, $\text{sgn}(x_n)$ no tiene límite. 
 
-En definitiva no existe el $\lim_{x \rightarrow 0}f(x)$.
+En definitiva no existe el $\lim_{x \rightarrow 0}\text{sgn}(x)$.
 
 
-## Límites laterales: gráfica de la función signo
+## Límites laterales: gráfica de la función $\text{sgn}(x)$
 
 <div class="center">
   ```{r, echo=FALSE, label=sgn1,fig.cap="",out.width = "600px"}
@@ -347,7 +347,7 @@ $$
 
 <div class="example"> **Ejemplos**
 
-@) En el caso de la función *signo*, $f(x) = \dfrac{x}{|x|}$, hemos visto que  $\lim_{x \rightarrow 0^+}f(x) = 1$ y  $\lim_{x \rightarrow 0^-}f(x) = -1$.
+@) En el caso de la función *signo*, $\text{sgn}(x) = \dfrac{x}{|x|}$, hemos visto que  $\lim_{x \rightarrow 0^+}\text{sgn}(x) = 1$ y  $\lim_{x \rightarrow 0^-} \text{sgn}(x) = -1$.
 
 @) Sea $g:\mathbb{R} \rightarrow \mathbb{R}$, la función definida por
 $$
@@ -413,7 +413,7 @@ existen y son iguales.
 
 <div class="dem"> **Demostración**
 
-Si $\lim_{x \rightarrow c}f(x) = L$, entonces para toda sucesión $x_n$ tal que $x_n \rightarrow c$ es $f(x_n) \rightarrow L$. Ahora, si $x_n \rightarrow c$ y $x_n > c$ será igualemente $f(x_n) \rightarrow L$. Análogamente si $x_n <c$.
+Si $\lim_{x \rightarrow c}f(x) = L$, entonces para toda sucesión $x_n$ tal que $x_n \rightarrow c$ es $f(x_n) \rightarrow L$. Ahora, si $x_n \rightarrow c$ y $x_n > c$ será igualmente $f(x_n) \rightarrow L$. Análogamente si $x_n <c$.
 
 Supongamos ahora que los dos límites laterales existen y son iguales a $L$. Sea $x_n$ tal que $x_n \rightarrow c$, entonces tres casos són posibles:1) todos los $x_n$ a partir de un lugar son tales que $x_n \geq c$, 2) todos los $x_n$ a partir de un lugar son tales que $x_n \leq c$, y 3) existen infinitos $x_{n_k}$ tales que $x_{n_k} \geq c$ e infinitos $x_{n_j}$ tales que $x_{n_j} \leq c$, claramente $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$.
 
@@ -785,7 +785,7 @@ $\epsilon$ es la precisión con la queremos $f(x_0)$ y $\delta$ es la precisón 
 
 1. Es fàcil comprobar que si $x_0$ es un punto de acumulación de $A$, entonces $f$ es contínua en $x_0$ si, y sólo sí, $\lim _{x \rightarrow x_0}f(x)=f(x_0)$.
 
-2. Si $x_0$ es un punto aislado de $A$, es decir, que no es de acumulación, entonces, dado que existe una entorno de $x_0$ donde este es el único punto de $A$, para que $f$ sea contínua en $x_0$ es suficiente que $f$ esté definida en ese punto.
+2. Si $x_0$ es un punto aislado de $A$, es decir, que no es de acumulación, entonces, dado que existe un entorno de $x_0$ donde este es el único punto de $A$, para que $f$ sea contínua en $x_0$ es suficiente que $f$ esté definida en ese punto.
 
 3. El concepto de continuidad es esencialmente **local**: una función es contínua en un punto. No hay que olvidar, pues, que la precisión $\delta$ para $x_0$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada *continuidad uniforme*. 
 
