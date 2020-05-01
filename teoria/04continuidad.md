@@ -931,3 +931,25 @@ $$
 </div>
 
 ## Composició de funciones: Ejemplos.
+
+
+## Composición de funciones contínuas
+
+<l class="prop"> **Proposición** </l>
+
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g : B \subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $f(A) \subset B$. Si $f$ es contínua en $x_0$ y $g$ es contínua en $f(x_0)$, entonces $g \circ f$ es contínua en $x_0$
+
+<div class="dem"> **Demostración**
+
+Sea $\epsilon >0$, dado que 
+
+
+</div>
+
+
+
+
+
+
+
+
