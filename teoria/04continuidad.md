@@ -170,6 +170,7 @@ $$
 \left|\dfrac{x^3-4}{x^2+1} -  \dfrac{4}{5}\right| < \epsilon
 $$
 que era lo que queríamos demostrar.
+</div>
 
 ## Sobre la propiedad $\epsilon-\delta$
 
@@ -252,6 +253,7 @@ $$
 \lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = \dfrac{L_1}{L_2}.
 $$
 
+</div>
 
 ## Propiedades del límite de una función
 
@@ -287,6 +289,8 @@ Análogamente, si Si $\lim _{x \rightarrow c} f(x) = L <0$, entonces existe $\de
 Supongamos, en primer lugar que $L>0$. Sea $\epsilon = \dfrac{L}{2} > 0$, entonces, por ser $L= \lim _{x \rightarrow c} f(x)$, existe $\delta >0$ tal que $|f(x)-L|<\dfrac{L}{2}= \epsilon$, por lo tanto, tenemos que $-\dfrac{L}{2} < f(x) - L < \dfrac{L}{2}$ y por lo tanto, es $0 <\dfrac{L}{2} < f(x)$. 
 
 La demostración para el caso $L<0$ es completamente similar y se deja como ejercicio.
+
+</div>
 
 ## Límites laterales
 
@@ -361,6 +365,8 @@ x^2+1, & \mbox{ si } x > 0
 $$
 Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 1$. y, como veremos a continuación, existe el $\lim_{x \rightarrow 0} h(x)$ y es igual a $1$.
 
+</div>
+
 ## Gráfica de la función g 
 
 <div class="center">
@@ -407,10 +413,11 @@ Supongamos ahora que los dos límites laterales existen y son iguales a $L$. Sea
 
 En todos los casos es $f(x_n) \rightarrow L$, en el primero por ser $\lim_{x \rightarrow c^+}f(x)$ y en el segundo por ser  $\lim_{x \rightarrow c^-}f(x)$. El el tercer caso tendríamos dos subsucesiones $f(x_{n_k})$ y $f(x_{n_j})$ con el mismo límite L y, por lo tanto es $f(x_n) \rightarrow L$, dado que $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$. En definitiva es  $\lim_{x \rightarrow c}f(x) = L$.
 
+</div>
 
 ## Limites infinitos
 
-<l class="definition"> **Definición**
+<l class="definition"> **Definición** </l>
 
 Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$,
 
@@ -432,6 +439,7 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
 
 $\lim_{x \rightarrow 0} \dfrac{1}{x^2} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| <K$ y, por lo tanto $|f(x_n)|=\dfrac{1}{x_n^2}>K^2$.
 
+</div>
 
 <div class="center">
 
@@ -454,6 +462,8 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
 
 @) Demuestra que $L = lim_{x \rightarrow -\infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x<-K$ entonces $|f(x)-L|<\epsilon$.
 
+</div>
+
 ## Limites en el infinito
 
 <div class="example"> **Ejemplos**
@@ -466,6 +476,7 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
 
 @) También es fácil comprobar que $\lim_{x \rightarrow -\infty} \dfrac{1}{x} =0 = \lim_{x \rightarrow \infty}  \dfrac{1}{x}$
 
+</div>+
 
 ## Límites en el infinito: Gráfica de la función $\frac{1}{x}$
 
@@ -568,7 +579,7 @@ Sea $c$ un punto de acumulación del dominio de una función $f: A \subset \math
 5. $l(x)= \dfrac{1}{x^2}$ en $x=\pm \infty$,
 6. $p(x) = e^{\frac{1}{x}}$ en $x=\pm\infty$
 
-<div>
+</div>
 
 ## Infinitésimos equivalentes
 
@@ -847,9 +858,44 @@ x \cos \frac{1}{x}, \text{ si } x \neq 0
 $$
 es una función contínua para todo $x \in \mathbb{R}$
 
+</div>
 
 ## Combinaciones de funciones contínuas
 
+<l class="definition"> **Definición** </l>
+
+Sean $f,g: A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de variable real. Entonces
+
+1. $f+g$ es la función de $A$ en $\mathbb{R}$ definida por $(f+g)(x)=f(x)+g(x)$
+2. $f \cdot g$ es la función de $A$ en $\mathbb{R}$ definida por $(f \cdot g)(x)=f(x) \cdot g(x)$
+3. Si $\lambda \in \mathbb{R}$, $\lambda \cdot f$ es la función de $A$ en $\mathbb{R}$ definida por $( \lambda \cdot f)(x) =\lambda \cdot f(x)$.
+4. Si $g(x) \neq 0$, $\dfrac{f}{g}$ es la función de $A$ en $\mathbb{R}$ definida por $\dfrac{f}{g}(x)= \dfrac{f(x)}{g(x)}$
+
+## Combinaciones de funciones contínuas
+
+<l class="prop"> **Proposición** </l>
+
+Sean $f,g : A \subset \mathbb{R} \rightarrow \mathbb{R}$  tales que $f$ y $g$ són contínuas en en $x_0 \in A$. Entonces
+
+1. $f+g$ es contínua en $x_0$
+2. $f.g$ es contínua en $x_0$
+3. Si $\lambda \in \mathbb{R}$, $\lambda f$ es contínua en $x_0$.
+4. Si $g(x_0) \neq 0$, entonces $\dfrac{f}{g}$ es contínua en $x_0$
+
+## Combinaciones de funciones contínuas
+
+<div class="dem"> **Demostración**
+
+Dado un  $\epsilon > 0$. Por ser $f$ continua en $x_0$ existe $\delta_1$ tal que si $|x-x_0| < \delta_1$ entonces $|f(x)-f(x_0)| < \frac{\epsilon}{2}$. Por ser $g$ continua en $x_0$ existe $\delta_2$ tal que si $|x-x_0| < \delta_2$ entonces $|g(x)-g(x_0)| < \frac{\epsilon}{2}$. 
+
+Sea $\delta = \min\{\delta_1, \delta_2\}$, entonces
+$$
+|(f+g)(x)-(f+g)(x_0)| = |f(x)+g(x) -f(x_0)-g(x_0)| 
+$$
+$$
+\leq |f(x)-f(x_0)| + |g(x)-g(x_0)| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+$$
+ 
 ## Composición de funciones
 
 <l class="definition"> **Definición** </l>
