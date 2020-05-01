@@ -397,20 +397,20 @@ knitr::include_graphics("Images/hx.png",dpi=1200)
 
 En lo que sigue,  $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es una función real de variable real y $c$ es un punto de acumulación de $A$.
 
-@) Demuestra que $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<x-c<\delta$, entonces es $|f(x)-L| < \epsilon$. 
+1. Demuestra que $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<x-c<\delta$, entonces es $|f(x)-L| < \epsilon$. 
 
-@) Demuestra que   $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si,si para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<c-x<\delta$, entonces es $|f(x)-L| < \epsilon$.
+2. Demuestra que   $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si,si para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<c-x<\delta$, entonces es $|f(x)-L| < \epsilon$.
 
-@) Demuestra que  $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (x) \cap (c, +\infty)$, entonces $f(x) \in V_{\epsilon}(L)$
+3. Demuestra que  $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (x) \cap (c, +\infty)$, entonces $f(x) \in V_{\epsilon}(L)$
 
-@) Demuestra que  $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (x) \cap (-\infty, c)$, entonces  entonces $f(x) \in V_{\epsilon}(L)$.
+4. Demuestra que  $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (x) \cap (-\infty, c)$, entonces  entonces $f(x) \in V_{\epsilon}(L)$.
 
 </div>
 
 
 ## Límites laterales
 
-<l class="prop"> **Proposición**
+<l class="prop"> **Proposición** </l>
 
 Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y sea $c$ un punto de acumulación de $A$. Entonces existe el $\lim_{x \rightarrow c}f(x)$ si, y sólo si, los dos límites laterales $\lim_{x \rightarrow c^+}f(x)$ y $\lim_{x \rightarrow c^-}f(x)$
 existen y son iguales.
@@ -433,9 +433,9 @@ En todos los casos es $f(x_n) \rightarrow L$, en el primero por ser $\lim_{x \ri
 
 Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$,
 
-@) Diremos que $\lim_{x \rightarrow c}f(x) = +\infty$, si para cada $K >0$ existe un $\delta > 0$ tal que si $x \in V^*_{\delta}(c)$ entonces es $f(x)>K$.
+1. Diremos que $\lim_{x \rightarrow c}f(x) = +\infty$, si para cada $K >0$ existe un $\delta > 0$ tal que si $x \in V^*_{\delta}(c)$ entonces es $f(x)>K$.
 
-@) Diremos que $\lim_{x \rightarrow c}f(x) = - \infty$, si para cada $K >0$ existe un $\delta > 0$ tal que si $x \in V^*_{\delta}(c)$ entonces es $f(x)< -K$
+2. Diremos que $\lim_{x \rightarrow c}f(x) = - \infty$, si para cada $K >0$ existe un $\delta > 0$ tal que si $x \in V^*_{\delta}(c)$ entonces es $f(x)< -K$
 
 <div class="exercise"> **Ejercicio** 
 
@@ -905,21 +905,32 @@ Sean $f,g : A \subset \mathbb{R} \rightarrow \mathbb{R}$  tales que $f$ y $g$ s�
 1. $f+g$ es contínua en $x_0$
 2. $f.g$ es contínua en $x_0$
 3. Si $\lambda \in \mathbb{R}$, $\lambda f$ es contínua en $x_0$.
-4. Si $g(x_0) \neq 0$, entonces $\dfrac{f}{g}$ es contínua en $x_0$
+4. Si $g(x) \neq 0$ para todo $x \in A$, entonces $\dfrac{f}{g}$ es contínua en $x_0$
 
 ## Combinaciones de funciones contínuas
 
 <div class="dem"> **Demostración**
 
-Dado un  $\epsilon > 0$. Por ser $f$ continua en $x_0$ existe $\delta_1$ tal que si $|x-x_0| < \delta_1$ entonces $|f(x)-f(x_0)| < \frac{\epsilon}{2}$. Por ser $g$ continua en $x_0$ existe $\delta_2$ tal que si $|x-x_0| < \delta_2$ entonces $|g(x)-g(x_0)| < \frac{\epsilon}{2}$. 
+Si $x_0$ es un punto aislado, el resultado es inmediato. 
 
-Sea $\delta = \min\{\delta_1, \delta_2\}$, entonces
+Supongamos pues que $x_0$ es un punto de acumulación de $A$, sea $x_n$ una sucesión de puntos de $A$ tal que $x_n \rightarrow x_0$, entonces, dado que $f$ y $g$ son continuas en $x_0$, tendremos que $f(x_n) \rightarrow f(x_0)$ y $g(x_n) \rightarrow g(x_0)$, por lo tanto 
 $$
-|(f+g)(x)-(f+g)(x_0)| = |f(x)+g(x) -f(x_0)-g(x_0)| 
-$$
-$$
-\leq |f(x)-f(x_0)| + |g(x)-g(x_0)| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
-$$
+(f+g)(x_n) = f(x_n)+g(x_n) \rightarrow f(x_0)+g(x_0) = (f+g)(x_0)
+$$. 
+
+Consideraciones anàlogas sirven para demostrar las otras combinaciones descritas en el enunciado.
+
+</div>
+
+<!-- Dado un  $\epsilon > 0$. Por ser $f$ continua en $x_0$ existe $\delta_1$ tal que si $|x-x_0| < \delta_1$ entonces $|f(x)-f(x_0)| < \frac{\epsilon}{2}$. Por ser $g$ continua en $x_0$ existe $\delta_2$ tal que si $|x-x_0| < \delta_2$ entonces $|g(x)-g(x_0)| < \frac{\epsilon}{2}$.  -->
+
+<!-- Sea $\delta = \min\{\delta_1, \delta_2\}$, entonces -->
+<!-- $$ -->
+<!-- |(f+g)(x)-(f+g)(x_0)| = |f(x)+g(x) -f(x_0)-g(x_0)|  -->
+<!-- $$ -->
+<!-- $$ -->
+<!-- \leq |f(x)-f(x_0)| + |g(x)-g(x_0)| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon -->
+<!-- $$ -->
  
 ## Composición de funciones
 
