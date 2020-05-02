@@ -437,7 +437,7 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
 
 <div class="example"> **Ejemplo**
 
-$\lim_{x \rightarrow 0} \dfrac{1}{x^2} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| <K$ y, por lo tanto $|f(x_n)|=\dfrac{1}{x_n^2}>K^2$.
+$\lim_{x \rightarrow 0} \dfrac{1}{x^2} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| < \sqrt{K}$ y, por lo tanto $|f(x_n)|=\dfrac{1}{x_n^2}>K$.
 
 </div>
 
@@ -773,7 +773,19 @@ $\epsilon$ es la precisión con la queremos $f(x_0)$ y $\delta$ es la precisón 
 
 2. Si $x_0$ es un punto aislado de $A$, es decir, que no es de acumulación, entonces, dado que existe un entorno de $x_0$ donde este es el único punto de $A$, para que $f$ sea contínua en $x_0$ es suficiente que $f$ esté definida en ese punto.
 
-3. El concepto de continuidad es esencialmente **local**: una función es contínua en un punto. No hay que olvidar, pues, que la precisión $\delta$ para $x_0$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada *continuidad uniforme*. 
+
+## Funciones contínuas
+
+<l clas="definition"> **Definición** </l>
+
+Una función $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es **contínua en el conjunto $A$** si para todo $x \in A$, $f$ es contínua en $x$.
+
+<l class="important"> **Observación importante** </l>
+
+Pese a que la definición anterior pueda inducir a pensar lo contrario, el concepto de continuidad es esencialmente **local**: una función es contínua en un punto. No hay que olvidar, pues, que aunque la función sea contínua sobre un conjunto $A$, la precisión $\delta$ para cada $x_0 \in A$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada *continuidad uniforme*. 
+
+
+
 
 
 ## Funciones contínuas: Ejemplos.
@@ -897,6 +909,22 @@ Consideraciones anàlogas sirven para demostrar las otras combinaciones descrita
 
 </div>
 
+## Combinaciones de funciones contínuas
+
+<l class="prop"> **Proposición** </l>
+
+Sean $f,g : A \subset \mathbb{R} \rightarrow \mathbb{R}$  tales que $f$ y $g$ **són contínuas en en $A$**. Entonces
+
+1. $f+g$ es contínua en $A$
+2. $f.g$ es contínua en $A$
+3. Si $\lambda \in \mathbb{R}$, $\lambda f$ es contínua en $A$.
+4. Si $g(x) \neq 0$ para todo $x \in A$, entonces $\dfrac{f}{g}$ es contínua en $A$
+
+<div class="dem"> **Demostración**
+
+Inmediata a partir de la definición de continuidad en un conjunto y de la proposición anterior
+
+</div>
 <!-- Dado un  $\epsilon > 0$. Por ser $f$ continua en $x_0$ existe $\delta_1$ tal que si $|x-x_0| < \delta_1$ entonces $|f(x)-f(x_0)| < \frac{\epsilon}{2}$. Por ser $g$ continua en $x_0$ existe $\delta_2$ tal que si $|x-x_0| < \delta_2$ entonces $|g(x)-g(x_0)| < \frac{\epsilon}{2}$.  -->
 
 <!-- Sea $\delta = \min\{\delta_1, \delta_2\}$, entonces -->
@@ -911,9 +939,9 @@ Consideraciones anàlogas sirven para demostrar las otras combinaciones descrita
 
 <l class="definition"> **Definición** </l>
 
-Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g: B \subset \mathbb{R} \rightarrow \mathbb{R}$ tales que $f(A) \subset B$. La función compuesta de $f$ y $g$, $g \circ f$ es la función $g \circ f : A \rightarrow \mathbb{R}$ definida por
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g: B \subset \mathbb{R} \rightarrow \mathbb{R}$ tales que $f(A) \subset B$. La **función compuesta de $f$ y $g$**, $g \circ f$, es la función $g \circ f : A \rightarrow \mathbb{R}$ definida por
 $$
-g \circ f (x)= g(f(x))
+(g \circ f) (x)= g(f(x))
 $$
 
 
@@ -932,6 +960,15 @@ $$
 
 ## Composició de funciones: Ejemplos.
 
+<div class="example"> **Ejemplos**
+
+1. $h(x) = \sin(\dfrac{\pi}{2}-x)$ es la composición de las funciones $g(x)=\sin x$ y $f(x) =\dfrac{\pi}{2}-x$: $h(x) = (g \circ f)(x)$. Se debe tener encuenta que la composición de funciones **no** es conmutativa, en  este caso $(f \circ g)(x) = \dfrac{\pi}{2}  - \sin x \neq \sin(\dfrac{\pi}{2}-x) = (g \circ f)(x)$
+
+2. $h(x)= |x|$ es la composición de las funciones $r(x) = \sqrt(x)$ y $s(x)= x^2$: $h(x) = |x| = \sqrt{x^2}=r(s(x))$. Nuevamente $|x| = (r \circ s)(x) \neq (s \circ r) = (\sqrt{x})^2= x$, ya que la igualdad sólo sería vàlida para los $x >0$.
+
+3. $h(x)=\log(x+1)$ es la composición de las funciones $f(x)= x+1$ y $g(x) = \log(x)$
+
+</div>
 
 ## Composición de funciones contínuas
 
@@ -956,15 +993,33 @@ En definitiva, para cada $\epsilon >0$ hemos podido determinar un $\delta >0$ ta
 
 <div class="example"> **Ejemplos**
 
-1. La función $\cos : \mathbb{R} \rightarrow \mathbb{R}$ es contínua para todo $x \in \mathbb{R}$. En efecto: si $g(x) = sin(x)$ y $f(x) = \dfrac{\pi}{2} -x$, entonces, tanto $f$ como $g$ son contínuas para todo $x \in \mathbb{R}$, por lo tanto
+1. La función $\cos : \mathbb{R} \rightarrow \mathbb{R}$ es contínua para todo $x \in \mathbb{R}$. En efecto: si $g(x) = \sin(x)$ y $f(x) = \dfrac{\pi}{2} -x$, entonces, tanto $f$ como $g$ son contínuas para todo $x \in \mathbb{R}$, por lo tanto
 $$
 \cos (x) = \sin (\dfrac{\pi}{2} - x) = g(f(x))
 $$
-es una función contínua para todo $x \in \mathbb{R}$ por ser la composición de dos funciones contínuas para todo $x \in \mathbb{R}$.
+es una función contínua para todo $x \in \mathbb{R}$ por ser la composición de dos funciones contínuas.
 
-2. 
+2. Si $f(x)$ es una función contínua en $x_0$, entonces $|f(x)|$ también es contínua en $x_0$, puesto que $h(x)=|x|$ es una función contínua para todo $x \in \mathbb{R}$, dado que $|x|=\sqrt{x^2}$ y tanto $r(x) = \sqrt{x}$, como $s(x)=x^2$ son funciones contínuas, la primera para todo $x \geq 0$ y la segunda para todo $x$. Entonces 
+$$
+|f(x)|= r(s(f(x))),
+$$
+es decir seria la composición de tres funciones contínuas.
 
+2. Si $f(x)$ es una función contínua en $x_0$, entonces $e^{f(x)}$ es también contínua en $x_0$, puesto que se trata de la composición de dos funciones contínuas, $f$, y la exponencial, $e^x$. Lo mismo pasa con $\log f(x)$, si $f$ es una función positiva.
 
+</div>
+
+## Composición de funciones contínuas
+
+<l class="prop"> **Proposición** </l>
+
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g : B \subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $f(A) \subset B$. Si $f$ es contínua en $A$ y $g$ es contínua en $B$, entonces $g \circ f$ es contínua en $A$
+
+<div class="dem"> **Demostración**
+
+Inmediata a partir de la definición de continuidad en un conjunto y de la proposición anterior
+
+</div>
 
 
 
