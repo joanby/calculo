@@ -941,7 +941,13 @@ Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g : B \subset \mathbb{R
 
 <div class="dem"> **Demostración**
 
-Sea $\epsilon >0$, dado que 
+Para simplificar la notación, pongamos que $y_0=f(x_0)$ y que $V_{\epsilon}(y)$ es el entorno centrado en $y$ y de radio $\epsilon$.
+
+Sea $\epsilon >0$, dado que $g$ es contínua en $y_0$, existe un $\gamma >0$ tal que si $y \in V_{\gamma} (y_0) \cap B$, entonces $g(y) \in V_{\epsilon}(g(y_0))$.
+
+Dado que $f$ es continua en $x_0$ , $f(A) \subset B$ y que $\gamma >0$, existe un $\delta >0$ tal que si $x_0 \in V_{\delta}(x_0) \cap A$, entonces $y_0=f(x_0) \in V_{\gamma}(f(x_0))$.
+
+En definitiva, para cada $\epsilon >0$ hemos podido determinar un $\delta >0$ tal que si $x \in V_{\delta}(x_0) \cap A$, entonces $g(f(x)) \in V_{\epsilon} (g(f(x_0)))$, es decir que $g \circ f$ es contínua en $x_0$.
 
 
 </div>
