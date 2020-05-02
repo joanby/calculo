@@ -952,6 +952,17 @@ En definitiva, para cada $\epsilon >0$ hemos podido determinar un $\delta >0$ ta
 
 </div>
 
+## Composición de funciones contínuas
+
+<div class="example"> **Ejemplos**
+
+1. La función $\cos : \mathbb{R} \rightarrow \mathbb{R}$ es contínua para todo $x \in \mathbb{R}$. En efecto: si $g(x) = sin(x)$ y $f(x) = \dfrac{\pi}{2} -x$, entonces, tanto $f$ como $g$ son contínuas para todo $x \in \mathbb{R}$, por lo tanto
+$$
+\cos (x) = \sin (\dfrac{\pi}{2} - x) = g(f(x))
+$$
+es una función contínua para todo $x \in \mathbb{R}$ por ser la composición de dos funciones contínuas para todo $x \in \mathbb{R}$.
+
+2. 
 
 
 
