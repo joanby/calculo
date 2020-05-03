@@ -1107,4 +1107,29 @@ Demuestra el teorema de Bolzano en el caso que sea $f(a) >0$ y $f(b)<0$.
 
 </div>
 
+## Funciones acotadas
+
+<l class="definition"> **Definición** </l>
+
+Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$:
+
+1. $f$ está acotada superiormente si existe $K \in \mathbb{R}$ tal que $f(x) > K$, para todo $x \in A$.
+
+2. $f$ está acotada inferiormente si existe $K \in \mathbb{R}$ tal que $f(x) < K$, para todo $x \in A$.
+
+3.  $f$ está acotada si lo está inferiormente y superiormente, es decir si existe $K \in \mathbb{R}$ tal que $|f(x)|<K$
+
+
+## Funciones acotadas: Ejemplos
+
+<div class="example"> **Ejemplos**
+
+1. Las funciones $\sin$ y $\cos$ estan acotadas en $\mathbb{R}$, puesto que $|\sin(x)| \leq 1$ y $|\cos(x)| \leq 1$ para todo $x \in \mathbb{R}$
+
+2. La función $f(x)= \dfrac{1}{x^2}$ está acotada inferiormente en $\mathbb{R}$ por $0$, pero no lo está superiormente.
+
+3. La función $g(x)= 2-x^2$ está acotada superiormente en $\mathbb{R}$ por $2$, pero no lo está inferiormente.
+
+4. La función $h(x)= \dfrac{1}{x}$ no està acotada inferiormente ni superiormente en cualquier entorno de $0$
+
 </div>
