@@ -1159,3 +1159,21 @@ Por el principio de los intervalos anidados, existe $c$ tal que $\lim_{n \righta
 
 </div>
 
+
+
+## Teorema del extremo
+
+<l class="prop"> **Proposición. Teorema del extremo** </l>
+
+Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua, entonces existen $x_1$ y $x_2$ tales que $f(x_1) \sup_{[a,b]}f$ y que $f(x_2) \inf_{[a,b]}f$
+
+
+
+
+## Teorema del extremo
+
+<div class="center">
+<img src="Images/teormaxmin.png" width="800px" />
+</div>
+
+
