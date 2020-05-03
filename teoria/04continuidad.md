@@ -872,6 +872,18 @@ es una función contínua para todo $x \in \mathbb{R}$
 
 </div>
 
+## Discontinuidades: Tipos.
+
+Las consideraciones anteriores, juntamente con la coincidencia o no de los limites laterales en un punto, lleva a la siguiente clasificación de las dicontinuidades
+
+1. *Evitable:* $f$ no está definida en $x_0$, pero existe el $\lim_{x \rightarrow x_0}f(x)$.
+
+2. *De primera especie (o de salto):* $\lim_{x \rightarrow x_0^-}f(x) \neq \lim_{x \rightarrow x_0^+}f(x)$,
+
+3. *De segunda especie:* No existe alguno de los límites laterales o ninguno de los dos.
+
+
+
 ## Combinaciones de funciones contínuas
 
 <l class="definition"> **Definición** </l>
@@ -1028,3 +1040,38 @@ Inmediata a partir de la definición de continuidad en un conjunto y de la propo
 Al considerar funciones contínuas sobre intervalos aparece, con todo su esplendor, la potencia y la magia de la propiedad de continuidad. Veremos que el hecho que la gráfica de la función entre los extremos del intervalo no se interrumpa -es decir, que sea contínua- se convierte en un potente instrumento para la localización de raíces de una ecuación, polinómica o no.
 
 También se demuestra que si el intervalo es cerrado, entonces la cunción está acotada y, el que posiblemete sea el resultado més importante, es que en este caso, las funciones contínuas son **uniformemente contínuas**, es decir que el $\delta$ de la propiedad $\epsilon -\delta$, que depende de $\epsilon$ y del punto, pasa a dender sólo de $\epsilon$, un hecho que tiene importantes cosecuencias, como se verá aposteriormente.
+
+## Teorema de Bolzano
+
+<l class="prop"> **Proposición: Teorema de Bolzano** </l>
+
+Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua tal que $f(a)\cdot f(b) < 0$, entonces existe $c \in (a,b)$ tal que $f(c)=0$
+
+La condición $f(a)\cdot f(b) < 0$ es una forma sencilla para exspresar que $f(a)$ y $f(b)$ son de signo diferente como se ilustra en el gráfico siguiente:
+
+
+<div class="center">
+<img src="Images/bolzanot2.png" width="900px" />
+</div>
+
+## Teorema de Bolzano: Demostración
+
+<div class="dem"> **Demostración**
+
+Supongamos que $f(a)<0$ y $f(b)>0$, El conjunto $S=\{x \in [a,b]: f(x) <0\}$ está acotado superiormente, ppor ejemplo, por $b$. Sea $c= \sup S$, veamos que $f(c)=0$.
+
+Supongamos en primer lugar que $f(c) <0$, por ser $f$ contínua y por el teorema de la conservación del signo, existirá un $\delta >0$ tal que para todo $x \in (c-\delta, c+\delta)$ es $f(x) <0$, es decir existirían elementos $x>c$ tales que $f(x)<0$, lo que contradice que $c$ sea el mayor para los que $f$ toma valores negativos, por lo tanto no puede ser que $f(c)<0$.
+
+Supongamos, pues que $f(c)>0$, razonamientos análogos a los anteriores no llevarían a ver que es incompatible esta condición con el hecho que $c$ sea el supremo de $S$.
+
+En consecuencia, $f(c)=0$, que es lo que queríamos demostrar.
+
+</div>
+
+<div class="exercise"> **Ejercicio**
+
+Demuestra el teorema de Bolzano en el caso que sea $f(a) >0$ y $f(b)<0$.
+
+</div>
+
+</div>
