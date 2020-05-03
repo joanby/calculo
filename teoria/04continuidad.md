@@ -882,6 +882,9 @@ Las consideraciones anteriores, juntamente con la coincidencia o no de los limit
 
 3. *De segunda especie:* No existe alguno de los límites laterales o ninguno de los dos.
 
+<l class="observ"> **Observación** </l>
+
+Las discontinuidades de salto, como la de la función sgn$(x)$ en el punto $0$, ayudan a entender el nombre **contínua** para las funciones que lo son: su gráfica no presenta saltos de ningún tipo, es decir -y valga la redundancia- la gráfica de una función contínua es continua.
 
 
 ## Combinaciones de funciones contínuas
@@ -1039,7 +1042,36 @@ Inmediata a partir de la definición de continuidad en un conjunto y de la propo
 
 Al considerar funciones contínuas sobre intervalos aparece, con todo su esplendor, la potencia y la magia de la propiedad de continuidad. Veremos que el hecho que la gráfica de la función entre los extremos del intervalo no se interrumpa -es decir, que sea contínua- se convierte en un potente instrumento para la localización de raíces de una ecuación, polinómica o no.
 
-También se demuestra que si el intervalo es cerrado, entonces la cunción está acotada y, el que posiblemete sea el resultado més importante, es que en este caso, las funciones contínuas son **uniformemente contínuas**, es decir que el $\delta$ de la propiedad $\epsilon -\delta$, que depende de $\epsilon$ y del punto, pasa a dender sólo de $\epsilon$, un hecho que tiene importantes cosecuencias, como se verá aposteriormente.
+También se demuestra que si el intervalo es cerrado, entonces la función está acotada y, el que posiblemente sea el resultado más importante, es que en este caso, las funciones contínuas son **uniformemente contínuas**, es decir que el $\delta$ de la propiedad $\epsilon -\delta$, que depende de $\epsilon$ y del punto, pasa a depender sólo de $\epsilon$, un hecho que tiene importantes consecuencias, como se verá posteriormente.
+
+
+## Teorema de la conservación del signo
+
+<l class="prop"> **Proposición: Teorema de la conservación del signo** </l>
+
+Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua y sea $c \in (a,b)$ tal que $f(c) >0$. Entonces existe un $\delta >0$ tal que $f(x) >0$ para todo $x \in (c-\delta, c+\delta)$. Análogamente, si $f(c) <0$, entonces existe un $\delta >0$ tal que $f(x) <0$ para todo $x \in (c-\delta, c+\delta)$
+
+<l class="prop"> **Corolario** </l>
+
+Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua y sea $c \in (a,b)$ tal que $f(c) =0$, entonces en todo entorno de $c$ hay puntos en los que $f$ es positiva y puntos en los que $f$ es negativa.
+
+
+## Teorema de la conservación del signo: Demostración.
+
+<div class="dem"> **Demostración**
+
+Supongamos en primer lugar que $f(c)>0$, sea $\epsilon = \dfrac{f(c)}{2} >0$. Por ser $f$ contínua en $c$, existe $\delta >0$ tal que si $x \in (c-\delta,c+\delta)$, entonces $f(x) \in (f(c)-\epsilon,f(c)+\epsilon) = \left(\dfrac{f(c)}{2},\dfrac{3f(c)}{2}\right)$, por lo tanto si $x  \in (c-\delta,c+\delta)$, es $f(x) > \dfrac{f(c)}{2} >0$.
+
+</div>
+
+<div class="exercise"> **Ejercicio**
+
+Demuestra el teorema anterior en el caso que $f(c) <0$.
+
+</div>
+
+
+
 
 ## Teorema de Bolzano
 
@@ -1047,20 +1079,21 @@ También se demuestra que si el intervalo es cerrado, entonces la cunción está
 
 Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua tal que $f(a)\cdot f(b) < 0$, entonces existe $c \in (a,b)$ tal que $f(c)=0$
 
-La condición $f(a)\cdot f(b) < 0$ es una forma sencilla para exspresar que $f(a)$ y $f(b)$ son de signo diferente como se ilustra en el gráfico siguiente:
+La condición $f(a)\cdot f(b) < 0$ es una forma sencilla para expresar que $f(a)$ y $f(b)$ son de signo diferente como se ilustra en el gráfico siguiente:
 
 
 <div class="center">
 <img src="Images/bolzanot2.png" width="900px" />
 </div>
 
+
 ## Teorema de Bolzano: Demostración
 
 <div class="dem"> **Demostración**
 
-Supongamos que $f(a)<0$ y $f(b)>0$, El conjunto $S=\{x \in [a,b]: f(x) <0\}$ está acotado superiormente, ppor ejemplo, por $b$. Sea $c= \sup S$, veamos que $f(c)=0$.
+Supongamos que $f(a)<0$ y que $f(b)>0$, el conjunto $S=\{x \in [a,b]: f(x) <0\}$ está acotado superiormente, por ejemplo, por $b$. Sea $c= \sup S$, veamos que $f(c)=0$.
 
-Supongamos en primer lugar que $f(c) <0$, por ser $f$ contínua y por el teorema de la conservación del signo, existirá un $\delta >0$ tal que para todo $x \in (c-\delta, c+\delta)$ es $f(x) <0$, es decir existirían elementos $x>c$ tales que $f(x)<0$, lo que contradice que $c$ sea el mayor para los que $f$ toma valores negativos, por lo tanto no puede ser que $f(c)<0$.
+Supongamos en primer lugar que $f(c) <0$, por ser $f$ contínua y por el teorema de la conservación del signo, existirá un $\delta >0$ tal que para todo $x \in (c-\delta, c+\delta)$ es $f(x) <0$, es decir, existirían elementos $x>c$ tales que $f(x)<0$, lo que contradice que $c$ sea el mayor para los que $f$ toma valores negativos, por lo tanto no puede ser que $f(c)<0$.
 
 Supongamos, pues que $f(c)>0$, razonamientos análogos a los anteriores no llevarían a ver que es incompatible esta condición con el hecho que $c$ sea el supremo de $S$.
 
