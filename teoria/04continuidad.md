@@ -1107,6 +1107,31 @@ Demuestra el teorema de Bolzano en el caso que sea $f(a) >0$ y $f(b)<0$.
 
 </div>
 
+## Teorema de los valores intermedios
+
+<l class="prop"> **Proposición: Teorema de los valores intermedios**
+
+Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua y sean $x_1,x_2 \in [a,b]$ tales que $x_1 < x_2$ y $f(x_1)\neq f(x_2)$, entonces $f$ toma todos los valores comprendidos entre $f(x_1)$ y $f(x_2)$.
+
+<div class="dem"> **Demostración**.
+
+En primer lugar  hay que tener en cuenta que  $x_1 < x_2$ no significa que $f(x_1)<f(x_2)$. 
+
+Supongamos, pues, que $f(x_1) < f(x_2)$, sea $d \in (f(x_1), f(x_2))$, entonces $h(x)= f(x)-d$ es una función contínua sobre el intervalo $[x_1,x_2]$ tal que $h(x_1)=f(x_1) -d <0$ y $h(x_2)= f(x_2) -d >0$, por el teorema de Bolzano, existe $c \in (x_1,x_2)$ tal que $h(c)=0=f(c)-d$, es decir que $f(c)=d$.
+
+</div>
+
+<div class="exercise"> **Ejercicio**
+
+Demuestra la proposición para el caso $x_1 < x_2$ y $f(x_1) > f(x_2)$
+
+</div>
+
+<l class="observ"> **Observación** </l>
+
+
+
+
 ## Funciones acotadas
 
 <l class="definition"> **Definición** </l>
@@ -1133,3 +1158,18 @@ Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$:
 4. La función $h(x)= \dfrac{1}{x}$ no està acotada inferiormente ni superiormente en cualquier entorno de $0$
 
 </div>
+
+## Teorema de Weierstrass
+
+<l class="prop"> **Proposición: Teorema de Weierstrass.** </l>
+
+Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua, entonces $f$ está acotada.
+
+<div class="dem"> **Demostración**
+
+Por reducción al absurdo. Supongamos que $f$ no está acotada en $[a,b]$, entonces existe $x_1 \in I_1= [a,b]$ tal que $f(x_1) >1$. Sea $c =\dfrac{a+b}{2}$, entonces $f$ no está acotada en $[a,c]$ o en $[c,b]$, sea $I_2 =[a_2,b_2]$ dicho intervalo. Entonces $f$ no está cotada en $I_2$, por lo tanto, existe $x_2 \in I_2$ tal que $f(x_2) > 2$. Reiterando este proceso, construiremos una sucesión $I_n$ de intervalos anidados, $I_{n-1} \supset I_n$, tal que $b_n - a_n = \dfrac{b_{n-1 }-a_{n-1}}{2}$, por lo que $\lim_{n \rightarrow \infty}(b_n - a_n)=0$ y, además $x_n \in I_n$
+
+Por el principio de los intervalos anidados, existe $c$ tal que $\lim_{n \rightarrow \infty} a_n = c = \lim_{n \rightarrow \infty} b_n$. Dado que $a_n \leq x_n \leq b_n$, tendremos que $\lim_{n \rightarrow \infty} x_n = c$ como, por otra parte $f(x_n) > n$, resulta que $f(x_n)  \rightarrow \infty$, lo que contradice que $f$ sea contínua, puesto que debería ser $f(x_n) \rightarrow f(c)$.
+
+</div>
+
