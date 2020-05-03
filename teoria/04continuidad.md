@@ -1191,7 +1191,23 @@ Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existe
 
 
 
+# Continuidad uniforme
 
+## Introducción
 
+A pesar de las múltiples e interesantes propiedades que tienen la funciones contínuas en un punto, en determinadas situaciones, el hecho que el $\delta$ dependa de $\epsilon$ y del punto se convierte en una limitación importante. Así, por ejemplo, la convergencia de determinadas series de funciones está vinculada a que $\delta$ sea el mismo para todos los $x$, una vez fijado el $\epsilon$.
 
+En este apartado se estudia un tipos de continuidad en la que $\delta$ sólo depende de $\epsilon$, es la llamada **continuidad uniforme**.
+
+## Continuidad uniforme
+
+<l class="definition"> **Definición** </l>
+
+Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ es **uniformemente contínua** en $A$ si para todo $\epsilon > 0$ existe $\delta >0$ tal que si $x,y \in A$ son tales $|x-y| < \delta$, entonces $|f(x) -f(y)| < \epsilon$
+
+<div class="important"> **Observación importante**
+
+La **continuidad uniforme** es una propiedad de conjunto: una función puede ser uniformemente contínua en un conjunto, pero no tiene sentido decir que una función es uniformemente contínua en un punto. Con todo, para evitar confusiones, se acostumbra a denotar esta última por **continuidad puntual** para distinguirla de la **uniforme** 
+
+</div>
 
