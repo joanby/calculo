@@ -1196,14 +1196,11 @@ Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua, entonces existen $x_1$ y $x_2$ t
 
 <div class="dem"> **Demostración**
 
-Dado que $f$ es contínua en $[a,b]$, $f$ está acotada, por lo tanto existen $c= \sup_{[a,b]}f$ y $d= \inf_{[a,b]}f$. Veamos que existen $x_1$ y $x_2$ tales que $c=f(x_1)$ y $d=f(x_2)$. Supongamos, en primer lugar que no existe $x$ tal que $f(x) = c$, entonces la función $h(x)=\dfrac{1}{f(x)-c}$ es contínua y por lo tanto, debería estar acotada en ¢[a,b]$.
-Veamos que no es así: Supongamos 
+Dado que $f$ es contínua en $[a,b]$, $f$ está acotada, por lo tanto existen $M= \sup_{[a,b]}f$ y $m= \inf_{[a,b]}f$. Veamos que existen $x_1$ y $x_2$ tales que $m=f(x_1)$ y $M=f(x_2)$. Supongamos, en primer lugar que no existe $x$ tal que $f(x) = M$, entonces la función $h(x)=\dfrac{1}{f(x)-M}$ es contínua y por lo tanto, debería estar acotada en $[a,b]$.
+Veamos que no es así: sea $K>0$, por ser $M= \sup_{[a,b]}f$, existe $x \in [a,b]$ tal que $f(x) \in (M-\dfrac{1}{K},M+\dfrac{1}{K})$, puesto que, de no ser así $M-\dfrac{1}{K}$ seria una cota superior para $f$ en $[a,b]$, por lo tanto, dado que $h(x) = \dfrac{1}{f(x)-M} > K$, lo cual contradice que sea contínua en $[a,b]$. Así pues, existe $x_2$ tal que $f(x_2)=M= \sup_{[a,b]} f$. 
 
+Razonamientos análogos permiten demostrar que existe $x_1 \in [a,b]$ tal que $f(x_1)=m= \inf_{[a,b]}f$
 </div>
-
-
-
-
 
 ## Teorema del extremo
 
@@ -1212,5 +1209,20 @@ Veamos que no es así: Supongamos
 knitr::include_graphics("Images/teormaxmin.png",dpi=1200)
 ```
 </div>
+
+## Corolario del teorema del extremo
+
+<l class="prop"> **Proposición. Corolario del teorema del extremo.** </l>
+
+La imagen contínua de un intervalo cerrado es un intervalo cerrado.
+
+<div class="dem"> **Demostración**
+
+Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existen $x_1, x_2 \in [a,b]$ tales que $f(x_1)= m=\inf{[a,b]}$ y $f(x_2)= M=\sup{[a,b]}$, por lo tanto $f([a,b]) \subset [m,M]$. Sea ahora $y \in [m,M]$, por el teorema de los valores intermedios, existe $x \in [a,b]$ tal que $y=f(x)$, por lo que $[m,M] \subset f([a,b])$.
+
+
+
+
+
 
 
