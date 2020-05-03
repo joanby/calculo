@@ -284,7 +284,7 @@ Las demostraciones de estas dos proposiciones son del todo análogas a las corre
 
 ## Propiedades del límite de una función
 
-<l class="prop"> **Proposición**
+<l class="prop"> **Proposición** </l>
 
 Sean $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. Si $\lim _{x \rightarrow c} f(x) = L>0$, entonces existe $\delta > 0$ tal que $f(x)>0$ para todo $x \in V^*_{\delta}(c) \cap A$.
 
@@ -334,13 +334,13 @@ knitr::include_graphics("Images/sgn1.png",dpi=1200)
 
 <l class="definition"> **Definición de límite lateral** </l>
 
-@) Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función real de variable real y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite lateral por la derecha** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \geq c$, es $f(x_n)\rightarrow L$. Escribiremos 
+1) Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función real de variable real y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite lateral por la derecha** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \geq c$, es $f(x_n)\rightarrow L$. Escribiremos 
 $$
 L = \lim_{x \rightarrow c^+}f(x).
 $$
 
 
-@) Análogamente, $L \in \mathbb{R}$ es el **límite lateral por la izquierda** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \leq c$, es $f(x_n)\rightarrow L$. Escribiremos 
+2) Análogamente, $L \in \mathbb{R}$ es el **límite lateral por la izquierda** de $f$ en $c$, si para toda sucesión $x_n$ tal que $x_n \rightarrow c$ con $x_n \leq c$, es $f(x_n)\rightarrow L$. Escribiremos 
 $$
 L = \lim_{x \rightarrow c^-}f(x).
 $$
@@ -351,9 +351,9 @@ $$
 
 <div class="example"> **Ejemplos**
 
-@) En el caso de la función *signo*, $\text{sgn}(x) = \dfrac{x}{|x|}$, hemos visto que  $\lim_{x \rightarrow 0^+}\text{sgn}(x) = 1$ y  $\lim_{x \rightarrow 0^-} \text{sgn}(x) = -1$.
+1) En el caso de la función *signo*, $\text{sgn}(x) = \dfrac{x}{|x|}$, hemos visto que  $\lim_{x \rightarrow 0^+}\text{sgn}(x) = 1$ y  $\lim_{x \rightarrow 0^-} \text{sgn}(x) = -1$.
 
-@) Sea $g:\mathbb{R} \rightarrow \mathbb{R}$, la función definida por
+2) Sea $g:\mathbb{R} \rightarrow \mathbb{R}$, la función definida por
 $$
 g(x)=
 \begin{cases}
@@ -363,7 +363,7 @@ x^2, & \mbox{ si } x > 0
 $$
 Entonces $\lim_{x \rightarrow 0^+} g(x) = 1$ y $\lim_{x \rightarrow 0^-} g(x) = 0$.
 
-@) Sea $h:\mathbb{R} \rightarrow \mathbb{R}$, la función definida por
+3) Sea $h:\mathbb{R} \rightarrow \mathbb{R}$, la función definida por
 $$
 h(x)=
 \begin{cases}
@@ -472,9 +472,9 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
 
 <div class="exercise"> **Ejercicios**
 
-@) Demuestra que $L = lim_{x \rightarrow \infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x>K$ entonces $|f(x)-L|<\epsilon$.
+1) Demuestra que $L = lim_{x \rightarrow \infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x>K$ entonces $|f(x)-L|<\epsilon$.
 
-@) Demuestra que $L = lim_{x \rightarrow -\infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x<-K$ entonces $|f(x)-L|<\epsilon$.
+2) Demuestra que $L = lim_{x \rightarrow -\infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x<-K$ entonces $|f(x)-L|<\epsilon$.
 
 </div>
 
@@ -482,15 +482,15 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
 
 <div class="example"> **Ejemplos**
 
-@) $\lim_{x \rightarrow \infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < K$ siempre que $x >K$
+1) $\lim_{x \rightarrow \infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < K$ siempre que $x >K$
 
-@) Anàlogamente $\lim_{x \rightarrow -\infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < K$ siempre que $x <-K$
+2) Anàlogamente $\lim_{x \rightarrow -\infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < K$ siempre que $x <-K$
 
-@) La función $h(x) = \dfrac{1}{x}$, proporciona un interesante ejemplo de también tienen sentido los límites laterales para los límites infinitos, puesto que como es fácil comprobar $\lim_{x \rightarrow 0^+} h(x) = +\infty$ en tanto que $\lim_{x \rightarrow 0^-} h(x) = -\infty$. 
+3) La función $h(x) = \dfrac{1}{x}$, proporciona un interesante ejemplo de también tienen sentido los límites laterales para los límites infinitos, puesto que como es fácil comprobar $\lim_{x \rightarrow 0^+} h(x) = +\infty$ en tanto que $\lim_{x \rightarrow 0^-} h(x) = -\infty$. 
 
-@) También es fácil comprobar que $\lim_{x \rightarrow -\infty} \dfrac{1}{x} =0 = \lim_{x \rightarrow \infty}  \dfrac{1}{x}$
+4) También es fácil comprobar que $\lim_{x \rightarrow -\infty} \dfrac{1}{x} =0 = \lim_{x \rightarrow \infty}  \dfrac{1}{x}$
 
-</div>+
+</div>
 
 ## Límites en el infinito: Gráfica de la función $\frac{1}{x}$
 
@@ -722,7 +722,7 @@ $$
 L = \lim_{x \rightarrow c} f(x).h(x) = \lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}\dfrac{g(x)}{h(x)}= \lim_{x \rightarrow c}\dfrac{f(x)}{g(x)} \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)} = \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)}
 $$
 
-2. La demostración és análoga a la anterior.
+2. La demostración es análoga a la anterior.
 
 </div>
 
@@ -798,16 +798,11 @@ $\epsilon$ es la precisión con la queremos $f(x_0)$ y $\delta$ es la precisón 
 
 2. Si $x_0$ es un punto aislado de $A$, es decir, que no es de acumulación, entonces, dado que existe un entorno de $x_0$ donde este es el único punto de $A$, para que $f$ sea contínua en $x_0$ es suficiente que $f$ esté definida en ese punto.
 
-
 ## Funciones contínuas
-
-<l clas="definition"> **Definición** </l>
-
-Una función $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es **contínua en el conjunto $A$** si para todo $x \in A$, $f$ es contínua en $x$.
 
 <l class="important"> **Observación importante** </l>
 
-Pese a que la definición anterior pueda inducir a pensar lo contrario, el concepto de continuidad es esencialmente **local**: una función es contínua en un punto. No hay que olvidar, pues, que aunque la función sea contínua sobre un conjunto $A$, la precisión $\delta$ para cada $x_0 \in A$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada *continuidad uniforme*. 
+Pese a que la definición de continuidad sobre un conjunto pueda inducir a pensar lo contrario, el concepto de continuidad es esencialmente **local**: una función es contínua en un punto. No hay que olvidar, pues, que aunque la función sea contínua sobre un conjunto $A$, la precisión $\delta$ para cada $x_0 \in A$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada *continuidad uniforme*. 
 
 
 
@@ -965,15 +960,6 @@ Sean $f,g : A \subset \mathbb{R} \rightarrow \mathbb{R}$  tales que $f$ y $g$ **
 Inmediata a partir de la definición de continuidad en un conjunto y de la proposición anterior
 
 </div>
-<!-- Dado un  $\epsilon > 0$. Por ser $f$ continua en $x_0$ existe $\delta_1$ tal que si $|x-x_0| < \delta_1$ entonces $|f(x)-f(x_0)| < \frac{\epsilon}{2}$. Por ser $g$ continua en $x_0$ existe $\delta_2$ tal que si $|x-x_0| < \delta_2$ entonces $|g(x)-g(x_0)| < \frac{\epsilon}{2}$.  -->
-
-<!-- Sea $\delta = \min\{\delta_1, \delta_2\}$, entonces -->
-<!-- $$ -->
-<!-- |(f+g)(x)-(f+g)(x_0)| = |f(x)+g(x) -f(x_0)-g(x_0)|  -->
-<!-- $$ -->
-<!-- $$ -->
-<!-- \leq |f(x)-f(x_0)| + |g(x)-g(x_0)| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon -->
-<!-- $$ -->
  
 ## Composición de funciones
 
