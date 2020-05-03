@@ -1142,8 +1142,6 @@ Demuestra la proposición para el caso $x_1 < x_2$ y $f(x_1) > f(x_2)$
 
 </div>
 
-<l class="observ"> **Observación** </l>
-
 
 
 
@@ -1194,7 +1192,15 @@ Por el principio de los intervalos anidados, existe $c$ tal que $\lim_{n \righta
 
 <l class="prop"> **Proposición. Teorema del extremo** </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua, entonces existen $x_1$ y $x_2$ tales que $f(x_1) \sup_{[a,b]}f$ y que $f(x_2) \inf_{[a,b]}f$
+Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua, entonces existen $x_1$ y $x_2$ tales que $f(x_1) = \inf_{[a,b]}f$ y que $f(x_2) = \sup_{[a,b]}f$
+
+<div class="dem"> **Demostración**
+
+Dado que $f$ es contínua en $[a,b]$, $f$ está acotada, por lo tanto existen $c= \sup_{[a,b]}f$ y $d= \inf_{[a,b]}f$. Veamos que existen $x_1$ y $x_2$ tales que $c=f(x_1)$ y $d=f(x_2)$. Supongamos, en primer lugar que no existe $x$ tal que $f(x) = c$, entonces la función $h(x)=\dfrac{1}{f(x)-c}$ es contínua y por lo tanto, debería estar acotada en ¢[a,b]$.
+Veamos que no es así: Supongamos 
+
+</div>
+
 
 
 
