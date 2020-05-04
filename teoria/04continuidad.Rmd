@@ -154,7 +154,7 @@ $$
 $$
 
 
-Ahora, dado un $\epsilon >0$ bastaá tomar $\delta = \min \left\{\dfrac{1}{2}c, \dfrac{1}{2}c^2 \epsilon \right\}$ para tener asegurado que si $|x -c|<\delta$, entonces $\left|\dfrac{1}{x} -\dfrac{1}{c}\right| < \epsilon$.
+Ahora, dado un $\epsilon >0$ bastará tomar $\delta = \min \left\{\dfrac{1}{2}c, \dfrac{1}{2}c^2 \epsilon \right\}$ para tener asegurado que si $|x -c|<\delta$, entonces $\left|\dfrac{1}{x} -\dfrac{1}{c}\right| < \epsilon$.
 
 </div>
 
@@ -519,9 +519,9 @@ Calcula el $\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2}$.
 
 En primer lugar, la función està definida para todos los puntos $x \geq -\frac{1}{3}$, menos el punto $x=0$. Por lo tanto $x$ es un punto de acumulación del dominio y tiene sentido considerar el límite de la función en ese punto.
 
-En segundo lugar, se trata de una indeterminación del tipo $\frac{0}{0}$, en estos casos que involucran sumas o diferencias de raícces cuadradas, es conveniente intentar resolver la indeterminación multiplicando y dividiendo por el conjugado:
+En segundo lugar, se trata de una indeterminación del tipo $\frac{0}{0}$, en estos casos que involucran sumas o diferencias de raíces cuadradas, es conveniente intentar resolver la indeterminación multiplicando y dividiendo por el conjugado:
 $$
-\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2} = \lim_{x \rightarrow 0}(\dfrac{\sqrt{1+2x} - \sqrt{1+3x})(\sqrt{1+2x} + \sqrt{1+3x})}{(x+2x^2)(\sqrt{1+2x} + \sqrt{1+3x})}
+\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2} = \lim_{x \rightarrow 0}\dfrac{(\sqrt{1+2x} - \sqrt{1+3x})(\sqrt{1+2x} + \sqrt{1+3x})}{(x+2x^2)(\sqrt{1+2x} + \sqrt{1+3x})}
 $$
 $$
 = \lim_{x \rightarrow 0}\dfrac{1+2x - (1+3x)}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})} = \lim_{x \rightarrow 0}\dfrac{-x}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})}=-\dfrac{1}{2}
@@ -760,7 +760,7 @@ $$
 
 ## Introducción
 
-Dada una función $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, si $x \in A$ es irracional cabe preguntarse cómo podemos evaluar f(x). Dado que podemos aproximar $x$ por racionales tanto como queramos, sería conveniente poder determinar la precisión de esta aproximación una vez que conozcamos la precisión requerida para $f(x)$. 
+Dada una función $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, si $x \in A$ es irracional cabe preguntarse cómo podemos evaluar $f(x)$. Dado que podemos aproximar $x$ por racionales tanto como queramos, sería conveniente poder determinar la precisión de esta aproximación una vez que conozcamos la precisión requerida para $f(x)$. 
 
 Las funciones continuas son precisamente las funciones para las que, una vez fijada la precisión requerida a $f(x)$, es posible determinar la precisión de $x$, para tener asegurada la precisión requerida.
 
@@ -990,7 +990,7 @@ knitr::include_graphics("Images/gof.png",dpi=1200)
 
 <div class="example"> **Ejemplos**
 
-1. $h(x) = \sin(\dfrac{\pi}{2}-x)$ es la composición de las funciones $g(x)=\sin x$ y $f(x) =\dfrac{\pi}{2}-x$: $h(x) = (g \circ f)(x)$. Se debe tener encuenta que la composición de funciones **no** es conmutativa, en  este caso $(f \circ g)(x) = \dfrac{\pi}{2}  - \sin x \neq \sin(\dfrac{\pi}{2}-x) = (g \circ f)(x)$
+1. $h(x) = \sin(\dfrac{\pi}{2}-x)$ es la composición de las funciones $g(x)=\sin x$ y $f(x) =\dfrac{\pi}{2}-x$: $h(x) = (g \circ f)(x)$. Se debe tener en cuenta que la composición de funciones **no** es conmutativa, en  este caso $(f \circ g)(x) = \dfrac{\pi}{2}  - \sin x \neq \sin(\dfrac{\pi}{2}-x) = (g \circ f)(x)$
 
 2. $h(x)= |x|$ es la composición de las funciones $r(x) = \sqrt(x)$ y $s(x)= x^2$: $h(x) = |x| = \sqrt{x^2}=r(s(x))$. Nuevamente $|x| = (r \circ s)(x) \neq (s \circ r) = (\sqrt{x})^2= x$, ya que la igualdad sólo sería vàlida para los $x >0$.
 
@@ -1218,7 +1218,7 @@ La imagen continua de un intervalo cerrado es un intervalo cerrado.
 
 <div class="dem"> **Demostración**
 
-Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existen $x_1, x_2 \in [a,b]$ tales que $f(x_1)= m=\inf{[a,b]}$ y $f(x_2)= M=\sup{[a,b]}$, por lo tanto $f([a,b]) \subset [m,M]$. Sea ahora $y \in [m,M]$, por el teorema de los valores intermedios, existe $x \in [a,b]$ tal que $y=f(x)$, por lo que $[m,M] \subset f([a,b])$.
+Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existen $x_1, x_2 \in [a,b]$ tales que $f(x_1)= m=\inf{[a,b]}$ y $f(x_2)= M=\sup{[a,b]}$, por lo tanto $f([a,b]) \subset [m,M]$. Sea ahora $y \in [m,M]$, por el teorema de los valores intermedios, existe $x \in [a,b]$ tal que $y=f(x)$, por lo que $[m,M] \subset f([a,b])$. POr consiguiente es $f([a,b]) = [m,M]$
 
 
 
