@@ -739,25 +739,25 @@ $$
 
 Dada una función $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, si $x \in A$ es irracional cabe preguntarse cómo podemos evaluar f(x). Dado que podemos aproximar $x$ por racionales tanto como queramos, sería conveniente poder determinar la precisión de esta aproximación una vez que conozcamos la precisión requerida para $f(x)$. 
 
-Las funciones contínuas son precisamente las funciones para las que, una vez fijada la precisión requerida a $f(x)$, es posible determinar la precisión de $x$, para tener asegurada la precisión requerida.
+Las funciones continuas son precisamente las funciones para las que, una vez fijada la precisión requerida a $f(x)$, es posible determinar la precisión de $x$, para tener asegurada la precisión requerida.
 
 En lo que sigue, veremos que de esta condición tiene consecuencias muy notables.
 
-## Funciones contínuas.
+## Funciones continuas.
 
 <l class="definition"> **Definición** </l>
 
-Sean $f: A\subset \mathbb{R} \rightarrow \mathbb{R}$ y $x_0 \in A$, **$f$ és contínua en $x_0$** si para cada $\epsilon >0$ existe un $\delta >0$ tal que para todo $x \in A$ que verifique que $|x-x_0|<\delta$, entonces $|f(x)-f(x_0)|< \epsilon$.
+Sean $f: A\subset \mathbb{R} \rightarrow \mathbb{R}$ y $x_0 \in A$, **$f$ és continua en $x_0$** si para cada $\epsilon >0$ existe un $\delta >0$ tal que para todo $x \in A$ que verifique que $|x-x_0|<\delta$, entonces $|f(x)-f(x_0)|< \epsilon$.
 
-Diremos que **$f$ es contínua en $A$**, si es contínua para todo $x \in A$.
+Diremos que **$f$ es continua en $A$**, si es continua para todo $x \in A$.
 
-Dicho de otra forma, **$f$ es contínua en $x_0$** si, una vez fijada la precisión, $\epsilon$, que se requiere para $f(x_0)$, es posible determinar la precisión, $\delta$, que hay que exigir a $x_0$ para tener asegurada la precisión de $f(x_0)$.
+Dicho de otra forma, **$f$ es continua en $x_0$** si, una vez fijada la precisión, $\epsilon$, que se requiere para $f(x_0)$, es posible determinar la precisión, $\delta$, que hay que exigir a $x_0$ para tener asegurada la precisión de $f(x_0)$.
 
 La gráfica siguiente ilustra esta definición.
 
 
 
-## Funciones contínuas
+## Funciones continuas
 
 <div class="center">
 <img src="Images/fcont.png" width="300px" />
@@ -765,35 +765,35 @@ La gráfica siguiente ilustra esta definición.
 
 $\epsilon$ es la precisión con la queremos $f(x_0)$ y $\delta$ es la precisón para $x_0$. Es decir, $f(x_0) \in (f(x_0)-\epsilon,f(x_0)+\epsilon)$, siempre que $x_0 \in (x_0 -\delta, x_0 + \delta)$.
 
-## Funciones contínuas
+## Funciones continuas
 
 <l class="observ"> **Observaciones** </l>
 
-1. Es fàcil comprobar que si $x_0$ es un punto de acumulación de $A$, entonces $f$ es contínua en $x_0$ si, y sólo sí, $\lim _{x \rightarrow x_0}f(x)=f(x_0)$.
+1. Es fàcil comprobar que si $x_0$ es un punto de acumulación de $A$, entonces $f$ es continua en $x_0$ si, y sólo sí, $\lim _{x \rightarrow x_0}f(x)=f(x_0)$.
 
-2. Si $x_0$ es un punto aislado de $A$, es decir, que no es de acumulación, entonces, dado que existe un entorno de $x_0$ donde este es el único punto de $A$, para que $f$ sea contínua en $x_0$ es suficiente que $f$ esté definida en ese punto.
+2. Si $x_0$ es un punto aislado de $A$, es decir, que no es de acumulación, entonces, dado que existe un entorno de $x_0$ donde este es el único punto de $A$, para que $f$ sea continua en $x_0$ es suficiente que $f$ esté definida en ese punto.
 
-## Funciones contínuas
+## Funciones continuas
 
 <l class="important"> **Observación importante** </l>
 
-Pese a que la definición de continuidad sobre un conjunto pueda inducir a pensar lo contrario, el concepto de continuidad es esencialmente **local**: una función es contínua en un punto. No hay que olvidar, pues, que aunque la función sea contínua sobre un conjunto $A$, la precisión $\delta$ para cada $x_0 \in A$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada *continuidad uniforme*. 
+Pese a que la definición de continuidad sobre un conjunto pueda inducir a pensar lo contrario, el concepto de continuidad es esencialmente **local**: una función es continua en un punto. No hay que olvidar, pues, que aunque la función sea continua sobre un conjunto $A$, la precisión $\delta$ para cada $x_0 \in A$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada *continuidad uniforme*. 
 
 
 
 
 
-## Funciones contínuas: Ejemplos.
+## Funciones continuas: Ejemplos.
 
 <div class="example"> **Ejemplos**
 
-1. Una función constante $f(x)=c$ es contínua para todo $x \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces $f(x_n) \rightarrow c$, puesto que $f(x_n)=c$, para todo $n \in \mathbb{N}$
+1. Una función constante $f(x)=c$ es continua para todo $x \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces $f(x_n) \rightarrow c$, puesto que $f(x_n)=c$, para todo $n \in \mathbb{N}$
 
-2. $g(x) = x$ es contínua para todo $x  \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces, obviamente $g(x_n)=x_n \rightarrow x_0$.
+2. $g(x) = x$ es continua para todo $x  \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces, obviamente $g(x_n)=x_n \rightarrow x_0$.
 
-3. $h(x)=x^2$ es contínua para todo $x \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces $x_n^2 \rightarrow x_0^2$.
+3. $h(x)=x^2$ es continua para todo $x \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces $x_n^2 \rightarrow x_0^2$.
 
-4. La función signo $\text{sgn}(x)$ no es contínua en $x=0$, puesto que como hemos visto no existe el $\lim_{x \rightarrow x_0} \text{sgn} (x)$, dado que $-1 = \lim_{x \rightarrow x_0^-} \text{sgn}(x) \neq \lim_{x \rightarrow x_0^+} \text{sgn}(x) =1$.
+4. La función signo $\text{sgn}(x)$ no es continua en $x=0$, puesto que como hemos visto no existe el $\lim_{x \rightarrow x_0} \text{sgn} (x)$, dado que $-1 = \lim_{x \rightarrow x_0^-} \text{sgn}(x) \neq \lim_{x \rightarrow x_0^+} \text{sgn}(x) =1$.
 
 5. La función $\psi :\mathbb{R} \rightarrow \mathbb{R}$ definida por
 $$
@@ -807,11 +807,11 @@ es discontinua en todo punto $x \in \mathbb{R}$, puesto que si $x \in \mathbb{Q}
 </div>
 
 
-## La función $\sin x$ es contínua.
+## La función $\sin x$ es continua.
 
 <l class="prop"> **Proposición** </l>
 
-La función $\sin : \mathbb{R} \rightarrow \mathbb{R}$ es contínua para todo $x \in \mathbb{R}$.
+La función $\sin : \mathbb{R} \rightarrow \mathbb{R}$ es continua para todo $x \in \mathbb{R}$.
 
 <div class="dem"> **Demostración**
 
@@ -828,7 +828,7 @@ $$
 $$
 </div>
 
-## Funciones contínuas
+## Funciones continuas
 
 <l class="observ"> **Observaciones** </l>
 
@@ -840,20 +840,20 @@ L, \quad  \text{ si } x=c \\
 f(x), \text{ si } x \in A
 \end{cases}
 $$
-es una función contínua en $A \cup \{c\}$.
+es una función continua en $A \cup \{c\}$.
 
-2. Caso que no exista el  $\lim_{x \rightarrow c} f(x)$, entonces no es posible extender $f$ a una función contínua en $A \cup \{c\}$, puesto que sea cual sea el valor, $L$ que asignemos a la extensión $F$ en $c$, dicha función no podria ser contínua, puesto que si fuera contínua tendríamos que $\lim_{x \rightarrow c} f(x)=L$, y hemos supuesto dicho límite no existía.
+2. Caso que no exista el  $\lim_{x \rightarrow c} f(x)$, entonces no es posible extender $f$ a una función continua en $A \cup \{c\}$, puesto que sea cual sea el valor, $L$ que asignemos a la extensión $F$ en $c$, dicha función no podria ser continua, puesto que si fuera continua tendríamos que $\lim_{x \rightarrow c} f(x)=L$, y hemos supuesto dicho límite no existía.
 
-## Funciones contínuas
+## Funciones continuas
 
 <div class="example"> **Ejemplos**
 
-1. La función $f(x)= \frac{\sin x}{x}$, no está definida en $x=0$, sin embargo, dado que existe $\lim_{x \rightarrow 0} \frac{\sin x}{x} =1$, se puede extender dicha función a una función contínua definida en $x=0$, asignando en ese punto el valor del límite, es decir 
+1. La función $f(x)= \frac{\sin x}{x}$, no está definida en $x=0$, sin embargo, dado que existe $\lim_{x \rightarrow 0} \frac{\sin x}{x} =1$, se puede extender dicha función a una función continua definida en $x=0$, asignando en ese punto el valor del límite, es decir 
 $$
 f(0) =1 = \lim_{x \rightarrow 0} \frac{\sin x}{x} 
 $$
 
-2. Por el contrario, no es posible extender la función $h(x)= \text{sgn}(x)$ para que sea contínua en $x=0$, puesto que, como como hemos visto, no existe el $\lim_{x \rightarrow 0} \text{sgn} (x)$.
+2. Por el contrario, no es posible extender la función $h(x)= \text{sgn}(x)$ para que sea continua en $x=0$, puesto que, como como hemos visto, no existe el $\lim_{x \rightarrow 0} \text{sgn} (x)$.
 
 3. Dado que el $\lim_{x \rightarrow 0} x \cos \frac{1}{x} = 0$, entonces la función $\varphi :\mathbb{R} \rightarrow \mathbb{R}$, definida por
 $$
@@ -863,7 +863,7 @@ $$
 x \cos \frac{1}{x}, \text{ si } x \neq 0
 \end{cases}
 $$
-es una función contínua para todo $x \in \mathbb{R}$
+es una función continua para todo $x \in \mathbb{R}$
 
 </div>
 
@@ -879,10 +879,10 @@ Las consideraciones anteriores, juntamente con la coincidencia o no de los limit
 
 <l class="observ"> **Observación** </l>
 
-Las discontinuidades de salto, como la de la función sgn$(x)$ en el punto $0$, ayudan a entender el nombre **contínua** para las funciones que lo son: su gráfica no presenta saltos de ningún tipo, es decir -y valga la redundancia- la gráfica de una función contínua es continua.
+Las discontinuidades de salto, como la de la función sgn$(x)$ en el punto $0$, ayudan a entender el nombre **continua** para las funciones que lo son: su gráfica no presenta saltos de ningún tipo, es decir -y valga la redundancia- la gráfica de una función continua es continua.
 
 
-## Combinaciones de funciones contínuas
+## Combinaciones de funciones continuas
 
 <l class="definition"> **Definición** </l>
 
@@ -893,18 +893,18 @@ Sean $f,g: A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de 
 3. Si $\lambda \in \mathbb{R}$, $\lambda \cdot f$ es la función de $A$ en $\mathbb{R}$ definida por $( \lambda \cdot f)(x) =\lambda \cdot f(x)$.
 4. Si $g(x) \neq 0$, $\dfrac{f}{g}$ es la función de $A$ en $\mathbb{R}$ definida por $\dfrac{f}{g}(x)= \dfrac{f(x)}{g(x)}$
 
-## Combinaciones de funciones contínuas
+## Combinaciones de funciones continuas
 
 <l class="prop"> **Proposición** </l>
 
-Sean $f,g : A \subset \mathbb{R} \rightarrow \mathbb{R}$  tales que $f$ y $g$ són contínuas en en $x_0 \in A$. Entonces
+Sean $f,g : A \subset \mathbb{R} \rightarrow \mathbb{R}$  tales que $f$ y $g$ són continuas en en $x_0 \in A$. Entonces
 
-1. $f+g$ es contínua en $x_0$
-2. $f.g$ es contínua en $x_0$
-3. Si $\lambda \in \mathbb{R}$, $\lambda f$ es contínua en $x_0$.
-4. Si $g(x) \neq 0$ para todo $x \in A$, entonces $\dfrac{f}{g}$ es contínua en $x_0$
+1. $f+g$ es continua en $x_0$
+2. $f.g$ es continua en $x_0$
+3. Si $\lambda \in \mathbb{R}$, $\lambda f$ es continua en $x_0$.
+4. Si $g(x) \neq 0$ para todo $x \in A$, entonces $\dfrac{f}{g}$ es continua en $x_0$
 
-## Combinaciones de funciones contínuas
+## Combinaciones de funciones continuas
 
 <div class="dem"> **Demostración**
 
@@ -919,16 +919,16 @@ Consideraciones anàlogas sirven para demostrar las otras combinaciones descrita
 
 </div>
 
-## Combinaciones de funciones contínuas
+## Combinaciones de funciones continuas
 
 <l class="prop"> **Proposición** </l>
 
-Sean $f,g : A \subset \mathbb{R} \rightarrow \mathbb{R}$  tales que $f$ y $g$ **són contínuas en en $A$**. Entonces
+Sean $f,g : A \subset \mathbb{R} \rightarrow \mathbb{R}$  tales que $f$ y $g$ **són continuas en en $A$**. Entonces
 
-1. $f+g$ es contínua en $A$
-2. $f.g$ es contínua en $A$
-3. Si $\lambda \in \mathbb{R}$, $\lambda f$ es contínua en $A$.
-4. Si $g(x) \neq 0$ para todo $x \in A$, entonces $\dfrac{f}{g}$ es contínua en $A$
+1. $f+g$ es continua en $A$
+2. $f.g$ es continua en $A$
+3. Si $\lambda \in \mathbb{R}$, $\lambda f$ es continua en $A$.
+4. Si $g(x) \neq 0$ para todo $x \in A$, entonces $\dfrac{f}{g}$ es continua en $A$
 
 <div class="dem"> **Demostración**
 
@@ -971,50 +971,50 @@ $$
 
 </div>
 
-## Composición de funciones contínuas
+## Composición de funciones continuas
 
 <l class="prop"> **Proposición** </l>
 
-Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g : B \subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $f(A) \subset B$. Si $f$ es contínua en $x_0$ y $g$ es contínua en $f(x_0)$, entonces $g \circ f$ es contínua en $x_0$
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g : B \subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $f(A) \subset B$. Si $f$ es continua en $x_0$ y $g$ es continua en $f(x_0)$, entonces $g \circ f$ es continua en $x_0$
 
 <div class="dem"> **Demostración**
 
 Para simplificar la notación, pongamos que $y_0=f(x_0)$ y que $V_{\epsilon}(y)$ es el entorno centrado en $y$ y de radio $\epsilon$.
 
-Sea $\epsilon >0$, dado que $g$ es contínua en $y_0$, existe un $\gamma >0$ tal que si $y \in V_{\gamma} (y_0) \cap B$, entonces $g(y) \in V_{\epsilon}(g(y_0))$.
+Sea $\epsilon >0$, dado que $g$ es continua en $y_0$, existe un $\gamma >0$ tal que si $y \in V_{\gamma} (y_0) \cap B$, entonces $g(y) \in V_{\epsilon}(g(y_0))$.
 
 Dado que $f$ es continua en $x_0$ , $f(A) \subset B$ y que $\gamma >0$, existe un $\delta >0$ tal que si $x_0 \in V_{\delta}(x_0) \cap A$, entonces $y_0=f(x_0) \in V_{\gamma}(f(x_0))$.
 
-En definitiva, para cada $\epsilon >0$ hemos podido determinar un $\delta >0$ tal que si $x \in V_{\delta}(x_0) \cap A$, entonces $g(f(x)) \in V_{\epsilon} (g(f(x_0)))$, es decir que $g \circ f$ es contínua en $x_0$.
+En definitiva, para cada $\epsilon >0$ hemos podido determinar un $\delta >0$ tal que si $x \in V_{\delta}(x_0) \cap A$, entonces $g(f(x)) \in V_{\epsilon} (g(f(x_0)))$, es decir que $g \circ f$ es continua en $x_0$.
 
 
 </div>
 
-## Composición de funciones contínuas
+## Composición de funciones continuas
 
 <div class="example"> **Ejemplos**
 
-1. La función $\cos : \mathbb{R} \rightarrow \mathbb{R}$ es contínua para todo $x \in \mathbb{R}$. En efecto: si $g(x) = \sin(x)$ y $f(x) = \dfrac{\pi}{2} -x$, entonces, tanto $f$ como $g$ son contínuas para todo $x \in \mathbb{R}$, por lo tanto
+1. La función $\cos : \mathbb{R} \rightarrow \mathbb{R}$ es continua para todo $x \in \mathbb{R}$. En efecto: si $g(x) = \sin(x)$ y $f(x) = \dfrac{\pi}{2} -x$, entonces, tanto $f$ como $g$ son continuas para todo $x \in \mathbb{R}$, por lo tanto
 $$
 \cos (x) = \sin (\dfrac{\pi}{2} - x) = g(f(x))
 $$
-es una función contínua para todo $x \in \mathbb{R}$ por ser la composición de dos funciones contínuas.
+es una función continua para todo $x \in \mathbb{R}$ por ser la composición de dos funciones continuas.
 
-2. Si $f(x)$ es una función contínua en $x_0$, entonces $|f(x)|$ también es contínua en $x_0$, puesto que $h(x)=|x|$ es una función contínua para todo $x \in \mathbb{R}$, dado que $|x|=\sqrt{x^2}$ y tanto $r(x) = \sqrt{x}$, como $s(x)=x^2$ son funciones contínuas, la primera para todo $x \geq 0$ y la segunda para todo $x$. Entonces 
+2. Si $f(x)$ es una función continua en $x_0$, entonces $|f(x)|$ también es continua en $x_0$, puesto que $h(x)=|x|$ es una función continua para todo $x \in \mathbb{R}$, dado que $|x|=\sqrt{x^2}$ y tanto $r(x) = \sqrt{x}$, como $s(x)=x^2$ son funciones continuas, la primera para todo $x \geq 0$ y la segunda para todo $x$. Entonces 
 $$
 |f(x)|= r(s(f(x))),
 $$
-es decir seria la composición de tres funciones contínuas.
+es decir seria la composición de tres funciones continuas.
 
-2. Si $f(x)$ es una función contínua en $x_0$, entonces $e^{f(x)}$ es también contínua en $x_0$, puesto que se trata de la composición de dos funciones contínuas, $f$, y la exponencial, $e^x$. Lo mismo pasa con $\log f(x)$, si $f$ es una función positiva.
+2. Si $f(x)$ es una función continua en $x_0$, entonces $e^{f(x)}$ es también continua en $x_0$, puesto que se trata de la composición de dos funciones continuas, $f$, y la exponencial, $e^x$. Lo mismo pasa con $\log f(x)$, si $f$ es una función positiva.
 
 </div>
 
-## Composición de funciones contínuas
+## Composición de funciones continuas
 
 <l class="prop"> **Proposición** </l>
 
-Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g : B \subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $f(A) \subset B$. Si $f$ es contínua en $A$ y $g$ es contínua en $B$, entonces $g \circ f$ es contínua en $A$
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g : B \subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $f(A) \subset B$. Si $f$ es continua en $A$ y $g$ es continua en $B$, entonces $g \circ f$ es continua en $A$
 
 <div class="dem"> **Demostración**
 
@@ -1022,31 +1022,31 @@ Inmediata a partir de la definición de continuidad en un conjunto y de la propo
 
 </div>
 
-# Funciones contínuas en intervalos
+# Funciones continuas en intervalos
 
 ## Introducción
 
-Al considerar funciones contínuas sobre intervalos aparece, con todo su esplendor, la potencia y la magia de la propiedad de continuidad. Veremos que el hecho que la gráfica de la función entre los extremos del intervalo no se interrumpa -es decir, que sea contínua- se convierte en un potente instrumento para la localización de raíces de una ecuación, polinómica o no.
+Al considerar funciones continuas sobre intervalos aparece, con todo su esplendor, la potencia y la magia de la propiedad de continuidad. Veremos que el hecho que la gráfica de la función entre los extremos del intervalo no se interrumpa -es decir, que sea continua- se convierte en un potente instrumento para la localización de raíces de una ecuación, polinómica o no.
 
-También se demuestra que si el intervalo es cerrado, entonces la función está acotada y, el que posiblemente sea el resultado más importante, es que en este caso, las funciones contínuas son **uniformemente contínuas**, es decir que el $\delta$ de la propiedad $\epsilon -\delta$, que depende de $\epsilon$ y del punto, pasa a depender sólo de $\epsilon$, un hecho que tiene importantes consecuencias, como se verá posteriormente.
+También se demuestra que si el intervalo es cerrado, entonces la función está acotada y, el que posiblemente sea el resultado más importante, es que en este caso, las funciones continuas son **uniformemente continuas**, es decir que el $\delta$ de la propiedad $\epsilon -\delta$, que depende de $\epsilon$ y del punto, pasa a depender sólo de $\epsilon$, un hecho que tiene importantes consecuencias, como se verá posteriormente.
 
 
 ## Teorema de la conservación del signo
 
 <l class="prop"> **Proposición: Teorema de la conservación del signo** </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua y sea $c \in (a,b)$ tal que $f(c) >0$. Entonces existe un $\delta >0$ tal que $f(x) >0$ para todo $x \in (c-\delta, c+\delta)$. Análogamente, si $f(c) <0$, entonces existe un $\delta >0$ tal que $f(x) <0$ para todo $x \in (c-\delta, c+\delta)$
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua y sea $c \in (a,b)$ tal que $f(c) >0$. Entonces existe un $\delta >0$ tal que $f(x) >0$ para todo $x \in (c-\delta, c+\delta)$. Análogamente, si $f(c) <0$, entonces existe un $\delta >0$ tal que $f(x) <0$ para todo $x \in (c-\delta, c+\delta)$
 
 <l class="prop"> **Corolario** </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua y sea $c \in (a,b)$ tal que $f(c) =0$, entonces en todo entorno de $c$ hay puntos en los que $f$ es positiva y puntos en los que $f$ es negativa.
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua y sea $c \in (a,b)$ tal que $f(c) =0$, entonces en todo entorno de $c$ hay puntos en los que $f$ es positiva y puntos en los que $f$ es negativa.
 
 
 ## Teorema de la conservación del signo: Demostración.
 
 <div class="dem"> **Demostración**
 
-Supongamos en primer lugar que $f(c)>0$, sea $\epsilon = \dfrac{f(c)}{2} >0$. Por ser $f$ contínua en $c$, existe $\delta >0$ tal que si $x \in (c-\delta,c+\delta)$, entonces $f(x) \in (f(c)-\epsilon,f(c)+\epsilon) = \left(\dfrac{f(c)}{2},\dfrac{3f(c)}{2}\right)$, por lo tanto si $x  \in (c-\delta,c+\delta)$, es $f(x) > \dfrac{f(c)}{2} >0$.
+Supongamos en primer lugar que $f(c)>0$, sea $\epsilon = \dfrac{f(c)}{2} >0$. Por ser $f$ continua en $c$, existe $\delta >0$ tal que si $x \in (c-\delta,c+\delta)$, entonces $f(x) \in (f(c)-\epsilon,f(c)+\epsilon) = \left(\dfrac{f(c)}{2},\dfrac{3f(c)}{2}\right)$, por lo tanto si $x  \in (c-\delta,c+\delta)$, es $f(x) > \dfrac{f(c)}{2} >0$.
 
 </div>
 
@@ -1063,7 +1063,7 @@ Demuestra el teorema anterior en el caso que $f(c) <0$.
 
 <l class="prop"> **Proposición: Teorema de Bolzano** </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua tal que $f(a)\cdot f(b) < 0$, entonces existe $c \in (a,b)$ tal que $f(c)=0$
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua tal que $f(a)\cdot f(b) < 0$, entonces existe $c \in (a,b)$ tal que $f(c)=0$
 
 La condición $f(a)\cdot f(b) < 0$ es una forma sencilla para expresar que $f(a)$ y $f(b)$ son de signo diferente como se ilustra en el gráfico siguiente:
 
@@ -1079,7 +1079,7 @@ La condición $f(a)\cdot f(b) < 0$ es una forma sencilla para expresar que $f(a)
 
 Supongamos que $f(a)<0$ y que $f(b)>0$, el conjunto $S=\{x \in [a,b]: f(x) <0\}$ está acotado superiormente, por ejemplo, por $b$. Sea $c= \sup S$, veamos que $f(c)=0$.
 
-Supongamos en primer lugar que $f(c) <0$, por ser $f$ contínua y por el teorema de la conservación del signo, existirá un $\delta >0$ tal que para todo $x \in (c-\delta, c+\delta)$ es $f(x) <0$, es decir, existirían elementos $x>c$ tales que $f(x)<0$, lo que contradice que $c$ sea el mayor para los que $f$ toma valores negativos, por lo tanto no puede ser que $f(c)<0$.
+Supongamos en primer lugar que $f(c) <0$, por ser $f$ continua y por el teorema de la conservación del signo, existirá un $\delta >0$ tal que para todo $x \in (c-\delta, c+\delta)$ es $f(x) <0$, es decir, existirían elementos $x>c$ tales que $f(x)<0$, lo que contradice que $c$ sea el mayor para los que $f$ toma valores negativos, por lo tanto no puede ser que $f(c)<0$.
 
 Supongamos, pues que $f(c)>0$, razonamientos análogos a los anteriores no llevarían a ver que es incompatible esta condición con el hecho que $c$ sea el supremo de $S$.
 
@@ -1097,13 +1097,13 @@ Demuestra el teorema de Bolzano en el caso que sea $f(a) >0$ y $f(b)<0$.
 
 <l class="prop"> **Proposición: Teorema de los valores intermedios**
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua y sean $x_1,x_2 \in [a,b]$ tales que $x_1 < x_2$ y $f(x_1)\neq f(x_2)$, entonces $f$ toma todos los valores comprendidos entre $f(x_1)$ y $f(x_2)$.
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua y sean $x_1,x_2 \in [a,b]$ tales que $x_1 < x_2$ y $f(x_1)\neq f(x_2)$, entonces $f$ toma todos los valores comprendidos entre $f(x_1)$ y $f(x_2)$.
 
 <div class="dem"> **Demostración**.
 
 En primer lugar  hay que tener en cuenta que  $x_1 < x_2$ no significa que $f(x_1)<f(x_2)$. 
 
-Supongamos, pues, que $f(x_1) < f(x_2)$, sea $d \in (f(x_1), f(x_2))$, entonces $h(x)= f(x)-d$ es una función contínua sobre el intervalo $[x_1,x_2]$ tal que $h(x_1)=f(x_1) -d <0$ y $h(x_2)= f(x_2) -d >0$, por el teorema de Bolzano, existe $c \in (x_1,x_2)$ tal que $h(c)=0=f(c)-d$, es decir que $f(c)=d$.
+Supongamos, pues, que $f(x_1) < f(x_2)$, sea $d \in (f(x_1), f(x_2))$, entonces $h(x)= f(x)-d$ es una función continua sobre el intervalo $[x_1,x_2]$ tal que $h(x_1)=f(x_1) -d <0$ y $h(x_2)= f(x_2) -d >0$, por el teorema de Bolzano, existe $c \in (x_1,x_2)$ tal que $h(c)=0=f(c)-d$, es decir que $f(c)=d$.
 
 </div>
 
@@ -1147,13 +1147,13 @@ Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$:
 
 <l class="prop"> **Proposición: Teorema de Weierstrass.** </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua, entonces $f$ está acotada.
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua, entonces $f$ está acotada.
 
 <div class="dem"> **Demostración**
 
 Por reducción al absurdo. Supongamos que $f$ no está acotada en $[a,b]$, entonces existe $x_1 \in I_1= [a,b]$ tal que $f(x_1) >1$. Sea $c =\dfrac{a+b}{2}$, entonces $f$ no está acotada en $[a,c]$ o en $[c,b]$, sea $I_2 =[a_2,b_2]$ dicho intervalo. Entonces $f$ no está cotada en $I_2$, por lo tanto, existe $x_2 \in I_2$ tal que $f(x_2) > 2$. Reiterando este proceso, construiremos una sucesión $I_n$ de intervalos anidados, $I_{n-1} \supset I_n$, tal que $b_n - a_n = \dfrac{b_{n-1 }-a_{n-1}}{2}$, por lo que $\lim_{n \rightarrow \infty}(b_n - a_n)=0$ y, además $x_n \in I_n$
 
-Por el principio de los intervalos anidados, existe $c$ tal que $\lim_{n \rightarrow \infty} a_n = c = \lim_{n \rightarrow \infty} b_n$. Dado que $a_n \leq x_n \leq b_n$, tendremos que $\lim_{n \rightarrow \infty} x_n = c$ como, por otra parte $f(x_n) > n$, resulta que $f(x_n)  \rightarrow \infty$, lo que contradice que $f$ sea contínua, puesto que debería ser $f(x_n) \rightarrow f(c)$.
+Por el principio de los intervalos anidados, existe $c$ tal que $\lim_{n \rightarrow \infty} a_n = c = \lim_{n \rightarrow \infty} b_n$. Dado que $a_n \leq x_n \leq b_n$, tendremos que $\lim_{n \rightarrow \infty} x_n = c$ como, por otra parte $f(x_n) > n$, resulta que $f(x_n)  \rightarrow \infty$, lo que contradice que $f$ sea continua, puesto que debería ser $f(x_n) \rightarrow f(c)$.
 
 </div>
 
@@ -1163,12 +1163,12 @@ Por el principio de los intervalos anidados, existe $c$ tal que $\lim_{n \righta
 
 <l class="prop"> **Proposición. Teorema del extremo** </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ contínua, entonces existen $x_1$ y $x_2$ tales que $f(x_1) = \inf_{[a,b]}f$ y que $f(x_2) = \sup_{[a,b]}f$
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua, entonces existen $x_1$ y $x_2$ tales que $f(x_1) = \inf_{[a,b]}f$ y que $f(x_2) = \sup_{[a,b]}f$
 
 <div class="dem"> **Demostración**
 
-Dado que $f$ es contínua en $[a,b]$, $f$ está acotada, por lo tanto existen $M= \sup_{[a,b]}f$ y $m= \inf_{[a,b]}f$. Veamos que existen $x_1$ y $x_2$ tales que $m=f(x_1)$ y $M=f(x_2)$. Supongamos, en primer lugar que no existe $x$ tal que $f(x) = M$, entonces la función $h(x)=\dfrac{1}{f(x)-M}$ es contínua y por lo tanto, debería estar acotada en $[a,b]$.
-Veamos que no es así: sea $K>0$, por ser $M= \sup_{[a,b]}f$, existe $x \in [a,b]$ tal que $f(x) \in (M-\dfrac{1}{K},M+\dfrac{1}{K})$, puesto que, de no ser así $M-\dfrac{1}{K}$ seria una cota superior para $f$ en $[a,b]$, por lo tanto, dado que $h(x) = \dfrac{1}{f(x)-M} > K$, lo cual contradice que sea contínua en $[a,b]$. Así pues, existe $x_2$ tal que $f(x_2)=M= \sup_{[a,b]} f$. 
+Dado que $f$ es continua en $[a,b]$, $f$ está acotada, por lo tanto existen $M= \sup_{[a,b]}f$ y $m= \inf_{[a,b]}f$. Veamos que existen $x_1$ y $x_2$ tales que $m=f(x_1)$ y $M=f(x_2)$. Supongamos, en primer lugar que no existe $x$ tal que $f(x) = M$, entonces la función $h(x)=\dfrac{1}{f(x)-M}$ es continua y por lo tanto, debería estar acotada en $[a,b]$.
+Veamos que no es así: sea $K>0$, por ser $M= \sup_{[a,b]}f$, existe $x \in [a,b]$ tal que $f(x) \in (M-\dfrac{1}{K},M+\dfrac{1}{K})$, puesto que, de no ser así $M-\dfrac{1}{K}$ seria una cota superior para $f$ en $[a,b]$, por lo tanto, dado que $h(x) = \dfrac{1}{f(x)-M} > K$, lo cual contradice que sea continua en $[a,b]$. Así pues, existe $x_2$ tal que $f(x_2)=M= \sup_{[a,b]} f$. 
 
 Razonamientos análogos permiten demostrar que existe $x_1 \in [a,b]$ tal que $f(x_1)=m= \inf_{[a,b]}f$
 </div>
@@ -1183,7 +1183,7 @@ Razonamientos análogos permiten demostrar que existe $x_1 \in [a,b]$ tal que $f
 
 <l class="prop"> **Proposición. Corolario del teorema del extremo.** </l>
 
-La imagen contínua de un intervalo cerrado es un intervalo cerrado.
+La imagen continua de un intervalo cerrado es un intervalo cerrado.
 
 <div class="dem"> **Demostración**
 
@@ -1195,7 +1195,7 @@ Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existe
 
 ## Introducción
 
-A pesar de las múltiples e interesantes propiedades que tienen la funciones contínuas en un punto, en determinadas situaciones, el hecho que el $\delta$ dependa de $\epsilon$ y del punto se convierte en una limitación importante. Así, por ejemplo, la convergencia de determinadas series de funciones está vinculada a que $\delta$ sea el mismo para todos los $x$, una vez fijado el $\epsilon$.
+A pesar de las múltiples e interesantes propiedades que tienen la funciones continuas en un punto, en determinadas situaciones, el hecho que el $\delta$ dependa de $\epsilon$ y del punto se convierte en una limitación importante. Así, por ejemplo, la convergencia de determinadas series de funciones está vinculada a que $\delta$ sea el mismo para todos los $x$, una vez fijado el $\epsilon$.
 
 En este apartado se estudia un tipos de continuidad en la que $\delta$ sólo depende de $\epsilon$, es la llamada **continuidad uniforme**.
 
@@ -1203,11 +1203,48 @@ En este apartado se estudia un tipos de continuidad en la que $\delta$ sólo dep
 
 <l class="definition"> **Definición** </l>
 
-Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ es **uniformemente contínua** en $A$ si para todo $\epsilon > 0$ existe $\delta >0$ tal que si $x,y \in A$ son tales $|x-y| < \delta$, entonces $|f(x) -f(y)| < \epsilon$
+Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ es **uniformemente continua** en $A$ si para todo $\epsilon > 0$ existe $\delta >0$ tal que si $x,y \in A$ son tales $|x-y| < \delta$, entonces $|f(x) -f(y)| < \epsilon$
 
 <div class="important"> **Observación importante**
 
-La **continuidad uniforme** es una propiedad de conjunto: una función puede ser uniformemente contínua en un conjunto, pero no tiene sentido decir que una función es uniformemente contínua en un punto. Con todo, para evitar confusiones, se acostumbra a denotar esta última por **continuidad puntual** para distinguirla de la **uniforme** 
+La **continuidad uniforme** es una propiedad de conjunto: una función puede ser uniformemente continua en un conjunto, pero no tiene sentido decir que una función es uniformemente continua en un punto. Con todo, para evitar confusiones, se acostumbra a denotar esta última por **continuidad puntual** para distinguirla de la **uniforme** 
 
 </div>
 
+## Continuidad uniforme
+
+<l class="prop"> **Lema** </l>
+
+Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. Si $f$ **no** es uniformemente continua en $A$ entonces existen $\epsilon > 0$ y dos sucesiones $x_n$ y $y_n$ de puntos de $A$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ y $|f(x_n) - f(y_n)| \geq \epsilon$
+
+<div class="dem"> **Demostración**
+
+Si $f$ no es uniformente continua, entonces existe $\epsilon >0$ tal que para todo $\delta >0$ existen $x_{\delta}$ y $y_{\delta}$ tales que $|x_{\delta} - y_{\delta}|  < \delta$ y $|f(x_{\delta}) - f(y_{\delta})| > \epsilon$.
+
+Dado este $\epsilon$, consideremos la sucesión de números positivos $\dfrac{1}{n}>0$. Para cada uno de estos números existen, pues, $x_n$ y $y_n$ tales que $|x_n - y_n| <\dfrac{1}{n}$ y $|f(x_n) - f(y_n)| \geq \epsilon$. Por lo tanto $x_n$ y $y_n$ satisfacen las condiciones del enunciado.
+
+
+## Continuidad uniforme
+
+<div class="example"> **Ejemplo de función no uniformemente continua**
+
+La función $f(x)=\dfrac{1}{x}$ no es uniformemente continua en $(0,+\infty)$. 
+
+En efecto: las sucesiones $x_n = \dfrac{1}{n}$ y $y_n = \dfrac{1}{n+1}$ son tales que $|x_n -y_n|= \dfrac{1}{n(n+1)}$, es decir que $\lim_{n \rightarrow \infty}(x_n - y_n) = 0$ en tanto que que
+$|f(x_n)-f(y_n)| = |n -(n+1)| = 1$.
+
+## Continuidad uniforme
+
+<l class="prop"> **Proposición** </l>
+
+Toda función continua sobre un intervalo cerrado es uniformemente continua.
+
+<div class="dem"> **Demostración**
+
+Supongamos que $f$ no es uniformemente continua en $[a,b]$. De acuerdo con el lema anterior, existen un $\epsilon >0$ y dos sucesiones $x_n$ y $y_n$ de puntos de $[a,b]$ tales que $\lim_{n \rightarrow \infty}(x_n-y_n)=0$ y $|f(x_n)-f(y_n)| > \epsilon$. 
+
+Dado que, tanto $x_n$, como $y_n$ estan acotadas por estar contenidas en $[a,b]$, de acuerdo con el teorema de Bolzano-Weierstrass, cada una de ellas tiene una subsucesión convergente. Sean estas $x_{n _k}$ y $y_{n_k}$, sea $l = \lim x_{n _k}$, tenemos que $|y_{n_k} -l|\leq |y_{n_k} - x_{n _k}| + |x_{n _k}-l|$ y, por lo tanto, dado que $\lim (x_n -y_n) =0$, tendremos que $\lim y_{n_k} =l$. Por consiguiente, tanto $f(x_{n_k}) \rightarrow f(l)$, como $f(y_{n_k}) \rightarrow f(l)$,es decir que $\lim (f(x_{n_k}) - f(y_{n_k}) = 0$ lo cual es absurdo, puesto que $|f(x_n)-f(y_n)| > \epsilon$ para todo $n$. 
+
+Queda así demostrado que si $f$ es continua sobre un intervalo cerrado, entonces $f$ es uniformemente continua.
+
+</div>
