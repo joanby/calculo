@@ -1242,6 +1242,8 @@ La **continuidad uniforme** es una propiedad de conjunto: una función puede ser
 
 </div>
 
+
+
 ## Continuidad uniforme
 
 <l class="prop"> **Lema** </l>
@@ -1264,6 +1266,27 @@ La función $f(x)=\dfrac{1}{x}$ no es uniformemente continua en $(0,+\infty)$.
 En efecto: las sucesiones $x_n = \dfrac{1}{n}$ y $y_n = \dfrac{1}{n+1}$ son tales que $|x_n -y_n|= \dfrac{1}{n(n+1)}$, es decir que $\lim_{n \rightarrow \infty}(x_n - y_n) = 0$ en tanto que que
 $|f(x_n)-f(y_n)| = |n -(n+1)| = 1$.
 
+</div>
+
+<l class="observ"> **Observación** </l>
+
+El lema anterior se puede formular en positivo, esto es:
+
+Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es uniformemente continua en $A$ si, y sólo si, para todo par de sucesiones $x_n$ y $y_n$ de puntos de $A$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ es $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$
+
+## Funciones continuas
+
+<l class="prop"> **Proposición** </l>
+
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y  $g: B \subset \mathbb{R} \rightarrow \mathbb{R}$ tales que $f(A) \subset B$. Entonces si $f$ y $g$ son uniformemente continuas, también lo es la función compuesta $g \circ f$.
+
+<div class="dem"> **Demostración**
+
+La demostración es inmediata  a partir de la observación anterior: Sean $x_n$ y $y_n$ dos sucesiones tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$. Por ser $f$ uniformente continua, tendremos que $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$. Por ser $g$ uniformemente continua, tendremos que $\lim_{n \rightarrow \infty}(g(f(x_n))- g(f(y_n))) =0$, por lo tanto $g \circ f$ es uniformemente continua.
+
+</div>
+
+
 ## Continuidad uniforme
 
 <l class="prop"> **Proposición** </l>
@@ -1279,3 +1302,4 @@ Dado que, tanto $x_n$, como $y_n$ estan acotadas por estar contenidas en $[a,b]$
 Queda así demostrado que si $f$ es continua sobre un intervalo cerrado, entonces $f$ es uniformemente continua.
 
 </div>
+

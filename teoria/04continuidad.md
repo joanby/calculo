@@ -150,7 +150,7 @@ $$
 $$
 
 
-Ahora, dado un $\epsilon >0$ bastaá tomar $\delta = \min \left\{\dfrac{1}{2}c, \dfrac{1}{2}c^2 \epsilon \right\}$ para tener asegurado que si $|x -c|<\delta$, entonces $\left|\dfrac{1}{x} -\dfrac{1}{c}\right| < \epsilon$.
+Ahora, dado un $\epsilon >0$ bastará tomar $\delta = \min \left\{\dfrac{1}{2}c, \dfrac{1}{2}c^2 \epsilon \right\}$ para tener asegurado que si $|x -c|<\delta$, entonces $\left|\dfrac{1}{x} -\dfrac{1}{c}\right| < \epsilon$.
 
 </div>
 
@@ -503,9 +503,9 @@ Calcula el $\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2}$.
 
 En primer lugar, la función està definida para todos los puntos $x \geq -\frac{1}{3}$, menos el punto $x=0$. Por lo tanto $x$ es un punto de acumulación del dominio y tiene sentido considerar el límite de la función en ese punto.
 
-En segundo lugar, se trata de una indeterminación del tipo $\frac{0}{0}$, en estos casos que involucran sumas o diferencias de raícces cuadradas, es conveniente intentar resolver la indeterminación multiplicando y dividiendo por el conjugado:
+En segundo lugar, se trata de una indeterminación del tipo $\frac{0}{0}$, en estos casos que involucran sumas o diferencias de raíces cuadradas, es conveniente intentar resolver la indeterminación multiplicando y dividiendo por el conjugado:
 $$
-\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2} = \lim_{x \rightarrow 0}(\dfrac{\sqrt{1+2x} - \sqrt{1+3x})(\sqrt{1+2x} + \sqrt{1+3x})}{(x+2x^2)(\sqrt{1+2x} + \sqrt{1+3x})}
+\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2} = \lim_{x \rightarrow 0}\dfrac{(\sqrt{1+2x} - \sqrt{1+3x})(\sqrt{1+2x} + \sqrt{1+3x})}{(x+2x^2)(\sqrt{1+2x} + \sqrt{1+3x})}
 $$
 $$
 = \lim_{x \rightarrow 0}\dfrac{1+2x - (1+3x)}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})} = \lim_{x \rightarrow 0}\dfrac{-x}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})}=-\dfrac{1}{2}
@@ -737,7 +737,7 @@ $$
 
 ## Introducción
 
-Dada una función $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, si $x \in A$ es irracional cabe preguntarse cómo podemos evaluar f(x). Dado que podemos aproximar $x$ por racionales tanto como queramos, sería conveniente poder determinar la precisión de esta aproximación una vez que conozcamos la precisión requerida para $f(x)$. 
+Dada una función $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, si $x \in A$ es irracional cabe preguntarse cómo podemos evaluar $f(x)$. Dado que podemos aproximar $x$ por racionales tanto como queramos, sería conveniente poder determinar la precisión de esta aproximación una vez que conozcamos la precisión requerida para $f(x)$. 
 
 Las funciones continuas son precisamente las funciones para las que, una vez fijada la precisión requerida a $f(x)$, es posible determinar la precisión de $x$, para tener asegurada la precisión requerida.
 
@@ -963,7 +963,7 @@ $$
 
 <div class="example"> **Ejemplos**
 
-1. $h(x) = \sin(\dfrac{\pi}{2}-x)$ es la composición de las funciones $g(x)=\sin x$ y $f(x) =\dfrac{\pi}{2}-x$: $h(x) = (g \circ f)(x)$. Se debe tener encuenta que la composición de funciones **no** es conmutativa, en  este caso $(f \circ g)(x) = \dfrac{\pi}{2}  - \sin x \neq \sin(\dfrac{\pi}{2}-x) = (g \circ f)(x)$
+1. $h(x) = \sin(\dfrac{\pi}{2}-x)$ es la composición de las funciones $g(x)=\sin x$ y $f(x) =\dfrac{\pi}{2}-x$: $h(x) = (g \circ f)(x)$. Se debe tener en cuenta que la composición de funciones **no** es conmutativa, en  este caso $(f \circ g)(x) = \dfrac{\pi}{2}  - \sin x \neq \sin(\dfrac{\pi}{2}-x) = (g \circ f)(x)$
 
 2. $h(x)= |x|$ es la composición de las funciones $r(x) = \sqrt(x)$ y $s(x)= x^2$: $h(x) = |x| = \sqrt{x^2}=r(s(x))$. Nuevamente $|x| = (r \circ s)(x) \neq (s \circ r) = (\sqrt{x})^2= x$, ya que la igualdad sólo sería vàlida para los $x >0$.
 
@@ -1187,7 +1187,7 @@ La imagen continua de un intervalo cerrado es un intervalo cerrado.
 
 <div class="dem"> **Demostración**
 
-Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existen $x_1, x_2 \in [a,b]$ tales que $f(x_1)= m=\inf{[a,b]}$ y $f(x_2)= M=\sup{[a,b]}$, por lo tanto $f([a,b]) \subset [m,M]$. Sea ahora $y \in [m,M]$, por el teorema de los valores intermedios, existe $x \in [a,b]$ tal que $y=f(x)$, por lo que $[m,M] \subset f([a,b])$.
+Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existen $x_1, x_2 \in [a,b]$ tales que $f(x_1)= m=\inf{[a,b]}$ y $f(x_2)= M=\sup{[a,b]}$, por lo tanto $f([a,b]) \subset [m,M]$. Sea ahora $y \in [m,M]$, por el teorema de los valores intermedios, existe $x \in [a,b]$ tal que $y=f(x)$, por lo que $[m,M] \subset f([a,b])$. POr consiguiente es $f([a,b]) = [m,M]$
 
 
 
@@ -1211,6 +1211,8 @@ La **continuidad uniforme** es una propiedad de conjunto: una función puede ser
 
 </div>
 
+
+
 ## Continuidad uniforme
 
 <l class="prop"> **Lema** </l>
@@ -1233,6 +1235,27 @@ La función $f(x)=\dfrac{1}{x}$ no es uniformemente continua en $(0,+\infty)$.
 En efecto: las sucesiones $x_n = \dfrac{1}{n}$ y $y_n = \dfrac{1}{n+1}$ son tales que $|x_n -y_n|= \dfrac{1}{n(n+1)}$, es decir que $\lim_{n \rightarrow \infty}(x_n - y_n) = 0$ en tanto que que
 $|f(x_n)-f(y_n)| = |n -(n+1)| = 1$.
 
+</div>
+
+<l class="observ"> **Observación** </l>
+
+El lema anterior se puede formular en positivo, esto es:
+
+Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es uniformemente continua en $A$ si, y sólo si, para todo par de sucesiones $x_n$ y $y_n$ de puntos de $A$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ es $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$
+
+## Funciones continuas
+
+<l class="prop"> **Proposición** </l>
+
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y  $g: B \subset \mathbb{R} \rightarrow \mathbb{R}$ tales que $f(A) \subset B$. Entonces si $f$ y $g$ son uniformemente continuas, también lo es la función compuesta $g \circ f$.
+
+<div class="dem"> **Demostración**
+
+La demostración es inmediata  a partir de la observación anterior: Sean $x_n$ y $y_n$ dos sucesiones tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$. Por ser $f$ uniformente continua, tendremos que $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$. Por ser $g$ uniformemente continua, tendremos que $\lim_{n \rightarrow \infty}(g(f(x_n))- g(f(y_n))) =0$, por lo tanto $g \circ f$ es uniformemente continua.
+
+</div>
+
+
 ## Continuidad uniforme
 
 <l class="prop"> **Proposición** </l>
@@ -1248,3 +1271,4 @@ Dado que, tanto $x_n$, como $y_n$ estan acotadas por estar contenidas en $[a,b]$
 Queda así demostrado que si $f$ es continua sobre un intervalo cerrado, entonces $f$ es uniformemente continua.
 
 </div>
+
