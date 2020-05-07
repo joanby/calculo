@@ -1189,6 +1189,18 @@ La imagen continua de un intervalo cerrado es un intervalo cerrado.
 
 Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existen $x_1, x_2 \in [a,b]$ tales que $f(x_1)= m=\inf{[a,b]}$ y $f(x_2)= M=\sup{[a,b]}$, por lo tanto $f([a,b]) \subset [m,M]$. Sea ahora $y \in [m,M]$, por el teorema de los valores intermedios, existe $x \in [a,b]$ tal que $y=f(x)$, por lo que $[m,M] \subset f([a,b])$. POr consiguiente es $f([a,b]) = [m,M]$
 
+## Funciones monótonas
+
+<l class="definition"> **Definición** </l>
+
+## Funciones monótonas.
+
+<div class="examples> **Ejemplos** 
+
+</div>
+
+## Funciones monótonas
+
 
 
 # Continuidad uniforme
@@ -1211,11 +1223,20 @@ La **continuidad uniforme** es una propiedad de conjunto: una función puede ser
 
 </div>
 
+## Continuidad uniforme
+
+Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es uniformemente continua en $A$ si, y sólo si, para todo par de sucesiones $x_n$ y $y_n$ de puntos de $A$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ es $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$
+
+<div class="dem"> **Demostración**
+
+
+
+</div>
 
 
 ## Continuidad uniforme
 
-<l class="prop"> **Lema** </l>
+<l class="prop"> **Corolario** </l>
 
 Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. Si $f$ **no** es uniformemente continua en $A$ entonces existen $\epsilon > 0$ y dos sucesiones $x_n$ y $y_n$ de puntos de $A$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ y $|f(x_n) - f(y_n)| \geq \epsilon$
 
@@ -1237,13 +1258,11 @@ $|f(x_n)-f(y_n)| = |n -(n+1)| = 1$.
 
 </div>
 
-<l class="observ"> **Observación** </l>
 
-El lema anterior se puede formular en positivo, esto es:
 
-Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es uniformemente continua en $A$ si, y sólo si, para todo par de sucesiones $x_n$ y $y_n$ de puntos de $A$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ es $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$
 
-## Funciones continuas
+
+## Continuidad uniforme
 
 <l class="prop"> **Proposición** </l>
 
@@ -1254,19 +1273,6 @@ Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y  $g: B \subset \mathbb{R
 La demostración es inmediata  a partir de la observación anterior: Sean $x_n$ y $y_n$ dos sucesiones tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$. Por ser $f$ uniformente continua, tendremos que $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$. Por ser $g$ uniformemente continua, tendremos que $\lim_{n \rightarrow \infty}(g(f(x_n))- g(f(y_n))) =0$, por lo tanto $g \circ f$ es uniformemente continua.
 
 </div>
-
-## Funciones monótonas
-
-<l class="definition"> **Definición** </l>
-
-## Funciones monótonas.
-
-<div class="examples> **Ejemplos** 
-
-</div>
-
-## Funciones monótonas
-
 
 
 
@@ -1279,7 +1285,7 @@ Toda función continua sobre un intervalo cerrado es uniformemente continua.
 
 <div class="dem"> **Demostración**
 
-Supongamos que $f$ no es uniformemente continua en $[a,b]$. De acuerdo con el lema anterior, existen un $\epsilon >0$ y dos sucesiones $x_n$ y $y_n$ de puntos de $[a,b]$ tales que $\lim_{n \rightarrow \infty}(x_n-y_n)=0$ y $|f(x_n)-f(y_n)| > \epsilon$. 
+Supongamos que $f$ no es uniformemente continua en $[a,b]$. De acuerdo con el corolario anterior, existen un $\epsilon >0$ y dos sucesiones $x_n$ y $y_n$ de puntos de $[a,b]$ tales que $\lim_{n \rightarrow \infty}(x_n-y_n)=0$ y $|f(x_n)-f(y_n)| > \epsilon$. 
 
 Dado que, tanto $x_n$, como $y_n$ estan acotadas por estar contenidas en $[a,b]$, de acuerdo con el teorema de Bolzano-Weierstrass, cada una de ellas tiene una subsucesión convergente. Sean estas $x_{n _k}$ y $y_{n_k}$, sea $l = \lim x_{n _k}$, tenemos que $|y_{n_k} -l|\leq |y_{n_k} - x_{n _k}| + |x_{n _k}-l|$ y, por lo tanto, dado que $\lim (x_n -y_n) =0$, tendremos que $\lim y_{n_k} =l$. Por consiguiente, tanto $f(x_{n_k}) \rightarrow f(l)$, como $f(y_{n_k}) \rightarrow f(l)$,es decir que $\lim (f(x_{n_k}) - f(y_{n_k}) = 0$ lo cual es absurdo, puesto que $|f(x_n)-f(y_n)| > \epsilon$ para todo $n$. 
 
