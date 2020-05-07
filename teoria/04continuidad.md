@@ -1255,6 +1255,21 @@ La demostración es inmediata  a partir de la observación anterior: Sean $x_n$ 
 
 </div>
 
+## Funciones monótonas
+
+<l class="definition"> **Definición** </l>
+
+## Funciones monótonas.
+
+<div class="examples> **Ejemplos** 
+
+</div>
+
+## Funciones monótonas
+
+
+
+
 
 ## Continuidad uniforme
 
@@ -1271,4 +1286,6 @@ Dado que, tanto $x_n$, como $y_n$ estan acotadas por estar contenidas en $[a,b]$
 Queda así demostrado que si $f$ es continua sobre un intervalo cerrado, entonces $f$ es uniformemente continua.
 
 </div>
+
+## Funciones Lipschitzianas
 
