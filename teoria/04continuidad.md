@@ -1206,10 +1206,60 @@ Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función y sea $B \subs
 
 <div class="example"> **Ejemplos** 
 
+La función representada en esta gráfica, es estrictamente creciente en los intervalos $[a,x_2)$ y $[x_1,b)$ y es estrictamente decreciente en el intervalo $(x_2,x_1)$.
+
+<div class="center">
+<img src="Images/teormaxmin.png" width="600px" />
+</div> </div>
+
+## Funciones monótonas.
+
+<div class="example"> **Ejemplos** 
+
+La función $f(x)= \dfrac{1}{x}$ es estrictamente decreciente en todo su dominio, es  decir en $\mathbb{R} \setminus \{0\}$
+
+<div class="center">
+
+ <img src="Images/inversx.png" width="600px" />
+</div> </div>
+
+## Funciones monótonas.
+
+<div class="example"> **Ejemplos** 
+
+La función $f(x)= \dfrac{1}{x^2}$ es estrictamente creciente en $(-\infty,0)$ y estrictamente decreciente en $(0,+\infty)$
+<div class="center">
+
+ <img src="Images/inversax2.png" width="500px" />
 </div>
+
+</div>
+
 
 ## Funciones monótonas
 
+<l class="prop"> **Proposición** </l>
+
+$f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función monótona en $A$. Entonces $f$ no puede tener ninguna discontinuïdad de segunda especie.
+
+<div class="dem"> **Demostración**
+
+En esencia, lo que nos asegura el enunciado es que existen los límites laterales de $f$ en todo punto de acumulación de $A$. Supongamos que $f$ es creciente y sea $c$ uno de estos puntos de acumulación, veamos que existe el $\lim_{x \rightarrow c^-} f(x)$. Para ello consideremos el conjunto $D=\{f(x): x<c, \, x \in A \}$. Dado que $f$ es creciente, $D$ está acotado superiormente por $f(c)$, por lo tanto existe el supremo de $D$, sea $s= \sup D$, dado un $\epsilon >0$, existe $x_0 < c$ tal que $s-\epsilon < f(x_0) <s$, puesto que, de no ser así, el supremo seria $s-\epsilon$ y no $s$. 
+Sea $\delta = c-x_0 >0$, para todo $x  \in A$ tal que $x_0 <x < c$ es $|c-x| < \delta$ y $|s -f(x)| < epsilon$, puesto que $f(x_0) < f(x)| por ser $f$ creciente, Por lo tanto, queda demostrado que $\lim_{x \rightarrow c^-} f(x) = s$.
+
+Consideraciones análogas permiten demostrar que existe $\lim_{x \rightarrow c^+}f(x)$. </div>
+
+<div class="exercise"> **Ejercicio**
+
+Demuestra la proposición anterior para $f$ decreciente. </div>
+
+
+
+
+## Funciones inversas
+
+
+## Funciones monótonas e inversas
 
 
 # Continuidad uniforme
