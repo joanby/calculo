@@ -1193,6 +1193,15 @@ Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existe
 
 <l class="definition"> **Definición** </l>
 
+Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función y sea $B \subset A$.
+
+1. $f$ es **creciente** en $B$ si, para todo par $x,y \in B$  tales que si $x <y$, entonces  $f(x) \leq f(y)$. Si esta última desigualdad es estricta, i.e.$f(x) <f(y)$, entonces $f$ es **estrictamente creciente**.
+
+2. $f$ es **decreciente** en $B$ si, para todo par $x,y \in B$ tales que $x < y$, entonces $f(x) \geq f(y)$. Si $f(x) > f(y)$, entonces $f$ es **estrictamente decreciente** en $B$.
+
+3. $f$ es **monótona** en $B$, si es creciente o decreciente en $B$. **Estrictamente monónotona** seria, por consiguiente una función estrictamente creciente o estrictamente decreciente.
+
+
 ## Funciones monótonas.
 
 <div class="example"> **Ejemplos** 
