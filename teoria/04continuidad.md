@@ -1231,9 +1231,10 @@ Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es uniformemente continu
 
 Supongamos que $f$ es uniformemente continua, dado que $\epsilon >0$ existe $\delta >0$ tal que para todo $x,y \in A$ tales que $|x-y| < \delta$, entonces $|f(x)-f(y)|< \epsilon$. dado que $\delta >0$, existe $n_0 \in \mathbb{N}$ tal que para todo $n > n_0$ es $|x_n - y_n| < \delta$ y, por lo tanto es $|f(x_n) - f(y_n)| < \epsilon$, es decir que  $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$.
 
-Recíprocamente, supongamos que todo par de sucesiones de puntos de $A$, $x_n$ y $y_n$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ es $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$, veamos que $f$ es uniformemente continua. Supongamos que no, que existe un par de sucesiones tal que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ y que $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n))  \neq 0$ o, lo que es lo mismo, que existen $\epsilon >0$ y $n$ tales  que $|f(x_n)-f(y_n)| \geq \epsilon$. Ahora bien, para este $\epsilon$ existe $n_0$ tal que para todo $n > n_0$ es$|x_n -y_n|< \epsilon$ y, sin embargo, $|f(x_n)-f(y_n)| \geq \epsilon$, es decir $f$ no seria uniformemente continua en $A$.
-</div>
+Para el recíproco, supongamos que $f$ no es uniformemente continua, veremos que existe un par de sucesiones $x_n$ y $y_n$ tales que $\lim (x_n-y_n) =0$, en tanto que $\lim (f(x_n) -f(y_n)) \neq 0$.
+Ahora bien, por no ser $f$ uniformemente continua, existe un $\epsilon >0$ tal que pasra todo $\delta >0$ existe un par $x_{\delta}$, y $y_{\delta}$ tal que $|x_{\delta} - y_{\delta}| < \delta$ y $|f(x_{\delta})-f(y_{\delta})|  \geq \epsilon$. Por lo tanto es suficiente considerar $\delta_n = \dfrac{1}{n}$ y los correspondientes $x_n$ y $y_n$ para tener las dos sucesiones que satisfacen que $(x_n - y_n) \rightarrow 0$ en tanto que $|f(x_n)-f(y_n)| \geq \epsilon$.
 
+</div>
 
 ## Continuidad uniforme
 
