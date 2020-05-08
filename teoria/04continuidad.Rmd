@@ -1272,6 +1272,27 @@ knitr::include_graphics("Images/inversax2.png",dpi=1200)
 
 </div>
 
+## Funciones monótonas.
+
+<div class="example"> **Ejemplos** 
+
+Un ejemplo de función creciente, pero no estrictamente creciente.
+$$
+g(x)= \begin{cases}
+x+1,& \text{ si } x \in [-2,0], \\
+1, & \text{ si } x \in [0,1] \\
+x^2+1 & \text{ si } x \in [1,2] 
+\end{cases}
+$$
+<div class="center">
+
+ ```{r, echo=FALSE, label=monot4,fig.cap="",out.width = "500px"}
+knitr::include_graphics("Images/creix1.png",dpi=1200)
+```
+</div>
+
+</div>
+
 
 ## Funciones monótonas
 

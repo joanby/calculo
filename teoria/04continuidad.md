@@ -1235,6 +1235,25 @@ La función $f(x)= \dfrac{1}{x^2}$ es estrictamente creciente en $(-\infty,0)$ y
 
 </div>
 
+## Funciones monótonas.
+
+<div class="example"> **Ejemplos** 
+
+Un ejemplo de función creciente, pero no estrictamente creciente.
+$$
+g(x)= \begin{cases}
+x+1,& \text{ si } x \in [-2,0], \\
+1, & \text{ si } x \in [0,1] \\
+x^2+1 & \text{ si } x \in [1,2] 
+\end{cases}
+$$
+<div class="center">
+
+ <img src="Images/creix1.png" width="500px" />
+</div>
+
+</div>
+
 
 ## Funciones monótonas
 
