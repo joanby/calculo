@@ -1319,6 +1319,48 @@ Demuestra la proposición anterior para $f$ decreciente. </div>
 
 ## Funciones monótonas e inversas
 
+<l class="prop"> **Proposición**
+
+Sea $f: [A \subset \mathbb{R}[a,b] \rightarrow \mathbb{R}$ una función continua y estrictamente creciente. Entonces 
+
+1. Existe la función inversa $f^{-1} : [f(a),f(b)] \rightarrow [a,b]$.
+2. $f^{-1}$ es continua y estrictamente creciente.
+
+<div class="dem"> **Demostración**
+
+Que existe $f^{-1}$, es decir que $f$ es una biyección entre $[a,b]$ y $[f(a),f(b)]$. El teorema de los valores intermedios no asegura que $f$ es exhaustiva, puesto que dado un $y \in [f(a),f(b)]$, existe un $x \in [a,b]$, tal que $f(x)=y$, o lo que es lo mismo tal que $f^{-1}(y)=x$, por lo tanto, todos los elementos de $[f(a),f(b)]$ son imagen de alguno de $[a,b]$, por lo tanto $f$ es exhaustiva.
+$f$ es, además inyectiva por ser estrictamente creciente, puesto que si $x_1 \neq x_2$, entonces o es $x_1 < x_2$ o es $x_1 > x_2$, en el primer caso seria $f(x_1) <f(x_2)$ y, en el segundo, $f(x_1) > f(x_2)$ y, por lo tanto, en cualquier caso $f(x_1) \neq f(x_2)$. Al ser $f$ exhaustiva y inyectiva, es biyectiva y, por lo tanto $f^{-1}$ es una función. </div>
+
+## Funciones monótonas e inversas
+
+<div class="dem"> **Demostración**
+
+$f^{-1}$ es estrictamente creciente, puesto que si $y_1 < y_2$ entonces, si $f^{-1}(y_1) > f^{-1}(y_2)$, tendríamos, por ser $f$ estrictamente creciente y $f(f^{-1}(y))=y$, que $y_1=f(f^{-1}(y_1)) > f(f^{-1}(y_2))=y_2$, y si fuera$f^{-1}(y_1) = f^{-1}(y_2)$, sería $y_1=f(f^{-1}(y_1)) = f(f^{-1}(y_2))=y_2$, como las dos opciones son absurdas, resulta que ha de ser $f^{-1}(y_1) < f^{-1}(y_2)$.
+
+Falta ver que $f^{-1}$ es continua: Con este fin, sean $y_0 \in (f(a),f(b))$, $c=f^{-1}(y_0)$ y $\epsilon >0$. Sea ahora $\delta = \min \{f(c+\epsilon) - y_0, y_0 - f(c-\epsilon)\}$.
+
+Si $y$ es tal que $|y-y_0|< \delta$, entonces, dado que $f(c-\epsilon) <y < f(c+ \epsilon)$, tendremos que $f^{-1}(f(c-\epsilon)) < f^{-1}(y) < f^{-1}(f(c+ \epsilon))$, por lo que
+$c-\epsilon < f^{-1}(y) < c+ \epsilon$, es decir que $|f^{-1}(y)-c| < \epsilon$ o sea que
+$|f^{-1}(y)-f^{-1}(y_0)| < \epsilon$. 
+
+En los extremos del intervalo $f(a)$ y $f(b)$, es suficiente considerar $\delta = |f(a+\epsilon) -f(a)|$ en el primer caso y $\delta = |f(b-\epsilon) -f(b)|$.
+</div>
+
+## Funciones monótonas e inversas
+
+<l class="prop"> **Proposición**
+
+Sea $f: [A \subset \mathbb{R}[a,b] \rightarrow \mathbb{R}$ una función continua y estrictamente decreciente. Entonces 
+
+1. Existe la función inversa $f^{-1} : [f(b),f(a)] \rightarrow [a,b]$.
+2. $f^{-1}$ es continua y estrictamente decreciente.
+
+<div class="exercise"> **Ejercicio**
+
+La demostración es completamente análoga ala anterior y se deja como ejercicio.
+</div>
+
+
 
 # Continuidad uniforme
 
