@@ -1300,7 +1300,7 @@ En el caso de funciones, es decir, aplicaciones entre conjuntos de números, la 
 
 ## Funciones inversas
 
-<div class="examples"> **Ejemplos**
+<div class="example"> **Ejemplos**
 
 1. la inversa en $[0,+\infty)$ de la función $f(x)= x^2$ es $f^{-1}(x)= \sqrt{x}$, en general la de $g(x)= x^n$ es $g^{-1}(x)=\sqrt[n]{x}$.
 
@@ -1309,6 +1309,8 @@ En el caso de funciones, es decir, aplicaciones entre conjuntos de números, la 
 3. La inversa de la función $g(x) = \dfrac{1}{x}$ en $\mathbb{R} \setminus \{0\}$ es ella misma. 
 
 4. La inversa de la funcion $h(x) =\dfrac{1}{x^2}$ en $(0,+\infty)$ es $h^{-1}(x) = \dfrac{1}{\sqrt{x}}$.  
+
+5. La inversa de $t(x)=a + (b-a)x$ en $[0,1]$ es $t^{-1}(x)= \dfrac{y-a}{b-a}$ en $[a,b]$. Este ejemplo muestra que siempre existe una aplicación biyectiva entre dos intervalos cerrados cualesquiera de $\mathbb{R}$.
 
 
 </div>
@@ -1367,6 +1369,11 @@ Sea $f: [A \subset \mathbb{R}[a,b] \rightarrow \mathbb{R}$ una función continua
 La demostración es completamente análoga a la anterior y se deja como ejercicio.
 </div>
 
+## Funciones monótonas e inversas
+
+<div class="example"> **Ejemplos de aplicación**
+
+1. Dado que la función $f(x)=x^2$ es estrictamente creciente y continua en $[0,+\infty]$, su función inversa $f^{-1}(x)= \sqrt{x}$ tambiés es estrictamente creciente y continua sobre la imagen por $f$ de $[0,+\infty]$, que es el mismo conjunto.
 
 
 # Continuidad uniforme
