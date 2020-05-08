@@ -1273,9 +1273,55 @@ Consideraciones análogas permiten demostrar que existe $\lim_{x \rightarrow c^+
 Demuestra la proposición anterior para $f$ decreciente. </div>
 
 
+## Funciones inversas
 
+Recordemos que una **aplicación biyectiva** o **correspondencia uno a uno** es una aplicación que es, a la vez, inyectiva y exhaustiva.
+
+<div class="center">
+<img src="Images/biyectiva.png" width="400px" />
+</div>
+Una propiedad importante de esta aplicaciones biyectivas es que se puede invertir el sentido de las flechas y el resultado continua siendo una aplicación biyectiva. 
 
 ## Funciones inversas
+
+<l class="prop"> **Proposición** </l>
+
+Sea $f: A \rightarrow B$ una aplicación biyectiva. Entonces la aplicación $f^{-1}: B \rightarrow A$, definida por $f^{-1}(y)= x$ si $f(x)=y$ es una aplicación biyectiva.
+
+<div class="exercise"> **Ejercicio**
+
+Demuestra esta proposición. 
+
+</div>
+
+Está claro que $f$ y $f^{-1}$ son tales que $(f \circ f^{-1})(x) = x = (f^{-1}\circ f)(x)$
+
+En el caso de funciones, es decir, aplicaciones entre conjuntos de números, la aplicación inversa recibe el nombre de función inversa.
+
+## Funciones inversas
+
+<div class="examples"> **Ejemplos**
+
+1. la inversa en $[0,+\infty)$ de la función $f(x)= x^2$ es $f^{-1}(x)= \sqrt{x}$, en general la de $g(x)= x^n$ es $g^{-1}(x)=\sqrt[n]{x}$.
+
+2. La inversa de la función $\sin: \left[-\dfrac{\pi}{2},\dfrac{\pi}{2} \right] \rightarrow [-1,1]$ es $\arcsin:  [-1,1] \rightarrow \left[-\dfrac{\pi}{2},\dfrac{\pi}{2} \right]$.
+
+3. La inversa de la función $g(x) = \dfrac{1}{x}$ en $\mathbb{R} \setminus \{0\}$ es ella misma. 
+
+4. La inversa de la funcion $h(x) =\dfrac{1}{x^2}$ en $(0,+\infty)$ es $h^{-1}(x) = \dfrac{1}{\sqrt{x}}$.  
+
+
+</div>
+
+## Funciones inversas
+
+Las gràficas de una función, $f$, y la de su inversa, $f^{-1}$ són simétricas respecto de la recta $y=x$:
+
+<div class="center">
+
+ <img src="Images/finversa.png" width="400px" />
+</div>
+
 
 
 ## Funciones monótonas e inversas
@@ -1318,7 +1364,7 @@ Sea $f: [A \subset \mathbb{R}[a,b] \rightarrow \mathbb{R}$ una función continua
 
 <div class="exercise"> **Ejercicio**
 
-La demostración es completamente análoga ala anterior y se deja como ejercicio.
+La demostración es completamente análoga a la anterior y se deja como ejercicio.
 </div>
 
 
