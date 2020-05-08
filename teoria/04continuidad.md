@@ -1195,7 +1195,7 @@ Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existe
 
 ## Funciones monótonas.
 
-<div class="examples> **Ejemplos** 
+<div class="example"> **Ejemplos** 
 
 </div>
 
@@ -1229,10 +1229,10 @@ Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es uniformemente continu
 
 <div class="dem"> **Demostración**
 
-Supongamos que $f$ es uniformemente continua, dado que $\epsilon >0$ existe $\delta >0$ tal que para todo $x,y \in A$ tales que $|x-y| < \delta$, entonces $|f(x)-f(y)|< \epsilon$. dado que $\delta >0$, existe $n_0 \in \mathbb{N}$ tal que para todo $n > n_0$ es $|x_n - y_n| < \delta$ y, por lo tanto es $|f(x_n) - f(y_n)| < \epsilon$, es decir que  $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$.
+Supongamos que $f$ es uniformemente continua, dado que $\epsilon >0$ existe $\delta >0$ tal que para todo $x,y \in A$ tales que $|x-y| < \delta$, entonces $|f(x)-f(y)|< \epsilon$. Dado que $\delta >0$, existe $n_0 \in \mathbb{N}$ tal que para todo $n > n_0$ es $|x_n - y_n| < \delta$ y, por lo tanto es $|f(x_n) - f(y_n)| < \epsilon$, es decir que  $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$.
 
 Para el recíproco, supongamos que $f$ no es uniformemente continua, veremos que existe un par de sucesiones $x_n$ y $y_n$ tales que $\lim (x_n-y_n) =0$, en tanto que $\lim (f(x_n) -f(y_n)) \neq 0$.
-Ahora bien, por no ser $f$ uniformemente continua, existe un $\epsilon >0$ tal que pasra todo $\delta >0$ existe un par $x_{\delta}$, y $y_{\delta}$ tal que $|x_{\delta} - y_{\delta}| < \delta$ y $|f(x_{\delta})-f(y_{\delta})|  \geq \epsilon$. Por lo tanto es suficiente considerar $\delta_n = \dfrac{1}{n}$ y los correspondientes $x_n$ y $y_n$ para tener las dos sucesiones que satisfacen que $(x_n - y_n) \rightarrow 0$ en tanto que $|f(x_n)-f(y_n)| \geq \epsilon$.
+Ahora bien, por no ser $f$ uniformemente continua, existe un $\epsilon >0$ tal que para todo $\delta >0$ existe un par $x_{\delta}$, y $y_{\delta}$ tal que $|x_{\delta} - y_{\delta}| < \delta$ y $|f(x_{\delta})-f(y_{\delta})|  \geq \epsilon$. Por lo tanto es suficiente considerar $\delta_n = \dfrac{1}{n}$ y los correspondientes $x_n = x_{\delta_n}$ y $y_n=y_{\delta_n}$ para tener las dos sucesiones que satisfacen que $(x_n - y_n) \rightarrow 0$ en tanto que $|f(x_n)-f(y_n)| \geq \epsilon$.
 
 </div>
 
