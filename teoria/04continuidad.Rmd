@@ -37,9 +37,9 @@ La primera cuestión que se aborda tiene que ver con los **números reales**, en
 
 <l class="definition"> **Definición. Límite de una función en un punto.** </l>
 
-Sea $f:A \subset \mathbb{R}$ una función definida sobre el conjunto $A \subset \mathbb{R}$ y sea $x_0$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite de $f(x)$ cuando $x$ tiende a $x_0$** si para toda sucesión $\{x_n\}_{n \in \mathbb{N}}$ de puntos de $A$ tal que $\lim_{n \rightarrow \infty}x_n = x_0$ es $\lim_{n \rightarrow \infty}f(x_n)=L$.
+Sea $f:A \subset \mathbb{R}$ una función definida sobre el conjunto $A \subset \mathbb{R}$ y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite de $f(x)$ cuando $x$ tiende a $c$** si para toda sucesión $\{x_n\}_{n \in \mathbb{N}}$ de puntos de $A$ tal que $\lim_{n \rightarrow \infty}x_n = c$ es $\lim_{n \rightarrow \infty}f(x_n)=L$.
 
-Escribiremos, $\lim_{x \rightarrow x_0}f(x)=L$, para indicar el límite de $f(x)$ cuando $x$ tiende a $x_0$. 
+Escribiremos, $\lim_{x \rightarrow c}f(x)=L$, para indicar el límite de $f(x)$ cuando $x$ tiende a $c$. 
 
 
 ##  Límite de una función en un punto
@@ -47,9 +47,9 @@ Escribiremos, $\lim_{x \rightarrow x_0}f(x)=L$, para indicar el límite de $f(x)
 
 **1.** Igual que hemos hecho con las sucesiones y los números irracionales, con esta definción convertimos el problema de evaluar una función en un punto irracional en el de calcular el límite de una sucesión. 
 
-**2.** El hecho requerir que $x_0$ sea un punto de acumulación de $A$, nos garantiza que existan sucesiones $\{x_n\}$ de puntos de $A$ tales que $\lim_{n\rightarrow \infty} x_n = x_0$ y, por lo tanto, la definición tiene sentido.
+**2.** El hecho requerir que $c$ sea un punto de acumulación de $A$, nos garantiza que existan sucesiones $\{x_n\}$ de puntos de $A$ tales que $\lim_{n\rightarrow \infty} x_n = c$ y, por lo tanto, la definición tiene sentido.
 
-**3.** Si $x_0$ es un punto **aislado** de $A$, es decir si hay un entorno de $x_0$ en el cual no hay puntos de $A$ diferentes de $x_0$, entonces no tiene sentido hablar del límite de $f$ en ese punto.
+**3.** Si $c$ es un punto **aislado** de $A$, es decir si hay un entorno de $c$ en el cual no hay puntos de $A$ diferentes de $c$, entonces no tiene sentido hablar del límite de $f$ en ese punto.
 
 ## Límite de una función en un punto: Ejemplos.
 
@@ -80,11 +80,11 @@ $$
 $$
 como se deduce fácilmente de las propiedades aritméticas de los límites de sucesiones.
 
-**Ejemplo 4.** Igualmente, si $P_n(x)$ y $Q_m(x)$ són polinomios tales que $P_n(x_0) \ne 0$ y $Q_m(x_0) \ne 0$, entonces 
+**Ejemplo 4.** Igualmente, si $P_n(x)$ y $Q_m(x)$ són polinomios tales que $P_n(c) \ne 0$ y $Q_m(c) \ne 0$, entonces 
 $$
-\lim_{x \rightarrow x_0} \dfrac{P_n(x)}{Q_m(x)} = \dfrac{P_n(x_0)}{Q_m(x_0)}.
+\lim_{x \rightarrow c} \dfrac{P_n(x)}{Q_m(x)} = \dfrac{P_n(c)}{Q_m(c)}.
 $$
-**Ejemplo 5.** Si $f(x) = e^x$, entonces $\lim_{x \rightarrow x_0} e^x = e^{x_0}$ puesto que, como hemos demostrado, si $x_n \rightarrow x_0$, entonces $e^{x_n} \rightarrow e^{x_0}$.
+**Ejemplo 5.** Si $f(x) = e^x$, entonces $\lim_{x \rightarrow c} e^x = e^{c}$ puesto que, como hemos demostrado, si $x_n \rightarrow c$, entonces $e^{x_n} \rightarrow e^{c}$.
 </div>
 
 
@@ -101,24 +101,24 @@ Ahora bien, dado que el numerador también se anula en este punto, podemos simpl
 
 <l class="prop"> **Proposición** </l>
 
-Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función definida sobre el conjunto $A \subset \mathbb{R}$ y sea $x_0$ un punto de acumulación de $A$. entonces son equivalentes las tres afirmaciones siguientes:
+Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función definida sobre el conjunto $A \subset \mathbb{R}$ y sea $c$ un punto de acumulación de $A$. entonces son equivalentes las tres afirmaciones siguientes:
 
-  a) $\lim_{x \rightarrow x_0}f(x)=L$
+  a) $\lim_{x \rightarrow c}f(x)=L$
   
-  b) Para todo $\epsilon >0$ existe un $\delta >0$ tal que siempre que $0<|x-x_0|< \delta$, entonces es $|f(x)-L|<\epsilon$. (**Propiedad $\epsilon-\delta$**).
+  b) Para todo $\epsilon >0$ existe un $\delta >0$ tal que siempre que $0<|x-c|< \delta$, entonces es $|f(x)-L|<\epsilon$. (**Propiedad $\epsilon-\delta$**).
 
-  c) Para todo entorno abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $x_0$, $V_{\delta} (x_0)$ tal que para todo $x \in V^*_{\delta} (x_0)$ es $f(x) \in V_{\epsilon}(L)$, donde $V^*_{\delta}= V_{\delta} \setminus \{x_0\}$, es decir el entorno reducido de $x_0$ y radio $\delta$
+  c) Para todo entorno abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $c$, $V_{\delta} (c)$ tal que para todo $x \in V^*_{\delta} (c)$ es $f(x) \in V_{\epsilon}(L)$, donde $V^*_{\delta}= V_{\delta} \setminus \{c\}$, es decir el entorno reducido de c$ y radio $\delta$
 
 
 ## Caracterización del límite: propiedad $\epsilon-\delta$
 
 <div class="dem"> **Demostración**
 
- Veamos en primer lugar que 2) $\implies$ 1). Sea $x_n$ una sucesión de puntos distintos de $x_0$, tal que $x_n \rightarrow x_0$.
+ Veamos en primer lugar que 2) $\implies$ 1). Sea $x_n$ una sucesión de puntos distintos de $c$, tal que $x_n \rightarrow c$.
 
-Supongamos que para todo $\epsilon >0$ existe $\delta >0$ tal que si $|x - x_0|< \delta$, entonces $|f(x)-L|<\epsilon$. 
+Supongamos que para todo $\epsilon >0$ existe $\delta >0$ tal que si $|x - c|< \delta$, entonces $|f(x)-L|<\epsilon$. 
 
-Dado que $\delta >0$, existe $n_0$ tal que para todo $n > n_0$ es $|x_n - x_0|<\delta$, por lo tanto será $|f(x_n) - L| < \epsilon$, para todo $n > n_0$, por lo que, efectivamente, $f(x_n) \rightarrow L$.
+Dado que $\delta >0$, existe $n_0$ tal que para todo $n > n_0$ es $|x_n - c|<\delta$, por lo tanto será $|f(x_n) - L| < \epsilon$, para todo $n > n_0$, por lo que, efectivamente, $f(x_n) \rightarrow L$.
 
 </div>
 
@@ -128,13 +128,13 @@ Dado que $\delta >0$, existe $n_0$ tal que para todo $n > n_0$ es $|x_n - x_0|<\
 
 Demostramos la otra implicación por contraposición, es decir usando la equivalencia $b \implies a \equiv \lnot a \implies \lnot b$. 
 
-Suponemos, pues, que $\lim_{x \rightarrow x_0} f(x) \neq L$, es decir que hay un $\epsilon > 0$ tal que para todo $\delta >0$ existe $x_{\delta}$ tal que $|x_{\delta} - x_0|<\delta$ y $|f(x_{\delta}) - L| \geq \epsilon$. 
+Suponemos, pues, que $\lim_{x \rightarrow c} f(x) \neq L$, es decir que hay un $\epsilon > 0$ tal que para todo $\delta >0$ existe $x_{\delta}$ tal que $|x_{\delta} - c|<\delta$ y $|f(x_{\delta}) - L| \geq \epsilon$. 
 
-Se trata de ver que hay una sucesión, $\{x_n\}$ que tiene límite  $x_0$ y que $f(x_n) \not\rightarrow_{x \rightarrow x_0} L$. 
+Se trata de ver que hay una sucesión, $\{x_n\}$ que tiene límite  $c$ y que $f(x_n) \not\rightarrow_{x \rightarrow c} L$. 
 
-Consideremos ahora la sucesión de números positivos $\frac{1}{n}$, y los correspondientes $x_n$ tales que $|x_n-x_0|< \frac{1}{n}$, es $|f(x_n) -L | \geq \epsilon$, es decir $f(x_n) \not\rightarrow L$, en tanto que $x_n \rightarrow x_0$, que es lo que se quería demostrar.
+Consideremos ahora la sucesión de números positivos $\frac{1}{n}$, y los correspondientes $x_n$ tales que $|x_n-c|< \frac{1}{n}$, es $|f(x_n) -L | \geq \epsilon$, es decir $f(x_n) \not\rightarrow L$, en tanto que $x_n \rightarrow c$, que es lo que se quería demostrar.
 
-Finalmente, en lo que se refiere al tercer apartado, es suficiente tener en cuenta que que $|x-x_0| < \delta$ si, y sólo si,  $x \in V_{\delta}(x_0)$.
+Finalmente, en lo que se refiere al tercer apartado, es suficiente tener en cuenta que que $|x-c| < \delta$ si, y sólo si,  $x \in V_{\delta}(c)$.
 
 </div>
 
@@ -1511,5 +1511,5 @@ Queda así demostrado que si $f$ es continua sobre un intervalo cerrado, entonce
 
 </div>
 
-## Funciones Lipschitzianas
+
 
