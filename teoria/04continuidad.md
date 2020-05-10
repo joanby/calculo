@@ -562,6 +562,23 @@ $$
  <img src="Images/limit3.png" width="300px" />
 </div>
 
+## Cálculo de límites
+
+<div class="example"> **Ejemplo 4**
+
+</div>
+
+## Cálculo de límites
+
+<div class="example"> **Ejemplo 5**
+
+</div>
+
+## Cálculo de límites
+
+<div class="example"> **Ejemplo 6**
+
+</div>
 
 
 ## Infinitésimos
@@ -730,6 +747,24 @@ Debemos demostrar que $\lim_{x \rightarrow 0}\dfrac{\dfrac{x}{2}}{\sqrt{1+x}-1}=
 $$
 \lim_{x \rightarrow 0}\dfrac{\dfrac{x}{2}}{\sqrt{1+x}-1} = \lim_{t \rightarrow 1}\dfrac{t^2 -1}{2(t-1)} = \lim_{t \rightarrow 1} \dfrac{t+1}{2} =1.
 $$
+
+</div>
+
+## Infinitésimos equivalentes. Más ejemplos
+
+<div class="example"> **Ejemplos**
+
+**Ejemplo 4**
+
+
+</div>
+
+## Infinitésimos equivalentes. Más ejemplos
+
+<div class="example"> **Ejemplos**
+
+**Ejemplo 6**
+
 
 </div>
 
