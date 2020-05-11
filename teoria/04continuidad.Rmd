@@ -1476,6 +1476,22 @@ La **continuidad uniforme** es una propiedad de conjunto: una función puede ser
 
 ## Continuidad uniforme
 
+<div class="example"> **Ejemplo de función uniformemente continua**
+
+La funció $g(x)=\sqrt{x}$ es uniformemente continua en $(0,+\infty)$. Puesto que si $x,y \in (0,+\infty)$, con $x <y$, multiplicando y dividiendo por el conjugado de $\sqrt{y} - \sqrt{x}$ tendremos que:
+$$
+\sqrt{y} - \sqrt{x} \leq \dfrac{y-x}{\sqrt{y} + \sqrt{x}} \leq \dfrac{y-x}{\sqrt{y-x}}= \sqrt{y-x}
+$$
+por lo tanto, dado que cuando $x=y$ la desigualdad sigue siendo cierta y que podemos cambiar el papel de $x$ e $y$, resulta que, dado un $\epsilon > 0$, tomado $\delta = \epsilon^2$, tendremo que siempre que $|y-x|<\delta$, sera 
+$$
+\sqrt{y} - \sqrt{x} \leq \sqrt{|y-x|} < \epsilon.
+$$
+</div>
+
+Má adelante veremos más ejemplos de funciones continuas.
+
+## Continuidad uniforme
+
 Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es uniformemente continua en $A$ si, y sólo si, para todo par de sucesiones $x_n$ y $y_n$ de puntos de $A$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ es $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$
 
 <div class="dem"> **Demostración**
@@ -1527,12 +1543,68 @@ La demostración es inmediata  a partir de la observación anterior: Sean $x_n$ 
 
 </div>
 
+## Continuidad uniforme: La propiedad de Lipschitz
 
+Un ejemplo de condición que implica la continuidad uniforme sobre un conjunto- pero no al revés- és la llamada propiedad de **Lpschitz**:
+
+<l class="definition"> **Definición** </l>
+
+Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ cumple **la propiedad de Lipschitz** si existe $M>0$ tal que para todo $x,y \in A$ es 
+$$
+|f(x)-f(y)|\leq M|x-y|
+$$
+A una función que cumpla esta propiedad, se le acostumbra a llamar **función lipschitziana**.
+
+## Continuidad uniforme: La propiedad de Lipschitz
+
+<l class="observ"> **Observación** </l>
+
+Si una función $f$ verifica la propiedad de Lipschitz entonces el conjunto
+$$
+\cal{M}=\left\{ \dfrac{f(y)-f(x)}{y-x}: x,y \in A, \quad x \neq y \right\}
+$$
+es no vacio y está acotado superiormente, por lo que existe $M_0 = \sup \cal{M}$. $M_0$ recibe el nombre de **constante de Lipschitz** para $f$.
+
+
+
+
+## Continuidad uniforme: La propiedad de Lipschitz
+
+<l class="prop"> **Proposición** </l>
+
+Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función lipschitziana en $A$, entonces $f$ es uniformemente continua en $A$.
+
+<div class="dem"> **Demostración**
+
+Si $M >0$ es tal que $|f(x)-f(y)|\leq M|x-y|$, para todo $x,y \in A$, para cada $\epsilon >0$, sea $\delta < \dfrac{\epsilon}{M}$, entonces, siempre $|x-y| < \delta = \dfrac{\epsilon}{M}$, tendremos que
+$$
+|f(x)-f(y)|\leq M|x-y| < M \dfrac{\epsilon}{M}= \epsilon,
+$$
+es decir, $f$ es uniformemente continua en $A$
+
+## Continuidad uniforme: La propiedad de Lipschitz
+
+<div class="example"> **Ejemplo**
+
+La función $g(x)= \sqrt{x}$ es uniformemente continua en $(0,+\infty)$, pero no es lipschitziana.
+
+Hemos demostrado anteriormente uqe $g$ era uniformemente continua en $(0,+\infty)$, veamos que no verifica la propiedad de Lipschitz. Para ello veremos que
+$$
+\lim_{x \rightarrow y}\dfrac{\sqrt{y}-\sqrt{x}}{y-x} = \dfrac{1}{2\sqrt{y}}
+$$
+Por lo que el cociente $\dfrac{\sqrt{y}-\sqrt{x}}{y-x}$ no está acotado en $(0,+\infty)$ y hemos visto que este cociente estaba acotado para la sfunciones lipschitzianas.
+
+Para calcular el límite, basta considerar los cambios $\sqrt{y} = u$ y $\sqrt{x}=v$, con lo que tendremos
+$$
+\lim_{x \rightarrow y}\dfrac{\sqrt{y}-\sqrt{x}}{y-x} = \lim_{v \rightarrow u}\dfrac{u-v}{u^2-v^2}=\lim_{v \rightarrow u} \dfrac{1}{u+v}= \lim_{v \rightarrow u} \dfrac{1}{2u}= \dfrac{1}{2\sqrt{y}}.
+$$
+
+</div>
 
 
 ## Continuidad uniforme
 
-<l class="prop"> **Proposición** </l>
+<l class="prop"> **Proposición. Teorema de Heine-Cantor** </l>
 
 Toda función continua sobre un intervalo cerrado es uniformemente continua.
 
