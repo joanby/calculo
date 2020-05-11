@@ -629,8 +629,9 @@ $$
 <div class="example"> **Ejemplos**
 
 1. $f(x)= 3x -5x^2$ y $g(x)=3x$ en $x=0$, puesto que el $\lim_{x \rightarrow 0} \frac{3x-5x^2}{3x} =1$.
-2. $h(x)= e^x -1$ y $p(x)=x$, en $x=0$, puesto que el $\lim_{x \rightarrow 0} \dfrac{e^x-1}{x}=1$.
 3. $\log (1+x)$ y $x$ son equivalentes en $x=0$, puesto que $\lim_{x \rightarrow 0} \dfrac{\log(1+x)}{x} = \lim_{x \rightarrow 0} \log(1+x)^\frac{1}{x} = \log \lim (1+x)^\frac{1}{x} = \log e =1$.
+2. $h(x)= e^x -1$ y $p(x)=x$, en $x=0$: Con el cambio de variable $e^x-1 =t$, tenemos que cuando $x \rightarrow 0$ es $t \rightarrow 0$ y $x=\log(1+t)$, por lo tanto:
+$\lim_{x \rightarrow 0} \dfrac{e^x-1}{x} = \lim_{t \rightarrow 0} \dfrac{t}{\log(1+t)}=1$
 
 
 </div>
@@ -640,7 +641,7 @@ $$
 
 <l class="prop"> **Proposición** </l>
 
-Las funciones $\sin x$ y $x$ son infinitésimos equivalentes en $x=0$
+Las funciones $\sin (x)$ y $x$ son infinitésimos equivalentes en $x=0$
 
 <div class="center">
 
@@ -649,7 +650,7 @@ knitr::include_graphics("Images/sinxx1.png",dpi=1200)
 ```
 </div>
 
-## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin (x)}{x}$
 
 <div class="center">
 
@@ -658,39 +659,39 @@ knitr::include_graphics("Images/sinxx.png",dpi=1200)
 ```
 </div>
 
-El área del triangulo $ABE$ es $\frac{1}{2} \sin \alpha$
+El área del triangulo $ABE$ es $\frac{1}{2} \sin (\alpha)$
 
 El área del sector circular $ABE$ es $\frac{1}{2} \alpha$
 
-El área del triángulo $ADE$ es $\frac{1}{2} \tan \alpha$
+El área del triángulo $ADE$ es $\frac{1}{2} \tan (\alpha)$
 
 
-## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin (x)}{x}$
 
 Claramente, la relación entre estas tres áreas es la siguiente
 $$
-\frac{1}{2} \sin \alpha < \frac{1}{2} \alpha < \frac{1}{2} \tan \alpha
+\frac{1}{2} \sin (\alpha) < \frac{1}{2} \alpha < \frac{1}{2} \tan (\alpha)
 $$
-Dividiendo por $\frac{1}{2} \sin \alpha$ y tomando recíprocos, queda
+Dividiendo por $\frac{1}{2} \sin (\alpha)$ y tomando recíprocos, queda
 $$
-\cos \alpha < \dfrac{\sin \alpha}{\alpha} < 1
+\cos (\alpha) < \dfrac{\sin (\alpha)}{\alpha} < 1
 $$
 Por lo tanto,
 $$
-1 = \lim_{x \rightarrow 0^+} \cos x \leq \lim_{x \rightarrow 0^+}\dfrac{\sin x}{x} \leq 1
+1 = \lim_{x \rightarrow 0^+} \cos (x) \leq \lim_{x \rightarrow 0^+}\dfrac{\sin (x)}{x} \leq 1
 $$
 
-## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin (x)}{x}$
 
 Análogamente tenemos
 $$
-1 = \lim_{x \rightarrow 0^-} \cos x \leq \lim_{x \rightarrow 0^-}\dfrac{\sin x}{x} \leq 1
+1 = \lim_{x \rightarrow 0^-} \cos (x) \leq \lim_{x \rightarrow 0^-}\dfrac{\sin (x)}{x} \leq 1
 $$
 En definitiva, como los dos límites laterales existen y son iguales, resulta que
 $$
-\lim_{x \rightarrow 0}\dfrac{\sin x}{x} =1
+\lim_{x \rightarrow 0}\dfrac{\sin (x)}{x} =1
 $$
-Por lo tanto, $\sin x$ y $x$ son infinitésimos equivalentes en $0$.
+Por lo tanto, $\sin (x)$ y $x$ son infinitésimos equivalentes en $0$.
 
 ## Infinitésimos equivalentes.
 
@@ -799,7 +800,19 @@ puesto que como acabamos de ver $(t+1)^n-1$ y $nt$ son infinitésimos equivalent
 
 <div class="example"> **Ejemplos**
 
-**Ejemplo 6**
+**Ejemplo 6.** $\lim_{x \rightarrow 1}\dfrac{\tan(x^2-1)}{x-1}$
+
+En $x = 1$, tanto $\tan(x^2-1)$ como $x-1$ son infinitésimos. Dado que $\tan (x) y $x$ son infinitésimos equivalentes en $0$, resulta que $\tan(x^2-1)$ y $x^2-1$ son equivalentes, por lo tanto
+$$
+\lim_{x \rightarrow 1}\dfrac{x^2-1}{x-1}= \lim_{x \rightarrow 1} (x+1)= 2
+$$
+**Ejemplo 7.** $\lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a}$
+
+Dado que $a^x = e^{x \log a}$, por lo tanto
+$$
+\lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a} = \lim_{x \rightarrow 0}\dfrac{e^{x \log a}-1}{x \log a} =1
+$$
+Puesto que $e^x  - 1$ y $x$ són infinitésimos equivalentes en $x=0$.
 
 
 </div>
