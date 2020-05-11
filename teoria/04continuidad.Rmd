@@ -641,7 +641,7 @@ $\lim_{x \rightarrow 0} \dfrac{e^x-1}{x} = \lim_{t \rightarrow 0} \dfrac{t}{\log
 
 <l class="prop"> **Proposición** </l>
 
-Las funciones $\sin (x)$ y $x$ son infinitésimos equivalentes en $x=0$
+Las funciones $\sin x$ y $x$ son infinitésimos equivalentes en $x=0$
 
 <div class="center">
 
@@ -650,7 +650,7 @@ knitr::include_graphics("Images/sinxx1.png",dpi=1200)
 ```
 </div>
 
-## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin (x)}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{\sin x}{x}$
 
 <div class="center">
 
@@ -659,39 +659,39 @@ knitr::include_graphics("Images/sinxx.png",dpi=1200)
 ```
 </div>
 
-El área del triangulo $ABE$ es $\frac{1}{2} \sin (\alpha)$
+El área del triangulo $ABE$ es $\frac{1}{2} \sin \alpha$
 
 El área del sector circular $ABE$ es $\frac{1}{2} \alpha$
 
-El área del triángulo $ADE$ es $\frac{1}{2} \tan (\alpha)$
+El área del triángulo $ADE$ es $\frac{1}{2} \tan \alpha$
 
 
-## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin (x)}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{\sin x}{x}$
 
 Claramente, la relación entre estas tres áreas es la siguiente
 $$
-\frac{1}{2} \sin (\alpha) < \frac{1}{2} \alpha < \frac{1}{2} \tan (\alpha)
+\frac{1}{2} \sin (\alpha) < \frac{1}{2} \alpha < \frac{1}{2} \tan \alpha
 $$
-Dividiendo por $\frac{1}{2} \sin (\alpha)$ y tomando recíprocos, queda
+Dividiendo por $\frac{1}{2} \sin \alpha$ y tomando recíprocos, queda
 $$
-\cos (\alpha) < \dfrac{\sin (\alpha)}{\alpha} < 1
+\cos \alpha < \dfrac{\sin \alpha}{\alpha} < 1
 $$
 Por lo tanto,
 $$
-1 = \lim_{x \rightarrow 0^+} \cos (x) \leq \lim_{x \rightarrow 0^+}\dfrac{\sin (x)}{x} \leq 1
+1 = \lim_{x \rightarrow 0^+} \cos x \leq \lim_{x \rightarrow 0^+}\dfrac{\sin x}{x} \leq 1
 $$
 
-## Cálculo del $\lim_{x \rightarrow 0}\dfrac{sin (x)}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{\sin x}{x}$
 
 Análogamente tenemos
 $$
-1 = \lim_{x \rightarrow 0^-} \cos (x) \leq \lim_{x \rightarrow 0^-}\dfrac{\sin (x)}{x} \leq 1
+1 = \lim_{x \rightarrow 0^-} \cos x \leq \lim_{x \rightarrow 0^-}\dfrac{\sin x}{x} \leq 1
 $$
 En definitiva, como los dos límites laterales existen y son iguales, resulta que
 $$
-\lim_{x \rightarrow 0}\dfrac{\sin (x)}{x} =1
+\lim_{x \rightarrow 0}\dfrac{\sin x}{x} =1
 $$
-Por lo tanto, $\sin (x)$ y $x$ son infinitésimos equivalentes en $0$.
+Por lo tanto, $\sin x$ y $x$ son infinitésimos equivalentes en $0$.
 
 ## Infinitésimos equivalentes.
 
@@ -808,11 +808,11 @@ $$
 $$
 **Ejemplo 7.** $\lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a}$
 
-Dado que $a^x = e^{x \log a}$, por lo tanto
+Dado que $a^x = e^{x \log a}$, tenemos que
 $$
 \lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a} = \lim_{x \rightarrow 0}\dfrac{e^{x \log a}-1}{x \log a} =1
 $$
-Puesto que $e^x  - 1$ y $x$ són infinitésimos equivalentes en $x=0$.
+puesto que $e^x  - 1$ y $x$ són infinitésimos equivalentes en $x=0$.
 
 
 </div>
