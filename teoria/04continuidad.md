@@ -754,8 +754,21 @@ $$
 
 <div class="example"> **Ejemplos**
 
-**Ejemplo 4**
+**Ejemplo 4.** $p(x)=(x+1)^n -1$ y $q(x)=nx$ son infinitésimos equivalentes en $x=0$.
 
+Dado que $(x+1)^n = \sum_{j=0}^n \binom{n}{j} x^{n-j}=x^n+\binom{n}{n-1}x^{n-1} +  \cdots + \binom{n}{1}x+1$, 
+
+tendremos que $(x+1)^n -1 = x^n+nx^{n-1} +  \cdots + nx$, y por lo tanto
+$$
+\lim_{x \rightarrow 0} \dfrac{(x+1)^n -1}{nx} = \lim_{x \rightarrow 0} \dfrac{x^n+nx^{n-1} +  \cdots + nx}{nx}= 1.
+$$
+**Ejemplo 5.** $\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x}$
+
+Si hacemos el cambio de variable $x+1= (t+1)^n$, tendremos que $x=(t+1)^n-1$, por lo que
+$$
+\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x}= \lim_{t \rightarrow 0} \dfrac{t+1-1}{(t+1)^n-1}= \lim_{t \rightarrow 0}\dfrac{t}{(t+1)^n-1}=\lim_{t \rightarrow 0}\dfrac{t}{nt} = \dfrac{1}{n}
+$$
+puesto que como acabamos de ver $(t+1)^n-1$ y $nt$ son infinitésimos equivalentes en $t=0$.
 
 </div>
 
