@@ -610,8 +610,9 @@ $$
 <div class="example"> **Ejemplos**
 
 1. $f(x)= 3x -5x^2$ y $g(x)=3x$ en $x=0$, puesto que el $\lim_{x \rightarrow 0} \frac{3x-5x^2}{3x} =1$.
-2. $h(x)= e^x -1$ y $p(x)=x$, en $x=0$, puesto que el $\lim_{x \rightarrow 0} \dfrac{e^x-1}{x}=1$.
 3. $\log (1+x)$ y $x$ son equivalentes en $x=0$, puesto que $\lim_{x \rightarrow 0} \dfrac{\log(1+x)}{x} = \lim_{x \rightarrow 0} \log(1+x)^\frac{1}{x} = \log \lim (1+x)^\frac{1}{x} = \log e =1$.
+2. $h(x)= e^x -1$ y $p(x)=x$, en $x=0$: Con el cambio de variable $e^x-1 =t$, tenemos que cuando $x \rightarrow 0$ es $t \rightarrow 0$ y $x=\log(1+t)$, por lo tanto:
+$\lim_{x \rightarrow 0} \dfrac{e^x-1}{x} = \lim_{t \rightarrow 0} \dfrac{t}{\log(1+t)}=1$
 
 
 </div>
@@ -628,7 +629,7 @@ Las funciones $\sin x$ y $x$ son infinitésimos equivalentes en $x=0$
  <img src="Images/sinxx1.png" width="600px" />
 </div>
 
-## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{\sin x}{x}$
 
 <div class="center">
 
@@ -642,11 +643,11 @@ El área del sector circular $ABE$ es $\frac{1}{2} \alpha$
 El área del triángulo $ADE$ es $\frac{1}{2} \tan \alpha$
 
 
-## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{\sin x}{x}$
 
 Claramente, la relación entre estas tres áreas es la siguiente
 $$
-\frac{1}{2} \sin \alpha < \frac{1}{2} \alpha < \frac{1}{2} \tan \alpha
+\frac{1}{2} \sin (\alpha) < \frac{1}{2} \alpha < \frac{1}{2} \tan \alpha
 $$
 Dividiendo por $\frac{1}{2} \sin \alpha$ y tomando recíprocos, queda
 $$
@@ -657,7 +658,7 @@ $$
 1 = \lim_{x \rightarrow 0^+} \cos x \leq \lim_{x \rightarrow 0^+}\dfrac{\sin x}{x} \leq 1
 $$
 
-## Cálculo del $\lim_{x \rightarrow 0}\frac{sin x}{x}$
+## Cálculo del $\lim_{x \rightarrow 0}\dfrac{\sin x}{x}$
 
 Análogamente tenemos
 $$
@@ -754,8 +755,21 @@ $$
 
 <div class="example"> **Ejemplos**
 
-**Ejemplo 4**
+**Ejemplo 4.** $p(x)=(x+1)^n -1$ y $q(x)=nx$ son infinitésimos equivalentes en $x=0$.
 
+Dado que $(x+1)^n = \sum_{j=0}^n \binom{n}{j} x^{n-j}=x^n+\binom{n}{n-1}x^{n-1} +  \cdots + \binom{n}{1}x+1$, 
+
+tendremos que $(x+1)^n -1 = x^n+nx^{n-1} +  \cdots + nx$, y por lo tanto
+$$
+\lim_{x \rightarrow 0} \dfrac{(x+1)^n -1}{nx} = \lim_{x \rightarrow 0} \dfrac{x^n+nx^{n-1} +  \cdots + nx}{nx}= 1.
+$$
+**Ejemplo 5.** $\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x}$
+
+Si hacemos el cambio de variable $x+1= (t+1)^n$, tendremos que $x=(t+1)^n-1$, por lo que
+$$
+\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x}= \lim_{t \rightarrow 0} \dfrac{t+1-1}{(t+1)^n-1}= \lim_{t \rightarrow 0}\dfrac{t}{(t+1)^n-1}=\lim_{t \rightarrow 0}\dfrac{t}{nt} = \dfrac{1}{n}
+$$
+puesto que como acabamos de ver $(t+1)^n-1$ y $nt$ son infinitésimos equivalentes en $t=0$.
 
 </div>
 
@@ -763,7 +777,19 @@ $$
 
 <div class="example"> **Ejemplos**
 
-**Ejemplo 6**
+**Ejemplo 6.** $\lim_{x \rightarrow 1}\dfrac{\tan(x^2-1)}{x-1}$
+
+En $x = 1$, tanto $\tan(x^2-1)$ como $x-1$ son infinitésimos. Dado que $\tan (x) y $x$ son infinitésimos equivalentes en $0$, resulta que $\tan(x^2-1)$ y $x^2-1$ son equivalentes, por lo tanto
+$$
+\lim_{x \rightarrow 1}\dfrac{x^2-1}{x-1}= \lim_{x \rightarrow 1} (x+1)= 2
+$$
+**Ejemplo 7.** $\lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a}$
+
+Dado que $a^x = e^{x \log a}$, tenemos que
+$$
+\lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a} = \lim_{x \rightarrow 0}\dfrac{e^{x \log a}-1}{x \log a} =1
+$$
+puesto que $e^x  - 1$ y $x$ són infinitésimos equivalentes en $x=0$.
 
 
 </div>
