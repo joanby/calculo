@@ -566,17 +566,47 @@ $$
 
 <div class="example"> **Ejemplo 4**
 
+Calcula el $\lim_{x \rightarrow a} \dfrac{x^2-(a+1)x+a}{x^3-a^3}$
+
+Se trata de una indeterminación del tipo $\dfrac{0}{0}$. Dado que a es una raíz de los deos polinomios, ambos son múltiplos de $x-a$, efectuando la división entera obtenemos que 
+$$
+x^2-(a+1)x+a = (x-1)(x-a) \quad \text{ y  } x^3-a^3= (x^2 +ax+a^2)(x-a)
+$$
+Por lo tanto 
+$$
+\lim_{x \rightarrow a} \dfrac{x^2-(a+1)x+a}{x^3-a^3} =\lim_{x \rightarrow a} \dfrac{(x-1)(x-a)}{(x^2 +ax+a^2)(x-a)} = \lim_{x \rightarrow a} \dfrac{x-1}{x^2 +ax+a^2} =\dfrac{a-1}{3a^2}
+$$
+
 </div>
 
 ## Cálculo de límites
 
 <div class="example"> **Ejemplo 5**
 
+Calcula $\lim_{x \rightarrow 0}\left(\dfrac{1-x}{1+x}\right)^{\dfrac{1}{x}}$
+
+Se trata de una indeterminación del tipo $1^{\infty}$, con el cambio $x=\dfrac{1}{t}$, tenemos
+$$
+\lim_{x \rightarrow 0}\left(\dfrac{1-x}{1+x}\right)^{\frac{1}{x}} =\lim_{t \rightarrow \infty}\left(\dfrac{t-1}{t+1} \right)^t= e^{\lim_{t \rightarrow \infty}t (\frac{t+1}{t-1}-1)} = e^0=1
+$$
+
+
+
 </div>
+
+
 
 ## Cálculo de límites
 
 <div class="example"> **Ejemplo 6**
+
+Calcula el $\lim_{x \rightarrow 0}\dfrac{1}{x} \log \sqrt{\dfrac{1+x}{1-x}}$
+
+Se trata de una indeterminación del tipo $\dfrac{0}{0}$. Dado que  $\log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} (\log (1+x)- \log(1-x))$, tenemos que el límite a calcular es
+
+$$
+\lim_{x \rightarrow 0}\dfrac{1}{x} \log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} \log \lim_{x \rightarrow 0} \left(\dfrac{1+x}{1-x} \right)^{\dfrac{1}{x}}=0
+$$
 
 </div>
 
