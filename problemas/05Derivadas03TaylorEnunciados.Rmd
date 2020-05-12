@@ -19,7 +19,7 @@ $$
 Usar la desigualdad anterior para hallar aproximaciones de $\sqrt[3]{1.2}$ y de $\sqrt[3]{2}$.
 1. Si $x\in [0,1]$ y $n\in\mathbb{N}$, demostrar que:
 $$
-\left|\ln (x+1)-\left(x-\frac{x^2}{2}+\frac{x^3}{3}+\cdots +(-1)^{n-1}\frac{x^n}{n}\right)\right|<\frac{x^{n+1}}{n+1.}
+\left|\ln (x+1)-\left(x-\frac{x^2}{2}+\frac{x^3}{3}+\cdots +(-1)^{n-1}\frac{x^n}{n}\right)\right|<\frac{x^{n+1}}{n+1}.
 $$
 Usar la expresión anterior para calcular $\ln 1.5$ con un error menor que $0.001$.
 1. Sea $I=(a,b)$ un intervalo abierto y $c\in I$. Sean $f$ y $g$ dos funciones definidas en $I$ tal que las funciones derivadas $f^{(k)}$ y $g^{(k)}$ existen y son continuas en $I$, para $k=0,1,\ldots, n$. Supongamos que $f^{(k)}(c)=g^{(k)}(c)=0$ para $k=0,1,\ldots,n-1$ y $g^{(n)}\neq 0$. Demostrar que:
