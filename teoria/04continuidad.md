@@ -568,9 +568,9 @@ $$
 
 Calcula el $\lim_{x \rightarrow a} \dfrac{x^2-(a+1)x+a}{x^3-a^3}$
 
-Se trata de una indeterminación del tipo $\dfrac{0}{0}$. Dado que a es una raíz de los deos polinomios, ambos son múltiplos de $x-a$, efectuando la división entera obtenemos que 
+Se trata de una indeterminación del tipo $\dfrac{0}{0}$. Dado que $a$ es una raíz de los dos polinomios, ambos son múltiplos de $x-a$, efectuando la división entera obtenemos que 
 $$
-x^2-(a+1)x+a = (x-1)(x-a) \quad \text{ y  } x^3-a^3= (x^2 +ax+a^2)(x-a)
+x^2-(a+1)x+a = (x-1)(x-a) \quad \text{ y} \quad x^3-a^3= (x^2 +ax+a^2)(x-a)
 $$
 Por lo tanto 
 $$
@@ -602,10 +602,12 @@ $$
 
 Calcula el $\lim_{x \rightarrow 0}\dfrac{1}{x} \log \sqrt{\dfrac{1+x}{1-x}}$
 
-Se trata de una indeterminación del tipo $\dfrac{0}{0}$. Dado que  $\log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} (\log (1+x)- \log(1-x))$, tenemos que el límite a calcular es
+Se trata de una indeterminación del tipo $\dfrac{0}{0}$. 
+
+Dado que  $\log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} (\log (1+x)- \log(1-x))$, tenemos que el límite a calcular es
 
 $$
-\lim_{x \rightarrow 0}\dfrac{1}{x} \log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} \log \lim_{x \rightarrow 0} \left(\dfrac{1+x}{1-x} \right)^{\dfrac{1}{x}}=0
+\lim_{x \rightarrow 0}\dfrac{1}{x} \log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} \log \lim_{x \rightarrow 0} \left(\dfrac{1+x}{1-x} \right)^{\dfrac{1}{x}}= \dfrac{1}{2} \log 1 =0
 $$
 
 </div>
