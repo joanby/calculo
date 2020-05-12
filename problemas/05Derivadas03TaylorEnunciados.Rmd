@@ -24,5 +24,5 @@ $$
 Usar la expresión anterior para calcular $\ln 1.5$ con un error menor que $0.001$.
 1. Sea $I=(a,b)$ un intervalo abierto y $c\in I$. Sean $f$ y $g$ dos funciones definidas en $I$ tal que las funciones derivadas $f^{(k)}$ y $g^{(k)}$ existen y son continuas en $I$, para $k=0,1,\ldots, n$. Supongamos que $f^{(k)}(c)=g^{(k)}(c)=0$ para $k=0,1,\ldots,n-1$ y $g^{(n)}\neq 0$. Demostrar que:
 $$
-\lim_{x\to c}\frac{f(x)}{g(x)}=\frac{f^{n)}(c)}{g^{(n)}(c)}.
+\lim_{x\to c}\frac{f(x)}{g(x)}=\frac{f^{(n)}(c)}{g^{(n)}(c)}.
 $$
