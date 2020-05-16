@@ -526,7 +526,10 @@ $$
 $$
 = \lim_{x \rightarrow 0}\dfrac{1+2x - (1+3x)}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})} = \lim_{x \rightarrow 0}\dfrac{-x}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})}=-\dfrac{1}{2}
 $$
+
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28sqrt%281%2B2x%29-sqrt%281%2B3x%29%29%2F%28x%2B2x%5E2%29+as+x+tends+to+0)
 </div>
+
 
 ## Cálculo de límites
 
@@ -572,11 +575,11 @@ Se trata de una indeterminación del tipo $\dfrac{0}{0}$. En este caso el cambio
 $$
 \lim_{x \rightarrow 1} \dfrac{\sqrt{x} -1}{x-1} = \lim_{t \rightarrow 1}\dfrac{t-1}{t^2-1}=\lim_{t \rightarrow 1}\dfrac{t-1}{(t-1)(t+1)} =\lim_{t \rightarrow 1}\dfrac{1}{t+1} = \dfrac{1}{2}
 $$
-
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim%20%28sqrt%28x%29-1%29%2F%28x-1%29%20as%20x-%3E1)
 </div>
 <div class="center">
 
- ```{r, echo=FALSE, label=limit3,fig.cap="",out.width = "300px"}
+ ```{r, echo=FALSE, label=limit3,fig.cap="",out.width = "250px"}
 knitr::include_graphics("Images/limit3.png",dpi=1200)
 ```
 </div>
@@ -595,6 +598,7 @@ Por lo tanto
 $$
 \lim_{x \rightarrow a} \dfrac{x^2-(a+1)x+a}{x^3-a^3} =\lim_{x \rightarrow a} \dfrac{(x-1)(x-a)}{(x^2 +ax+a^2)(x-a)} = \lim_{x \rightarrow a} \dfrac{x-1}{x^2 +ax+a^2} =\dfrac{a-1}{3a^2}
 $$
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim%28x%5E2-%28a%2B1%29x%2Ba%29%2F%28x%5E3-a%5E3%29+as+x+tends+to+a)
 
 </div>
 
@@ -606,10 +610,10 @@ Calcula $\lim_{x \rightarrow 0}\left(\dfrac{1-x}{1+x}\right)^{\dfrac{1}{x}}$
 
 Se trata de una indeterminación del tipo $1^{\infty}$, con el cambio $x=\dfrac{1}{t}$, tenemos
 $$
-\lim_{x \rightarrow 0}\left(\dfrac{1-x}{1+x}\right)^{\frac{1}{x}} =\lim_{t \rightarrow \infty}\left(\dfrac{t-1}{t+1} \right)^t= e^{\lim_{t \rightarrow \infty}t (\frac{t+1}{t-1}-1)} = e^0=1
+\lim_{x \rightarrow 0}\left(\dfrac{1-x}{1+x}\right)^{\frac{1}{x}} =\lim_{t \rightarrow \infty}\left(\dfrac{t-1}{t+1} \right)^t= e^{\lim_{t \rightarrow \infty}t (\frac{t-1}{t+1}-1)} = e^{-2}=\dfrac{1}{e^2}
 $$
 
-
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28%281-x%29%2F%281%2Bx%29%29%5E%281%2Fx%29+as+x+tends+to+0)
 
 </div>
 
@@ -626,9 +630,10 @@ Se trata de una indeterminación del tipo $\dfrac{0}{0}$.
 Dado que  $\log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} (\log (1+x)- \log(1-x))$, tenemos que el límite a calcular es
 
 $$
-\lim_{x \rightarrow 0}\dfrac{1}{x} \log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} \log \lim_{x \rightarrow 0} \left(\dfrac{1+x}{1-x} \right)^{\dfrac{1}{x}}= \dfrac{1}{2} \log 1 =0
+\lim_{x \rightarrow 0}\dfrac{1}{x} \log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} \log \lim_{x \rightarrow 0} \left(\dfrac{1+x}{1-x} \right)^{\dfrac{1}{x}}= \dfrac{1}{2} \log e^2 =1
 $$
 
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%281%2Fx%29ln+%28sqrt%28+%28%281%2Bx%29%2F%281-x%29%29%29%29+as+x+tends+0)
 </div>
 
 
