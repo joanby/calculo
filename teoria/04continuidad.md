@@ -1744,7 +1744,14 @@ S(x) =
 4, &\text{ si } x \in (4,5],
 \end{cases}
 $$
+</div>
 
+## Ejemplo de función escalonada
+
+<div class="center">
+
+ <img src="Images/escalonada.png" width="600px" />
+</div>
 
 ## Continuidad uniforme: funciones escalonadas.
 
@@ -1795,6 +1802,13 @@ Una función entre dos intervalos $f:[a,b] \rightarrow [c,d]$ es **lineal a troz
 
 Una función lineal a trozos es siempre continua.
 
+## Ejemplo de función lineal a trozos
+
+<div class="center">
+
+ <img src="Images/linealtr.png" width="600px" />
+</div>
+
 ## Continuidad uniforme: funciones lineales a trozos.
 
 <l class="prop"> **Proposición** </l>
@@ -1837,3 +1851,4 @@ $$
 |g_{\epsilon}(x)-f(x)| \leq |g_{\epsilon}(x)-f(x_{k-1})| + |f(x_{k-1})-f(x_k)|< \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2}=\epsilon
 $$
 </div>
+
