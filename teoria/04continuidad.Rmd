@@ -526,7 +526,10 @@ $$
 $$
 = \lim_{x \rightarrow 0}\dfrac{1+2x - (1+3x)}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})} = \lim_{x \rightarrow 0}\dfrac{-x}{x(1+2x)(\sqrt{1+2x} + \sqrt{1+3x})}=-\dfrac{1}{2}
 $$
+
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28sqrt%281%2B2x%29-sqrt%281%2B3x%29%29%2F%28x%2B2x%5E2%29+as+x+tends+to+0)
 </div>
+
 
 ## Cálculo de límites
 
@@ -572,11 +575,11 @@ Se trata de una indeterminación del tipo $\dfrac{0}{0}$. En este caso el cambio
 $$
 \lim_{x \rightarrow 1} \dfrac{\sqrt{x} -1}{x-1} = \lim_{t \rightarrow 1}\dfrac{t-1}{t^2-1}=\lim_{t \rightarrow 1}\dfrac{t-1}{(t-1)(t+1)} =\lim_{t \rightarrow 1}\dfrac{1}{t+1} = \dfrac{1}{2}
 $$
-
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim%20%28sqrt%28x%29-1%29%2F%28x-1%29%20as%20x-%3E1)
 </div>
 <div class="center">
 
- ```{r, echo=FALSE, label=limit3,fig.cap="",out.width = "300px"}
+ ```{r, echo=FALSE, label=limit3,fig.cap="",out.width = "250px"}
 knitr::include_graphics("Images/limit3.png",dpi=1200)
 ```
 </div>
@@ -595,6 +598,7 @@ Por lo tanto
 $$
 \lim_{x \rightarrow a} \dfrac{x^2-(a+1)x+a}{x^3-a^3} =\lim_{x \rightarrow a} \dfrac{(x-1)(x-a)}{(x^2 +ax+a^2)(x-a)} = \lim_{x \rightarrow a} \dfrac{x-1}{x^2 +ax+a^2} =\dfrac{a-1}{3a^2}
 $$
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim%28x%5E2-%28a%2B1%29x%2Ba%29%2F%28x%5E3-a%5E3%29+as+x+tends+to+a)
 
 </div>
 
@@ -606,10 +610,10 @@ Calcula $\lim_{x \rightarrow 0}\left(\dfrac{1-x}{1+x}\right)^{\dfrac{1}{x}}$
 
 Se trata de una indeterminación del tipo $1^{\infty}$, con el cambio $x=\dfrac{1}{t}$, tenemos
 $$
-\lim_{x \rightarrow 0}\left(\dfrac{1-x}{1+x}\right)^{\frac{1}{x}} =\lim_{t \rightarrow \infty}\left(\dfrac{t-1}{t+1} \right)^t= e^{\lim_{t \rightarrow \infty}t (\frac{t+1}{t-1}-1)} = e^0=1
+\lim_{x \rightarrow 0}\left(\dfrac{1-x}{1+x}\right)^{\frac{1}{x}} =\lim_{t \rightarrow \infty}\left(\dfrac{t-1}{t+1} \right)^t= e^{\lim_{t \rightarrow \infty}t (\frac{t-1}{t+1}-1)} = e^{-2}=\dfrac{1}{e^2}
 $$
 
-
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28%281-x%29%2F%281%2Bx%29%29%5E%281%2Fx%29+as+x+tends+to+0)
 
 </div>
 
@@ -626,9 +630,10 @@ Se trata de una indeterminación del tipo $\dfrac{0}{0}$.
 Dado que  $\log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} (\log (1+x)- \log(1-x))$, tenemos que el límite a calcular es
 
 $$
-\lim_{x \rightarrow 0}\dfrac{1}{x} \log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} \log \lim_{x \rightarrow 0} \left(\dfrac{1+x}{1-x} \right)^{\dfrac{1}{x}}= \dfrac{1}{2} \log 1 =0
+\lim_{x \rightarrow 0}\dfrac{1}{x} \log \sqrt{\dfrac{1+x}{1-x}} = \dfrac{1}{2} \log \lim_{x \rightarrow 0} \left(\dfrac{1+x}{1-x} \right)^{\dfrac{1}{x}}= \dfrac{1}{2} \log e^2 =1
 $$
 
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%281%2Fx%29ln+%28sqrt%28+%28%281%2Bx%29%2F%281-x%29%29%29%29+as+x+tends+0)
 </div>
 
 
@@ -769,48 +774,59 @@ La proposición anterior establece que, en el cálculo de un límite, se pude su
 
 1. Multiplicando y dividiendo por $g(x)$, tendremos que 
 $$
-L = \lim_{x \rightarrow c} f(x).h(x) = \lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}\dfrac{g(x)}{h(x)}= \lim_{x \rightarrow c}\dfrac{f(x)}{g(x)} \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)} = \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)}
+L = \lim_{x \rightarrow c} f(x)\cdot h(x) = \lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}\dfrac{g(x)}{h(x)}= \lim_{x \rightarrow c}\dfrac{f(x)}{g(x)} \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)} = \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)}
 $$
 
 2. La demostración es análoga a la anterior.
 
 </div>
 
-<div class="example"> **Ejemplos**
+<div class="example"> **Ejemplo 1**
 
-*Ejemplo 1.* Cálculo del límite $\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}$
+Cálculo del límite $\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}$
 
 Primero, usamos la equivalencia entre $3x -5x^3$ y $3x$ y, acontinuación, la que hay entre $\sin 2x$ y $2x$:
 $$
 \lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}= \lim \dfrac{\sin 2x}{3x} = \dfrac{2}{3}\lim\dfrac{\sin 2x }{2x}= \dfrac{2}{3}
 $$
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+sin%282x%29%2F%283x-5x%5E3%29+as+x+tends+0)
+
 </div>
 
 ## Infinitésimos equivalentes. Más ejemplos
 
-<div class="example"> **Ejemplos**
+<div class="example"> **Ejemplo 2**
 
-*Ejemplo 2.* Calcula el $\lim_{x \rightarrow 0}\dfrac{\sqrt[3]{x^3+2x^4}}{\log (1+2x)}$.
+Calcula el $\lim_{x \rightarrow 0}\dfrac{\sqrt[3]{x^3+2x^4}}{\log (1+2x)}$.
 
 Dado que $\log(1+x)$ y $x$ son equivalentes, mediante el cambio de variable $x=2t$, vemos que también lo son $\log(1+2x)$ y $2x$. Por lo tanto,
 $$
 \lim_{x \rightarrow 0}\dfrac{\sqrt[3]{x^3+2x^4}}{\log (1+2x)} = \lim_{x \rightarrow 0} \dfrac{\sqrt[3]{x^3+2x^4}}{2x}= \dfrac{1}{2}
 $$
 
-*Ejemplo 3.* Demuestra que $\dfrac{x}{2}$ y $\sqrt{1+x}-1$ son infinitésimos equivalentes en $x=0$.
-
-Debemos demostrar que $\lim_{x \rightarrow 0}\dfrac{\dfrac{x}{2}}{\sqrt{1+x}-1}=1$. Mediante el cambio de variable $1+x =t^2$, tenemos que cuando $x \rightarrow 0$, $t \rightarrow 1$ y, por lo tanto,
-$$
-\lim_{x \rightarrow 0}\dfrac{\dfrac{x}{2}}{\sqrt{1+x}-1} = \lim_{t \rightarrow 1}\dfrac{t^2 -1}{2(t-1)} = \lim_{t \rightarrow 1} \dfrac{t+1}{2} =1.
-$$
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28x%5E3%2B2x%5E4%29%5E%281%2F3%29%2Flog%281%2B2x%29+as+x+tends+0&assumption=%7B%22FunClash%22%2C+%22log%22%7D+-%3E+%7B%22Log%22%7D&assumption=%22%5E%22+-%3E+%22Real%22)
 
 </div>
 
 ## Infinitésimos equivalentes. Más ejemplos
 
-<div class="example"> **Ejemplos**
+<div class="example"> **Ejemplo 3**
 
-**Ejemplo 4.** $p(x)=(x+1)^n -1$ y $q(x)=nx$ son infinitésimos equivalentes en $x=0$.
+Demuestra que $\dfrac{x}{2}$ y $\sqrt{1+x}-1$ son infinitésimos equivalentes en $x=0$.
+
+Debemos demostrar que $\lim_{x \rightarrow 0}\dfrac{\dfrac{x}{2}}{\sqrt{1+x}-1}=1$. Mediante el cambio de variable $1+x =t^2$, tenemos que cuando $x \rightarrow 0$, $t \rightarrow 1$ y, por lo tanto,
+$$
+\lim_{x \rightarrow 0}\dfrac{\dfrac{x}{2}}{\sqrt{1+x}-1} = \lim_{t \rightarrow 1}\dfrac{t^2 -1}{2(t-1)} = \lim_{t \rightarrow 1} \dfrac{t+1}{2} =1.
+$$
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28x%2F2%29%2F%28sqrt%281%2Bx%29-1%29+as+x+tends+0)
+
+</div>
+
+## Infinitésimos equivalentes. Más ejemplos
+
+<div class="example"> **Ejemplo 4**
+
+Comprueba que $p(x)=(x+1)^n -1$ y $q(x)=nx$ son infinitésimos equivalentes en $x=0$.
 
 Dado que $(x+1)^n = \sum_{j=0}^n \binom{n}{j} x^{n-j}=x^n+\binom{n}{n-1}x^{n-1} +  \cdots + \binom{n}{1}x+1$, 
 
@@ -818,7 +834,16 @@ tendremos que $(x+1)^n -1 = x^n+nx^{n-1} +  \cdots + nx$, y por lo tanto
 $$
 \lim_{x \rightarrow 0} \dfrac{(x+1)^n -1}{nx} = \lim_{x \rightarrow 0} \dfrac{x^n+nx^{n-1} +  \cdots + nx}{nx}= 1.
 $$
-**Ejemplo 5.** $\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x}$
+
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28%28x%2B1%29%5En+-1%29%2Fnx+as+x+tends+0)
+
+</div>
+
+## Infinitésimos equivalentes. Más ejemplos
+
+<div class="example"> **Ejemplo 5**
+
+Calcula el $\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x}$
 
 Si hacemos el cambio de variable $x+1= (t+1)^n$, tendremos que $x=(t+1)^n-1$, por lo que
 $$
@@ -826,19 +851,30 @@ $$
 $$
 puesto que como acabamos de ver $(t+1)^n-1$ y $nt$ son infinitésimos equivalentes en $t=0$.
 
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28%28x%2B1%29%5E%281%2Fn%29+-1%29%2Fx+as+x+tends+0)
+
 </div>
 
 ## Infinitésimos equivalentes. Más ejemplos
 
-<div class="example"> **Ejemplos**
+<div class="example"> **Ejemplo 6**
 
-**Ejemplo 6.** $\lim_{x \rightarrow 1}\dfrac{\tan(x^2-1)}{x-1}$
+Calcula el $\lim_{x \rightarrow 1}\dfrac{\tan(x^2-1)}{x-1}$
 
-En $x = 1$, tanto $\tan(x^2-1)$ como $x-1$ son infinitésimos. Dado que $\tan (x) y $x$ son infinitésimos equivalentes en $0$, resulta que $\tan(x^2-1)$ y $x^2-1$ son equivalentes, por lo tanto
+En $x = 1$, tanto $\tan(x^2-1)$ como $x-1$ son infinitésimos. Dado que $\tan (x)$ y $x$ son infinitésimos equivalentes en $0$, resulta que $\tan(x^2-1)$ y $x^2-1$ son equivalentes en $x=1$, por lo tanto
 $$
 \lim_{x \rightarrow 1}\dfrac{x^2-1}{x-1}= \lim_{x \rightarrow 1} (x+1)= 2
 $$
-**Ejemplo 7.** $\lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a}$
+
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28tan%28x%5E2-1%29%29%2F%28x-1%29+as+x+tends+1)
+
+</div>
+
+## Infinitésimos equivalentes. Más ejemplos
+
+<div class="example"> **Ejemplo 7**
+
+Calcula el $\lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a}$
 
 Dado que $a^x = e^{x \log a}$, tenemos que
 $$
@@ -846,8 +882,40 @@ $$
 $$
 puesto que $e^x  - 1$ y $x$ són infinitésimos equivalentes en $x=0$.
 
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28a%5Ex+-1%29%2F%28xlog+a%29+x+tends+0)
+</div>
+
+## Comparación infinitésimos
+
+<l class="definition"> **Definición** </l>
+
+Sean $c$ un punto de acumulación de $A$ y sean $f$ y $g$ dos infinitésimos en $c$. 
+
+1. $f$ y $g$ son del mismo orden si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = k \neq 0$ y $|k| < +\infty$. Se indica por $f(x)=O(g(x))$ cuando $x \rightarrow c$.
+
+2. $f$ es de orden superior a $g$ si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} =  0$, se indica por $f(x)=o(g(x))$, cuando $x \rightarrow c$.
+
+3. $f$ es de orden inferior a $g$ si $g$ es de orden superior a $f$, o equivalentemente, si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = \infty$.
+
+
+## Comparación infinitésimos
+
+<div class="example"> **Ejemplos**
+
+1. Hemos visto que $\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x} = \dfrac{1}{n}$, por lo tanto $\sqrt[n]{x+1}-1$ y $x$ son del mismo orden.
+
+2. $f(x)= x$ es de orden superior a $g(x)=1+\sin^2 x$ en $x=0$, puesto que $\lim_{x \rightarrow 0}\dfrac{x}{1+\sin^2 x}=0$. 
+
 
 </div>
+
+<l class="observ"> **Observaciones** </l>
+
+1. Dos infinitésimos equivalentes son del mismo orden, pero no todos los infinitésimos del mismo orden son equivalentes.
+
+2. Habitualmente se usan como referencia los infinitésimos en $c$, $(x-c)^n$, donde el exponente se usa para indicar el orden del infinitésimo.
+
+
 
 # Continuidad
 
@@ -1466,7 +1534,7 @@ knitr::include_graphics("Images/finversa.png",dpi=1200)
 
 <l class="prop"> **Proposición**
 
-Sea $f: [A \subset \mathbb{R}[a,b] \rightarrow \mathbb{R}$ una función continua y estrictamente creciente. Entonces 
+Sea $f: [a,b] \rightarrow \mathbb{R}$ una función continua y estrictamente creciente. Entonces 
 
 1. Existe la función inversa $f^{-1} : [f(a),f(b)] \rightarrow [a,b]$.
 2. $f^{-1}$ es continua y estrictamente creciente.
@@ -1509,8 +1577,11 @@ La demostración es completamente análoga a la anterior y se deja como ejercici
 
 <div class="example"> **Ejemplos de aplicación**
 
-1. Dado que la función $f(x)=x^2$ es estrictamente creciente y continua en $[0,+\infty]$, su función inversa $f^{-1}(x)= \sqrt{x}$ tambiés es estrictamente creciente y continua sobre la imagen por $f$ de $[0,+\infty]$, que es el mismo conjunto.
+1. Dado que la función $f(x)=x^2$ es estrictamente creciente y continua en $[0,+\infty]$, su función inversa $f^{-1}(x)= \sqrt{x}$ también es estrictamente creciente y continua sobre la imagen por $f$ de $[0,+\infty]$, que es el mismo conjunto.
 
+2. Dado que la función $sin(x)$ es estrictamente creciente y continua en el intervalo $\left[-\dfrac{\pi}{2},\dfrac{\pi}{2} \right]$, su función inversa $\arcsin(x)$ es estrictamente creciente y continua en el intervalo $[-1,1]$.
+
+3. Dado que la función $sin(x)$ es estrictamente decreciente y continua en el intervalo $[0,\pi]$, su función inversa $\arcsin(x)$ es estrictamente decreciente y continua en el intervalo $[-1,1]$.
 
 # Continuidad uniforme
 
@@ -1603,7 +1674,7 @@ La demostración es inmediata  a partir de la observación anterior: Sean $x_n$ 
 
 ## Continuidad uniforme: La propiedad de Lipschitz
 
-Un ejemplo de condición que implica la continuidad uniforme sobre un conjunto- pero no al revés- és la llamada propiedad de **Lpschitz**:
+Un ejemplo de condición que implica la continuidad uniforme sobre un conjunto- pero no al revés- és la llamada propiedad de **Lipschitz**:
 
 <l class="definition"> **Definición** </l>
 
@@ -1619,7 +1690,7 @@ A una función que cumpla esta propiedad, se le acostumbra a llamar **función l
 
 Si una función $f$ verifica la propiedad de Lipschitz entonces el conjunto
 $$
-\cal{M}=\left\{ \dfrac{f(y)-f(x)}{y-x}: x,y \in A, \quad x \neq y \right\}
+{\cal{M}}=\left\{ \dfrac{f(y)-f(x)}{y-x}: x,y \in A, \quad x \neq y \right\}
 $$
 es no vacio y está acotado superiormente, por lo que existe $M_0 = \sup \cal{M}$. $M_0$ recibe el nombre de **constante de Lipschitz** para $f$.
 
@@ -1646,7 +1717,7 @@ es decir, $f$ es uniformemente continua en $A$
 
 La función $g(x)= \sqrt{x}$ es uniformemente continua en $(0,+\infty)$, pero no es lipschitziana.
 
-Hemos demostrado anteriormente uqe $g$ era uniformemente continua en $(0,+\infty)$, veamos que no verifica la propiedad de Lipschitz. Para ello veremos que
+Hemos demostrado anteriormente que $g$ era uniformemente continua en $(0,+\infty)$, veamos que no verifica la propiedad de Lipschitz. Para ello veremos que
 $$
 \lim_{x \rightarrow y}\dfrac{\sqrt{y}-\sqrt{x}}{y-x} = \dfrac{1}{2\sqrt{y}}
 $$
@@ -1676,5 +1747,130 @@ Queda así demostrado que si $f$ es continua sobre un intervalo cerrado, entonce
 
 </div>
 
+## Continuidad uniforme: funciones escalonadas.
+
+Una consecuencia notable del resultado anterior es que, dada una función continua sobre un intervalo cerrado, podemos aproximar esta función  por una función constante a trozos.
+
+<l class="definition"> **Definición** </l>
+
+**Una partición** de un intervalo $[a,b] \subset \mathbb{R}$ és una colección de subintervalos disjuntos,$[a,x_1]$,$(x_i,x_{i+1}]$, con $i \in \{1, \ldots, n-1\}$ y $a <x_1< \ldots < x_n=b$, tales que 
+$$
+[a,x_1] \cup (x_1,x_2]  \ldots \cup (x_i,x_{i+1}] \cup \dots \cup (x_{n-1}, x_n] = [a,b]
+$$
+Representaremos la partición por el conjunto de extremos de los subintervalos que la definen: $\{a,x_1, \ldots,x_{n-1},b\}$
 
 
+## Continuidad uniforme: funciones escalonadas.
+
+<l class="definition"> **Definición** </l>
+
+Dada una partición $\{a,x_1, \ldots,x_{n-1},b\}$ de un intervalo $[a,b]$, $S:[a,b] \rightarrow \mathbb{R}$ es **una función escalonada** sobre $[a,b]$ si $S$ es constante sobre cada uno de los subintervalos de la partición.
+
+
+
+<div class="example"> **Ejemplo**
+
+La función $S: [-3,5] \rightarrow \mathbb{R}$ definida por
+$$
+S(x) =
+\begin{cases}
+-2, & \text{ si } x \in [-3,-1],\\
+1, & \text{ si } x \in (-1,1], \\
+-1, &\text{ si } x \in (1,3],\\
+2, &\text{ si } x \in (3,4], \\
+4, &\text{ si } x \in (4,5],
+\end{cases}
+$$
+
+
+## Continuidad uniforme: funciones escalonadas.
+
+<l class="prop"> **Proposición** </l>
+
+Sea $f:[a,b] \rightarrow \mathbb{R}$ una función continua. Entonces, para cada $\epsilon > 0$ existen una partición $\{a,x_1, \ldots,x_{n-1},b\}$ del intervalo $[a,b]$, con todos los subintervalos de igual longitud, y una función escalonada $S_{\epsilon}: [a,b] \rightarrow \mathbb{R}$ tales que, para todo $x \in \mathbb{R}$, es
+$$
+|f(x)-S_{\epsilon}(x)| < \epsilon
+$$
+
+## Continuidad uniforme: funciones escalonadas.
+
+<div class="dem"> **Demostración**
+
+Por ser $f$ continua sobre un intervalo cerrado, es uniformemente continua, por lo tanto dado un $\epsilon>0$, existe un $\delta >0$, tal que si $|x-y|< \delta$, entonces $|f(x)-f(y)|< \epsilon$. La propiedad arquimediana nos asegura que existe $m \in \mathbb{N}$ tal que $h=\dfrac{b-a}{m} < \delta$. Consideremos pues la partición de $[a,b]$ dada por los puntos.
+$$
+a; x_1=a+h; x_2=a+2h; \ldots a+kh; \ldots a+(n-1)h; b
+$$
+Consideremos los intervalos $I_1=[a,x_1]=[a,a+h]$ y $I_k=(x_{k-1},x_k]=(a+(k-1)h,a+kh]$, para $k \in \{2,\ldots, n\}$
+Sea ahora la función escalonada definida por
+$$
+S_{\epsilon} (x) = f(a+kh)=f(x_k) \text{ si } x \in I_k
+$$
+para $k \in \{1, \ldots n \}$.
+
+$S_{\epsilon}$ es la función escalonada buscada, puesto que dado $x \in [a,b]$ existe un $k$ tal que $x \in I_k$, por lo tanto
+$$
+|f(x)-S_{\epsilon}(x)| = |f(x)-f(x_k)| < \epsilon
+$$
+puesto que $|x-x_k| < \delta$, dado que $x \in I_k$.
+
+## Continuidad uniforme: funciones lineales a trozos.
+
+<l class="definition"> **Definición** </l>
+
+**Función lineal** entre dos intervalos, $f:[a,b] \rightarrow [c,d]$, es la función que tiene por gráfica el segmento que une los puntos $(a,c)$ y $(b,d)$, es decir la función definida por
+$$
+f(x) = \dfrac{d-c}{b-a}(x-a)+c
+$$
+
+Está claro que una función lineal entre dos intervalos es siempre continua.
+
+## Continuidad uniforme: funciones lineales a trozos.
+
+<l class="definition"> **Definición** </l>
+
+Una función entre dos intervalos $f:[a,b] \rightarrow [c,d]$ es **lineal a trozos** si existe una partición del intervalo $I_k$, $k=1, \ldots ,n$, tal que $f$ restringida a cada $I_k$ es una función lineal sobre dicho intervalo. 
+
+Una función lineal a trozos es siempre continua.
+
+## Continuidad uniforme: funciones lineales a trozos.
+
+<l class="prop"> **Proposición** </l>
+
+Sea $f: [a,b] \rightarrow \mathbb{R}$ una función continua. Entonces, para cad $\epsilon >0$ existe una función lineal a trozos $g_{\epsilon}: [a,b] \rightarrow \mathbb{R}$ tal que, para todo $x \in [a,b]$ es 
+$$
+|f(x)-g_{\epsilon}(x)|<\epsilon
+$$
+
+## Funciones lineales a trozos.
+
+<div class="dem"> **Demostración**
+
+Por ser $f$ continua sobre $[a,b]$, es uniformemente continua. Por lo tanto, dado un $\epsilon > 0$, existe un $\delta >0$ tal que si $|x-y| < \delta$, entonces $|f(x)-f(y)|<\dfrac{\epsilon}{2}$. Sea $m \in \mathbb{N}$ tal que $h = \dfrac{b-a}{m} \delta$ y sean $I_k$ los subintervalos de la partición de $[a,b]$ determinada por los puntos $x_0=a,x_1=a+h, \ldots x_k=a+kh, \ldots x_{m-1}=a+(m-1)h,x_m=b$. Entonces la función lineal, $g_{\epsilon}$ a trozos que une los puntos 
+$$
+(x_{k-1}, f(x_{k-1})) \text{ y } (x_k, f(x_k))
+$$
+es la función buscada. 
+</div>
+
+## Funciones lineales a trozos.
+
+<div class="dem"> **Demostración**
+
+En efecto,
+$$
+g_{\epsilon}(x)=\dfrac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}} (x -x_{k-1})+f(x_{k-1})
+$$
+
+Por lo tanto
+$$
+|g_{\epsilon}(x)-f(x_{k-1})| \leq \left|\dfrac{x -x_{k-1}}{x_k - x_{k-1}}\right| |f(x_k) - f(x_{k-1})|\leq \dfrac{\epsilon}{2}
+$$
+
+ya que $\left|\dfrac{x -x_{k-1}}{x_k - x_{k-1}} \right| \leq 1$ y $|x_k - x_{k-1}| < \delta$
+
+
+En definitiva, 
+$$
+|g_{\epsilon}(x)-f(x)| \leq |g_{\epsilon}(x)-f(x_{k-1})| + |f(x_{k-1})-f(x_k)|< \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2}=\epsilon
+$$
+</div>
