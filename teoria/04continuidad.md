@@ -1596,7 +1596,7 @@ La demostración es inmediata  a partir de la observación anterior: Sean $x_n$ 
 
 ## Continuidad uniforme: La propiedad de Lipschitz
 
-Un ejemplo de condición que implica la continuidad uniforme sobre un conjunto- pero no al revés- és la llamada propiedad de **Lpschitz**:
+Un ejemplo de condición que implica la continuidad uniforme sobre un conjunto- pero no al revés- és la llamada propiedad de **Lipschitz**:
 
 <l class="definition"> **Definición** </l>
 
@@ -1734,3 +1734,41 @@ $$
 |f(x)-S_{\epsilon}(x)| = |f(x)-f(x_k)| < \epsilon
 $$
 puesto que $|x-x_k| < \delta$, dado que $x \in I_k$.
+
+## Continuidad uniforme: funciones lineales a trozos.
+
+<l class="definition"> **Definición** </l>
+
+**Función lineal** entre dos intervalos, $f:[a,b] \rightarrow [c,d]$, es la función que tiene por gráfica el segmento que une los puntos $(a,c)$ y $(b,d)$, es decir la función definida por
+$$
+f(x) = \dfrac{d-c}{b-a}(x-a)+c
+$$
+
+Está claro que una función lineal entre dos intervalos es siempre continua.
+
+## Continuidad uniforme: funciones lineales a trozos.
+
+<l class="definition"> **Definición** </l>
+
+Una función entre dos intervalos $f:[a,b] \rightarrow [c,d]$ es **lineal a trozos** si existe una partición del intervalo $I_k$, $k=1, \ldots ,n$, tal que $f$ restringida a cada $I_k$ es una función lineal sobre dicho intervalo. 
+
+Una función lineal a trozos es siempre continua.
+
+## Continuidad uniforme: funciones lineales a trozos.
+
+<l class="prop"> **Proposición** </l>
+
+Sea $f: [a,b] \rightarrow \mathbb{R}$ una función continua. Entonces, para cad $\epsilon >0$ existe una función lineal a trozos $g_{\epsilon}: [a,b] \rightarrow \mathbb{R}$ tal que, para todo $x \in [a,b]$ es 
+$$
+|f(x)-g_{\epsilon}(x)|<\epsilon
+$$
+
+## Continuidad uniforme: funciones lineales a trozos.
+
+<div class="dem"> **Demostración**
+
+Por ser $f$ continua sobre $[a,b]$, es uniformemente continua. Por lo tanto, dado un $\epsilon > 0$, existe un $\delta >0$ tal que si $|x-y| < \delta$, entonces $|f(x)-f(y)|<\epsilon$. Sea $m \in \mathbb{N}$ tal que $h = \dfrac{b-a}{m} \delta$ y sean $I_k$ los subintervalos de la partición de $[a,b]$ determinada por los puntos $a,a+h, \ldots a+kh, \ldots a+(m-1)h,b$. Entonces la función lineal, $g_{\epsilon}$ a trozos que une los puntos 
+$$
+(a+(k-1)h, f(a+(k-1)h) \text{ y } (a+kh, f(a+kh)
+$$
+es la función buscada.
