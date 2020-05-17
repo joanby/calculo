@@ -1540,6 +1540,12 @@ La demostración es completamente análoga a la anterior y se deja como ejercici
 
 3. Dado que la función $sin(x)$ es estrictamente decreciente y continua en el intervalo $[0,\pi]$, su función inversa $\arcsin(x)$ es estrictamente decreciente y continua en el intervalo $[-1,1]$.
 
+</div>
+<div class="center">
+
+ <img src="Images/sin_cos.png" width="350px" />
+</div>
+
 # Continuidad uniforme
 
 ## Introducción
