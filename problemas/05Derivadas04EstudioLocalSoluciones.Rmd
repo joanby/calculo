@@ -1,0 +1,153 @@
+---
+title: "Problemas de derivabilidad de funciones. Estudio local de funciones."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Realizar un estudio completo y la gráfica correspondiente de la función $f(x)=x^3-5 x^2+12$.
+
+## Solución
+
+a) Dominio.
+
+El dominio de la función es $\mathbb{R}$ al ser una función polinómica.
+
+b) Puntos de discontinuidad.
+
+No tiene ya que su dominio es $\mathbb{R}$.
+
+c) Puntos de corte:
+  * Eje de abscisas o eje X. Hemos de resolver la ecuación $f(x)=0$:
+$$
+x^3-5 x^2+12=0.
+$$
+Probamos con Ruffini en $x=2$:
+<div class="center">
+| | $1$| $-5$| $0$|$12$|
+|---:|:---:|:---:|:---:|:---:|
+|$2$| |$2$|$-6$|$-12$|
+||$1$|$-3$|$-6$|$0$|
+</div>
+Vemos que $x=2$. Para hallar las demás hemos de resolver la ecuación siguiente de segundo grado:
+$$
+x^2-3x-6=0,\ \Rightarrow x=\frac{3\pm\sqrt{9+24}}{2}=\frac{3\pm\sqrt{33}}{2}\approx `r round((3-sqrt(33))/2,4)`, `r round((3+sqrt(33))/2,4)`.
+$$
+Entonces la función $f$ pasa por los tres puntos siguientes: $(2,0)$, $\left(\frac{3\pm\sqrt{33}}{2},0\right)$.
+  * Eje de ordenadas o eje Y. El valor de $f(0)$ és $f(0)=12$. Por tanto, la función $f$ pasa por el punto $(0,12)$.
+  
+d) Simetrías. 
+
+El valor de $f(-x)$ vale $f(-x)=-x^3-5x^2+12$, valor que no está relacionado con $f(x)=x^3-5x^2+12$. Por tanto, no tiene simetrías respecto al eje Y ni respecto al origen.
+
+e) Asíntotas.
+
+Al ser una función polinómica, la función $f(x)$ no tiene asíntotas.
+
+f) Crecimiento y decrecimiento.
+
+Para estudiar el crecimiento y el decrecimiento, hemos de hallar la función derivada:
+$$
+f'(x)=3x^2-10x.
+$$
+Los posibles extremos se hallan resolviendo $f'(x)=0$:
+$$
+3x^2-10 x=0,\ \Rightarrow x(3x-10)=0,\ \Rightarrow x=0,\  x=\frac{10}{3}.
+$$
+Hemos hallado dos candidatos a extremos. Hallemos a continuación la región de crecimiento y decrecimiento y el tipo de extremos que son los candidatos hallados:
+<div class="center">
+|$x$| $-\infty$| | $0$| |$\frac{10}{3}$||$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|$y'$| |$+$| | $-$| |$+$| 
+|$y$| |$\nearrow$| |$\searrow$| |$\nearrow$| 
+</div>
+La función es creciente en la región $(-\infty,0)\cup\left(\frac{10}{3},\infty\right)$, es decreciente en el intervalo $\left(0,\frac{10}{3}\right)$, tiene un máximo en el punto $(0,12)$ y un mínimo en el punto $\left(\frac{10}{3},\left(\frac{10}{3}\right)^3-5\cdot \left(\frac{10}{3}\right)^2+12\right)=\left(\frac{10}{3},-\frac{176}{27}\right)\approx (`r round(10/3,4)`,`r round(-176/27,4)`)$.
+
+g) Concavidad y convexidad.
+
+Para estudiar la concavidad y la convexidad, hemos de hallar la función derivada segunda:
+$$
+f''(x)=6x-10.
+$$
+Los posibles puntos de inflexión se hallan resolviendo $f''(x)=0$:
+$$
+6x-10=0,\ \Rightarrow x=\frac{10}{6}=\frac{5}{3}\approx `r round(5/3,4)`.
+$$
+Hemos hallado un candidato a punto de inflexión. Hallemos a continuación la región de concavidad y convexidad:
+<div class="center">
+|$x$| $-\infty$| | $\frac{5}{3}$|  |$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|$y''$| |$-$| | $+$| 
+|$y$| |$\bigcap$| |$\bigcup$| 
+</div>
+La función será cóncava en el intervalo $\left(-\infty,\frac{5}{3}\right)$, convexa en el intervalo $\left(\frac{5}{3},\infty\right)$ y tiene un punto de inflexión en $\left(\frac{5}{3},\left(\frac{5}{3}\right)^3-5\cdot \left(\frac{5}{3}\right)^2+12\right)=\left(\frac{5}{3},\frac{74}{27}\right)\approx (`r round(5/3,4)`,`r round(74/27,4)`)$.
+
+Usando todas propiedades anteriores ya podemos dibujar la función $y=f(x)$:
+```{r,echo=FALSE,fig.align='center',fig.height=6}
+xmin=-2
+xmax=5
+ymin=-7
+ymax=15
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=7
+quantsy=11
+f = function(x){x^3-5*x^2+12}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-15*tolx,"x")
+text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+```
+
+
+\newpage
+
+
+2. Realizar un estudio completo y la gráfica correspondiente de la función $f(x)=\frac{x+1}{x^2+1}$.
+
+
+## Solución
+
+
+\newpage
+
+
+
+
+3. Realizar un estudio completo y la gráfica correspondiente de la función $f(x)=\ln (\cos^2 x)$.
+
+
+## Solución
+
+
+\newpage
+
+
+4. Realizar un estudio completo y la gráfica correspondiente de la función $f(x)=\frac{x^2}{x-1}$.
+
+
+## Solución
+
+
+\newpage
+
+
+
+
