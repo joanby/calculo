@@ -1502,7 +1502,7 @@ knitr::include_graphics("Images/finversa.png",dpi=1200)
 
 <l class="prop"> **Proposición**
 
-Sea $f: [A \subset \mathbb{R}[a,b] \rightarrow \mathbb{R}$ una función continua y estrictamente creciente. Entonces 
+Sea $f: [a,b] \rightarrow \mathbb{R}$ una función continua y estrictamente creciente. Entonces 
 
 1. Existe la función inversa $f^{-1} : [f(a),f(b)] \rightarrow [a,b]$.
 2. $f^{-1}$ es continua y estrictamente creciente.
@@ -1545,8 +1545,11 @@ La demostración es completamente análoga a la anterior y se deja como ejercici
 
 <div class="example"> **Ejemplos de aplicación**
 
-1. Dado que la función $f(x)=x^2$ es estrictamente creciente y continua en $[0,+\infty]$, su función inversa $f^{-1}(x)= \sqrt{x}$ tambiés es estrictamente creciente y continua sobre la imagen por $f$ de $[0,+\infty]$, que es el mismo conjunto.
+1. Dado que la función $f(x)=x^2$ es estrictamente creciente y continua en $[0,+\infty]$, su función inversa $f^{-1}(x)= \sqrt{x}$ también es estrictamente creciente y continua sobre la imagen por $f$ de $[0,+\infty]$, que es el mismo conjunto.
 
+2. Dado que la función $sin(x)$ es estrictamente creciente y continua en el intervalo $\left[-\dfrac{\pi}{2},\dfrac{\pi}{2} \right]$, su función inversa $\arcsin(x)$ es estrictamente creciente y continua en el intervalo $[-1,1]$.
+
+3. Dado que la función $sin(x)$ es estrictamente decreciente y continua en el intervalo $[0,\pi]$, su función inversa $\arcsin(x)$ es estrictamente decreciente y continua en el intervalo $[-1,1]$.
 
 # Continuidad uniforme
 
@@ -1806,12 +1809,36 @@ $$
 |f(x)-g_{\epsilon}(x)|<\epsilon
 $$
 
-## Continuidad uniforme: funciones lineales a trozos.
+## Funciones lineales a trozos.
 
 <div class="dem"> **Demostración**
 
-Por ser $f$ continua sobre $[a,b]$, es uniformemente continua. Por lo tanto, dado un $\epsilon > 0$, existe un $\delta >0$ tal que si $|x-y| < \delta$, entonces $|f(x)-f(y)|<\epsilon$. Sea $m \in \mathbb{N}$ tal que $h = \dfrac{b-a}{m} \delta$ y sean $I_k$ los subintervalos de la partición de $[a,b]$ determinada por los puntos $a,a+h, \ldots a+kh, \ldots a+(m-1)h,b$. Entonces la función lineal, $g_{\epsilon}$ a trozos que une los puntos 
+Por ser $f$ continua sobre $[a,b]$, es uniformemente continua. Por lo tanto, dado un $\epsilon > 0$, existe un $\delta >0$ tal que si $|x-y| < \delta$, entonces $|f(x)-f(y)|<\dfrac{\epsilon}{2}$. Sea $m \in \mathbb{N}$ tal que $h = \dfrac{b-a}{m} \delta$ y sean $I_k$ los subintervalos de la partición de $[a,b]$ determinada por los puntos $x_0=a,x_1=a+h, \ldots x_k=a+kh, \ldots x_{m-1}=a+(m-1)h,x_m=b$. Entonces la función lineal, $g_{\epsilon}$ a trozos que une los puntos 
 $$
-(a+(k-1)h, f(a+(k-1)h) \text{ y } (a+kh, f(a+kh)
+(x_{k-1}, f(x_{k-1})) \text{ y } (x_k, f(x_k))
 $$
-es la función buscada.
+es la función buscada. 
+</div>
+
+## Funciones lineales a trozos.
+
+<div class="dem"> **Demostración**
+
+En efecto,
+$$
+g_{\epsilon}(x)=\dfrac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}} (x -x_{k-1})+f(x_{k-1})
+$$
+
+Por lo tanto
+$$
+|g_{\epsilon}(x)-f(x_{k-1})| \leq \left|\dfrac{x -x_{k-1}}{x_k - x_{k-1}}\right| |f(x_k) - f(x_{k-1})|\leq \dfrac{\epsilon}{2}
+$$
+
+ya que $\left|\dfrac{x -x_{k-1}}{x_k - x_{k-1}} \right| \leq 1$ y $|x_k - x_{k-1}| < \delta$
+
+
+En definitiva, 
+$$
+|g_{\epsilon}(x)-f(x)| \leq |g_{\epsilon}(x)-f(x_{k-1})| + |f(x_{k-1})-f(x_k)|< \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2}=\epsilon
+$$
+</div>
