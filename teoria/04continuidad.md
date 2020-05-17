@@ -1639,7 +1639,7 @@ es decir, $f$ es uniformemente continua en $A$
 
 La función $g(x)= \sqrt{x}$ es uniformemente continua en $(0,+\infty)$, pero no es lipschitziana.
 
-Hemos demostrado anteriormente uqe $g$ era uniformemente continua en $(0,+\infty)$, veamos que no verifica la propiedad de Lipschitz. Para ello veremos que
+Hemos demostrado anteriormente que $g$ era uniformemente continua en $(0,+\infty)$, veamos que no verifica la propiedad de Lipschitz. Para ello veremos que
 $$
 \lim_{x \rightarrow y}\dfrac{\sqrt{y}-\sqrt{x}}{y-x} = \dfrac{1}{2\sqrt{y}}
 $$
@@ -1669,5 +1669,22 @@ Queda así demostrado que si $f$ es continua sobre un intervalo cerrado, entonce
 
 </div>
 
+## Continuidad uniforme: funciones escalonadas.
 
+Una consecuencia notable del resultado anterior es que, dada una función continua sobre un intervalo cerrado, podemos aproximar esta función  por una función constante a trozos.
+
+<l class="definition"> **Definición** </l>
+
+**Una partición** de un intervalo $[a,b] \subset \mathbb{R}$ és una colección de subintervalos $[x_i,x_{i+1}]$, con $i \in \{0,1, \ldots, n-1\} y $a=x_0 <x_1< \ldots , x_n=b], tales que 
+$$
+[x_0,x_1] \cup [x_1,x_2]  \ldots \cup [x_i,x_{i+1}] \cup \dots \cup [x_{n-1}, x_n] = [a,b]
+$$
+Representaremos la partición por el conjunto de extremos de los subintervalos que la definen: $\{a,x_1, \ldots,x_{n-1},b\}$
+
+
+## Continuidad uniforme: funciones escalonadas.
+
+<l class="definition"> **Definición** </l>
+
+Dada una partición $\{a,x_1, \ldots,x_{n-1},b\}$ de un intervalo $[a,b]$, $S:[a,b] \rightarrow \mathbb{R}$ es **una función escalonada** sobre $[a,b]$ si existe una colección $c_1, c_2, \ldots c_n$ de constantes reales tal que  $S(x)=c_i$ si $x \in [x_i,x_{i-1}]$, es decir, si $S$ es constante sobre cada uno de los subintervalos de la partición.
 
