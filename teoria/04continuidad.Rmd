@@ -1718,9 +1718,9 @@ Una consecuencia notable del resultado anterior es que, dada una función contin
 
 <l class="definition"> **Definición** </l>
 
-**Una partición** de un intervalo $[a,b] \subset \mathbb{R}$ és una colección de subintervalos $[x_i,x_{i+1}]$, con $i \in \{0,1, \ldots, n-1\} y $a=x_0 <x_1< \ldots , x_n=b], tales que 
+**Una partición** de un intervalo $[a,b] \subset \mathbb{R}$ és una colección de subintervalos disjuntos,$[a,x_1]$,$(x_i,x_{i+1}]$, con $i \in \{1, \ldots, n-1\}$ y $a <x_1< \ldots < x_n=b$, tales que 
 $$
-[x_0,x_1] \cup [x_1,x_2]  \ldots \cup [x_i,x_{i+1}] \cup \dots \cup [x_{n-1}, x_n] = [a,b]
+[a,x_1] \cup (x_1,x_2]  \ldots \cup (x_i,x_{i+1}] \cup \dots \cup (x_{n-1}, x_n] = [a,b]
 $$
 Representaremos la partición por el conjunto de extremos de los subintervalos que la definen: $\{a,x_1, \ldots,x_{n-1},b\}$
 
@@ -1729,5 +1729,51 @@ Representaremos la partición por el conjunto de extremos de los subintervalos q
 
 <l class="definition"> **Definición** </l>
 
-Dada una partición $\{a,x_1, \ldots,x_{n-1},b\}$ de un intervalo $[a,b]$, $S:[a,b] \rightarrow \mathbb{R}$ es **una función escalonada** sobre $[a,b]$ si existe una colección $c_1, c_2, \ldots c_n$ de constantes reales tal que  $S(x)=c_i$ si $x \in [x_i,x_{i-1}]$, es decir, si $S$ es constante sobre cada uno de los subintervalos de la partición.
+Dada una partición $\{a,x_1, \ldots,x_{n-1},b\}$ de un intervalo $[a,b]$, $S:[a,b] \rightarrow \mathbb{R}$ es **una función escalonada** sobre $[a,b]$ si $S$ es constante sobre cada uno de los subintervalos de la partición.
 
+
+
+<div class="example"> **Ejemplo**
+
+La función $S: [-3,5] \rightarrow \mathbb{R}$ definida por
+$$
+S(x) =
+\begin{cases}
+-2, & \text{ si } x \in [-3,-1],\\
+1, & \text{ si } x \in (-1,1], \\
+-1, &\text{ si } x \in (1,3],\\
+2, &\text{ si } x \in (3,4], \\
+4, &\text{ si } x \in (4,5],
+\end{cases}
+$$
+
+
+## Continuidad uniforme: funciones escalonadas.
+
+<l class="prop"> **Proposición** </l>
+
+Sea $f:[a,b] \rightarrow \mathbb{R}$ una función continua. Entonces, para cada $\epsilon > 0$ existen una partición $\{a,x_1, \ldots,x_{n-1},b\}$ del intervalo $[a,b]$, con todos los subintervalos de igual longitud, y una función escalonada $S_{\epsilon}: [a,b] \rightarrow \mathbb{R}$ tales que, para todo $x \in \mathbb{R}$, es
+$$
+|f(x)-S_{\epsilon}(x)| < \epsilon
+$$
+
+## Continuidad uniforme: funciones escalonadas.
+
+<div class="dem"> **Demostración**
+
+Por ser $f$ continua sobre un intervalo cerrado, es uniformemente continua, por lo tanto dado un $\epsilon>0$, existe un $\delta >0$, tal que si $|x-y|< \delta$, entonces $|f(x)-f(y)|< \epsilon$. La propiedad arquimediana nos asegura que existe $m \in \mathbb{N}$ tal que $h=\dfrac{b-a}{m} < \delta$. Consideremos pues la partición de $[a,b]$ dada por los puntos.
+$$
+a; x_1=a+h; x_2=a+2h; \ldots a+kh; \ldots a+(n-1)h; b
+$$
+Consideremos los intervalos $I_1=[a,x_1]=[a,a+h]$ y $I_k=(x_{k-1},x_k]=(a+(k-1)h,a+kh]$, para $k \in \{2,\ldots, n\}$
+Sea ahora la función escalonada definida por
+$$
+S_{\epsilon} (x) = f(a+kh)=f(x_k) \text{ si } x \in I_k
+$$
+para $k \in \{1, \ldots n \}$.
+
+$S_{\epsilon}$ es la función escalonada buscada, puesto que dado $x \in [a,b]$ existe un $k$ tal que $x \in I_k$, por lo tanto
+$$
+|f(x)-S_{\epsilon}(x)| = |f(x)-f(x_k)| < \epsilon
+$$
+puesto que $|x-x_k| < \delta$, dado que $x \in I_k$.
