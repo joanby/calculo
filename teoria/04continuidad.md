@@ -862,6 +862,19 @@ puesto que $e^x  - 1$ y $x$ són infinitésimos equivalentes en $x=0$.
 Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28a%5Ex+-1%29%2F%28xlog+a%29+x+tends+0)
 </div>
 
+## Comparación infinitésimos
+
+<l class="definition"> **Definición**
+
+Sean $c$ un punto de acumulación de $A$ y sean $f$ y $g$ dos infinitésimos en $c$. 
+
+1. $f$ y $g$ son del mismo orden si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = k \neq 0$
+
+2. $f$ es de orden superior a $g$ si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} =  0$
+
+3. $f$ es de orden inferior a $g$, $g$ es de orden superior a $f$, o equivalentemente, si
+$\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = \infty$
+
 # Continuidad
 
 ## Introducción
