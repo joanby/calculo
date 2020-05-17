@@ -864,16 +864,35 @@ Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Image
 
 ## Comparación infinitésimos
 
-<l class="definition"> **Definición**
+<l class="definition"> **Definición** </l>
 
 Sean $c$ un punto de acumulación de $A$ y sean $f$ y $g$ dos infinitésimos en $c$. 
 
-1. $f$ y $g$ son del mismo orden si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = k \neq 0$
+1. $f$ y $g$ son del mismo orden si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = k \neq 0$ y $|k| < +\infty$. Se indica por $f(x)=O(g(x))$ cuando $x \rightarrow c$.
 
-2. $f$ es de orden superior a $g$ si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} =  0$
+2. $f$ es de orden superior a $g$ si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} =  0$, se indica por $f(x)=o(g(x))$, cuando $x \rightarrow c$.
 
-3. $f$ es de orden inferior a $g$, $g$ es de orden superior a $f$, o equivalentemente, si
-$\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = \infty$
+3. $f$ es de orden inferior a $g$ si $g$ es de orden superior a $f$, o equivalentemente, si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = \infty$.
+
+
+## Comparación infinitésimos
+
+<div class="example"> **Ejemplos**
+
+1. Hemos visto que $\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x} = \dfrac{1}{n}$, por lo tanto $\sqrt[n]{x+1}-1$ y $x$ son del mismo orden.
+
+2. $f(x)= x$ es de orden superior a $g(x)=1+\sin^2 x$ en $x=0$, puesto que $\lim_{x \rightarrow 0}\dfrac{x}{1+\sin^2 x}=0$. 
+
+
+</div>
+
+<l class="observ"> **Observaciones** </l>
+
+1. Dos infinitésimos equivalentes son del mismo orden, pero no todos los infinitésimos del mismo orden son equivalentes.
+
+2. Habitualmente se usan como referencia los infinitésimos en $c$, $(x-c)^n$, donde el exponente se usa para indicar el orden del infinitésimo.
+
+
 
 # Continuidad
 
