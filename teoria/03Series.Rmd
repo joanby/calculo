@@ -166,7 +166,7 @@ Es importante tener en cuenta que esta es una condición **necesaria** pero no s
 
 ## Propiedades de las series convergentes.
 
-<l class="prop"> **Proposición: Suma de series** </l>
+<l class="prop">**Proposición: Suma de series**</l>
 
 Sean $\sum a_n$ y $\sum b_n$ dos series convergentes (divergentes), entonces
 
