@@ -1,5 +1,5 @@
 ---
-title: "Tema 3 - Límites y continuidad"
+title: "Tema 4 - Límites y continuidad"
 author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
 date: ''
 output: 
@@ -17,25 +17,25 @@ output:
 
 ## Funciones reales de variable real
 
-Supondremos que son conocidos el concepto de **función**, en tanto que una **aplicación** entre conjuntos de números. En particular, nos concentraremos en **funciones reales de variable real**, es decir en funciones $f:\mathbb{R} \rightarrow \mathbb{R}$.
+Supondremos que son conocidos el concepto de **función**, en tanto que una **aplicación** entre conjuntos de números. En particular, nos concentraremos en **funciones reales de variable real**, es decir en funciones $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$.
 
-Tambien suponemos conocidos los cenceptos de **rango** y **dominio** de una función, así como los términos **variable independiente** y **dependiente**. 
+Tambien suponemos conocidos los conceptos de **rango** y **dominio** de una función, así como los términos **variable independiente** y **dependiente**. 
 
-Aunque seran tratadas con detalle más adelante, es conveniente tener presentes las principales características de funciones elementales como las polinómicas $f(x)= P_n(x) = a_nx^n+a_{n-1}x^{n-1}+ \cdots + a_1x+a_0$, la exponencial $f(x)=e^x$,  las trigonométricas $f(x)=\sin(x)$, $f(x)=\cos(x)$, $f(x) =\tan(x)$, entre otras. 
+Aunque seran tratadas con detalle más adelante, es conveniente tener presentes las principales características de funciones elementales como las polinómicas $f(x)= P_n(x) = a_nx^n+a_{n-1}x^{n-1}+ \cdots + a_1x+a_0$, la exponencial $f(x)=e^x$ y las trigonométricas $f(x)=\sin(x)$, $f(x)=\cos(x)$, $f(x) =\tan(x)$, entre otras. 
 
 ## Funciones reales de variable real
 
-Uno de los principales objetivos del càlculo es el estudio las funciones. De hecho, como ya se ha mencionado, el **cálculo diferencial** trata del estudio de la **medida del cambio**, precisamente a través de relaciones que vienen expresadas como funciones, principalmente como **funciones reales de variable real**
+Uno de los principales objetivos del cálculo es el estudio las funciones. De hecho, como ya se ha mencionado, el **cálculo diferencial** trata del estudio de la **medida del cambio**, precisamente a través de relaciones que vienen expresadas como funciones, principalmente como **funciones reales de variable real**.
 
-La primera cuestión que se aborda tiene que ver con los **números reales**, en particular cómo **evaluar las funciones reales de variable real** cuando la **variable independiente** es un número **irraciona**l. Nuevamente el concepto de **límite** viene a ayudar en la solución de esta cuestión.
+La primera cuestión que se aborda tiene que ver con los **números reales**, en particular cómo **evaluar las funciones reales de variable real** cuando la **variable independiente** es un número **irracional**. Nuevamente el concepto de **límite** viene a ayudar en la solución de esta cuestión.
 
 ## Límite de una función en un punto
 
 <l class="definition"> **Definición. Límite de una función en un punto.** </l>
 
-Sea $f:A \subset \mathbb{R}$ una función definida sobre el conjunto $A \subset \mathbb{R}$ y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite de $f(x)$ cuando $x$ tiende a $c$** si para toda sucesión $\{x_n\}_{n \in \mathbb{N}}$ de puntos de $A$ tal que $\lim_{n \rightarrow \infty}x_n = c$ es $\lim_{n \rightarrow \infty}f(x_n)=L$.
+Sea $f:A \subset \mathbb{R}$ una función definida sobre el conjunto $A \subset \mathbb{R}$ y sea $c$ un punto de acumulación de $A$. $L \in \mathbb{R}$ es el **límite de $f(x)$ cuando $x$ tiende a $c$** si para toda sucesión $\{x_n\}_{n \in \mathbb{N}}$ de puntos de $A$ tal que $\displaystyle{\lim_{n \rightarrow \infty}x_n = c}$ es $\displaystyle{\lim_{n \rightarrow \infty}f(x_n)=L}$.
 
-Escribiremos, $\lim_{x \rightarrow c}f(x)=L$, para indicar el límite de $f(x)$ cuando $x$ tiende a $c$. 
+Escribiremos, $\displaystyle{\lim_{x \rightarrow c}f(x)=L}$, para indicar el límite de $f(x)$ cuando $x$ tiende a $c$. 
 
 
 ##  Límite de una función en un punto
@@ -43,7 +43,7 @@ Escribiremos, $\lim_{x \rightarrow c}f(x)=L$, para indicar el límite de $f(x)$ 
 
 **1.** Igual que hemos hecho con las sucesiones y los números irracionales, con esta definción convertimos el problema de evaluar una función en un punto irracional en el de calcular el límite de una sucesión. 
 
-**2.** El hecho requerir que $c$ sea un punto de acumulación de $A$, nos garantiza que existan sucesiones $\{x_n\}$ de puntos de $A$ tales que $\lim_{n\rightarrow \infty} x_n = c$ y, por lo tanto, la definición tiene sentido.
+**2.** El hecho requerir que $c$ sea un punto de acumulación de $A$, nos garantiza que existan sucesiones $\{x_n\}$ de puntos de $A$ tales que $\displaystyle{\lim_{n\rightarrow \infty} x_n = c}$ y, por lo tanto, la definición tiene sentido.
 
 **3.** Si $c$ es un punto **aislado** de $A$, es decir si hay un entorno de $c$ en el cual no hay puntos de $A$ diferentes de $c$, entonces no tiene sentido hablar del límite de $f$ en ese punto.
 
@@ -53,7 +53,7 @@ Escribiremos, $\lim_{x \rightarrow c}f(x)=L$, para indicar el límite de $f(x)$ 
 
 **Ejemplo 1.** Sea $f: \mathbb{R}\rightarrow \mathbb{R}$ definida por $f(x)=x$ y sea $c \in \mathbb{R}$, entonces
 $$
-\lim_{x \rightarrow c} x = c
+\lim_{x \rightarrow c} x = c,
 $$
 puesto que para cualquier sucesión $x_n  \rightarrow c$ es obvio que $f(x_n) = x_n \rightarrow c$.
 
@@ -62,7 +62,7 @@ puesto que para cualquier sucesión $x_n  \rightarrow c$ es obvio que $f(x_n) = 
 $$
 \lim_{x \rightarrow c} \dfrac{1}{x} = \dfrac{1}{c},
 $$
-puesto que si $x_n \rightarrow c$, entonces $\dfrac{1}{x_n} \rightarrow \dfrac{1}{c}$
+puesto que si $x_n \rightarrow c$, entonces $\dfrac{1}{x_n} \rightarrow \dfrac{1}{c}.$
 
 </div>
 
@@ -76,11 +76,11 @@ $$
 $$
 como se deduce fácilmente de las propiedades aritméticas de los límites de sucesiones.
 
-**Ejemplo 4.** Igualmente, si $P_n(x)$ y $Q_m(x)$ són polinomios tales que $P_n(c) \ne 0$ y $Q_m(c) \ne 0$, entonces 
+**Ejemplo 4.** Igualmente, si $P_n(x)$ y $Q_m(x)$ són polinomios tales que $Q_m(c) \ne 0$, entonces 
 $$
 \lim_{x \rightarrow c} \dfrac{P_n(x)}{Q_m(x)} = \dfrac{P_n(c)}{Q_m(c)}.
 $$
-**Ejemplo 5.** Si $f(x) = e^x$, entonces $\lim_{x \rightarrow c} e^x = e^{c}$ puesto que, como hemos demostrado, si $x_n \rightarrow c$, entonces $e^{x_n} \rightarrow e^{c}$.
+**Ejemplo 5.** Si $f(x) = e^x$, entonces $\displaystyle{\lim_{x \rightarrow c} e^x = e^{c}}$ puesto que, como hemos demostrado, si $x_n \rightarrow c$, entonces $e^{x_n} \rightarrow e^{c}$.
 </div>
 
 
@@ -88,10 +88,14 @@ $$
 
 <div class="example"> **Ejemplos**
 
-**Ejemplo 6.** Más interesante és el caso $\lim_{x \rightarrow 1} \dfrac{x^5-2x^3+1}{x-1}$, puesto que, en principio, para $x=1$ la función no está definida al anularse el denominador, es decir que el dominio de la función es $\mathbb{R}\setminus\{1\}$ y, por lo tanto, $1$ es un punto de acumulación del dominio.
+**Ejemplo 6.** Más interesante es el caso $\displaystyle{\lim_{x \rightarrow 1} \dfrac{x^5-2x^3+1}{x-1}}$, puesto que, en principio, para $x=1$ la función no está definida al anularse el denominador, es decir que el dominio de la función es $\mathbb{R}\setminus\{1\}$ y, por lo tanto, $1$ es un punto de acumulación del dominio.
 
-Ahora bien, dado que el numerador también se anula en este punto, podemos simplificar la fracción por $x-1$, con lo que nos queda que $\dfrac{x^5-2x^3+1}{x-1} = x^4+x^3-x^2-x$, y por lo tanto, $\lim _{x \rightarrow 1} \dfrac{x^5-2x^3+1}{x-1} = \lim _{x \rightarrow 1} x^4+x^3-x^2-x = 0$. 
+Ahora bien, dado que el numerador también se anula en este punto, podemos simplificar la fracción por $x-1$, con lo que nos queda que $\dfrac{x^5-2x^3+1}{x-1} = x^4+x^3-x^2-x$, y por lo tanto, 
+$$\lim _{x \rightarrow 1} \dfrac{x^5-2x^3+1}{x-1} = \lim _{x \rightarrow 1} (x^4+x^3-x^2-x-1 )= -1.
+$$
 </div>
+
+Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit%5B%28x%5E5-2x%5E3%2B1%29%2F%28x-1%29%5D%2C+when+x+tends+1)
 
 ## Caracterización del límite: propiedad $\epsilon-\delta$.
 
@@ -99,11 +103,11 @@ Ahora bien, dado que el numerador también se anula en este punto, podemos simpl
 
 Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función definida sobre el conjunto $A \subset \mathbb{R}$ y sea $c$ un punto de acumulación de $A$. entonces son equivalentes las tres afirmaciones siguientes:
 
-  a) $\lim_{x \rightarrow c}f(x)=L$
+  a) $\displaystyle{\lim_{x \rightarrow c}f(x)=L}$
   
   b) Para todo $\epsilon >0$ existe un $\delta >0$ tal que siempre que $0<|x-c|< \delta$, entonces es $|f(x)-L|<\epsilon$. (**Propiedad $\epsilon-\delta$**).
 
-  c) Para todo entorno abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $c$, $V_{\delta} (c)$ tal que para todo $x \in V^*_{\delta} (c)$ es $f(x) \in V_{\epsilon}(L)$, donde $V^*_{\delta}= V_{\delta} \setminus \{c\}$, es decir el entorno reducido de c$ y radio $\delta$
+  c) Para todo entorno abierto de $L$, $V_{\epsilon}(L)$, existe un entorno abierto de $c$, $V_{\delta} (c)$ tal que para todo $x \in V^*_{\delta} (c)$ es $f(x) \in V_{\epsilon}(L)$, donde $V^*_{\delta}= V_{\delta} \setminus \{c\}$, es decir el entorno reducido de $c$ y radio $\delta$
 
 
 ## Caracterización del límite: propiedad $\epsilon-\delta$
@@ -120,15 +124,15 @@ Dado que $\delta >0$, existe $n_0$ tal que para todo $n > n_0$ es $|x_n - c|<\de
 
 ## Las dos definiciones son equivalentes
 
-<div class="dem">
+<div class="dem"> **Demostración. (Continuación)**
 
-Demostramos la otra implicación por contraposición, es decir usando la equivalencia $b \implies a \equiv \lnot a \implies \lnot b$. 
+Demostramos la otra implicación por contraposición, es decir usando la equivalencia $2 \implies 1 \equiv \lnot 1 \implies \lnot 2$. 
 
-Suponemos, pues, que $\lim_{x \rightarrow c} f(x) \neq L$, es decir que hay un $\epsilon > 0$ tal que para todo $\delta >0$ existe $x_{\delta}$ tal que $|x_{\delta} - c|<\delta$ y $|f(x_{\delta}) - L| \geq \epsilon$. 
+Suponemos, pues que se verifica la propiedad $\epsilon-\delta$, es decir que hay un $\epsilon > 0$ tal que para todo $\delta >0$ existe $x_{\delta}$ tal que $|x_{\delta} - c|<\delta$ y $|f(x_{\delta}) - L| \geq \epsilon$. 
 
 Se trata de ver que hay una sucesión, $\{x_n\}$ que tiene límite  $c$ y que $f(x_n) \not\rightarrow_{x \rightarrow c} L$. 
 
-Consideremos ahora la sucesión de números positivos $\frac{1}{n}$, y los correspondientes $x_n$ tales que $|x_n-c|< \frac{1}{n}$, es $|f(x_n) -L | \geq \epsilon$, es decir $f(x_n) \not\rightarrow L$, en tanto que $x_n \rightarrow c$, que es lo que se quería demostrar.
+Consideremos ahora la sucesión de números positivos $\delta_n = \frac{1}{n}$, y los correspondientes $x_n$ tales que $|x_n-c|< \frac{1}{n}$, es $|f(x_n) -L | \geq \epsilon$, es decir $f(x_n) \not\rightarrow L$, en tanto que $x_n \rightarrow c$, que es lo que se quería demostrar.
 
 Finalmente, en lo que se refiere al tercer apartado, es suficiente tener en cuenta que que $|x-c| < \delta$ si, y sólo si,  $x \in V_{\delta}(c)$.
 
@@ -143,10 +147,10 @@ Si $f(x)=\dfrac{1}{x}$, dado un punto $c>0$, tenemos para $x>0$,
 $$
 \left|\dfrac{1}{x} -\dfrac{1}{c}\right|= \left|\dfrac{1}{cx}(c-x)\right| = \dfrac{1}{cx}|c-x|
 $$
-Ahora, si $x$ es tal que $|x-c| <\dfrac{1}{2}c$, de tal manera que $\dfrac{1}{2}<x<\dfrac{3}{2}$, por lo que $0 < \dfrac{1}{cx} <  \dfrac{2}{c^2} \quad \text{ para } |x-c|< \dfrac{1}{2}c$.
+Ahora, si $x$ es tal que $|x-c| <\dfrac{1}{2}c$, de tal manera que $\dfrac{c}{2}<x<\dfrac{3c}{2}$, por lo que $0 < \dfrac{1}{cx} <  \dfrac{2}{c^2} \quad \text{ para } |x-c|< \dfrac{1}{2}c$.
 Por lo tanto, para estos valores de $x$ tenemos que
 $$
-\left|\dfrac{1}{x} -\dfrac{1}{c}\right| \leq \dfrac{2}{c^2} |x-c|
+\left|\dfrac{1}{x} -\dfrac{1}{c}\right| \leq \dfrac{2}{c^2} |x-c|.
 $$
 
 
@@ -159,7 +163,7 @@ Ahora, dado un $\epsilon >0$ bastará tomar $\delta = \min \left\{\dfrac{1}{2}c,
 
 <div class="example"> **Ejemplo**
 
-Veamos que $\lim_{x \rightarrow 2} \dfrac{x^3-4}{x^2+1}= \dfrac{4}{5}$
+Veamos que $\displaystyle{\lim_{x \rightarrow 2} \dfrac{x^3-4}{x^2+1}= \dfrac{4}{5}}$
 $$
 \left|\dfrac{x^3-4}{x^2+1} -  \dfrac{4}{5}\right|= \left|\dfrac{5x^3-20-4x^2-4}{5(x^2+1)}\right| = \dfrac{|5x^2+6x+12|}{5(x^2+1)}|x-2|
 $$
@@ -169,7 +173,7 @@ Si para un $\epsilon >0$ tomamos $\delta = \min \left\{1, \dfrac{2}{15} \epsilon
 $$
 \left|\dfrac{x^3-4}{x^2+1} -  \dfrac{4}{5}\right| < \epsilon
 $$
-que era lo que queríamos demostrar.
+que era lo que queríamos demostrar. Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=limit+%28x%5E3-4%29%2F%28x%5E2%2B1%29+as+x+tends+to+2)
 </div>
 
 ## Sobre la propiedad $\epsilon-\delta$
@@ -178,7 +182,7 @@ que era lo que queríamos demostrar.
 
 **1.** La propiedad $\epsilon -\delta$, significa que dada una precisión cualquiera, $\epsilon$, para el resultado, $L$, podemos determinar la precisión, $\delta$, con la que hay que tomar la aproximación, $x$ de $c$, para tener asegurada la precisión requerida para $L$.
 
-**2.** Los ejemplos anteriores muestran que $\delta$ puede depender de $\epsilon$ y del punto $c$, por lo que sería más apropiado escribir $\delta(\epsilon,c)$, lo que no se acostumbra a hacer para evitar complicar la notación en exceso, lo cual no és óbice para olvidar esta dependencia.
+**2.** Los ejemplos anteriores muestran que $\delta$ puede depender de $\epsilon$ y del punto $c$, por lo que sería más apropiado escribir $\delta(\epsilon,c)$, lo que no se acostumbra a hacer para evitar complicar la notación en exceso, lo cual no es óbice para olvidar esta dependencia.
 
 **3.** Los ejemplos anteriores también pueden producir la impresión, equivocada, que es más conveniente usar la primera definición de límite que la propiedad $\epsilon-\delta$, pero veremos que, en ocasiones, resulta más conveniente esta última que la primera.
 
@@ -192,11 +196,11 @@ que era lo que queríamos demostrar.
 
 <l class="definition"> **Definición** </l>
 
-Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. $f$ **está cotada en un entorno de $c$** $V_{\delta}(c)$ si existe una constante $M \in \mathbb{R}$ tal que $|f(x)| \leq M$ para todo $x \in A \cap V_{\delta}(c)$.
+Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. $f$ **está acotada en un entorno de $c$**, $V_{\delta}(c)$, si existe una constante $M \in \mathbb{R}$ tal que $|f(x)| \leq M$ para todo $x \in A \cap V_{\delta}(c)$.
 
 <l class="prop"> **Proposición**
 
-Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. Si $\lim _{x \rightarrow c} f(x) =L$, entonces f está acotada en un entorno de $c$.
+Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. Si $\lim _{x \rightarrow c} f(x) =L$, entonces $f$ está acotada en un entorno de $c$.
 
 <div class="dem"> **Demostración**
 
@@ -224,15 +228,15 @@ Sean $f,g:A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de v
 
 <l class="prop"> **Proposición** </l>
 
-Sean $f,g:A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de variable real y $c$ un punto de acumulación de $A$, tales que $\lim_{x \rightarrow c} f(x) = L_1$ y $\lim_{x \rightarrow c} g(x)= L_2$. Entonces
+Sean $f,g:A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de variable real y $c$ un punto de acumulación de $A$, tales que $\displaystyle{\lim_{x \rightarrow c} f(x) = L_1}$ y $\displaystyle{\lim_{x \rightarrow c} g(x)= L_2}$. Entonces
 
-P1. $\lim_{x \rightarrow c}(f+g)(x) = L_1+L_2$
+P1. $\displaystyle{\lim_{x \rightarrow c}(f+g)(x) = L_1+L_2}$.
 
-P2. $\lim_{x \rightarrow c}(f \cdot g)(x) = L_1 \cdot L_2$
+P2. $\displaystyle{\lim_{x \rightarrow c}(f \cdot g)(x) = L_1 \cdot L_2}$.
 
-P3 $\lim_{x \rightarrow c} (\lambda \cdot f)(x) = \lambda \cdot L_1$
+P3. $\displaystyle{\lim_{x \rightarrow c} (\lambda \cdot f)(x) = \lambda \cdot L_1}$.
 
-P4. Si $L_2 \neq 0$, entonces $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = \dfrac{L_1}{L_2}$
+P4. Si $L_2 \neq 0$, entonces $\displaystyle{\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = \dfrac{L_1}{L_2}}$.
 
 ## Propiedades del límite de una función
 
@@ -259,13 +263,13 @@ $$
 
 <l class="prop"> **Proposición** </l>
 
-Si para todo $x \in A$ es $a \leq f(x) \leq b$, entonces $a \leq \lim_{x \rightarrow c} f(x) \leq b$
+Si para todo $x \in A$ es $a \leq f(x) \leq b$, entonces $\displaystyle{a \leq \lim_{x \rightarrow c} f(x) \leq b}$
 
 <l class="prop"> **Proposición** </l>
 
 Sean $f,g,h :A\subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $h(x) \leq f(x) \leq g(x)$, para todo $x \in A$, y
 
-que $\lim_{x \rightarrow c} g(x) =  \lim_{x \rightarrow c} h(x) = L$, entonces  
+que $\displaystyle{\lim_{x \rightarrow c} g(x) =  \lim_{x \rightarrow c} h(x) = L}$, entonces  
 $$
 \lim_{x \rightarrow c} f(x) = L.
 $$
@@ -282,7 +286,7 @@ Las demostraciones de estas dos proposiciones son del todo análogas a las corre
 
 Sean $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $c$ un punto de acumulación de $A$. Si $\lim _{x \rightarrow c} f(x) = L>0$, entonces existe $\delta > 0$ tal que $f(x)>0$ para todo $x \in V^*_{\delta}(c) \cap A$.
 
-Análogamente, si Si $\lim _{x \rightarrow c} f(x) = L <0$, entonces existe $\delta > 0$ tal que $f(x)<0$ para todo $x \in V^*_{\delta}(c) \cap A$.
+Análogamente, si $\lim _{x \rightarrow c} f(x) = L <0$, entonces existe $\delta > 0$ tal que $f(x)<0$ para todo $x \in V^*_{\delta}(c) \cap A$.
 
 <div class="dem"> **Demostración**
 
@@ -305,15 +309,15 @@ f(x) =
 $$
 conocida como la función *signo* de $x$, que se acostumbra a indicar por $\text{sgn}(x)$
 
-$0$ es un punto de acumulación del dominio de $f$, pero no existe el $\lim_{x \rightarrow 0} \text{sgn}(x)$
+$0$ es un punto de acumulación del dominio de $f$, pero no existe el $\displaystyle{\lim_{x \rightarrow 0} \text{sgn}(x)}$
 
 ## Límites laterales
 
-No existe el $\lim_{x \rightarrow 0}\text{sgn}(x)$. 
+No existe el $\displaystyle{\lim_{x \rightarrow 0}\text{sgn}(x)}$. 
 
 En efecto, consideremos la sucesión de término general $x_n = \dfrac{(-1)^n}{n}$, entonces es $\text{sgn}(x_{2k})= 1$ en tanto que $\text{sgn}(x_{2k+1})=-1$, para todo $k \in \mathbb{N}$, es decir que la sucesión de término general $\text{sgn}(x_n)$ tiene dos subsucesiones con límite diferente y, por lo tanto, $\text{sgn}(x_n)$ no tiene límite. 
 
-En definitiva no existe el $\lim_{x \rightarrow 0}\text{sgn}(x)$.
+En definitiva no existe el $\displaystyle{\lim_{x \rightarrow 0}\text{sgn}(x)}$.
 
 
 ## Límites laterales: gráfica de la función $\text{sgn}(x)$
@@ -349,8 +353,8 @@ $$
 $$
 g(x)=
 \begin{cases}
-x+1, & \mbox{ si } x \leq 0 \\
-x^2, & \mbox{ si } x > 0 
+x+1, & \mbox{ si } x \leq 0, \\
+x^2, & \mbox{ si } x > 0.
 \end{cases}
 $$
 Entonces $\lim_{x \rightarrow 0^+} g(x) = 1$ y $\lim_{x \rightarrow 0^-} g(x) = 0$.
@@ -359,11 +363,11 @@ Entonces $\lim_{x \rightarrow 0^+} g(x) = 1$ y $\lim_{x \rightarrow 0^-} g(x) = 
 $$
 h(x)=
 \begin{cases}
-x+1, & \mbox{ si } x \leq 0 \\
-x^2+1, & \mbox{ si } x > 0 
+x+1, & \mbox{ si } x \leq 0, \\
+x^2+1, & \mbox{ si } x > 0. 
 \end{cases}
 $$
-Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 1$. y, como veremos a continuación, existe el $\lim_{x \rightarrow 0} h(x)$ y es igual a $1$.
+Entonces $\lim_{x \rightarrow 0^+} h(x) = 1$ y $\lim_{x \rightarrow 0^-} h(x) = 1$ y, como veremos a continuación, existe el $\lim_{x \rightarrow 0} h(x)$ y es igual a $1$.
 
 </div>
 
@@ -387,7 +391,7 @@ En lo que sigue,  $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es una funci�
 
 1. Demuestra que $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<x-c<\delta$, entonces es $|f(x)-L| < \epsilon$. 
 
-2. Demuestra que   $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si,si para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<c-x<\delta$, entonces es $|f(x)-L| < \epsilon$.
+2. Demuestra que   $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<c-x<\delta$, entonces es $|f(x)-L| < \epsilon$.
 
 3. Demuestra que  $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (x) \cap (c, +\infty)$, entonces $f(x) \in V_{\epsilon}(L)$
 
@@ -400,7 +404,7 @@ En lo que sigue,  $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es una funci�
 
 <l class="prop"> **Proposición** </l>
 
-Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y sea $c$ un punto de acumulación de $A$. Entonces existe el $\lim_{x \rightarrow c}f(x)$ si, y sólo si, los dos límites laterales $\lim_{x \rightarrow c^+}f(x)$ y $\lim_{x \rightarrow c^-}f(x)$
+Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y sea $c$ un punto de acumulación de $A$. Entonces existe el $\displaystyle{\lim_{x \rightarrow c}f(x)}$ si, y sólo si, los dos límites laterales $\displaystyle{\lim_{x \rightarrow c^+}f(x)}$ y $\displaystyle{\lim_{x \rightarrow c^-}f(x)}$
 existen y son iguales.
 
 ## Límites laterales
@@ -409,7 +413,13 @@ existen y son iguales.
 
 Si $\lim_{x \rightarrow c}f(x) = L$, entonces para toda sucesión $x_n$ tal que $x_n \rightarrow c$ es $f(x_n) \rightarrow L$. Ahora, si $x_n \rightarrow c$ y $x_n > c$ será igualmente $f(x_n) \rightarrow L$. Análogamente si $x_n <c$.
 
-Supongamos ahora que los dos límites laterales existen y son iguales a $L$. Sea $x_n$ tal que $x_n \rightarrow c$, entonces tres casos són posibles:1) todos los $x_n$ a partir de un lugar son tales que $x_n \geq c$, 2) todos los $x_n$ a partir de un lugar son tales que $x_n \leq c$, y 3) existen infinitos $x_{n_k}$ tales que $x_{n_k} \geq c$ e infinitos $x_{n_j}$ tales que $x_{n_j} \leq c$, claramente $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$.
+Supongamos ahora que los dos límites laterales existen y son iguales a $L$. Sea $x_n$ tal que $x_n \rightarrow c$, entonces tres casos són posibles:
+
+1) todos los $x_n$ a partir de un lugar son tales que $x_n \geq c$, 
+
+2) todos los $x_n$ a partir de un lugar son tales que $x_n \leq c$, y 
+
+3) existen infinitos $x_{n_k}$ tales que $x_{n_k} \geq c$ e infinitos $x_{n_j}$ tales que $x_{n_j} \leq c$, claramente $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$.
 
 En todos los casos es $f(x_n) \rightarrow L$, en el primero por ser $\lim_{x \rightarrow c^+}f(x)$ y en el segundo por ser  $\lim_{x \rightarrow c^-}f(x)$. El el tercer caso tendríamos dos subsucesiones $f(x_{n_k})$ y $f(x_{n_j})$ con el mismo límite L y, por lo tanto es $f(x_n) \rightarrow L$, dado que $\{x_n\}= \{ x_{n_k}\} \cup \{x_{n_j}\}$. En definitiva es  $\lim_{x \rightarrow c}f(x) = L$.
 
@@ -437,7 +447,7 @@ $\lim_{x \rightarrow c}f(x) = +\infty$ si, y sólo si, para toda sucesión $x_n$
 
 <div class="example"> **Ejemplo**
 
-$\lim_{x \rightarrow 0} \dfrac{1}{x^2} = \infty$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| < \sqrt{K}$ y, por lo tanto $|f(x_n)|=\dfrac{1}{x_n^2}>K$.
+$\displaystyle{\lim_{x \rightarrow 0} \dfrac{1}{x^2} = \infty}$, puesto que si $x_n \rightarrow 0$ entonces para todo $K>0$ existe $n_0$ tal que para todo $n > n_0$ es $|x_n| < \dfrac{1}{\sqrt{K}}$ y, por lo tanto $|f(x_n)|=\dfrac{1}{x_n^2}>K$.
 
 </div>
 
@@ -452,15 +462,15 @@ El ejemplo anterior también sirve para justificar la siguiente definición:
 
 <l class="definition"> **Definición** </l>
 
-Sean $f: \mathbb{R} \rightarrow \mathbb{R}$ y $L \in \mathbb{R}$, $L = lim_{x \rightarrow \infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= \infty$ entonces $\lim_{n \rightarrow \infty} f(x_n)= L$.
+Sean $f: \mathbb{R} \rightarrow \mathbb{R}$ y $L \in \mathbb{R}$, $L = \lim_{x \rightarrow \infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= +\infty$ entonces $\lim_{n \rightarrow +\infty} f(x_n)= L$.
 
-Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= -\infty$ entonces $\lim_{n \rightarrow \infty} f(x_n)= L$.
+Análogamente, $L = \lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= -\infty$ entonces $\lim_{n \rightarrow -\infty} f(x_n)= L$.
 
 <div class="exercise"> **Ejercicios**
 
-1) Demuestra que $L = lim_{x \rightarrow \infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x>K$ entonces $|f(x)-L|<\epsilon$.
+1) Demuestra que $L = \lim_{x \rightarrow +\infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x>K$ entonces $|f(x)-L|<\epsilon$.
 
-2) Demuestra que $L = lim_{x \rightarrow -\infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x<-K$ entonces $|f(x)-L|<\epsilon$.
+2) Demuestra que $L = \lim_{x \rightarrow -\infty}f(x)$ si, sólo sí, para todo $\epsilon >0$ existe $K>0$ tal que si $x<-K$ entonces $|f(x)-L|<\epsilon$.
 
 </div>
 
@@ -468,13 +478,13 @@ Análogamente, $L = lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n
 
 <div class="example"> **Ejemplos**
 
-1) $\lim_{x \rightarrow \infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < K$ siempre que $x >K$
+1) $\displaystyle{\lim_{x \rightarrow +\infty} \dfrac{1}{x^2} = 0}$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < \epsilon$ siempre que $x >K$.
 
-2) Anàlogamente $\lim_{x \rightarrow -\infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < K$ siempre que $x <-K$
+2) Anàlogamente $\lim_{x \rightarrow -\infty} \dfrac{1}{x^2} = 0$, puesto que dado un $\epsilon >0$ para $K=\dfrac{1}{\sqrt{\epsilon}}$ es $f(x)= \dfrac{1}{x^2} < \epsilon$ siempre que $x <-K$.
 
-3) La función $h(x) = \dfrac{1}{x}$, proporciona un interesante ejemplo de también tienen sentido los límites laterales para los límites infinitos, puesto que como es fácil comprobar $\lim_{x \rightarrow 0^+} h(x) = +\infty$ en tanto que $\lim_{x \rightarrow 0^-} h(x) = -\infty$. 
+3) La función $h(x) = \dfrac{1}{x}$, proporciona un interesante ejemplo de que también tienen sentido los límites laterales para los límites infinitos, puesto que como es fácil comprobar $\lim_{x \rightarrow 0^+} h(x) = +\infty$ en tanto que $\lim_{x \rightarrow 0^-} h(x) = -\infty$. 
 
-4) También es fácil comprobar que $\lim_{x \rightarrow -\infty} \dfrac{1}{x} =0 = \lim_{x \rightarrow \infty}  \dfrac{1}{x}$
+4) También es fácil comprobar que $\lim_{x \rightarrow -\infty} \dfrac{1}{x} =0 = \lim_{x \rightarrow +\infty}  \dfrac{1}{x}.$
 
 </div>
 
@@ -501,7 +511,7 @@ Aparecen algunas técnicas nuevas, como las relacionadas con la consideración d
 
 Calcula el $\lim_{x \rightarrow 0}\dfrac{\sqrt{1+2x} - \sqrt{1+3x}}{x+2x^2}$.
 
-En primer lugar, la función està definida para todos los puntos $x \geq -\frac{1}{3}$, menos el punto $x=0$. Por lo tanto $x$ es un punto de acumulación del dominio y tiene sentido considerar el límite de la función en ese punto.
+En primer lugar, la función està definida para todos los puntos $x \geq -\frac{1}{3}$, menos el punto $x=0$. Por lo tanto $0$ es un punto de acumulación del dominio y tiene sentido considerar el límite de la función en ese punto.
 
 En segundo lugar, se trata de una indeterminación del tipo $\frac{0}{0}$, en estos casos que involucran sumas o diferencias de raíces cuadradas, es conveniente intentar resolver la indeterminación multiplicando y dividiendo por el conjugado:
 $$
@@ -517,11 +527,13 @@ Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Image
 
 ## Cálculo de límites
 
+<div class="example">
 La gráfica de la función corrobora el resultado obtenido:
 
 <div class="center">
 
  <img src="Images/limit1.png" width="600px" />
+</div>
 </div>
 
 ## Cálculo de límites
@@ -530,7 +542,7 @@ La gráfica de la función corrobora el resultado obtenido:
 
 Demuestra que no existe el $\lim_{x \rightarrow 0}  \cos \dfrac{1}{x}$ y que $\lim_{x \rightarrow 0} x \cos \dfrac{1}{x}=0$
 
-Para ver que no existe el primer límite es suficiente considerar las dos sucesiones $a_n= \dfrac{1}{2n\pi}$ y $b_n=\dfrac{1}{2n\pi + \frac{\pi}{2}}$, ambas tienden a $0$, sin embargo $\cos 2n \pi \rightarrow 1$ en tanto que $\cos 2n\pi + \frac{\pi}{2} \rightarrow 1$.
+Para ver que no existe el primer límite es suficiente considerar las dos sucesiones $\dfrac{1}{2n\pi}$ y $\dfrac{1}{2n\pi + \frac{\pi}{2}}$, ambas tienden a $0$, sin embargo $\cos (2n \pi) \rightarrow 1$ en tanto que $\cos (2n\pi + \frac{\pi}{2}) \rightarrow 0$.
 
 En el segundo límite, se trata de una función que tiene límite $0$ multiplicada por otra que está acotada, ya que $\left|\cos \dfrac{1}{x}\right| \leq 1$, por lo tanto $\lim_{x \rightarrow 0} x \cos \dfrac{1}{x}=0$
 
@@ -573,7 +585,7 @@ Calcula el $\lim_{x \rightarrow a} \dfrac{x^2-(a+1)x+a}{x^3-a^3}$
 
 Se trata de una indeterminación del tipo $\dfrac{0}{0}$. Dado que $a$ es una raíz de los dos polinomios, ambos son múltiplos de $x-a$, efectuando la división entera obtenemos que 
 $$
-x^2-(a+1)x+a = (x-1)(x-a) \quad \text{ y} \quad x^3-a^3= (x^2 +ax+a^2)(x-a)
+x^2-(a+1)x+a = (x-1)(x-a) \quad \text{ y} \quad x^3-a^3= (x^2 +ax+a^2)(x-a).
 $$
 Por lo tanto 
 $$
@@ -591,7 +603,7 @@ Calcula $\lim_{x \rightarrow 0}\left(\dfrac{1-x}{1+x}\right)^{\dfrac{1}{x}}$
 
 Se trata de una indeterminación del tipo $1^{\infty}$, con el cambio $x=\dfrac{1}{t}$, tenemos
 $$
-\lim_{x \rightarrow 0}\left(\dfrac{1-x}{1+x}\right)^{\frac{1}{x}} =\lim_{t \rightarrow \infty}\left(\dfrac{t-1}{t+1} \right)^t= e^{\lim_{t \rightarrow \infty}t (\frac{t-1}{t+1}-1)} = e^{-2}=\dfrac{1}{e^2}
+\lim_{x \rightarrow 0}\left(\dfrac{1-x}{1+x}\right)^{\frac{1}{x}} =\lim_{t \rightarrow \infty}\left(\dfrac{t-1}{t+1} \right)^t= e^{\lim_{t \rightarrow \infty}t \left(\frac{t-1}{t+1}-1\right)} = e^{-2}=\dfrac{1}{e^2}
 $$
 
 Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28%281-x%29%2F%281%2Bx%29%29%5E%281%2Fx%29+as+x+tends+to+0)
@@ -604,7 +616,7 @@ Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Image
 
 <div class="example"> **Ejemplo 6**
 
-Calcula el $\lim_{x \rightarrow 0}\dfrac{1}{x} \log \sqrt{\dfrac{1+x}{1-x}}$
+Calcula el $\displaystyle{\lim_{x \rightarrow 0}\dfrac{1}{x} \log \sqrt{\dfrac{1+x}{1-x}}}$
 
 Se trata de una indeterminación del tipo $\dfrac{0}{0}$. 
 
@@ -622,12 +634,12 @@ Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Image
 
 <l class="definition"> **Definición** </l>
 
-Sea $c$ un punto de acumulación del dominio de una función $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es un **infinitésimo** en $c$ si $\lim_{x \rightarrow c}f(x) =0$.
+Sea $c$ un punto de acumulación del dominio de una función $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es un **infinitésimo** en $c$ si $\lim_{x \rightarrow c}f(x) =0$. Análogamente, diremos que $f$ es un infinitésimo en $\pm \infty$ si  $\lim_{x \rightarrow \pm \infty}f(x)=0$.
 
 <div class="example"> **Ejemplos**
 
 1. $f(x)=x$ en el punto $0$,
-2. $g(x)= \sin x$, en $x=0$ y, en general, en todos los puntos de la forma $(2k+1)\pi$, con $k \in \mathbb{N}$,
+2. $g(x)= \sin x$, en $x=0$ y, en general, en todos los puntos de la forma $k\pi$, con $k \in \mathbb{N}$,
 3. $h(x) = e^x -1$ en $x=0$,
 4. $k(x)= \cos x$ en $x=\dfrac{\pi}{2}$ y, en general en todos los $x=\dfrac{(2k+1)}{2}\pi$, con $k \in \mathbb{N}$,
 5. $l(x)= \dfrac{1}{x^2}$ en $x=\pm \infty$,
@@ -641,15 +653,15 @@ Sea $c$ un punto de acumulación del dominio de una función $f: A \subset \math
 
 Sean $f$ y $g$ dos infinitésimos en $c$, entonces $f$ y $g$ son **equivalentes** si 
 $$
-\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}=1
+\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}=1.
 $$
 
 <div class="example"> **Ejemplos**
 
 1. $f(x)= 3x -5x^2$ y $g(x)=3x$ en $x=0$, puesto que el $\lim_{x \rightarrow 0} \frac{3x-5x^2}{3x} =1$.
-3. $\log (1+x)$ y $x$ son equivalentes en $x=0$, puesto que $\lim_{x \rightarrow 0} \dfrac{\log(1+x)}{x} = \lim_{x \rightarrow 0} \log(1+x)^\frac{1}{x} = \log \lim (1+x)^\frac{1}{x} = \log e =1$.
+3. $\log (1+x)$ y $x$ son equivalentes en $x=0$, puesto que $\lim_{x \rightarrow 0} \dfrac{\log(1+x)}{x} = \lim_{x \rightarrow 0} \log(1+x)^\frac{1}{x} = \log \lim_{x \rightarrow 0} (1+x)^\frac{1}{x} = \log e =1$.
 2. $h(x)= e^x -1$ y $p(x)=x$, en $x=0$: Con el cambio de variable $e^x-1 =t$, tenemos que cuando $x \rightarrow 0$ es $t \rightarrow 0$ y $x=\log(1+t)$, por lo tanto:
-$\lim_{x \rightarrow 0} \dfrac{e^x-1}{x} = \lim_{t \rightarrow 0} \dfrac{t}{\log(1+t)}=1$
+$\lim_{x \rightarrow 0} \dfrac{e^x-1}{x} = \lim_{t \rightarrow 0} \dfrac{t}{\log(1+t)}=1.$
 
 
 </div>
@@ -659,7 +671,7 @@ $\lim_{x \rightarrow 0} \dfrac{e^x-1}{x} = \lim_{t \rightarrow 0} \dfrac{t}{\log
 
 <l class="prop"> **Proposición** </l>
 
-Las funciones $\sin x$ y $x$ son infinitésimos equivalentes en $x=0$
+Las funciones $\sin x$ y $x$ son infinitésimos equivalentes en $x=0$.
 
 <div class="center">
 
@@ -684,26 +696,26 @@ El área del triángulo $ADE$ es $\frac{1}{2} \tan \alpha$
 
 Claramente, la relación entre estas tres áreas es la siguiente
 $$
-\frac{1}{2} \sin (\alpha) < \frac{1}{2} \alpha < \frac{1}{2} \tan \alpha
+\frac{1}{2} \sin (\alpha) < \frac{1}{2} \alpha < \frac{1}{2} \tan \alpha.
 $$
 Dividiendo por $\frac{1}{2} \sin \alpha$ y tomando recíprocos, queda
 $$
-\cos \alpha < \dfrac{\sin \alpha}{\alpha} < 1
+\cos \alpha < \dfrac{\sin \alpha}{\alpha} < 1.
 $$
 Por lo tanto,
 $$
-1 = \lim_{x \rightarrow 0^+} \cos x \leq \lim_{x \rightarrow 0^+}\dfrac{\sin x}{x} \leq 1
+1 = \lim_{x \rightarrow 0^+} \cos x \leq \lim_{x \rightarrow 0^+}\dfrac{\sin x}{x} \leq 1.
 $$
 
 ## Cálculo del $\lim_{x \rightarrow 0}\dfrac{\sin x}{x}$
 
 Análogamente tenemos
 $$
-1 = \lim_{x \rightarrow 0^-} \cos x \leq \lim_{x \rightarrow 0^-}\dfrac{\sin x}{x} \leq 1
+1 = \lim_{x \rightarrow 0^-} \cos x \leq \lim_{x \rightarrow 0^-}\dfrac{\sin x}{x} \leq 1.
 $$
 En definitiva, como los dos límites laterales existen y son iguales, resulta que
 $$
-\lim_{x \rightarrow 0}\dfrac{\sin x}{x} =1
+\lim_{x \rightarrow 0}\dfrac{\sin x}{x} =1.
 $$
 Por lo tanto, $\sin x$ y $x$ son infinitésimos equivalentes en $0$.
 
@@ -717,13 +729,13 @@ $1-\cos x$ y $\dfrac{x^2}{2}$ son infinitésimos equivalentes en $x=0$.
 
 Es inmediata a partir de la consideración de la igualdad trigonométrica: 
 $$
-1-\cos x =\dfrac{\sin^2 x}{1+ \cos x}
+1-\cos x =\dfrac{\sin^2 x}{1+ \cos x},
 $$
 
 que se puede verificar mediante cálculos elementales. Ahora
 
 $$
-\lim_{x \rightarrow 0} \dfrac{ 1-\cos x}{\dfrac{x^2}{2}}= \lim_{x \rightarrow 0} \dfrac{\dfrac{\sin^2 x}{1+ \cos x}}{\dfrac{x^2}{2}} = \lim_{x \rightarrow 0}\dfrac{2 \sin^2 x}{x^2(1+\cos x)}= \lim_{x\rightarrow 0} \dfrac{\sin^2 x}{x^2} \lim_{x \rightarrow 0} \dfrac{2}{1+\cos x} =  1
+\lim_{x \rightarrow 0} \dfrac{ 1-\cos x}{\dfrac{x^2}{2}}= \lim_{x \rightarrow 0} \dfrac{\dfrac{\sin^2 x}{1+ \cos x}}{\dfrac{x^2}{2}} = \lim_{x \rightarrow 0}\dfrac{2 \sin^2 x}{x^2(1+\cos x)}= \lim_{x\rightarrow 0} \dfrac{\sin^2 x}{x^2} \lim_{x \rightarrow 0} \dfrac{2}{1+\cos x} =  1.
 $$
 
 </div>
@@ -734,14 +746,14 @@ $$
 
 Sean $f,g,h: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y sea $c$ un punto de acumulación de $a$. Supongamos, además que $f(x)$ y $g(x)$ son infinitésimos equivalentes en $x =c$. Entonces
 
-1. Existe el $\lim_{x \rightarrow c} f(x)h(x) = L$ si, y sólo si, existe el $\lim g(x)h(x)=L$. 
+1. Existe el $\lim_{x \rightarrow c} f(x)h(x) = L$ si, y sólo si, existe el $\lim_{x \rightarrow c} g(x)h(x)=L$. 
 
 
-2. Existe el $\lim_{x \rightarrow c} \dfrac{f(x)}{h(x)} = L$ si, y sólo si, existe el $\lim \dfrac{g(x)}{h(x)}=L$.
+2. Existe el $\lim_{x \rightarrow c} \dfrac{f(x)}{h(x)} = L$ si, y sólo si, existe el $\lim_{x \rightarrow c} \dfrac{g(x)}{h(x)}=L$.
 
 <div class="important"> **Importante**
 
-La proposición anterior establece que, en el cálculo de un límite, se pude substituir un infinitésimo por otro equivalente, siempre que el infinitésimo multiplique o divida a la otra función involucrada. No se puede substituir si forma parte de una suma o de una diferencia.
+La proposición anterior establece que, en el cálculo de un límite, se puede substituir un infinitésimo por otro equivalente, siempre que el infinitésimo multiplique o divida a la otra función involucrada. No se puede substituir si forma parte de una suma o de una diferencia.
 
 </div>
 
@@ -751,7 +763,7 @@ La proposición anterior establece que, en el cálculo de un límite, se pude su
 
 1. Multiplicando y dividiendo por $g(x)$, tendremos que 
 $$
-L = \lim_{x \rightarrow c} f(x)\cdot h(x) = \lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}\dfrac{g(x)}{h(x)}= \lim_{x \rightarrow c}\dfrac{f(x)}{g(x)} \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)} = \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)}
+L = \lim_{x \rightarrow c} f(x)\cdot h(x) = \lim_{x \rightarrow c} \dfrac{f(x)}{g(x)}\dfrac{g(x)}{h(x)}= \lim_{x \rightarrow c}\dfrac{f(x)}{g(x)} \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)} = \lim_{x \rightarrow c} \dfrac{g(x)}{h(x)}.
 $$
 
 2. La demostración es análoga a la anterior.
@@ -764,7 +776,7 @@ Cálculo del límite $\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}$
 
 Primero, usamos la equivalencia entre $3x -5x^3$ y $3x$ y, acontinuación, la que hay entre $\sin 2x$ y $2x$:
 $$
-\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}= \lim \dfrac{\sin 2x}{3x} = \dfrac{2}{3}\lim\dfrac{\sin 2x }{2x}= \dfrac{2}{3}
+\lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x -5x^3}= \lim_{x \rightarrow 0} \dfrac{\sin 2x}{3x} = \dfrac{2}{3}\lim_{x \rightarrow 0} \dfrac{\sin 2x }{2x}= \dfrac{2}{3}
 $$
 Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+sin%282x%29%2F%283x-5x%5E3%29+as+x+tends+0)
 
@@ -774,11 +786,11 @@ Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Image
 
 <div class="example"> **Ejemplo 2**
 
-Calcula el $\lim_{x \rightarrow 0}\dfrac{\sqrt[3]{x^3+2x^4}}{\log (1+2x)}$.
+Calcula el $\displaystyle{\lim_{x \rightarrow 0}\dfrac{\sqrt[3]{x^3+2x^4}}{\log (1+2x)}}$.
 
 Dado que $\log(1+x)$ y $x$ son equivalentes, mediante el cambio de variable $x=2t$, vemos que también lo son $\log(1+2x)$ y $2x$. Por lo tanto,
 $$
-\lim_{x \rightarrow 0}\dfrac{\sqrt[3]{x^3+2x^4}}{\log (1+2x)} = \lim_{x \rightarrow 0} \dfrac{\sqrt[3]{x^3+2x^4}}{2x}= \dfrac{1}{2}
+\lim_{x \rightarrow 0}\dfrac{\sqrt[3]{x^3+2x^4}}{\log (1+2x)} = \lim_{x \rightarrow 0} \dfrac{\sqrt[3]{x^3+2x^4}}{2x}= \dfrac{1}{2}.
 $$
 
 Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28x%5E3%2B2x%5E4%29%5E%281%2F3%29%2Flog%281%2B2x%29+as+x+tends+0&assumption=%7B%22FunClash%22%2C+%22log%22%7D+-%3E+%7B%22Log%22%7D&assumption=%22%5E%22+-%3E+%22Real%22)
@@ -820,11 +832,11 @@ Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Image
 
 <div class="example"> **Ejemplo 5**
 
-Calcula el $\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x}$
+Calcula el $\displaystyle{\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x}}$
 
 Si hacemos el cambio de variable $x+1= (t+1)^n$, tendremos que $x=(t+1)^n-1$, por lo que
 $$
-\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x}= \lim_{t \rightarrow 0} \dfrac{t+1-1}{(t+1)^n-1}= \lim_{t \rightarrow 0}\dfrac{t}{(t+1)^n-1}=\lim_{t \rightarrow 0}\dfrac{t}{nt} = \dfrac{1}{n}
+\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x}= \lim_{t \rightarrow 0} \dfrac{t+1-1}{(t+1)^n-1}= \lim_{t \rightarrow 0}\dfrac{t}{(t+1)^n-1}=\lim_{t \rightarrow 0}\dfrac{t}{nt} = \dfrac{1}{n},
 $$
 puesto que como acabamos de ver $(t+1)^n-1$ y $nt$ son infinitésimos equivalentes en $t=0$.
 
@@ -838,9 +850,11 @@ Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Image
 
 Calcula el $\lim_{x \rightarrow 1}\dfrac{\tan(x^2-1)}{x-1}$
 
-En $x = 1$, tanto $\tan(x^2-1)$ como $x-1$ son infinitésimos. Dado que $\tan (x)$ y $x$ son infinitésimos equivalentes en $0$, resulta que $\tan(x^2-1)$ y $x^2-1$ son equivalentes en $x=1$, por lo tanto
+En $x = 1$, tanto $\tan(x^2-1)$ como $x-1$ son infinitésimos.
+
+Dado que $\tan (x)$ y $x$ son infinitésimos equivalentes en $0$, resulta que $\tan(x^2-1)$ y $x^2-1$ son equivalentes en $x=1$, por lo tanto
 $$
-\lim_{x \rightarrow 1}\dfrac{x^2-1}{x-1}= \lim_{x \rightarrow 1} (x+1)= 2
+\lim_{x \rightarrow 1}\dfrac{\tan(x^2-1)}{x-1}= \lim_{x \rightarrow 1}\dfrac{x^2-1}{x-1}= \lim_{x \rightarrow 1} (x+1)= 2.
 $$
 
 Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=lim+%28tan%28x%5E2-1%29%29%2F%28x-1%29+as+x+tends+1)
@@ -851,11 +865,11 @@ Este resultado se puede comprobar con `Wolfram Alpha` en este enlace: [![](Image
 
 <div class="example"> **Ejemplo 7**
 
-Calcula el $\lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a}$
+Calcula el $\displaystyle{\lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a}}$.
 
 Dado que $a^x = e^{x \log a}$, tenemos que
 $$
-\lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a} = \lim_{x \rightarrow 0}\dfrac{e^{x \log a}-1}{x \log a} =1
+\lim_{x \rightarrow 0}\dfrac{a^x-1}{x \log a} = \lim_{x \rightarrow 0}\dfrac{e^{x \log a}-1}{x \log a} =1.
 $$
 puesto que $e^x  - 1$ y $x$ són infinitésimos equivalentes en $x=0$.
 
@@ -881,7 +895,10 @@ Sean $c$ un punto de acumulación de $A$ y sean $f$ y $g$ dos infinitésimos en 
 
 1. Hemos visto que $\lim_{x \rightarrow 0} \dfrac{\sqrt[n]{x+1}-1}{x} = \dfrac{1}{n}$, por lo tanto $\sqrt[n]{x+1}-1$ y $x$ son del mismo orden.
 
-2. $f(x)= x$ es de orden superior a $g(x)=1+\sin^2 x$ en $x=0$, puesto que $\lim_{x \rightarrow 0}\dfrac{x}{1+\sin^2 x}=0$. 
+2. $f(x)= \sin^2 x$ es de orden superior a $g(x)= x$ en $x=0$, puesto que 
+$$
+\lim_{x \rightarrow 0}\dfrac{\sin^2 x}{x}=0.
+$$ 
 
 
 </div>
