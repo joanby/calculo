@@ -250,9 +250,10 @@ La expresión explícita de la sucesión anterior puede verse en el enlace sigui
 [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=x%281%29%3Dc+and+x%28n%2B1%29%3D%281%2F2%29*%28x%28n%29%2Ba%2Fx%28n%29%29%2C)
 </l>
 
-<l class="center">
+<div class="center">
 Para $c=\frac{1}{4}$ y $a=10$, el gráfico de la sucesión definida anteriormente es el siguiente: 
-![](CorreccionsTema2Arnau_files/figure-html/unnamed-chunk-5-1.png)<!-- --> </l>
+![](CorreccionsTema2Arnau_files/figure-html/unnamed-chunk-5-1.png)
+</div>
 
 </div>
 
@@ -320,7 +321,7 @@ Ahora, como sabemos que dado un $\epsilon > 0$  existe $n_0 \in \mathbb{N}$ tal 
 
 ## Observaciones
 
-<div class="observ"> **Observaciones**
+<l class="observ"> **Observaciones**</l>
 
 1. De una sucesión con límite diremos que es <l class="important">**convergente**</l>
 
@@ -328,9 +329,9 @@ Ahora, como sabemos que dado un $\epsilon > 0$  existe $n_0 \in \mathbb{N}$ tal 
 
 2. La **existencia o no del límite** de una sucesión no depende de los primeros términos de la misma, es decir sólo depende del **comportamiento final** de los términos de la sucesión. Es decir, si se remplaza qualquier número finito de términos de una sucesión, la sucesión resultante seguirá teniendo límite o no, según lo tuviera o no la sucesión original.
 
-</div>
 
-## Propiedades de los límites de sucesiones (1).
+
+## Propiedades de los límites de sucesiones
 
 <l class="prop">**Proposición** </l>
 
@@ -348,7 +349,7 @@ para todo $n>n_1$, para la primera desigualdad y para todo $n>n_2$, para la segu
 
 Ahora $|l_1-l_2| = |l_1-a_n +a_n -l_2| \leq |l_1-a_n| + |a_n -l_2| < \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2} = \epsilon$, siempre que $n>n_0 = \max\{n_1,n_2\}$. Por lo tanto, para todo $\epsilon >0$ es $|l_1-l_2| <\epsilon$ y esto sólo puede ocurrir si $|l_1-l_2| =0$, es decir si $l_1 = l_2$.
 
-## Propiedades de los límites (2).
+## Propiedades de los límites
 
 <l class="prop"> **Proposición** </l>
 
@@ -361,13 +362,15 @@ En primer lugar, si todas las subsucesiones de $\{a_n\}$ son convergentes, enton
 Recíprocamente, si $\{a_{n_k}\}$ es una subsucesión de $\{a_n\}$ y esta es convergente, entonces si $a = \lim a_n$, para cada $\epsilon > 0$ existe $n_0$ tal que para todo $n>n_0$ es $|a_n-a|<\epsilon$. Sea ahora $n_{n_{k_0}}$ el menor de los $n_k$ mayor que $n_0$, entonces para todo $n_k > n_{n_{k_0}} \geq n_0$, será $|a_{n_k}-a|<\epsilon$, es decir, que la subsucesión es convergente y tiene el mismo límite que la sucesión.
 </div>
 
+## Propiedades de los límites
+
 <div class="example"> **Ejemplos**
 
 1. Dado que $\{ \frac{1}{n+5}\}$ es una subsucesión de $\{\frac{1}{n}\}$, será $\lim  \frac{1}{n+5} =0= \lim \frac{1}{n}$
 2. La sucesión $\{1,-1,1,-1, \ldots\}=\{(-1)^n\}$, no es convergente, puesto que las subsucesiones $\{1,1,1, \ldots \}$ y $\{-1,-1,-1, \ldots \}$ tienen límites diferentes, $1$ y $-1$, respectivamente.
 </div>
 
-## Propiedades de los límites (3)
+## Propiedades de los límites
 
 <l class="prop"> **Corolario del Teorema de Bolzano-Weierstrass.**
 
@@ -386,7 +389,7 @@ $$
 lo que significa que $\lim a_{n_k} = L$, que es lo que queríamos demostrar.
 
 
-## Propiedades de los límites (4).
+## Propiedades de los límites
 
 <l class="prop">**Proposición** </l>
 
@@ -406,7 +409,7 @@ Con esta elección de $K$, está claro que $|a_n| < K$ para todo $n \in \mathbb{
 Si representamos los números reales mediante límites de sucesiones, para que esta representación sea útil, también debería servir para representar las operaciones entre ellas. De esto se ocupa la proposición siguiente.
 
 
-## Operaciones entre sucesiones.
+## Operaciones entre sucesiones
 
 Dadas dos sucesiones $\{a_n\}_{n\in \mathbb{N}}$ y $\{b_n\}_{n \in \mathbb{N}}$, se definen la sucesión suma y producto de la forma:
 
@@ -418,7 +421,7 @@ Dadas dos sucesiones $\{a_n\}_{n\in \mathbb{N}}$ y $\{b_n\}_{n \in \mathbb{N}}$,
 
 En realidad, para poder definir la inversa de una sucesión, no es necesario que todos los términos sean diferentes de $0$, es suficiente que sean diferentes de $0$ todos los términos a partir de uno dado.
 
-## Límites y operaciones (1).
+## Límites y operaciones
 
 <l class="prop">**Proposición**</l>
 
@@ -430,7 +433,7 @@ Si $a_n \rightarrow a$ y $b_n \rightarrow b$, entonces
   d) Si $a_n \leq b_n$, entonces $a \leq b$.
 
 
-## Límites y operaciones (2)
+## Límites y operaciones
 
 Para demostrar la proposición anterior, será útil el lema siguiente:
 
@@ -440,7 +443,7 @@ Si $\lim a_n =0$ y $b_n$ está acotada, entonces $\lim a_nb_n =0$.
 
 <div class="dem"> **Demostración**
 
-Por ser $b_n$ acotada, existe $K>0$ y $n_1$ tal que, para todo $n>n_1$ es $|b_n|>K$.
+Por ser $b_n$ acotada, existe $K>0$ y $n_1$ tal que, para todo $n>n_1$ es $|b_n|<K$.
 
 Por ser $\lim a_n =0$, para todo $\epsilon >0$ existe $n_2$ tal que para todo $n>n_2$ es $|a_n|<\dfrac{\epsilon}{K}$.
 
@@ -452,7 +455,7 @@ por lo tanto, $\lim a_nb_n =0$
 
 </div>
 
-## Límites y operaciones (3).
+## Límites y operaciones
 
 <div class="dem">
 
@@ -460,8 +463,10 @@ por lo tanto, $\lim a_nb_n =0$
 
 P1. $\lim (a_n +b_n) = \lim a_n + \lim b_n$. 
   
-  Dado un $\epsilon >0$, existen $n_1,n_2 \in \mathbb{N}$, tales que $|a_1 -a|< \dfrac{\epsilon}{2}$ si $n>n_1$ y $|b_n -b|< \dfrac{\epsilon}{2}$ si $n>n_2$. Entonces, si $n \geq \max\{n_1,n_2\}$, tendremos que: 
-$$|(a_n + b_n) - (a+b)| = |(a_n -a)+(b_n-b)| \leq |a_n -a|+|b_n - b| < \dfrac{\epsilon}{2}+ \dfrac{\epsilon}{2} = \epsilon 
+  Dado un $\epsilon >0$, existen $n_1,n_2 \in \mathbb{N}$, tales que $|a_n -a|< \dfrac{\epsilon}{2}$ si $n>n_1$ y $|b_n -b|< \dfrac{\epsilon}{2}$ si $n>n_2$. Entonces, si $n \geq \max\{n_1,n_2\}$, tendremos que: 
+  
+$$
+|(a_n + b_n) - (a+b)| = |(a_n -a)+(b_n-b)| \leq |a_n -a|+|b_n - b| < \dfrac{\epsilon}{2}+ \dfrac{\epsilon}{2} = \epsilon 
 $$
 
 P2. $\lim (a_n b_n) = \lim a_n \lim b_n$.
@@ -472,18 +477,17 @@ Supongamos, pues que los dos límites son diferentes de $0$
   
 </div>
 
-## Límites y operaciones (4)
+## Límites y operaciones
 
 <div class="dem">
 
 **Demostración**
 
 P2. (continuación) Por ser $\{a_n \}_{n \in \mathbb{N}}$ convergente, está acotada, es decir, existen $K>0$ i $n_1 \in \mathbb{N}$ tal que $|a_n| < K$, para todo $n>n_1$.
-Sea $M= \max\{|a|, K \}$.
-Por ser $\lim a_n = a$ convergente, existe $n_2  \in \mathbb{N}$
-tal que $|a_n-a|< \dfrac{\epsilon}{2K}$ para todo $n>n_2$.
-Por ser $\lim b_n =b\neq 0$, existe $n_3 \in \mathbb{N}$
-tal que $|b_n-b|< \dfrac{\epsilon}{2|b|}$ para todo $n>n_3$.
+
+* Sea $M= \max\{|a|, K \}$.
+* Por ser $\lim a_n = a$ convergente y  $\lim b_n =b\neq 0$, existe $n_2  \in \mathbb{N}$ tal que $|a_n-a|< \dfrac{\epsilon}{2|b|}$ para todo $n>n_2$.
+* Por ser $\lim b_n =b\neq 0$, existe $n_3 \in \mathbb{N}$ tal que $|b_n-b|< \dfrac{\epsilon}{2K}$ para todo $n>n_3$.
 
 Ahora, si $n \geq \max \{n_1,n_2,n_3\}$, será 
 
@@ -498,7 +502,7 @@ que es lo que se quería demostrar.
 </div>
 
 
-## Límites y operaciones (5).
+## Límites y operaciones
 
 <div class="dem">
 
@@ -515,7 +519,7 @@ Tenemos, pues, el producto de una sucesión acotada por una que tiene límite $0
 Finalmente $\lim \dfrac{b_n}{a_n} =\lim( b_n) \left( \dfrac{1}{a_n}\right) = \lim b_n \lim \dfrac{1}{a_n}= \dfrac{b}{a}$
 </div>
 
-## Límites y operaciones (6).
+## Límites y operaciones
 
 <div class="dem">
 
@@ -526,7 +530,7 @@ Ahora, si $a_n \leq b_n$, entonces $b_n - a_n \geq 0$ y, por lo tanto $b-a = \li
 
 </div>
 
-## Límites y operaciones (7)
+## Límites y operaciones
 
 <l class="prop">**Proposición**</l>
 
@@ -545,7 +549,7 @@ $$
 </div>
 
 
-## Límites y operaciones (8)
+## Límites y operaciones
 
 <l class="prop">**Proposición**</l>
 
@@ -642,7 +646,7 @@ $$
 por lo tanto, en cualquier caso, es $|a_n| \leq K$, para todo $n \in \mathbb{N}$.
 </div>
 
-## Las sucesiones de Cauchy en $\mathbb{R}$ son convergentes 
+## Sucesiones de Cauchy
 
 <l class="prop"> **Proposición** </l>
 
@@ -672,7 +676,7 @@ Es decir, para todo $\epsilon >0$ existe un $n_0 \in \mathbb{N}$ tal que para to
 
 # Cálculo de límites
 
-## Cálculo de límites (1)
+## Cálculo de límites
 
 Veremos en este apartado algunas estrategias para calcular limites de sucesiones reales, la mayoría, orientadas a resolver algunas de las indeterminaciones que involucran límites infinitos y que hemos explicitado al extender la recta real.
 
@@ -683,10 +687,12 @@ $$
 
 
 
-## Cálculo de límites (2)
+## Cálculo de límites
 
 Se trata de una indeterminación del tipo $\dfrac{\infty}{\infty}$. Se puede resolver dividiendo todos los terminos por la potencia mayor de $n$, para obtener
-$$\lim \dfrac{P(n)}{Q(n)} =
+
+$$
+\lim \dfrac{P(n)}{Q(n)} =
 \begin{cases}
 \mbox{  } 0, & \mbox{ si } h<k; \\
 \dfrac{a_h}{b_k}, & \mbox { si } h=k; \\
@@ -698,7 +704,7 @@ $$
 
 
 
-## Cálculo de límites (3)
+## Cálculo de límites
 
 <div class="example"> **Ejemplos** 
 
@@ -709,10 +715,11 @@ $$
 
 </div>
 
-## Cálculo de límites (3)
+## Cálculo de límites
 
 <div class="example"> 
 Los límites anteriores se resolverían en `python` de la forma siguiente:
+
 
 ```python
 from sympy import *
@@ -735,9 +742,10 @@ limit_seq((2*n**3+4*n+1) / (3*n**3+2*n**2),n)
 </div>
 
 
-## Cálculo de límites (3)
+## Cálculo de límites
 
 <div class="example"> 
+
 
 ```python
 limit_seq((3*n**5+4*n**4+2*n) / (7*n**4+2*n**3+n**2+5*n),n)
@@ -757,7 +765,7 @@ limit_seq(((3.*n**2.-1.)**0.5-n**0.5)/(n+1.),n)
 </div>
 
 
-## Cálculo de límites (3)
+## Cálculo de límites
 
 <div class="example"> 
 Los límites anteriores en `Wolfram Alpha` se pueden ver en los enlaces siguientes:
@@ -771,7 +779,7 @@ Los límites anteriores en `Wolfram Alpha` se pueden ver en los enlaces siguient
 * $\lim \dfrac{\sqrt{3n^2-1}-\sqrt{n}}{n+1}= \sqrt{3}$: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit+of+%28Sqrt%5B3+n%5E2-1%5D-Sqrt%5Bn%5D%29%2F%28n%2B1%29%2C+when+n+tends+to+infinity)
 </div>
 
-## Cálculo de límites (4)
+## Cálculo de límites
 
 <l class="prop"> Indeterminaciones del tipo $\infty -\infty$
 
@@ -787,17 +795,18 @@ $= \lim \dfrac{n^2-n+4-n^2-2}{\sqrt{n^2-n+4}+\sqrt{n^2+2}} = \lim \dfrac{-n+2}{\
 
 </div>
 
-## Cálculo de límites (4)
+## Cálculo de límites
 
 <div class="example"> 
 El límite anterior se resolvería en `python` de la forma siguiente:
+
 
 ```python
 limit_seq(((n**2-n+4)**(0.5))-((n**2+2)**(0.5)),n)
 ```
 
 ```
--0.500000000000000
+## -0.500000000000000
 ```
 
 y el límite resuelto en `Wolfram Alpha` se puede ver en el enlace siguiente: [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=Limit+of+Sqrt%5Bn%5E2-n%2B4%5D-Sqrt%5Bn%5E2%2B2%5D+when+n+tends+to+infinity)
@@ -830,7 +839,8 @@ b) Una sucesión monótona decreciente acotada inferiormente es convergente.
 
 Por ser $\{a_n\}_{n \in \mathbb{N}}$ acotada tiene supremo, sea $a= \sup \{a_n: n\in \mathbb{N} \}$. Veamos que $a= \lim _{n \rightarrow \infty} a_n$.
 
-Sea ahora $\epsilon >0$, $a - \epsilon$ no es cota superior, por lo que existe algún $n_0$ tal que $a - \epsilon < a_{n_0}$, dado que la sucesión és monótona creciente será $a-\epsilon <a_{n_0}\leq a_n$, para todo $n \geq n_0$. En definitiva es $a-a_n>\epsilon, es decir 
+Sea ahora $\epsilon >0$, $a - \epsilon$ no es cota superior, por lo que existe algún $n_0$ tal que $a - \epsilon < a_{n_0}$, dado que la sucesión és monótona creciente será $a-\epsilon <a_{n_0}\leq a_n$, para todo $n \geq n_0$. En definitiva es $a-a_n<\epsilon$, es decir 
+
 $$
 0 \leq |a-a_n| < \epsilon
 $$
@@ -1122,7 +1132,7 @@ dado que la otra solución de la ecuación de segundo grado resultante es mayor 
 <div class="example"> 
 Acabamos de ver que si $a_1=2$, $a_{n+1} = \frac{1}{3-a_n}$, entonces $\lim a_n = \frac{3-\sqrt{5}}{2}$. El gràfico siguiente muestra los $25$ primeros términos de esta sucesión y lo rápida que es la convergencia.
 
- ![](02Succesiones_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+ ![](02Succesiones_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 </div>
 
