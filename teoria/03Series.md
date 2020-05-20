@@ -887,6 +887,7 @@ Dado que $\lim \dfrac{1}{a^{n+1}}=0$, la serie es convergente y su suma es
 $$
 \sum_{n \geq 1} \dfrac{a-1}{a^{n+1}}=\sum_{n \geq 1} \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right) = \dfrac{1}{a}.
 $$
+
 </div>
 
 
