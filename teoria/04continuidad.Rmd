@@ -912,7 +912,7 @@ Sean $c$ un punto de acumulación de $A$ y sean $f$ y $g$ dos infinitésimos en 
 3. $f$ es de orden inferior a $g$ si $g$ es de orden superior a $f$, o equivalentemente, si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = \infty$.
 
 
-## Comparación infinitésimos
+## Comparación de infinitésimos
 
 <div class="example"> **Ejemplos**
 
@@ -990,15 +990,15 @@ Pese a que la definición de continuidad sobre un conjunto pueda inducir a pensa
 
 <div class="example"> **Ejemplos**
 
-1. Una función constante $f(x)=c$ es continua para todo $x \in \mathbb{R}$, dado que si $x_n \rightarrow x_0$, entonces $f(x_n) \rightarrow x_0$, puesto que $f(x_n)=c=f(x_0)$, para todo $n \in \mathbb{N}$.
+**Ejemplo 1**. Una función constante $f(x)=c$ es continua para todo $x \in \mathbb{R}$, dado que si $x_n \rightarrow x_0$, entonces $f(x_n) \rightarrow x_0$, puesto que $f(x_n)=c=f(x_0)$, para todo $n \in \mathbb{N}$.
 
-2. $g(x) = x$ es continua para todo $x_0  \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces, obviamente $g(x_n)=x_n \rightarrow x_0=g(x_0)$.
+**Ejemplo 2**. $g(x) = x$ es continua para todo $x_0  \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces, obviamente $g(x_n)=x_n \rightarrow x_0=g(x_0)$.
 
-3. $h(x)=x^2$ es continua para todo $x_0 \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces $x_n^2 \rightarrow x_0^2=h(x_0)$.
+**Ejemplo 3**. $h(x)=x^2$ es continua para todo $x_0 \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces $x_n^2 \rightarrow x_0^2=h(x_0)$.
 
-4. La función signo $\text{sgn}(x)$ no es continua en $x_0=0$, puesto que como hemos visto no existe el $\lim_{x \rightarrow x_0} \text{sgn} (x)$, dado que $-1 = \lim_{x \rightarrow x_0^-} \text{sgn}(x) \neq \lim_{x \rightarrow x_0^+} \text{sgn}(x) =1$.
+**Ejemplo 4**. La función signo $\text{sgn}(x)$ no es continua en $x_0=0$, puesto que como hemos visto no existe el $\lim_{x \rightarrow x_0} \text{sgn} (x)$, dado que $-1 = \lim_{x \rightarrow x_0^-} \text{sgn}(x) \neq \lim_{x \rightarrow x_0^+} \text{sgn}(x) =1$.
 
-5. La función $\psi :\mathbb{R} \rightarrow \mathbb{R}$ definida por
+**Ejemplo 5**. La función $\psi :\mathbb{R} \rightarrow \mathbb{R}$ definida por
 $$
 \psi(x)=
 \begin{cases}
@@ -1007,6 +1007,16 @@ $$
 \end{cases}
 $$
 es discontinua en todo punto $x \in \mathbb{R}$, puesto que si $x \in \mathbb{Q}$, existe una sucesión de irracionales $x_n$, tal que $x_n \rightarrow x$ y, por lo tanto $\psi(x_n)= 0$ para todo $n$, es decir que $\psi(x_n) \rightarrow 0 \neq 1=\psi(x)$. Análogamente, si $x \in \mathbb{R}\setminus \mathbb{Q}$, existe una sucesión de racionales tal que $x_n \rightarrow x$ y, por lo tanto $\psi(x_n) \rightarrow 1 \neq 0=\psi(x)$.
+</div>
+
+## Funciones continuas: Ejemplos.
+
+<div class="example"> **Ejemplos**
+
+**Ejemplo 6**. La función $f(x)=e^x$ es continua para todo $x_0 \in \mathbb{R}$, puesto que, como demostramos en el tema de sucesiones, si $x_n \rightarrow x_0$, entonces $e^{x_n} \rightarrow e^{x_0}$
+
+**Ejemplo 7**. La función $\log: (0,+\infty) \rightarrow \mathbb{R}$, es continua para todo $x_0 \in (0,+\infty)$, puesto que, igual que con la exponencial, en su día demostramos que si $x_n \rightarrow x_0$, con $x_n > 0$, entonces $\log x_n \rightarrow \log x_0$
+
 </div>
 
 
@@ -1568,7 +1578,11 @@ $f$ es, además inyectiva por ser estrictamente creciente, puesto que si $x_1 \n
 
 ## Funciones monótonas e inversas
 
-Contenido muy técnico
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido muy técnico. </i>
+</div>
+</div>
 
 <div class="dem"> **Demostración**
 
