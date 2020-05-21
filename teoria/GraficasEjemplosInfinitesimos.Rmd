@@ -54,6 +54,50 @@ text(-1.1,14,expression(paste("y=",frac(1,10)%.%x^4 - frac(7,10)%.%x^3 + x^2 - 2
 ```
 
 
+## Funciones potenciales
+
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE, fig.align='center',fig.height=6}
+xmin=-5
+xmax=5
+ymin=-6
+ymax=10
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=10
+quantsy=8
+f = function(x){1/x}
+g = function(x){sqrt(x)}
+h = function(x){x^2}
+k = function(x){1/sqrt(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-15*tolx,"x")
+text(toly/2,ymax+toly,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+lines(x,g(x),col="blue")
+lines(x,h(x),col="green")
+lines(x,k(x),col="orange")
+text(-4,-2,expression(paste("y=",frac(1,x))),col="red")
+text(4,2.5,expression(paste("y=",sqrt(x))),col="blue")
+text(4,9.5,expression(paste("y=",x^2)),col="green")
+text(5,1.25,expression(paste("y=",frac(1,sqrt(x)))),col="orange")
+```
+
+
 ## Funciones exponenciales
 
 ```{r,echo=FALSE,fig.align='center',fig.height=6}
@@ -95,6 +139,48 @@ text(4.5,7,expression(paste("y=",e^frac(x,2))),col="blue")
 text(-2,13,expression(paste("y=",e^-x)),col="green")
 text(-3.8,9,expression(paste("y=",e^-frac(x,2))),col="orange")
 ```
+
+
+## Funciones logarítmicas
+
+```{r,echo=FALSE,fig.align='center',fig.height=6,warning=FALSE}
+xmin=-1
+xmax=9
+ymin=-2
+ymax=4
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=10
+quantsy=6
+f = function(x){log(x)}
+g = function(x){log(1+x)}
+h = function(x){log(2*x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-15*tolx,"x")
+text(toly,ymax+toly,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(2.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+lines(x,g(x),col="blue")
+lines(x,h(x),col="green")
+text(8,1.5,expression(paste("y=",log(x))),col="red")
+text(8,2.5,expression(paste("y=",log(x+1))),col="blue")
+text(8,3,expression(paste("y=",log(2%.%x))),col="green")
+```
+
+
 
 ## Funciones trigonométricas
 
@@ -185,7 +271,7 @@ ymin=-2
 ymax=4
 tolx=0.01*(xmax-xmin)
 toly=0.05*(ymax-ymin)
-quantsx=2
+quantsx=8
 quantsy=6
 f = function(x){asin(x)}
 g = function(x){acos(x)}
@@ -195,7 +281,7 @@ x=seq(from=xmin,to=xmax,by=0.01)
 lines(c(0,0),c(ymin,ymax))
 lines(c(xmin,xmax),c(0,0))
 text(xmax-3*tolx,-15*tolx,"x")
-text(toly,ymax+toly/2,"y")
+text(toly/2,ymax+toly/2,"y")
 for (i in 0:(quantsx)){
   if(xmin+((xmax-xmin)/quantsx)*i != 0){
     lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))

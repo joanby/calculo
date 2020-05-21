@@ -18,17 +18,22 @@ output:
 <img src="GraficasEjemplosInfinitesimos_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
 
 
-## Funciones exponenciales
+## Funciones potenciales
+
 
 <img src="GraficasEjemplosInfinitesimos_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
-## Funciones trigonométricas
+
+## Funciones exponenciales
 
 <img src="GraficasEjemplosInfinitesimos_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
-## Funciones trigonométricas
+
+## Funciones logarítmicas
 
 <img src="GraficasEjemplosInfinitesimos_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+
+
 
 ## Funciones trigonométricas
 
@@ -37,3 +42,11 @@ output:
 ## Funciones trigonométricas
 
 <img src="GraficasEjemplosInfinitesimos_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+
+## Funciones trigonométricas
+
+<img src="GraficasEjemplosInfinitesimos_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
+
+## Funciones trigonométricas
+
+<img src="GraficasEjemplosInfinitesimos_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
