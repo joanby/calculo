@@ -889,7 +889,7 @@ Sean $c$ un punto de acumulación de $A$ y sean $f$ y $g$ dos infinitésimos en 
 3. $f$ es de orden inferior a $g$ si $g$ es de orden superior a $f$, o equivalentemente, si $\lim_{x \rightarrow c} \dfrac{f(x)}{g(x)} = \infty$.
 
 
-## Comparación infinitésimos
+## Comparación de infinitésimos
 
 <div class="example"> **Ejemplos**
 
@@ -919,13 +919,13 @@ Dada una función $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$, si $x \in A$ e
 
 Las funciones continuas son precisamente las funciones para las que, una vez fijada la precisión requerida a $f(x)$, es posible determinar la precisión de $x$, para tener asegurada la precisión requerida.
 
-En lo que sigue, veremos que de esta condición tiene consecuencias muy notables.
+En lo que sigue, veremos que esta condición tiene consecuencias muy notables.
 
 ## Funciones continuas.
 
 <l class="definition"> **Definición** </l>
 
-Sean $f: A\subset \mathbb{R} \rightarrow \mathbb{R}$ y $x_0 \in A$, **$f$ és continua en $x_0$** si para cada $\epsilon >0$ existe un $\delta >0$ tal que para todo $x \in A$ que verifique que $|x-x_0|<\delta$, entonces $|f(x)-f(x_0)|< \epsilon$.
+Sean $f: A\subset \mathbb{R} \rightarrow \mathbb{R}$ y $x_0 \in A$, **$f$ es continua en $x_0$** si para cada $\epsilon >0$ existe un $\delta >0$ tal que para todo $x \in A$ que verifique que $|x-x_0|<\delta$, entonces $|f(x)-f(x_0)|< \epsilon$.
 
 Diremos que **$f$ es continua en $A$**, si es continua para todo $x \in A$.
 
@@ -947,7 +947,7 @@ $\epsilon$ es la precisión con la queremos $f(x_0)$ y $\delta$ es la precisón 
 
 <l class="observ"> **Observaciones** </l>
 
-1. Es fàcil comprobar que si $x_0$ es un punto de acumulación de $A$, entonces $f$ es continua en $x_0$ si, y sólo sí, $\lim _{x \rightarrow x_0}f(x)=f(x_0)$.
+1. Es fàcil comprobar que si $x_0$ es un punto de acumulación de $A$, entonces $f$ es continua en $x_0$ si, y sólo sí, $\displaystyle{\lim _{x \rightarrow x_0}f(x)=f(x_0)}$.
 
 2. Si $x_0$ es un punto aislado de $A$, es decir, que no es de acumulación, entonces, dado que existe un entorno de $x_0$ donde este es el único punto de $A$, para que $f$ sea continua en $x_0$ es suficiente que $f$ esté definida en ese punto.
 
@@ -955,7 +955,7 @@ $\epsilon$ es la precisión con la queremos $f(x_0)$ y $\delta$ es la precisón 
 
 <l class="important"> **Observación importante** </l>
 
-Pese a que la definición de continuidad sobre un conjunto pueda inducir a pensar lo contrario, el concepto de continuidad es esencialmente **local**: una función es continua en un punto. No hay que olvidar, pues, que aunque la función sea continua sobre un conjunto $A$, la precisión $\delta$ para cada $x_0 \in A$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada *continuidad uniforme*. 
+Pese a que la definición de continuidad sobre un conjunto pueda inducir a pensar lo contrario, el concepto de continuidad es esencialmente **local**: una función es continua en un punto. No hay que olvidar, pues, que aunque la función sea continua sobre un conjunto $A$, la precisión $\delta$ para cada $x_0 \in A$, depende de $\epsilon$ y de $x_0$, por lo que se debería escribir $\delta(\epsilon,x_0)$, aunque no se haga, se debe tener siempre en cuenta esta dependencia. Por otra parte, veremos algunos casos en los que $\delta$ sólo depende de $\epsilon$, es la llamada **continuidad uniforme**. 
 
 
 
@@ -965,23 +965,33 @@ Pese a que la definición de continuidad sobre un conjunto pueda inducir a pensa
 
 <div class="example"> **Ejemplos**
 
-1. Una función constante $f(x)=c$ es continua para todo $x \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces $f(x_n) \rightarrow c$, puesto que $f(x_n)=c$, para todo $n \in \mathbb{N}$
+**Ejemplo 1**. Una función constante $f(x)=c$ es continua para todo $x \in \mathbb{R}$, dado que si $x_n \rightarrow x_0$, entonces $f(x_n) \rightarrow x_0$, puesto que $f(x_n)=c=f(x_0)$, para todo $n \in \mathbb{N}$.
 
-2. $g(x) = x$ es continua para todo $x  \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces, obviamente $g(x_n)=x_n \rightarrow x_0$.
+**Ejemplo 2**. $g(x) = x$ es continua para todo $x_0  \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces, obviamente $g(x_n)=x_n \rightarrow x_0=g(x_0)$.
 
-3. $h(x)=x^2$ es continua para todo $x \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces $x_n^2 \rightarrow x_0^2$.
+**Ejemplo 3**. $h(x)=x^2$ es continua para todo $x_0 \in \mathbb{R}$, puesto que si $x_n \rightarrow x_0$, entonces $x_n^2 \rightarrow x_0^2=h(x_0)$.
 
-4. La función signo $\text{sgn}(x)$ no es continua en $x=0$, puesto que como hemos visto no existe el $\lim_{x \rightarrow x_0} \text{sgn} (x)$, dado que $-1 = \lim_{x \rightarrow x_0^-} \text{sgn}(x) \neq \lim_{x \rightarrow x_0^+} \text{sgn}(x) =1$.
+**Ejemplo 4**. La función signo $\text{sgn}(x)$ no es continua en $x_0=0$, puesto que como hemos visto no existe el $\lim_{x \rightarrow x_0} \text{sgn} (x)$, dado que $-1 = \lim_{x \rightarrow x_0^-} \text{sgn}(x) \neq \lim_{x \rightarrow x_0^+} \text{sgn}(x) =1$.
 
-5. La función $\psi :\mathbb{R} \rightarrow \mathbb{R}$ definida por
+**Ejemplo 5**. La función $\psi :\mathbb{R} \rightarrow \mathbb{R}$ definida por
 $$
 \psi(x)=
 \begin{cases}
-1, \text{ si } x \in \mathbb{Q}; \\
-0, \text{ si } x \in \mathbb{R} \setminus \mathbb{Q}.
+1, \text{ si } x \in \mathbb{Q}, \\
+0, \text{ si } x \in \mathbb{R} \setminus \mathbb{Q},
 \end{cases}
 $$
-es discontinua en todo punto $x \in \mathbb{R}$, puesto que si $x \in \mathbb{Q}$, existe una sucesión de irracionales $x_n$, tal que $x_n \rightarrow x$ y, por lo tanto $\psi(x_n)= 0$ para todo $n$, es deciir que $\psi(x_n) \rightarrow 0 \neq 1=\psi(x)$. Anàlogamente, si $x \in \mathbb{R}\setminus \mathbb{Q}$, existe una sucesión de racionales tal que $x_n \rightarrow x$ y, por lo tanto $\psi(x_n) \rightarrow 1 \neq 0=\psi(x)$
+es discontinua en todo punto $x \in \mathbb{R}$, puesto que si $x \in \mathbb{Q}$, existe una sucesión de irracionales $x_n$, tal que $x_n \rightarrow x$ y, por lo tanto $\psi(x_n)= 0$ para todo $n$, es decir que $\psi(x_n) \rightarrow 0 \neq 1=\psi(x)$. Análogamente, si $x \in \mathbb{R}\setminus \mathbb{Q}$, existe una sucesión de racionales tal que $x_n \rightarrow x$ y, por lo tanto $\psi(x_n) \rightarrow 1 \neq 0=\psi(x)$.
+</div>
+
+## Funciones continuas: Ejemplos.
+
+<div class="example"> **Ejemplos**
+
+**Ejemplo 6**. La función $f(x)=e^x$ es continua para todo $x_0 \in \mathbb{R}$, puesto que, como demostramos en el tema de sucesiones, si $x_n \rightarrow x_0$, entonces $e^{x_n} \rightarrow e^{x_0}$
+
+**Ejemplo 7**. La función $\log: (0,+\infty) \rightarrow \mathbb{R}$, es continua para todo $x_0 \in (0,+\infty)$, puesto que, igual que con la exponencial, en su día demostramos que si $x_n \rightarrow x_0$, con $x_n > 0$, entonces $\log x_n \rightarrow \log x_0$
+
 </div>
 
 
@@ -993,14 +1003,14 @@ La función $\sin : \mathbb{R} \rightarrow \mathbb{R}$ es continua para todo $x 
 
 <div class="dem"> **Demostración**
 
-Hay que ver que, para cada $\epsilon >0$ existe $\delta >0$ tal que si $|x-x_0| < \delta$ entonces $|\sin x - \sin x_0|<\epsilon$, o lo que es lo mismo, dado que en su dominio no hay puntos aislados, que $\lim_{x \rightarrow x_0} \sin x = \sin x_0$
+Hay que ver que, para cada $\epsilon >0$ existe $\delta >0$ tal que si $|x-x_0| < \delta$ entonces $|\sin x - \sin x_0|<\epsilon$, o lo que es lo mismo, dado que en su dominio no hay puntos aislados, que $\lim_{x \rightarrow x_0} \sin x = \sin x_0$.
 
 Teniendo en cuenta la igualdad trigonométrica: $\sin \alpha -\sin \beta = 2 \sin \frac{\alpha - \beta}{2} \cos \frac{\alpha + \beta}{2}$, 
 tenemos 
 $$
-\sin x -\sin x_0 =2 \sin \frac{x-x_0}{2} \cos \frac{x+x_0}{2} = \frac{x-x_0}{2} \frac{\sin \frac{x-x_0}{2}}{\frac{x-x_0}{2}} \cos \dfrac{x+x_0}{2} 
+\sin x -\sin x_0 =2 \sin \frac{x-x_0}{2} \cos \frac{x+x_0}{2}.
 $$
-Por lo tanto, dado que $\lim_{x \rightarrow x_0}\frac{\sin \frac{x-x_0}{2}}{\frac{x-x_0}{2}} =1$ y que la función $\cos x$ está acotada, tendremos que $\lim_{x \rightarrow x_0} (sin x -\sin x_0) = 0$, es decir, que
+Dado que que la función $\cos x$ está acotada, tendremos que $\displaystyle{\lim_{x \rightarrow x_0} (\sin x -\sin x_0) }= 0$, es decir, que
 $$
 \lim_{x \rightarrow x_0} \sin x = \sin x_0.
 $$
@@ -1014,13 +1024,13 @@ $$
 $$
 F(x)=
 \begin{cases}
-L, \quad  \text{ si } x=c \\
-f(x), \text{ si } x \in A
+L, \quad  \text{ si } x=c, \\
+f(x), \text{ si } x \in A,
 \end{cases}
 $$
 es una función continua en $A \cup \{c\}$.
 
-2. Caso que no exista el  $\lim_{x \rightarrow c} f(x)$, entonces no es posible extender $f$ a una función continua en $A \cup \{c\}$, puesto que sea cual sea el valor, $L$ que asignemos a la extensión $F$ en $c$, dicha función no podria ser continua, puesto que si fuera continua tendríamos que $\lim_{x \rightarrow c} f(x)=L$, y hemos supuesto dicho límite no existía.
+2. Caso que no exista el  $\lim_{x \rightarrow c} f(x)$, entonces no es posible extender $f$ a una función continua en $A \cup \{c\}$, puesto que sea cual sea el valor, $L$ que asignemos a la extensión $F$ en $c$, dicha función no podría ser continua, puesto que si fuera continua tendríamos que $\lim_{x \rightarrow c} f(x)=L$, y hemos supuesto dicho límite no existía.
 
 ## Funciones continuas
 
@@ -1028,7 +1038,7 @@ es una función continua en $A \cup \{c\}$.
 
 1. La función $f(x)= \frac{\sin x}{x}$, no está definida en $x=0$, sin embargo, dado que existe $\lim_{x \rightarrow 0} \frac{\sin x}{x} =1$, se puede extender dicha función a una función continua definida en $x=0$, asignando en ese punto el valor del límite, es decir 
 $$
-f(0) =1 = \lim_{x \rightarrow 0} \frac{\sin x}{x} 
+f(0) =1 = \lim_{x \rightarrow 0} \frac{\sin x}{x}.
 $$
 
 2. Por el contrario, no es posible extender la función $h(x)= \text{sgn}(x)$ para que sea continua en $x=0$, puesto que, como como hemos visto, no existe el $\lim_{x \rightarrow 0} \text{sgn} (x)$.
@@ -1037,11 +1047,11 @@ $$
 $$
 \varphi (x) =
 \begin{cases}
-0, \qquad \,  \text{ si } x=0 \\
-x \cos \frac{1}{x}, \text{ si } x \neq 0
+0, \qquad \,  \text{ si } x=0, \\
+x \cos \frac{1}{x}, \text{ si } x \neq 0,
 \end{cases}
 $$
-es una función continua para todo $x \in \mathbb{R}$
+es una función continua para todo $x \in \mathbb{R}$.
 
 </div>
 
@@ -1051,9 +1061,9 @@ Las consideraciones anteriores, juntamente con la coincidencia o no de los limit
 
 1. *Evitable:* $f$ no está definida en $x_0$, pero existe el $\lim_{x \rightarrow x_0}f(x)$.
 
-2. *De primera especie (o de salto):* $\lim_{x \rightarrow x_0^-}f(x) \neq \lim_{x \rightarrow x_0^+}f(x)$,
+2. *De primera especie (o de salto):* $\lim_{x \rightarrow x_0^-}f(x) \neq \lim_{x \rightarrow x_0^+}f(x)$.
 
-3. *De segunda especie:* No existe alguno de los límites laterales o ninguno de los dos.
+3. *De segunda especie:* No existe alguno o ninguno de los límites laterales.
 
 <l class="observ"> **Observación** </l>
 
@@ -1062,14 +1072,16 @@ Las discontinuidades de salto, como la de la función sgn$(x)$ en el punto $0$, 
 
 ## Combinaciones de funciones continuas
 
+Recordemos la definición siguiente:
+
 <l class="definition"> **Definición** </l>
 
 Sean $f,g: A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de variable real. Entonces
 
-1. $f+g$ es la función de $A$ en $\mathbb{R}$ definida por $(f+g)(x)=f(x)+g(x)$
-2. $f \cdot g$ es la función de $A$ en $\mathbb{R}$ definida por $(f \cdot g)(x)=f(x) \cdot g(x)$
+1. $f+g$ es la función de $A$ en $\mathbb{R}$ definida por $(f+g)(x)=f(x)+g(x)$.
+2. $f \cdot g$ es la función de $A$ en $\mathbb{R}$ definida por $(f \cdot g)(x)=f(x) \cdot g(x)$.
 3. Si $\lambda \in \mathbb{R}$, $\lambda \cdot f$ es la función de $A$ en $\mathbb{R}$ definida por $( \lambda \cdot f)(x) =\lambda \cdot f(x)$.
-4. Si $g(x) \neq 0$, $\dfrac{f}{g}$ es la función de $A$ en $\mathbb{R}$ definida por $\dfrac{f}{g}(x)= \dfrac{f(x)}{g(x)}$
+4. Si $g(x) \neq 0$, $\dfrac{f}{g}$ es la función de $A$ en $\mathbb{R}$ definida por $\dfrac{f}{g}(x)= \dfrac{f(x)}{g(x)}$.
 
 ## Combinaciones de funciones continuas
 
@@ -1077,10 +1089,10 @@ Sean $f,g: A \subset \mathbb{R} \rightarrow \mathbb{R}$ dos funciones reales de 
 
 Sean $f,g : A \subset \mathbb{R} \rightarrow \mathbb{R}$  tales que $f$ y $g$ són continuas en en $x_0 \in A$. Entonces
 
-1. $f+g$ es continua en $x_0$
-2. $f.g$ es continua en $x_0$
+1. $f+g$ es continua en $x_0$.
+2. $f \cdot g$ es continua en $x_0$.
 3. Si $\lambda \in \mathbb{R}$, $\lambda f$ es continua en $x_0$.
-4. Si $g(x) \neq 0$ para todo $x \in A$, entonces $\dfrac{f}{g}$ es continua en $x_0$
+4. Si $g(x) \neq 0$ para todo $x \in A$, entonces $\dfrac{f}{g}$ es continua en $x_0$.
 
 ## Combinaciones de funciones continuas
 
@@ -1090,10 +1102,10 @@ Si $x_0$ es un punto aislado, el resultado es inmediato.
 
 Supongamos pues que $x_0$ es un punto de acumulación de $A$, sea $x_n$ una sucesión de puntos de $A$ tal que $x_n \rightarrow x_0$, entonces, dado que $f$ y $g$ son continuas en $x_0$, tendremos que $f(x_n) \rightarrow f(x_0)$ y $g(x_n) \rightarrow g(x_0)$, por lo tanto 
 $$
-(f+g)(x_n) = f(x_n)+g(x_n) \rightarrow f(x_0)+g(x_0) = (f+g)(x_0)
-$$. 
+(f+g)(x_n) = f(x_n)+g(x_n) \rightarrow f(x_0)+g(x_0) = (f+g)(x_0).
+$$
 
-Consideraciones anàlogas sirven para demostrar las otras combinaciones descritas en el enunciado.
+Consideraciones análogas sirven para demostrar las otras combinaciones descritas en el enunciado.
 
 </div>
 
@@ -1103,14 +1115,14 @@ Consideraciones anàlogas sirven para demostrar las otras combinaciones descrita
 
 Sean $f,g : A \subset \mathbb{R} \rightarrow \mathbb{R}$  tales que $f$ y $g$ **són continuas en en $A$**. Entonces
 
-1. $f+g$ es continua en $A$
-2. $f.g$ es continua en $A$
+1. $f+g$ es continua en $A$.
+2. $f \cdot g$ es continua en $A$.
 3. Si $\lambda \in \mathbb{R}$, $\lambda f$ es continua en $A$.
-4. Si $g(x) \neq 0$ para todo $x \in A$, entonces $\dfrac{f}{g}$ es continua en $A$
+4. Si $g(x) \neq 0$ para todo $x \in A$, entonces $\dfrac{f}{g}$ es continua en $A$.
 
 <div class="dem"> **Demostración**
 
-Inmediata a partir de la definición de continuidad en un conjunto y de la proposición anterior
+Inmediata a partir de la definición de continuidad en un conjunto y de la proposición anterior.
 
 </div>
  
@@ -1120,7 +1132,7 @@ Inmediata a partir de la definición de continuidad en un conjunto y de la propo
 
 Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g: B \subset \mathbb{R} \rightarrow \mathbb{R}$ tales que $f(A) \subset B$. La **función compuesta de $f$ y $g$**, $g \circ f$, es la función $g \circ f : A \rightarrow \mathbb{R}$ definida por
 $$
-(g \circ f) (x)= g(f(x))
+(g \circ f) (x)= g(f(x)).
 $$
 
 
@@ -1128,7 +1140,7 @@ $$
 
 Por $f(A)$ se entiende el conjunto de los elementos de $\mathbb{R}$ tales que son imagen por $f$ de algún elemento de $A$, es decir
 $$
-f(A) =\{y \in \mathbb{R}: y=f(x)\text{ para algún x }\in A \}
+f(A) =\{y \in \mathbb{R}: y=f(x)\text{ para algún } x \in A \}.
 $$
 
 ## Composición de funciones
@@ -1141,11 +1153,14 @@ $$
 
 <div class="example"> **Ejemplos**
 
-1. $h(x) = \sin(\dfrac{\pi}{2}-x)$ es la composición de las funciones $g(x)=\sin x$ y $f(x) =\dfrac{\pi}{2}-x$: $h(x) = (g \circ f)(x)$. Se debe tener en cuenta que la composición de funciones **no** es conmutativa, en  este caso $(f \circ g)(x) = \dfrac{\pi}{2}  - \sin x \neq \sin(\dfrac{\pi}{2}-x) = (g \circ f)(x)$
+1. $h(x) = \sin \left(\dfrac{\pi}{2}-x \right)$ es la composición de las funciones $g(x)=\sin x$ y $f(x) =\dfrac{\pi}{2}-x$: $h(x) = (g \circ f)(x)$. Se debe tener en cuenta que la composición de funciones **no** es conmutativa, en  este caso 
+$$
+(f \circ g)(x) = \dfrac{\pi}{2}  - \sin x \neq \sin \left(\dfrac{\pi}{2}-x \right) = (g \circ f)(x).
+$$
 
-2. $h(x)= |x|$ es la composición de las funciones $r(x) = \sqrt(x)$ y $s(x)= x^2$: $h(x) = |x| = \sqrt{x^2}=r(s(x))$. Nuevamente $|x| = (r \circ s)(x) \neq (s \circ r) = (\sqrt{x})^2= x$, ya que la igualdad sólo sería vàlida para los $x >0$.
+2. $h(x)= |x|$ es la composición de las funciones $r(x) = \sqrt{x}$ y $s(x)= x^2$: $h(x) = |x| = \sqrt{x^2}=r(s(x))$. Nuevamente $|x| = (r \circ s)(x) \neq (s \circ r) = (\sqrt{x})^2= x$, ya que la igualdad sólo sería vàlida para los $x >0$.
 
-3. $h(x)=\log(x+1)$ es la composición de las funciones $f(x)= x+1$ y $g(x) = \log(x)$
+3. $h(x)=\log(x+1)$ es la composición de las funciones $f(x)= x+1$ y $g(x) = \log(x)$.
 
 </div>
 
@@ -1153,7 +1168,7 @@ $$
 
 <l class="prop"> **Proposición** </l>
 
-Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g : B \subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $f(A) \subset B$. Si $f$ es continua en $x_0$ y $g$ es continua en $f(x_0)$, entonces $g \circ f$ es continua en $x_0$
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g : B \subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $f(A) \subset B$. Si $f$ es continua en $x_0$ y $g$ es continua en $f(x_0)$, entonces $g \circ f$ es continua en $x_0$.
 
 <div class="dem"> **Demostración**
 
@@ -1161,7 +1176,7 @@ Para simplificar la notación, pongamos que $y_0=f(x_0)$ y que $V_{\epsilon}(y)$
 
 Sea $\epsilon >0$, dado que $g$ es continua en $y_0$, existe un $\gamma >0$ tal que si $y \in V_{\gamma} (y_0) \cap B$, entonces $g(y) \in V_{\epsilon}(g(y_0))$.
 
-Dado que $f$ es continua en $x_0$ , $f(A) \subset B$ y que $\gamma >0$, existe un $\delta >0$ tal que si $x_0 \in V_{\delta}(x_0) \cap A$, entonces $y_0=f(x_0) \in V_{\gamma}(f(x_0))$.
+Dado que $f$ es continua en $x_0$, $f(A) \subset B$ y que $\gamma >0$, existe un $\delta >0$ tal que si $x \in V_{\delta}(x_0) \cap A$, entonces $y=f(x) \in V_{\gamma}(f(x_0))$.
 
 En definitiva, para cada $\epsilon >0$ hemos podido determinar un $\delta >0$ tal que si $x \in V_{\delta}(x_0) \cap A$, entonces $g(f(x)) \in V_{\epsilon} (g(f(x_0)))$, es decir que $g \circ f$ es continua en $x_0$.
 
@@ -1174,7 +1189,7 @@ En definitiva, para cada $\epsilon >0$ hemos podido determinar un $\delta >0$ ta
 
 1. La función $\cos : \mathbb{R} \rightarrow \mathbb{R}$ es continua para todo $x \in \mathbb{R}$. En efecto: si $g(x) = \sin(x)$ y $f(x) = \dfrac{\pi}{2} -x$, entonces, tanto $f$ como $g$ son continuas para todo $x \in \mathbb{R}$, por lo tanto
 $$
-\cos (x) = \sin (\dfrac{\pi}{2} - x) = g(f(x))
+\cos (x) = \sin \left(\dfrac{\pi}{2} - x \right) = g(f(x)).
 $$
 es una función continua para todo $x \in \mathbb{R}$ por ser la composición de dos funciones continuas.
 
@@ -1192,11 +1207,11 @@ es decir seria la composición de tres funciones continuas.
 
 <l class="prop"> **Proposición** </l>
 
-Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g : B \subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $f(A) \subset B$. Si $f$ es continua en $A$ y $g$ es continua en $B$, entonces $g \circ f$ es continua en $A$
+Sean $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ y $g : B \subset \mathbb{R} \rightarrow \mathbb{R}$, tales que $f(A) \subset B$. Si $f$ es continua en $A$ y $g$ es continua en $B$, entonces $g \circ f$ es continua en $A$.
 
 <div class="dem"> **Demostración**
 
-Inmediata a partir de la definición de continuidad en un conjunto y de la proposición anterior
+Inmediata a partir de la definición de continuidad en un conjunto y de la proposición anterior.
 
 </div>
 
@@ -1213,7 +1228,7 @@ También se demuestra que si el intervalo es cerrado, entonces la función está
 
 <l class="prop"> **Proposición: Teorema de la conservación del signo** </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ continua y sea $c \in (a,b)$ tal que $f(c) >0$. Entonces existe un $\delta >0$ tal que $f(x) >0$ para todo $x \in (c-\delta, c+\delta)$. Análogamente, si $f(c) <0$, entonces existe un $\delta >0$ tal que $f(x) <0$ para todo $x \in (c-\delta, c+\delta)$
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua y sea $c \in (a,b)$ tal que $f(c) >0$. Entonces existe un $\delta >0$ tal que $f(x) >0$ para todo $x \in (c-\delta, c+\delta)$. Análogamente, si $f(c) <0$, entonces existe un $\delta >0$ tal que $f(x) <0$ para todo $x \in (c-\delta, c+\delta)$.
 
 <l class="prop"> **Corolario** </l>
 
@@ -1241,7 +1256,7 @@ Demuestra el teorema anterior en el caso que $f(c) <0$.
 
 <l class="prop"> **Proposición: Teorema de Bolzano** </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ continua tal que $f(a)\cdot f(b) < 0$, entonces existe $c \in (a,b)$ tal que $f(c)=0$
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua tal que $f(a)\cdot f(b) < 0$, entonces existe $c \in (a,b)$ tal que $f(c)=0$.
 
 La condición $f(a)\cdot f(b) < 0$ es una forma sencilla para expresar que $f(a)$ y $f(b)$ son de signo diferente como se ilustra en el gráfico siguiente:
 
@@ -1287,7 +1302,7 @@ Supongamos, pues, que $f(x_1) < f(x_2)$, sea $d \in (f(x_1), f(x_2))$, entonces 
 
 <div class="exercise"> **Ejercicio**
 
-Demuestra la proposición para el caso $x_1 < x_2$ y $f(x_1) > f(x_2)$
+Demuestra la proposición para el caso $x_1 < x_2$ y $f(x_1) > f(x_2)$.
 
 </div>
 
@@ -1300,24 +1315,24 @@ Demuestra la proposición para el caso $x_1 < x_2$ y $f(x_1) > f(x_2)$
 
 Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$:
 
-1. $f$ está acotada superiormente si existe $K \in \mathbb{R}$ tal que $f(x) > K$, para todo $x \in A$.
+1. $f$ está acotada superiormente si existe $K \in \mathbb{R}$ tal que $f(x) < K$, para todo $x \in A$.
 
-2. $f$ está acotada inferiormente si existe $K \in \mathbb{R}$ tal que $f(x) < K$, para todo $x \in A$.
+2. $f$ está acotada inferiormente si existe $K \in \mathbb{R}$ tal que $f(x) > K$, para todo $x \in A$.
 
-3.  $f$ está acotada si lo está inferiormente y superiormente, es decir si existe $K \in \mathbb{R}$ tal que $|f(x)|<K$
+3.  $f$ está acotada si lo está inferiormente y superiormente, es decir si existe $K \in \mathbb{R}$ tal que $|f(x)|<K$, para todo $x \in A$.
 
 
 ## Funciones acotadas: Ejemplos
 
 <div class="example"> **Ejemplos**
 
-1. Las funciones $\sin$ y $\cos$ estan acotadas en $\mathbb{R}$, puesto que $|\sin(x)| \leq 1$ y $|\cos(x)| \leq 1$ para todo $x \in \mathbb{R}$
+1. Las funciones $\sin$ y $\cos$ estan acotadas en $\mathbb{R}$, puesto que $|\sin(x)| \leq 1$ y $|\cos(x)| \leq 1$ para todo $x \in \mathbb{R}$.
 
 2. La función $f(x)= \dfrac{1}{x^2}$ está acotada inferiormente en $\mathbb{R}$ por $0$, pero no lo está superiormente.
 
 3. La función $g(x)= 2-x^2$ está acotada superiormente en $\mathbb{R}$ por $2$, pero no lo está inferiormente.
 
-4. La función $h(x)= \dfrac{1}{x}$ no està acotada inferiormente ni superiormente en cualquier entorno de $0$
+4. La función $h(x)= \dfrac{1}{x}$ no està acotada inferiormente ni superiormente en cualquier entorno de $0$.
 
 </div>
 
@@ -1329,7 +1344,7 @@ Sea $f:[a,b] \rightarrow \mathbb{R}$ continua, entonces $f$ está acotada.
 
 <div class="dem"> **Demostración**
 
-Por reducción al absurdo. Supongamos que $f$ no está acotada en $[a,b]$, entonces existe $x_1 \in I_1= [a,b]$ tal que $f(x_1) >1$. Sea $c =\dfrac{a+b}{2}$, entonces $f$ no está acotada en $[a,c]$ o en $[c,b]$, sea $I_2 =[a_2,b_2]$ dicho intervalo. Entonces $f$ no está cotada en $I_2$, por lo tanto, existe $x_2 \in I_2$ tal que $f(x_2) > 2$. Reiterando este proceso, construiremos una sucesión $I_n$ de intervalos anidados, $I_{n-1} \supset I_n$, tal que $b_n - a_n = \dfrac{b_{n-1 }-a_{n-1}}{2}$, por lo que $\lim_{n \rightarrow \infty}(b_n - a_n)=0$ y, además $x_n \in I_n$
+Por reducción al absurdo. Supongamos que $f$ no está acotada en $[a,b]$, entonces existe $x_1 \in I_1= [a,b]$ tal que $f(x_1) >1$. Sea $c =\dfrac{a+b}{2}$, entonces $f$ no está acotada en $[a,c]$ o en $[c,b]$, sea $I_2 =[a_2,b_2]$ dicho intervalo. Entonces $f$ no está cotada en $I_2$, por lo tanto, existe $x_2 \in I_2$ tal que $f(x_2) > 2$. Reiterando este proceso, construiremos una sucesión $I_n$ de intervalos anidados, $I_{n-1} \supset I_n$, tal que $b_n - a_n = \dfrac{b_{n-1 }-a_{n-1}}{2}$, por lo que $\lim_{n \rightarrow \infty}(b_n - a_n)=0$ y, además $x_n \in I_n$.
 
 Por el principio de los intervalos anidados, existe $c$ tal que $\lim_{n \rightarrow \infty} a_n = c = \lim_{n \rightarrow \infty} b_n$. Dado que $a_n \leq x_n \leq b_n$, tendremos que $\lim_{n \rightarrow \infty} x_n = c$ como, por otra parte $f(x_n) > n$, resulta que $f(x_n)  \rightarrow \infty$, lo que contradice que $f$ sea continua, puesto que debería ser $f(x_n) \rightarrow f(c)$.
 
@@ -1341,14 +1356,14 @@ Por el principio de los intervalos anidados, existe $c$ tal que $\lim_{n \righta
 
 <l class="prop"> **Proposición. Teorema del extremo** </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ continua, entonces existen $x_1$ y $x_2$ tales que $f(x_1) = \inf_{[a,b]}f$ y que $f(x_2) = \sup_{[a,b]}f$
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua, entonces existen $x_1$ y $x_2$ tales que $f(x_1) = \inf_{[a,b]}f$ y que $f(x_2) = \sup_{[a,b]}f$.
 
 <div class="dem"> **Demostración**
 
 Dado que $f$ es continua en $[a,b]$, $f$ está acotada, por lo tanto existen $M= \sup_{[a,b]}f$ y $m= \inf_{[a,b]}f$. Veamos que existen $x_1$ y $x_2$ tales que $m=f(x_1)$ y $M=f(x_2)$. Supongamos, en primer lugar que no existe $x$ tal que $f(x) = M$, entonces la función $h(x)=\dfrac{1}{f(x)-M}$ es continua y por lo tanto, debería estar acotada en $[a,b]$.
-Veamos que no es así: sea $K>0$, por ser $M= \sup_{[a,b]}f$, existe $x \in [a,b]$ tal que $f(x) \in (M-\dfrac{1}{K},M+\dfrac{1}{K})$, puesto que, de no ser así $M-\dfrac{1}{K}$ seria una cota superior para $f$ en $[a,b]$, por lo tanto, dado que $h(x) = \dfrac{1}{f(x)-M} > K$, lo cual contradice que sea continua en $[a,b]$. Así pues, existe $x_2$ tal que $f(x_2)=M= \sup_{[a,b]} f$. 
+Veamos que no es así: sea $K>0$, por ser $M= \sup_{[a,b]}f$, existe $x \in [a,b]$ tal que $f(x) \in \left(M-\dfrac{1}{K},M+\dfrac{1}{K}\right)$, puesto que, de no ser así $M-\dfrac{1}{K}$ seria una cota superior para $f$ en $[a,b]$, por lo tanto, dado que $|h(x)| = \dfrac{1}{|f(x)-M|} > K$, es decir $h(x)$ no está acotada, lo cual contradice que sea continua en $[a,b]$. Así pues, existe $x_2$ tal que $f(x_2)=M= \sup_{[a,b]} f$. 
 
-Razonamientos análogos permiten demostrar que existe $x_1 \in [a,b]$ tal que $f(x_1)=m= \inf_{[a,b]}f$
+Razonamientos análogos permiten demostrar que existe $x_1 \in [a,b]$ tal que $f(x_1)=m= \inf_{[a,b]}f$.
 </div>
 
 ## Teorema del extremo
@@ -1365,7 +1380,7 @@ La imagen continua de un intervalo cerrado es un intervalo cerrado.
 
 <div class="dem"> **Demostración**
 
-Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existen $x_1, x_2 \in [a,b]$ tales que $f(x_1)= m=\inf{[a,b]}$ y $f(x_2)= M=\sup{[a,b]}$, por lo tanto $f([a,b]) \subset [m,M]$. Sea ahora $y \in [m,M]$, por el teorema de los valores intermedios, existe $x \in [a,b]$ tal que $y=f(x)$, por lo que $[m,M] \subset f([a,b])$. POr consiguiente es $f([a,b]) = [m,M]$
+Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existen $x_1, x_2 \in [a,b]$ tales que $f(x_1)= m=\inf{[a,b]}$ y $f(x_2)= M=\sup{[a,b]}$, por lo tanto $f([a,b]) \subset [m,M]$. Sea ahora $y \in [m,M]$, por el teorema de los valores intermedios, existe $x \in [a,b]$ tal que $y=f(x)$, por lo que $[m,M] \subset f([a,b])$. Por consiguiente es $f([a,b]) = [m,M]$.
 
 ## Funciones monótonas
 
@@ -1373,7 +1388,7 @@ Sea $f: [a,b] \rightarrow \mathbb{R}$, el teorema del extremo asegura que existe
 
 Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función y sea $B \subset A$.
 
-1. $f$ es **creciente** en $B$ si, para todo par $x,y \in B$  tales que si $x <y$, entonces  $f(x) \leq f(y)$. Si esta última desigualdad es estricta, i.e.$f(x) <f(y)$, entonces $f$ es **estrictamente creciente**.
+1. $f$ es **creciente** en $B$ si, para todo par $x,y \in B$  tales que si $x <y$, entonces  $f(x) \leq f(y)$. Si esta última desigualdad es estricta, es decir $f(x) <f(y)$, entonces $f$ es **estrictamente creciente**.
 
 2. $f$ es **decreciente** en $B$ si, para todo par $x,y \in B$ tales que $x < y$, entonces $f(x) \geq f(y)$. Si $f(x) > f(y)$, entonces $f$ es **estrictamente decreciente** en $B$.
 
@@ -1394,7 +1409,7 @@ La función representada en esta gráfica, es estrictamente creciente en los int
 
 <div class="example"> **Ejemplos** 
 
-La función $f(x)= \dfrac{1}{x}$ es estrictamente decreciente en todo su dominio, es  decir en $\mathbb{R} \setminus \{0\}$
+La función $f(x)= \dfrac{1}{x}$ es estrictamente decreciente en todo su dominio, es  decir en $\mathbb{R} \setminus \{0\}$.
 
 <div class="center">
 
@@ -1405,7 +1420,7 @@ La función $f(x)= \dfrac{1}{x}$ es estrictamente decreciente en todo su dominio
 
 <div class="example"> **Ejemplos** 
 
-La función $f(x)= \dfrac{1}{x^2}$ es estrictamente creciente en $(-\infty,0)$ y estrictamente decreciente en $(0,+\infty)$
+La función $f(x)= \dfrac{1}{x^2}$ es estrictamente creciente en $(-\infty,0)$ y estrictamente decreciente en $(0,+\infty)$.
 <div class="center">
 
  <img src="Images/inversax2.png" width="500px" />
@@ -1417,12 +1432,12 @@ La función $f(x)= \dfrac{1}{x^2}$ es estrictamente creciente en $(-\infty,0)$ y
 
 <div class="example"> **Ejemplos** 
 
-Un ejemplo de función creciente, pero no estrictamente creciente.
+Un ejemplo de función creciente, pero no estrictamente creciente:
 $$
 g(x)= \begin{cases}
 x+1,& \text{ si } x \in [-2,0], \\
-1, & \text{ si } x \in [0,1] \\
-x^2+1 & \text{ si } x \in [1,2] 
+1, & \text{ si } x \in [0,1], \\
+x^2, & \text{ si } x \in [1,2]. 
 \end{cases}
 $$
 <div class="center">
@@ -1441,8 +1456,8 @@ $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ una función monótona en $A$. 
 
 <div class="dem"> **Demostración**
 
-En esencia, lo que nos asegura el enunciado es que existen los límites laterales de $f$ en todo punto de acumulación de $A$. Supongamos que $f$ es creciente y sea $c$ uno de estos puntos de acumulación, veamos que existe el $\lim_{x \rightarrow c^-} f(x)$. Para ello consideremos el conjunto $D=\{f(x): x<c, \, x \in A \}$. Dado que $f$ es creciente, $D$ está acotado superiormente por $f(c)$, por lo tanto existe el supremo de $D$, sea $s= \sup D$, dado un $\epsilon >0$, existe $x_0 < c$ tal que $s-\epsilon < f(x_0) <s$, puesto que, de no ser así, el supremo seria $s-\epsilon$ y no $s$. 
-Sea $\delta = c-x_0 >0$, para todo $x  \in A$ tal que $x_0 <x < c$ es $|c-x| < \delta$ y $|s -f(x)| < epsilon$, puesto que $f(x_0) < f(x)| por ser $f$ creciente, Por lo tanto, queda demostrado que $\lim_{x \rightarrow c^-} f(x) = s$.
+En esencia, lo que nos asegura el enunciado es que existen los límites laterales de $f$ en todo punto de acumulación de $A$. Supongamos que $f$ es creciente y sea $c$ uno de estos puntos de acumulación, veamos que existe el $\lim_{x \rightarrow c^-} f(x)$. Para ello consideremos el conjunto $D=\{f(x): x<c, \, x \in A \}$. Dado que $f$ es creciente, $D$ está acotado superiormente por $f(c)$, por lo tanto existe el supremo de $D$, sea $s= \sup D$, dado un $\epsilon >0$, existe $x_0 < c$ tal que $s-\epsilon < f(x_0) <s$, puesto que, de no ser así, el supremo sería $s-\epsilon$ y no $s$. 
+Sea $\delta = c-x_0 >0$, para todo $x  \in A$ tal que $x_0 <x < c$ es $|c-x| < \delta$ y $|s -f(x)| < \epsilon$, puesto que $f(x_0) < f(x)$ por ser $f$ creciente, Por lo tanto, queda demostrado que $\lim_{x \rightarrow c^-} f(x) = s$.
 
 Consideraciones análogas permiten demostrar que existe $\lim_{x \rightarrow c^+}f(x)$. </div>
 
@@ -1480,7 +1495,7 @@ En el caso de funciones, es decir, aplicaciones entre conjuntos de números, la 
 
 <div class="example"> **Ejemplos**
 
-1. la inversa en $[0,+\infty)$ de la función $f(x)= x^2$ es $f^{-1}(x)= \sqrt{x}$, en general la de $g(x)= x^n$ es $g^{-1}(x)=\sqrt[n]{x}$.
+1. La inversa en $[0,+\infty)$ de la función $f(x)= x^2$ es $f^{-1}(x)= \sqrt{x}$, en general la de $g(x)= x^n$ es $g^{-1}(x)=\sqrt[n]{x}$.
 
 2. La inversa de la función $\sin: \left[-\dfrac{\pi}{2},\dfrac{\pi}{2} \right] \rightarrow [-1,1]$ es $\arcsin:  [-1,1] \rightarrow \left[-\dfrac{\pi}{2},\dfrac{\pi}{2} \right]$.
 
@@ -1515,14 +1530,20 @@ Sea $f: [a,b] \rightarrow \mathbb{R}$ una función continua y estrictamente crec
 
 <div class="dem"> **Demostración**
 
-Que existe $f^{-1}$, es decir que $f$ es una biyección entre $[a,b]$ y $[f(a),f(b)]$. El teorema de los valores intermedios no asegura que $f$ es exhaustiva, puesto que dado un $y \in [f(a),f(b)]$, existe un $x \in [a,b]$, tal que $f(x)=y$, o lo que es lo mismo tal que $f^{-1}(y)=x$, por lo tanto, todos los elementos de $[f(a),f(b)]$ son imagen de alguno de $[a,b]$, por lo tanto $f$ es exhaustiva.
+Vamos a demostrar que existe $f^{-1}$, es decir que $f$ es una biyección entre $[a,b]$ y $[f(a),f(b)]$. El teorema de los valores intermedios nos asegura que $f$ es exhaustiva, puesto que dado un $y \in [f(a),f(b)]$, existe un $x \in [a,b]$, tal que $f(x)=y$, o lo que es lo mismo tal que $f^{-1}(y)=x$, por lo tanto, todos los elementos de $[f(a),f(b)]$ son imagen de alguno de $[a,b]$, por lo tanto $f$ es exhaustiva.
 $f$ es, además inyectiva por ser estrictamente creciente, puesto que si $x_1 \neq x_2$, entonces o es $x_1 < x_2$ o es $x_1 > x_2$, en el primer caso seria $f(x_1) <f(x_2)$ y, en el segundo, $f(x_1) > f(x_2)$ y, por lo tanto, en cualquier caso $f(x_1) \neq f(x_2)$. Al ser $f$ exhaustiva y inyectiva, es biyectiva y, por lo tanto $f^{-1}$ es una función. </div>
 
 ## Funciones monótonas e inversas
 
+<div class="box">
+<div class="important">
+<i class="fa fa-dizzy"> Contenido muy técnico. </i>
+</div>
+</div>
+
 <div class="dem"> **Demostración**
 
-$f^{-1}$ es estrictamente creciente, puesto que si $y_1 < y_2$ entonces, si $f^{-1}(y_1) > f^{-1}(y_2)$, tendríamos, por ser $f$ estrictamente creciente y $f(f^{-1}(y))=y$, que $y_1=f(f^{-1}(y_1)) > f(f^{-1}(y_2))=y_2$, y si fuera$f^{-1}(y_1) = f^{-1}(y_2)$, sería $y_1=f(f^{-1}(y_1)) = f(f^{-1}(y_2))=y_2$, como las dos opciones son absurdas, resulta que ha de ser $f^{-1}(y_1) < f^{-1}(y_2)$.
+$f^{-1}$ es estrictamente creciente, puesto que si $y_1 < y_2$ entonces, si $f^{-1}(y_1) > f^{-1}(y_2)$, tendríamos, por ser $f$ estrictamente creciente y $f(f^{-1}(y))=y$, que $y_1=f(f^{-1}(y_1)) > f(f^{-1}(y_2))=y_2$, y si fuera $f^{-1}(y_1) = f^{-1}(y_2)$, sería $y_1=f(f^{-1}(y_1)) = f(f^{-1}(y_2))=y_2$, como las dos opciones son absurdas, resulta que ha de ser $f^{-1}(y_1) < f^{-1}(y_2)$.
 
 Falta ver que $f^{-1}$ es continua: Con este fin, sean $y_0 \in (f(a),f(b))$, $c=f^{-1}(y_0)$ y $\epsilon >0$. Sea ahora $\delta = \min \{f(c+\epsilon) - y_0, y_0 - f(c-\epsilon)\}$.
 
@@ -1537,7 +1558,7 @@ En los extremos del intervalo $f(a)$ y $f(b)$, es suficiente considerar $\delta 
 
 <l class="prop"> **Proposición**
 
-Sea $f: [A \subset \mathbb{R}[a,b] \rightarrow \mathbb{R}$ una función continua y estrictamente decreciente. Entonces 
+Sea $f: [a,b] \subset \mathbb{R} \rightarrow \mathbb{R}$ una función continua y estrictamente decreciente. Entonces 
 
 1. Existe la función inversa $f^{-1} : [f(b),f(a)] \rightarrow [a,b]$.
 2. $f^{-1}$ es continua y estrictamente decreciente.
@@ -1553,9 +1574,9 @@ La demostración es completamente análoga a la anterior y se deja como ejercici
 
 1. Dado que la función $f(x)=x^2$ es estrictamente creciente y continua en $[0,+\infty]$, su función inversa $f^{-1}(x)= \sqrt{x}$ también es estrictamente creciente y continua sobre la imagen por $f$ de $[0,+\infty]$, que es el mismo conjunto.
 
-2. Dado que la función $sin(x)$ es estrictamente creciente y continua en el intervalo $\left[-\dfrac{\pi}{2},\dfrac{\pi}{2} \right]$, su función inversa $\arcsin(x)$ es estrictamente creciente y continua en el intervalo $[-1,1]$.
+2. Dado que la función $\sin(x)$ es estrictamente creciente y continua en el intervalo $\left[-\dfrac{\pi}{2},\dfrac{\pi}{2} \right]$, su función inversa $\arcsin(x)$ es estrictamente creciente y continua en el intervalo $[-1,1]$.
 
-3. Dado que la función $sin(x)$ es estrictamente decreciente y continua en el intervalo $[0,\pi]$, su función inversa $\arcsin(x)$ es estrictamente decreciente y continua en el intervalo $[-1,1]$.
+3. Dado que la función $\cos(x)$ es estrictamente decreciente y continua en el intervalo $[0,\pi]$, su función inversa $\arccos(x)$ es estrictamente decreciente y continua en el intervalo $[-1,1]$.
 
 </div>
 <div class="center">
@@ -1569,17 +1590,17 @@ La demostración es completamente análoga a la anterior y se deja como ejercici
 
 A pesar de las múltiples e interesantes propiedades que tienen la funciones continuas en un punto, en determinadas situaciones, el hecho que el $\delta$ dependa de $\epsilon$ y del punto se convierte en una limitación importante. Así, por ejemplo, la convergencia de determinadas series de funciones está vinculada a que $\delta$ sea el mismo para todos los $x$, una vez fijado el $\epsilon$.
 
-En este apartado se estudia un tipos de continuidad en la que $\delta$ sólo depende de $\epsilon$, es la llamada **continuidad uniforme**.
+En este apartado se estudia un tipo de continuidad en la que $\delta$ sólo depende de $\epsilon$, es la llamada **continuidad uniforme**.
 
 ## Continuidad uniforme
 
 <l class="definition"> **Definición** </l>
 
-Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ es **uniformemente continua** en $A$ si para todo $\epsilon > 0$ existe $\delta >0$ tal que si $x,y \in A$ son tales $|x-y| < \delta$, entonces $|f(x) -f(y)| < \epsilon$
+Sea $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ es **uniformemente continua** en $A$ si para todo $\epsilon > 0$ existe $\delta >0$ tal que si $x,y \in A$ son tales $|x-y| < \delta$, entonces $|f(x) -f(y)| < \epsilon$.
 
 <div class="important"> **Observación importante**
 
-La **continuidad uniforme** es una propiedad de conjunto: una función puede ser uniformemente continua en un conjunto, pero no tiene sentido decir que una función es uniformemente continua en un punto. Con todo, para evitar confusiones, se acostumbra a denotar esta última por **continuidad puntual** para distinguirla de la **uniforme** 
+La **continuidad uniforme** es una propiedad de conjunto: una función puede ser uniformemente continua en un conjunto, pero no tiene sentido decir que una función es uniformemente continua en un punto. Con todo, para evitar confusiones, se acostumbra a denotar esta última por **continuidad puntual** para distinguirla de la **uniforme**.
 
 </div>
 
@@ -1591,21 +1612,21 @@ La funció $g(x)=\sqrt{x}$ es uniformemente continua en $(0,+\infty)$. Puesto qu
 $$
 \sqrt{y} - \sqrt{x} \leq \dfrac{y-x}{\sqrt{y} + \sqrt{x}} \leq \dfrac{y-x}{\sqrt{y-x}}= \sqrt{y-x}
 $$
-por lo tanto, dado que cuando $x=y$ la desigualdad sigue siendo cierta y que podemos cambiar el papel de $x$ e $y$, resulta que, dado un $\epsilon > 0$, tomado $\delta = \epsilon^2$, tendremo que siempre que $|y-x|<\delta$, sera 
+por lo tanto, dado que cuando $x=y$ la desigualdad sigue siendo cierta y que podemos cambiar el papel de $x$ e $y$, resulta que, dado un $\epsilon > 0$, tomado $\delta = \epsilon^2$, tendremos que siempre que $|y-x|<\delta$, será 
 $$
 \sqrt{y} - \sqrt{x} \leq \sqrt{|y-x|} < \epsilon.
 $$
 </div>
 
-Má adelante veremos más ejemplos de funciones continuas.
+Más adelante veremos más ejemplos de funciones continuas.
 
 ## Continuidad uniforme
 
-Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es uniformemente continua en $A$ si, y sólo si, para todo par de sucesiones $x_n$ y $y_n$ de puntos de $A$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ es $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$
+Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. $f$ es uniformemente continua en $A$ si, y sólo si, para todo par de sucesiones $x_n$ y $y_n$ de puntos de $A$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ es $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$.
 
 <div class="dem"> **Demostración**
 
-Supongamos que $f$ es uniformemente continua, dado que $\epsilon >0$ existe $\delta >0$ tal que para todo $x,y \in A$ tales que $|x-y| < \delta$, entonces $|f(x)-f(y)|< \epsilon$. Dado que $\delta >0$, existe $n_0 \in \mathbb{N}$ tal que para todo $n > n_0$ es $|x_n - y_n| < \delta$ y, por lo tanto es $|f(x_n) - f(y_n)| < \epsilon$, es decir que  $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$.
+Supongamos que $f$ es uniformemente continua, dado $\epsilon >0$ existe $\delta >0$ tal que para todo $x,y \in A$ tales que $|x-y| < \delta$, entonces $|f(x)-f(y)|< \epsilon$. Dado que $\delta >0$, existe $n_0 \in \mathbb{N}$ tal que para todo $n > n_0$ es $|x_n - y_n| < \delta$ y, por lo tanto es $|f(x_n) - f(y_n)| < \epsilon$, es decir que  $\lim_{n \rightarrow \infty}(f(x_n)- f(y_n)) =0$.
 
 Para el recíproco, supongamos que $f$ no es uniformemente continua, veremos que existe un par de sucesiones $x_n$ y $y_n$ tales que $\lim (x_n-y_n) =0$, en tanto que $\lim (f(x_n) -f(y_n)) \neq 0$.
 Ahora bien, por no ser $f$ uniformemente continua, existe un $\epsilon >0$ tal que para todo $\delta >0$ existe un par $x_{\delta}$, y $y_{\delta}$ tal que $|x_{\delta} - y_{\delta}| < \delta$ y $|f(x_{\delta})-f(y_{\delta})|  \geq \epsilon$. Por lo tanto es suficiente considerar $\delta_n = \dfrac{1}{n}$ y los correspondientes $x_n = x_{\delta_n}$ y $y_n=y_{\delta_n}$ para tener las dos sucesiones que satisfacen que $(x_n - y_n) \rightarrow 0$ en tanto que $|f(x_n)-f(y_n)| \geq \epsilon$.
@@ -1616,7 +1637,7 @@ Ahora bien, por no ser $f$ uniformemente continua, existe un $\epsilon >0$ tal q
 
 <l class="prop"> **Corolario** </l>
 
-Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. Si $f$ **no** es uniformemente continua en $A$ entonces existen $\epsilon > 0$ y dos sucesiones $x_n$ y $y_n$ de puntos de $A$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ y $|f(x_n) - f(y_n)| \geq \epsilon$
+Sea $f:A\subset \mathbb{R} \rightarrow \mathbb{R}$. Si $f$ **no** es uniformemente continua en $A$ entonces existen $\epsilon > 0$ y dos sucesiones $x_n$ y $y_n$ de puntos de $A$ tales que $\lim_{n \rightarrow \infty} (x_n - y_n) =0$ y $|f(x_n) - f(y_n)| \geq \epsilon$.
 
 <div class="dem"> **Demostración**
 
@@ -1638,8 +1659,6 @@ $|f(x_n)-f(y_n)| = |n -(n+1)| = 1$.
 
 
 
-
-
 ## Continuidad uniforme
 
 <l class="prop"> **Proposición** </l>
@@ -1654,13 +1673,13 @@ La demostración es inmediata  a partir de la observación anterior: Sean $x_n$ 
 
 ## Continuidad uniforme: La propiedad de Lipschitz
 
-Un ejemplo de condición que implica la continuidad uniforme sobre un conjunto- pero no al revés- és la llamada propiedad de **Lipschitz**:
+Un ejemplo de condición que implica la continuidad uniforme sobre un conjunto -pero no al revés- és la llamada propiedad de **Lipschitz**:
 
 <l class="definition"> **Definición** </l>
 
 Sea $f:A \subset \mathbb{R} \rightarrow \mathbb{R}$, $f$ cumple **la propiedad de Lipschitz** si existe $M>0$ tal que para todo $x,y \in A$ es 
 $$
-|f(x)-f(y)|\leq M|x-y|
+|f(x)-f(y)|\leq M|x-y|.
 $$
 A una función que cumpla esta propiedad, se le acostumbra a llamar **función lipschitziana**.
 
@@ -1670,9 +1689,9 @@ A una función que cumpla esta propiedad, se le acostumbra a llamar **función l
 
 Si una función $f$ verifica la propiedad de Lipschitz entonces el conjunto
 $$
-{\cal{M}}=\left\{ \dfrac{f(y)-f(x)}{y-x}: x,y \in A, \quad x \neq y \right\}
+{\cal{M}}=\left\{\dfrac{f(y)-f(x)}{y-x}: x,y \in A, \quad x \neq y \right\}
 $$
-es no vacio y está acotado superiormente, por lo que existe $M_0 = \sup \cal{M}$. $M_0$ recibe el nombre de **constante de Lipschitz** para $f$.
+es no vacío y está acotado superiormente, por lo que existe $M_0 = \sup \cal{M}$. $M_0$ recibe el nombre de **constante de Lipschitz** para $f$.
 
 
 
@@ -1689,7 +1708,7 @@ Si $M >0$ es tal que $|f(x)-f(y)|\leq M|x-y|$, para todo $x,y \in A$, para cada 
 $$
 |f(x)-f(y)|\leq M|x-y| < M \dfrac{\epsilon}{M}= \epsilon,
 $$
-es decir, $f$ es uniformemente continua en $A$
+es decir, $f$ es uniformemente continua en $A$.
 
 ## Continuidad uniforme: La propiedad de Lipschitz
 
@@ -1699,9 +1718,9 @@ La función $g(x)= \sqrt{x}$ es uniformemente continua en $(0,+\infty)$, pero no
 
 Hemos demostrado anteriormente que $g$ era uniformemente continua en $(0,+\infty)$, veamos que no verifica la propiedad de Lipschitz. Para ello veremos que
 $$
-\lim_{x \rightarrow y}\dfrac{\sqrt{y}-\sqrt{x}}{y-x} = \dfrac{1}{2\sqrt{y}}
+\lim_{x \rightarrow y}\dfrac{\sqrt{y}-\sqrt{x}}{y-x} = \dfrac{1}{2\sqrt{y}}.
 $$
-Por lo que el cociente $\dfrac{\sqrt{y}-\sqrt{x}}{y-x}$ no está acotado en $(0,+\infty)$ y hemos visto que este cociente estaba acotado para la sfunciones lipschitzianas.
+Por lo que el cociente $\dfrac{\sqrt{y}-\sqrt{x}}{y-x}$ no está acotado en $(0,+\infty)$ y hemos visto que este cociente estaba acotado para las funciones lipschitzianas.
 
 Para calcular el límite, basta considerar los cambios $\sqrt{y} = u$ y $\sqrt{x}=v$, con lo que tendremos
 $$
@@ -1721,7 +1740,7 @@ Toda función continua sobre un intervalo cerrado es uniformemente continua.
 
 Supongamos que $f$ no es uniformemente continua en $[a,b]$. De acuerdo con el corolario anterior, existen un $\epsilon >0$ y dos sucesiones $x_n$ y $y_n$ de puntos de $[a,b]$ tales que $\lim_{n \rightarrow \infty}(x_n-y_n)=0$ y $|f(x_n)-f(y_n)| > \epsilon$. 
 
-Dado que, tanto $x_n$, como $y_n$ estan acotadas por estar contenidas en $[a,b]$, de acuerdo con el teorema de Bolzano-Weierstrass, cada una de ellas tiene una subsucesión convergente. Sean estas $x_{n _k}$ y $y_{n_k}$, sea $l = \lim x_{n _k}$, tenemos que $|y_{n_k} -l|\leq |y_{n_k} - x_{n _k}| + |x_{n _k}-l|$ y, por lo tanto, dado que $\lim (x_n -y_n) =0$, tendremos que $\lim y_{n_k} =l$. Por consiguiente, tanto $f(x_{n_k}) \rightarrow f(l)$, como $f(y_{n_k}) \rightarrow f(l)$,es decir que $\lim (f(x_{n_k}) - f(y_{n_k}) = 0$ lo cual es absurdo, puesto que $|f(x_n)-f(y_n)| > \epsilon$ para todo $n$. 
+Dado que, tanto $x_n$, como $y_n$ estan acotadas por estar contenidas en $[a,b]$, de acuerdo con el teorema de Bolzano-Weierstrass, cada una de ellas tiene una subsucesión convergente. Sean estas $x_{n _k}$ y $y_{n_k}$, sea $l = \lim x_{n _k}$, tenemos que $|y_{n_k} -l|\leq |y_{n_k} - x_{n _k}| + |x_{n _k}-l|$ y, por lo tanto, dado que $\lim (x_n -y_n) =0$, tendremos que $\lim y_{n_k} =l$. Por consiguiente, tanto $f(x_{n_k}) \rightarrow f(l)$, como $f(y_{n_k}) \rightarrow f(l)$,es decir que $\lim (f(x_{n_k}) - f(y_{n_k})) = 0$ lo cual es absurdo, puesto que $|f(x_n)-f(y_n)| > \epsilon$ para todo $n$. 
 
 Queda así demostrado que si $f$ es continua sobre un intervalo cerrado, entonces $f$ es uniformemente continua.
 
@@ -1748,7 +1767,7 @@ Dada una partición $\{a,x_1, \ldots,x_{n-1},b\}$ de un intervalo $[a,b]$, $S:[a
 
 
 
-<div class="example"> **Ejemplo**
+<div class="example"> **Ejemplo de función escalonada**
 
 La función $S: [-3,5] \rightarrow \mathbb{R}$ definida por
 $$
@@ -1776,27 +1795,27 @@ $$
 
 Sea $f:[a,b] \rightarrow \mathbb{R}$ una función continua. Entonces, para cada $\epsilon > 0$ existen una partición $\{a,x_1, \ldots,x_{n-1},b\}$ del intervalo $[a,b]$, con todos los subintervalos de igual longitud, y una función escalonada $S_{\epsilon}: [a,b] \rightarrow \mathbb{R}$ tales que, para todo $x \in \mathbb{R}$, es
 $$
-|f(x)-S_{\epsilon}(x)| < \epsilon
+|f(x)-S_{\epsilon}(x)| < \epsilon.
 $$
 
 ## Continuidad uniforme: funciones escalonadas.
 
 <div class="dem"> **Demostración**
 
-Por ser $f$ continua sobre un intervalo cerrado, es uniformemente continua, por lo tanto dado un $\epsilon>0$, existe un $\delta >0$, tal que si $|x-y|< \delta$, entonces $|f(x)-f(y)|< \epsilon$. La propiedad arquimediana nos asegura que existe $m \in \mathbb{N}$ tal que $h=\dfrac{b-a}{m} < \delta$. Consideremos pues la partición de $[a,b]$ dada por los puntos.
+Por ser $f$ continua sobre un intervalo cerrado, es uniformemente continua, por lo tanto dado un $\epsilon>0$, existe un $\delta >0$, tal que si $|x-y|< \delta$, entonces $|f(x)-f(y)|< \epsilon$. La propiedad arquimediana nos asegura que existe $n \in \mathbb{N}$ tal que $h=\dfrac{b-a}{n} < \delta$. Consideremos pues la partición de $[a,b]$ dada por los puntos.
 $$
-a; x_1=a+h; x_2=a+2h; \ldots a+kh; \ldots a+(n-1)h; b
+a; x_1=a+h; x_2=a+2h; \ldots x_k=a+kh; \ldots x_{n-1}=a+(n-1)h; b,
 $$
-Consideremos los intervalos $I_1=[a,x_1]=[a,a+h]$ y $I_k=(x_{k-1},x_k]=(a+(k-1)h,a+kh]$, para $k \in \{2,\ldots, n\}$
+Consideremos los intervalos $I_1=[a,x_1]=[a,a+h]$ y $I_k=(x_{k-1},x_k]=(a+(k-1)h,a+kh]$, para $k \in \{2,\ldots, n\}$.
 Sea ahora la función escalonada definida por
 $$
-S_{\epsilon} (x) = f(a+kh)=f(x_k) \text{ si } x \in I_k
+S_{\epsilon} (x) = f(a+kh)=f(x_k) \text{ si } x \in I_k,
 $$
 para $k \in \{1, \ldots n \}$.
 
 $S_{\epsilon}$ es la función escalonada buscada, puesto que dado $x \in [a,b]$ existe un $k$ tal que $x \in I_k$, por lo tanto
 $$
-|f(x)-S_{\epsilon}(x)| = |f(x)-f(x_k)| < \epsilon
+|f(x)-S_{\epsilon}(x)| = |f(x)-f(x_k)| < \epsilon,
 $$
 puesto que $|x-x_k| < \delta$, dado que $x \in I_k$.
 
@@ -1806,7 +1825,7 @@ puesto que $|x-x_k| < \delta$, dado que $x \in I_k$.
 
 **Función lineal** entre dos intervalos, $f:[a,b] \rightarrow [c,d]$, es la función que tiene por gráfica el segmento que une los puntos $(a,c)$ y $(b,d)$, es decir la función definida por
 $$
-f(x) = \dfrac{d-c}{b-a}(x-a)+c
+f(x) = \dfrac{d-c}{b-a}(x-a)+c.
 $$
 
 Está claro que una función lineal entre dos intervalos es siempre continua.
@@ -1830,18 +1849,22 @@ Una función lineal a trozos es siempre continua.
 
 <l class="prop"> **Proposición** </l>
 
-Sea $f: [a,b] \rightarrow \mathbb{R}$ una función continua. Entonces, para cad $\epsilon >0$ existe una función lineal a trozos $g_{\epsilon}: [a,b] \rightarrow \mathbb{R}$ tal que, para todo $x \in [a,b]$ es 
+Sea $f: [a,b] \rightarrow \mathbb{R}$ una función continua. Entonces, para cada $\epsilon >0$ existe una función lineal a trozos $g_{\epsilon}: [a,b] \rightarrow \mathbb{R}$ tal que, para todo $x \in [a,b]$ es 
 $$
-|f(x)-g_{\epsilon}(x)|<\epsilon
+|f(x)-g_{\epsilon}(x)|<\epsilon.
 $$
 
 ## Funciones lineales a trozos.
 
 <div class="dem"> **Demostración**
 
-Por ser $f$ continua sobre $[a,b]$, es uniformemente continua. Por lo tanto, dado un $\epsilon > 0$, existe un $\delta >0$ tal que si $|x-y| < \delta$, entonces $|f(x)-f(y)|<\dfrac{\epsilon}{2}$. Sea $m \in \mathbb{N}$ tal que $h = \dfrac{b-a}{m} \delta$ y sean $I_k$ los subintervalos de la partición de $[a,b]$ determinada por los puntos $x_0=a,x_1=a+h, \ldots x_k=a+kh, \ldots x_{m-1}=a+(m-1)h,x_m=b$. Entonces la función lineal, $g_{\epsilon}$ a trozos que une los puntos 
+Por ser $f$ continua sobre $[a,b]$, es uniformemente continua. Por lo tanto, dado un $\epsilon > 0$, existe un $\delta >0$ tal que si $|x-y| < \delta$, entonces $|f(x)-f(y)|<\dfrac{\epsilon}{2}$. Sea $n \in \mathbb{N}$ tal que $h = \dfrac{b-a}{n} < \delta$ y sean $I_k$ los subintervalos de la partición de $[a,b]$ determinada por los puntos 
 $$
-(x_{k-1}, f(x_{k-1})) \text{ y } (x_k, f(x_k))
+x_0=a,x_1=a+h, \ldots x_k=a+kh, \ldots x_{n-1}=a+(m-1)h,x_n=b,
+$$
+Entonces la función lineal, $g_{\epsilon}$ a trozos que une los puntos 
+$$
+(x_{k-1}, f(x_{k-1})) \text{ y } (x_k, f(x_k)),
 $$
 es la función buscada. 
 </div>
@@ -1852,20 +1875,20 @@ es la función buscada.
 
 En efecto,
 $$
-g_{\epsilon}(x)=\dfrac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}} (x -x_{k-1})+f(x_{k-1})
+g_{\epsilon}(x)=\dfrac{f(x_k) - f(x_{k-1})}{x_k - x_{k-1}} (x -x_{k-1})+f(x_{k-1}).
 $$
 
 Por lo tanto
 $$
-|g_{\epsilon}(x)-f(x_{k-1})| \leq \left|\dfrac{x -x_{k-1}}{x_k - x_{k-1}}\right| |f(x_k) - f(x_{k-1})|\leq \dfrac{\epsilon}{2}
+|g_{\epsilon}(x)-f(x_{k-1})| \leq \left|\dfrac{x -x_{k-1}}{x_k - x_{k-1}}\right| |f(x_k) - f(x_{k-1})|\leq \dfrac{\epsilon}{2},
 $$
 
-ya que $\left|\dfrac{x -x_{k-1}}{x_k - x_{k-1}} \right| \leq 1$ y $|x_k - x_{k-1}| < \delta$
+ya que $\left|\dfrac{x -x_{k-1}}{x_k - x_{k-1}} \right| \leq 1$ y $|x_k - x_{k-1}| < \delta$,
 
 
 En definitiva, 
 $$
-|g_{\epsilon}(x)-f(x)| \leq |g_{\epsilon}(x)-f(x_{k-1})| + |f(x_{k-1})-f(x_k)|< \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2}=\epsilon
+|g_{\epsilon}(x)-f(x)| \leq |g_{\epsilon}(x)-f(x_{k-1})| + |f(x_{k-1})-f(x_k)|< \dfrac{\epsilon}{2}+\dfrac{\epsilon}{2}=\epsilon.
 $$
 </div>
 
