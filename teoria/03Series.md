@@ -842,10 +842,14 @@ Si
 $$
 \sum_{n \geq 1} a_n = \sum_{n\geq 1} (b_n - b_{n+1}),
 $$ 
+
 entonces la serie es convergente si, y sólo sí, la sucesión $\{b_n\}$ es convergente. En cuyo caso 
+
 $$
 \sum_{n\geq 1} a_n = b_1 - \lim b_n
-$$.
+$$
+
+## Series telescópicas
 
 <div class="dem"> **Demostración**
 
@@ -861,17 +865,22 @@ $$
 <div class="example"> **Ejemplos** 
 
 **Ejemplo 1**. La serie 
+
 $$
 \sum_{n \geq 1} \dfrac{1}{(n+1)(n+2)}
 $$ 
+
 es telescópica, puesto que, como es fácil comprobar
+
 $$
  \dfrac{1}{(n+1)(n+2)} =\dfrac{1}{n+1} - \dfrac{1}{n+2}
 $$
+
 dado que $\lim \dfrac{1}{n+2} =0$ y el primer término de la sucesión $\dfrac{1}{n+1}$ es $\dfrac{1}{2}$, tenemos que 
 $$
 \sum_{n \geq 1} \dfrac{1}{(n+1)(n+2)} = \dfrac{1}{2}
 $$
+
 </div>
 
 ## Series telescópicas: Ejemplos.
@@ -880,10 +889,13 @@ $$
 **Ejemplo 2**. Sumar la serie $\displaystyle{\sum_{n \geq 1} \dfrac{a-1}{a^{n+1}}}$, con $a>1$.
 
 Se trata de una serie telescópica, puesto 
+
 $$
 \sum_{n \geq 1} \dfrac{a-1}{a^{n+1}}= \sum_{n \geq 1} \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right).
 $$
+
 Dado que $\lim \dfrac{1}{a^{n+1}}=0$, la serie es convergente y su suma es 
+
 $$
 \sum_{n \geq 1} \dfrac{a-1}{a^{n+1}}=\sum_{n \geq 1} \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right) = \dfrac{1}{a}.
 $$

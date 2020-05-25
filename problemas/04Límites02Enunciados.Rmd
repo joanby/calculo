@@ -1,0 +1,28 @@
+---
+title: "Problemas de límites y comprobación con `python`"
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Calcular los límites siguientes:
+    a) $\displaystyle\lim_{x\to 2}\frac{x^2-2x}{x^3-4x+4}.$
+    a) $\displaystyle\lim_{x \to 1} \left(\frac{1}{1-x}-\frac{3}{1-x^3}\right).$
+    a) $\displaystyle\lim_{x\to 7}\frac{2-\sqrt{x-3}}{x^2-49}.$
+    a) $\displaystyle\lim_{x\to +\infty} (x+\sqrt[3]{1-x^3}).$
+1. Calcular los límites siguientes:
+    a) $\displaystyle\lim_{x\to\frac{\pi}{4}}\frac{\sin x-\cos x}{1-\tan x}.$
+    a) $\displaystyle\lim_{x\to\frac{\pi}{3}}\frac{1-2\cos x}{\pi -3x}.$
+    a) $\displaystyle\lim_{x\to 0}\frac{\sqrt{1+\sin x}-\sqrt{1-\sin x}}{x}.$
+1. Calcular los límites siguientes:
+    a) $\displaystyle\lim_{x\to 0}\left(\frac{2+x}{3-x}\right)^x.$
+    a) $\displaystyle\lim_{x\to 0}\left(\frac{2+x}{3-x}\right)^x.$
+    a) $\displaystyle\lim_{x\to +\infty}\left(\frac{x-1}{x+3}\right)^{x+2}.$
+    a) $\displaystyle\lim_{x\to 0}(\cos x)^{\frac{1}{x^2}}.$
+1. Calcular los límites siguientes:
+    a) $\displaystyle\lim_{x\to 0}\frac{\log (1+10x)}{x}.$
+    a) $\displaystyle\lim_{x\to 0}\frac{1-\mathrm{e}^{-x}}{\sin x}.$
+    a) $\displaystyle\lim_{x\to 0^-}\frac{1}{1+\mathrm{e}^{\frac{1}{x}}},$ $\displaystyle\lim_{x\to 0^+}\frac{1}{1+\mathrm{e}^{\frac{1}{x}}},$
