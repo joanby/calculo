@@ -13,8 +13,6 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
-#reticulate::py_install("sympy")
 ```
 
 
