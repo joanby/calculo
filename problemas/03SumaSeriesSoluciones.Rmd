@@ -1,0 +1,81 @@
+---
+title: "Suma de series"
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Calcula la suma de la serie siguiente:
+$$
+\sum_{n=2}^\infty \left(1-\frac{1}{\sqrt{2}}\right)^n.
+$$
+
+### Solución
+
+Se trata de una serie geométrica de razón $1-\frac{1}{\sqrt{2}}\approx `r round(1-1/sqrt(2),4)` < 1$. Usando la expresión 
+$\displaystyle \sum_{n=n_0}^\infty r^n = \frac{r^{n_0}}{1-r}$, tenemos que:
+$$
+\sum_{n=2}^\infty \left(1-\frac{1}{\sqrt{2}}\right)^n =\frac{\left(1-\frac{1}{\sqrt{2}}\right)^2}{1-\left(1-\frac{1}{\sqrt{2}}\right)}=\frac{1+\frac{1}{2}-\frac{2}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=\sqrt{2}\left(\frac{3}{2}-\sqrt{2}\right)=\frac{3\sqrt{2}}{2}-2\approx `r round(3*sqrt(2)/2-2,4)`.
+$$
+
+
+\newpage
+
+2. Calcula la suma de la serie siguiente:
+$$
+\sum_{n=1}^\infty \frac{1}{(n+a) (n+a+1)},
+$$
+donde $a\in\mathbb{R}$, $a\geq 0$.
+
+### Solución
+
+Primeramente descomponemos la fracción $\frac{1}{(n+a) (n+a+1)}$ como:
+$$
+\frac{1}{(n+a) (n+a+1)} =\frac{1}{n+a}-\frac{1}{n+a+1}.
+$$
+Entonces se trataría de una serie telescópica de la forma $\displaystyle\sum_{n=1}^\infty b_n-b_{n+1}$, con $b_n=\frac{1}{a+n}$. Su suma será:
+$$
+\sum_{n=1}^\infty \frac{1}{(n+a) (n+a+1)} = b_1 = \frac{1}{a+1}.
+$$
+
+
+\newpage
+
+3. Calcula la suma de la serie siguiente:
+$$
+\sum_{n=3}^\infty \frac{1}{(n+2)(n-1)}.
+$$
+
+### Solución
+
+Descomponemos $\frac{1}{(n+2)(n-1)}$ de la forma:
+$$
+\frac{1}{(n+2)(n-1)} = \frac{A}{n+2}+\frac{B}{n-1}=\frac{A(n-1)+B(n+2)}{(n+2)(n-1)}.
+$$
+Para hallar los coeficientes $A$ y $B$ imponemos que $A(n-1)+B(n+2)=1$, de donde $A=-\frac{1}{3}$ y $B=\frac{1}{3}$. Entonces,
+$$
+\begin{array}{rl}
+\displaystyle\sum_{n=3}^\infty \frac{1}{(n+2)(n-1)}  & \displaystyle =\frac{1}{3}\sum_{n=3}^\infty \left(\frac{1}{n-1}-\frac{1}{n+2}\right)=\frac{1}{3}\sum_{n=3}^\infty \left(\frac{1}{n-1}-\frac{1}{n}+\frac{1}{n}-\frac{1}{n+1}+\frac{1}{n+1}-\frac{1}{n+2}\right) \\ & = \displaystyle \frac{1}{3}\left(\sum_{n=3}^\infty \left(\frac{1}{n-1}-\frac{1}{n}\right)+\sum_{n=3}^\infty \left(\frac{1}{n}-\frac{1}{n+1}\right)+\sum_{n=3}^\infty \left(\frac{1}{n+1}-\frac{1}{n+2}\right)\right).
+\end{array}
+$$
+Nos queda la suma de tres series telescópicas multiplicadas por una constante. Su valor será:
+$$
+\sum_{n=3}^\infty \frac{1}{(n+2)(n-1)} =\frac{1}{3}\left(\frac{1}{2}+\frac{1}{3}+\frac{1}{4}\right)=\frac{13}{36}.
+$$
+
+
+\newpage
+
+
+1. Calcula la suma de la serie siguiente:
+$$
+\sum_{n=1}^\infty \frac{n^2+n-2}{3^n}.
+$$
+1. Calcula la suma de la serie siguiente:
+$$
+\sum_{n=1}^\infty (an+b)r^n,
+$$
+donde $a,b,r\in\mathbb{R}$ y $|r|<1$.
