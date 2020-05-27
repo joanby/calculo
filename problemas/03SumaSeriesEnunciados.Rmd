@@ -28,6 +28,6 @@ $$
 $$
 1. Calcula la suma de la serie siguiente:
 $$
-\sum_{n=1}^\infty (an+b)r^n,
+\sum_{n=1}^\infty \frac{n!}{a(a+1)\cdots (a+n-1)}, 
 $$
-donde $a,b,r\in\mathbb{R}$ y $|r|<1$.
+donde $a>0$.
