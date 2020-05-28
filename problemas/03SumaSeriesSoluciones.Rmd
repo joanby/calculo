@@ -1,0 +1,129 @@
+---
+title: "Suma de series"
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Calcula la suma de la serie siguiente:
+$$
+\sum_{n=2}^\infty \left(1-\frac{1}{\sqrt{2}}\right)^n.
+$$
+
+### Solución
+
+Se trata de una serie geométrica de razón $1-\frac{1}{\sqrt{2}}\approx `r round(1-1/sqrt(2),4)` < 1$. Usando la expresión 
+$\displaystyle \sum_{n=n_0}^\infty r^n = \frac{r^{n_0}}{1-r}$, tenemos que:
+$$
+\sum_{n=2}^\infty \left(1-\frac{1}{\sqrt{2}}\right)^n =\frac{\left(1-\frac{1}{\sqrt{2}}\right)^2}{1-\left(1-\frac{1}{\sqrt{2}}\right)}=\frac{1+\frac{1}{2}-\frac{2}{\sqrt{2}}}{\frac{1}{\sqrt{2}}}=\sqrt{2}\left(\frac{3}{2}-\sqrt{2}\right)=\frac{3\sqrt{2}}{2}-2\approx `r round(3*sqrt(2)/2-2,4)`.
+$$
+
+
+\newpage
+
+2. Calcula la suma de la serie siguiente:
+$$
+\sum_{n=1}^\infty \frac{1}{(n+a) (n+a+1)},
+$$
+donde $a\in\mathbb{R}$, $a\geq 0$.
+
+### Solución
+
+Primeramente descomponemos la fracción $\frac{1}{(n+a) (n+a+1)}$ como:
+$$
+\frac{1}{(n+a) (n+a+1)} =\frac{1}{n+a}-\frac{1}{n+a+1}.
+$$
+Entonces se trataría de una serie telescópica de la forma $\displaystyle\sum_{n=1}^\infty b_n-b_{n+1}$, con $b_n=\frac{1}{a+n}$. Su suma será:
+$$
+\sum_{n=1}^\infty \frac{1}{(n+a) (n+a+1)} = b_1 = \frac{1}{a+1}.
+$$
+
+
+\newpage
+
+3. Calcula la suma de la serie siguiente:
+$$
+\sum_{n=3}^\infty \frac{1}{(n+2)(n-1)}.
+$$
+
+### Solución
+
+Descomponemos $\frac{1}{(n+2)(n-1)}$ de la forma:
+$$
+\frac{1}{(n+2)(n-1)} = \frac{A}{n+2}+\frac{B}{n-1}=\frac{A(n-1)+B(n+2)}{(n+2)(n-1)}.
+$$
+Para hallar los coeficientes $A$ y $B$ imponemos que $A(n-1)+B(n+2)=1$, de donde $A=-\frac{1}{3}$ y $B=\frac{1}{3}$. Entonces,
+$$
+\begin{array}{rl}
+\displaystyle\sum_{n=3}^\infty \frac{1}{(n+2)(n-1)}  & \displaystyle =\frac{1}{3}\sum_{n=3}^\infty \left(\frac{1}{n-1}-\frac{1}{n+2}\right)=\frac{1}{3}\sum_{n=3}^\infty \left(\frac{1}{n-1}-\frac{1}{n}+\frac{1}{n}-\frac{1}{n+1}+\frac{1}{n+1}-\frac{1}{n+2}\right) \\ & = \displaystyle \frac{1}{3}\left(\sum_{n=3}^\infty \left(\frac{1}{n-1}-\frac{1}{n}\right)+\sum_{n=3}^\infty \left(\frac{1}{n}-\frac{1}{n+1}\right)+\sum_{n=3}^\infty \left(\frac{1}{n+1}-\frac{1}{n+2}\right)\right).
+\end{array}
+$$
+Nos queda la suma de tres series telescópicas multiplicadas por una constante. Su valor será:
+$$
+\sum_{n=3}^\infty \frac{1}{(n+2)(n-1)} =\frac{1}{3}\left(\frac{1}{2}+\frac{1}{3}+\frac{1}{4}\right)=\frac{13}{36}.
+$$
+
+
+\newpage
+
+
+4. Calcula la suma de la serie siguiente:
+$$
+\sum_{n=1}^\infty \frac{n^2+n-2}{3^n}.
+$$
+
+### Solución
+
+La serie anterior serie una serie aritmético geométrica de la forma $\displaystyle\sum_{n=1}^\infty P(n)r^n$, con $P(n)=n^2+n-2$ y $r=\frac{1}{3}$. 
+
+Para hallar su suma, la separamos de la forma siguiente:
+$$
+\sum_{n=1}^\infty \frac{n^2+n-2}{3^n} =\sum_{n=1}^\infty \frac{n^2}{3^n}+\sum_{n=1}^\infty \frac{n}{3^n}-2\sum_{n=1}^\infty \frac{1}{3^n}.
+$$
+Sea $r=\frac{1}{3}$. La serie $\displaystyle \sum_{n=1}^\infty \frac{1}{3^n}=\sum_{n=1}^\infty r^n$ es una serie geométrica de suma:
+$$
+\sum_{n=1}^\infty r^n =\frac{r}{1-r}=\frac{\frac{1}{3}}{1-\frac{1}{3}}=\frac{\frac{1}{3}}{\frac{2}{3}}=\frac{1}{2}.
+$$
+El valor de la serie $\displaystyle \sum_{n=1}^\infty \frac{n}{3^n}=\sum_{n=1}^\infty n r^n$ se puede obtener de los apuntes a partir de la expresión:
+$$
+\sum_{n=1}^\infty n r^n =\frac{r}{(1-r)^2}=\frac{\frac{1}{3}}{\left(1-\frac{1}{3}\right)^2}=\frac{\frac{1}{3}}{\frac{4}{9}}=\frac{3}{4}.
+$$
+Por último, para hallar la suma $\displaystyle S=\sum_{n=1}^\infty \frac{n^2}{3^n}=\sum_{n=1}^\infty n^2 r^n,$ con $r=\frac{1}{3}$,
+hacemos lo siguiente:
+$$
+\begin{array}{rl}
+rS & \displaystyle =\sum_{n=1}^\infty n^2 r^{n+1}=\sum_{n=2}^\infty (n-1)^2 r^n = \sum_{n=2}^\infty (n^2-2n+1) r^n =\sum_{n=2}^\infty n^2 r^n-2 \sum_{n=2}^\infty n r^n+\sum_{n=2}^\infty r^n \\ & = \displaystyle (S-r)-2\left(\sum_{n=1}^\infty n r^n-r\right)+\frac{r^2}{1-r}=S+r-\frac{2r}{(1-r)^2}+\frac{r^2}{1-r}=S-\frac{r (r+1)}{(1-r)^2},
+\end{array}
+$$
+donde deducimos:
+$$
+(r-1)S=-\frac{r (r+1)}{(1-r)^2},\ \Rightarrow S=\frac{r (r+1)}{(1-r)^3}=\frac{\frac{1}{3}\cdot\frac{4}{3}}{\frac{8}{27}}=\frac{3}{2}.
+$$
+En resumen, el valor de $\displaystyle \sum_{n=1}^\infty \frac{n^2+n-2}{3^n}$ será:
+$$
+\sum_{n=1}^\infty \frac{n^2+n-2}{3^n} =\frac{3}{2}+\frac{3}{4}-2\cdot \frac{1}{2}=\frac{5}{4}.
+$$
+\newpage
+
+5. Calcula la suma de la serie siguiente:
+$$
+\sum_{n=1}^\infty \frac{n!}{a(a+1)\cdots (a+n-1)}, 
+$$
+donde $a>0$
+
+
+### Solución
+
+La serie anterior es hipergeométrica ya que:
+$$
+\frac{a_{n+1}}{a_n}=\frac{\frac{(n+1)!}{a(a+1)\cdots (a+n-1)(a+n)}}{\frac{n!}{a(a+1)\cdots (a+n-1)}}=\frac{n+1}{n+a}=\frac{\alpha n+\beta}{\alpha n+\gamma},
+$$
+con $\alpha =1$, $\beta=1$ y $\gamma =a$.
+
+La suma de la serie valdrá:
+$$
+\sum_{n=1}^\infty \frac{n!}{a(a+1)\cdots (a+n-1)} =\frac{a_1\gamma}{\gamma-(\alpha + \beta)}=\frac{\frac{1}{a}\cdot a}{a-(1+1)}=\frac{1}{a-2}.
+$$

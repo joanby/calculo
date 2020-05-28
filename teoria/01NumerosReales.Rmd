@@ -1009,7 +1009,7 @@ Obsérvese que la definición anterior también se puede hacer en términos de l
 
 <div class="example"> **Ejemplos**
 
-**Ejemplo 1.** Los extremos $a$,$b$ de un intervalo abierto $(a,b)$, son puntos de acumulación del intervalo. Son ejemplos de puntos de acumulación de un conjuunto que no pertenecenc al conjunto.
+**Ejemplo 1.** Los extremos $a$,$b$ de un intervalo abierto $(a,b)$, son puntos de acumulación del intervalo. Son ejemplos de puntos de acumulación de un conjunto que no pertenecenc al conjunto.
 
 **Ejemplo 2.** Sea $A=\{c\} \cup [a,b]$, donde $c \in \mathbb{R} \setminus [a,b]$. Entonces $c$ no es un punto de acumulación de $A$, en tanto que todos los puntos del intervalo $[a,b]$ lo son. De hecho los puntos del intervalo cerrado $[a,b]$ son los únicos puntos de acumulación del intervalo.
 
