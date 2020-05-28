@@ -357,7 +357,7 @@ x+1, & \mbox{ si } x \leq 0, \\
 x^2, & \mbox{ si } x > 0.
 \end{cases}
 $$
-Entonces $\lim_{x \rightarrow 0^+} g(x) = 1$ y $\lim_{x \rightarrow 0^-} g(x) = 0$.
+Entonces $\lim_{x \rightarrow 0^-} g(x) = 1$ y $\lim_{x \rightarrow 0^+} g(x) = 0$.
 
 3) Sea $h:\mathbb{R} \rightarrow \mathbb{R}$, la función definida por
 $$
@@ -393,9 +393,9 @@ En lo que sigue,  $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es una funci�
 
 2. Demuestra que   $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<c-x<\delta$, entonces es $|f(x)-L| < \epsilon$.
 
-3. Demuestra que  $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (x) \cap (c, +\infty)$, entonces $f(x) \in V_{\epsilon}(L)$
+3. Demuestra que  $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (c) \cap (c, +\infty)$, entonces $f(x) \in V_{\epsilon}(L)$
 
-4. Demuestra que  $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (x) \cap (-\infty, c)$, entonces  entonces $f(x) \in V_{\epsilon}(L)$.
+4. Demuestra que  $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (c) \cap (-\infty, c)$, entonces $f(x) \in V_{\epsilon}(L)$.
 
 </div>
 
@@ -464,7 +464,7 @@ El ejemplo anterior también sirve para justificar la siguiente definición:
 
 Sean $f: \mathbb{R} \rightarrow \mathbb{R}$ y $L \in \mathbb{R}$, $L = \lim_{x \rightarrow \infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= +\infty$ entonces $\lim_{n \rightarrow +\infty} f(x_n)= L$.
 
-Análogamente, $L = \lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= -\infty$ entonces $\lim_{n \rightarrow -\infty} f(x_n)= L$.
+Análogamente, $L = \lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= -\infty$ entonces $\lim_{n \rightarrow \infty} f(x_n)= L$.
 
 <div class="exercise"> **Ejercicios**
 
