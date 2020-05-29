@@ -11,7 +11,7 @@ output:
 ---
 
 
-# Ejemplo de inducción: Fórmula del binomio de Newton
+# Ejemplo de inducción: Binomio de Newton
 
 ## Fórmula del binomio de Newton
 

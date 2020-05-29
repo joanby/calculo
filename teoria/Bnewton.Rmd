@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
 #reticulate::py_install("sympy")
 ```
-# Ejemplo de inducción: Fórmula del binomio de Newton
+# Ejemplo de inducción: Binomio de Newton
 
 ## Fórmula del binomio de Newton
 
