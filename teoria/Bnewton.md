@@ -10,11 +10,7 @@ output:
     logo: Images/calculus.gif
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
-#reticulate::py_install("sympy")
-```
+
 # Ejemplo de inducción: Fórmula del binomio de Newton
 
 ## Fórmula del binomio de Newton
@@ -39,18 +35,14 @@ $$
 
 ## Triángulo de Pascal
 <div class="center">
-```{r, echo=FALSE, label=pas1,fig.cap="",out.width = "1000px"}
-knitr::include_graphics("Images/tpascal1.png",dpi=1200)
-```
+<img src="Images/tpascal1.png" width="1000px" />
 </div>
 
 
 
 ## Triángulo de Pascal
 <div class="center">
-```{r, echo=FALSE, label=pas2,fig.cap="",out.width = "900px"}
-knitr::include_graphics("Images/tpascal2.png",dpi=1200)
-```
+<img src="Images/tpascal2.png" width="900px" />
 </div>
 
 
