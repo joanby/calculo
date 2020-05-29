@@ -122,7 +122,7 @@ $$
 $$
 
 
-## Binomio de Newton
+## La fórmula del binomio de Newton
 
 Hacemos lo mismo con $b(a+b)^{n-1}$:
 $$
