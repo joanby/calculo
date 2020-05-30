@@ -10,6 +10,7 @@ output:
     logo: Images/calculus.gif
     widescreen: yes
 ---
+<script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

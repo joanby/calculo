@@ -13,7 +13,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
+reticulate::use_python("/opt/anaconda3/bin/python")
 #reticulate::py_install("sympy")
 ```
 
@@ -577,7 +577,7 @@ f'(x_0), &\mbox{si }x=x_0,
 $$
 es continua en $x_0$.
 
-Veamos a continuación que necesariamente $g(x_0)=f'(x_0)=$ y quedará demostrado el teorema.
+Veamos a continuación que necesariamente $g(x_0)=f'(x_0)=0$ y quedará demostrado el teorema.
 
 Supongamos que $g(x_0)>0$. Como la función $g$ es continua en $x_0$, por el teorema de conservación del signo de funciones continuas, existirá un entorno de $x_0$, es decir, existirá un $\delta >0$ tal que si $x\in (x_0-\delta,x_0+\delta)\subseteq (a,b)$, $g(x)>0$ también será positiva para todos los valores $x$ de dicho entorno.
 
@@ -714,7 +714,7 @@ Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea
 
 <l class="observ">Observación. </l> 
 
-La definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)>f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)<f(x_0)$. Ver el gráfico siguiente.
+La definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)>f(x_0)$ y si $x\in (x_0-\delta, x_0)$ o $x<x_0$, entonces $f(x)<f(x_0)$. Ver el gráfico siguiente.
 
 
 ## Derivación y extremos
@@ -732,7 +732,7 @@ Sea $f: (a,b)\longrightarrow \mathbb{R}$ una función real de variable real. Sea
 
 <l class="observ">Observación. </l> 
 
-La definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)<f(x_0)$ y si $x\in (x_0-\delta)$ o $x<x_0$, entonces $f(x)>f(x_0)$. Ver gráfico siguiente.
+La definición anterior es equivalente a decir que existe un valor $\delta >0$ tal que si $x\in (x_0,x_0+\delta)$ o $x>x_0$, entonces $f(x)<f(x_0)$ y si $x\in (x_0-\delta, x_0)$ o $x<x_0$, entonces $f(x)>f(x_0)$. Ver gráfico siguiente.
 
 ## Derivación y extremos
 <div class="center">
@@ -805,11 +805,11 @@ La derivada de la función $f$ vale: $f'(x)=\cos(x)+\sin(x)$.
 
 Dicha función se anula en los **extremos** $x=-\frac{5}{4}\pi,-\frac{\pi}{4},\frac{3}{4}\pi$ y $\frac{7}{4}\pi$:
 ```{python}
-def f(x):
+def df(x):
  return(cos(x)+sin(x))
  
 for x in [-5*pi/4,-pi/4,3*pi/4,7*pi/4]:
-  print('f({x})={res}'.format(x=x, res=f(x)))
+  print("f'({x})={res}".format(x=x, res=df(x)))
 ```
 
 </div>
@@ -820,13 +820,13 @@ for x in [-5*pi/4,-pi/4,3*pi/4,7*pi/4]:
 En los puntos $x=-\frac{3}{2}\pi$ y $x=\frac{\pi}{2}$ la función es **estrictamente creciente** al tener derivada positiva en dichos puntos:
 ```{python}
 for x in [-3*pi/2,pi/2]:
-  print('f({x})={res}'.format(x=x, res=f(x)))
+  print("f'({x})={res}".format(x=x, res=df(x)))
 ```
 
 En cambio, en los puntos $x=-\frac{\pi}{2}$ y $\frac{3}{2}\pi$ la función es **estrictamente decreciente** al tener derivada negativa en dichos puntos:
 ```{python}
 for x in [-pi/2,3*pi/2]:
-  print('f({x})={res}'.format(x=x, res=f(x)))
+  print("f'({x})={res}".format(x=x, res=df(x)))
 ```
 
 </div>

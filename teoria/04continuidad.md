@@ -10,6 +10,7 @@ output:
     logo: Images/calculus.gif
     widescreen: yes
 ---
+<script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
 
 
 
@@ -1232,7 +1233,7 @@ Sea $f:[a,b] \rightarrow \mathbb{R}$ continua y sea $c \in (a,b)$ tal que $f(c) 
 
 <l class="prop"> **Corolario** </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ continua y sea $c \in (a,b)$ tal que $f(c) =0$, entonces en todo entorno de $c$ hay puntos en los que $f$ es positiva y puntos en los que $f$ es negativa.
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua y sea $c \in (a,b)$ tal que en todo entorno de $c$ hay puntos en los que $f$ es positiva y puntos en los que $f$ es negativa, entonces $f(c) =0$ .
 
 
 ## Teorema de la conservación del signo: Demostración.
@@ -1376,7 +1377,7 @@ Razonamientos análogos permiten demostrar que existe $x_1 \in [a,b]$ tal que $f
 
 <l class="prop"> **Proposición. Corolario del teorema del extremo.** </l>
 
-La imagen continua de un intervalo cerrado es un intervalo cerrado.
+La imagen de un intervalo cerrado por una función continua es un intervalo cerrado.
 
 <div class="dem"> **Demostración**
 
@@ -1503,7 +1504,7 @@ En el caso de funciones, es decir, aplicaciones entre conjuntos de números, la 
 
 4. La inversa de la funcion $h(x) =\dfrac{1}{x^2}$ en $(0,+\infty)$ es $h^{-1}(x) = \dfrac{1}{\sqrt{x}}$.  
 
-5. La inversa de $t(x)=a + (b-a)x$ en $[0,1]$ es $t^{-1}(x)= \dfrac{y-a}{b-a}$ en $[a,b]$. Este ejemplo muestra que siempre existe una aplicación biyectiva entre dos intervalos cerrados cualesquiera de $\mathbb{R}$.
+5. La inversa de $t(x)=a + (b-a)x$ en $[0,1]$ es $t^{-1}(x)= \dfrac{x-a}{b-a}$ en $[a,b]$. Este ejemplo muestra que siempre existe una aplicación biyectiva entre dos intervalos cerrados cualesquiera de $\mathbb{R}$.
 
 
 </div>
