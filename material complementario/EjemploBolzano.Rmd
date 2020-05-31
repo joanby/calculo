@@ -33,16 +33,17 @@ Sea $f:[a,b] \rightarrow \mathbb{R}$ continua tal que $f(a)\cdot f(b) < 0$, ento
 
 
 ## Introducción
-```{r,echo=FALSE,fig.align='center',fig.height=5,fig.width=5.5}
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.height=4.5,fig.width=6}
 xmin=0
-xmax=1
-ymin=-1
-ymax=1
+xmax=3
+ymin=-5
+ymax=3
 tolx=0.01*(xmax-xmin)
 toly=0.05*(ymax-ymin)
-quantsx=4
+quantsx=3
 quantsy=4
-f = function(x){x-cos(x)}
+f = function(x){x^3-x-4}
 plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
 x=seq(from=xmin,to=xmax,by=0.01)
 #points(x,f(x),type="l")
@@ -62,19 +63,19 @@ for (i in 0:(quantsy)){
 # text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
 lines(x,f(x))
-text(0.25,f(0.25)-toly,"(a,f(a))",col="blue")
-points(0.25,f(0.25),cex=0.75,pch=19,col="blue")
-lines(c(0.25,0.25),c(0,f(0.25)),lty=3,col="blue")
+text(1,f(1)-toly*2,"(a,f(a))",col="blue")
+points(1,f(1),cex=0.75,pch=19,col="blue")
+lines(c(1,1),c(0,f(1)),lty=3,col="blue")
 
-text(0.95,f(0.95)+toly,"(b,f(b))",col="blue")
-points(0.95,f(0.95),cex=0.75,pch=19,col="blue")
-lines(c(0.95,0.95),c(0,f(0.95)),lty=3,col="blue")
+text(2,f(2)+2*toly,"(b,f(b))",col="blue")
+points(2,f(2),cex=0.75,pch=19,col="blue")
+lines(c(2,2),c(0,f(2)),lty=3,col="blue")
 
-text(0.25,toly,"a",col="blue")
-text(0.95,-toly,"b",col="blue")
+text(1,toly,"a",col="blue")
+text(2,-toly,"b",col="blue")
 
-text(0.739085,-toly,"c",col="red")
-text(0.5,-0.475,"y=f(x)")
+text(1.79632,-toly,"c",col="red")
+text(0.5,-3,"y=f(x)")
 ```
 
 
@@ -107,16 +108,17 @@ return $c$
 \end{algorithm} 
 
 ## Algoritmo para calcular el cero $c$
-```{r,echo=FALSE,fig.align='center',fig.height=5,fig.width=5.5}
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.height=5,fig.width=6}
 xmin=0
-xmax=1
-ymin=-1
-ymax=1
+xmax=3
+ymin=-5
+ymax=3
 tolx=0.01*(xmax-xmin)
 toly=0.05*(ymax-ymin)
-quantsx=4
+quantsx=3
 quantsy=4
-f = function(x){x-cos(x)}
+f = function(x){x^3-x-4}
 plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
 x=seq(from=xmin,to=xmax,by=0.01)
 #points(x,f(x),type="l")
@@ -136,21 +138,21 @@ for (i in 0:(quantsy)){
 # text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
 lines(x,f(x))
-text(0.25,f(0.25)-toly,expression(paste("(",a[1],"f(",a[1],"))")),col="blue",cex=0.7)
-points(0.25,f(0.25),cex=0.7,pch=19,col="blue")
-lines(c(0.25,0.25),c(0,f(0.25)),lty=3,col="blue")
+text(1,f(1)-toly*1.5,expression(paste("(",a[1],"f(",a[1],"))")),col="blue",cex=0.7)
+points(1,f(1),cex=0.7,pch=19,col="blue")
+lines(c(1,1),c(0,f(1)),lty=3,col="blue")
 
-text(0.95,f(0.95)+toly,expression(paste("(",b[1],"f(",b[1],"))")),col="green",cex=0.7)
-points(0.95,f(0.95),cex=0.7,pch=19,col="green")
-lines(c(0.95,0.95),c(0,f(0.95)),lty=3,col="green")
+text(2,f(2)+toly*1.5,expression(paste("(",b[1],"f(",b[1],"))")),col="green",cex=0.7)
+points(2,f(2),cex=0.7,pch=19,col="green")
+lines(c(2,2),c(0,f(2)),lty=3,col="green")
 
-text(0.25,toly*0.75,expression(a[1]),col="blue",cex=0.7)
-text(0.95,-toly*0.75,expression(b[1]),col="green",cex=0.7)
+text(1,toly,expression(a[1]),col="blue",cex=0.7)
+text(2,-toly,expression(b[1]),col="green",cex=0.7)
 
-text(0.739085,-toly*0.75,"c",col="red",cex=0.7)
+text(1.79632,-toly,"c",col="red",cex=0.7)
 
-a1=0.25
-b1=0.95
+a1=1
+b1=2
 epsilon=0.01
 as=c(a1)
 bs=c(b1)
@@ -161,20 +163,20 @@ while(abs(f(c))>= epsilon){
   {b1=c;bs=c(bs,c)}
 c=(a1+b1)/2
 }
-text(as[2],f(as[2])-toly,expression(paste("(",a[2],"f(",a[2],"))")),col="blue",cex=0.7)
-points(as[2],f(as[2]),pch=19,col="blue")
+text(as[2],f(as[2])-toly*1.5,expression(paste("(",a[2],"f(",a[2],"))")),col="blue",cex=0.7)
+points(as[2],f(as[2]),cex=0.7,pch=19,col="blue")
 lines(c(as[2],as[2]),c(0,f(as[2])),lty=3,col="blue")
-text(as[2],toly*0.75,expression(a[2]),col="blue",cex=0.7)
+text(as[2],toly,expression(a[2]),col="blue",cex=0.7)
 
-text(bs[2],f(bs[2])+toly,expression(paste("(",b[2],"f(",b[2],"))")),col="green",cex=0.7)
+text(bs[2],f(bs[2])+toly*1.5,expression(paste("(",b[2],"f(",b[2],"))")),col="green",cex=0.7)
 points(bs[2],f(bs[2]),cex=0.7,pch=19,col="green")
 lines(c(bs[2],bs[2]),c(0,f(bs[2])),lty=3,col="green")
-text(bs[2],-toly*0.75,expression(b[2]),col="green",cex=0.7)
+text(bs[2],-toly,expression(b[2]),col="green",cex=0.7)
 
-text(as[3],f(as[3])-toly,expression(paste("(",a[3],"f(",a[3],")")),col="blue",cex=0.7)
-points(as[3],f(as[3]),cex=0.75,pch=19,col="blue")
+text(as[3],f(as[3])-toly*1.5,expression(paste("(",a[3],"f(",a[3],")")),col="blue",cex=0.7)
+points(as[3],f(as[3]),cex=0.7,pch=19,col="blue")
 lines(c(as[3],as[3]),c(0,f(as[3])),lty=3,col="blue")
-text(as[3],toly*0.75,expression(a[3]),col="blue",cex=0.7)
+text(as[3],toly,expression(a[3]),col="blue",cex=0.7)
 
 ```
 
