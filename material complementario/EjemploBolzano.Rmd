@@ -1,0 +1,268 @@
+---
+title: "Ejemplo. Cálculo de ceros usando el Teorema de Bolzano"
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+  slidy_presentation:
+    incremental: yes
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+
+                 
+              
+---
+
+
+# Cálculo de ceros de funciones usando el Teorema de Bolzano
+
+## Introducción
+
+En esta presentación vamos a ver una utilidad del Teorema de Bolzano: **cálculo de ceros de funciones**.
+
+En primer lugar recordemos su enunciado:
+
+<l class="prop"> **Proposición: Teorema de Bolzano** </l>
+
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua tal que $f(a)\cdot f(b) < 0$, entonces existe $c \in (a,b)$ tal que $f(c)=0$.
+
+
+## Introducción
+```{r,echo=FALSE,fig.align='center',fig.height=5,fig.width=5.5}
+xmin=0
+xmax=1
+ymin=-1
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){x-cos(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-tolx,-15*tolx,"x")
+text(toly/10,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+#    text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+  }
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+# text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x))
+text(0.25,f(0.25)-toly,"(a,f(a))",col="blue")
+points(0.25,f(0.25),cex=0.75,pch=19,col="blue")
+lines(c(0.25,0.25),c(0,f(0.25)),lty=3,col="blue")
+
+text(0.95,f(0.95)+toly,"(b,f(b))",col="blue")
+points(0.95,f(0.95),cex=0.75,pch=19,col="blue")
+lines(c(0.95,0.95),c(0,f(0.95)),lty=3,col="blue")
+
+text(0.25,toly,"a",col="blue")
+text(0.95,-toly,"b",col="blue")
+
+text(0.739085,-toly,"c",col="red")
+text(0.5,-0.475,"y=f(x)")
+```
+
+
+## Algoritmo para calcular el cero $c$
+
+Supongamos para fijar ideas que $f(a)<0$ y $f(b)>0$. Si fuese al revés, $f(a)>0$ y $f(b)< 0$. Se razonaría de forma parecida.
+
+Vamos a definir dos sucesiones $(a_n)_n$ y $(b_n)_n$ de valores reales tal que $\displaystyle\lim_{n\to\infty} a_n=\lim_{n\to\infty}b_n=c$ de la forma siguiente:
+
+## Algoritmo para calcular el cero $c$
+\begin{algorithm}[H]
+\DontPrintSemicolon
+\SetAlgoLined
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}
+\Input{$a$, $b$ y $\epsilon$ con $f(a)<0$ y $f(b)>0$}
+\Output{$c$ tal que $|f(c)|<\epsilon$.}
+\medskip
+
+$c=\frac{f(a)+f(b)}{2}$
+\medskip
+
+\While{$|f(c)|\geq \epsilon$}{
+    \eIf{$f(c)<0$}{$a=c$}{$b=c$}
+    $c=\frac{f(a)+f(b)}{2}$
+}
+
+return $c$
+\BlankLine
+\caption{Algoritmo para calcular el cero de $f(x)=0$}
+\end{algorithm} 
+
+## Algoritmo para calcular el cero $c$
+```{r,echo=FALSE,fig.align='center',fig.height=5,fig.width=5.5}
+xmin=0
+xmax=1
+ymin=-1
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){x-cos(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-tolx,-15*tolx,"x")
+text(toly/10,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+#    text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+  }
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+# text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x))
+text(0.25,f(0.25)-toly,expression(paste("(",a[1],"f(",a[1],"))")),col="blue",cex=0.7)
+points(0.25,f(0.25),cex=0.7,pch=19,col="blue")
+lines(c(0.25,0.25),c(0,f(0.25)),lty=3,col="blue")
+
+text(0.95,f(0.95)+toly,expression(paste("(",b[1],"f(",b[1],"))")),col="green",cex=0.7)
+points(0.95,f(0.95),cex=0.7,pch=19,col="green")
+lines(c(0.95,0.95),c(0,f(0.95)),lty=3,col="green")
+
+text(0.25,toly*0.75,expression(a[1]),col="blue",cex=0.7)
+text(0.95,-toly*0.75,expression(b[1]),col="green",cex=0.7)
+
+text(0.739085,-toly*0.75,"c",col="red",cex=0.7)
+
+a1=0.25
+b1=0.95
+epsilon=0.01
+as=c(a1)
+bs=c(b1)
+c=(a1+b1)/2
+while(abs(f(c))>= epsilon){
+  if(f(c)<0){a1=c;as=c(as,c)}
+  else
+  {b1=c;bs=c(bs,c)}
+c=(a1+b1)/2
+}
+text(as[2],f(as[2])-toly,expression(paste("(",a[2],"f(",a[2],"))")),col="blue",cex=0.7)
+points(as[2],f(as[2]),pch=19,col="blue")
+lines(c(as[2],as[2]),c(0,f(as[2])),lty=3,col="blue")
+text(as[2],toly*0.75,expression(a[2]),col="blue",cex=0.7)
+
+text(bs[2],f(bs[2])+toly,expression(paste("(",b[2],"f(",b[2],"))")),col="green",cex=0.7)
+points(bs[2],f(bs[2]),cex=0.7,pch=19,col="green")
+lines(c(bs[2],bs[2]),c(0,f(bs[2])),lty=3,col="green")
+text(bs[2],-toly*0.75,expression(b[2]),col="green",cex=0.7)
+
+text(as[3],f(as[3])-toly,expression(paste("(",a[3],"f(",a[3],")")),col="blue",cex=0.7)
+points(as[3],f(as[3]),cex=0.75,pch=19,col="blue")
+lines(c(as[3],as[3]),c(0,f(as[3])),lty=3,col="blue")
+text(as[3],toly*0.75,expression(a[3]),col="blue",cex=0.7)
+
+```
+
+## Ejemplo
+```{r,echo=FALSE}
+f = function(x){x^3-x-4}
+a1=1
+b1=2
+epsilon=0.001
+as=c(a1)
+bs=c(b1)
+c=(a1+b1)/2
+while(abs(f(c))>= epsilon){
+  if(f(c)<0){a1=c;as=c(as,c)}
+  else
+  {b1=c;bs=c(bs,c)}
+c=(a1+b1)/2
+}
+```
+
+Consideremos la función $f(x)=x^3-x-4$.
+
+Vamos a crear una tabla de dos columnas: en la primera, vamos a escribir la sucesión $(a_n)_n$ y en la segunda la sucesión $(b_n)_n$.
+
+Nos dicen que $a=1$ con $f(1)=`r f(1)`<0$ y $b=2$ con $f(2)=`r f(2)`>0$.
+
+La primera fila de la tabla será:
+```{r,echo=FALSE}
+taula=data.frame(as[1],bs[1])
+library(knitr)
+knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
+```
+
+## Ejemplo
+Sea ahora $c=\frac{a+b}{2}=\frac{`r as[1]`+`r bs[1]`}{2}=`r (as[1]+bs[1])/2`.$ El valor de $f(c)$ es $f(`r (as[1]+bs[1])/2`)=`r f((as[1]+bs[1])/2)`$. Como es negativo, tendremos que $a=`r (as[1]+bs[1])/2`$ y la tabla será:
+```{r,echo=FALSE}
+taula=data.frame(c(as[1],as[2]),c(bs[1],""))
+knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
+```
+
+## Ejemplo
+
+Sea ahora $c=\frac{a+b}{2}=\frac{`r as[2]`+`r bs[1]`}{2}=`r (as[2]+bs[1])/2`.$ El valor de $f(c)$ es: $f(`r (as[2]+bs[1])/2`)=`r f((as[2]+bs[1])/2)`.$ Como es negativo, tendremos que $a=`r (as[2]+bs[1])/2`$ y la tabla será:
+```{r,echo=FALSE}
+taula=data.frame(c(as[1],as[2],as[3]),c(bs[1],"",""))
+knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
+```
+
+## Ejemplo
+
+Sea ahora $c=\frac{a+b}{2}=\frac{`r as[3]`+`r bs[1]`}{2}=`r (as[3]+bs[1])/2`.$ El valor de $f(c)$ es: $f(`r (as[3]+bs[1])/2`)=`r f((as[3]+bs[1])/2)`.$ Como es positivo, tendremos que $b=`r (as[3]+bs[1])/2`$ y la tabla será:
+```{r,echo=FALSE}
+taula=data.frame(c(as[1],as[2],as[3]),c(bs[1],bs[2],""))
+knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
+```
+
+## Ejemplo
+
+Sea ahora $c=\frac{a+b}{2}=\frac{`r as[3]`+`r bs[2]`}{2}=`r (as[3]+bs[2])/2`.$ El valor de $f(c)$ es: $f(`r (as[3]+bs[2])/2`)=`r f((as[3]+bs[2])/2)`.$ Como es positivo, tendremos que $b=`r (as[3]+bs[2])/2`$ y la tabla será:
+```{r,echo=FALSE}
+taula=data.frame(c(as[1],as[2],as[3]),c(bs[1],bs[2],bs[3]))
+knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
+```
+
+## Ejemplo
+
+Hagamos el último paso:
+
+Sea ahora $c=\frac{a+b}{2}=\frac{`r as[3]`+`r bs[3]`}{2}=`r (as[3]+bs[3])/2`.$ El valor de $f(c)$ es: $f(`r (as[3]+bs[3])/2`)=`r f((as[3]+bs[3])/2)`.$ Como es negativo, tendremos que $a=`r (as[3]+bs[2])/2`$ y la tabla será:
+```{r,echo=FALSE}
+taula=data.frame(c(as[1],as[2],as[3],as[4]),c(bs[1],bs[2],bs[3],""))
+knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
+```
+
+## Ejemplo
+La precisión de la sucesión $a_n$ es $f(`r as[4]`)=`r f(as[4])`$ y la de $b_n$ es $f(`r bs[3]`)=`r f(bs[3])`$. Vemos que tenemos poca precisión.
+Si queremos llegar a una precisión de $0.001$, las sucesiones $a_n$ y $b_n$ son las siguientes:
+```{r,echo=FALSE}
+taula=data.frame(as,c(bs,"","","",""))
+knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
+```
+
+
+## Ejemplo
+El valor $c$ buscado sería 
+$$c=\frac{`r as[8]`+`r bs[4]`}{2}=\frac{`r as[8]`+`r bs[4]`}{2}=`r (as[8]+bs[4])/2`,
+$$ 
+con 
+$$
+f(`r (as[8]+bs[4])/2`)=`r f((as[8]+bs[4])/2)`.
+$$
