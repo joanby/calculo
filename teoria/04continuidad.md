@@ -10,6 +10,7 @@ output:
     logo: Images/calculus.gif
     widescreen: yes
 ---
+<script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
 
 
 
@@ -357,7 +358,7 @@ x+1, & \mbox{ si } x \leq 0, \\
 x^2, & \mbox{ si } x > 0.
 \end{cases}
 $$
-Entonces $\lim_{x \rightarrow 0^+} g(x) = 1$ y $\lim_{x \rightarrow 0^-} g(x) = 0$.
+Entonces $\lim_{x \rightarrow 0^-} g(x) = 1$ y $\lim_{x \rightarrow 0^+} g(x) = 0$.
 
 3) Sea $h:\mathbb{R} \rightarrow \mathbb{R}$, la función definida por
 $$
@@ -393,9 +394,9 @@ En lo que sigue,  $f: A \subset \mathbb{R} \rightarrow \mathbb{R}$ es una funci�
 
 2. Demuestra que   $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que, siempre que $0<c-x<\delta$, entonces es $|f(x)-L| < \epsilon$.
 
-3. Demuestra que  $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (x) \cap (c, +\infty)$, entonces $f(x) \in V_{\epsilon}(L)$
+3. Demuestra que  $L = \lim_{x \rightarrow c^+}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (c) \cap (c, +\infty)$, entonces $f(x) \in V_{\epsilon}(L)$
 
-4. Demuestra que  $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (x) \cap (-\infty, c)$, entonces  entonces $f(x) \in V_{\epsilon}(L)$.
+4. Demuestra que  $L = \lim_{x \rightarrow c^-}f(x)$ si, y sólo si, para todo $\epsilon >0$, existe $\delta >0$ tal que si $x \in V^*_{\delta} (c) \cap (-\infty, c)$, entonces $f(x) \in V_{\epsilon}(L)$.
 
 </div>
 
@@ -464,7 +465,7 @@ El ejemplo anterior también sirve para justificar la siguiente definición:
 
 Sean $f: \mathbb{R} \rightarrow \mathbb{R}$ y $L \in \mathbb{R}$, $L = \lim_{x \rightarrow \infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= +\infty$ entonces $\lim_{n \rightarrow +\infty} f(x_n)= L$.
 
-Análogamente, $L = \lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= -\infty$ entonces $\lim_{n \rightarrow -\infty} f(x_n)= L$.
+Análogamente, $L = \lim_{x \rightarrow -\infty}f(x)$ si para toda sucesión $x_n$ tal que $\lim_{n \rightarrow \infty}x_n= -\infty$ entonces $\lim_{n \rightarrow \infty} f(x_n)= L$.
 
 <div class="exercise"> **Ejercicios**
 
@@ -1232,7 +1233,7 @@ Sea $f:[a,b] \rightarrow \mathbb{R}$ continua y sea $c \in (a,b)$ tal que $f(c) 
 
 <l class="prop"> **Corolario** </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ continua y sea $c \in (a,b)$ tal que $f(c) =0$, entonces en todo entorno de $c$ hay puntos en los que $f$ es positiva y puntos en los que $f$ es negativa.
+Sea $f:[a,b] \rightarrow \mathbb{R}$ continua y sea $c \in (a,b)$ tal que en todo entorno de $c$ hay puntos en los que $f$ es positiva y puntos en los que $f$ es negativa, entonces $f(c) =0$ .
 
 
 ## Teorema de la conservación del signo: Demostración.
@@ -1376,7 +1377,7 @@ Razonamientos análogos permiten demostrar que existe $x_1 \in [a,b]$ tal que $f
 
 <l class="prop"> **Proposición. Corolario del teorema del extremo.** </l>
 
-La imagen continua de un intervalo cerrado es un intervalo cerrado.
+La imagen de un intervalo cerrado por una función continua es un intervalo cerrado.
 
 <div class="dem"> **Demostración**
 
@@ -1503,7 +1504,7 @@ En el caso de funciones, es decir, aplicaciones entre conjuntos de números, la 
 
 4. La inversa de la funcion $h(x) =\dfrac{1}{x^2}$ en $(0,+\infty)$ es $h^{-1}(x) = \dfrac{1}{\sqrt{x}}$.  
 
-5. La inversa de $t(x)=a + (b-a)x$ en $[0,1]$ es $t^{-1}(x)= \dfrac{y-a}{b-a}$ en $[a,b]$. Este ejemplo muestra que siempre existe una aplicación biyectiva entre dos intervalos cerrados cualesquiera de $\mathbb{R}$.
+5. La inversa de $t(x)=a + (b-a)x$ en $[0,1]$ es $t^{-1}(x)= \dfrac{x-a}{b-a}$ en $[a,b]$. Este ejemplo muestra que siempre existe una aplicación biyectiva entre dos intervalos cerrados cualesquiera de $\mathbb{R}$.
 
 
 </div>

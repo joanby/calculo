@@ -806,7 +806,7 @@ Sea $\sum na_n$ una serie aritmético-geométrica, és decir $\sum a_n$ es una s
 $$
 S-rS= a(r+r^2+r^3 + \cdots+r^n+ \cdots ).
 $$
-Ahora, $(1-r) S = \dfrac{a}{1-r}$, por lo que $\sum nr^na= \dfrac{a}{(1-r)^2}$. 
+Ahora, $(1-r) S = \dfrac{ar}{1-r}$, por lo que $\sum nr^na= \dfrac{ar}{(1-r)^2}$. 
 
 En el caso general, hay que iterar este procedimiento hasta llegar a una serie geométrica.
 
