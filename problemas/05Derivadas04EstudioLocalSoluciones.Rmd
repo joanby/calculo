@@ -126,6 +126,143 @@ lines(x,f(x),col="red")
 ## Solución
 
 
+a) Dominio.
+
+El dominio de la función es $\mathbb{R}$ al ser una función racional donde el denominador no tiene raíces reales ya que la ecuación $x^2+1=0$ no tiene soluciones reales.
+
+b) Puntos de discontinuidad.
+
+No tiene ya que su dominio es $\mathbb{R}$.
+
+c) Puntos de corte:
+  * Eje de abscisas o eje X. Hemos de resolver la ecuación $f(x)=0$:
+$$
+\frac{x+1}{x^2+1}=0,\ \Rightarrow x+1=0,\ \Rightarrow x=-1.
+$$
+Corta el eje X en el punto $(-1,0)$.
+  * Eje de ordenadas o eje Y. El valor de $f(0)$ és $f(0)=\frac{0+1}{0^2+1}=1$. Por tanto, la función $f$ pasa por el punto $(0,1)$.
+  
+d) Simetrías. 
+
+El valor de $f(-x)$ vale $f(-x)=\frac{-x+1}{x^2+1}$, valor que no está relacionado con $f(x)=\frac{x+1}{x^2+1}$. Por tanto, no tiene simetrías respecto al eje Y ni respecto al origen.
+
+e) Asíntotas.
+
+  * Horizontales. Son de la forma $y=b$ donde $b$ vale:
+  $$
+  b=\lim_{x\to\infty}f(x)=\lim_{x\to\infty}\frac{x+1}{x^2+1}=0.
+  $$
+  Por tanto, tiene la asíntota horizontal $y=0$ que corresponde al eje X.
+  * Verticales. No tiene ya que no hay valores que anulen el denominador de la función $f(x)$ que serían los candidatos a las asíntotas verticales $x=a$.
+  * Oblicuas. Son de la forma $y=mx+n$, donde $m$ vale:
+  $$
+   b=\lim_{x\to\infty}\frac{f(x)}{x}=\lim_{x\to\infty}\frac{x+1}{x\cdot (x^2+1)}=0.
+  $$
+Como la pendiente es cero, sería una asíntota horizontal y éstas ya están estudiadas.
+f) Crecimiento y decrecimiento.
+
+Para estudiar el crecimiento y el decrecimiento, hemos de hallar la función derivada:
+$$
+f'(x)=\frac{x^2+1-2x\cdot (x+1)}{(x^2+1)^2}=\frac{x^2+1-2x^2-2x}{(x^2+1)^2}=\frac{-x^2-2x+1}{(x^2+1)^2}.
+$$
+Los posibles extremos se hallan resolviendo $f'(x)=0$:
+$$
+-x^2-2x+1=0,\ \Rightarrow x=\frac{2\pm\sqrt{4+4}}{-2}=\frac{-2\mp 2\sqrt{2}}{2}=-1\mp \sqrt{2}\approx `r round(-1-sqrt(2),4)`,\ `r round(-1+sqrt(2),4)`.
+$$
+Hemos hallado dos candidatos a extremos. Hallemos a continuación la región de crecimiento y decrecimiento y el tipo de extremos que son los candidatos hallados:
+<div class="center">
+|$x$| $-\infty$| | $-1-\sqrt{2}$| |$-1+\sqrt{2}$||$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|$y'$| |$-$| | $+$| |$-$| 
+|$y$| |$\searrow$| |$\nearrow$| |$\searrow$| 
+</div>
+La función es creciente en la región $(-1-\sqrt{2},-1+\sqrt{2})$, es decreciente en la región $\left(-\infty,-1-\sqrt{2}\right)\cup\left(-1+\sqrt{2},\infty\right)$, tiene un mínimo en el punto 
+$$
+\left(-1-\sqrt{2},\frac{-1-\sqrt{2}+1}{(-1-\sqrt{2})^2+1}\right)=\left(-1-\sqrt{2},\frac{-\sqrt{2}}{4+2\sqrt{2}}\right)\approx (`r round(-1-sqrt(2),4)`,`r round(-sqrt(2)/(4+2*sqrt(2)),4)`),
+$$ 
+y un máximo en el punto 
+$$
+\left(-1+\sqrt{2},\frac{-1+\sqrt{2}+1}{(-1+\sqrt{2})^2+1}\right)=\left(-1+\sqrt{2},\frac{\sqrt{2}}{4-2\sqrt{2}}\right)\approx (`r round(-1+sqrt(2),4)`,`r round(sqrt(2)/(4-2*sqrt(2)),4)`).
+$$ 
+
+
+g) Concavidad y convexidad.
+
+Para estudiar la concavidad y la convexidad, hemos de hallar la función derivada segunda:
+$$
+\begin{array}{rl}
+f''(x) & =\frac{(-2x-2)\cdot (x^2+1)^2-2(x^2+1)\cdot (-x^2-2x+1)}{(x^2+1)^4}=\frac{(-2x-2)\cdot (x^2+1)-2 (-x^2-2x+1)}{(x^2+1)^3}\\ & = \frac{2 (x-1) (x^2+4x+1)}{\left(x^2+1\right)^3}
+\end{array} 
+$$
+Los posibles puntos de inflexión se hallan resolviendo $f''(x)=0$:
+$$
+(x-1) (x^2+4x+1)=0,\ \Rightarrow x=1,\ x=\frac{-4\pm\sqrt{16-4}}{2}=-2\pm \sqrt{3}\approx `r round(-2-sqrt(3),4)`,\ `r round(-2+sqrt(3),4)`.
+$$
+Hemos hallado un candidato a punto de inflexión. Hallemos a continuación la región de concavidad y convexidad:
+<div class="center">
+|$x$| $-\infty$| | $-2-\sqrt{3}$|  |$-2+\sqrt{3}$| |$1$| |$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|$y''$| |$-$| | $+$| |$-$| |$+$| 
+|$y$| |$\bigcap$| |$\bigcup$| | $\bigcap$| |$\bigcup$|
+</div>
+La función será cóncava en la región $\left(-\infty,-2-\sqrt{3}\right)\cup \left(-2+\sqrt{3},1\right)$, convexa en la región $\left(-2-\sqrt{3},-2+\sqrt{3}\right)\cup (1,\infty)$ y tiene tres puntos de inflexión en 
+
+*
+$$
+\left(-2-\sqrt{3},\frac{-2-\sqrt{3}+1}{(-2-\sqrt{3})^2+1}\right)=\left(-2-\sqrt{3},\frac{-1-\sqrt{3}}{8+4\sqrt{3}}\right)\approx (`r round(-2-sqrt(3),4)`,`r round((-1-sqrt(3))/(8+4*sqrt(3)),4)`).
+$$
+*
+$$
+\left(-2+\sqrt{3},\frac{-2+\sqrt{3}+1}{(-2+\sqrt{3})^2+1}\right)=\left(-2+\sqrt{3},\frac{-1+\sqrt{3}}{8-4\sqrt{3}}\right)\approx (`r round(-2+sqrt(3),4)`,`r round((-1+sqrt(3))/(8-4*sqrt(3)),4)`).
+$$
+* 
+$$
+\left(1,\frac{1+1}{1^2+1}\right)=\left(1,1\right).
+$$
+
+
+
+
+Usando todas propiedades anteriores ya podemos dibujar la función $y=f(x)$ donde hemos señalado en azul los extremos relativos y en verde, los puntos de inflexión:
+```{r,echo=FALSE,fig.align='center',fig.height=6}
+xmin=-5
+xmax=5
+ymin=-1
+ymax=2
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=10
+quantsy=3
+f = function(x){(x+1)/(x^2+1)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-15*tolx,"x")
+text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+maxim = c(-1+sqrt(2),f(-1+sqrt(2)))
+minim = c(-1-sqrt(2),f(-1-sqrt(2)))
+inflex1 = c(-2-sqrt(3),f(-2-sqrt(3)))
+inflex2 = c(-2+sqrt(3),f(-2+sqrt(3)))
+inflex3 = c(1,1)
+points(c(maxim[1],minim[1]),c(maxim[2],minim[2]),cex=0.75,col="blue",pch=19)
+points(c(inflex1[1],inflex2[1],inflex3[1]),c(inflex1[2],inflex2[2],inflex3[2]),cex=0.75,pch=19,col="green")
+```
+
+
+
 \newpage
 
 
