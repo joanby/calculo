@@ -23,17 +23,17 @@ header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
 
 ## Introducción
 
-En esta presentación vamos a ver una utilidad del Teorema de Bolzano: **cálculo de ceros de funciones**.
+En esta presentación vamos a ver una utilidad del \blue{Teorema de Bolzano:} \red{cálculo de ceros de funciones}.
 
 En primer lugar recordemos su enunciado:
 
-<l class="prop"> **Proposición: Teorema de Bolzano** </l>
+<l class="prop"> \blue{Proposición: Teorema de Bolzano} </l>
 
-Sea $f:[a,b] \rightarrow \mathbb{R}$ continua tal que $f(a)\cdot f(b) < 0$, entonces existe $c \in (a,b)$ tal que $f(c)=0$.
+Sea $f:[a,b] \rightarrow \mathbb{R}$ \blue{continua} tal que $f(a)\cdot f(b) < 0$, entonces existe $c \in (a,b)$ tal que \red{$f(c)=0$.}
 
 
 ## Introducción
-\vspace{-2cm}
+\vspace{-1cm}
 ```{r,echo=FALSE,fig.align='center',fig.height=4.5,fig.width=6}
 xmin=0
 xmax=3
@@ -81,9 +81,9 @@ text(0.5,-3,"y=f(x)")
 
 ## Algoritmo para calcular el cero $c$
 
-Supongamos para fijar ideas que $f(a)<0$ y $f(b)>0$. Si fuese al revés, $f(a)>0$ y $f(b)< 0$. Se razonaría de forma parecida.
+Supongamos para fijar ideas que \blue{$f(a)<0$ y $f(b)>0$.} Si fuese al revés, $f(a)>0$ y $f(b)< 0$. Se razonaría de forma parecida.
 
-Vamos a definir dos sucesiones $(a_n)_n$ y $(b_n)_n$ de valores reales tal que $\displaystyle\lim_{n\to\infty} a_n=\lim_{n\to\infty}b_n=c$ de la forma siguiente:
+Vamos a definir dos sucesiones \red{$(a_n)_n$ y $(b_n)_n$} de valores reales tal que \red{$\displaystyle\lim_{n\to\infty} a_n=\lim_{n\to\infty}b_n=c$} de la forma siguiente:
 
 ## Algoritmo para calcular el cero $c$
 \begin{algorithm}[H]
@@ -94,12 +94,12 @@ Vamos a definir dos sucesiones $(a_n)_n$ y $(b_n)_n$ de valores reales tal que $
 \Output{$c$ tal que $|f(c)|<\epsilon$.}
 \medskip
 
-$c=\frac{f(a)+f(b)}{2}$
+$c=\frac{a+b}{2}$
 \medskip
 
 \While{$|f(c)|\geq \epsilon$}{
     \eIf{$f(c)<0$}{$a=c$}{$b=c$}
-    $c=\frac{f(a)+f(b)}{2}$
+    $c=\frac{a+b}{2}$
 }
 
 return $c$
@@ -108,7 +108,7 @@ return $c$
 \end{algorithm} 
 
 ## Algoritmo para calcular el cero $c$
-\vspace{-2cm}
+\vspace{-1cm}
 ```{r,echo=FALSE,fig.align='center',fig.height=5,fig.width=6}
 xmin=0
 xmax=3
@@ -197,11 +197,11 @@ c=(a1+b1)/2
 }
 ```
 
-Consideremos la función $f(x)=x^3-x-4$.
+Consideremos la función \blue{$f(x)=x^3-x-4$.}
 
-Vamos a crear una tabla de dos columnas: en la primera, vamos a escribir la sucesión $(a_n)_n$ y en la segunda la sucesión $(b_n)_n$.
+Vamos a crear una tabla de dos columnas: en la primera, vamos a escribir la sucesión \red{$(a_n)_n$} y en la segunda la sucesión \red{$(b_n)_n$.}
 
-Nos dicen que $a=1$ con $f(1)=`r f(1)`<0$ y $b=2$ con $f(2)=`r f(2)`>0$.
+Nos dicen que \blue{$a=a_1=1$ con $f(1)=`r f(1)`<0$} y \blue{$b=b_1=2$ con $f(2)=`r f(2)`>0$.}
 
 La primera fila de la tabla será:
 ```{r,echo=FALSE}
@@ -211,7 +211,7 @@ knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
 ```
 
 ## Ejemplo
-Sea ahora $c=\frac{a+b}{2}=\frac{`r as[1]`+`r bs[1]`}{2}=`r (as[1]+bs[1])/2`.$ El valor de $f(c)$ es $f(`r (as[1]+bs[1])/2`)=`r f((as[1]+bs[1])/2)`$. Como es negativo, tendremos que $a=`r (as[1]+bs[1])/2`$ y la tabla será:
+Sea ahora \red{$c=\frac{a_1+b_1}{2}=\frac{`r as[1]`+`r bs[1]`}{2}=`r (as[1]+bs[1])/2`.$} El valor de $f(c)$ es \blue{$f(`r (as[1]+bs[1])/2`)=`r f((as[1]+bs[1])/2)`$.} Como es \red{negativo}, tendremos que \red{$a_2=`r (as[1]+bs[1])/2`$} y la tabla será:
 ```{r,echo=FALSE}
 taula=data.frame(c(as[1],as[2]),c(bs[1],""))
 knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
@@ -219,7 +219,7 @@ knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
 
 ## Ejemplo
 
-Sea ahora $c=\frac{a+b}{2}=\frac{`r as[2]`+`r bs[1]`}{2}=`r (as[2]+bs[1])/2`.$ El valor de $f(c)$ es: $f(`r (as[2]+bs[1])/2`)=`r f((as[2]+bs[1])/2)`.$ Como es negativo, tendremos que $a=`r (as[2]+bs[1])/2`$ y la tabla será:
+Sea ahora \red{$c=\frac{a_2+b_1}{2}=\frac{`r as[2]`+`r bs[1]`}{2}=`r (as[2]+bs[1])/2`.$} El valor de $f(c)$ es: \blue{$f(`r (as[2]+bs[1])/2`)=`r f((as[2]+bs[1])/2)`.$} Como es \red{negativo}, tendremos que \red{$a_3=`r (as[2]+bs[1])/2`$} y la tabla será:
 ```{r,echo=FALSE}
 taula=data.frame(c(as[1],as[2],as[3]),c(bs[1],"",""))
 knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
@@ -227,7 +227,7 @@ knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
 
 ## Ejemplo
 
-Sea ahora $c=\frac{a+b}{2}=\frac{`r as[3]`+`r bs[1]`}{2}=`r (as[3]+bs[1])/2`.$ El valor de $f(c)$ es: $f(`r (as[3]+bs[1])/2`)=`r f((as[3]+bs[1])/2)`.$ Como es positivo, tendremos que $b=`r (as[3]+bs[1])/2`$ y la tabla será:
+Sea ahora \red{$c=\frac{a_3+b_1}{2}=\frac{`r as[3]`+`r bs[1]`}{2}=`r (as[3]+bs[1])/2`.$} El valor de $f(c)$ es: \blue{$f(`r (as[3]+bs[1])/2`)=`r f((as[3]+bs[1])/2)`.$} Como es \red{positivo}, tendremos que \red{$b_2=`r (as[3]+bs[1])/2`$} y la tabla será:
 ```{r,echo=FALSE}
 taula=data.frame(c(as[1],as[2],as[3]),c(bs[1],bs[2],""))
 knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
@@ -235,7 +235,7 @@ knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
 
 ## Ejemplo
 
-Sea ahora $c=\frac{a+b}{2}=\frac{`r as[3]`+`r bs[2]`}{2}=`r (as[3]+bs[2])/2`.$ El valor de $f(c)$ es: $f(`r (as[3]+bs[2])/2`)=`r f((as[3]+bs[2])/2)`.$ Como es positivo, tendremos que $b=`r (as[3]+bs[2])/2`$ y la tabla será:
+Sea ahora \red{$c=\frac{a_3+b_2}{2}=\frac{`r as[3]`+`r bs[2]`}{2}=`r (as[3]+bs[2])/2`.$} El valor de $f(c)$ es: \blue{$f(`r (as[3]+bs[2])/2`)=`r f((as[3]+bs[2])/2)`.$} Como es \red{positivo}, tendremos que \red{$b_3=`r (as[3]+bs[2])/2`$} y la tabla será:
 ```{r,echo=FALSE}
 taula=data.frame(c(as[1],as[2],as[3]),c(bs[1],bs[2],bs[3]))
 knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
@@ -245,15 +245,15 @@ knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
 
 Hagamos el último paso:
 
-Sea ahora $c=\frac{a+b}{2}=\frac{`r as[3]`+`r bs[3]`}{2}=`r (as[3]+bs[3])/2`.$ El valor de $f(c)$ es: $f(`r (as[3]+bs[3])/2`)=`r f((as[3]+bs[3])/2)`.$ Como es negativo, tendremos que $a=`r (as[3]+bs[2])/2`$ y la tabla será:
+Sea ahora \red{$c=\frac{a+b}{2}=\frac{`r as[3]`+`r bs[3]`}{2}=`r (as[3]+bs[3])/2`.$} El valor de $f(c)$ es: \blue{$f(`r (as[3]+bs[3])/2`)=`r f((as[3]+bs[3])/2)`.$} Como es \red{negativo}, tendremos que \red{$a_4=`r (as[3]+bs[3])/2`$} y la tabla será:
 ```{r,echo=FALSE}
 taula=data.frame(c(as[1],as[2],as[3],as[4]),c(bs[1],bs[2],bs[3],""))
 knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
 ```
 
 ## Ejemplo
-La precisión de la sucesión $a_n$ es $f(`r as[4]`)=`r f(as[4])`$ y la de $b_n$ es $f(`r bs[3]`)=`r f(bs[3])`$. Vemos que tenemos poca precisión.
-Si queremos llegar a una precisión de $0.001$, las sucesiones $a_n$ y $b_n$ son las siguientes:
+La precisión de la sucesión \red{$a_n$} es \blue{$f(`r as[4]`)=`r f(as[4])`$} y la de \red{$b_n$} es \blue{$f(`r bs[3]`)=`r f(bs[3])`$.} Vemos que tenemos poca precisión.
+Si queremos llegar a una precisión de $0.001$, las sucesiones \red{$a_n$} y \red{$b_n$} son las siguientes:
 ```{r,echo=FALSE}
 taula=data.frame(as,c(bs,"","","",""))
 knitr::kable(taula,col.names=c("$a_n$","$b_n$"),escape=FALSE)
@@ -268,3 +268,28 @@ con
 $$
 f(`r (as[8]+bs[4])/2`)=`r f((as[8]+bs[4])/2)`.
 $$
+
+## Ejemplo
+Para llevar a cabo el ejemplo anterior en `python`, haríamos lo siguiente:
+```{python}
+def f(x):
+ return(x**3-x-4)
+a=1.
+b=2.
+c=(a+b)/2.
+epsilon=0.001
+while abs(f(c)) >= epsilon:
+  if f(c)<0:
+    a=c
+  else:
+    b=c
+  c=(a+b)/2
+```
+
+## Ejemplo
+El valor de $c$ sería:
+```{python}
+print("El cero vale con un error menor que\
+{0:.3f}: {1:.7f}".format(epsilon,c))
+```
+
