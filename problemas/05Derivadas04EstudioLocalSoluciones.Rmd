@@ -156,7 +156,7 @@ e) Asíntotas.
   * Verticales. No tiene ya que no hay valores que anulen el denominador de la función $f(x)$ que serían los candidatos a las asíntotas verticales $x=a$.
   * Oblicuas. Son de la forma $y=mx+n$, donde $m$ vale:
   $$
-   b=\lim_{x\to\infty}\frac{f(x)}{x}=\lim_{x\to\infty}\frac{x+1}{x\cdot (x^2+1)}=0.
+   m=\lim_{x\to\infty}\frac{f(x)}{x}=\lim_{x\to\infty}\frac{x+1}{x\cdot (x^2+1)}=0.
   $$
 Como la pendiente es cero, sería una asíntota horizontal y éstas ya están estudiadas.
 f) Crecimiento y decrecimiento.
@@ -249,7 +249,7 @@ for (i in 0:(quantsx)){
 
 for (i in 0:(quantsy)){
   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
- text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
 lines(x,f(x),col="red")
 maxim = c(-1+sqrt(2),f(-1+sqrt(2)))
@@ -272,6 +272,125 @@ points(c(inflex1[1],inflex2[1],inflex3[1]),c(inflex1[2],inflex2[2],inflex3[2]),c
 
 
 ## Solución
+
+a) Dominio.
+
+La función estará definida en todos aquellos valores en los que $\cos^2 x> 0$ ya que si $\cos^2 x=0$, la función logaritmo no existe y no hace falta que nos preocupemos para los casos en que $\cos^2 x<0$ ya que el cuadrado de un número siempre es positivo.
+
+Veamos cuando ocurre que $\cos^2 x=0$, o cuando $\cos x=0$. Esto pasará si 
+$$
+x=\frac{\pi}{2}+n\pi,\ n\in\mathbb{Z}.
+$$
+El dominio de la función $f$ será, pues, $\mathbb{R}\setminus \left\{\frac{\pi}{2}+n\pi,\ n\in\mathbb{Z}\right\}$.
+
+b) Puntos de discontinuidad.
+
+Hemos de estudiar los puntos $\frac{\pi}{2}+n\pi,\ n\in\mathbb{Z}$. Sea $n\in\mathbb{Z}$,
+$$
+\lim_{x\to\frac{\pi}{2}+n\pi} f(x)=\lim_{x\to\frac{\pi}{2}+n\pi} \ln(\cos^2 x)=-\infty,
+$$
+ya que $\displaystyle\lim_{x\to 0}\ln x=-\infty.$ Los puntos $\frac{\pi}{2}+n\pi,\ n\in\mathbb{Z}$ serán pues puntos de discontinuidad de la función $f$.
+
+c) Puntos de corte:
+  * Eje de abscisas o eje X. Hemos de resolver la ecuación $f(x)=0$:
+$$
+\ln(\cos^2 x)=0,\ \Rightarrow \cos^2 x=1,\ \Rightarrow \cos x=\pm 1,\ \Rightarrow x=n\pi,\ n\in\mathbb{Z}.
+$$
+Corta el eje X en los puntos $(n\pi,0)$, con $n\in\mathbb{Z}$.
+  * Eje de ordenadas o eje Y. El valor de $f(0)$ és $f(0)=\ln(\cos^2 0)=0$. Por tanto, la función $f$ pasa por el punto $(0,0)$.
+  
+d) Simetrías. 
+
+El valor de $f(-x)$ vale $f(-x)=\ln(\cos^2(-x))$, valor que coincide con $f(x)$. Por tanto, la función es simétrica respecto al eje Y.
+
+e) Asíntotas.
+
+  * Horizontales. Son de la forma $y=b$ donde $b$ vale:
+  $$
+  b=\lim_{x\to\infty}f(x)=\lim_{x\to\infty}\ln(\cos^2 x).
+  $$
+  El límite anterior no existe ya que por ejemplo podemos considerar la sucesión $x_n=n\pi$ que tiende a infinito pero $\displaystyle\lim_{n\to\infty}\ln(\cos^2 x_n)=\lim_{n\to\infty}\ln 1=0$, y la sucesión $y_n=\frac{\pi}{4}+2n\pi$ que tiende también a infinito pero
+  $\displaystyle\lim_{n\to\infty}\ln(\cos^2 y_n)=\lim_{n\to\infty}\ln \frac{1}{2}=-\ln 2$. Como los dos límites anteriores no coinciden, el límite anterior no existe.
+  Por tanto, no tiene asíntotas horizontales.
+  * Verticales. Son de la forma $x=a$ tal que $\displaystyle\lim_{x\to a}f(x)=\infty$. Anteriormente hemos visto que 
+  $$\lim_{x\to\frac{\pi}{2}+n\pi} f(x)=-\infty.$$ Por tanto, tiene como asíntotas verticales $x=\frac{\pi}{2}+n\pi$, con $n\in\mathbb{Z}$.
+  * Oblicuas. Son de la forma $y=mx+n$, donde $m$ vale:
+  $$
+   m=\lim_{x\to\infty}\frac{f(x)}{x}=\lim_{x\to\infty}\frac{\ln(\cos^2 x)}{x}=0,
+  $$
+  ya que:
+  $$
+  0\leq \frac{|\ln(\cos^2 x)|}{x}\leq \frac{|\ln\sqrt{x}|}{x}=\frac{\ln x}{2x},
+  $$
+  para $x>1$, y como $\displaystyle\lim_{x\to\infty}\frac{\ln x}{2x}=\lim_{x\to\infty}\frac{1}{2x}=0$, por el criterio del sandwich, el límite vale $0$.
+Como la pendiente es cero, sería una asíntota horizontal y éstas ya están estudiadas.
+f) Crecimiento y decrecimiento.
+
+Para estudiar el crecimiento y el decrecimiento, hemos de hallar la función derivada:
+$$
+f'(x)=\frac{-2\cos x\sin x}{\cos^2 x}=-2\frac{\sin x}{\cos x}=-2\tan x.
+$$
+Los posibles extremos se hallan resolviendo $f'(x)=0$:
+$$
+-2\tan x=0,\ \Rightarrow x=n\pi,\ n\in\mathbb{Z}.
+$$
+Hemos hallado los candidatos a extremos. Hallemos a continuación la región de crecimiento y decrecimiento y el tipo de extremos que son los candidatos hallados:
+<div class="center">
+|$x$| $-\infty$| | $\ldots$| |$-2\pi$||$-\frac{3\pi}{2}$||$-\pi$||$-\frac{\pi}{2}$||$0$||$\frac{\pi}{2}$||$\pi$||$\frac{3\pi}{2}$||$2\pi$||$\ldots$||$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|$y'$| | | | | |$-$||$+$||$-$||$+$||$-$||$+$||$-$||$+$||
+|$y$|  | | | | |$\searrow$| |$\nearrow$| |$\searrow$||$\nearrow$||$\searrow$||$\nearrow$||$\searrow$||$\nearrow$|
+</div>
+La función es decreciente en la región 
+$$\bigcup_{n=-\infty}^\infty \left(n\pi,\left(n+\frac{1}{2}\right)\pi\right),$$ es creciente en la región 
+$$\bigcup_{n=-\infty}^\infty \left(\left(n+\frac{1}{2}\right)\pi,(n+1)\pi\right),$$
+y tiene máximos relativos en los puntos $\left(n\pi,0\right)$.
+
+
+g) Concavidad y convexidad.
+
+Para estudiar la concavidad y la convexidad, hemos de hallar la función derivada segunda:
+$$
+f''(x)=-\frac{2}{\cos^2 x}.
+$$
+Como $f''(x)<0$, la función será cóncava en todo punto de su dominio.
+
+
+Usando todas propiedades anteriores ya podemos dibujar la función $y=f(x)$ donde hemos señalado en azul los extremos relativos:
+```{r,echo=FALSE,fig.align='center',fig.height=6}
+xmin=-7
+xmax=7
+ymin=-6
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=7
+quantsy=7
+f = function(x){log(cos(x)^2)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-5*tolx,"x")
+text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+maximsx = seq(from=-2*pi,to=2*pi,by=pi)
+maximsy = f(maximsx)
+points(maximsx,maximsy,cex=0.75,col="blue",pch=19)
+```
+
+
 
 
 \newpage
