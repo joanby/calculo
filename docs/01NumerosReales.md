@@ -11,10 +11,7 @@ output:
     widescreen: yes
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-reticulate::use_python("/opt/anaconda3/bin/python")
-```
+
 
 # Introducción
 
@@ -183,9 +180,7 @@ Los números racionales no son suficientes puesto que hay medidas cuyo resultado
 * La longitud de una circunferencia tomando el diámetro como unidad ($\pi$)
 
 <div class="center">
-```{r, echo=FALSE, label=irr,fig.cap="",out.width = "600px"}
-knitr::include_graphics("Images/sqrt2pi.png",dpi=1200)
-```
+<img src="Images/sqrt2pi.png" width="600px" />
 </div>
 
 ## La raiz cuadrada de 2 no es un número racional, $\sqrt{2} \notin \mathbb{Q}$
@@ -474,9 +469,10 @@ Las consideraciones anteriores llevan a las siguientes
 Vecindad o bola son también nombres habituales para los entornos.
 
 <div class="center">
-```{r, echo=FALSE, label=vecin,fig.cap="Entorno de un punto",out.width = "700px"}
-knitr::include_graphics("Images/vecindad.png",dpi=1200)
-```
+<div class="figure">
+<img src="Images/vecindad.png" alt="Entorno de un punto" width="700px" />
+<p class="caption">Entorno de un punto</p>
+</div>
 </div>
 
 
@@ -771,9 +767,7 @@ $f: \mathbb{N} \rightarrow \mathbb{N}$ definida por $f(n) = 2n$ es una aplicaci�
 </div>
 
 <div class="center">
-```{r, echo=FALSE, label=iny,fig.cap="",out.width = "500px"}
-knitr::include_graphics("Images/inyectiva.png",dpi=1200)
-```
+<img src="Images/inyectiva.png" width="500px" />
 </div>
 
 <div class="example"> Es inyectiva porque no hay dos elementos de $\cal{B}$ que sean imagen del mismo elemento de $\cal{A}$. No es exhaustiva porque hay un elemento de $\cal{B}$ que no es imagen de ninguno de $\cal{A}$.
@@ -788,9 +782,7 @@ La aplicación $h: \mathbb{Z} \rightarrow \mathbb{N}$, definida por $h(n)=|n|$, 
 </div>
 
 <div class="center">
-```{r, echo=FALSE, label=exh,fig.cap="",out.width = "500px"}
-knitr::include_graphics("Images/exhaustiva.png",dpi=1200)
-```
+<img src="Images/exhaustiva.png" width="500px" />
 </div>
 <div class="example"> Se trata de una aplicación exhaustiva porque todos los elementos de $\cal{B}$ son imagen de alguno de $\cal{A}$, pero hay dos pares de elementos de $\cal{A}$ que tienen la misma imagen.
 </div>
@@ -811,9 +803,7 @@ es una aplicación biyectiva.
 </div>
 
 <div class="center">
-```{r, echo=FALSE, label=biy,fig.cap="",out.width = "500px"}
-knitr::include_graphics("Images/biyectiva.png",dpi=1200)
-```
+<img src="Images/biyectiva.png" width="500px" />
 </div>
 
 
@@ -905,9 +895,7 @@ El gráfico muestra cómo disponer los elementos de $\mathbb{Q}$ para numerarlos
 
 <div class="center">
 
-```{r, echo=FALSE, label=der1,fig.cap="",out.width = "600px"}
-knitr::include_graphics("Images/cantor.png",dpi=1200)
-```
+<img src="Images/cantor.png" width="600px" />
 </div>
 
 ## $\mathbb{R}$ no es numerable
@@ -1133,22 +1121,14 @@ $$
 - això és un element
 - això és un altre
 
-$$\int_0^1 x\ dx `r 2+2`$$
+$$\int_0^1 x\ dx 4$$
 
 
-```{python, echo = FALSE}
-### reticulate::py_install("sympy")
-# import sympy  
-from sympy import * 
-  
-x = symbols('x') 
-expr = sin(x)/x; 
-    
-print("Expression : {}".format(expr))  
-      
-# Use sympy.limit() method  
-limit_expr = limit(expr, x, 0)   
-      
-print("Limit of the expression tends to 0 : {}".format(limit_expr))   
 
+```
+## Expression : sin(x)/x
+```
+
+```
+## Limit of the expression tends to 0 : 1
 ```

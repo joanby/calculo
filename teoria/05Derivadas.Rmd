@@ -3,11 +3,12 @@ title: "Tema 5 - Derivabilidad de funciones"
 author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
 date: ''
 output: 
-  ioslides_presentation:
-    widescreen: true
+  ioslides_presentation: 
     css: Mery_style.css
-    logo: Images/calculus.gif
     fig_caption: yes
+    keep_md: yes
+    logo: Images/calculus.gif
+    widescreen: yes
 ---
 <script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
 
