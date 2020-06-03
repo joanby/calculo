@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 reticulate::use_python("/Users/juangabriel/anaconda3/bin/python")
 #reticulate::py_install("sympy")
 ```
-# Ejemplo de inducción: Binomio de Newton
+# Ejemplo del Principio de Inducción: Fórmula del binomio de Newton
 
 ## Potencias de un binomio
 
@@ -50,27 +50,6 @@ $$
 {n \choose k} =\dfrac{n!}{(n-k)!k!}
 $$
 
-
-
-## Triángulo de Pascal
-<div class="center">
-```{r, echo=FALSE, label=pas1,fig.cap="",out.width = "1000px"}
-knitr::include_graphics("Images/tpascal1.png",dpi=1200)
-```
-</div>
-
-
-
-## Triángulo de Pascal
-<div class="center">
-```{r, echo=FALSE, label=pas2,fig.cap="",out.width = "900px"}
-knitr::include_graphics("Images/tpascal2.png",dpi=1200)
-```
-</div>
-
-
-
-
 ## La fórmula del binomio de Newton
 
 Para $n=2$:
@@ -90,6 +69,40 @@ Para $n=5$:
 $$
 (a+b)^5= a^5+5a^4b+10a^3b^2+10a^2b^3+5ab^4+b^5
 $$
+
+
+
+<!-- ## Triángulo de Pascal -->
+<!-- <div class="center"> -->
+<!-- ```{r, echo=FALSE, label=pas1,fig.cap="",out.width = "1000px"} -->
+<!-- knitr::include_graphics("Images/tpascal1.png",dpi=1200) -->
+<!-- ``` -->
+<!-- </div> -->
+
+## Triángulo de Pascal
+<div class="center">
+```{r, echo=FALSE, label=pas2,fig.cap="",out.width = "900px"}
+knitr::include_graphics("Images/tpascal2.png",dpi=1200)
+```
+</div>
+
+
+## Triángulo de Pascal
+<div class="center">
+```{r, echo=FALSE, label=pas1,fig.cap="",out.width = "900px"}
+knitr::include_graphics("Images/tpascal1.png",dpi=1200)
+```
+</div>
+
+## Triángulo ¿de Pascal?
+
+<div class="center">
+```{r, echo=FALSE, label=paschino,fig.cap="",out.width = "350px"}
+knitr::include_graphics("Images/Yanghui.jpg",dpi=1200)
+```
+</div>
+
+
 
 
 ## La fórmula del binomio de Newton

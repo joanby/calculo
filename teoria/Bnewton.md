@@ -12,7 +12,7 @@ output:
 ---
 
 
-# Ejemplo de inducción: Binomio de Newton
+# Ejemplo del Principio de Inducción: Fórmula del binomio de Newton
 
 ## Potencias de un binomio
 
@@ -46,23 +46,6 @@ $$
 {n \choose k} =\dfrac{n!}{(n-k)!k!}
 $$
 
-
-
-## Triángulo de Pascal
-<div class="center">
-<img src="Images/tpascal1.png" width="1000px" />
-</div>
-
-
-
-## Triángulo de Pascal
-<div class="center">
-<img src="Images/tpascal2.png" width="900px" />
-</div>
-
-
-
-
 ## La fórmula del binomio de Newton
 
 Para $n=2$:
@@ -82,6 +65,34 @@ Para $n=5$:
 $$
 (a+b)^5= a^5+5a^4b+10a^3b^2+10a^2b^3+5ab^4+b^5
 $$
+
+
+
+<!-- ## Triángulo de Pascal -->
+<!-- <div class="center"> -->
+<!-- ```{r, echo=FALSE, label=pas1,fig.cap="",out.width = "1000px"} -->
+<!-- knitr::include_graphics("Images/tpascal1.png",dpi=1200) -->
+<!-- ``` -->
+<!-- </div> -->
+
+## Triángulo de Pascal
+<div class="center">
+<img src="Images/tpascal2.png" width="900px" />
+</div>
+
+
+## Triángulo de Pascal
+<div class="center">
+<img src="Images/tpascal1.png" width="900px" />
+</div>
+
+## Triángulo ¿de Pascal?
+
+<div class="center">
+<img src="Images/Yanghui.jpg" width="350px" />
+</div>
+
+
 
 
 ## La fórmula del binomio de Newton
