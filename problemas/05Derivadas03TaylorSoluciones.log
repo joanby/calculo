@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.24)  3 JUN 2020 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.24)  3 JUN 2020 15:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**05Derivadas04EstudioLocalSoluciones.tex
-(./05Derivadas04EstudioLocalSoluciones.tex
+**05Derivadas03TaylorSoluciones.tex
+(./05Derivadas03TaylorSoluciones.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base
 /article.cls
@@ -368,8 +368,8 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count279
 \l__pdf_internal_box=\box52
-) (./05Derivadas04EstudioLocalSoluciones.aux)
-\openout1 = `05Derivadas04EstudioLocalSoluciones.aux'.
+) (./05Derivadas03TaylorSoluciones.aux)
+\openout1 = `05Derivadas03TaylorSoluciones.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
 LaTeX Font Info:    ... okay on input line 94.
@@ -418,10 +418,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 94.
 LaTeX Info: Redefining \pageref on input line 94.
 LaTeX Info: Redefining \nameref on input line 94.
-(./05Derivadas04EstudioLocalSoluciones.out) (./05Derivadas04EstudioLocalSolucio
-nes.out)
+(./05Derivadas03TaylorSoluciones.out) (./05Derivadas03TaylorSoluciones.out)
 \@outlinefile=\write3
-\openout3 = `05Derivadas04EstudioLocalSoluciones.out'.
+\openout3 = `05Derivadas03TaylorSoluciones.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -521,214 +520,47 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-39.
-(/usr/share/texmf/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-1-1.pdf, 
-id=45, 469.755pt x 433.62pt>
-File: 05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-1-1.
-pdf Graphic file (type pdf)
-<use 05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-1-1.p
-df>
-Package pdftex.def Info: 05Derivadas04EstudioLocalSoluciones_files/figure-latex
-/unnamed-chunk-1-1.pdf  used on input line 257.
-(pdftex.def)             Requested size: 469.75386pt x 433.61894pt.
-[2] [3 <./05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-
-1-1.pdf>] [4]
-Overfull \hbox (3.529pt too wide) in paragraph at lines 421--426
-[]\T1/lmr/m/n/10 (-20) La fun-ción será cón-cava en la región $[] \OMS/lmsy/m/n
-/10 [ []$\T1/lmr/m/n/10 (-20) , con-vexa en la región $[] \OMS/lmsy/m/n/10 [
+Overfull \hbox (31.26947pt too wide) detected at line 129
+[]
  []
 
-<05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-2-1.pdf, 
-id=77, 469.755pt x 433.62pt>
-File: 05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-2-1.
-pdf Graphic file (type pdf)
-<use 05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-2-1.p
-df>
-Package pdftex.def Info: 05Derivadas04EstudioLocalSoluciones_files/figure-latex
-/unnamed-chunk-2-1.pdf  used on input line 447.
-(pdftex.def)             Requested size: 469.75386pt x 433.61894pt.
-[5] [6 <./05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-
-2-1.pdf>] [7]
-Overfull \hbox (1.02031pt too wide) in paragraph at lines 585--586
-[]$\OML/lmm/m/it/10 x$|  
- []
+[1
 
-
-Overfull \hbox (8.38072pt too wide) in paragraph at lines 587--588
- []$\OMS/lmsy/m/n/10 ^^@1$| 
- []
-
-
-Overfull \hbox (2.26952pt too wide) in paragraph at lines 591--592
- []$[]$| 
- []
-
-
-Overfull \hbox (9.33975pt too wide) in paragraph at lines 595--596
- []$\OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/10 (-20) 2\OML/lmm/m/it/10 ^^Y$| 
- []
-
-
-Overfull \hbox (9.69417pt too wide) in paragraph at lines 599--600
- []$\OMS/lmsy/m/n/10 ^^@[]$| 
- []
-
-
-Overfull \hbox (4.43976pt too wide) in paragraph at lines 603--604
- []$\OMS/lmsy/m/n/10 ^^@\OML/lmm/m/it/10 ^^Y$| 
- []
-
-
-Overfull \hbox (5.70818pt too wide) in paragraph at lines 607--608
- []$\OMS/lmsy/m/n/10 ^^@[]$| 
- []
-
-
-Overfull \hbox (1.91637pt too wide) in paragraph at lines 623--624
- []$[]$| 
- []
-
-
-Overfull \hbox (1.31195pt too wide) in paragraph at lines 627--628
- []$\OT1/lmr/m/n/10 (-20) 2\OML/lmm/m/it/10 ^^Y$| 
- []
-
-
-Overfull \hbox (2.26952pt too wide) in paragraph at lines 631--632
- []$[]$| 
- []
-
-
-Overfull \hbox (0.60292pt too wide) in paragraph at lines 635--636
- []$\OMS/lmsy/m/n/10 1$| 
- []
-
-
-Overfull \hbox (69.8677pt too wide) in alignment at lines 582--638
- [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
-
- []
-
-
-Overfull \hbox (3.3722pt too wide) in paragraph at lines 640--641
-[]$\OML/lmm/m/it/10 y[]$|  
- []
-
-
-Overfull \hbox (0.56664pt too wide) in paragraph at lines 693--694
-[]$\OML/lmm/m/it/10 y$|  
- []
-
-
-Overfull \hbox (0.60292pt too wide) in paragraph at lines 705--706
- []$\OMS/lmsy/m/n/10 &$| 
- []
-
-
-Overfull \hbox (0.60292pt too wide) in paragraph at lines 709--710
- []$\OMS/lmsy/m/n/10 %$| 
- []
-
-
-Overfull \hbox (0.60292pt too wide) in paragraph at lines 713--714
- []$\OMS/lmsy/m/n/10 &$| 
- []
-
-
-Overfull \hbox (0.60292pt too wide) in paragraph at lines 717--718
- []$\OMS/lmsy/m/n/10 %$| 
- []
-
-
-Overfull \hbox (0.60292pt too wide) in paragraph at lines 721--722
- []$\OMS/lmsy/m/n/10 &$| 
- []
-
-
-Overfull \hbox (0.60292pt too wide) in paragraph at lines 725--726
- []$\OMS/lmsy/m/n/10 %$| 
- []
-
-
-Overfull \hbox (0.60292pt too wide) in paragraph at lines 729--730
- []$\OMS/lmsy/m/n/10 &$| 
- []
-
-
-Overfull \hbox (0.60292pt too wide) in paragraph at lines 733--734
- []$\OMS/lmsy/m/n/10 %$| 
- []
-
-
-Overfull \hbox (69.8677pt too wide) in alignment at lines 638--746
- [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] [] 
-
- []
-
-<05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-3-1.pdf, 
-id=106, 469.755pt x 433.62pt>
-File: 05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-3-1.
-pdf Graphic file (type pdf)
-<use 05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-3-1.p
-df>
-Package pdftex.def Info: 05Derivadas04EstudioLocalSoluciones_files/figure-latex
-/unnamed-chunk-3-1.pdf  used on input line 771.
-(pdftex.def)             Requested size: 469.75386pt x 433.61894pt.
-[8] [9 <./05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-
-3-1.pdf>] [10]
-<05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-4-1.pdf, 
-id=136, 469.755pt x 433.62pt>
-File: 05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-4-1.
-pdf Graphic file (type pdf)
-<use 05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-4-1.p
-df>
-Package pdftex.def Info: 05Derivadas04EstudioLocalSoluciones_files/figure-latex
-/unnamed-chunk-4-1.pdf  used on input line 935.
-(pdftex.def)             Requested size: 469.75386pt x 433.61894pt.
-[11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 937.
-[12 <./05Derivadas04EstudioLocalSoluciones_files/figure-latex/unnamed-chunk-4-1
-.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 937.
-(./05Derivadas04EstudioLocalSoluciones.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 937.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 937.
-Package rerunfilecheck Info: File `05Derivadas04EstudioLocalSoluciones.out' has
- not changed.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 274.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 274.
+(./05Derivadas03TaylorSoluciones.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 274.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 274.
+Package rerunfilecheck Info: File `05Derivadas03TaylorSoluciones.out' has not c
+hanged.
 (rerunfilecheck)             Checksum: ED69C4683C14B7B34501405644300265;348.
  ) 
 Here is how much of TeX's memory you used:
- 12510 strings out of 483007
- 185004 string characters out of 5961757
- 474829 words of memory out of 5000000
- 27222 multiletter control sequences out of 15000+600000
- 563405 words of font info for 71 fonts, out of 8000000 for 9000
+ 12371 strings out of 483007
+ 181344 string characters out of 5961757
+ 463403 words of memory out of 5000000
+ 27162 multiletter control sequences out of 15000+600000
+ 561878 words of font info for 56 fonts, out of 8000000 for 9000
  107 hyphenation exceptions out of 8191
- 34i,7n,42p,843b,437s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/l
-m/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/f
-onts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-sy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/symbols/msbm10.pfb>
-Output written on 05Derivadas04EstudioLocalSoluciones.pdf (12 pages, 219841 byt
-es).
+ 34i,8n,42p,837b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
+c/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
+10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/font
+s/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
+sbm10.pfb>
+Output written on 05Derivadas03TaylorSoluciones.pdf (5 pages, 161553 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 183 compressed objects within 2 object streams
- 61 named destinations out of 1000 (max. 500000)
- 8245 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 114 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 19 named destinations out of 1000 (max. 500000)
+ 8225 words of extra memory for PDF output out of 10000 (max. 10000000)
 

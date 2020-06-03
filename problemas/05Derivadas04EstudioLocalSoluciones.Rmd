@@ -85,7 +85,7 @@ Hemos hallado un candidato a punto de inflexión. Hallemos a continuación la re
 </div>
 La función será cóncava en el intervalo $\left(-\infty,\frac{5}{3}\right)$, convexa en el intervalo $\left(\frac{5}{3},\infty\right)$ y tiene un punto de inflexión en $\left(\frac{5}{3},\left(\frac{5}{3}\right)^3-5\cdot \left(\frac{5}{3}\right)^2+12\right)=\left(\frac{5}{3},\frac{74}{27}\right)\approx (`r round(5/3,4)`,`r round(74/27,4)`)$.
 
-Usando todas propiedades anteriores ya podemos dibujar la función $y=f(x)$:
+Usando todas propiedades anteriores ya podemos dibujar la función $y=f(x)$ donde hemos indicado en azul los extremos y en verde el punto de inflexión:
 ```{r,echo=FALSE,fig.align='center',fig.height=6}
 xmin=-2
 xmax=5
@@ -114,6 +114,10 @@ for (i in 0:(quantsy)){
  text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
 }
 lines(x,f(x),col="red")
+x.extrems = c(0,10/3)
+y.extrems = c(f(0),f(10/3))
+points(x.extrems,y.extrems,cex=0.75,col="blue",pch=19)
+points(5/3,f(5/3),cex=0.75,col="green",pch=19)
 ```
 
 
@@ -402,7 +406,122 @@ points(maximsx,maximsy,cex=0.75,col="blue",pch=19)
 ## Solución
 
 
-\newpage
+a) Dominio.
+
+El dominio de la función es $\mathbb{R}\setminus\{1\}$ al ser una función racional donde el denominador se anula en el punto $x=1$.
+
+b) Puntos de discontinuidad.
+
+El único punto a estudiar es $x=1$:
+$$
+\lim_{x\to 1^\pm}f(x)=\lim_{x\to 1^\pm}\frac{x^2}{x-1}=\pm\infty.
+$$
+Por tanto, el punto $x=1$ es un punto de discontinuidad.
+
+c) Puntos de corte:
+  * Eje de abscisas o eje X. Hemos de resolver la ecuación $f(x)=0$:
+$$
+\frac{x^2}{x-1}=0,\ \Rightarrow x=0.
+$$
+Corta el eje X en el punto $(0,0)$.
+  * Eje de ordenadas o eje Y. El valor de $f(0)$ és $f(0)=\frac{0^2}{0-1}=0$. Por tanto, la función $f$ pasa por el punto $(0,0)$.
+  
+d) Simetrías. 
+
+El valor de $f(-x)$ vale $f(-x)=\frac{x^2}{-x-1}$, valor que no está relacionado con $f(x)=\frac{x^2}{x-1}$. Por tanto, no tiene simetrías respecto al eje Y ni respecto al origen.
+
+e) Asíntotas.
+
+  * Horizontales. Son de la forma $y=b$ donde $b$ vale:
+  $$
+  b=\lim_{x\to\infty}f(x)=\lim_{x\to\infty}\frac{x^2}{x-1}=\infty.
+  $$
+  Por tanto, no tiene asíntotas horizontales.
+  * Verticales. Son de la forma $x=a$ donde $\displaystyle\lim_{x\to a}f(x)=\infty$. Hemos visto anteriormente que $\displaystyle\lim_{x\to 1}f(x)=\infty$. Por tanto, la recta $x=1$ es una asíntota vertical.
+  * Oblicuas. Son de la forma $y=mx+n$, donde $m$ vale:
+  $$
+   m=\lim_{x\to\infty}\frac{f(x)}{x}=\lim_{x\to\infty}\frac{x^2}{x^2-x}=1.
+  $$
+  El valor de $n$ vale:
+  $$
+  n=\lim_{x\to\infty}(f(x)-m\cdot x)=\lim_{x\to\infty}\left(\frac{x^2}{x-1}-x\right)=\lim_{x\to\infty} \frac{x^2-x^2+x}{x-1}=1.
+  $$
+  Por tanto, la recta $y=x+1$ es una asíntota oblicua.
+
+f) Crecimiento y decrecimiento.
+
+Para estudiar el crecimiento y el decrecimiento, hemos de hallar la función derivada:
+$$
+f'(x)=\frac{2x(x-1)-x^2}{(x-1)^2}=\frac{x^2-2x}{(x-1)^2}.
+$$
+Los posibles extremos se hallan resolviendo $f'(x)=0$:
+$$
+x^2-2x=0,\ \Rightarrow x(x-2)=0,\ \Rightarrow x=0,2.
+$$
+Hemos hallado dos candidatos a extremos. Hallemos a continuación la región de crecimiento y decrecimiento y el tipo de extremos que son los candidatos hallados:
+<div class="center">
+|$x$| $-\infty$| | $0$| |$1$||$2$||$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|$y'$| |$+$| | $-$| |$-$| |$+$|
+|$y$| |$\nearrow$| |$\searrow$| |$\searrow$| |$\nearrow$|
+</div>
+La función es creciente en la región $(-\infty,0)\cup (2,\infty$, es decreciente en la región $(0,1)\cup (1,2)$, tiene un máximo en el punto $(0,0)$ y un mínimo en el punto $\left(2,\frac{2^2}{2-1}\right)=(2,4)$. 
+
+
+g) Concavidad y convexidad.
+
+Para estudiar la concavidad y la convexidad, hemos de hallar la función derivada segunda:
+$$
+f''(x)  = \frac{(2x-2) (x-1)^2-(x^2-2x)2 (x-1)}{(x-1)^4}=\frac{2 (x-1)^2-2(x^2-2x)}{(x-1)^3}=\frac{2}{(x-1)^3}.
+$$
+No hay puntos de inflexión ya que $f''(x)\neq 0$ para todo valor de $x$.
+
+Hallemos a continuación la región de concavidad y convexidad:
+<div class="center">
+|$x$| $-\infty$| | $1$| |$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|
+|$y''$| |$-$| | $+$|
+|$y$| |$\bigcap$| |$\bigcup$| 
+</div>
+La función será cóncava en la región $(-\infty,1)$ y convexa en la región $(1,\infty)$.
+
+
+Usando todas propiedades anteriores ya podemos dibujar la función $y=f(x)$ donde hemos señalado en azul los extremos relativos y en verde las asíntotas:
+```{r,echo=FALSE,fig.align='center',fig.height=6}
+xmin=-5
+xmax=5
+ymin=-14
+ymax=14
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=10
+quantsy=7
+f = function(x){x^2/(x-1)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-15*tolx,"x")
+text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+x.extrems = c(0,2)
+y.extrems = c(0,4)
+points(x.extrems,y.extrems,cex=0.75,col="blue",pch=19)
+abline(v=1,col="green",lty=2)
+abline(1,1,col="green",lty=2)
+```
+
 
 
 
