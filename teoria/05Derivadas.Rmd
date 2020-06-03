@@ -1264,7 +1264,7 @@ La idea fundamental de la **fórmula de Taylor** es aproximar localmente una fun
 
 Dicho de manera más explícita, consideremos una función $f:(a,b)\longrightarrow\mathbb{R}$ que se puede derivar hasta un cierto orden, pongamos $n+1$, para un cierto valor $n$ natural, y sea $x_0\in (a,b)$ un punto del interior del dominio de $f$. Queremos hallar un polinomio $P_n(x)$ tal que se verifique que $f$ y $P_n$ sean "iguales" en $x_0$ hasta orden $n$:
 $$
-\lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)^n} =0,\mbox{ para }m=0,1,\ldots,n.
+\lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)^m} =0,\mbox{ para }m=0,1,\ldots,n.
 $$
 
 ## Introducción
@@ -1281,9 +1281,8 @@ $$
 $$
 es decir, la derivada de la función y el polinomio a hallar deben coincidir en el valor $x_0$ ya que si aplicamos la regla de L'Hôpital (el límite es indeterminado de la forma $\frac{0}{0}$ ya que recordemos que $P_n(x_0)=f(x_0)$):
 $$
-\lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)} = \lim_{x\to x_0}\frac{f'(x)-P_n'(x)}{(x-x_0)}=0,
+\lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)} = \lim_{x\to x_0}\frac{f'(x)-P_n'(x)}{1}=0.
 $$
-y el numerador debe ser $0$ para $x=x_0$ ya que en caso contrario el límite anterior sería de la forma $\frac{f'(x_0)-P_n'(x_0)}{0}=\infty$, al ser el numerador diferente de $0$.
 
 ## Introducción
 En general, la condición para $m$ entre $0$ y $n$ es la siguiente:
@@ -1292,11 +1291,10 @@ $$
 $$
 es decir, la derivada $m$-ésima de la función y el polinomio a hallar deben coincidir en el valor $x_0$ ya que si aplicamos la regla de L'Hôpital $m$ veces (el límite es indeterminado de la forma $\frac{0}{0}$ ya que recordemos que $P_n^{(i)}(x_0)=f^{(i)}(x_0)$ para los $i$ anteriores desde $0$ hasta $m-1$):
 $$
-\lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)^m} = \lim_{x\to x_0}\frac{f'(x)-P_n(x)}{m (x-x_0)^{m-1}}=\cdots = \lim_{x\to x_0}\frac{f^{(m)}(x)-P_n^{(m)}(x)}{m! (x-x_0)}=0,
+\lim_{x\to x_0}\frac{f(x)-P_n(x)}{(x-x_0)^m} = \lim_{x\to x_0}\frac{f'(x)-P_n'(x)}{m (x-x_0)^{m-1}}=\cdots = \lim_{x\to x_0}\frac{f^{(m)}(x)-P_n^{(m)}(x)}{m!}=0.
 $$
 
 ## Introducción
-y el numerador debe ser $0$ para $x=x_0$ ya que en caso contrario el límite anterior sería de la forma $\frac{f^{(m)}(x_0)-P_n^{(m)}(x_0)}{0}=\infty$, al ser el numerador diferente de $0$.
 
 
 <div class="box">
