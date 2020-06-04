@@ -1396,7 +1396,7 @@ $$
 
 Calcula el límite:
 $$
-\lim_{n \rightarrow \infty} \dfrac{1+\dfrac{1}{2}+\dfrac{1}{3}+ \cdots +\dfrac{1}{n}}{n} = \lim_{n \rightarrow \infty} \dfrac{{\displaystyle\sum_{k=1}^n }\dfrac{1}{k}}{n}
+\lim_{n \rightarrow \infty} \dfrac{1+\dfrac{1}{2}+\dfrac{1}{3}+ \cdots +\dfrac{1}{n}}{n} = \lim_{n \rightarrow \infty} \dfrac{\displaystyle\sum_{k=1}^n\dfrac{1}{k}}{n}
 $$
 
 La sucesión dada es la sucesión de medias aritméticas de la sucesión $a_n = \left\{\dfrac{1}{n}\right\}_{n \in \mathbb{N}}$, por lo tanto, el límite pedido será igual al de la sucesión $a_n$, es decir
