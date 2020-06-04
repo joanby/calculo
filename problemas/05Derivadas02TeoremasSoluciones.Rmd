@@ -29,7 +29,7 @@ Por tanto, $p_4(x)$ tiene dos mínimos y un máximo.
 
 \newpage
 
-2. Demostrar que para todo valor $x,y\in\mathbb{R}$, $\cos x-\cos y|\leq |x-y|$.\newline\newline
+2. Demostrar que para todo valor $x,y\in\mathbb{R}$, $|\cos x-\cos y|\leq |x-y|$.\newline\newline
 
 
 ## Solución
