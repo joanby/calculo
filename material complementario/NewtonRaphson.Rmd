@@ -1,0 +1,269 @@
+---
+title: "Método de Newton-Raphson"
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+
+                 
+              
+---
+
+
+# Método de Newton-Raphson para hallar ceros de funciones
+
+## Introducción
+
+Una de las aplicaciones de las derivadas es el método de Newton-Raphson para hallar ceros de funciones.
+
+Concretamente, nos planteamos el problema siguiente:
+
+\begin{block}{Problema}
+Sea $f:[a,b]:\longrightarrow \mathbb{R}$ una función \blue{derivable} en el intervalo $(a,b)$. Sea $\alpha\in (a,b)$ un \red{cero} de la función $f$ en el intervalo $[a,b]$, es decir, $f(\alpha)=0$. ¿Cómo podemos hallar una \red{aproximación de $\alpha$}?
+\end{block}
+
+## Método de Newton-Raphson
+
+* El método que vamos a usar es el \red{método de Newton-Raphson}. 
+
+* Dicho método se basa en, dada una \red{aproximación inicial} $x_0$, hallar la \red{recta tangente} a la función $f$ que pasa por $(x_0,f(x_0))$, 
+
+* Seguidamente ver dónde corta dicha recta al eje $X$. El punto de corte será el valor $x_1$. 
+
+* A continuación, se hace lo mismo con el valor $x_1$ para hallar el valor $x_2$ y así sucesivamente.
+
+
+## Método de Newton-Raphson
+
+
+```{r,echo=FALSE,fig.align='center',fig.height=4.5,fig.width=6}
+xmin=0
+xmax=2
+ymin=-1
+ymax=15
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=3
+quantsy=8
+f = function(x){x^4-1/(1+exp(-x))}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-tolx,-100*tolx,"x")
+text(toly/10,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+#    text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+  }
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+# text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x))
+#points(1,f(1),cex=0.75,pch=19,col="blue")
+lines(c(1,1),c(0,f(1)),lty=3,col="blue")
+
+points(2,f(2),cex=0.75,pch=19,col="blue")
+lines(c(2,2),c(0,f(2)),lty=3,col="blue")
+
+
+text(2,-1.5*toly,expression(x[0]),col="red")
+text(1.75,14.5,expression(paste("(",x[0],",f(",x[0],"))")),col="blue")
+
+text(1.5,7.5,"y=f(x)")
+
+x0=2
+points(x0,0,cex=0.75,pch=19,col="red")
+m0=4*x0^3-1/(2*(1+cosh(x0)))
+y0=x0^4-1/(1+exp(-x0))
+abline(y0-m0*x0,m0,col="red",lty=2)
+x1=(m0*x0-y0)/m0
+text(x1,-1.5*toly,expression(x[1]),col="red")
+points(x1,0,cex=0.75,pch=19,col="red")
+points(x1,f(x1),cex=0.75,pch=19,col="blue")
+m1=4*x1^3-1/(2*(1+cosh(x1)))
+y1=x1^4-1/(1+exp(-x1))
+lines(c(x1,x1),c(0,f(x1)),lty=3,col="blue")
+abline(y1-m1*x1,m1,col="red",lty=2)
+x2=(m1*x1-y1)/m1
+text(x2,-1.5*toly,expression(x[2]),col="red")
+points(x2,f(x2),cex=0.75,pch=19,col="blue")
+lines(c(x2,x2),c(0,f(x2)),lty=3,col="blue")
+alpha=0.919536
+points(alpha,0,cex=0.75,pch=19,col="red")
+text(alpha,-1.5*toly,expression(alpha),col="red")
+```
+
+## Cálculo de la sucesión $(x_n)_n$
+* Vamos a hallar la \red{fórmula recurrente} que verifica la \blue{sucesión} $(x_n)_n$ que hemos introducido.
+
+* Supongamos que tenemos el valor $x_n$. Vamos a hallar el \red{siguiente valor de la sucesión $x_{n+1}$.}
+
+* La \red{pendiente} de la \blue{recta tangente} de la función $f$ en el punto $(x_n,f(x_n))$ vale $f'(x_n)$ y por tanto, la ecuación de la \blue{recta tangente} a la función $f$ en dicho punto será:
+$$
+Y=f(x_n)+f'(x_n)\cdot (X-x_n),
+$$
+donde $(X,Y)$ es un punto cualquiera de la recta tangente en el punto $(x_n,f(x_n))$.
+
+
+## Cálculo de la sucesión $(x_n)_n$
+* Para hallar el punto $x_{n+1}$ hemos de resolver $Y=0$ o, si se quiere:
+$$
+f(x_n)+f'(x_n)\cdot (X-x_n)=0,\ \Rightarrow X=x_n-\frac{f(x_n)}{f'(x_n)}.
+$$
+
+* El valor de $x_{n+1}$ será, pues $x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}$.
+
+## Ejemplo de aplicación
+* Para ilustrar el método anterior vamos a hallar el cero de la ecuación siguiente: 
+$$
+\frac{1}{1+\mathrm{e}^{-x}}=x^4,
+$$
+donde la función $S(x)=\frac{1}{1+\mathrm{e}^{-x}}$ se llama \red{función sigmoide}.
+
+* Muchos \blue{procesos naturales}, como los de las \red{curvas de aprendizaje de sistemas complejos}, muestran una progresión en el tiempo con unos niveles bajos al principio que van acelerándose hasta alcanzar un valor máximo. Dicha \blue{transición} viene modelada muchas veces por la \red{función sigmoide.}
+
+
+## Función sigmoide
+```{r,echo=FALSE,fig.align='center',fig.height=4.5,fig.width=6}
+xmin=-5
+xmax=5
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=10
+quantsy=2
+f = function(x){1/(1+exp(-x))}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-tolx,2*toly,"x")
+text(toly/10,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-1.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+  }
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+
+
+text(-2,0.25,"y=S(x)")
+```
+
+## Ejemplo de aplicación
+* Recordemos que el ejemplo planteado es hallar el punto de corte entre las funciones $x^4$ y la función sigmoide $\frac{1}{1+\mathrm{e}^{-x}}$:
+```{r,echo=FALSE,fig.align='center',fig.height=4,fig.width=6}
+xmin=-1
+xmax=1
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=2
+quantsy=2
+f = function(x){1/(1+exp(-x))}
+g = function(x){x^4}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-tolx,2*toly,"x")
+text(toly/10,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-1.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+  }
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+lines(x,g(x),col="blue")
+
+text(-0.5,0.55,expression(paste("y=",frac(1,1+exp(-x)))),col="red")
+text(-0.8,0.85,expression(paste("y=",x^4)),col="blue")
+points(alpha,g(alpha),cex=0.75,col="red",pch=19)
+```
+
+## Cálculo de la sucesión $(x_n)_n$
+* Recordemos que la \red{sucesión $(x_n)_n$} se definía de la forma siguiente:
+$$
+x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)},
+$$
+a partir de un \red{valor inicial} $x_0$.
+
+* Consideremos $x_0=1$. Para hallar los demás términos de la sucesión, hemos de tener en cuenta que:
+$$
+f(x)=x^4-\frac{1}{1+\mathrm{e}^{-x}},\ \Rightarrow f'(x)=4 x^3-\frac{\mathrm{e}^{-x}}{(1+\mathrm{e}^{-x})^2}.
+$$
+
+```{r,echo=FALSE}
+f = function(x){x^4-1/(1+exp(-x))}
+f1 = function(x){4*x^3-exp(-x)/(1+exp(-x))^2}
+```
+
+
+* El siguiente término de la sucesión $x_1$ será:
+$$
+x_1 = x_0-\frac{f(x_0)}{f'(x_0)}=1-\frac{1^4-\frac{1}{1+\mathrm{e}^{-1}}}{4\cdot 1^3-\frac{\mathrm{e}^{-1}}{(1+\mathrm{e}^{-1})^2}}\approx `r round(1-f(1)/f1(1),5)`.
+$$
+
+
+## Cálculo de la sucesión $(x_n)_n$
+* Hagamos un programa en `python` que nos calcule el valor $\alpha$ con una precisión $\epsilon$, es decir, hallaremos $x_n$ hasta que $|f(x_n)|<\epsilon$. 
+Consideramos $\epsilon =0.00001$ y $x_0=1$.
+```{python}
+from math import *
+def f(x):
+ return(x**4-1/(1+exp(-x)))
+ 
+def der_f(x):
+  return(4*x**3-exp(-x)/(1+exp(-x))**2)
+
+x0=1.
+epsilon=0.00001
+x=x0
+n=0
+
+```
+
+## Cálculo de la sucesión $(x_n)_n$
+```{python}
+print("El término {0:2} de la sucesión\
+ vale {1:.7f}".format(n,x))
+while abs(f(x)) >= epsilon:
+  x=x-f(x)/der_f(x)
+  n=n+1
+  print("El término {0:2} de la sucesión\
+ vale {1:.7f}".format(n,x))
+```
+
+## Cálculo de la sucesión $(x_n)_n$
+
+* Observamos que el método ha convergido muy rápido, ha necesitado sólo tres iteraciones para darnos una aproximación con un error menor que $0.00001$.
