@@ -114,33 +114,16 @@ text(2.5,9.5,"x",cex=0.8)
 ```
 \end{center}
 
-## Ejemplo 2: minimización del tiempo. Resolución.
+## Ejemplo 2: minimización del tiempo. Resolución
 * Sea $X$ el punto de la otra orilla donde está el punto $B$ donde el excursionista llega. 
 
 * Sea $x$ la \red{distancia horizontal entre el punto $A$ y el punto $X$.}
 
-* La distancia que habrá recorrido el excursionista por la orilla para llegar al punto $B$ será \red{$|d-x|$} y la distancia que habrá recorrido por el río será \red{$\sqrt{h^2+x^2}$} usando el \blue{Teorema de Pitágoras.}
+* Podemos suponer que $0\leq x\leq d$ ya que 
+  * si $x>d$ o el punto $X$ está a la derecha del punto $B$, el tiempo que tardará el excursionista de ir desde $A$ hasta $X$ más el tiempo de ir desde $X$ a $B$ seguro que superará el tiempo de ir del punto $A$ al punto $B$ por el río ya que la distancia $AX$ es mayor que $AB$.
+  * si $x<0$ o el punto $X$ está a la derecha del punto $A$, el tiempo que tardará el excursionista de ir desde $A$ hasta $X$ más el tiempo de ir desde $X$ a $B$ seguro que superará el tiempo de ir desde $A$ hasta $A'$ y desde $A'$ hasta $B$.
 
-* Sea $v_o$ la \red{velocidad de movimiento por la orilla} y $v_r$, la \red{velocidad de movimiento por el río.} Nos dicen que $v_o = k\cdot v_r$.
-
-* El \red{tiempo} que tarda en ir por la orilla será $t_o=\frac{|d-x|}{v_o}$ y el \red{tiempo} que tarda en ir por el río, $t_r=\frac{\sqrt{h^2+x^2}}{v_r}$.
-
-## Ejemplo 2: minimización del tiempo. Resolución.
-* El \red{tiempo total} será: 
-$$
-t=t_o+t_r=\frac{d-x}{v_o}+\frac{\sqrt{h^2+x^2}}{v_r}=\frac{|d-x|}{k\cdot v_r}+\frac{\sqrt{h^2+x^2}}{v_r},
-$$
-donde hemos usado que $v_o = k\cdot v_r$.
-
-* Hemos de \red{minimizar} la función anterior. Para ello, primero la escribimos como una función a trozos:
-$$
-t=\begin{cases}
-\frac{d-x}{k\cdot v_r}+\frac{\sqrt{h^2+x^2}}{v_r}, & \mbox{si }x\leq d,\\
-\frac{x-d}{k\cdot v_r}+\frac{\sqrt{h^2+x^2}}{v_r}, & \mbox{si }x\geq d.\\
-\end{cases}
-$$
-
-## Ejemplo 2: minimización del tiempo
+## Ejemplo 2: minimización del tiempo. Resolución
 \begin{center}
 ```{r,echo=FALSE,fig.align='center',fig.height=4,fig.width=4}
 xmin=0
@@ -173,17 +156,37 @@ text(5,-0.5,"ORILLA",cex=1.25)
 text(5,10.5,"ORILLA",cex=1.25)
 text(1.45,1.25,expression(alpha),col="red",cex=0.7)
 text((1+8.5)/2,9.5,"x",cex=0.8)
+lines(c(1,7),c(1,9),lty=1,col="blue")
+points(1,9,cex=0.7,col="blue",pch=19)
+text(1,9.5,'A\'',cex=0.8,col="blue")
+points(-0.25,9,cex=0.7,col="blue",pch=19)
+text(-0.25,9.5,'X',cex=0.8,col="blue")
+lines(c(1,-0.25),c(1,9),col="blue",lty=3)
 ```
 \end{center}
 
-## Ejemplo 2: minimización del tiempo. Resolución.
 
-* Si derivamos e igualamos a cero, obtenemos:
+## Ejemplo 2: minimización del tiempo. Resolución
+* La distancia que habrá recorrido el excursionista por la orilla para llegar al punto $B$ será \red{$d-x$} y la distancia que habrá recorrido por el río será \red{$\sqrt{h^2+x^2}$} usando el \blue{Teorema de Pitágoras.}
+
+* Sea $v_o$ la \red{velocidad de movimiento por la orilla} y $v_r$, la \red{velocidad de movimiento por el río.} Nos dicen que $v_o = k\cdot v_r$.
+
+* El \red{tiempo} que tarda en ir por la orilla será $t_o=\frac{d-x}{v_o}$ y el \red{tiempo} que tarda en ir por el río, $t_r=\frac{\sqrt{h^2+x^2}}{v_r}$.
+
+## Ejemplo 2: minimización del tiempo. Resolución
+* El \red{tiempo total} será: 
+$$
+t=t_o+t_r=\frac{d-x}{v_o}+\frac{\sqrt{h^2+x^2}}{v_r}=\frac{d-x}{k\cdot v_r}+\frac{\sqrt{h^2+x^2}}{v_r},
+$$
+donde hemos usado que $v_o = k\cdot v_r$.
+
+* Hemos de \red{minimizar} la función anterior. Si derivamos e igualamos a cero, obtenemos:
 $$
 t'=-\frac{1}{k\cdot v_r}+\frac{1}{v_r}\cdot \frac{x}{\sqrt{h^2+x^2}}=0.
 $$
 
-## Ejemplo 2: minimización del tiempo. Resolución.
+
+## Ejemplo 2: minimización del tiempo. Resolución
 * Resolviendo la ecuación anterior, obtenemos:
 $$
 \begin{array}{rl}
@@ -191,28 +194,98 @@ $$
 \end{array}
 $$
 
-* El valor de $x$ puede ser positivo o negativo, por tanto, hemos de tener en cuenta los dos signos de $x$: $x=\pm \frac{h}{\sqrt{k^2-1}}$.
+* El valor de $x$ es positivo: $x=\frac{h}{\sqrt{k^2-1}}$.
 
 
 
-## Ejemplo 2: minimización del tiempo. Resolución.
-* Veamos que se trata de dos \red{mínimos:}
+## Ejemplo 2: minimización del tiempo. Resolución
+* Veamos que se trata de un \red{mínimo relativo:}
 $$
 t''=\frac{1}{v_r}\cdot \frac{\sqrt{h^2+x^2}-x\cdot \frac{x}{\sqrt{h^2+x^2}}}{h^2+x^2}=\frac{1}{v_r}\cdot \frac{h^2}{(h^2+x^2)^{\frac{3}{2}}}>0.
 $$
 
-
-* El ángulo $\alpha$ con que atraviesa el río tiene como tangente:
+* Para la $x$ hallada, el tiempo mínimo será:
 $$
-\tan \alpha =\frac{h}{x}=\frac{h}{\frac{h}{\sqrt{k^2-1}}}=\sqrt{k^2-1}.
-$$
-
-* Por tanto:
-$$
-\alpha =\arctan (k^2-1).
+t=\frac{d-\frac{h}{\sqrt{k^2-1}}}{k\cdot v_r}+\frac{\sqrt{h^2+\frac{h^2}{k^2-1}}}{v_r}=\frac{d+h\sqrt{k^2-1}}{k v_r}.
 $$
 
-* Por ejemplo, si la velocidad de movimiento por la orilla fuese el doble de la velocidad de movimiento por el río, es decir, $k=2$, el ángulo $\alpha$ sería:
+## Ejemplo 2: minimización del tiempo. Resolución
+* Hallemos el tiempo que tarda el excursionista en los extremos del intervalo $[0,d]$. 
+  * Para $x=0$, el tiempo que tarda el excursionista es:
 $$
-\alpha =\arctan \sqrt{3}=\frac{\pi}{3}\ \mbox{radianes}=60\ \mbox{grados.}
+t(x=0)=\frac{d}{k\cdot v_r}+\frac{h}{v_r}=\frac{d+h k}{k v_r}.
+$$
+Fijémonos que dicho tiempo siempre será mayor que el tiempo tardado usando la $x$ anterior, $x=\frac{h}{\sqrt{k^2-1}}$ ya que:
+$$
+\frac{d+h k}{k v_r} > \frac{d+h\sqrt{k^2-1}}{k v_r},\ \Leftrightarrow k >\sqrt{k^2-1},\ \Leftrightarrow k^2 > k^2-1.
+$$
+
+## Ejemplo 2: minimización del tiempo. Resolución
+  * Para $x=d$, el tiempo que tarda el excursionista es:
+$$
+t(x=d)=\frac{\sqrt{h^2+d^2}}{v_r}.
+$$
+En este caso, también el tiempo será mayor que el tiempo tardado usando la $x$ anterior, $x=\frac{h}{\sqrt{k^2-1}}$ ya que:
+$$
+\begin{array}{rl}
+\frac{\sqrt{h^2+d^2}}{v_r}  & > \frac{d+h\sqrt{k^2-1}}{k v_r},\ \Leftrightarrow \\ k\sqrt{h^2+d^2} & > d+h\sqrt{k^2-1},\ \Leftrightarrow \\ 
+k^2 (h^2+d^2) & > d^2+h^2(k^2-1)+2dh\sqrt{k^2-1},\ \Leftrightarrow\\
+(k^2-1)d^2+h^2 & > 2dh\sqrt{k^2-1},\ \Leftrightarrow\\
+(\sqrt{k^2-1}d-h)^2 & >0.
+\end{array}
+$$
+
+
+## Ejemplo 2: minimización del tiempo. Resolución
+* Para hallar el tiempo mínimo, consideremos dos casos:
+  * si $x=\frac{h}{\sqrt{k^2-1}}<d$, el tiempo mínimo se alcanza para $x=\frac{h}{\sqrt{k^2-1}}$:
+  $$
+  t_{\mathrm{mín}}=\frac{d+h\sqrt{k^2-1}}{k v_r}.
+  $$
+   * si $x=\frac{h}{\sqrt{k^2-1}}\geq d$, significa que la función $t$ no tiene ningún extremo relativo en el intervalo $[0,d]$ ya que el único extremo hallado $x=\frac{h}{\sqrt{k^2-1}}$ se encuentra fuera de dicho intervalo. Por tanto, la función será creciente o decreciente en el intervalo $[0,d]$. 
+  Recordemos que $t'(x)=-\frac{1}{k\cdot v_r}+\frac{1}{v_r}\cdot \frac{x}{\sqrt{h^2+x^2}}$. Como $t'(x=0)=-\frac{1}{k\cdot v_r}<0$, la función será decreciente y el mínimo se alcanzará para $x=d$:
+  $$
+  t_{\mathrm{mín}}=\frac{\sqrt{h^2+d^2}}{v_r}.
+  $$
+
+## Ejemplo 2: minimización del tiempo. Resolución
+* El ángulo $\alpha$ con que atraviesa el río tiene como tangente será:
+  * si $x=\frac{h}{\sqrt{k^2-1}}<d$, el ángulo $\alpha$ tiene como tangente:
+   $$
+   \tan\alpha =\frac{h}{x}=\frac{h}{\frac{h}{\sqrt{k^2-1}}}=\sqrt{k^2-1},\ \Rightarrow\alpha =\arctan(k^2-1).
+   $$
+  * si $x=\frac{h}{\sqrt{k^2-1}}\geq d$, el ángulo $\alpha$ tiene como tangente:
+  $$
+  tan\alpha =\frac{h}{d},\ \Rightarrow \alpha =\arctan\left(\frac{h}{d}\right).
+  $$
+
+## Ejemplo 2: minimización del tiempo. Resolución
+* Por ejemplo, supongamos que la velocidad de movimiento por la orilla es el doble de la velocidad de movimiento por el río, es decir, $k=2$, con una anchura de $h=900$ m. y con una distancia de $d=500$ m. Hallemos el tiempo mínimo para llegar de $A$ a $B$.
+
+* En este caso, el valor de $\frac{h}{\sqrt{k^2-1}}$ vale $\frac{900}{\sqrt{3}}\approx`r round(900/sqrt(3),4)`>d=500$. Estamos en el segundo caso.
+
+* El tiempo mínimo será, pues: 
+  $$
+  t_{\mathrm{mín}}=\frac{\sqrt{h^2+d^2}}{v_r}=\frac{\sqrt{900^2+500^2}}{v_r}=\frac{`r round(sqrt(900^2+500^2),4)`}{v_r},
+  $$
+  siendo $v_r$ la velocidad de movimiento por el río.
+  
+## Ejemplo 2: minimización del tiempo. Resolución
+* El ángulo $\alpha$ será en este caso,
+$$
+\alpha =\arctan\frac{900}{500}\approx `r round(atan(9/5),4)` \ \mbox{radianes}\approx `r round(atan(9/5)*180/pi,4)`\ \mbox{grados.}
+$$
+
+* Supongamos ahora que $k=2$, $h=500$ y $d=900$. En este caso, el valor de $\frac{h}{\sqrt{k^2-1}}$ vale $\frac{500}{\sqrt{3}}\approx`r round(500/sqrt(3),4)`\leq d=900$. Estamos en el primer caso.
+
+* El tiempo mínimo será, pues: 
+  $$
+  t_{\mathrm{mín}}=\frac{d+h\sqrt{k^2-1}}{k v_r}=\frac{900+500\cdot\sqrt{3}}{2\cdot v_r}=\frac{`r round(900+500*sqrt(3),4)`}{2\cdot v_r},
+  $$
+  siendo $v_r$ la velocidad de movimiento por el río.
+  
+## Ejemplo 2: minimización del tiempo. Resolución
+* El ángulo $\alpha$ será en este caso,
+$$
+\alpha =\arctan(k^2-1)=\arctan\sqrt{3}=\frac{\pi}{3}\ \mbox{radianes}=60\ \mbox{grados.}
 $$
