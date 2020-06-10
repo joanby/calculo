@@ -121,7 +121,7 @@ text(2.5,9.5,"x",cex=0.8)
 
 * Podemos suponer que $0\leq x\leq d$ ya que 
   * si $x>d$ o el punto $X$ está a la derecha del punto $B$, el tiempo que tardará el excursionista de ir desde $A$ hasta $X$ más el tiempo de ir desde $X$ a $B$ seguro que superará el tiempo de ir del punto $A$ al punto $B$ por el río ya que la distancia $AX$ es mayor que $AB$.
-  * si $x<0$ o el punto $X$ está a la derecha del punto $A$, el tiempo que tardará el excursionista de ir desde $A$ hasta $X$ más el tiempo de ir desde $X$ a $B$ seguro que superará el tiempo de ir desde $A$ hasta $A'$ y desde $A'$ hasta $B$.
+  * si $x<0$ o el punto $X$ está a la izquierda del punto $A'$, el tiempo que tardará el excursionista de ir desde $A$ hasta $X$ más el tiempo de ir desde $X$ a $B$ seguro que superará el tiempo de ir desde $A$ hasta $A'$ y desde $A'$ hasta $B$.
 
 ## Ejemplo 2: minimización del tiempo. Resolución
 \begin{center}
