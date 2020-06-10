@@ -252,7 +252,7 @@ $$
 * El ángulo $\alpha$ con que atraviesa el río tiene como tangente será:
   * si $x=\frac{h}{\sqrt{k^2-1}}<d$, el ángulo $\alpha$ tiene como tangente:
    $$
-   \tan\alpha =\frac{h}{x}=\frac{h}{\frac{h}{\sqrt{k^2-1}}}=\sqrt{k^2-1},\ \Rightarrow\alpha =\arctan(k^2-1).
+   \tan\alpha =\frac{h}{x}=\frac{h}{\frac{h}{\sqrt{k^2-1}}}=\sqrt{k^2-1},\ \Rightarrow\alpha =\arctan(\sqrt{k^2-1}).
    $$
   * si $x=\frac{h}{\sqrt{k^2-1}}\geq d$, el ángulo $\alpha$ tiene como tangente:
   $$
@@ -287,5 +287,5 @@ $$
 ## Ejemplo 2: minimización del tiempo. Resolución
 * El ángulo $\alpha$ será en este caso,
 $$
-\alpha =\arctan(k^2-1)=\arctan\sqrt{3}=\frac{\pi}{3}\ \mbox{radianes}=60\ \mbox{grados.}
+\alpha =\arctan(\sqrt{k^2-1})=\arctan\sqrt{3}=\frac{\pi}{3}\ \mbox{radianes}=60\ \mbox{grados.}
 $$
