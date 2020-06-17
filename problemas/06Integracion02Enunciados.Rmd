@@ -17,9 +17,10 @@ output:
     a) $\displaystyle\int_0^4 \frac{1}{1+\sqrt{x}}dx$.
     a) $\displaystyle\int_0^{\ln 5}\frac{\mathrm{e}^x\sqrt{\mathrm{e}^x-1}}{\mathrm{e}^x+3}dx$.
 1. Resolver las integrales siguientes usando la técnica de integración por partes:
-    a) $\displaystyle\int_0^\pi \mathrm{e}^x\sin x\, dx.$
-    a) $\displaystyle\int_0^\infty x\cdot\mathrm{e}^{-x}\, dx.$
-    a) $\displaystyle\int_0^\infty \mathrm{e}^{-a x}\sin (bx)\, dx,$ con $a>0$.
+    a) $\displaystyle\int_0^1 x\cdot\mathrm{e}^{-x}\, dx.$
+    a) $\displaystyle\int_0^{2\pi} \mathrm{e}^{-a x}\sin (bx)\, dx,$ con $a>0$.
+    a) $\displaystyle\int_1^\mathrm{e}x^n\cdot \ln x\, dx,$ con $n\in\mathbb{N}$.
+    a) $\displaystyle\int_0^2 x^3\cdot\arctan x\, dx.$
 1. Hallar los extremos relativos de la función siguiente:
 $$
 f(x)=\int_0^x \frac{\sin t}{t} \, dt, \ x > 0.
