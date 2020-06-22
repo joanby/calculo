@@ -134,7 +134,7 @@ En esta sección vamos a aprender técnicas para calcular **integrales indefinid
 
 Distinguiremos dos casos:
 
-* Supongamos que el grado del polinomio $P(x)$ es mayor o igual que el grado del polinomio $Q(x)$: $\mathrm{grado}(P)\geq \mathrm{grado}(Q)$.
+**Primer caso:** Supongamos que el grado del polinomio $P(x)$ es mayor o igual que el grado del polinomio $Q(x)$: $\mathrm{grado}(P)\geq \mathrm{grado}(Q)$.
 
 En este caso, hemos de dividir el polinomio $P(x)$ entre el polinomio $Q(x)$ obteniendo un cociente $C(x)$ y un resto $R(x)$, donde $\mathrm{grado}(R) < \mathrm{grado}(Q)$. 
 
@@ -164,7 +164,8 @@ En resumen, dada una integral racional, siempre podemos suponer que el grado del
 
 
 ## Caso en que el grado del numerador es menor que el del denominador
-* Supongamos que el grado del polinomio $P(x)$ es menor estrictamente que el grado del polinomio $Q(x)$: $\mathrm{grado}(P)< \mathrm{grado}(Q)$.
+
+**Segundo caso:** Supongamos que el grado del polinomio $P(x)$ es menor estrictamente que el grado del polinomio $Q(x)$: $\mathrm{grado}(P)< \mathrm{grado}(Q)$.
 
 Supondremos además que el polinomio $Q(x)$ del denominador es mónico, es decir, el coeficiente correspondiente al término principal o del monomio de mayor grado vale 1. Si éste no fuera el caso, dividimos todos los términos por dicho coeficiente y "sacamos" fuera de la integral dicho coeficiente. 
 
@@ -190,7 +191,8 @@ En primer lugar, supongamos que estamos en el caso en que las multiplicidades de
 A continuación, descomponemos la fracción racional $\frac{P(x)}{Q(x)}$ de la siguiente manera:
 $$
 \begin{array}{rl}
-\frac{P(x)}{Q(x)} = & \frac{A_{11}}{x-a_1}+\frac{A_{12}}{(x-a_1)^2}+\cdots +\frac{A_{1n_1}}{(x-a_1)^{n_1}}+\cdots +\frac{A_{k1}}{x-a_k}+\frac{A_{k2}}{(x-a_k)^2}+\cdots +\frac{A_{kn_k}}{(x-a_k)^{n_k}}+\\ & \frac{B_1x+C_1}{((x-b_1)^2+c_1^2)}+\cdots + \frac{B_l x+C_l}{((x-b_l)^2+c_l^2)}
+\frac{P(x)}{Q(x)} = & \frac{A_{11}}{x-a_1}+\frac{A_{12}}{(x-a_1)^2}+\cdots +\frac{A_{1n_1}}{(x-a_1)^{n_1}}+\cdots \\ 
+& +\frac{A_{k1}}{x-a_k}+\frac{A_{k2}}{(x-a_k)^2}+\cdots +\frac{A_{kn_k}}{(x-a_k)^{n_k}}\\ & +\frac{B_1x+C_1}{((x-b_1)^2+c_1^2)}+\cdots + \frac{B_l x+C_l}{((x-b_l)^2+c_l^2)}
 \end{array}
 $$
 hallando los coeficientes $A_{ij}$, $B_i$ y $C_i$ correspondientes.
@@ -209,7 +211,7 @@ Al final nos saldrá un sistema de ecuaciones lineal en los coeficientes $A_{ij}
 Una vez hallados los coeficientes $A_{ij}$, $B_i$ y $C_i$, descomponemos la integral racional $\displaystyle\int\frac{P(x)}{Q(x)}\, dx$ de la siguiente manera:
 $$
 \begin{array}{rl}
-\displaystyle\int\frac{P(x)}{Q(x)}\, dx = & \displaystyle A_{11}\int\frac{1}{x-a_1}\, dx+\cdots +A_{1n1}\int \frac{1}{(x-a_1)^{n_1}}\, dx + \\ & \displaystyle +\cdots +A_{k1}\int \frac{1}{x-a_k}\, dx +\cdots +A_{kn_k}\int \frac{1}{(x-a_k)^{n_k}}\, dx+\\ & \displaystyle + \int \frac{B_1x+C_1}{((x-b_1)^2+c_1^2)}\, dx+\cdots + \int\frac{B_l x+C_l}{((x-b_l)^2+c_l^2)}\, dx.
+\displaystyle\int\frac{P(x)}{Q(x)}\, dx = & \displaystyle A_{11}\int\frac{1}{x-a_1}\, dx+\cdots +A_{1n_1}\int \frac{1}{(x-a_1)^{n_1}}\, dx + \\ & \displaystyle +\cdots +A_{k1}\int \frac{1}{x-a_k}\, dx +\cdots +A_{kn_k}\int \frac{1}{(x-a_k)^{n_k}}\, dx+\\ & \displaystyle + \int \frac{B_1x+C_1}{((x-b_1)^2+c_1^2)}\, dx+\cdots + \int\frac{B_l x+C_l}{((x-b_l)^2+c_l^2)}\, dx.
 \end{array}
 $$
 
@@ -280,7 +282,7 @@ Dicho método consiste en descomponer la integral indefinida a calcular de la si
 $$
 \int\frac{P(x)}{Q(x)}\, dx = \frac{R(x)}{Q_1(x)}+\int\frac{T(x)}{Q_2(x)}\, dx,
 $$
-donde $Q_1(x)=\mathrm{mcd}(Q(x),Q'(x)$, es decir, el máximo común divisor entre los polinomios $Q(x)$ y su derivada $Q'(x)$ y $Q_2 =\frac{Q(x)}{Q_1(x)}$ es el cociente que resulta de dividir el polinomio $Q(x)$ por el polinomio $Q_1(x)$.
+donde $Q_1(x)=\mathrm{mcd}(Q(x),Q'(x))$, es decir, el máximo común divisor entre los polinomios $Q(x)$ y su derivada $Q'(x)$ y $Q_2 =\frac{Q(x)}{Q_1(x)}$ es el cociente que resulta de dividir el polinomio $Q(x)$ por el polinomio $Q_1(x)$.
 
 ## Método de Ostrogradski
 Los polinomios $R(x)$ y $T(x)$ son polinomios de grados $\mathrm{grado\ }Q_1-1$ y $\mathrm{grado\ }Q_2-1$, respectivamente cuyos coeficientes se tienen que hallar derivando la descomposición anterior:
@@ -298,14 +300,30 @@ En esta sección vamos a aprender a calcular integrales indefinidas que involucr
 * $\displaystyle \int \sin^m x\cos^n x\, dx$, donde $m$ y $n$ son números naturales.
 * $\displaystyle \int \tan^n x\, dx,\ \int \cot^n x$ donde $n$ es un número natural.
 * $\displaystyle \int \sin (m x)\cos (n x)\, dx$, donde $m$ y $n$ son números naturales.
-* $\displaystyle \int R(\sin x, \cos x)\, dx$ donde $R(\sin x,\cos x)$ quiere decir una función racional en las variables $\sin x$ y $\cos x$ como por ejemplo $R(\sin x,\cos x)=\frac{\sin^2+\cos x+1}{\cos^2 x-\cos x-1}$.
+* $\displaystyle \int R(\sin x, \cos x)\, dx$ donde $R(\sin x,\cos x)$ quiere decir una función racional en las variables $\sin x$ y $\cos x$ como por ejemplo $R(\sin x,\cos x)=\frac{\sin^2 x +\cos x+1}{\cos^2 x-\cos x-1}$.
 
 ## Introducción
 Recordemos las identidades trigonométricas que usaremos en el cálculo de las integrales anteriores:
 
-* El seno del ángulo doble: $\sin (2x)=2\sin x\cos x$.
-* El coseno del ángulo doble: $\cos (2x)=\cos^2 x-\sin^2 x=2\cos^2 x-1=1-2\sin^2 x$. De las identidades anteriores tenemos que $\sin^2 x=\frac{1}{2}(1-\cos (2x)),\ \cos^2 x=\frac{1}{2}(1+\cos (2x))$.
-* Relación entre el coseno y la tangente: $1+\tan^2 x=\frac{1}{\cos^2 x}$, o, si se quiere $\tan^2 x=\sec^2 x-1$ o, $\cot^2 x=\csc^2x -1$.
+* El seno del ángulo doble: 
+
+$$\sin (2x)=2\sin x\cos x.$$
+
+* El coseno del ángulo doble: 
+
+$$\cos (2x)=\cos^2 x-\sin^2 x=2\cos^2 x-1=1-2\sin^2 x.$$ 
+
+## Introducción
+
+* De las identidades anteriores tenemos que 
+
+$$\sin^2 x=\frac{1}{2}(1-\cos (2x)),\ \cos^2 x=\frac{1}{2}(1+\cos (2x)).$$
+
+* Relación entre el coseno y la tangente: 
+
+$$1+\tan^2 x=\frac{1}{\cos^2 x},$$ 
+
+o, si se quiere $$\tan^2 x=\sec^2 x-1 \ \mathrm{o}, \ \cot^2 x=\csc^2x -1.$$
 
 ## Introducción
 
@@ -334,35 +352,39 @@ En esta sección vamos a explicar cómo calcular el siguiente tipo de integrales
 Vamos a distinguir los casos siguientes:
 
 * 1: Uno de los números $n$ o $m$ es cero. En este caso, distinguimos los subcasos siguientes:
-  * 1.1: $m$ impar. En este caso, existe un natural $m'$ tal que $m=2m'+1$. La integral indefinida a calcular sería:
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+
+**1.1: $m$ impar**. En este caso, existe un natural $m'$ tal que $m=2m'+1$. La integral indefinida a calcular sería:
 $$
 \int\sin^{2m'+1}x\, dx =\int (\sin^2 x)^{m'}\sin x\, dx=\int (1-\cos^2 x)^{m'}\sin x\, dx.
 $$
 
-## Integrales indefinidas de $\sin^m x\cos^n x$
 A continuación, si desarrollamos la expresión $(1-\cos^2 x)^{m'}$ nos quedará una suma de integrales de la forma $\displaystyle\int \cos^j x\sin x\, dx$, con $j$ natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con $g(x)=\cos x$:
 $$
 \int \cos^j x\sin x\, dx =-\int \cos^j x (-\sin x)\, dx = -\frac{\cos^{j+1}x}{(j+1)}+C.
 $$
-  
-  * 1.2: $n$ impar. En este caso, existe un natural $n'$ tal que $n=2n'+1$. Este caso es parecido al anterior:
+
+## Integrales indefinidas de $\sin^m x\cos^n x$
+
+**1.2: $n$ impar**. En este caso, existe un natural $n'$ tal que $n=2n'+1$. Este caso es parecido al anterior:
 $$
 \int\cos^{2n'+1}x\, dx =\int (\cos^2 x)^{n'}\cos x\, dx=\int (1-\sin^2 x)^{n'}\cos x\, dx.
 $$
 
-
-## Integrales indefinidas de $\sin^m x\cos^n x$
 A continuación, si desarrollamos la expresión $(1-\sin^2 x)^{n'}$ nos quedará una suma de integrales de la forma $\displaystyle\int \sin^j x\cos x\, dx$, con $j$ natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con $g(x)=\sin x$:
+
 $$
 \int \sin^j x\cos x\, dx =\frac{\sin^{j+1}x}{(j+1)}+C.
 $$
 
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
-  * 1.3 $n$ par. En este caso, existe un natural $n'$ tal que $n=2n'$. El cálculo de la integral es el siguiente:
+**1.3 $n$ par**. En este caso, existe un natural $n'$ tal que $n=2n'$. El cálculo de la integral es el siguiente:
+
 $$
 \begin{array}{rl}
-\displaystyle\int \cos^{2n'} x\, dx & =\displaystyle \int (cos^2 x)^{n'}\, dx  = \int\left(\frac{1+\cos(2x)}{2}\right)^{n'}\, dx
+\displaystyle\int \cos^{2n'} x\, dx & =\displaystyle \int (\cos^2 x)^{n'}\, dx  = \int\left(\frac{1+\cos(2x)}{2}\right)^{n'}\, dx
 \\ & = \displaystyle \frac{1}{2^{m'+1}}\int (1+\cos t)^{m'}\, dt,
 \end{array}
 $$
@@ -378,10 +400,10 @@ $$
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
 
-  * 1.4 $m$ par. En este caso, existe un natural $m'$ tal que $m=2m'$. El cálculo de la integral es el siguiente:
+**1.4 $m$ par**. En este caso, existe un natural $m'$ tal que $m=2m'$. El cálculo de la integral es el siguiente:
 $$
 \begin{array}{rl}
-\displaystyle\int \sin^{2n'} x\, dx & =\displaystyle \int (sin^2 x)^{n'}\, dx  = \int\left(\frac{1-\cos(2x)}{2}\right)^{n'}\, dx
+\displaystyle\int \sin^{2n'} x\, dx & =\displaystyle \int (\sin^2 x)^{n'}\, dx  = \int\left(\frac{1-\cos(2x)}{2}\right)^{n'}\, dx
 \\ & = \displaystyle \frac{1}{2^{m'+1}}\int (1-\cos t)^{m'}\, dt,
 \end{array}
 $$
@@ -389,7 +411,8 @@ donde en la última igualdad hemos hecho el cambio de variable $t=2x$.  Seguidam
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
 * 2: Uno de los números $n$ o $m$ es par y el otro, $impar$. 
-  * 2.1: $m$ es impar y $n$ es par. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'+1$ y $n=2n'$. Para resolver la integral inmediata, hacemos lo siguiente:
+
+**2.1: $m$ es impar y $n$ es par**. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'+1$ y $n=2n'$. Para resolver la integral inmediata, hacemos lo siguiente:
 $$
 \begin{array}{rl}
 \displaystyle\int \sin^{2m'+1}x\cos^{2n'}x\, dx & \displaystyle =\int (\sin^2 x)^{m'}\cos^{2n'} x \sin x\, dx \\ & \displaystyle =\int (1-\cos^2 x)^{m'}\cos^{2n'}x \sin x\, dx.
@@ -399,7 +422,7 @@ Seguidamente si desarrollamos $(1-\cos^2 x)^{m'}$ nos van saliento integrales de
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
 
-  * 2.2: $m$ par y $n$ impar. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'$ y $n=2n'+1$. Para resolver la integral inmediata, hacemos lo siguiente:
+**2.2: $m$ par y $n$ impar**. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'$ y $n=2n'+1$. Para resolver la integral inmediata, hacemos lo siguiente:
 $$
 \begin{array}{rl}
 \displaystyle\int \sin^{2m'}x\cos^{2n'+1}x\, dx & \displaystyle =\int \sin^{2m'}x (\cos^2 x)^{n'} x \cos x\, dx \\ & \displaystyle =\int \sin^{2m'}x (1-\sin^2 x)^{n'} \cos x\, dx.
@@ -421,6 +444,8 @@ En la última igualdad hemos hecho el cambio de variable $t=2x$.
 ## Integrales indefinidas de $\sin^m x\cos^n x$
 Si desarrollamos las expresiones $(1-\cos t)^{m'}\cdot (1+\cos t)^{n'}$ nos quedarán sumas de integrales del tipo $\displaystyle \int \cos^j t\, dx$ que ya han sido estudiadas en los apartados 1.2 y 1.3. 
 
+## Integrales indefinidas de $\sin^m x\cos^n x$
+
 * 4: Las dos potencias $m$ y $n$ son impares. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'+1$ y $n=2n'+1$. Para resolver la integral inmediata, hacemos lo siguiente:
 $$
 \begin{array}{rl}
@@ -428,24 +453,25 @@ $$
 \end{array}
 $$
 
-## Integrales indefinidas de $\sin^m x\cos^n x$
 A continuación, si desarrollamos la expresión $(1-\sin^2 x)^{n'}$ nos quedará una suma de integrales de la forma $\displaystyle\int \sin^j x\cos x\, dx$, con $j$ natural. Dichas integrales son inmediatas, ver apartado 1.2.
 
-
+ 
 ## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
 Vamos a ver cómo se calculan las integrales indefinidas del tipo $\displaystyle\int \tan^n x\, dx$ y $\displaystyle\int\cot^n x\, dx$.
 
 En primer lugar, calculemos las integrales anteriores para $n=1$ y $n=2$.
 
 La integral $\displaystyle\int\tan x\, dx=\int\frac{\sin x}{\cos x}\, dx =-\int\frac{-\sin x}{\cos x}\, dx$ es inmediata y corresponde a la segunda fila de la tabla de integrales inmediatas con $g(x)=\cos x$:
+
 $$
-\int\tan x\, dx =-\ln |cos x|+C.
+\int\tan x\, dx =-\ln |\cos x|+C.
 $$
 
 ## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
 La integral $\displaystyle\int\cot x\, dx=\int\frac{\cos x}{\sin x}\, dx$ es inmediata y corresponde a la segunda fila de la tabla de integrales inmediatas con $g(x)=\sin x$:
+
 $$
-\int\cot x\, dx =\ln |sin x|+C.
+\int\cot x\, dx =\ln |\sin x|+C.
 $$
 
 Usando que la derivada de la función $\tan x$ vale $(\tan x)'=\frac{1}{\cos^2 x}=1+\tan^2 x$, la integral indefinida $\displaystyle\int \tan^2 x\, dx$ es sencilla de calcular:
@@ -464,7 +490,7 @@ $$
 $$
 
 ## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
-Sea un $n\geq 3$ natural. La integral indefinida $\displaystyle\int tan^n x\, dx$ se calcularía de la forma siguiente:
+Sea un $n\geq 3$ natural. La integral indefinida $\displaystyle\int \tan^n x\, dx$ se calcularía de la forma siguiente:
 $$
 \begin{array}{rl}
 \displaystyle\int\tan^n x\, dx & \displaystyle = \int\tan^{n-2} x (1+\tan^2 x-1)\, dx \\ & \displaystyle = \int\tan^{n-2} x (1+\tan^2 x)\, dx-\int \tan^{n-2} x\, dx
@@ -480,6 +506,8 @@ En resumen, hemos reducido el cálculo de la integral $\displaystyle\int \tan^n 
 
 ## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
 Aplicando la técnica anterior unas $\frac{n}{2}$ veces, llegaríamos a la integral $\displaystyle\int \tan x\, dx$ o $\displaystyle\int\tan^2 x\, dx$ dependiendo de la paridad de $n$. El valor de dichas integrales ya ha sido calculado.
+
+## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
 
 Para calcular $\displaystyle\int \cot^n x\, dx$, usamos una técnica parecida:
 $$
@@ -502,12 +530,14 @@ Aplicando la técnica anterior unas $\frac{n}{2}$ veces, llegaríamos a la integ
 Para resolver dichas integrales consideraremos 3 casos:
 
 * $\displaystyle\int\sin(mx)\sin(nx)\, dx$. Usando la fórmula que transforma el producto de funciones trigonométricas en sumas, obtenemos lo siguiente:
+
 $$
 \begin{array}{rl}
 \displaystyle\int\sin(mx)\sin(nx)\, dx &  =\displaystyle  \frac{1}{2}\int (\cos((m-n)x)-\cos((m+n)x))\, dx\\
 & = \displaystyle \frac{1}{2}\left(\frac{\sin((m-n)x)}{m-n}-\frac{\sin((m+n)x)}{m+n}\right)+C,
 \end{array}
 $$
+
 si $m\neq n$.
 
 ## Integrales indefinidas de $\sin(mx)\cos(nx)$
@@ -516,6 +546,8 @@ $$
 \int\sin^2(nx)\, dx   = \frac{1}{2}\int (1-\cos(2nx))\, dx
  =  \frac{1}{2}\left(x-\frac{\sin (2nx)}{2n}\right)+C.
 $$
+
+## Integrales indefinidas de $\sin(mx)\cos(nx)$
 
 * $\displaystyle\int\sin(mx)\cos(nx)\, dx$. Usando la fórmula que transforma el producto de funciones trigonométricas en sumas, obtenemos lo siguiente:
 $$
@@ -526,12 +558,13 @@ $$
 $$
 si $m\neq n$.
 
-## Integrales indefinidas de $\sin(mx)\cos(nx)$
 Si $m=n$:
 $$
 \int\sin(nx)\cos(nx)\, dx   = \frac{1}{2}\int \sin(2nx)\, dx
  =  -\frac{1}{4n}\cos (2nx)+C.
 $$
+
+## Integrales indefinidas de $\sin(mx)\cos(nx)$
 
 * $\displaystyle\int\cos(mx)\cos(nx)\, dx$. Usando la fórmula que transforma el producto de funciones trigonométricas en sumas, obtenemos lo siguiente:
 $$
@@ -542,7 +575,6 @@ $$
 $$
 si $m\neq n$.
 
-## Integrales indefinidas de $\sin(mx)\cos(nx)$
 Si $m=n$:
 $$
 \int\cos^2(nx)\, dx   = \frac{1}{2}\int (1+\cos(2nx))\, dx
@@ -567,7 +599,7 @@ De la misma manera, $\sin x=2\sin\left(\frac{x}{2}\right)\cos \left(\frac{x}{2}\
 
 La relación entre los diferenciales será la siguiente:
 $$
-dt = \frac{1}{2\cos^2 \left(\frac{x}{2}\right)}\, dx=\frac{\left(1+\tan^2\left(\frac{x}{2}\right)\right)}{2}dx = \frac{1+t^2}{2}dx,\ \Rightarrow dx=\frac{2 dt}{1+t^2}.
+dt = \frac{1}{2\cos^2 \left(\frac{x}{2}\right)}\, dx=\frac{\left(1+\tan^2\left(\frac{x}{2}\right)\right)}{2}dx = \frac{1+t^2}{2}dx\ \Rightarrow dx=\frac{2 dt}{1+t^2}.
 $$
 
 ## Integrales indefinidas de $R(\sin x, \cos x)$
@@ -590,6 +622,8 @@ En algunas ocasiones, si la función $R$ verifica una cierta condición, podemos
 Entonces, sólo nos pueden salir potencias pares en $\sin x$ y $\cos x$.
 
 En este caso hacemos el cambio $t=\tan x$, con $\cos^2 x=\frac{1}{1+t^2}$, $\sin^2 x=\frac{t}{1+t^2}$, $dx=\frac{dt}{1+t^2}$.
+
+## Integrales indefinidas de $R(\sin x, \cos x)$
 
 * Supongamos que la función $R$ es impar en la variable $\sin x$: $R(\sin x, \cos x)=-R(-\sin x, \cos x)$.
 Entonces, sólo nos pueden salir potencias impares en $\sin x$.
