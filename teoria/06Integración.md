@@ -12,11 +12,7 @@ output:
 ---
 <script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-reticulate::use_python("/opt/anaconda3/bin/python")
-#reticulate::py_install("sympy")
-```
+
 
 
 # Introducción
@@ -45,9 +41,7 @@ Si hacemos dichos polígonos más "precisos" progresivamente, podemos considerar
 ## Motivación
 <div class="center">
 
-```{r, echo=FALSE, label=int1,fig.cap="",out.width = "500px"}
-knitr::include_graphics("Images/MotivacionIntegral.png",dpi=1200)
-```
+<img src="Images/MotivacionIntegral.png" width="500px" />
 </div>
 
 
@@ -62,9 +56,7 @@ Sea $[a,b]\subset\mathbb{R}$ un intervalo de la recta real. Una **partición** $
 
 <div class="center">
 
-```{r, echo=FALSE, label=part1,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/Particion.png",dpi=1200)
-```
+<img src="Images/Particion.png" width="650px" />
 </div>
 
 
@@ -157,17 +149,13 @@ La suma de las áreas de los rectángulos en azul sería la suma inferior $L(f,P
 ## Sumas inferiores y superiores
 <div class="center">
 
-```{r, echo=FALSE, label=suminf1,fig.cap="",out.width = "700px"}
-knitr::include_graphics("Images/SumaInferiorNet.png",dpi=1200)
-```
+<img src="Images/SumaInferiorNet.png" width="700px" />
 </div>
 
 ## Sumas inferiores y superiores
 <div class="center">
 
-```{r, echo=FALSE, label=sumsup1,fig.cap="",out.width = "700px"}
-knitr::include_graphics("Images/SumaSuperiorNet.png",dpi=1200)
-```
+<img src="Images/SumaSuperiorNet.png" width="700px" />
 </div>
 
 ## Ejemplo
@@ -187,15 +175,7 @@ La función $f(x)=1-x^2$ es decreciente en el intervalo $[0,1]$ tal como muestra
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
-x=seq(from=0,to=1,by=0.01)
-f=function(x){1-x^2}
-plot(x,f(x),type="l",xlab="x",ylab="y")
-abline(h=0)
-lines(c(0,0),c(0,f(0)),lty=3)
-lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
-lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
 </div>
 
 ## Ejemplo
@@ -212,7 +192,7 @@ El valor de la suma inferior será, pues,
 $$
 \begin{array}{rl}
 L(f,P) & =f\left(\frac{1}{3}\right)\cdot \frac{1}{3}+f\left(\frac{2}{3}\right)\cdot \frac{1}{3}+f\left(1\right)\cdot \frac{1}{3}=\left(1-\frac{1}{9}\right)\cdot \frac{1}{3}+\left(1-\frac{4}{9}\right)\cdot \frac{1}{3}+\left(1-1\right)\cdot \frac{1}{3}\\
-& = \frac{13}{27}\approx `r round((f(1/3)+f(2/3))/3,4)`.
+& = \frac{13}{27}\approx 0.4815.
 \end{array}
 $$
 </div>
@@ -227,7 +207,7 @@ El valor de la suma superior será, pues,
 $$
 \begin{array}{rl}
 U(f,P) & =f\left(0\right)\cdot \frac{1}{3}+f\left(\frac{1}{3}\right)\cdot \frac{1}{3}+f\left(\frac{2}{3}\right)\cdot \frac{1}{3}=\left(1-0\right)\cdot \frac{1}{3}+\left(1-\frac{1}{9}\right)\cdot \frac{1}{3}+\left(1-\frac{4}{9}\right)\cdot \frac{1}{3}\\
-& = \frac{22}{27}\approx `r round((f(0)+f(1/3)+f(2/3))/3,4)`.
+& = \frac{22}{27}\approx 0.8148.
 \end{array}
 $$
 En las dos figuras siguientes, hemos dibujado en verde los rectángulos correspondientes a la suma inferior $L(f,P)$ y en rojo, los correspondientes a la suma superior $U(f,P)$. Los valores obtenidos anteriormente serían, pues, la suma de las áreas de los rectángulos en verde para $L(f,P)$ y la suma de las áreas de los rectángulos en rojo para $U(f,P)$.
@@ -235,34 +215,12 @@ En las dos figuras siguientes, hemos dibujado en verde los rectángulos correspo
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
-x=seq(from=0,to=1,by=0.01)
-f=function(x){1-x^2}
-plot(x,f(x),type="l",xlab="x",ylab="y")
-abline(h=0)
-lines(c(0,0),c(0,f(0)),lty=3)
-lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
-lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
-rect(0,0,1/3,f(1/3),col="springgreen3")
-rect(1/3,0,2/3,f(2/3),col="springgreen3")
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 </div>
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
-x=seq(from=0,to=1,by=0.01)
-f=function(x){1-x^2}
-plot(x,f(x),type="l",xlab="x",ylab="y")
-abline(h=0)
-lines(c(0,0),c(0,f(0)),lty=3)
-lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
-lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
-rect(0,0,1/3,f(0),col='firebrick2')
-rect(1/3,0,2/3,f(1/3),col='firebrick2')
-rect(2/3,0,1,f(2/3),col='firebrick2')
-lines(x,f(x))
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
 </div>
 
@@ -270,7 +228,8 @@ lines(x,f(x))
 ## Ejemplo
 <div class="example">
 El cálculo de la suma inferior y superior en `python` es el siguiente:
-```{python}
+
+```python
 import numpy as np
 def f(x):
  return(1-x**2)
@@ -288,9 +247,21 @@ for i in range(1,len(x)):
 
 ## Ejemplo
 <div class="example">
-```{python}
+
+```python
 print('Suma inferior={res}'.format(x=x, res=suma_inferior))
+```
+
+```
+## Suma inferior=0.48148148148148145
+```
+
+```python
 print('Suma superior={res}'.format(x=x, res=suma_superior))
+```
+
+```
+## Suma superior=0.8148148148148148
 ```
 
 </div>
@@ -454,7 +425,8 @@ Comprobemos en `python` que $L(f,P')\geq L(f,P)$ y $U(f,P')\leq U(f,P)$:
 
 ## Ejemplo
 <div class="example">
-```{python}
+
+```python
 def f(x):
  return(1-x**2)
 
@@ -479,19 +451,42 @@ for i in range(1,len(P2)):
 
 ## Ejemplo
 <div class="example">
-```{python}
-print('Suma inferior={res}'.format(x=x, res=suma_inferior_P))
-print('Suma inferior partición más fina={res}'.format(x=x, res=suma_inferior_P2))
 
+```python
+print('Suma inferior={res}'.format(x=x, res=suma_inferior_P))
+```
+
+```
+## Suma inferior=0.48148148148148145
+```
+
+```python
+print('Suma inferior partición más fina={res}'.format(x=x, res=suma_inferior_P2))
+```
+
+```
+## Suma inferior partición más fina=0.5873842592592592
 ```
 </div>
 
 
 ## Ejemplo
 <div class="example">
-```{python}
+
+```python
 print('Suma superior={res}'.format(x=x, res=suma_superior_P))
+```
+
+```
+## Suma superior=0.8148148148148148
+```
+
+```python
 print('Suma superior partición más fina={res}'.format(x=x, res=suma_superior_P2))
+```
+
+```
+## Suma superior partición más fina=0.7378472222222222
 ```
 
 </div>
@@ -508,65 +503,23 @@ Los dos gráficos siguientes corresponden a las sumas inferiores de las dos part
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
-x=seq(from=0,to=1,by=0.01)
-f=function(x){1-x^2}
-plot(x,f(x),type="l",xlab="x",ylab="y")
-abline(h=0)
-lines(c(0,0),c(0,f(0)),lty=3)
-lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
-lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
-rect(0,0,1/3,f(1/3),col="springgreen3")
-rect(1/3,0,2/3,f(2/3),col="springgreen3")
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" />
 </div>
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
-x=seq(from=0,to=1,by=0.01)
-plot(x,f(x),type="l",xlab="x",ylab="y")
-abline(h=0)
-particio = c(0,1/6,1/3,1/2,7/12,2/3,5/6,1)
-for (i in 1:length(particio)){
-  lines(c(particio[i],particio[i]),c(0,f(particio[i])))
-}
-for (i in 1:(length(particio)-1)){
-  rect(particio[i],0,particio[i+1],f(particio[i+1]),col="springgreen3")
-}
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
 </div>
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
-x=seq(from=0,to=1,by=0.01)
-f=function(x){1-x^2}
-plot(x,f(x),type="l",xlab="x",ylab="y")
-abline(h=0)
-lines(c(0,0),c(0,f(0)),lty=3)
-lines(c(1/3,1/3),c(0,f(1/3)),lty=3)
-lines(c(2/3,2/3),c(0,f(2/3)),lty=3)
-rect(0,0,1/3,f(0),col='firebrick2')
-rect(1/3,0,2/3,f(1/3),col='firebrick2')
-rect(2/3,0,1,f(2/3),col='firebrick2')
-lines(x,f(x))
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" />
 
 </div>
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,message=FALSE,warning=FALSE,fig.align='center'}
-x=seq(from=0,to=1,by=0.01)
-plot(x,f(x),type="l",xlab="x",ylab="y")
-abline(h=0)
-particio = c(0,1/6,1/3,1/2,7/12,2/3,5/6,1)
-for (i in 1:(length(particio)-1)){
-  rect(particio[i],0,particio[i+1],f(particio[i]),col='firebrick2')
-}
-lines(x,f(x))
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
 </div>
 
 ## Integral superior e inferior
@@ -838,13 +791,26 @@ Parece que el valor de la integral es $\frac{1}{k+1}$. Más adelante veremos que
 <div class="example">
 El cálculo de la integral en `python` se realizaría de la forma siguiente:
 
-```{python}
+
+```python
 from sympy import * 
 from sympy.abc import i, k, n
 
 for k in range(1,10):
   valor=Limit(Sum(i**k, (i, 1, n)).doit()/n**(k+1),n,oo).doit();
   print('k={res}, valor integral={valor}'.format(res=k, valor=valor))
+```
+
+```
+## k=1, valor integral=1/2
+## k=2, valor integral=1/3
+## k=3, valor integral=1/4
+## k=4, valor integral=1/5
+## k=5, valor integral=1/6
+## k=6, valor integral=1/7
+## k=7, valor integral=1/8
+## k=8, valor integral=1/9
+## k=9, valor integral=1/10
 ```
 
 </div>
@@ -1506,43 +1472,7 @@ El **Teorema del valor medio de la integral** nos asegura precisamente esto: par
 
 ## Teorema del valor medio
 
-```{r,echo=FALSE,fig.align=TRUE}
-xmin=-2
-xmax=2
-ymin=0
-ymax=4
-tolx=0.01*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=4
-f = function(x){4-x^2}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-3*tolx,"x")
-text(toly,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-#  text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
-  }
-
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-#  text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
-}
-lines(x,f(x),col='firebrick2')
-text(pi,1.3,"f(x)")
-lines(c(-2,-2),c(0,8/3),col='deepskyblue3')
-lines(c(-2,2),c(8/3,8/3),col='deepskyblue3')
-lines(c(2,2),c(0,8/3),col='deepskyblue3')
-text(-2,-0.2,"a")
-text(2,-0.2,"b")
-text(1.5,2.1,"f(x)")
-
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-14-1.png" style="display: block; margin: auto auto auto 0;" />
 
 
 ## Teorema del valor medio
@@ -1630,9 +1560,7 @@ El **Teorema Fundamental del Cálculo** nos resuelve este problema relacionando 
 Más concretamente, consideremos una función $f:[a,b]\longrightarrow \mathbb{R}$ **integrable** en el intervalo $[a,b]$ y definamos a partir de ella la función área $F:[a,b]\longrightarrow \mathbb{R}$ como $F(x)=\int_a^x f$, ver gráfica adjunta:
 
 <div class="center">
-```{r, echo=FALSE, label=der2,fig.cap="",out.width = "550px"}
-knitr::include_graphics("Images/tfc.png",dpi=1200)
-```
+<img src="Images/tfc.png" width="550px" />
 </div>
 
 ## Introducción
@@ -1750,46 +1678,14 @@ Concretamente, consideremos el polinomio $p(x)=4-x^2$ definido en el intervalo $
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,fig.align='center'}
-xmin=-2
-xmax=2
-ymin=0
-ymax=4
-tolx=0.01*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=4
-f = function(x){4-x^2}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-3*tolx,"x")
-text(toly,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-#  text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
-  }
-
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-#  text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
-}
-lines(x,f(x),col='firebrick2')
-text(-2,-0.25,"-2")
-text(2,-0.25,"2")
-text(1.5,2.2,"p(x)")
-
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
 </div>
 
 ## Ejemplo
 <div class="example">
 Una primitiva del polinomio anterior sería: $F(x)=-\frac{x^3}{3}+4x$. El área entre $x=-2$ y $x=2$, sería usando la regla de Barrow:
 $$
-\int_{-2}^2 p = F(2)-F(-2)=-\frac{2^3}{3}+4\cdot 2-\left(\frac{(-2)^3}{3}-4\cdot (-2)\right)=\frac{32}{3}\approx `r round(32/3,4)`.
+\int_{-2}^2 p = F(2)-F(-2)=-\frac{2^3}{3}+4\cdot 2-\left(\frac{(-2)^3}{3}-4\cdot (-2)\right)=\frac{32}{3}\approx 10.6667.
 $$
 El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
 <l class="center">
@@ -1902,9 +1798,7 @@ $$
 Tenemos la situación siguiente:
 
 <div class="center">
-```{r, echo=FALSE, label=tmitjana,fig.cap="",out.width = "800px"}
-knitr::include_graphics("Images/teorema2mitjana.png",dpi=1200)
-```
+<img src="Images/teorema2mitjana.png" width="800px" />
 </div>
 
 
@@ -2145,7 +2039,7 @@ Sigamos los pasos de la integración por partes:
 * Aplicamos la fórmula de integración por partes:
 $$
 \begin{array}{rl}
-\displaystyle\int_0^2 x\mathrm{e}^x\, dx  & \displaystyle =u(2)\cdot v(2)-u(0)\cdot v(0)-\int_0^2 u'(x)\cdot v(x)\, dx=2\cdot \mathrm{e}^2-0\cdot \mathrm{e}^0-\int_0^2 1\cdot \mathrm{e}^x\, dx \\ & =2\cdot\mathrm{e}^2-[\mathrm{e}^x]_0^2  = 2\cdot\mathrm{e}^2-(\mathrm{e}^2-1)  =\mathrm{e}^2+1\approx`r round(exp(2)+1,4)`.
+\displaystyle\int_0^2 x\mathrm{e}^x\, dx  & \displaystyle =u(2)\cdot v(2)-u(0)\cdot v(0)-\int_0^2 u'(x)\cdot v(x)\, dx=2\cdot \mathrm{e}^2-0\cdot \mathrm{e}^0-\int_0^2 1\cdot \mathrm{e}^x\, dx \\ & =2\cdot\mathrm{e}^2-[\mathrm{e}^x]_0^2  = 2\cdot\mathrm{e}^2-(\mathrm{e}^2-1)  =\mathrm{e}^2+1\approx8.3891.
 \end{array}
 $$
 El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
@@ -2188,44 +2082,7 @@ $$
 Calculemos la longitud del trozo de parábola $y=x^2$ desde el punto $(1,1)$ hasta el punto $(2,4)$:
 
 
-```{r,echo=FALSE,fig.align='center'}
-xmin=-2
-xmax=2
-ymin=0
-ymax=4
-tolx=0.02*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=4
-f = function(x){x^2}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-3*tolx,"x")
-text(toly,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  text(xmin+((xmax-xmin)/quantsx)*i,-1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
-  }
-
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
-}
-lines(x,f(x),col="black")
-#text(-2,-0.2,"a")
-#text(2,-0.2,"b")
-text(1.5,1.7,expression(x^2))
-text(1,0.7,"(1,1)")
-text(2.1,3.7,"(2,4)")
-points(c(1,2),c(1,4),pch=19)
-
-x2=seq(from=1,to=2,by=0.01)
-lines(x2,f(x2),col='firebrick2')
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
 
 
 </div>
@@ -2252,36 +2109,7 @@ para todo valor de $t$. Las funciones seno y coseno hiperbólicas verifican las 
 <div class="example">
 Las gráficas del $\sinh x$ (en azul) y del $\cosh x$ (en rojo) para $x$ entre $-2$ y $2$ se muestran a continuación:
 
-```{r,echo=FALSE,fig.align='center'}
-xmin=-2
-xmax=2
-ymin=-3
-ymax=3
-tolx=0.02*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=4
-f = function(x){sinh(x)}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-3*tolx,"x")
-text(toly,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  text(xmin+((xmax-xmin)/quantsx)*i,-1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
-}
-
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
-}
-lines(x,f(x),col='deepskyblue3')
-lines(x,cosh(x),col='firebrick2')
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
 </div>
 
 ## Ejemplo
@@ -2301,7 +2129,7 @@ Para escribir el valor de la integral que nos da la longitud del trozo de curva 
 El valor de la longitud será, pues,
 $$
 \begin{array}{rl}
-L & =\displaystyle \int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\cosh t\cdot \frac{1}{2}\cosh t\, dt=\frac{1}{2}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\cosh^2 t\, dt=\frac{1}{2}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})} \left(\frac{\mathrm{e}^t+\mathrm{e}^{-t}}{2}\right)^2\, dt \\ & \displaystyle =\frac{1}{8}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})} (\mathrm{e}^{2t}+\mathrm{e}^{-2t}+2)\, dt=\frac{1}{8}\left[\frac{\mathrm{e}^{2t}}{2}-\frac{\mathrm{e}^{-2t}}{2}+2t\right]_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\\ & =\frac{1}{8}\left(\frac{(4+\sqrt{17})^2}{2}-\frac{1}{2(4+\sqrt{17})^2}+2\ln(4+\sqrt{17})-\left(\frac{(2+\sqrt{5})^2}{2}-\frac{1}{2(2+\sqrt{5})^2}+2\ln(2+\sqrt{5})\right)\right) \\ & = \frac{1}{4} (4\sqrt{17}-2\sqrt{5}+\ln(4+\sqrt{17})-\ln(2+\sqrt{5}))\approx `r round((1/4)*(4*sqrt(17)-2*sqrt(5)+log(4+sqrt(17))-log(2+sqrt(5))),4)`.
+L & =\displaystyle \int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\cosh t\cdot \frac{1}{2}\cosh t\, dt=\frac{1}{2}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\cosh^2 t\, dt=\frac{1}{2}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})} \left(\frac{\mathrm{e}^t+\mathrm{e}^{-t}}{2}\right)^2\, dt \\ & \displaystyle =\frac{1}{8}\int_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})} (\mathrm{e}^{2t}+\mathrm{e}^{-2t}+2)\, dt=\frac{1}{8}\left[\frac{\mathrm{e}^{2t}}{2}-\frac{\mathrm{e}^{-2t}}{2}+2t\right]_{\ln(2+\sqrt{5})}^{\ln(4+\sqrt{17})}\\ & =\frac{1}{8}\left(\frac{(4+\sqrt{17})^2}{2}-\frac{1}{2(4+\sqrt{17})^2}+2\ln(4+\sqrt{17})-\left(\frac{(2+\sqrt{5})^2}{2}-\frac{1}{2(2+\sqrt{5})^2}+2\ln(2+\sqrt{5})\right)\right) \\ & = \frac{1}{4} (4\sqrt{17}-2\sqrt{5}+\ln(4+\sqrt{17})-\ln(2+\sqrt{5}))\approx 3.1678.
 \end{array}
 $$
 El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
@@ -2325,38 +2153,7 @@ Consideremos la función $f(x)=-x^2$ definida en el intervalo $[-1,1]$. Como pue
 ## Cálculo de áreas de figuras planas
 
 <div class="example">
-```{r,echo=FALSE,fig.align='center'}
-xmin=-1
-xmax=1
-ymin=-1
-ymax=0.5
-tolx=0.02*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=3
-f = function(x){-x^2}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.005)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,3*tolx,"x")
-text(toly,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  text(xmin+((xmax-xmin)/quantsx)*i,1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
-}
-
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
-}
-lines(x,f(x),col='firebrick2')
-for (i in 1:length(x)){
-  lines(c(x[i],x[i]),c(0,f(x[i])),col='deepskyblue3')}
-
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
 </div>
 
 ## Cálculo de áreas de figuras planas
@@ -2383,44 +2180,7 @@ Veamos el ejemplo siguiente:
 
 Consideremos la función $f(x)=\sin x-\cos x$ definida en el intervalo $\left[0,\pi\right]$ donde hemos indicado con color azul el área negativa donde la función va por debajo del eje $X$ (intervalo $\left[0,\frac{\pi}{4}\right]$) y en color rojo el área positiva donde la función va por encima del eje $X$ (intervalo $\left[\frac{\pi}{4},\pi\right]$) 
 
-```{r,echo=FALSE,fig.align='center'}
-xmin=0
-xmax=pi
-ymin=-1.5
-ymax=1.5
-tolx=0.01*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=6
-f = function(x){sin(x)-cos(x)}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-2.5*tolx,"x")
-text(toly,ymax+toly,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  ii=-2+0.5*i}
-text(xmin+((xmax-xmin)/quantsx)*1,-2*toly,expression(frac(pi,4)),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*2,-2*toly,expression(frac(pi,2)),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*3,-2*toly,expression(frac(3*pi,4)),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*4,-2*toly,expression(pi),cex=0.75)
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  if (i==3){text(2.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*3,ymin+((ymax-ymin)/quantsy)*3,cex=0.75)}
-  else
-  {text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
-}
-lines(x,f(x),col='firebrick2')
-text(pi,1.3,"f(x)")
-xmenys=seq(from=0,to=pi/4,by=0.005)
-xmes=seq(from=pi/4,to=pi,by=0.005)
-for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(0,f(xmenys[i])),col='deepskyblue3')}
-for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(0,f(xmes[i])),col='firebrick2')}
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
 </div>
 
 ## Cálculo de áreas de figuras planas
@@ -2435,8 +2195,8 @@ $$
 ¿Qué representa el valor obtenido $2$? Pues es la suma entre el área roja y el área azul. Veámoslo:
 $$
 \begin{array}{rl}
-\mathrm{Área\ roja} &\displaystyle = \int_{\frac{\pi}{4}}^\pi \sin x-\cos x \, dx = [-\sin x-\cos x]_{\frac{\pi}{4}}^\pi = -\sin\pi-\cos\pi-\left(-\sin\left(\frac{\pi}{4}\right)-\cos\left(\frac{\pi}{4}\right)\right) \\ & =-(-1)-\left(-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}\right)=1+\sqrt{2}\approx `r round(1+sqrt(2),4)`, \\
-\mathrm{Área\ azul} &\displaystyle = \int_0^{\frac{\pi}{4}} \sin x-\cos x \, dx = [-\sin x-\cos x]_0^{\frac{\pi}{4}} = -\sin\left(\frac{\pi}{4}\right)-\cos\left(\frac{\pi}{4}\right)-(\sin 0-\cos 0) \\ & =-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}-(-1)=1-\sqrt{2}\approx `r round(1-sqrt(2),4)`. \\
+\mathrm{Área\ roja} &\displaystyle = \int_{\frac{\pi}{4}}^\pi \sin x-\cos x \, dx = [-\sin x-\cos x]_{\frac{\pi}{4}}^\pi = -\sin\pi-\cos\pi-\left(-\sin\left(\frac{\pi}{4}\right)-\cos\left(\frac{\pi}{4}\right)\right) \\ & =-(-1)-\left(-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}\right)=1+\sqrt{2}\approx 2.4142, \\
+\mathrm{Área\ azul} &\displaystyle = \int_0^{\frac{\pi}{4}} \sin x-\cos x \, dx = [-\sin x-\cos x]_0^{\frac{\pi}{4}} = -\sin\left(\frac{\pi}{4}\right)-\cos\left(\frac{\pi}{4}\right)-(\sin 0-\cos 0) \\ & =-\frac{\sqrt{2}}{2}-\frac{\sqrt{2}}{2}-(-1)=1-\sqrt{2}\approx -0.4142. \\
 \end{array}
 $$
 </div>
@@ -2502,48 +2262,7 @@ Como observamos en el gráfico siguiente,
 ## Cálculo de áreas de figuras planas
 
 <div class="example">
-```{r,echo=FALSE,fig.align='center'}
-xmin=0
-xmax=2*pi
-ymin=-1.5
-ymax=1.5
-tolx=0.01*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=6
-f = function(x){sin(x)-cos(x)}
-g = function(x){sin(x)+cos(x)}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-2.5*tolx,"x")
-text(toly,ymax+toly,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  ii=-2+0.5*i}
-text(xmin+((xmax-xmin)/quantsx)*1,-2*toly,expression(frac(pi,2)),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*2,-2*toly,expression(pi),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*3,-2*toly,expression(frac(3*pi,2)),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*4,-2*toly,expression(2*pi),cex=0.75)
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  if (i==3){text(-2.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*3,ymin+((ymax-ymin)/quantsy)*3,cex=0.75)}
-  else
-  {text(-3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
-}
-lines(x,f(x),col='firebrick2')
-lines(x,g(x),col='deepskyblue3')
-text(pi,1.3,"f(x)")
-text(pi,-1.3,"g(x)")
-xmenys=seq(from=pi/4,to=3*pi/4,by=0.005)
-xmes=seq(from=0,to=pi/4,by=0.005)
-xmes=c(xmes,seq(from=3*pi/4,to=2*pi,by=0.005))
-#for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(f(xmenys[i]),g(xmenys[i])),col="springgreen3")}
-#for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(g(xmes[i]),f(xmes[i])),col="springgreen3")}
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
 </div>
 
 
@@ -2552,48 +2271,7 @@ xmes=c(xmes,seq(from=3*pi/4,to=2*pi,by=0.005))
 
 <div class="example">
 El área que queremos hallar está en verde:
-```{r,echo=FALSE,fig.align='center'}
-xmin=0
-xmax=2*pi
-ymin=-1.5
-ymax=1.5
-tolx=0.01*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=6
-f = function(x){sin(x)-cos(x)}
-g = function(x){sin(x)+cos(x)}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-2.5*tolx,"x")
-text(toly,ymax+toly,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  ii=-2+0.5*i}
-text(xmin+((xmax-xmin)/quantsx)*1,-2*toly,expression(frac(pi,2)),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*2,-2*toly,expression(pi),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*3,-2*toly,expression(frac(3*pi,2)),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*4,-2*toly,expression(2*pi),cex=0.75)
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  if (i==3){text(-2.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*3,ymin+((ymax-ymin)/quantsy)*3,cex=0.75)}
-  else
-  {text(-3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
-}
-lines(x,f(x),col="firebrick2")
-lines(x,g(x),col='deepskyblue3')
-text(pi,1.3,"f(x)")
-text(pi,-1.3,"g(x)")
-xmenys=seq(from=pi/4,to=3*pi/4,by=0.005)
-xmes=seq(from=0,to=pi/4,by=0.005)
-xmes=c(xmes,seq(from=3*pi/4,to=2*pi,by=0.005))
-for (i in 1:length(xmenys)){lines(c(xmenys[i],xmenys[i]),c(f(xmenys[i]),g(xmenys[i])),col="springgreen3")}
-for (i in 1:length(xmes)){lines(c(xmes[i],xmes[i]),c(g(xmes[i]),f(xmes[i])),col="springgreen3")}
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
 </div>
 
 
@@ -2663,9 +2341,7 @@ $$
 Un cono se puede obtener generando la función $f(x)=mx$, con $m>0$ alrededor del eje $X$ para $x\in [0,b]$:
 <div class="center">
 
-```{r, echo=FALSE, label=conx,fig.cap="",out.width = "500px"}
-knitr::include_graphics("Images/conox.png",dpi=1200)
-```
+<img src="Images/conox.png" width="500px" />
 </div>
 </div>
 
@@ -2700,9 +2376,7 @@ $$
 Vamos a calcular el volumen del cono del ejemplo anterior pero ahora vamos a girar la función $f(x)=mx$, con $m>0$ alrededor del eje $Y$ para $x\in [0,b]$:
 <div class="center">
 
-```{r, echo=FALSE, label=cony,fig.cap="",out.width = "500px"}
-knitr::include_graphics("Images/conoy.png",dpi=1200)
-```
+<img src="Images/conoy.png" width="500px" />
 </div>
 </div>
 
@@ -2726,9 +2400,7 @@ Pues que cuando giramos una figura alrededor del eje $Y$, obtenemos el volumen q
 
 <div class="center">
 
-```{r, echo=FALSE, label=cony2,fig.cap="",out.width = "500px"}
-knitr::include_graphics("Images/conoy2.png",dpi=1200)
-```
+<img src="Images/conoy2.png" width="500px" />
 </div>
 </div>
 
@@ -2808,40 +2480,7 @@ A este tipo de integración se le denomina **integración impropia de primera es
 Si el límite anterior existe, diremos que la **integral impropia** es **convergente**. En caso contrario, diremos que es **divergente**
 
 ## Introducción
-```{r,echo=FALSE,fig.align='center'}
-xmin=0
-xmax=50
-ymin=0
-ymax=1
-tolx=0.02*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=4
-f = function(x){1/(x)}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmax/16,to=xmax,by=0.01)
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,3*tolx,"x")
-text(3*tolx,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-#  text(xmin+((xmax-xmin)/quantsx)*i,1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
-}
-
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-#  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
-}
-lines(x,f(x),col='firebrick2')
-lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col='deepskyblue3',lty=2)
-for (i in 1:length(x)){
-  lines(c(x[i],x[i]),c(0,f(x[i])),col='deepskyblue3')}
-text(xmax/16,-toly,expression(a))
-text(45,-toly,expression(x %->% infinity))
-
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" />
 
 ## Introducción
 
@@ -2857,40 +2496,7 @@ Si el límite anterior existe, diremos que la **integral impropia** es **converg
 
 
 ## Introducción
-```{r,echo=FALSE,fig.align='center'}
-xmin=0
-xmax=1
-ymin=0
-ymax=100
-tolx=0.02*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=4
-f = function(x){1/(x)}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=tolx/100,to=xmax/2,by=0.0001)
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-150*tolx,"x")
-text(3*tolx,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  #  text(xmin+((xmax-xmin)/quantsx)*i,1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
-}
-
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
-}
-lines(x,f(x),col='firebrick2')
-lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col='deepskyblue3',lty=2)
-for (i in 1:length(x)){
-  lines(c(x[i],x[i]),c(0,f(x[i])),col='deepskyblue3')}
-text(xmax/2,-toly,expression(b))
-text(tolx/2,-toly,expression(x %->% a))
-
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
 
 
 ## Introducción
@@ -2910,75 +2516,11 @@ A este tipo de integración se le denomina **integración impropia de tercera es
 Si los dos límites anteriores existen, diremos que la **integral impropia** es **convergente**. En caso contrario, diremos que es **divergente.**
 
 ## Introducción
-```{r,echo=FALSE,fig.align='center'}
-xmin=-10
-xmax=10
-ymin=0
-ymax=2
-tolx=0.02*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=4
-f = function(x){1/(1+x^2)}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-150*tolx,"x")
-text(3*tolx,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  #  text(xmin+((xmax-xmin)/quantsx)*i,1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
-}
-
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
-}
-lines(x,f(x),col='firebrick2')
-lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col='deepskyblue3',lty=2)
-for (i in 1:length(x)){
-  lines(c(x[i],x[i]),c(0,f(x[i])),col='deepskyblue3')}
-text(xmax,-toly,expression(x %->% infinity))
-text(xmin,-toly,expression(x %->% -infinity))
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-24-1.png" style="display: block; margin: auto;" />
 
 
 ## Introducción
-```{r,echo=FALSE,fig.align='center'}
-xmin=0
-xmax=1
-ymin=0
-ymax=100
-tolx=0.02*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=4
-f = function(x){1/(x*(1-x))}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.001)
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-150*tolx,"x")
-text(3*tolx,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  #  text(xmin+((xmax-xmin)/quantsx)*i,1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
-}
-
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
-}
-lines(x,f(x),col='firebrick2')
-lines(c(xmax/16,xmax/16),c(0,f(xmax/16)),col='deepskyblue3',lty=2)
-for (i in 1:length(x)){
-  lines(c(x[i],x[i]),c(0,f(x[i])),col='deepskyblue3')}
-text(xmax,-toly,expression(x %->% b))
-text(xmin,-toly,expression(x %->% a))
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
 
 ## Integrales impropias de primera especie
 La definición formal de **integral impropia de primera especie** es la siguiente:
@@ -3369,53 +2911,7 @@ Ver que la integral impropia $\displaystyle\int_1^\infty \cos(x^2)\,dx$ es conve
 Sea $\{a_n\}_n$ una sucesión de números reales positiva y decreciente, $a_n\geq 0$, $a_{n+1}\leq a_n$, para todo $n$. Sea $f:[1,\infty)\longrightarrow\mathbb{R}$ una función positiva y decreciente, $f(x)\geq 0$ y $f(x)\geq f(y)$, para todo $x, y\in [1,\infty)$ con $x<y$ tal que $f(n)=a_n$, para todo $n$, es decir, el valor de $f$ en los naturales es precisamente el valor de la sucesión anterior $(a_n)_n$. Entonces, la serie $\displaystyle\sum_{n=1}^\infty a_n$ y la integral impropia $\displaystyle\int_1^\infty f(x)\, dx$ tienen el mismo carácter, es decir, una es convergente si, y sólo si, la otra lo es y viceversa.
 
 ## Criterios de convergencia
-```{r,echo=FALSE,fig.align='center'}
-xmin=0
-xmax=10
-ymin=0
-ymax=1
-tolx=0.02*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=10
-quantsy=4
-f = function(x){1/x}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.001)
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-150*tolx,"x")
-text(3*tolx,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  text(xmin+((xmax-xmin)/quantsx)*i,-1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
-}
-
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx/2,tolx/2),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  #  text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
-}
-lines(x,f(x),col='firebrick2')
-
-for (i in 1:quantsx){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(0,f(xmin+((xmax-xmin)/quantsx)*i)),lty=3)
-  lines(c(xmin+((xmax-xmin)/quantsx)*i,xmin+((xmax-xmin)/quantsx)*(i+1)),c(f(xmin+((xmax-xmin)/quantsx)*(i+1)),f(xmin+((xmax-xmin)/quantsx)*(i+1))),lty=3)
-  points(xmin+((xmax-xmin)/quantsx)*i,f(xmin+((xmax-xmin)/quantsx)*i),cex=1,pch=19)
-}
-
-text(tolx+xmin+((xmax-xmin)/quantsx)*1,f(xmin+((xmax-xmin)/quantsx)*1)+toly,expression(a[1]))
-text(xmin+((xmax-xmin)/quantsx)*2,f(xmin+((xmax-xmin)/quantsx)*2)+toly,expression(a[2]))
-text(xmin+((xmax-xmin)/quantsx)*3,f(xmin+((xmax-xmin)/quantsx)*3)+toly,expression(a[3]))
-text(xmin+((xmax-xmin)/quantsx)*4,f(xmin+((xmax-xmin)/quantsx)*4)+toly,expression(a[4]))
-text(xmin+((xmax-xmin)/quantsx)*5,f(xmin+((xmax-xmin)/quantsx)*5)+toly,expression(a[5]))
-text(xmin+((xmax-xmin)/quantsx)*6,f(xmin+((xmax-xmin)/quantsx)*6)+toly,expression(a[6]))
-text(xmin+((xmax-xmin)/quantsx)*7,f(xmin+((xmax-xmin)/quantsx)*7)+toly,expression(a[7]))
-text(xmin+((xmax-xmin)/quantsx)*8,f(xmin+((xmax-xmin)/quantsx)*8)+toly,expression(a[8]))
-text(xmin+((xmax-xmin)/quantsx)*9,f(xmin+((xmax-xmin)/quantsx)*9)+toly,expression(a[9]))
-text(xmin+((xmax-xmin)/quantsx)*10,f(xmin+((xmax-xmin)/quantsx)*10)+toly,expression(a[10]))
-
-text(1.6,0.85,expression(f(x)))
-```
+<img src="06Integración_files/figure-html/unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
 
 
 ## Criterios de convergencia
