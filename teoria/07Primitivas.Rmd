@@ -186,6 +186,24 @@ $$
 donde $a_1, \ldots, a_k$ serían las raíces reales de multiplicidad $n_1,\ldots, n_k$, respectivamente y los términos $((x-b_1)^2+c_1^2),\ldots,((x-b_l)^2+c_l^2)$ representan los términos de las raíces no reales de multiplicidad $m_1\ldots,m_l$, respectivamente.
 
 ## Descomposición de la fracción racional
+<div class="exercise">
+**Ejercicio**
+
+Sea $P(x)$ un polinomio de grado $n$ con coeficientes reales, es decir,
+$$
+P(x)=\alpha_0 +\alpha_1 x+\cdots + \alpha_n x^n,
+$$
+con $\alpha_i\in\mathbb{R}$, $i=0,1,\ldots,n$.
+
+Demostrar que si $z=z_1 +\mathrm{i} z_2$, $z_1,\ z_2\in\mathbb{R}$, es una raíz compleja del polinomio $P(x)$, es decir $P(z)=0$, también lo es su conjugada $\overline{z}=z_1-\mathrm{i}z_2$, $P(\overline{z})=0$, y en este caso, el polinomio $P(x)$ es divisible por el polinomio de segundo grado $(x^2-2 z_1 x+z_1^2 +z_2^2)$.
+
+Los números complejos están introducidos en el curso de Álgebra lineal:
+
+https://www.udemy.com/course/algebralineal/?couponCode=51CABC7FFF4982E6CBB7
+
+</div>
+
+## Descomposición de la fracción racional
 En primer lugar, supongamos que estamos en el caso en que las multiplicidades de los términos correspondientes a las raíces no reales son simples, es decir, suponemos que $m_1=\cdots =m_l=1$.
 
 A continuación, descomponemos la fracción racional $\frac{P(x)}{Q(x)}$ de la siguiente manera:
@@ -305,9 +323,20 @@ En esta sección vamos a aprender a calcular integrales indefinidas que involucr
 ## Introducción
 Recordemos las identidades trigonométricas que usaremos en el cálculo de las integrales anteriores:
 
+* Seno de la suma/diferencia:
+$$
+\sin (A\pm B)=\sin A\cdot cos B\pm \cos A\cdot \sin B.
+$$
+
 * El seno del ángulo doble: 
 
 $$\sin (2x)=2\sin x\cos x.$$
+
+## Introducción
+* Coseno de la suma/diferencia:
+$$
+\cos (A\pm B)=\cos A\cdot \cos B\mp \sin A\cdot \sin B.
+$$
 
 * El coseno del ángulo doble: 
 
@@ -355,24 +384,24 @@ Vamos a distinguir los casos siguientes:
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
 
-**1.1: $m$ impar**. En este caso, existe un natural $m'$ tal que $m=2m'+1$. La integral indefinida a calcular sería:
+**1.1: $m$ impar**. En este caso, existe un natural $m_1$ tal que $m=2m_1+1$. La integral indefinida a calcular sería:
 $$
-\int\sin^{2m'+1}x\, dx =\int (\sin^2 x)^{m'}\sin x\, dx=\int (1-\cos^2 x)^{m'}\sin x\, dx.
+\int\sin^{2m_1+1}x\, dx =\int (\sin^2 x)^{m_1}\sin x\, dx=\int (1-\cos^2 x)^{m_1}\sin x\, dx.
 $$
 
-A continuación, si desarrollamos la expresión $(1-\cos^2 x)^{m'}$ nos quedará una suma de integrales de la forma $\displaystyle\int \cos^j x\sin x\, dx$, con $j$ natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con $g(x)=\cos x$:
+A continuación, si desarrollamos la expresión $(1-\cos^2 x)^{m_1}$ nos quedará una suma de integrales de la forma $\displaystyle\int \cos^j x\sin x\, dx$, con $j$ natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con $g(x)=\cos x$:
 $$
 \int \cos^j x\sin x\, dx =-\int \cos^j x (-\sin x)\, dx = -\frac{\cos^{j+1}x}{(j+1)}+C.
 $$
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
 
-**1.2: $n$ impar**. En este caso, existe un natural $n'$ tal que $n=2n'+1$. Este caso es parecido al anterior:
+**1.2: $n$ impar**. En este caso, existe un natural $n_1$ tal que $n=2n_1+1$. Este caso es parecido al anterior:
 $$
-\int\cos^{2n'+1}x\, dx =\int (\cos^2 x)^{n'}\cos x\, dx=\int (1-\sin^2 x)^{n'}\cos x\, dx.
+\int\cos^{2n_1+1}x\, dx =\int (\cos^2 x)^{n_1}\cos x\, dx=\int (1-\sin^2 x)^{n_1}\cos x\, dx.
 $$
 
-A continuación, si desarrollamos la expresión $(1-\sin^2 x)^{n'}$ nos quedará una suma de integrales de la forma $\displaystyle\int \sin^j x\cos x\, dx$, con $j$ natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con $g(x)=\sin x$:
+A continuación, si desarrollamos la expresión $(1-\sin^2 x)^{n_1}$ nos quedará una suma de integrales de la forma $\displaystyle\int \sin^j x\cos x\, dx$, con $j$ natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con $g(x)=\sin x$:
 
 $$
 \int \sin^j x\cos x\, dx =\frac{\sin^{j+1}x}{(j+1)}+C.
@@ -380,18 +409,18 @@ $$
 
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
-**1.3 $n$ par**. En este caso, existe un natural $n'$ tal que $n=2n'$. El cálculo de la integral es el siguiente:
+**1.3 $n$ par**. En este caso, existe un natural $n_1$ tal que $n=2n_1$. El cálculo de la integral es el siguiente:
 
 $$
 \begin{array}{rl}
-\displaystyle\int \cos^{2n'} x\, dx & =\displaystyle \int (\cos^2 x)^{n'}\, dx  = \int\left(\frac{1+\cos(2x)}{2}\right)^{n'}\, dx
-\\ & = \displaystyle \frac{1}{2^{m'+1}}\int (1+\cos t)^{m'}\, dt,
+\displaystyle\int \cos^{2n_1} x\, dx & =\displaystyle \int (\cos^2 x)^{n_1}\, dx  = \int\left(\frac{1+\cos(2x)}{2}\right)^{n_1}\, dx
+\\ & = \displaystyle \frac{1}{2^{n_1+1}}\int (1+\cos t)^{n_1}\, dt,
 \end{array}
 $$
 donde en la última igualdad hemos hecho el cambio de variable $t=2x$. 
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
-Seguidamente si desarrollamos $(1+\cos t)^{m'}$ nos van saliento integrales del tipo $\displaystyle \int \cos^j x\, dx$ donde si $j$ es impar, ya las hemos estudiado en el apartado 1.2 y si $j$ es par, hemos reducido el exponente a la mitad. En el peor de los casos nos saldría la integral $\displaystyle\int\cos^2 x\,dx$ que se resolvería de la forma siguiente:
+Seguidamente si desarrollamos $(1+\cos t)^{n_1}$ nos van saliento integrales del tipo $\displaystyle \int \cos^j x\, dx$ donde si $j$ es impar, ya las hemos estudiado en el apartado 1.2 y si $j$ es par, hemos reducido el exponente a la mitad. En el peor de los casos nos saldría la integral $\displaystyle\int\cos^2 x\,dx$ que se resolvería de la forma siguiente:
 $$
 \begin{array}{rl}
 \displaystyle \int\cos^2 x\, dx & \displaystyle  = \frac{1}{2}\int (1+\cos (2x))\, dx = \frac{1}{2}\left(x+\frac{\sin(2x)}{2}\right)+C \\ & \displaystyle  =\frac{1}{2}x+\frac{1}{4}\sin (2x)+C
@@ -400,60 +429,60 @@ $$
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
 
-**1.4 $m$ par**. En este caso, existe un natural $m'$ tal que $m=2m'$. El cálculo de la integral es el siguiente:
+**1.4 $m$ par**. En este caso, existe un natural $m_1$ tal que $m=2m_1$. El cálculo de la integral es el siguiente:
 $$
 \begin{array}{rl}
-\displaystyle\int \sin^{2n'} x\, dx & =\displaystyle \int (\sin^2 x)^{n'}\, dx  = \int\left(\frac{1-\cos(2x)}{2}\right)^{n'}\, dx
-\\ & = \displaystyle \frac{1}{2^{m'+1}}\int (1-\cos t)^{m'}\, dt,
+\displaystyle\int \sin^{2m_1} x\, dx & =\displaystyle \int (\sin^2 x)^{m_1}\, dx  = \int\left(\frac{1-\cos(2x)}{2}\right)^{m_1}\, dx
+\\ & = \displaystyle \frac{1}{2^{m_1+1}}\int (1-\cos t)^{m_1}\, dt,
 \end{array}
 $$
-donde en la última igualdad hemos hecho el cambio de variable $t=2x$.  Seguidamente si desarrollamos $(1+\cos t)^{m'}$ nos van saliento integrales del tipo $\displaystyle \int \cos^j x\, dx$ que ya están estudiadas en los apartados 1.2 y 1.3.
+donde en la última igualdad hemos hecho el cambio de variable $t=2x$.  Seguidamente si desarrollamos $(1+\cos t)^{m_1}$ nos van saliento integrales del tipo $\displaystyle \int \cos^j x\, dx$ que ya están estudiadas en los apartados 1.2 y 1.3.
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
 * 2: Uno de los números $n$ o $m$ es par y el otro, $impar$. 
 
-**2.1: $m$ es impar y $n$ es par**. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'+1$ y $n=2n'$. Para resolver la integral inmediata, hacemos lo siguiente:
+**2.1: $m$ es impar y $n$ es par**. En este caso, existen dos naturales más, $m_1$ y $n_1$ tal que $m=2m_1+1$ y $n=2n_1$. Para resolver la integral inmediata, hacemos lo siguiente:
 $$
 \begin{array}{rl}
-\displaystyle\int \sin^{2m'+1}x\cos^{2n'}x\, dx & \displaystyle =\int (\sin^2 x)^{m'}\cos^{2n'} x \sin x\, dx \\ & \displaystyle =\int (1-\cos^2 x)^{m'}\cos^{2n'}x \sin x\, dx.
+\displaystyle\int \sin^{2m_1+1}x\cos^{2n_1}x\, dx & \displaystyle =\int (\sin^2 x)^{m_1}\cos^{2n_1} x \sin x\, dx \\ & \displaystyle =\int (1-\cos^2 x)^{m_1}\cos^{2n_1}x \sin x\, dx.
 \end{array}
 $$
-Seguidamente si desarrollamos $(1-\cos^2 x)^{m'}$ nos van saliento integrales del tipo $\displaystyle \int \cos^j x\sin x\, dx$, que son inmediatas, ver apartado 1.1.
+Seguidamente si desarrollamos $(1-\cos^2 x)^{m_1}$ nos van saliento integrales del tipo $\displaystyle \int \cos^j x\sin x\, dx$, que son inmediatas, ver apartado 1.1.
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
 
-**2.2: $m$ par y $n$ impar**. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'$ y $n=2n'+1$. Para resolver la integral inmediata, hacemos lo siguiente:
+**2.2: $m$ par y $n$ impar**. En este caso, existen dos naturales más, $m_1$ y $n_1$ tal que $m=2m_1$ y $n=2n_1+1$. Para resolver la integral inmediata, hacemos lo siguiente:
 $$
 \begin{array}{rl}
-\displaystyle\int \sin^{2m'}x\cos^{2n'+1}x\, dx & \displaystyle =\int \sin^{2m'}x (\cos^2 x)^{n'} x \cos x\, dx \\ & \displaystyle =\int \sin^{2m'}x (1-\sin^2 x)^{n'} \cos x\, dx.
+\displaystyle\int \sin^{2m_1}x\cos^{2n_1+1}x\, dx & \displaystyle =\int \sin^{2m_1}x (\cos^2 x)^{n_1} x \cos x\, dx \\ & \displaystyle =\int \sin^{2m_1}x (1-\sin^2 x)^{n_1} \cos x\, dx.
 \end{array}
 $$
-Seguidamente si desarrollamos $(1-\sin^2 x)^{m'}$ nos van saliento integrales del tipo $\displaystyle \int \sin^j x\cos x\, dx$ que son inmediatas, ver apartado 1.2.
+Seguidamente si desarrollamos $(1-\sin^2 x)^{n_1}$ nos van saliento integrales del tipo $\displaystyle \int \sin^j x\cos x\, dx$ que son inmediatas, ver apartado 1.2.
 
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
-* 3: Las dos potencias $m$ y $n$ son pares. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'$ y $n=2n'$. Para resolver la integral inmediata, hacemos lo siguiente:
+* 3: Las dos potencias $m$ y $n$ son pares. En este caso, existen dos naturales más, $m_1$ y $n_1$ tal que $m=2m_1$ y $n=2n_1$. Para resolver la integral inmediata, hacemos lo siguiente:
 $$
 \begin{array}{rl}
-\displaystyle\int \sin^{2m'}x\cos^{2n'}x\, dx & \displaystyle =\int (\sin^2 x)^{m'}\cos^{2n'} x \, dx \\ & \displaystyle =\int \left(\frac{1-\cos(2x)}{2}\right)^{m'}\cdot\left(\frac{1+\cos (2x)}{2}\right)^{n'}\, dx \\ & \displaystyle =\frac{1}{2^{m'+n'+1}}\int (1-\cos t)^{m'}\cdot (1+\cos t)^{n'}\, dt
+\displaystyle\int \sin^{2m_1}x\cos^{2n_1}x\, dx & \displaystyle =\int (\sin^2 x)^{m_1}\cos^{2n_1} x \, dx \\ & \displaystyle =\int \left(\frac{1-\cos(2x)}{2}\right)^{m_1}\cdot\left(\frac{1+\cos (2x)}{2}\right)^{n_1}\, dx \\ & \displaystyle =\frac{1}{2^{m_1+n_1+1}}\int (1-\cos t)^{m_1}\cdot (1+\cos t)^{n_1}\, dt
 \end{array}
 $$
 En la última igualdad hemos hecho el cambio de variable $t=2x$. 
 
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
-Si desarrollamos las expresiones $(1-\cos t)^{m'}\cdot (1+\cos t)^{n'}$ nos quedarán sumas de integrales del tipo $\displaystyle \int \cos^j t\, dx$ que ya han sido estudiadas en los apartados 1.2 y 1.3. 
+Si desarrollamos las expresiones $(1-\cos t)^{m_1}\cdot (1+\cos t)^{n_1}$ nos quedarán sumas de integrales del tipo $\displaystyle \int \cos^j t\, dx$ que ya han sido estudiadas en los apartados 1.2 y 1.3. 
 
 ## Integrales indefinidas de $\sin^m x\cos^n x$
 
-* 4: Las dos potencias $m$ y $n$ son impares. En este caso, existen dos naturales más, $m'$ y $n'$ tal que $m=2m'+1$ y $n=2n'+1$. Para resolver la integral inmediata, hacemos lo siguiente:
+* 4: Las dos potencias $m$ y $n$ son impares. En este caso, existen dos naturales más, $m_1$ y $n_1$ tal que $m=2m_1+1$ y $n=2n_1+1$. Para resolver la integral inmediata, hacemos lo siguiente:
 $$
 \begin{array}{rl}
-\displaystyle\int \sin^{2m'+1}x\cos^{2n'+1}x\, dx & \displaystyle =\int \sin^{2m'+1}x (\cos^2 x)^{n'} \cos x\, dx \\ & \displaystyle =\int \sin^{2m'+1}x (1-\sin^2 x)^{n'} \cos x\, dx.
+\displaystyle\int \sin^{2m_1+1}x\cos^{2n_1+1}x\, dx & \displaystyle =\int \sin^{2m_1+1}x (\cos^2 x)^{n_1} \cos x\, dx \\ & \displaystyle =\int \sin^{2m_1+1}x (1-\sin^2 x)^{n_1} \cos x\, dx.
 \end{array}
 $$
 
-A continuación, si desarrollamos la expresión $(1-\sin^2 x)^{n'}$ nos quedará una suma de integrales de la forma $\displaystyle\int \sin^j x\cos x\, dx$, con $j$ natural. Dichas integrales son inmediatas, ver apartado 1.2.
+A continuación, si desarrollamos la expresión $(1-\sin^2 x)^{n_1}$ nos quedará una suma de integrales de la forma $\displaystyle\int \sin^j x\cos x\, dx$, con $j$ natural. Dichas integrales son inmediatas, ver apartado 1.2.
 
  
 ## Integrales indefinidas de $\tan^n x$ y $\cot^n x$
@@ -485,7 +514,7 @@ $$
 De la misma manera, la integral de $\displaystyle\int \cot^2 x\, dx$ se puede calcular usando que $(\cot x)'=-\frac{1}{\sin^2 x}=-(1+\cot^2 x)$:
 $$
 \begin{array}{rl}
-\displaystyle\int \cot^2 x\, dx  & \displaystyle =-\int -(1+\cot^2 x-1)\, dx = -\int -(1+\cot^2 x)\, dx - \int 1\, dx \\ & \displaystyle =-\cot x-x+C.
+\displaystyle\int \cot^2 x\, dx  & \displaystyle =-\int -(1+\cot^2 x-1)\, dx \\ & \displaystyle = -\int -(1+\cot^2 x)\, dx - \int 1\, dx  =-\cot x-x+C.
 \end{array}
 $$
 

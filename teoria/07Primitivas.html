@@ -1354,11 +1354,6 @@ opacity: 0;
 }
 @media print {
 
-@page {
-size: landscape;
-margin: 0;
-}
-
 slides slide {
 display: block !important;
 position: relative;
@@ -3218,7 +3213,7 @@ text-align: center; text-decoration: none;
         <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
-      
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
           </hgroup>
   </slide>
@@ -3375,9 +3370,7 @@ F(x)=\int_a^x f(t)\, dt.
 
 <p>Distinguiremos dos casos:</p>
 
-<ul>
-<li>Supongamos que el grado del polinomio \(P(x)\) es mayor o igual que el grado del polinomio \(Q(x)\): \(\mathrm{grado}(P)\geq \mathrm{grado}(Q)\).</li>
-</ul>
+<p><strong>Primer caso:</strong> Supongamos que el grado del polinomio \(P(x)\) es mayor o igual que el grado del polinomio \(Q(x)\): \(\mathrm{grado}(P)\geq \mathrm{grado}(Q)\).</p>
 
 <p>En este caso, hemos de dividir el polinomio \(P(x)\) entre el polinomio \(Q(x)\) obteniendo un cociente \(C(x)\) y un resto \(R(x)\), donde \(\mathrm{grado}(R) &lt; \mathrm{grado}(Q)\).</p>
 
@@ -3403,9 +3396,7 @@ P(x)=Q(x)\cdot C(x)+R(x).
 
 </article></slide><slide class=""><hgroup><h2>Caso en que el grado del numerador es menor que el del denominador</h2></hgroup><article  id="caso-en-que-el-grado-del-numerador-es-menor-que-el-del-denominador">
 
-<ul>
-<li>Supongamos que el grado del polinomio \(P(x)\) es menor estrictamente que el grado del polinomio \(Q(x)\): \(\mathrm{grado}(P)&lt; \mathrm{grado}(Q)\).</li>
-</ul>
+<p><strong>Segundo caso:</strong> Supongamos que el grado del polinomio \(P(x)\) es menor estrictamente que el grado del polinomio \(Q(x)\): \(\mathrm{grado}(P)&lt; \mathrm{grado}(Q)\).</p>
 
 <p>Supondremos además que el polinomio \(Q(x)\) del denominador es mónico, es decir, el coeficiente correspondiente al término principal o del monomio de mayor grado vale 1. Si éste no fuera el caso, dividimos todos los términos por dicho coeficiente y &ldquo;sacamos&rdquo; fuera de la integral dicho coeficiente.</p>
 
@@ -3425,15 +3416,31 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 
 </article></slide><slide class=""><hgroup><h2>Descomposición de la fracción racional</h2></hgroup><article  id="descomposición-de-la-fracción-racional">
 
+<div class="exercise">
+<p><strong>Ejercicio</strong></p>
+
+<p>Sea \(P(x)\) un polinomio de grado \(n\) con coeficientes reales, es decir, \[
+P(x)=\alpha_0 +\alpha_1 x+\cdots + \alpha_n x^n,
+\] con \(\alpha_i\in\mathbb{R}\), \(i=0,1,\ldots,n\).</p>
+
+<p>Demostrar que si \(z=z_1 +\mathrm{i} z_2\), \(z_1,\ z_2\in\mathbb{R}\), es una raíz compleja del polinomio \(P(x)\), es decir \(P(z)=0\), también lo es su conjugada \(\overline{z}=z_1-\mathrm{i}z_2\), \(P(\overline{z})=0\), y en este caso, el polinomio \(P(x)\) es divisible por el polinomio de segundo grado \((x^2-2 z_1 x+z_1^2 +z_2^2)\).</p>
+
+<p>Los números complejos están introducidos en el curso de Álgebra lineal:</p>
+
+<p><a href='https://www.udemy.com/course/algebralineal/?couponCode=51CABC7FFF4982E6CBB7' title=''>https://www.udemy.com/course/algebralineal/?couponCode=51CABC7FFF4982E6CBB7</a></p></div>
+
+</article></slide><slide class=""><hgroup><h2>Descomposición de la fracción racional</h2></hgroup><article  id="descomposición-de-la-fracción-racional-1">
+
 <p>En primer lugar, supongamos que estamos en el caso en que las multiplicidades de los términos correspondientes a las raíces no reales son simples, es decir, suponemos que \(m_1=\cdots =m_l=1\).</p>
 
 <p>A continuación, descomponemos la fracción racional \(\frac{P(x)}{Q(x)}\) de la siguiente manera: \[
 \begin{array}{rl}
-\frac{P(x)}{Q(x)} = &amp; \frac{A_{11}}{x-a_1}+\frac{A_{12}}{(x-a_1)^2}+\cdots +\frac{A_{1n_1}}{(x-a_1)^{n_1}}+\cdots +\frac{A_{k1}}{x-a_k}+\frac{A_{k2}}{(x-a_k)^2}+\cdots +\frac{A_{kn_k}}{(x-a_k)^{n_k}}+\\ &amp; \frac{B_1x+C_1}{((x-b_1)^2+c_1^2)}+\cdots + \frac{B_l x+C_l}{((x-b_l)^2+c_l^2)}
+\frac{P(x)}{Q(x)} = &amp; \frac{A_{11}}{x-a_1}+\frac{A_{12}}{(x-a_1)^2}+\cdots +\frac{A_{1n_1}}{(x-a_1)^{n_1}}+\cdots \\ 
+&amp; +\frac{A_{k1}}{x-a_k}+\frac{A_{k2}}{(x-a_k)^2}+\cdots +\frac{A_{kn_k}}{(x-a_k)^{n_k}}\\ &amp; +\frac{B_1x+C_1}{((x-b_1)^2+c_1^2)}+\cdots + \frac{B_l x+C_l}{((x-b_l)^2+c_l^2)}
 \end{array}
 \] hallando los coeficientes \(A_{ij}\), \(B_i\) y \(C_i\) correspondientes.</p>
 
-</article></slide><slide class=""><hgroup><h2>Descomposición de la fracción racional</h2></hgroup><article  id="descomposición-de-la-fracción-racional-1">
+</article></slide><slide class=""><hgroup><h2>Descomposición de la fracción racional</h2></hgroup><article  id="descomposición-de-la-fracción-racional-2">
 
 <p>Para hallar dichos coeficientes hemos de sumar la parte de la derecha de la igualdad anterior reduciendo a común denominador y nos quedará una igualdad del tipo: \[
 \frac{P(x)}{Q(x)}=\frac{H(x)}{Q(x)},
@@ -3445,7 +3452,7 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 
 <p>Una vez hallados los coeficientes \(A_{ij}\), \(B_i\) y \(C_i\), descomponemos la integral racional \(\displaystyle\int\frac{P(x)}{Q(x)}\, dx\) de la siguiente manera: \[
 \begin{array}{rl}
-\displaystyle\int\frac{P(x)}{Q(x)}\, dx = &amp; \displaystyle A_{11}\int\frac{1}{x-a_1}\, dx+\cdots +A_{1n1}\int \frac{1}{(x-a_1)^{n_1}}\, dx + \\ &amp; \displaystyle +\cdots +A_{k1}\int \frac{1}{x-a_k}\, dx +\cdots +A_{kn_k}\int \frac{1}{(x-a_k)^{n_k}}\, dx+\\ &amp; \displaystyle + \int \frac{B_1x+C_1}{((x-b_1)^2+c_1^2)}\, dx+\cdots + \int\frac{B_l x+C_l}{((x-b_l)^2+c_l^2)}\, dx.
+\displaystyle\int\frac{P(x)}{Q(x)}\, dx = &amp; \displaystyle A_{11}\int\frac{1}{x-a_1}\, dx+\cdots +A_{1n_1}\int \frac{1}{(x-a_1)^{n_1}}\, dx + \\ &amp; \displaystyle +\cdots +A_{k1}\int \frac{1}{x-a_k}\, dx +\cdots +A_{kn_k}\int \frac{1}{(x-a_k)^{n_k}}\, dx+\\ &amp; \displaystyle + \int \frac{B_1x+C_1}{((x-b_1)^2+c_1^2)}\, dx+\cdots + \int\frac{B_l x+C_l}{((x-b_l)^2+c_l^2)}\, dx.
 \end{array}
 \]</p>
 
@@ -3519,7 +3526,7 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 
 <p>Dicho método consiste en descomponer la integral indefinida a calcular de la siguiente manera: \[
 \int\frac{P(x)}{Q(x)}\, dx = \frac{R(x)}{Q_1(x)}+\int\frac{T(x)}{Q_2(x)}\, dx,
-\] donde \(Q_1(x)=\mathrm{mcd}(Q(x),Q&#39;(x)\), es decir, el máximo común divisor entre los polinomios \(Q(x)\) y su derivada \(Q&#39;(x)\) y \(Q_2 =\frac{Q(x)}{Q_1(x)}\) es el cociente que resulta de dividir el polinomio \(Q(x)\) por el polinomio \(Q_1(x)\).</p>
+\] donde \(Q_1(x)=\mathrm{mcd}(Q(x),Q&#39;(x))\), es decir, el máximo común divisor entre los polinomios \(Q(x)\) y su derivada \(Q&#39;(x)\) y \(Q_2 =\frac{Q(x)}{Q_1(x)}\) es el cociente que resulta de dividir el polinomio \(Q(x)\) por el polinomio \(Q_1(x)\).</p>
 
 </article></slide><slide class=""><hgroup><h2>Método de Ostrogradski</h2></hgroup><article  id="método-de-ostrogradski-2">
 
@@ -3539,7 +3546,7 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 <li>\(\displaystyle \int \sin^m x\cos^n x\, dx\), donde \(m\) y \(n\) son números naturales.</li>
 <li>\(\displaystyle \int \tan^n x\, dx,\ \int \cot^n x\) donde \(n\) es un número natural.</li>
 <li>\(\displaystyle \int \sin (m x)\cos (n x)\, dx\), donde \(m\) y \(n\) son números naturales.</li>
-<li>\(\displaystyle \int R(\sin x, \cos x)\, dx\) donde \(R(\sin x,\cos x)\) quiere decir una función racional en las variables \(\sin x\) y \(\cos x\) como por ejemplo \(R(\sin x,\cos x)=\frac{\sin^2+\cos x+1}{\cos^2 x-\cos x-1}\).</li>
+<li>\(\displaystyle \int R(\sin x, \cos x)\, dx\) donde \(R(\sin x,\cos x)\) quiere decir una función racional en las variables \(\sin x\) y \(\cos x\) como por ejemplo \(R(\sin x,\cos x)=\frac{\sin^2 x +\cos x+1}{\cos^2 x-\cos x-1}\).</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Introducción</h2></hgroup><article  id="introducción-3">
@@ -3547,12 +3554,42 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 <p>Recordemos las identidades trigonométricas que usaremos en el cálculo de las integrales anteriores:</p>
 
 <ul>
-<li>El seno del ángulo doble: \(\sin (2x)=2\sin x\cos x\).</li>
-<li>El coseno del ángulo doble: \(\cos (2x)=\cos^2 x-\sin^2 x=2\cos^2 x-1=1-2\sin^2 x\). De las identidades anteriores tenemos que \(\sin^2 x=\frac{1}{2}(1-\cos (2x)),\ \cos^2 x=\frac{1}{2}(1+\cos (2x))\).</li>
-<li>Relación entre el coseno y la tangente: \(1+\tan^2 x=\frac{1}{\cos^2 x}\), o, si se quiere \(\tan^2 x=\sec^2 x-1\) o, \(\cot^2 x=\csc^2x -1\).</li>
+<li><p>Seno de la suma/diferencia: \[
+\sin (A\pm B)=\sin A\cdot cos B\pm \cos A\cdot \sin B.
+\]</p></li>
+<li><p>El seno del ángulo doble:</p></li>
 </ul>
 
+<p>\[\sin (2x)=2\sin x\cos x.\]</p>
+
 </article></slide><slide class=""><hgroup><h2>Introducción</h2></hgroup><article  id="introducción-4">
+
+<ul>
+<li><p>Coseno de la suma/diferencia: \[
+\cos (A\pm B)=\cos A\cdot \cos B\mp \sin A\cdot \sin B.
+\]</p></li>
+<li><p>El coseno del ángulo doble:</p></li>
+</ul>
+
+<p>\[\cos (2x)=\cos^2 x-\sin^2 x=2\cos^2 x-1=1-2\sin^2 x.\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Introducción</h2></hgroup><article  id="introducción-5">
+
+<ul>
+<li>De las identidades anteriores tenemos que</li>
+</ul>
+
+<p>\[\sin^2 x=\frac{1}{2}(1-\cos (2x)),\ \cos^2 x=\frac{1}{2}(1+\cos (2x)).\]</p>
+
+<ul>
+<li>Relación entre el coseno y la tangente:</li>
+</ul>
+
+<p>\[1+\tan^2 x=\frac{1}{\cos^2 x},\]</p>
+
+<p>o, si se quiere \[\tan^2 x=\sec^2 x-1 \ \mathrm{o}, \ \cot^2 x=\csc^2x -1.\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Introducción</h2></hgroup><article  id="introducción-6">
 
 <ul>
 <li>Fórmulas que transforman productos en sumas: \[
@@ -3577,47 +3614,45 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 <p>Vamos a distinguir los casos siguientes:</p>
 
 <ul>
-<li>1: Uno de los números \(n\) o \(m\) es cero. En este caso, distinguimos los subcasos siguientes:
-
-<ul>
-<li>1.1: \(m\) impar. En este caso, existe un natural \(m&#39;\) tal que \(m=2m&#39;+1\). La integral indefinida a calcular sería: \[
-\int\sin^{2m&#39;+1}x\, dx =\int (\sin^2 x)^{m&#39;}\sin x\, dx=\int (1-\cos^2 x)^{m&#39;}\sin x\, dx.
-\]</li>
-</ul></li>
+<li>1: Uno de los números \(n\) o \(m\) es cero. En este caso, distinguimos los subcasos siguientes:</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin^m x\cos^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-sinm-xcosn-x-1">
 
-<p>A continuación, si desarrollamos la expresión \((1-\cos^2 x)^{m&#39;}\) nos quedará una suma de integrales de la forma \(\displaystyle\int \cos^j x\sin x\, dx\), con \(j\) natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con \(g(x)=\cos x\): \[
+<p><strong>1.1: \(m\) impar</strong>. En este caso, existe un natural \(m_1\) tal que \(m=2m_1+1\). La integral indefinida a calcular sería: \[
+\int\sin^{2m_1+1}x\, dx =\int (\sin^2 x)^{m_1}\sin x\, dx=\int (1-\cos^2 x)^{m_1}\sin x\, dx.
+\]</p>
+
+<p>A continuación, si desarrollamos la expresión \((1-\cos^2 x)^{m_1}\) nos quedará una suma de integrales de la forma \(\displaystyle\int \cos^j x\sin x\, dx\), con \(j\) natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con \(g(x)=\cos x\): \[
 \int \cos^j x\sin x\, dx =-\int \cos^j x (-\sin x)\, dx = -\frac{\cos^{j+1}x}{(j+1)}+C.
 \]</p>
 
-<ul>
-<li>1.2: \(n\) impar. En este caso, existe un natural \(n&#39;\) tal que \(n=2n&#39;+1\). Este caso es parecido al anterior: \[
-\int\cos^{2n&#39;+1}x\, dx =\int (\cos^2 x)^{n&#39;}\cos x\, dx=\int (1-\sin^2 x)^{n&#39;}\cos x\, dx.
-\]</li>
-</ul>
-
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin^m x\cos^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-sinm-xcosn-x-2">
 
-<p>A continuación, si desarrollamos la expresión \((1-\sin^2 x)^{n&#39;}\) nos quedará una suma de integrales de la forma \(\displaystyle\int \sin^j x\cos x\, dx\), con \(j\) natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con \(g(x)=\sin x\): \[
+<p><strong>1.2: \(n\) impar</strong>. En este caso, existe un natural \(n_1\) tal que \(n=2n_1+1\). Este caso es parecido al anterior: \[
+\int\cos^{2n_1+1}x\, dx =\int (\cos^2 x)^{n_1}\cos x\, dx=\int (1-\sin^2 x)^{n_1}\cos x\, dx.
+\]</p>
+
+<p>A continuación, si desarrollamos la expresión \((1-\sin^2 x)^{n_1}\) nos quedará una suma de integrales de la forma \(\displaystyle\int \sin^j x\cos x\, dx\), con \(j\) natural. Dichas integrales son inmediatas y corresponden a la primera fila de la tabla de integrales inmediatas con \(g(x)=\sin x\):</p>
+
+<p>\[
 \int \sin^j x\cos x\, dx =\frac{\sin^{j+1}x}{(j+1)}+C.
 \]</p>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin^m x\cos^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-sinm-xcosn-x-3">
 
-<ul>
-<li>1.3 \(n\) par. En este caso, existe un natural \(n&#39;\) tal que \(n=2n&#39;\). El cálculo de la integral es el siguiente: \[
+<p><strong>1.3 \(n\) par</strong>. En este caso, existe un natural \(n_1\) tal que \(n=2n_1\). El cálculo de la integral es el siguiente:</p>
+
+<p>\[
 \begin{array}{rl}
-\displaystyle\int \cos^{2n&#39;} x\, dx &amp; =\displaystyle \int (cos^2 x)^{n&#39;}\, dx  = \int\left(\frac{1+\cos(2x)}{2}\right)^{n&#39;}\, dx
-\\ &amp; = \displaystyle \frac{1}{2^{m&#39;+1}}\int (1+\cos t)^{m&#39;}\, dt,
+\displaystyle\int \cos^{2n_1} x\, dx &amp; =\displaystyle \int (\cos^2 x)^{n_1}\, dx  = \int\left(\frac{1+\cos(2x)}{2}\right)^{n_1}\, dx
+\\ &amp; = \displaystyle \frac{1}{2^{n_1+1}}\int (1+\cos t)^{n_1}\, dt,
 \end{array}
-\] donde en la última igualdad hemos hecho el cambio de variable \(t=2x\).</li>
-</ul>
+\] donde en la última igualdad hemos hecho el cambio de variable \(t=2x\).</p>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin^m x\cos^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-sinm-xcosn-x-4">
 
-<p>Seguidamente si desarrollamos \((1+\cos t)^{m&#39;}\) nos van saliento integrales del tipo \(\displaystyle \int \cos^j x\, dx\) donde si \(j\) es impar, ya las hemos estudiado en el apartado 1.2 y si \(j\) es par, hemos reducido el exponente a la mitad. En el peor de los casos nos saldría la integral \(\displaystyle\int\cos^2 x\,dx\) que se resolvería de la forma siguiente: \[
+<p>Seguidamente si desarrollamos \((1+\cos t)^{n_1}\) nos van saliento integrales del tipo \(\displaystyle \int \cos^j x\, dx\) donde si \(j\) es impar, ya las hemos estudiado en el apartado 1.2 y si \(j\) es par, hemos reducido el exponente a la mitad. En el peor de los casos nos saldría la integral \(\displaystyle\int\cos^2 x\,dx\) que se resolvería de la forma siguiente: \[
 \begin{array}{rl}
 \displaystyle \int\cos^2 x\, dx &amp; \displaystyle  = \frac{1}{2}\int (1+\cos (2x))\, dx = \frac{1}{2}\left(x+\frac{\sin(2x)}{2}\right)+C \\ &amp; \displaystyle  =\frac{1}{2}x+\frac{1}{4}\sin (2x)+C
 \end{array}
@@ -3625,64 +3660,58 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin^m x\cos^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-sinm-xcosn-x-5">
 
-<ul>
-<li>1.4 \(m\) par. En este caso, existe un natural \(m&#39;\) tal que \(m=2m&#39;\). El cálculo de la integral es el siguiente: \[
+<p><strong>1.4 \(m\) par</strong>. En este caso, existe un natural \(m_1\) tal que \(m=2m_1\). El cálculo de la integral es el siguiente: \[
 \begin{array}{rl}
-\displaystyle\int \sin^{2n&#39;} x\, dx &amp; =\displaystyle \int (sin^2 x)^{n&#39;}\, dx  = \int\left(\frac{1-\cos(2x)}{2}\right)^{n&#39;}\, dx
-\\ &amp; = \displaystyle \frac{1}{2^{m&#39;+1}}\int (1-\cos t)^{m&#39;}\, dt,
+\displaystyle\int \sin^{2m_1} x\, dx &amp; =\displaystyle \int (\sin^2 x)^{m_1}\, dx  = \int\left(\frac{1-\cos(2x)}{2}\right)^{m_1}\, dx
+\\ &amp; = \displaystyle \frac{1}{2^{m_1+1}}\int (1-\cos t)^{m_1}\, dt,
 \end{array}
-\] donde en la última igualdad hemos hecho el cambio de variable \(t=2x\). Seguidamente si desarrollamos \((1+\cos t)^{m&#39;}\) nos van saliento integrales del tipo \(\displaystyle \int \cos^j x\, dx\) que ya están estudiadas en los apartados 1.2 y 1.3.</li>
-</ul>
+\] donde en la última igualdad hemos hecho el cambio de variable \(t=2x\). Seguidamente si desarrollamos \((1+\cos t)^{m_1}\) nos van saliento integrales del tipo \(\displaystyle \int \cos^j x\, dx\) que ya están estudiadas en los apartados 1.2 y 1.3.</p>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin^m x\cos^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-sinm-xcosn-x-6">
 
 <ul>
-<li>2: Uno de los números \(n\) o \(m\) es par y el otro, \(impar\).
-
-<ul>
-<li>2.1: \(m\) es impar y \(n\) es par. En este caso, existen dos naturales más, \(m&#39;\) y \(n&#39;\) tal que \(m=2m&#39;+1\) y \(n=2n&#39;\). Para resolver la integral inmediata, hacemos lo siguiente: \[
-\begin{array}{rl}
-\displaystyle\int \sin^{2m&#39;+1}x\cos^{2n&#39;}x\, dx &amp; \displaystyle =\int (\sin^2 x)^{m&#39;}\cos^{2n&#39;} x \sin x\, dx \\ &amp; \displaystyle =\int (1-\cos^2 x)^{m&#39;}\cos^{2n&#39;}x \sin x\, dx.
-\end{array}
-\] Seguidamente si desarrollamos \((1-\cos^2 x)^{m&#39;}\) nos van saliento integrales del tipo \(\displaystyle \int \cos^j x\sin x\, dx\), que son inmediatas, ver apartado 1.1.</li>
-</ul></li>
+<li>2: Uno de los números \(n\) o \(m\) es par y el otro, \(impar\).</li>
 </ul>
+
+<p><strong>2.1: \(m\) es impar y \(n\) es par</strong>. En este caso, existen dos naturales más, \(m_1\) y \(n_1\) tal que \(m=2m_1+1\) y \(n=2n_1\). Para resolver la integral inmediata, hacemos lo siguiente: \[
+\begin{array}{rl}
+\displaystyle\int \sin^{2m_1+1}x\cos^{2n_1}x\, dx &amp; \displaystyle =\int (\sin^2 x)^{m_1}\cos^{2n_1} x \sin x\, dx \\ &amp; \displaystyle =\int (1-\cos^2 x)^{m_1}\cos^{2n_1}x \sin x\, dx.
+\end{array}
+\] Seguidamente si desarrollamos \((1-\cos^2 x)^{m_1}\) nos van saliento integrales del tipo \(\displaystyle \int \cos^j x\sin x\, dx\), que son inmediatas, ver apartado 1.1.</p>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin^m x\cos^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-sinm-xcosn-x-7">
 
-<ul>
-<li>2.2: \(m\) par y \(n\) impar. En este caso, existen dos naturales más, \(m&#39;\) y \(n&#39;\) tal que \(m=2m&#39;\) y \(n=2n&#39;+1\). Para resolver la integral inmediata, hacemos lo siguiente: \[
+<p><strong>2.2: \(m\) par y \(n\) impar</strong>. En este caso, existen dos naturales más, \(m_1\) y \(n_1\) tal que \(m=2m_1\) y \(n=2n_1+1\). Para resolver la integral inmediata, hacemos lo siguiente: \[
 \begin{array}{rl}
-\displaystyle\int \sin^{2m&#39;}x\cos^{2n&#39;+1}x\, dx &amp; \displaystyle =\int \sin^{2m&#39;}x (\cos^2 x)^{n&#39;} x \cos x\, dx \\ &amp; \displaystyle =\int \sin^{2m&#39;}x (1-\sin^2 x)^{n&#39;} \cos x\, dx.
+\displaystyle\int \sin^{2m_1}x\cos^{2n_1+1}x\, dx &amp; \displaystyle =\int \sin^{2m_1}x (\cos^2 x)^{n_1} x \cos x\, dx \\ &amp; \displaystyle =\int \sin^{2m_1}x (1-\sin^2 x)^{n_1} \cos x\, dx.
 \end{array}
-\] Seguidamente si desarrollamos \((1-\sin^2 x)^{m&#39;}\) nos van saliento integrales del tipo \(\displaystyle \int \sin^j x\cos x\, dx\) que son inmediatas, ver apartado 1.2.</li>
-</ul>
+\] Seguidamente si desarrollamos \((1-\sin^2 x)^{n_1}\) nos van saliento integrales del tipo \(\displaystyle \int \sin^j x\cos x\, dx\) que son inmediatas, ver apartado 1.2.</p>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin^m x\cos^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-sinm-xcosn-x-8">
 
 <ul>
-<li>3: Las dos potencias \(m\) y \(n\) son pares. En este caso, existen dos naturales más, \(m&#39;\) y \(n&#39;\) tal que \(m=2m&#39;\) y \(n=2n&#39;\). Para resolver la integral inmediata, hacemos lo siguiente: \[
+<li>3: Las dos potencias \(m\) y \(n\) son pares. En este caso, existen dos naturales más, \(m_1\) y \(n_1\) tal que \(m=2m_1\) y \(n=2n_1\). Para resolver la integral inmediata, hacemos lo siguiente: \[
 \begin{array}{rl}
-\displaystyle\int \sin^{2m&#39;}x\cos^{2n&#39;}x\, dx &amp; \displaystyle =\int (\sin^2 x)^{m&#39;}\cos^{2n&#39;} x \, dx \\ &amp; \displaystyle =\int \left(\frac{1-\cos(2x)}{2}\right)^{m&#39;}\cdot\left(\frac{1+\cos (2x)}{2}\right)^{n&#39;}\, dx \\ &amp; \displaystyle =\frac{1}{2^{m&#39;+n&#39;+1}}\int (1-\cos t)^{m&#39;}\cdot (1+\cos t)^{n&#39;}\, dt
+\displaystyle\int \sin^{2m_1}x\cos^{2n_1}x\, dx &amp; \displaystyle =\int (\sin^2 x)^{m_1}\cos^{2n_1} x \, dx \\ &amp; \displaystyle =\int \left(\frac{1-\cos(2x)}{2}\right)^{m_1}\cdot\left(\frac{1+\cos (2x)}{2}\right)^{n_1}\, dx \\ &amp; \displaystyle =\frac{1}{2^{m_1+n_1+1}}\int (1-\cos t)^{m_1}\cdot (1+\cos t)^{n_1}\, dt
 \end{array}
 \] En la última igualdad hemos hecho el cambio de variable \(t=2x\).</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin^m x\cos^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-sinm-xcosn-x-9">
 
-<p>Si desarrollamos las expresiones \((1-\cos t)^{m&#39;}\cdot (1+\cos t)^{n&#39;}\) nos quedarán sumas de integrales del tipo \(\displaystyle \int \cos^j t\, dx\) que ya han sido estudiadas en los apartados 1.2 y 1.3.</p>
+<p>Si desarrollamos las expresiones \((1-\cos t)^{m_1}\cdot (1+\cos t)^{n_1}\) nos quedarán sumas de integrales del tipo \(\displaystyle \int \cos^j t\, dx\) que ya han sido estudiadas en los apartados 1.2 y 1.3.</p>
+
+</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin^m x\cos^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-sinm-xcosn-x-10">
 
 <ul>
-<li>4: Las dos potencias \(m\) y \(n\) son impares. En este caso, existen dos naturales más, \(m&#39;\) y \(n&#39;\) tal que \(m=2m&#39;+1\) y \(n=2n&#39;+1\). Para resolver la integral inmediata, hacemos lo siguiente: \[
+<li>4: Las dos potencias \(m\) y \(n\) son impares. En este caso, existen dos naturales más, \(m_1\) y \(n_1\) tal que \(m=2m_1+1\) y \(n=2n_1+1\). Para resolver la integral inmediata, hacemos lo siguiente: \[
 \begin{array}{rl}
-\displaystyle\int \sin^{2m&#39;+1}x\cos^{2n&#39;+1}x\, dx &amp; \displaystyle =\int \sin^{2m&#39;+1}x (\cos^2 x)^{n&#39;} \cos x\, dx \\ &amp; \displaystyle =\int \sin^{2m&#39;+1}x (1-\sin^2 x)^{n&#39;} \cos x\, dx.
+\displaystyle\int \sin^{2m_1+1}x\cos^{2n_1+1}x\, dx &amp; \displaystyle =\int \sin^{2m_1+1}x (\cos^2 x)^{n_1} \cos x\, dx \\ &amp; \displaystyle =\int \sin^{2m_1+1}x (1-\sin^2 x)^{n_1} \cos x\, dx.
 \end{array}
 \]</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin^m x\cos^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-sinm-xcosn-x-10">
-
-<p>A continuación, si desarrollamos la expresión \((1-\sin^2 x)^{n&#39;}\) nos quedará una suma de integrales de la forma \(\displaystyle\int \sin^j x\cos x\, dx\), con \(j\) natural. Dichas integrales son inmediatas, ver apartado 1.2.</p>
+<p>A continuación, si desarrollamos la expresión \((1-\sin^2 x)^{n_1}\) nos quedará una suma de integrales de la forma \(\displaystyle\int \sin^j x\cos x\, dx\), con \(j\) natural. Dichas integrales son inmediatas, ver apartado 1.2.</p>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\tan^n x\) y \(\cot^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-tann-x-y-cotn-x">
 
@@ -3690,14 +3719,18 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 
 <p>En primer lugar, calculemos las integrales anteriores para \(n=1\) y \(n=2\).</p>
 
-<p>La integral \(\displaystyle\int\tan x\, dx=\int\frac{\sin x}{\cos x}\, dx =-\int\frac{-\sin x}{\cos x}\, dx\) es inmediata y corresponde a la segunda fila de la tabla de integrales inmediatas con \(g(x)=\cos x\): \[
-\int\tan x\, dx =-\ln |cos x|+C.
+<p>La integral \(\displaystyle\int\tan x\, dx=\int\frac{\sin x}{\cos x}\, dx =-\int\frac{-\sin x}{\cos x}\, dx\) es inmediata y corresponde a la segunda fila de la tabla de integrales inmediatas con \(g(x)=\cos x\):</p>
+
+<p>\[
+\int\tan x\, dx =-\ln |\cos x|+C.
 \]</p>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\tan^n x\) y \(\cot^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-tann-x-y-cotn-x-1">
 
-<p>La integral \(\displaystyle\int\cot x\, dx=\int\frac{\cos x}{\sin x}\, dx\) es inmediata y corresponde a la segunda fila de la tabla de integrales inmediatas con \(g(x)=\sin x\): \[
-\int\cot x\, dx =\ln |sin x|+C.
+<p>La integral \(\displaystyle\int\cot x\, dx=\int\frac{\cos x}{\sin x}\, dx\) es inmediata y corresponde a la segunda fila de la tabla de integrales inmediatas con \(g(x)=\sin x\):</p>
+
+<p>\[
+\int\cot x\, dx =\ln |\sin x|+C.
 \]</p>
 
 <p>Usando que la derivada de la función \(\tan x\) vale \((\tan x)&#39;=\frac{1}{\cos^2 x}=1+\tan^2 x\), la integral indefinida \(\displaystyle\int \tan^2 x\, dx\) es sencilla de calcular:</p>
@@ -3710,13 +3743,13 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 \end{array}
 \] De la misma manera, la integral de \(\displaystyle\int \cot^2 x\, dx\) se puede calcular usando que \((\cot x)&#39;=-\frac{1}{\sin^2 x}=-(1+\cot^2 x)\): \[
 \begin{array}{rl}
-\displaystyle\int \cot^2 x\, dx  &amp; \displaystyle =-\int -(1+\cot^2 x-1)\, dx = -\int -(1+\cot^2 x)\, dx - \int 1\, dx \\ &amp; \displaystyle =-\cot x-x+C.
+\displaystyle\int \cot^2 x\, dx  &amp; \displaystyle =-\int -(1+\cot^2 x-1)\, dx \\ &amp; \displaystyle = -\int -(1+\cot^2 x)\, dx - \int 1\, dx  =-\cot x-x+C.
 \end{array}
 \]</p>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\tan^n x\) y \(\cot^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-tann-x-y-cotn-x-3">
 
-<p>Sea un \(n\geq 3\) natural. La integral indefinida \(\displaystyle\int tan^n x\, dx\) se calcularía de la forma siguiente: \[
+<p>Sea un \(n\geq 3\) natural. La integral indefinida \(\displaystyle\int \tan^n x\, dx\) se calcularía de la forma siguiente: \[
 \begin{array}{rl}
 \displaystyle\int\tan^n x\, dx &amp; \displaystyle = \int\tan^{n-2} x (1+\tan^2 x-1)\, dx \\ &amp; \displaystyle = \int\tan^{n-2} x (1+\tan^2 x)\, dx-\int \tan^{n-2} x\, dx
 \end{array}
@@ -3732,19 +3765,21 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 
 <p>Aplicando la técnica anterior unas \(\frac{n}{2}\) veces, llegaríamos a la integral \(\displaystyle\int \tan x\, dx\) o \(\displaystyle\int\tan^2 x\, dx\) dependiendo de la paridad de \(n\). El valor de dichas integrales ya ha sido calculado.</p>
 
+</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\tan^n x\) y \(\cot^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-tann-x-y-cotn-x-6">
+
 <p>Para calcular \(\displaystyle\int \cot^n x\, dx\), usamos una técnica parecida: \[
 \begin{array}{rl}
 \displaystyle\int\cot^n x\, dx &amp; \displaystyle = -\int\cot^{n-2} x (-1-\cot^2 x+1)\, dx \\ &amp; \displaystyle = -\int\cot^{n-2} x (-1-\cot^2 x)\, dx-\int \cot^{n-2} x\, dx
 \end{array}
 \]</p>
 
-</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\tan^n x\) y \(\cot^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-tann-x-y-cotn-x-6">
+</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\tan^n x\) y \(\cot^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-tann-x-y-cotn-x-7">
 
 <p>La integral \(\displaystyle \int\cot^{n-2} x (-1-\cot^2 x)\, dx\) es inmediata y corresponde a la primera fila de la tabla de integrales inmediatas con \(g(x)=\cot x\): \[
 \int\cot^{n-2} x (-1-\cot^2 x)\, dx =\frac{\cot^{n-1} x}{n-1}+C.
 \] En resumen, hemos reducido el cálculo de la integral \(\displaystyle\int \cot^n x\, dx\) al cálculo de la integral \(\displaystyle\int \cot^{n-2} x\, dx\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\tan^n x\) y \(\cot^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-tann-x-y-cotn-x-7">
+</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\tan^n x\) y \(\cot^n x\)</h2></hgroup><article  id="integrales-indefinidas-de-tann-x-y-cotn-x-8">
 
 <p>Aplicando la técnica anterior unas \(\frac{n}{2}\) veces, llegaríamos a la integral \(\displaystyle\int \cot x\, dx\) o \(\displaystyle\int\cot^2 x\, dx\) dependiendo de la paridad de \(n\). El valor de dichas integrales ya ha sido calculado.</p>
 
@@ -3753,13 +3788,17 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 <p>Para resolver dichas integrales consideraremos 3 casos:</p>
 
 <ul>
-<li>\(\displaystyle\int\sin(mx)\sin(nx)\, dx\). Usando la fórmula que transforma el producto de funciones trigonométricas en sumas, obtenemos lo siguiente: \[
+<li>\(\displaystyle\int\sin(mx)\sin(nx)\, dx\). Usando la fórmula que transforma el producto de funciones trigonométricas en sumas, obtenemos lo siguiente:</li>
+</ul>
+
+<p>\[
 \begin{array}{rl}
 \displaystyle\int\sin(mx)\sin(nx)\, dx &amp;  =\displaystyle  \frac{1}{2}\int (\cos((m-n)x)-\cos((m+n)x))\, dx\\
 &amp; = \displaystyle \frac{1}{2}\left(\frac{\sin((m-n)x)}{m-n}-\frac{\sin((m+n)x)}{m+n}\right)+C,
 \end{array}
-\] si \(m\neq n\).</li>
-</ul>
+\]</p>
+
+<p>si \(m\neq n\).</p>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin(mx)\cos(nx)\)</h2></hgroup><article  id="integrales-indefinidas-de-sinmxcosnx-1">
 
@@ -3767,6 +3806,8 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 \int\sin^2(nx)\, dx   = \frac{1}{2}\int (1-\cos(2nx))\, dx
  =  \frac{1}{2}\left(x-\frac{\sin (2nx)}{2n}\right)+C.
 \]</p>
+
+</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin(mx)\cos(nx)\)</h2></hgroup><article  id="integrales-indefinidas-de-sinmxcosnx-2">
 
 <ul>
 <li>\(\displaystyle\int\sin(mx)\cos(nx)\, dx\). Usando la fórmula que transforma el producto de funciones trigonométricas en sumas, obtenemos lo siguiente: \[
@@ -3777,12 +3818,12 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 \] si \(m\neq n\).</li>
 </ul>
 
-</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin(mx)\cos(nx)\)</h2></hgroup><article  id="integrales-indefinidas-de-sinmxcosnx-2">
-
 <p>Si \(m=n\): \[
 \int\sin(nx)\cos(nx)\, dx   = \frac{1}{2}\int \sin(2nx)\, dx
  =  -\frac{1}{4n}\cos (2nx)+C.
 \]</p>
+
+</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin(mx)\cos(nx)\)</h2></hgroup><article  id="integrales-indefinidas-de-sinmxcosnx-3">
 
 <ul>
 <li>\(\displaystyle\int\cos(mx)\cos(nx)\, dx\). Usando la fórmula que transforma el producto de funciones trigonométricas en sumas, obtenemos lo siguiente: \[
@@ -3792,8 +3833,6 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 \end{array}
 \] si \(m\neq n\).</li>
 </ul>
-
-</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(\sin(mx)\cos(nx)\)</h2></hgroup><article  id="integrales-indefinidas-de-sinmxcosnx-3">
 
 <p>Si \(m=n\): \[
 \int\cos^2(nx)\, dx   = \frac{1}{2}\int (1+\cos(2nx))\, dx
@@ -3817,7 +3856,7 @@ Q(x)= &amp; (x-a_1)^{n_1}\cdot (x-a_2)^{n_2}\cdots (x-a_k)^{n_k}\cdot \\ &amp; (
 <p>De la misma manera, \(\sin x=2\sin\left(\frac{x}{2}\right)\cos \left(\frac{x}{2}\right)=2\tan\left(\frac{x}{2}\right)\cos^2\left(\frac{x}{2}\right)=\frac{2t}{1+t^2}\).</p>
 
 <p>La relación entre los diferenciales será la siguiente: \[
-dt = \frac{1}{2\cos^2 \left(\frac{x}{2}\right)}\, dx=\frac{\left(1+\tan^2\left(\frac{x}{2}\right)\right)}{2}dx = \frac{1+t^2}{2}dx,\ \Rightarrow dx=\frac{2 dt}{1+t^2}.
+dt = \frac{1}{2\cos^2 \left(\frac{x}{2}\right)}\, dx=\frac{\left(1+\tan^2\left(\frac{x}{2}\right)\right)}{2}dx = \frac{1+t^2}{2}dx\ \Rightarrow dx=\frac{2 dt}{1+t^2}.
 \]</p>
 
 </article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(R(\sin x, \cos x)\)</h2></hgroup><article  id="integrales-indefinidas-de-rsin-x-cos-x-2">
@@ -3842,13 +3881,15 @@ dt = \frac{1}{2\cos^2 \left(\frac{x}{2}\right)}\, dx=\frac{\left(1+\tan^2\left(\
 
 <p>En este caso hacemos el cambio \(t=\tan x\), con \(\cos^2 x=\frac{1}{1+t^2}\), \(\sin^2 x=\frac{t}{1+t^2}\), \(dx=\frac{dt}{1+t^2}\).</p>
 
+</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(R(\sin x, \cos x)\)</h2></hgroup><article  id="integrales-indefinidas-de-rsin-x-cos-x-5">
+
 <ul>
 <li>Supongamos que la función \(R\) es impar en la variable \(\sin x\): \(R(\sin x, \cos x)=-R(-\sin x, \cos x)\). Entonces, sólo nos pueden salir potencias impares en \(\sin x\).</li>
 </ul>
 
 <p>En este caso hacemos el cambio \(t=\cos x\), con \(\sin x = \sqrt{1-t^2}\), \(dx=-\frac{dt}{\sqrt{1-t^2}}\).</p>
 
-</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(R(\sin x, \cos x)\)</h2></hgroup><article  id="integrales-indefinidas-de-rsin-x-cos-x-5">
+</article></slide><slide class=""><hgroup><h2>Integrales indefinidas de \(R(\sin x, \cos x)\)</h2></hgroup><article  id="integrales-indefinidas-de-rsin-x-cos-x-6">
 
 <ul>
 <li>Supongamos que la función \(R\) es impar en la variable \(\cos x\): \(R(\sin x, \cos x)=-R(\sin x, -\cos x)\). Entonces, sólo nos pueden salir potencias impares en \(\cos x\).</li>
@@ -3858,7 +3899,7 @@ dt = \frac{1}{2\cos^2 \left(\frac{x}{2}\right)}\, dx=\frac{\left(1+\tan^2\left(\
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Integrales que contienen \(\sqrt{ax^2+bx+c}\)</h2></hgroup><article  id="integrales-que-contienen-sqrtax2bxc">
 
-</article></slide><slide class=""><hgroup><h2>Introducción</h2></hgroup><article  id="introducción-5">
+</article></slide><slide class=""><hgroup><h2>Introducción</h2></hgroup><article  id="introducción-7">
 
 <p>En esta sección vamos a estudiar la integral indefinida de un conjunto de funciones que contienen la raíz cuadrada de un polinomio de segundo grado \(\sqrt{ax^2+bx+c}\).</p>
 
@@ -3984,7 +4025,7 @@ dt = \frac{1}{2\cos^2 \left(\frac{x}{2}\right)}\, dx=\frac{\left(1+\tan^2\left(\
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Integración de otras funciones racionales</h2></hgroup><article  id="integración-de-otras-funciones-racionales">
 
-</article></slide><slide class=""><hgroup><h2>Introducción</h2></hgroup><article  id="introducción-6">
+</article></slide><slide class=""><hgroup><h2>Introducción</h2></hgroup><article  id="introducción-8">
 
 <p>En esta sección nos planteamos el cálculo de integrales indefinidas del tipo \[
 \int R\left(x,\left(\frac{ax+b}{cx+e}\right)^{r_1},\left(\frac{ax+b}{cx+e}\right)^{r_2},\ldots, \left(\frac{ax+b}{cx+e}\right)^{r_k}\right)\, dx,
