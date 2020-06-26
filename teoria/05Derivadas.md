@@ -12,11 +12,7 @@ output:
 ---
 <script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-reticulate::use_python("/usr/bin/python3.8")
-#reticulate::py_install("sympy")
-```
+
 
 # Derivada de una función en un punto del dominio de la misma
 
@@ -28,24 +24,13 @@ En el gráfico siguiente, podemos observar un ejemplo del dibujo de una función
 La pendiente de la recta tangente (en rojo) vendría a representar lo que denominaremos la derivada de la función $f(x)$ en $x=x_0$.
 
 ## Introducción
-```{r,echo=FALSE,fig.align='center'}
-x=seq(from=-1,to=pi, by=0.01)
-f = function(x){sin(x)+cos(x)}
-plot(x,f(x),type="l")
-x0=0
-text(x0+0.15,f(x0)-0.175,expression(paste("(",x[0],",f(",x[0],"))")))
-points(x0,f(x0),pch=19,col="blue")
-m=cos(x0)-sin(x0)
-abline(f(x0)-m*x0,m,col="red")
-```
+<img src="05Derivadas_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
 
 ## Introducción
 
 <div class="center">
 
-```{r, echo=FALSE, label=der1,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/Derivada1.png",dpi=1200)
-```
+<img src="Images/Derivada1.png" width="650px" />
 </div>
 
 
@@ -174,10 +159,7 @@ Este comportamiento es el usual cuando una función no es derivable en un punto 
 ## Ejemplos
 <div class="example">
 **Derivada del valor absoluto**
-```{r,echo=FALSE,fig.align='center'}
-x=seq(from=-1,to=1,by=0.01)
-plot(x,abs(x),type='l',ylab=expression("|x|"),main="Gráfica de función valor absoluto")
-```
+<img src="05Derivadas_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
 
 </div>
@@ -494,61 +476,7 @@ El gráfico de la función anterior puede verse en `Wolfram Alpha` en el enlace 
 
 ## Ejemplo
 <div class="example">
-```{r,echo=FALSE,fig.align='center'}
-xmin=-2*pi
-xmax=2*pi
-ymin=-1.5
-ymax=1.5
-tolx=0.01*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=8
-quantsy=6
-f = function(x){sin(x)-cos(x)}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-2*tolx,"x")
-text(toly,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  ii=-2+0.5*i}
-text(xmin+((xmax-xmin)/quantsx)*0,-1.5*toly,expression(-2*pi),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*1,-2.5*toly,expression(-frac(3,2)*pi),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*2,-1.5*toly,expression(-pi),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*3,-2.5*toly,expression(-frac(pi,2)),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*4+0.1,-1.5*toly,0,cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*5,-2.5*toly,expression(frac(pi,2)),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*6,-1.5*toly,expression(pi),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*7,-2.5*toly,expression(frac(3,2)*pi),cex=0.75)
-text(xmin+((xmax-xmin)/quantsx)*8,-1.5*toly,expression(2*pi),cex=0.75)
-
-lines(rep(xmin+((xmax-xmin)/quantsx)*1.5,2),c(-0.5*toly,+0.5*toly))
-lines(c(-5*pi/4,-5*pi/4),c(0,f(-5*pi/4)),lty=2,col="blue")
-text(xmin+((xmax-xmin)/quantsx)*1.5,-2.5*toly,expression(-frac(5,4)*pi),cex=0.75)
-
-lines(rep(xmin+((xmax-xmin)/quantsx)*3.5,2),c(-0.5*toly,+0.5*toly))
-lines(c(-pi/4,-pi/4),c(0,f(-pi/4)),lty=2,col="blue")
-text(xmin+((xmax-xmin)/quantsx)*3.5,2.5*toly,expression(-frac(pi,4)),cex=0.75)
-
-lines(rep(xmin+((xmax-xmin)/quantsx)*5.5,2),c(-0.5*toly,+0.5*toly))
-lines(c(3*pi/4,3*pi/4),c(0,f(3*pi/4)),lty=2,col="blue")
-text(xmin+((xmax-xmin)/quantsx)*5.5,-2.5*toly,expression(frac(3,4)*pi),cex=0.75)
-
-lines(rep(xmin+((xmax-xmin)/quantsx)*7.5,2),c(-0.5*toly,+0.5*toly))
-lines(c(7*pi/4,7*pi/4),c(0,f(7*pi/4)),lty=2,col="blue")
-text(xmin+((xmax-xmin)/quantsx)*7.5,2.5*toly,expression(frac(7,4)*pi),cex=0.75)
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  if (i==3){text(2.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*3,ymin+((ymax-ymin)/quantsy)*3,cex=0.75)}
-  else
-    {text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)}
-  }
-lines(x,f(x),col="red")
-text(pi,1.3,"f(x)")
-```
+<img src="05Derivadas_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
 
 </div>
@@ -636,35 +564,7 @@ Vemos que $f'(0)=0$. En cambio $f$ no tiene ningún extremo en este punto tal co
 ## Derivación y extremos
 <div class="example">
 **Ejemplo**
-```{r,echo=FALSE,fig.align='center'}
-xmin=-2
-xmax=2
-ymin=-2.5
-ymax=2.5
-tolx=0.01*(xmax-xmin)
-toly=0.05*(ymax-ymin)
-quantsx=4
-quantsy=4
-f = function(x){x^2*sin(x)}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-text(xmax-3*tolx,-3*tolx,"x")
-text(toly,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-  text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
-
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
-  text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
-  }
-lines(x,f(x),col="red")
-text(pi,1.3,"f(x)")
-```
+<img src="05Derivadas_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
 
 </div>
@@ -674,7 +574,8 @@ text(pi,1.3,"f(x)")
 **Ejemplo**
 
 Para ver que el 0 no es extremo relativo, es facil ver que para $x\in (0,\pi)$, $f(x)\geq 0$ y para $x\in (-\pi,0)$, $f(x)\leq 0$. Comprobémoslo para unos cuantos valores en `python`, para $x=-0.2,-0.1,0.1,0.2$:
-```{python}
+
+```python
 from sympy import * 
   
 def f(x):
@@ -687,9 +588,17 @@ def f(x):
 <div class="example">
 **Ejemplo**
 
-```{python}
+
+```python
 for x in [-0.2,-0.1,0.1,0.2]:
   print('f({x})={res}'.format(x=x, res=f(x)))
+```
+
+```
+## f(-0.2)=-0.00794677323180245
+## f(-0.1)=-0.000998334166468282
+## f(0.1)=0.000998334166468282
+## f(0.2)=0.00794677323180245
 ```
 </div>
 
@@ -720,9 +629,7 @@ La definición anterior es equivalente a decir que existe un valor $\delta >0$ t
 
 ## Derivación y extremos
 <div class="center">
-```{r, echo=FALSE, label=der2,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/Derivada2.png",dpi=1200)
-```
+<img src="Images/Derivada2.png" width="650px" />
 </div>
 
 
@@ -737,9 +644,7 @@ La definición anterior es equivalente a decir que existe un valor $\delta >0$ t
 
 ## Derivación y extremos
 <div class="center">
-```{r, echo=FALSE, label=der3,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/Derivada3.png",dpi=1200)
-```
+<img src="Images/Derivada3.png" width="650px" />
 </div>
 
 ## Derivación y extremos
@@ -805,12 +710,20 @@ Consideremos la función siguiente de un ejemplo anterior: $f(x)=\sin(x)-\cos(x)
 La derivada de la función $f$ vale: $f'(x)=\cos(x)+\sin(x)$.
 
 Dicha función se anula en los **extremos** $x=-\frac{5}{4}\pi,-\frac{\pi}{4},\frac{3}{4}\pi$ y $\frac{7}{4}\pi$:
-```{python}
+
+```python
 def df(x):
  return(cos(x)+sin(x))
  
 for x in [-5*pi/4,-pi/4,3*pi/4,7*pi/4]:
   print("f'({x})={res}".format(x=x, res=df(x)))
+```
+
+```
+## f'(-5*pi/4)=0
+## f'(-pi/4)=0
+## f'(3*pi/4)=0
+## f'(7*pi/4)=0
 ```
 
 </div>
@@ -819,15 +732,27 @@ for x in [-5*pi/4,-pi/4,3*pi/4,7*pi/4]:
 <div class="example">
 
 En los puntos $x=-\frac{3}{2}\pi$ y $x=\frac{\pi}{2}$ la función es **estrictamente creciente** al tener derivada positiva en dichos puntos:
-```{python}
+
+```python
 for x in [-3*pi/2,pi/2]:
   print("f'({x})={res}".format(x=x, res=df(x)))
 ```
 
+```
+## f'(-3*pi/2)=1
+## f'(pi/2)=1
+```
+
 En cambio, en los puntos $x=-\frac{\pi}{2}$ y $\frac{3}{2}\pi$ la función es **estrictamente decreciente** al tener derivada negativa en dichos puntos:
-```{python}
+
+```python
 for x in [-pi/2,3*pi/2]:
   print("f'({x})={res}".format(x=x, res=df(x)))
+```
+
+```
+## f'(-pi/2)=-1
+## f'(3*pi/2)=-1
 ```
 
 </div>
@@ -842,9 +767,7 @@ El teorema de Rolle dice que si los valores de una función derivable en todo el
 
 ## Teoremas de Rolle y del valor medio
 <div class="center">
-```{r, echo=FALSE, label=rolle1,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/Rolle1.png",dpi=1200)
-```
+<img src="Images/Rolle1.png" width="650px" />
 </div>
 
 ## Teoremas de Rolle y del valor medio
@@ -855,9 +778,7 @@ En el gráfico siguiente la recta verde es la recta que pasa por los extremos de
 
 ## Teoremas de Rolle y del valor medio
 <div class="center">
-```{r, echo=FALSE, label=valormedio1,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/ValorMedio1.png",dpi=1200)
-```
+<img src="Images/ValorMedio1.png" width="650px" />
 </div>
 
 ## Teorema de Rolle
@@ -1080,7 +1001,7 @@ Entonces las parejas $(\sin(c),\cos(c))$ son las siguientes:
 
 El primer caso no puede ser ya que $\cos(c)<0$ y como estamos en el intervalo $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, la función coseno es positiva.
 
-Sólo será solución el segundo caso, donde el valor de $c$ será aproximadamente: `r round(asin((2-sqrt(2*pi^2-4))/(2*pi)),3)`.
+Sólo será solución el segundo caso, donde el valor de $c$ será aproximadamente: -0.318.
 
 </div>
 
@@ -1090,22 +1011,38 @@ Sólo será solución el segundo caso, donde el valor de $c$ será aproximadamen
 <div class="example">
 Comprobemos usando `python` que el valor de $c$ hallado es el correcto:
 
-```{python}
+
+```python
 from numpy import * 
 c=arcsin((2-sqrt(2*pi**2-4))/(2*pi))
 derivada_c = sin(c)+cos(c)
 k=2/pi
 print('El valor de c es: {c}'.format(c=c))
+```
 
+```
+## El valor de c es: -0.3184557133984764
 ```
 
 </div>
 
 ## Ejemplo
 <div class="example">
-```{python}
+
+```python
 print('El valor de la derivada de f en c es:{x}'.format(x=derivada_c))
+```
+
+```
+## El valor de la derivada de f en c es:0.6366197723675814
+```
+
+```python
 print('El valor de 2/pi es:{k}'.format(k=k))
+```
+
+```
+## El valor de 2/pi es:0.6366197723675814
 ```
 
 </div>
@@ -1460,14 +1397,12 @@ $$
 P_n(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}+\cdots + \frac{(-1)^k x^{2k+1}}{(2k+1)!}=\sum_{i=0}^k \frac{(-1)^i x^{2i+1}}{(2i+1)!},
 $$
 donde $k$ es tal que $n-1=2k+1$, o, lo que es lo mismo, $k=\frac{n-2}{2}$.
-```{r,echo=FALSE}
-options(scipen=999)
-```
+
 Consideremos por ejemplo $n=14$, en este caso $k=\frac{14-2}{2}=6$. El polinomio de Taylor de $f(x)=\sin x$ de grado $14$ en $x_0=0$ es el siguiente:
 $$
 \begin{array}{rl}
 P_{14}(x) & =x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\frac{x^{11}}{11!}+\frac{x^{13}}{13!},\\
-& = x-\frac{x^3}{`r factorial(3)`}+\frac{x^5}{`r factorial(5)`}-\frac{x^7}{`r factorial(7)`}+\frac{x^9}{`r factorial(9)`}-\frac{x^{11}}{`r factorial(11)`}+\frac{x^{13}}{`r factorial(13)`}.
+& = x-\frac{x^3}{6}+\frac{x^5}{120}-\frac{x^7}{5040}+\frac{x^9}{362880}-\frac{x^{11}}{39916800}+\frac{x^{13}}{6227020800}.
 \end{array}
 $$
 </div>
@@ -1486,7 +1421,7 @@ donde $k$ es tal que $n=2k+1$, o, lo que es lo mismo, $k=\frac{n-1}{2}$.
 Consideremos por ejemplo $n=11$, en este caso $k=\frac{11-1}{2}=5$. El polinomio de Taylor de $f(x)=\sin x$ de grado $11$ en $x_0=0$ es el siguiente:
 $$
 P_{11}(x)  =x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\frac{x^9}{9!}-\frac{x^{11}}{11!}
- = x-\frac{x^3}{`r factorial(3)`}+\frac{x^5}{`r factorial(5)`}-\frac{x^7}{`r factorial(7)`}+\frac{x^9}{`r factorial(9)`}-\frac{x^{11}}{`r factorial(11)`}.
+ = x-\frac{x^3}{6}+\frac{x^5}{120}-\frac{x^7}{5040}+\frac{x^9}{362880}-\frac{x^{11}}{39916800}.
 $$
 Si váis al enlace siguiente  [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=taylors+series+of+sin%28x%29+at+x%3D0) y apretáis una vez la casilla `More terms` en la sección `Series expansion at x=0` os aparecerá el polinomio de Taylor de grado 11 y si volvéis a apretar, os aparecerá el polinomio de Taylor de grado 19 que "incluye" el polinomio de Taylor de grado 14.
 
@@ -1655,7 +1590,8 @@ La $n$ buscada debe verificar: $\frac{|x|^{n+1}}{(n+1)!}\leq \epsilon$.
 Como para cualquier valor de $x$ el límite $\displaystyle\lim_{n\to\infty} \frac{|x|^{n+1}}{(n+1)!}=0$, seguro que existe una $n$ tal que $\frac{|x|^{n+1}}{(n+1)!}\leq\epsilon$.
 
 La función siguiente nos calcula la $n$ dado $x$ y el error en `python` asegurándose que $n$ es par:
-```{python}
+
+```python
 import math
 def n(x,error):
  x=float(x)
@@ -1672,8 +1608,13 @@ def n(x,error):
 ## Ejemplo
 <div class="example">
 El valor de $n$ para $x=0.5$ con un error máximo permitido de $0.0001$ será:
-```{python}
+
+```python
 n(0.5,0.0001)
+```
+
+```
+## 6
 ```
 
 El polinomio de Taylor sería en este caso:
@@ -1681,18 +1622,28 @@ $$
 P_6(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}.
 $$
 El valor de $P_6(0.5)$ vale:
-```{python}
+
+```python
 x=0.5
 x-x**3/math.factorial(3)+x**5/math.factorial(5)
+```
+
+```
+## 0.47942708333333334
 ```
 </div>
 
 ## Ejemplo
 <div class="example">
 Sabemos que el valor anterior evalúa $\sin 0.5$ con un error menor que $0.0001$. Comprobémoslo en `python`:
-```{python}
+
+```python
 valor_pol_taylor = x-x**3/math.factorial(3)+x**5/math.factorial(5)
 abs(sin(0.5)-valor_pol_taylor)
+```
+
+```
+## 1.5447291303316568e-06
 ```
 
 </div>
@@ -1743,7 +1694,8 @@ $$
 ## Ejemplo
 <div class="example">
 La función siguiente nos calcula la $n$ dado el error en `python`:
-```{python}
+
+```python
 def ne(error):
  m=2
  while(3./math.factorial(m+1) >=error):
@@ -1751,8 +1703,13 @@ def ne(error):
  return(m)
 ```
 El valor de $n$ para un error de $0.000001$ vale:
-```{python}
+
+```python
 ne(0.000001)
+```
+
+```
+## 9
 ```
 </div>
 
@@ -1763,15 +1720,25 @@ $$
 \mathrm{e}\approx 1+1+\frac{1}{2!}+\frac{1}{3!}+\frac{1}{4!}+\frac{1}{5!}+\frac{1}{6!}+\frac{1}{7!}+\frac{1}{8!}+\frac{1}{9!}.
 $$
 Si calculamos su valor en `python`, obtenemos:
-```{python}
+
+```python
 valor_e_aproximado =1
 for i in range(1,10):
   valor_e_aproximado=valor_e_aproximado+1./math.factorial(i)
 valor_e_aproximado
 ```
+
+```
+## 2.7182815255731922
+```
 Comprobamos que efectivamente tiene 6 cifras decimales exactas:
-```{python}
+
+```python
 math.exp(1)
+```
+
+```
+## 2.718281828459045
 ```
 
 </div>
@@ -1890,7 +1857,8 @@ $$
 |R_n(x-2)|\leq\frac{(2n+1)!!}{2^{n+1}\cdot \sqrt{3^{2n+3}}\cdot (n+1)!}\cdot (x-2)^{n+1}.
 $$
 Consideremos $x=2.25$. Calculemos el valor de $n$ para calcular $f(2.25)$ con un error menor que $0.000001$:
-```{python}
+
+```python
 def doublefactorial(n):
   if n in (0, 1):
     return 1
@@ -1902,7 +1870,8 @@ def doublefactorial(n):
 
 ## Ejemplo
 <div class="example">
-```{python}
+
+```python
 def calculo_n(error):
   x=2.25
   m=2
@@ -1915,8 +1884,13 @@ def calculo_n(error):
   return(m)
 ```
 El valor del grado $n$ del polinomio de Taylor será:
-```{python}
+
+```python
 calculo_n(0.000001)
+```
+
+```
+## 4
 ```
 </div>
 
@@ -1927,7 +1901,8 @@ $$
 P_4(x)=\frac{1}{\sqrt{3}}-\frac{1}{6 \sqrt{3}}\cdot (x-2)+\frac{1}{24\sqrt{3}}\cdot (x-2)^2-\frac{5}{432\sqrt{3}}\cdot (x-2)^3+\frac{35}{10368\sqrt{3}}\cdot (x-2)^4.
 $$
 Calculemos el valor de $P_4(2.25)$:
-```{python}
+
+```python
 coeficientes=[1.,-1./6,1./24,-5./432,35./10368]
 coeficientes=[(1./math.sqrt(3.))*c for c in coeficientes]
 x=2.25
@@ -1936,13 +1911,22 @@ potencias=[1,y,y**2,y**3,y**4]
 import numpy
 numpy.dot(potencias,coeficientes)
 ```
+
+```
+## 0.5547007267350142
+```
 </div>
 
 ## Ejemplo
 <div class="example">
 Comprobemos que tiene efectivamente 6 cifras decimales exactas:
-```{python}
+
+```python
 1/math.sqrt(2.25+1.)
+```
+
+```
+## 0.5547001962252291
 ```
 
 </div>
@@ -2147,18 +2131,14 @@ Ver las dos gráficas siguientes.
 ## Concavidad y convexidad
 <div class="center">
 
-```{r, echo=FALSE, label=convexa2,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/convexa2.png",dpi=1200)
-```
+<img src="Images/convexa2.png" width="650px" />
 </div>
 
 ## Concavidad y convexidad
 
 <div class="center">
 
-```{r, echo=FALSE, label=concava2,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/concava2.png",dpi=1200)
-```
+<img src="Images/concava2.png" width="650px" />
 </div>
 
 ## Concavidad y convexidad
@@ -2191,9 +2171,7 @@ Se puede ver en la figura siguiente.
 ## Concavidad y convexidad
 <div class="center">
 
-```{r, echo=FALSE, label=convexa,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/convexa.png",dpi=1200)
-```
+<img src="Images/convexa.png" width="650px" />
 </div>
 
 ## Concavidad y convexidad
@@ -2233,9 +2211,7 @@ Se puede ver en la figura siguiente.
 ## Concavidad y convexidad
 <div class="center">
 
-```{r, echo=FALSE, label=concava,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/concava.png",dpi=1200)
-```
+<img src="Images/concava.png" width="650px" />
 </div>
 
 ## Concavidad y convexidad
@@ -2345,9 +2321,7 @@ Se puede ver en la figura siguiente.
 ## Concavidad y convexidad
 <div class="center">
 
-```{r, echo=FALSE, label=infle,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/inflexion.png",dpi=1200)
-```
+<img src="Images/inflexion.png" width="650px" />
 </div>
 
 ## Concavidad y convexidad
@@ -2463,7 +2437,7 @@ Usando el resultado anterior, estudiar la **concavidad y convexidad** equivale a
 * si $f''(x)<0$, o si $x<-\frac{b}{3a}$, la función es **cóncava** y,
 * si $f''(x)=0$, o si $x=-\frac{b}{3a}$, como $f'''(x)=6a\neq 0$, $f$ tiene un **punto de inflexión** en dicho punto.
 
-En el enlace siguiente  [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=plot+of+x%5E3-3+x%5E2%2B2+x-1) se muestra la gráfica de la función $f(x)=x^3-3 x^2+2x-1$, donde puede observarse que es convexa en la región $\left(-\frac{b}{3a},\infty\right)=\left(-\frac{-3}{3\cdot 1},\infty\right)=(1,\infty)$, cóncava en la región $(-\infty,1)$ y tiene un punto de inflexión en el punto $(1,`r 1-3+2-1`)$.
+En el enlace siguiente  [![](Images/wolfram.png)](https://www.wolframalpha.com/input/?i=plot+of+x%5E3-3+x%5E2%2B2+x-1) se muestra la gráfica de la función $f(x)=x^3-3 x^2+2x-1$, donde puede observarse que es convexa en la región $\left(-\frac{b}{3a},\infty\right)=\left(-\frac{-3}{3\cdot 1},\infty\right)=(1,\infty)$, cóncava en la región $(-\infty,1)$ y tiene un punto de inflexión en el punto $(1,-1)$.
 
 </div>
 
@@ -2591,12 +2565,24 @@ valor que, claramente es diferente de $f(x)$ y de $f(-x)$. Por tanto, la funció
 ## Estudio de las **simetrías**
 <div class="example">
 Comprobémoslo con un valor concreto de $x$ de su dominio en `python`, por ejemplo $x=2$:
-```{python}
+
+```python
 def f(x):
  return((x**3-3*x+2)/(x**3-x))
  
 f(2.)
+```
+
+```
+## 0.6666666666666666
+```
+
+```python
 f(-2.)
+```
+
+```
+## -0.0
 ```
 </div>
 
@@ -2620,9 +2606,7 @@ Es decir, $\displaystyle\lim_{x\to\pm\infty} (f(x)-b)=0$. En este caso, se dice 
 
 <div class="center">
 
-```{r, echo=FALSE, label=ah,fig.cap="",out.width = "750px"}
-knitr::include_graphics("Images/AsintotaHorizontal.png",dpi=1200)
-```
+<img src="Images/AsintotaHorizontal.png" width="750px" />
 </div>
 
 
@@ -2643,9 +2627,7 @@ Usualmente, los posibles valores de $a$ son puntos que no pertenecen al dominio 
 
 <div class="center">
 
-```{r, echo=FALSE, label=av,fig.cap="",out.width = "750px"}
-knitr::include_graphics("Images/AsintotaVertical.png",dpi=1200)
-```
+<img src="Images/AsintotaVertical.png" width="750px" />
 </div>
 
 
@@ -2684,9 +2666,7 @@ $$
 
 <div class="center">
 
-```{r, echo=FALSE, label=ao,fig.cap="",out.width = "750px"}
-knitr::include_graphics("Images/AsintotaOblicua.png",dpi=1200)
-```
+<img src="Images/AsintotaOblicua.png" width="750px" />
 </div>
 
 ## Ejemplo
@@ -2706,13 +2686,18 @@ Entoces la recta horizontal $y=1$ sería una **asíntota horizontal** de nuestra
 
 ## Ejemplo
 <div class="example">
-  * $x=-1$: $\displaystyle\lim_{x\to -1}f(x)=\lim_{x\to -1}\frac{x^3-3 x+2}{x^3-x}=\frac{`r (-1)^3-3*(-1)+2`}{`r (-1)^3-(-1)`}=\infty.$ De hecho para ser más explícitos, tendríamos que escribir:
+  * $x=-1$: $\displaystyle\lim_{x\to -1}f(x)=\lim_{x\to -1}\frac{x^3-3 x+2}{x^3-x}=\frac{4}{0}=\infty.$ De hecho para ser más explícitos, tendríamos que escribir:
 $$
 \lim_{x\to -1^-}\frac{x^3-3 x+2}{x^3-x}=-\infty,\quad \lim_{x\to -1^+}\frac{x^3-3 x+2}{x^3-x}=+\infty,
 $$
 ya que si $x\to -1^-$, significa que $x<-1$ pero está cerca de $-1$. Veamos cuál es su signo para el valor $x=-1.001$ por ejemplo:
-```{python}
+
+```python
 f(-1.001)
+```
+
+```
+## -1997.0019980021598
 ```
 Es decir, su valor tiende a $-\infty$. 
 
@@ -2721,12 +2706,17 @@ Es decir, su valor tiende a $-\infty$.
 ## Ejemplo
 <div class="example">
 Si hacemos $x\to -1^+$, significa que $x>-1$ pero está cerca de $-1$. Veamos cuál es su signo para el valor $x=-0.999$ por ejemplo:
-```{python}
+
+```python
 f(-0.999)
+```
+
+```
+## 2003.0020020020036
 ```
 Es decir, su valor tiende a $+\infty$ tal como hemos indicado anteriormente. Por tanto, la recta vertical $x=-1$ es una **asíntota vertical**.
 
-  * $x=0$: $\displaystyle\lim_{x\to 0}f(x)=\lim_{x\to 0}\frac{x^3-3 x+2}{x^3-x}=\frac{`r (0)^3-3*(0)+2`}{`r (0)^3-(0)`}=\infty.$ De hecho para ser más explícitos, tendríamos que escribir:
+  * $x=0$: $\displaystyle\lim_{x\to 0}f(x)=\lim_{x\to 0}\frac{x^3-3 x+2}{x^3-x}=\frac{2}{0}=\infty.$ De hecho para ser más explícitos, tendríamos que escribir:
 $$
 \lim_{x\to 0^-}\frac{x^3-3 x+2}{x^3-x}=+\infty,\quad \lim_{x\to 0^+}\frac{x^3-3 x+2}{x^3-x}=-\infty,
 $$
@@ -2736,10 +2726,10 @@ Por tanto, la recta vertical $x=0$ es una **asíntota vertical**.
 
 ## Ejemplo
 <div class="example">
- * $x=1$: $\displaystyle\lim_{x\to 1}f(x)=\lim_{x\to 1}\frac{x^3-3 x+2}{x^3-x}=\frac{`r (1)^3-3*(1)+2`}{`r (1)^3-(1)`}.$ 
+ * $x=1$: $\displaystyle\lim_{x\to 1}f(x)=\lim_{x\to 1}\frac{x^3-3 x+2}{x^3-x}=\frac{0}{0}.$ 
  Como hemos obtenido una indeterminación, la resolvemos descomponiendo los polinomios del numerador y del denominador:
 $$
-\lim_{x\to 1}\frac{x^3-3 x+2}{x^3-x} =\lim_{x\to 1}\frac{(x^2+x-2)\cdot (x-1)}{x\cdot (x-1)\cdot (x+1)}= \lim_{x\to 1}\frac{(x^2+x-2)}{x\cdot (x+1)}=\frac{`r (1+1-2)`}{`r (1+1)`}=0.
+\lim_{x\to 1}\frac{x^3-3 x+2}{x^3-x} =\lim_{x\to 1}\frac{(x^2+x-2)\cdot (x-1)}{x\cdot (x-1)\cdot (x+1)}= \lim_{x\to 1}\frac{(x^2+x-2)}{x\cdot (x+1)}=\frac{0}{2}=0.
 $$
 Entonces, la recta $x=1$ no sería una **asíntota vertical**.
 
@@ -2948,9 +2938,7 @@ Si queréis ver el gráfico de la función que hemos desarrollado en `Wolfram Al
 <div class="example">
 <div class="center">
 
-```{r, echo=FALSE, label=repre,fig.cap="",out.width = "650px"}
-knitr::include_graphics("Images/Representacion.png",dpi=1200)
-```
+<img src="Images/Representacion.png" width="650px" />
 </div>
 
 </div>
