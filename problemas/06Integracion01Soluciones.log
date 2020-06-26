@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.24)  26 JUN 2020 13:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.24)  26 JUN 2020 18:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**06Integracion01Enunciados.tex
-(./06Integracion01Enunciados.tex
+**06Integracion01Soluciones.tex
+(./06Integracion01Soluciones.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base
 /article.cls
@@ -328,8 +328,8 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count270
 \l__pdf_internal_box=\box47
-) (./06Integracion01Enunciados.aux)
-\openout1 = `06Integracion01Enunciados.aux'.
+) (./06Integracion01Soluciones.aux)
+\openout1 = `06Integracion01Soluciones.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
@@ -378,9 +378,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 91.
 LaTeX Info: Redefining \pageref on input line 91.
 LaTeX Info: Redefining \nameref on input line 91.
-(./06Integracion01Enunciados.out) (./06Integracion01Enunciados.out)
+(./06Integracion01Soluciones.out) (./06Integracion01Soluciones.out)
 \@outlinefile=\write3
-\openout3 = `06Integracion01Enunciados.out'.
+\openout3 = `06Integracion01Soluciones.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -441,84 +441,92 @@ e
 LaTeX Warning: No \author given.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
-7.
+8.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
-7.
+8.
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-97.
+98.
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-97.
+98.
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 97.
+(Font)              <10> on input line 98.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 97.
+(Font)              <7> on input line 98.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 97.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
+(Font)              <5> on input line 98.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 118.
+(amsmath)                 on input line 192.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
-[1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
-(./06Integracion01Enunciados.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
-Package rerunfilecheck Info: File `06Integracion01Enunciados.out' has not chang
+Overfull \hbox (20.1765pt too wide) detected at line 234
+[]
+ []
+
+[3] [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 327.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 327.
+(./06Integracion01Soluciones.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 327.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 327.
+Package rerunfilecheck Info: File `06Integracion01Soluciones.out' has not chang
 ed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12169 strings out of 483007
- 178627 string characters out of 5961757
- 455731 words of memory out of 5000000
- 26976 multiletter control sequences out of 15000+600000
- 559129 words of font info for 58 fonts, out of 8000000 for 9000
+ 12192 strings out of 483007
+ 178853 string characters out of 5961757
+ 464731 words of memory out of 5000000
+ 26978 multiletter control sequences out of 15000+600000
+ 562705 words of font info for 66 fonts, out of 8000000 for 9000
  107 hyphenation exceptions out of 8191
- 34i,6n,42p,833b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/u
-sr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/l
-m/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
-7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/p
-ublic/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb>
-Output written on 06Integracion01Enunciados.pdf (1 page, 100414 bytes).
+ 34i,9n,42p,833b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/s
+hare/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
+-mathex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
+10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/font
+s/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/
+public/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmsy5.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on 06Integracion01Soluciones.pdf (5 pages, 169721 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
+ 100 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
  8193 words of extra memory for PDF output out of 10000 (max. 10000000)
 
