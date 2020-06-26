@@ -1,0 +1,68 @@
+---
+title: "Problemas de integración. Teorema fundamental del cálculo."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Hallar las integrales definidas siguientes:
+    a) $\displaystyle\int_0^{\frac{\pi}{4}}\cos^2 x\, dx$.
+    a) $\displaystyle\int_0^{1}\frac{x^2}{\sqrt{x^6+4}}\, dx$.
+    a) $\displaystyle\int_0^1 \frac{\mathrm{e}^x}{1+\mathrm{e}^{2x}}dx$.
+    a) $\displaystyle\int_1^{\mathrm{e}}\frac{\sin(\ln x)}{x}\, dx$.
+
+**Solución**
+
+a) 
+$$
+\int_0^{\frac{\pi}{4}}\cos^2 x\, dx =\int_0^{\frac{\pi}{4}}\frac{1+\cos (2x)}{2}\, dx=\frac{1}{2}\left[x+\frac{\sin(2x)}{2}\right]_0^{\frac{\pi}{4}}=\frac{1}{2}\left(\frac{\pi}{4}+\frac{1}{2}\sin\frac{\pi}{2}\right)=\frac{\pi}{8}+\frac{1}{4}\approx `r round(pi/8+1/4,4)`.
+$$
+
+b) 
+$$
+\int_0^{1}\frac{x^2}{\sqrt{x^6+4}}\, dx=\frac{1}{3}\int_0^{1}\frac{3x^2}{\sqrt{(x^3)^2+4}}\, dx.
+$$
+Si hacemos el cambio de variable $t=x^3$, nos queda $dt=3x^2dx$ y la nueva integral en la variable $t$ vale: (si $x=0$, $t=0$ y si $x=1$, $t=1$)
+$$
+\frac{1}{3}\int_0^1 \frac{dt}{\sqrt{t^2+4}}=\frac{1}{3}[\ln (t+\sqrt{t^2+4})]_0^1 =\frac{1}{3} (\ln(1+\sqrt{5})-\ln (0+2))=\frac{1}{3}\cdot\ln\left(\frac{1+\sqrt{5}}{2}\right)\approx `r round((1/3)*log((1+sqrt(5))/2),4)`.
+$$
+
+c) Hacemos el cambio de variable $t=\mathrm{e}^x$, $dt=\mathrm{e}^x dx= tdx,\ dx=\frac{dt}{t}$, si $x=0$, $t=1$ y si $x=1$, $t=\mathrm{e}$:
+$$
+\int_0^1 \frac{\mathrm{e}^x}{1+\mathrm{e}^{2x}}dx  =\int_1^\mathrm{e} \frac{1}{1+t^2}\, dt=[\arctan t]_1^\mathrm{e} =\arctan\mathrm{e}-\arctan 1=\arctan\mathrm{e}-\frac{\pi}{4}\approx `r round(atan(exp(1))-pi/4,4)`.
+$$
+
+d) Hacemos el cambio de variable $t=\ln x$, $dt=\frac{1}{x}\, dx$, para $x=1$, $t=0$ y para $x=\mathrm{e}$, $t=\ln\mathrm{e}=1$:
+$$
+\int_1^{\mathrm{e}}\frac{\sin(\ln x)}{x}\, dx =\int_{0}^1 \sin t\, dt=[-\cos t]_0^1=-\cos 1+\cos 0=1-\cos 1\approx`r round(1-cos(1),4)`.
+$$
+\newpage
+
+2. Resolver las integrales siguientes haciendo un cambio de variable adecuado:
+    a) $\displaystyle\int_0^4 \frac{1}{1+\sqrt{x}}dx$.
+    a) $\displaystyle\int_0^{\ln 5}\frac{\mathrm{e}^x\sqrt{\mathrm{e}^x-1}}{\mathrm{e}^x+3}dx$.
+
+\newpage
+
+3. Resolver las integrales siguientes usando la técnica de integración por partes:
+    a) $\displaystyle\int_0^1 x\cdot\mathrm{e}^{-x}\, dx.$
+    a) $\displaystyle\int_0^{2\pi} \mathrm{e}^{-a x}\sin (bx)\, dx,$ con $a>0$.
+    a) $\displaystyle\int_1^\mathrm{e}x^n\cdot \ln x\, dx,$ con $n\in\mathbb{N}$.
+    a) $\displaystyle\int_0^2 x^3\cdot\arctan x\, dx.$
+
+\newpage
+
+4. Hallar los extremos relativos de la función siguiente:
+$$
+f(x)=\int_0^x \frac{\sin t}{t} \, dt, \ x > 0.
+$$
+
+\newpage
+
+5. Calcular las derivadas de las funciones siguientes:
+    a) $\displaystyle f_1(x) = \int_1^{\ln (x^2+1)} e^t \> dt.$
+    a) $\displaystyle f_2(x) = \int_x^0 \sqrt{1+t^4} \> dt.$
+    a) $\displaystyle f_3(x) = \int_{1/x}^{\sqrt{x}} \cos t^2 \> dt.$
