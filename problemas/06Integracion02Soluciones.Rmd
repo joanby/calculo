@@ -4,6 +4,10 @@ author: ""
 date: ""
 header-includes:
    - \usepackage{polynom}
+   - \newtheorem{theorem}{Proposición}
+   - \newenvironment{nota}[1]{\vspace{1ex}\textbf{#1}}{\vspace{1ex}}
+
+
 output:
   pdf_document: default
               
@@ -172,9 +176,102 @@ $$
 f(x)=\int_0^x \frac{\sin t}{t} \, dt, \ x > 0.
 $$
 
+**Solución**
+
+Para hallar los extremos relativos de la función anterior tenemos que derivarla e igualar la función derivada a cero para calcular los candidatos a extremos relativos. Usando el Teorema fundamental del Cálculo, tenemos que la función derivada vale:
+$$
+f'(x)=\frac{\sin x}{x}.
+$$
+Los candidatos a extremos relativos cumplen:
+$$
+f'(x)=\frac{\sin x}{x}=0,\ \Rightarrow \sin x=0,\ \Rightarrow x=\pi n,\ n\in\mathbb{N}.
+$$
+Veamos si se trata de máximos o mínimos relativos:
+<div class="center">
+|$x$| |$0$||$\pi$||$2\pi$||$3\pi$||$\ldots$||$2k\pi$||$(2k+1)\pi$||$(2k+2)\pi$||$\ldots$||$\infty$|
+|--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|$y'$|||$+$||$-$||$+$||$-$||$\ldots$||$+$||$-$||$+$||$\ldots$
+|$y$|||$\nearrow$||$\searrow$||$\nearrow$||$\searrow$||$\ldots$||$\nearrow$||$\searrow$||$\nearrow$||$\ldots$
+</div>
+
+Entonces los valores $x_{2k+1}=(2k+1)\pi$, $k\in\mathbb{N}$, corresponden a máximos relativos y los valores $x_{2k}=2k\pi$, $k\in\mathbb{N}$, a mínimos relativos.
+
 \newpage
 
 5. Calcular las derivadas de las funciones siguientes:
-    a) $\displaystyle f_1(x) = \int_1^{\ln (x^2+1)} e^t \> dt.$
+    a) $\displaystyle f_1(x) = \int_1^{\ln (x^2+1)} \mathrm{e}^t \> dt.$
     a) $\displaystyle f_2(x) = \int_x^0 \sqrt{1+t^4} \> dt.$
-    a) $\displaystyle f_3(x) = \int_{1/x}^{\sqrt{x}} \cos t^2 \> dt.$
+    a) $\displaystyle f_3(x) = \int_{\frac{1}{x}}^{\sqrt{x}} \cos t^2 \> dt.$
+
+**Solución**
+
+Antes de exponer la solución del problema, veamos el resultado siguiente:
+
+\begin{theorem}
+Sea $f:D\longrightarrow\mathbb{R}$ una función continua siendo $D$ su dominio de definición. Sean $g,h:[a,b]\longrightarrow\mathbb{R}$ funciones derivables tales que $g([a,b])\subseteq D$, $h([a,b])\subseteq D$. Definimos la función 
+$$
+F(x)=\int_{g(x)}^{h(x)} f(t)\,dt.
+$$
+Entonces $F$ es derivable y el valor de su función derivada $F'(x)$ puede expresarse como:
+$$
+F'(x)=f(h(x))\cdot h'(x)-f(g(x))\cdot g'(x).
+$$
+\end{theorem}
+
+\begin{nota}{Demostración.}
+
+Usando las propiedades de la integral de una función podemos escribir la función $F(x)$ como:
+\begin{equation}
+F(x)=\int_{a}^{h(x)} f(t)\,dt-\int_a^{g(x)}f(t)\,dt,
+\label{FDIF}
+\end{equation}
+siendo $a\in D$.
+
+Para demostrar la proposición anterior basta demostrar que la derivada de las funciones:
+$$
+H(x)=\int_{a}^{h(x)} f(t)\,dt,\quad G(x)=\int_{a}^{g(x)} f(t)\,dt
+$$
+valen, respectivamente,
+$$
+H'(x)=f(h(x))\cdot h'(x),\quad G'(x)=f(g(x))\cdot g'(x),
+$$
+ya que usando la expresión (\ref{FDIF}), podemos escribir la derivada de la función $F(x)$ como:
+$$
+F'(x)=H'(x)-G'(x)=f(h(x))\cdot h'(x)-f(g(x))\cdot g'(x).
+$$
+Para ver las expresiones de las derivadas de las funciones $H(x)$ y $G(x)$, basta ver la expresión por ejemplo de $H'(x)$ ya que la otra, la expresión de $G'(x)$, se obtendría cambiando los papeles de la función $h(x)$ por $g(x)$.
+
+Veamos pues que $\displaystyle H'(x)=f(h(x))\cdot h'(x)$. Notemos en primer lugar que podemos escribir la función $H(x)$ como la composición de las funciones siguientes:
+$H(x)=(\hat{F}\circ h)(x),$ siendo $\displaystyle \hat{F}(x)=\int_a^x f(t)\,dt$. Efectivamente,
+$$
+(\hat{F}\circ h)(x)=\hat{F}(h(x))=\int_a^{h(x)}f(t)\,dt = H(x).
+$$
+Aplicando la regla de la cadena obtenemos,
+$$
+H'(x)=\hat{F}'(h(x))\cdot h'(x),
+$$
+pero usando el Teorema Fundamental del cálculo, tenemos que $\hat{F}'(z)=f(z)$. Por tanto, cambiando $z$ por $h(x)$, tenemos lo que queríamos demostrar:
+$$
+H'(x)=f(h(x))\cdot h'(x).
+$$
+\ \hfill $\Box$
+\end{nota}
+
+Resolvamos el ejercicio usando la proposición anterior:
+
+a) Basta considerar $f(x)=\mathrm{e}^x$, $g(x)=1$ y $h(x)=\ln (x^2+1)$:
+$$
+f_1'(x)=\mathrm{e}^{\ln (x^2+1)}\cdot h'(x) =(x^2+1)\cdot \frac{2x}{x^2+1}=2x,
+$$
+ya que en este caso $g'(x)=0$ y sólo aparece un término en la expresión de $f_1'(x)$.
+
+b) Basta considerar $f(x)=\sqrt{1+x^4}$, $g(x)=x$ y $h(x)=0$:
+$$
+f_2'(x)=-\sqrt{1+x^4}\cdot g'(x)=-\sqrt{1+x^4},
+$$
+ya que en este caso $h'(x)=0$ y sólo aparece un término en la expresión de $f_2'(x)$.
+
+c) Basta considerar $f(x)=\cos(x^2)$, $g(x)=\frac{1}{x}$ y $h(x)=\sqrt{x}$:
+$$
+f_3'(x)=\cos(\sqrt{x}^2)\cdot h'(x)-\cos\left(\frac{1}{x^2}\right)\cdot g'(x)=\cos(x)\cdot \frac{1}{2\sqrt{x}}-\cos\left(\frac{1}{x^2}\right)\left(-\frac{1}{x^2}\right)=\frac{\cos x}{2\sqrt{x}}+\frac{\cos\left(\frac{1}{x^2}\right)}{x^2}.
+$$

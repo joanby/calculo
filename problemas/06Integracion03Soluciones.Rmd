@@ -1,0 +1,149 @@
+---
+title: "Problemas de integración. Integración Impropia."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Estudiar la convergencia de la integral impropia $\displaystyle\int_0^\infty x^n\mathrm{e}^{-x}\,dx$ y calcular su valor en función de $n$ en el caso en que sea convergente.
+
+
+**Solución**
+
+Se trata de una integral impropia de primera especie. 
+
+Veamos primero que es convergente. Para ello, vamos a usar el criterio de comparación por cociente de la  función a integrar $x^n\mathrm{e}^{-x}$ con la función $\mathrm{e}^{-\frac{x}{2}}$:
+$$
+\begin{array}{rl}
+\displaystyle\lim_{x\to\infty}\frac{x^n\mathrm{e}^{-x}}{\mathrm{e}^{-\frac{x}{2}}}& \displaystyle =\lim_{x\to\infty}\frac{x^n}{\mathrm{e}^{\frac{x}{2}}}=\lim_{x\to\infty}\frac{nx^{n-1}}{\frac{1}{2}\mathrm{e}^{\frac{x}{2}}}=2n\lim_{x\to\infty}\frac{x^{n-1}}{\mathrm{e}^{\frac{x}{2}}}=2^2\cdot n\cdot (n-1)\lim_{x\to\infty}\frac{x^{n-2}}{\mathrm{e}^{\frac{x}{2}}}\\[0.5cm] & \displaystyle = \cdots = 2^{n-1}\cdot n!\lim_{x\to\infty}\frac{x}{\mathrm{e}^{\frac{x}{2}}}=2^n\cdot n!\lim_{x\to\infty}\frac{1}{\mathrm{e}^{\frac{x}{2}}}=0.
+\end{array}
+$$
+Como la integral impropia $\displaystyle\int_0^\infty \mathrm{e}^{-\frac{x}{2}}\, dx$ es convergente ya que:
+$$
+\int_0^\infty \mathrm{e}^{-\frac{x}{2}}\, dx =\lim_{t\to\infty}\int_0^t \mathrm{e}^{-\frac{x}{2}}\, dx =\lim_{t\to\infty}\left[-2\mathrm{e}^{-\frac{x}{2}}\right]_0^t =2\lim_{t\to\infty}\left(-\mathrm{e}^{-\frac{t}{2}}+1\right)=2\cdot (0+1)=2,
+$$
+la integral impropia $\displaystyle\int_0^\infty x^n\mathrm{e}^{-x}\,dx$, usando el criterio de comparación por cociente, también lo sería.
+
+Hallemos su valor en función de $n$. Si llamamos $\displaystyle I_n=\int_0^\infty x^n\mathrm{e}^{-x}\,dx$, usando la técnica de integración por partes con:
+$$
+\begin{array}{llcll}
+u  &= x^n,& du &=nx^{n-1}\,dx,\\
+dv & = \mathrm{e}^{-x}, & v&=-\mathrm{e}^{-x},
+\end{array}
+$$
+obtenemos:
+$$
+I_n = \int_0^\infty x^n\mathrm{e}^{-x}\,dx = [-x^n\cdot\mathrm{e}^{-x}]_0^\infty + n\int_0^\infty x^{n-1}\mathrm{e}^{-x}\,dx = n\cdot I_{n-1}.
+$$
+En el último cálculo hemos usado que si $n\geq 0$,
+$$
+\lim_{x\to\infty}x^n\cdot\mathrm{e}^{-x}=0,
+$$
+ya que 
+$$
+\begin{array}{rl}
+\displaystyle\lim_{x\to\infty}x^n\cdot\mathrm{e}^{-x}& \displaystyle =\lim_{x\to\infty}\frac{x^n}{\mathrm{e}^{x}}=\lim_{x\to\infty}\frac{nx^{n-1}}{\mathrm{e}^{x}}=n\lim_{x\to\infty}\frac{x^{n-1}}{\mathrm{e}^{x}}=n\cdot (n-1)\lim_{x\to\infty}\frac{x^{n-2}}{\mathrm{e}^{x}}\\[0.5cm] & \displaystyle = \cdots =  n!\lim_{x\to\infty}\frac{x}{\mathrm{e}^{x}}= n!\lim_{x\to\infty}\frac{1}{\mathrm{e}^{x}}=0.
+\end{array}
+$$
+Como $I_n=n\cdot I_{n-1}$, obtenemos:
+$$
+I_n = n\cdot I_{n-1}=n\cdot (n-1)\cdot I_{n-2}=n!\cdot I_0 =n!\cdot \int_0^\infty\mathrm{e}^{-x}\, dx=n!\cdot \left[-\mathrm{e}^{-x}\right]_0^\infty =n!\cdot (0+1)=n!
+$$
+\newpage
+
+
+2. Estudiar el carácter de las siguientes integrales impropias en función del parámetre $\alpha$:
+    a) $\displaystyle\int_a^b\frac{dx}{(x-a)^\alpha},\ \alpha\in\mathbb{R},\ -\infty<a<b<+\infty$.
+    a) $\displaystyle\int_0^1 x^\alpha\ln x\, dx$.
+    a) $\displaystyle\int_1^2\frac{dx}{x(\ln x)^\alpha}.$
+
+**Solución**
+
+a) Se trataría de una integral impropia de segunda especie. Si hacemos el cambio $t=x-a$, la integral impropia sería en función de la variable $t$:
+$$
+\int_0^{b-a}\frac{dt}{t^\alpha},
+$$
+ya que $dt=dx$, y si $x=a$, $t=0$ y si $x=b$, $t=b-a$.
+
+Estudiemos la convergencia de la integral impropia anterior. Consideremos dos casos:
+
+* $\alpha\neq 1$:
+$$
+\int_0^{b-a}\frac{dt}{t^\alpha}=\lim_{c\to 0^+}\int_c^{b-a}t^{-\alpha}\,dt=\lim_{c\to 0^+}\left[\frac{t^{1-\alpha}}{1-\alpha}\right]_c^{b-a}=\frac{1}{1-\alpha}\left((b-a)^{1-\alpha}-\lim_{c\to 0^+} c^{1-\alpha}\right).
+$$
+A partir de aquí, tenemos dos nuevos casos:
+    * si $1-\alpha <0$ o $\alpha >1$, $\displaystyle \lim_{c\to 0^+} c^{1-\alpha}=\infty$ y la integral sería divergente.
+    * si $1-\alpha >0$ o $\alpha <1$, $\displaystyle \lim_{c\to 0^+} c^{1-\alpha}=0$ y la integral sería convergente de valor
+    $$
+    \int_0^{b-a}\frac{dt}{t^\alpha}=\frac{(b-a)^{1-\alpha}}{1-\alpha}.
+    $$
+* $\alpha=1$:
+$$
+\int_0^{b-a}\frac{dt}{t}=\lim_{c\to 0^+}\int_c^{b-a}t^{-1}\,dt =\lim_{c\to 0^+}[\ln t]_c^{b-a} =\ln (b-a)-\lim_{c\to 0^+}\ln c =\infty.
+$$
+La integral sería divergente.
+
+b) Consideremos dos casos:
+* $\alpha\neq -1$. Apliquemos la técnica de integración por partes con:
+$$
+\begin{array}{llcll}
+u  &= \ln x,& du &=\frac{1}{x}\,dx,\\
+dv & = x^\alpha, & v&=\frac{x^{\alpha+1}}{\alpha+1},
+\end{array}
+$$
+$$
+\int_0^1 x^\alpha\ln x\, dx =\lim_{c\to 0^+}\int_c^1 x^\alpha\ln x\, dx = \lim_{c\to 0^+} \left[\ln x\cdot \frac{x^{\alpha +1}}{\alpha +1}\right]_c^1-\frac{1}{\alpha +1}\int_c^1 x^\alpha\, dx.
+$$
+En los apuntes vimos que la integral impropia $\displaystyle\int_0^1 x^\alpha\, dx$ es convergente si $-1<\alpha$ y, en este caso:
+$$
+\int_0^1 x^\alpha\, dx =\lim_{c\to 0^+}\int_c^1 x^\alpha\, dx=\lim_{c\to 0^+}\left[\frac{x^{\alpha +1}}{\alpha +1}\right]_c^1 =\frac{1}{\alpha +1}\lim_{c\to 0^+}(1-c^{\alpha +1})=\frac{1}{\alpha +1}.
+$$
+Para $\alpha > -1$, la integral inicial valdrá:
+$$
+\begin{array}{rl}
+\displaystyle\int_0^1 x^\alpha\ln x\, dx & \displaystyle =\lim_{c\to 0^+} \left[\ln x\cdot \frac{x^{\alpha +1}}{\alpha +1}\right]_c^1-\frac{1}{(\alpha +1)^2}=\frac{1}{\alpha +1}\left(\lim_{c\to 0^+}\ln x\cdot x^{\alpha +1}-\frac{1}{\alpha +1}\right)\\[0.5cm] &\displaystyle =
+\frac{1}{\alpha+1}\left(\lim_{c\to 0^+}\frac{\ln x}{x^{-(\alpha +1)}}-\frac{1}{\alpha +1}\right)  = \frac{1}{\alpha+1}\left(\lim_{c\to 0^+}\frac{\frac{1}{x}}{-(\alpha +1)x^{-(\alpha +2)}}-\frac{1}{\alpha +1}\right) \\[0.5cm] & \displaystyle = \lim_{c\to 0^+}\frac{1}{-x^{-(\alpha +1)}}-\frac{1}{(\alpha+1)^2}=-\frac{1}{(\alpha +1)^2}.
+\end{array}
+$$
+Por tanto, la integral inicial será convergente en este caso y su valor será $-\frac{1}{(\alpha +1)^2}$.
+
+* $\alpha =-1$. En este caso la integral impropia es:
+$$
+\int_0^1 \frac{\ln x}{x}\, dx.
+$$
+Para resolver la integral impropia anterior, aplicaremos el criterio de comparación por cociente usando las funciones $\frac{\ln x}{x}$ y $\frac{1}{x}$. Si hacemos el límite del cociente, obtenemos:
+$$
+\lim_{x\to 0^+}\frac{\frac{\ln x}{x}}{\frac{1}{x}}=\lim_{x\to 0^+}\ln x=-\infty.
+$$
+Sabemos por los apuntes que la integral impropia $\displaystyle\int_0^1\frac{1}{x}\, dx$ es divergente y usando el límite anterior, podemos afirmar que nuestra integral impropia $\displaystyle\int_0^1 \frac{\ln x}{x}\, dx$ también lo es.
+\newpage
+
+3. Provar que las integrales siguientes son convergentes:
+$$
+I=\int_0^1\frac{\ln x}{1+x^2}\, dx,\quad J=\int_1^\infty \frac{\ln x}{1+x^2}\, dx,
+$$
+y que $I+J=0$.
+
+\newpage
+
+4. Estudiar el carácter de las siguientes integrales impropias:
+    a) $\displaystyle\int_1^\infty \frac{dx}{2\mathrm{e}^x+1}.$
+    a) $\displaystyle\int_0^1\frac{dx}{\sqrt{1-x^4}}.$
+    a) $\displaystyle\int_0^\frac{\pi}{2}\frac{\sin x}{\sqrt{1-\cos x}}\, dx.$
+
+\newpage
+
+5. Estudiar el carácter de las siguientes integrales impropias en función del parámetre $\alpha$:
+    a) $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$.
+    a) $\displaystyle\int_1^\infty \frac{\sin x}{x^\alpha}\, dx.$
+    a) $\displaystyle\int_1^\infty \sin(x^\alpha)\, dx,\ \alpha >1$.
+
+\newpage
+
+6. Explicar por qué el valor de las integrales siguientes no es correcto, estudiar su convergencia y, en el caso en que sean convergentes, hallar su valor:
+$$
+\int_{-1}^1\frac{dx}{x^2}=-2,\quad \int_0^4\frac{dx}{(x-1)^2}=\frac{4}{3}.
+$$
