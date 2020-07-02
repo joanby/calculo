@@ -127,12 +127,137 @@ I=\int_0^1\frac{\ln x}{1+x^2}\, dx,\quad J=\int_1^\infty \frac{\ln x}{1+x^2}\, d
 $$
 y que $I+J=0$.
 
+**Solución**
+
+La integral impropia $I$ es de segunda especie con una singularidad en $x=0$.
+
+Para demostrar que $I$ es convergente aplicaremos la técnica de integración por partes con:
+$$
+\begin{array}{llcll}
+u  &= \ln x,& du &=\frac{1}{x}\,dx,\\
+dv & = \frac{1}{1+x^2}\, dx, & v&=\arctan x.
+\end{array}
+$$
+Usando la técnica anterior, podemos escribir la integral $I$ como:
+$$
+I=\lim_{c\to 0^+}\int_c^1  \frac{\ln x}{1+x^2}\, dx=\lim_{c\to 0^+}[\ln x\cdot\arctan x]_c^1-\lim_{c\to 0^+}\int_c^1 \frac{\arctan x}{x}\, dx.
+$$
+El primer término de la expresión anterior se calcula como:
+$$
+\lim_{c\to 0^+}[\ln x\cdot\arctan x]_c^1 =-\lim_{c\to 0^+}\ln c\cdot \arctan c.
+$$
+Usando que $\displaystyle\lim_{c\to 0^+}\frac{\arctan c}{c}=1$, ya que usando la regla de l'Hôpital,
+$$
+\lim_{c\to 0^+}\frac{\arctan c}{c}=\lim_{c\to 0^+}\frac{\frac{1}{1+c^2}}{1}=1,
+$$
+podemos sustituir $\arctan c$ por $c$ en el límite a calcular y nos queda,
+$$
+\lim_{c\to 0^+}[\ln x\cdot\arctan x]_c^1 =-\lim_{c\to 0^+}\ln c\cdot c =-\lim_{c\to 0^+}\frac{\ln c}{\frac{1}{c}}=-\lim_{c\to 0^+}\frac{\frac{1}{c}}{-\frac{1}{c^2}}=-\lim_{c\to 0^+}-c=0.
+$$
+Entonces la integral $I$ puede escribirse como:
+$$
+I=-\lim_{c\to 0^+}\int_c^1 \frac{\arctan x}{x}\, dx.
+$$
+Ahora bien, tal como hemos indicado antes, $\displaystyle\lim_{x\to 0^+}\frac{\arctan x}{x}=1$, por tanto, usando el criterio de comparación por cociente, como $\displaystyle\int_0^1 1\, dx$ es convergente, la integral impropia $\displaystyle \int_0^1 \frac{\arctan x}{x}\, dx$ también será convergente y como conclusión, la integral impropia $I$ será convergente.
+
+La integral $J$ es una integral impropia de primera especie. Para ver que $J$ es convergente, aplicaremos el criterio de comparación por cociente usando las funciones $\frac{\ln x}{1+x^2}$ y $\frac{1}{x^{\frac{3}{2}}}$:
+$$
+\begin{array}{rl}
+\displaystyle\lim_{x\to\infty}\frac{\frac{\ln x}{1+x^2}}{\frac{1}{x^{\frac{3}{2}}}} & \displaystyle =\lim_{x\to\infty}\frac{x^\frac{3}{2}\cdot\ln x}{1+x^2}=\lim_{x\to\infty}\frac{\frac{3}{2}\cdot x^\frac{1}{2}\cdot\ln x+x^\frac{3}{2}\cdot\frac{1}{x}}{2x}=\lim_{x\to\infty}\frac{\frac{3}{2}\cdot x^\frac{1}{2}\cdot\ln x+x^\frac{1}{2}}{2x}\\[0.5cm] & \displaystyle =\lim_{x\to\infty}\frac{x^\frac{1}{2}\left(\frac{3}{2}\ln x+1\right)}{2x}=\lim_{x\to\infty}\frac{\frac{3}{2}\ln x+1}{2x^\frac{1}{2}}=\lim_{x\to\infty}\frac{\frac{3}{2}\cdot\frac{1}{x}}{2\cdot \frac{1}{2}\cdot x^ {-\frac{1}{2}}}=\frac{3}{2}\lim_{x\to\infty}\frac{1}{x^\frac{1}{2}}=0.
+\end{array}
+$$
+Como la integral impropia $\displaystyle\int_1^\infty \frac{1}{x^\frac{3}{2}}\, dx$ es convergente ya que
+$$
+\int_1^\infty \frac{1}{x^\frac{3}{2}}\, dx =\lim_{c\to\infty}\int_1^c x^{-\frac{3}{2}}\, dx=\lim_{c\to\infty} \left[\frac{x^{-\frac{1}{2}}}{-\frac{1}{2}}\right]_1^c =-2\cdot\lim_{c\to\infty} c^{-\frac{1}{2}}-1=2,
+$$
+la integral impropia $J$ también lo será usando el límite anterior.
+
+Por último veamos que $I+J=0$.
+Para ello, realizamos el cambio de variable siguiente en la integral impropia $I$, $t=\frac{1}{x}$.
+La relación entre los diferenciales es $dt=-\frac{1}{x^2}\,dx=-t^2\, dx$, $dx=-\frac{dt}{t^2}$ y cuando $x=0$, $t=\infty$ y cuando $x=1$, $t=1$. La integral $I$ en la nueva variable $t$ será:
+$$
+I=\int_\infty^1 \frac{\ln\left(\frac{1}{t}\right)}{1+\frac{1}{t^2}}\left(-\frac{1}{t^2}\right)\, dt.
+$$
+Usando que, en general $\displaystyle\int_\infty^1 h(t)\,dt=-\int_1^\infty h(t)\, dt$, podemos escribir la integral anterior como:
+$$
+I=-\int_1^\infty\frac{-\ln t}{\frac{t^2+1}{t^2}}\left(-\frac{1}{t^2}\right)\, dt =-\int_1^\infty \frac{\ln t}{1+t^2}\, dt=-J,
+$$
+con lo cual, $I+J=0$, tal como queríamos demostrar.
+
 \newpage
 
 4. Estudiar el carácter de las siguientes integrales impropias:
     a) $\displaystyle\int_1^\infty \frac{dx}{2\mathrm{e}^x+1}.$
     a) $\displaystyle\int_0^1\frac{dx}{\sqrt{1-x^4}}.$
     a) $\displaystyle\int_0^\frac{\pi}{2}\frac{\sin x}{\sqrt{1-\cos x}}\, dx.$
+    
+**Solución**
+
+a) Para estudiar el carácter de la integral impropia propuesta, realizamos el cambio de variable siguiente $t=\mathrm{e}^x$. La relación entre los diferenciales es $dt=\mathrm{e}^x\,dx=t\,dx$, $dx=\frac{dt}{t}$. Cuando $x=1$, $t=\mathrm{e}$ y cuando $x=\infty$, $t=\infty$:
+$$
+\int_1^\infty \frac{dx}{2\mathrm{e}^x+1}=\int_\mathrm{e}^\infty \frac{1}{2t+1}\cdot \frac{1}{t}\, dt=\int_\mathrm{e}^\infty\frac{1}{t\cdot (2t+1)}\, dt=\frac{1}{2}\lim_{c\to\infty}\int_\mathrm{e}^c
+\frac{1}{t\cdot \left(t+\frac{1}{2}\right)}\, dt.
+$$
+Obtenemos una integral racional. Para resolverla, descomponemos la función a integrar de la forma siguiente:
+$$
+\frac{1}{t\cdot \left(t+\frac{1}{2}\right)} =\frac{A}{t}+\frac{B}{t+\frac{1}{2}}=\frac{A\left(t+\frac{1}{2}\right)+B t}{t\cdot \left(t+\frac{1}{2}\right)}.
+$$
+Como los denominadores son iguales, los numeradores deben serlo:
+$$
+A\left(t+\frac{1}{2}\right)+B t=1.
+$$
+Si damos el valor de $t=0$, obtenemos el valor de $A$:
+$$
+\frac{1}{2}\cdot A=1,\ \Rightarrow A=2,
+$$
+y si damos el valor de $t=-\frac{1}{2}$, obtenemos el valor de $B$:
+$$
+-\frac{1}{2}\cdot B=1,\ \Rightarrow B=-2.
+$$
+La integral a resolver queda, pues:
+$$
+\begin{array}{rl}
+\displaystyle\int_1^\infty \frac{dx}{2\mathrm{e}^x+1} & \displaystyle =\frac{1}{2}\lim_{c\to\infty}\int_\mathrm{e}^c \left(\frac{2}{t}-\frac{2}{t+\frac{1}{2}}\right)\, dt =\lim_{c\to\infty}\left[\ln t-\ln\left(t+\frac{1}{2}\right)\right]_\mathrm{e}^c =\lim_{c\to\infty}\left[\ln\frac{t}{t+\frac{1}{2}}\right]_\mathrm{e}^c\\[0.5cm] & =\displaystyle \lim_{c\to\infty}\ln\frac{c}{c+\frac{1}{2}}-\ln\frac{\mathrm{e}}{\mathrm{e}+\frac{1}{2}} =\ln 1-\left(\ln e-\ln \left(\mathrm{e}+\frac{1}{2}\right)\right)=-1+\ln \left(\mathrm{e}+\frac{1}{2}\right)\approx `r round(-1+log(exp(1)+1/2),4)`.
+\end{array}
+$$
+
+b) Se trataría de una integral impropia de segunda especie con una singularidad en $x=1$. Para resolverla aplicaremos el criterio por cociente usando las funciones $\frac{1}{\sqrt[4]{1-x^4}}$ y $\frac{1}{\sqrt[4]{1-x}}$. 
+
+¿Cuál es la razón de que hayamos escogido la función $\frac{1}{\sqrt[4]{1-x}}$ para comparar?
+
+Veamos intuitivamente cómo se comporta la singuralidad de nuestra función $\frac{1}{\sqrt[4]{1-x^4}}$ en $x=1$. En primer lugar, "separamos" nuestra función en dos partes: una que conserva la singularidad y la otra no: 
+$$
+\frac{1}{\sqrt[4]{1-x^4}}=\frac{1}{\sqrt[4]{(1-x^2)\cdot (1+x^2)}}=\frac{1}{\sqrt[4]{1-x^2}}\cdot \frac{1}{\sqrt[4]{1+x^2}}.
+$$
+Vemos que la función que "hereda" la singularidad $x=1$ es $\frac{1}{\sqrt[4]{1-x^2}}$. La otra, $\frac{1}{\sqrt[4]{1+x^2}}$ no tiene ninguna singularidad en $x=1$.
+
+A su vez, podemos descomponer la función $\frac{1}{\sqrt[4]{1-x^2}}$ como:
+$$
+\frac{1}{\sqrt[4]{1-x^2}}=\frac{1}{\sqrt[4]{1-x}}\cdot\frac{1}{\sqrt[4]{1+x}}.
+$$
+La singularidad $x=1$ se "hereda" en la función $\frac{1}{\sqrt[4]{1-x}}$. En resumen, nuestra función a integrar puede descomponerse de la forma siguiente:
+$$
+\frac{1}{\sqrt[4]{1-x^4}}=\frac{1}{\sqrt[4]{1-x}}\cdot \left(\frac{1}{\sqrt[4]{1+x}}\cdot \frac{1}{\sqrt[4]{1+x^2}}\right).
+$$
+La función del paréntesis no tiene ningún "problema" en $x=1$, es decir, vemos que la función donde hay "problemas" es $\frac{1}{\sqrt[4]{1-x}}$. De ahí que parece que intuitivamente es equivalente estudiar el carácter de la integral impropia $\displaystyle\int_0^1\frac{dx}{\sqrt{1-x^4}}$ a estudiar el carácter de la integral impropia $\displaystyle\int_0^1 \frac{1}{\sqrt[4]{1-x}}\,dx$. Veámoslo:
+$$
+\lim_{x\to 1^-}\frac{\frac{1}{\sqrt[4]{1-x^4}}}{\frac{1}{\sqrt[4]{1-x}}}=\lim_{x\to 1^-}\frac{\frac{1}{\sqrt[4]{1-x}}\cdot \left(\frac{1}{\sqrt[4]{1+x}}\cdot \frac{1}{\sqrt[4]{1+x^2}}\right)}{\frac{1}{\sqrt[4]{1-x}}}=\lim_{x\to 1^-} \frac{1}{\sqrt[4]{1+x}}\cdot \frac{1}{\sqrt[4]{1+x^2}} =\frac{1}{\sqrt[4]{2}}\cdot\frac{1}{\sqrt[4]{2}}=\frac{1}{\sqrt[4]{4}},
+$$
+tal como queríamos ver.
+
+A continuación, estudiemos el carácter de la integral impropia $\displaystyle\int_0^1 \frac{1}{\sqrt[4]{1-x}}\,dx$:
+$$
+\begin{array}{rl}
+\displaystyle \int_0^1 \frac{1}{\sqrt[4]{1-x}}\,dx & \displaystyle =\lim_{c\to 1^-}\int_0^c (1-x)^{-\frac{1}{4}}\,dx=\lim_{c\to 1^-}-\left[\frac{(1-x)^{-\frac{1}{4}+1}}{-\frac{1}{4}+1}\right]_0^c=-\lim_{c\to 1^-}\left[\frac{(1-x)^{\frac{3}{4}}}{\frac{3}{4}}\right]_0^c\\[0.5cm] &\displaystyle = -\frac{4}{3}\lim_{c\to 1^-}((1-c)^\frac{3}{4}-1)=\frac{4}{3}.
+\end{array}
+$$
+Como la integral impropia $\displaystyle\int_0^1 \frac{1}{\sqrt[4]{1-x}}\,dx$ es convergente, nuestra integral impropia $\displaystyle\int_0^1\frac{dx}{\sqrt{1-x^4}}$ también lo será al tener las dos el mismo carácter.
+
+c) La función de la integral impropia  $\displaystyle\int_0^\frac{\pi}{2}\frac{\sin x}{\sqrt{1-\cos x}}\, dx$ sólo puede tener problemas en $x=0$ ya que este valor es el único valor donde se anula el denominador $\sqrt{1-\cos x}$ en el intervalo $\left(0,\frac{\pi}{2}\right)$. Veamos si realmente es una singularidad. Usando la igualdad trigonométrica $\sin\left(\frac{x}{2}\right)=\sqrt{\frac{1-\cos x}{2}}$, de donde $\sqrt{1-\cos x}=\sqrt{2}\sin\left(\frac{x}{2}\right)$:
+$$
+\lim_{x\to 0^+} \frac{\sin x}{\sqrt{1-\cos x}}=\lim_{x\to 0^+}\frac{\sin x}{\sqrt{2}{\sin\left(\frac{x}{2}\right)}}=\frac{1}{\sqrt{2}}\lim_{x\to 0^+}\frac{\cos x}{\frac{1}{2}\cos\left(\frac{x}{2}\right)}=\frac{2}{\sqrt{2}}=\sqrt{2}.
+$$
+Usando el criterio por cociente, como la integral $\displaystyle \int_0^\frac{\pi}{2} 1\, dx$ es convergente, nuestra integral impropia $\displaystyle\int_0^\frac{\pi}{2}\frac{\sin x}{\sqrt{1-\cos x}}\, dx$ también lo será ya que gracias al límite anterior, las dos integrales anteriores tienen el mismo carácter.
 
 \newpage
 

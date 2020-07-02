@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.24)  1 JUL 2020 19:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.24)  2 JUL 2020 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -486,27 +486,32 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
 79.
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [2] [3] [4] [5] [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 312.
-[7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 312.
+) [2] [3] [4] [5]
+Overfull \hbox (6.62616pt too wide) detected at line 359
+[]
+ []
+
+[6] [7] [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 465.
+[9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 465.
 (./06Integracion03Soluciones.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 312.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 312.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 465.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 465.
 Package rerunfilecheck Info: File `06Integracion03Soluciones.out' has not chang
 ed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12215 strings out of 483007
- 179547 string characters out of 5961757
- 462896 words of memory out of 5000000
+ 12242 strings out of 483007
+ 179812 string characters out of 5961757
+ 463896 words of memory out of 5000000
  27007 multiletter control sequences out of 15000+600000
- 562240 words of font info for 57 fonts, out of 8000000 for 9000
+ 563153 words of font info for 68 fonts, out of 8000000 for 9000
  107 hyphenation exceptions out of 8191
- 34i,8n,42p,833b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/shar
+ 34i,11n,42p,833b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
+c/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/shar
 e/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
 m-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}</usr/share/texmf/f
 onts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.
@@ -515,12 +520,13 @@ type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr5.pfb></usr/share/
 texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-sy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on 06Integracion03Soluciones.pdf (7 pages, 156496 bytes).
+sy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb>
+Output written on 06Integracion03Soluciones.pdf (9 pages, 180408 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
- 25 named destinations out of 1000 (max. 500000)
+ 135 PDF objects out of 1000 (max. 8388607)
+ 109 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
  8193 words of extra memory for PDF output out of 10000 (max. 10000000)
 
