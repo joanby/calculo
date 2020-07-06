@@ -22,7 +22,7 @@ header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e} \newcomma
 
 En esta presentación vamos a combinar lo aprendido en el capítulo de \blue{derivación} y en el de \blue{integración} con el objetivo de hallar la derivada de funciones del tipo:
 $$
-F(x)=\int_{f(x)}^{g(x)}h(t)\,dt.
+F(x)=\int_{g(x)}^{h(x)}f(t)\,dt.
 $$
 donde $f(x)$, $g(x)$ y $h(x)$ son funciones reales de variable real.
 
@@ -44,7 +44,7 @@ runApp("IntegralSinx")
 ## Introducción
 Nos preguntamos cuál es la expresión de la \red{derivada} de la función $F(x)$:
 $$
-F(x)=\int_{f(x)}^{g(x)}h(t)\,dt.
+F(x)=\int_{g(x)}^{h(x)}f(t)\,dt.
 $$
 
 El siguiente resultado nos da la solución a nuestro problema.
