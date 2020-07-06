@@ -261,14 +261,104 @@ Usando el criterio por cociente, como la integral $\displaystyle \int_0^\frac{\p
 
 \newpage
 
-5. Estudiar el carácter de las siguientes integrales impropias en función del parámetre $\alpha$:
+5. Estudiar el carácter de las siguientes integrales impropias en función del parámetro $\alpha$:
     a) $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$.
-    a) $\displaystyle\int_1^\infty \frac{\sin x}{x^\alpha}\, dx.$
+    a) $\displaystyle\int_1^\infty \frac{\sin x}{x^\alpha}\, dx,\ \alpha >0.$
     a) $\displaystyle\int_1^\infty \sin(x^\alpha)\, dx,\ \alpha >1$.
 
+**Solución**
+
+a) Primero tenemos que analizar las posibles singularidades de la integral impropia $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$. Distinguimos los casos siguientes:
+    * $\alpha >1$: es de primera especie ya que el polinomio $x^4-1$ no tiene raíces reales en el intervalo $[\alpha,\infty)$.
+    * $-1<\alpha \leq 1$ es de tercera especie ya que en este caso tiene dos puntos singulares: $c=1,\ \infty$.
+    * $\alpha \leq -1$ es de tercera especie ya que tiene tres puntos singulares: $c=-1,\ 1,\ \infty$.
+    
+Estudiemos cada caso por separado:
+
+* $\alpha >1$. En este caso, vamos a aplicar el criterio por cociente usando las funciones $\frac{x^\alpha}{x^4-1}$ y $x^{\alpha -4}$ ya que cuando $x\to\infty$ $\frac{x^\alpha}{x^4-1}\approx x^{\alpha -4}$:
+$$
+\lim_{x\to\infty}\frac{\frac{x^\alpha}{x^4-1}}{x^{\alpha-4}}=1.
+$$
+Por tanto, las integrales impropias $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$ y $\displaystyle\int_\alpha^\infty x^{\alpha -4}\, dx$ tienen el mismo carácter. Estudiemos el carácter de la integral impropia $\displaystyle\int_\alpha^\infty x^{\alpha -4}\, dx$:
+$$
+\begin{array}{rl}
+\displaystyle\int_\alpha^\infty x^{\alpha -4}\, dx & \displaystyle=\lim_{t\to\infty}\int_\alpha^t x^{\alpha -4}\, dx =\begin{cases} \displaystyle\lim_{t\to\infty}\left[\frac{x^{\alpha -3}}{\alpha -3}\right]_\alpha^t, & \mbox{ si }\alpha\neq 3,\\
+\displaystyle\lim_{t\to\infty}[\ln x]_\alpha^t, & \mbox{ si }\alpha=3,\end{cases}=
+\begin{cases} \displaystyle\lim_{t\to\infty}\frac{1}{\alpha-3}\left(t^{\alpha -3}-\alpha^{\alpha-3}\right), & \mbox{ si }\alpha\neq 3,\\
+\displaystyle\lim_{t\to\infty}(\ln t-\ln\alpha), & \mbox{ si }\alpha=3,\end{cases}\\ &\displaystyle = 
+\begin{cases} \begin{cases}\infty, & \mbox{ si }\alpha >3,\\ \frac{\alpha^{\alpha-3}}{3-\alpha}, & \mbox{ si }1<\alpha < 3\end{cases}, & \mbox{ si }\alpha\neq 3,\\
+\infty, & \mbox{ si }\alpha=3.\end{cases}
+\end{array}
+$$
+En resumen, si $1<\alpha<3$, nuestra integral impropia $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$ será convergente y si $\alpha \geq 3$, será divergente.
+
+* $-1< \alpha\leq 1$. En este caso, como la integral impropia es de tercera especie separamos dicha integral impropia de la forma siguiente con el objetivo de tener integrales en las que haya sólo un punto singular:
+$$
+\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx=\int_\alpha^{1}\frac{x^\alpha}{x^4-1}\, dx+\int_1^{2}\frac{x^\alpha}{x^4-1}\, dx+\int_2^\infty\frac{x^\alpha}{x^4-1}\, dx.
+$$
+Usando un razonamiento similar al del apartado anterior, como $\alpha-3 \in (-4,-2]$ ya que $\alpha\in (-1,1]$, tenemos que la integral impropia $\displaystyle \int_2^\infty\frac{x^\alpha}{x^4-1}\, dx$ será convergente ya que vimos que tiene el mismo carácter que la integral impropia $\displaystyle \int_2^\infty x^{\alpha -4}\,dx$ y esta última será convergente ya que $\alpha -3<0$ y por tanto:
+$$
+\int_\alpha^\infty x^{\alpha -4}\, dx =\lim_{t\to\infty}\int_\alpha^t x^{\alpha -4}\, dx=\lim_{t\to\infty}\frac{1}{\alpha -3}\left(t^{\alpha-3}-\alpha^{\alpha-3}\right)=\frac{\alpha^{\alpha-3}}{3-\alpha}.
+$$
+
+\newpage
+
+Estudiemos la convergencia de las otras dos integrales impropias de segunda especie. Dichas integrales impropias tienen la singularidad en $x=1$. Entonces, si descomponemos la función a integrar, $\frac{x^\alpha}{x^4-1}$ como:
+$$
+\frac{x^\alpha}{x^4-1} =\frac{1}{x-1}\cdot \frac{x^\alpha}{(x+1)\cdot (x^2+1)},
+$$
+vemos que la función que hereda la singularidad es $\frac{1}{x-1}$. Entonces, si aplicamos el criterio por cociente a las funciones $\frac{x^\alpha}{x^4-1}$ y $\frac{1}{x-1}$, obtenemos,
+$$
+\lim_{x\to 1}\frac{\frac{x^\alpha}{x^4-1}}{\frac{1}{x-1}}=\lim_{x\to 1}\frac{\frac{1}{x-1}\cdot \frac{x^\alpha}{(x+1)\cdot (x^2+1)}}{\frac{1}{x-1}}=\lim_{x\to 1}\frac{x^\alpha}{(x+1)\cdot (x^2+1)}=\frac{1}{2\cdot 2}=\frac{1}{4}.
+$$
+Por tanto, las integrales impropias $\displaystyle \int_\alpha^{1}\frac{x^\alpha}{x^4-1}\, dx$ y $\displaystyle\int_\alpha^1\frac{1}{x-1}$ tienen el mismo carácter.
+
+También deducimos que las integrales impropias $\displaystyle \int_1^{2}\frac{x^\alpha}{x^4-1}\, dx$ y $\displaystyle\int_1^2\frac{1}{x-1}\, dx$ tienen el mismo carácter.
+
+Estudiemos el carácter de las integrales impropias $\displaystyle\int_\alpha^1\frac{1}{x-1}\, dx$ y $\displaystyle\int_1^2\frac{1}{x-1}\, dx$:
+$$
+\begin{array}{rl}
+\displaystyle \int_\alpha^1\frac{1}{x-1}\, dx & \displaystyle =\lim_{t\to 1^-}\int_\alpha^t\frac{1}{x-1}\, dx=\lim_{t\to 1^-}[\ln|x-1|]_\alpha^t =\lim_{t\to 1^-}(\ln |t-1|-\ln |\alpha -1|)=-\infty,\\[0.25cm]
+\displaystyle \int_1^2\frac{1}{x-1}\, dx & \displaystyle=\lim_{t\to 1^+}\int_t^2\frac{1}{x-1}\, dx=\lim_{t\to 1^-}[\ln|x-1|]_t^2 =\lim_{t\to 1^-}\ln |t-1|=-\infty,
+\end{array}
+$$
+Como las dos integrales anteriores son divergentes, concluimos que la integral impropia de tercera especie $\displaystyle \int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$ es divergente.
+
+* $\alpha\leq -1$. En este caso, como la integral impropia es de tercera especie separamos dicha integral impropia de la forma siguiente con el objetivo de tener integrales en las que haya sólo un punto singular:
+$$
+\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx=\int_\alpha^{-1}\frac{x^\alpha}{x^4-1}\, dx+\int_{-1}^{0}\frac{x^\alpha}{x^4-1}\, dx+\int_0^{1}\frac{x^\alpha}{x^4-1}\, dx+\int_1^{2}\frac{x^\alpha}{x^4-1}\, dx+\int_2^\infty\frac{x^\alpha}{x^4-1}\, dx.
+$$
+Usando un razonamiento similar al del apartado anterior, podemos ver que las 4 primeras integrales impropias de la descomposición anterior serán divergentes y por tanto, la integral impropia de tercera especie $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$ también será divergente.
+
+b) Vamos a aplicar el criterio de Abel-Dirichlet. Consideramos $g(x)=\frac{1}{x^\alpha}=x^{-\alpha}$ y $s(x)=\sin x$.
+
+La función $g'(x)=-\alpha\cdot x^{-\alpha -1}$ es absolutamente integrable si $-\alpha -1<-1$ o $\alpha >0$ ya que
+$$
+\int_1^\infty |g'(x)|\, dx=|\alpha|\lim_{t\to\infty}\int_1^t x^{-\alpha -1}\, dx=|\alpha|\lim_{t\to\infty} \left[\frac{x^{-\alpha}}{-\alpha}\right]_1^t =\lim_{t\to\infty}(1-t^{-\alpha})=1.
+$$
+
+La función primitiva $S(t)=\int_0^t \sin x=[-\cos x]_0^t =1-\cos t$ está acotada ya que $|S(t)=1-\cos t|\leq 2$.
+
+Usando el criterio de Abel-Dirichlet podemos decir que la integral impropia  $\displaystyle\int_1^\infty \frac{\sin x}{x^\alpha}\, dx$ es convergente si $\alpha >0$.
+
+c) En primer lugar, realizamos el cambio de variable siguiente $u=x^\alpha$. La relación entre los diferenciales será: 
+$$
+du=\alpha\cdot x^{\alpha -1}\, dx=\alpha\cdot u^{\frac{\alpha -1}{\alpha}}\, dx\ \Rightarrow dx=\frac{du}{\alpha\cdot u^{1-\frac{1}{\alpha}}},
+$$
+y si $x=1$, $u=1$ y si $x=\infty$, $u=\infty$, si $\alpha >1$.
+La integral impropia vale en la nueva variable $u$: $\displaystyle\int_1^\infty\frac{\sin u}{\alpha\cdot u^{1-\frac{1}{\alpha}}}\, du$.
+
+A continuación, aplicamos el criterio de Abel-Dirichlet para resolver la integral anterior con $g(u)=\frac{1}{u^{1-\frac{1}{\alpha}}}=u^{\frac{1}{\alpha}-1}$ y $s(u)=\sin u$.
+
+La función $g'(u)=\left(\frac{1}{\alpha}-1\right)\cdot u^{\frac{1}{\alpha}-2}$ es absolutamente integrable si $\frac{1}{\alpha} -2<-1$ o $\alpha >1$ ya que
+$$
+\int_1^\infty |g'(u)|\, du=\left|\frac{1}{\alpha}-1\right|\lim_{t\to\infty}\int_1^t u^{\frac{1}{\alpha}-2}\, du=\lim_{t\to\infty} \left|\left[u^{\frac{1}{\alpha}-1}\right]_1^t\right|=1.
+$$
+En el apartado anterior, vimos que la primitiva $S(u)$ está acotada. Por tanto, la integral impropia $\displaystyle\int_1^\infty\frac{\sin u}{\alpha\cdot u^{1-\frac{1}{\alpha}}}\, du$ es convergente.
 \newpage
 
 6. Explicar por qué el valor de las integrales siguientes no es correcto, estudiar su convergencia y, en el caso en que sean convergentes, hallar su valor:
 $$
 \int_{-1}^1\frac{dx}{x^2}=-2,\quad \int_0^4\frac{dx}{(x-1)^2}=\frac{4}{3}.
 $$
+

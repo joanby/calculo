@@ -22,9 +22,9 @@ y que $I+J=0$.
     a) $\displaystyle\int_1^\infty \frac{dx}{2\mathrm{e}^x+1}.$
     a) $\displaystyle\int_0^1\frac{dx}{\sqrt{1-x^4}}.$
     a) $\displaystyle\int_0^\frac{\pi}{2}\frac{\sin x}{\sqrt{1-\cos x}}\, dx.$
-1. Estudiar el carácter de las siguientes integrales impropias en función del parámetre $\alpha$:
+1. Estudiar el carácter de las siguientes integrales impropias en función del parámetro $\alpha$:
     a) $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$.
-    a) $\displaystyle\int_1^\infty \frac{\sin x}{x^\alpha}\, dx.$
+    a) $\displaystyle\int_1^\infty \frac{\sin x}{x^\alpha}\, dx,\ \alpha >0.$
     a) $\displaystyle\int_1^\infty \sin(x^\alpha)\, dx,\ \alpha >1$.
 1. Explicar por qué el valor de las integrales siguientes no es correcto, estudiar su convergencia y, en el caso en que sean convergentes, hallar su valor:
 $$
