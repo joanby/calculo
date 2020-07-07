@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.24)  7 JUL 2020 09:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.24)  7 JUL 2020 09:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**06Integracion04Enunciados.tex
-(./06Integracion04Enunciados.tex
+**06Integracion04Soluciones.tex
+(./06Integracion04Soluciones.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14> (/usr/share/texlive/texmf-dist/tex/latex/base
 /article.cls
@@ -328,8 +328,8 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count270
 \l__pdf_internal_box=\box47
-) (./06Integracion04Enunciados.aux)
-\openout1 = `06Integracion04Enunciados.aux'.
+) (./06Integracion04Soluciones.aux)
+\openout1 = `06Integracion04Soluciones.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
@@ -378,9 +378,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 91.
 LaTeX Info: Redefining \pageref on input line 91.
 LaTeX Info: Redefining \nameref on input line 91.
-(./06Integracion04Enunciados.out) (./06Integracion04Enunciados.out)
+(./06Integracion04Soluciones.out) (./06Integracion04Soluciones.out)
 \@outlinefile=\write3
-\openout3 = `06Integracion04Enunciados.out'.
+\openout3 = `06Integracion04Soluciones.out'.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -479,39 +479,40 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 130.
-[1
+) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 130.
-(./06Integracion04Enunciados.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 130.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 130.
-Package rerunfilecheck Info: File `06Integracion04Enunciados.out' has not chang
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
+[7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
+(./06Integracion04Soluciones.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Package rerunfilecheck Info: File `06Integracion04Soluciones.out' has not chang
 ed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12170 strings out of 483007
- 178653 string characters out of 5961757
- 453946 words of memory out of 5000000
- 26978 multiletter control sequences out of 15000+600000
- 563320 words of font info for 57 fonts, out of 8000000 for 9000
+ 12179 strings out of 483007
+ 178735 string characters out of 5961757
+ 451946 words of memory out of 5000000
+ 26980 multiletter control sequences out of 15000+600000
+ 566315 words of font info for 58 fonts, out of 8000000 for 9000
  107 hyphenation exceptions out of 8191
- 34i,4n,42p,833b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,4n,42p,833b,326s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/s
 hare/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm
-/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmsy7.pfb>
-Output written on 06Integracion04Enunciados.pdf (1 page, 103213 bytes).
+/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmsy7.pfb>
+Output written on 06Integracion04Soluciones.pdf (7 pages, 126283 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
+ 93 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
  10241 words of extra memory for PDF output out of 12000 (max. 10000000)
 
