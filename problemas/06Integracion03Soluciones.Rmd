@@ -168,7 +168,7 @@ $$
 $$
 Como la integral impropia $\displaystyle\int_1^\infty \frac{1}{x^\frac{3}{2}}\, dx$ es convergente ya que
 $$
-\int_1^\infty \frac{1}{x^\frac{3}{2}}\, dx =\lim_{c\to\infty}\int_1^c x^{-\frac{3}{2}}\, dx=\lim_{c\to\infty} \left[\frac{x^{-\frac{1}{2}}}{-\frac{1}{2}}\right]_1^c =-2\cdot\lim_{c\to\infty} c^{-\frac{1}{2}}-1=2,
+\int_1^\infty \frac{1}{x^\frac{3}{2}}\, dx =\lim_{c\to\infty}\int_1^c x^{-\frac{3}{2}}\, dx=\lim_{c\to\infty} \left[\frac{x^{-\frac{1}{2}}}{-\frac{1}{2}}\right]_1^c =-2\cdot\left(\lim_{c\to\infty} c^{-\frac{1}{2}}-1\right)=2,
 $$
 la integral impropia $J$ también lo será usando el límite anterior.
 
@@ -361,4 +361,34 @@ En el apartado anterior, vimos que la primitiva $S(u)$ está acotada. Por tanto,
 $$
 \int_{-1}^1\frac{dx}{x^2}=-2,\quad \int_0^4\frac{dx}{(x-1)^2}=\frac{4}{3}.
 $$
+
+**Solución**
+
+La integral impropia $\displaystyle \int_{-1}^1\frac{dx}{x^2}$ tiene un punto singular en $x=0$. Por tanto, es de tercera especie y tiene que separarse de la forma siguiente:
+$$
+\int_{-1}^1\frac{dx}{x^2} =\int_{-1}^0 \frac{dx}{x^2}+\int_0^1 \frac{dx}{x^2},
+$$
+separándola en dos integrales de segunda especie. Estudiemos la convergencia de cada una de las dos integrales anteriores:
+$$
+\begin{array}{rl}
+\displaystyle \int_{-1}^0 \frac{dx}{x^2} & \displaystyle =\lim_{t\to 0^-}\int_{-1}^t \frac{dx}{x^2}=\lim_{t\to 0^-}\left[-\frac{1}{x}\right]_{-1}^t =-\lim_{t\to 0^-}\left(\frac{1}{t}+1\right)=\infty,\\[0.5cm]
+\displaystyle \int_{0}^1 \frac{dx}{x^2} & \displaystyle =\lim_{t\to 0^+}\int_{t}^1 \frac{dx}{x^2}=\lim_{t\to 0^+}\left[-\frac{1}{x}\right]_{t}^1 =-\lim_{t\to 0^-}\left(1-\frac{1}{t}\right)=\infty.
+\end{array}
+$$
+Las dos integrales de segunda especie son divergentes y, por tanto, la integral impropia de tercera especie  $\displaystyle \int_{-1}^1\frac{dx}{x^2}$ también lo es. Concluimos que el valor $-2$ es incorrecto ya que implicaría que la integral sería convergente y hemos visto que no lo es.
+
+
+
+La integral impropia $\displaystyle \int_{0}^4\frac{dx}{(x-1)^2}$ tiene un punto singular en $x=1$. Por tanto, es de tercera especie y tiene que separarse de la forma siguiente:
+$$
+\int_{0}^4\frac{dx}{(x-1)^2} =\int_{0}^1 \frac{dx}{(x-1)^2}+\int_1^4 \frac{dx}{(x-1)^2},
+$$
+separándola en dos integrales de segunda especie. Estudiemos la convergencia de cada una de las dos integrales anteriores:
+$$
+\begin{array}{rl}
+\displaystyle \int_{0}^1 \frac{dx}{(x-1)^2} & \displaystyle =\lim_{t\to 1^-}\int_{0}^t \frac{dx}{(x-1)^2}=\lim_{t\to 1^-}\left[-\frac{1}{x-1}\right]_{0}^t =-\lim_{t\to 1^-}\left(\frac{1}{t-1}+1\right)=\infty,\\[0.5cm]
+\displaystyle \int_{1}^4 \frac{dx}{(x-1)^2} & \displaystyle =\lim_{t\to 1^+}\int_{t}^4 \frac{dx}{(x-1)^2}=\lim_{t\to 1^+}\left[-\frac{1}{x-1}\right]_{t}^4 =-\lim_{t\to 1^+}\left(\frac{1}{3}-\frac{1}{t-1}\right)=\infty.
+\end{array}
+$$
+Las dos integrales de segunda especie son divergentes y, por tanto, la integral impropia de tercera especie  $\displaystyle \int_{0}^4\frac{dx}{(x-1)^2}$ también lo es. Concluimos que el valor $\frac{4}{3}$ es incorrecto ya que implicaría que la integral sería convergente y hemos visto que no lo es.
 

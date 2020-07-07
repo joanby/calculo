@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.24)  6 JUL 2020 19:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.24)  7 JUL 2020 12:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -497,22 +497,22 @@ Overfull \hbox (42.4351pt too wide) detected at line 498
  []
 
 [8] [9] [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 626.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 660.
 [11]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 626.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 660.
 (./06Integracion03Soluciones.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 626.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 626.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 660.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 660.
 Package rerunfilecheck Info: File `06Integracion03Soluciones.out' has not chang
 ed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12261 strings out of 483007
- 179991 string characters out of 5961757
+ 12265 strings out of 483007
+ 180035 string characters out of 5961757
  463896 words of memory out of 5000000
  27007 multiletter control sequences out of 15000+600000
- 563734 words of font info for 75 fonts, out of 8000000 for 9000
+ 563900 words of font info for 77 fonts, out of 8000000 for 9000
  107 hyphenation exceptions out of 8191
  34i,19n,42p,833b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
@@ -528,7 +528,7 @@ texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lm
 sy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy5.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on 06Integracion03Soluciones.pdf (11 pages, 194098 bytes).
+Output written on 06Integracion03Soluciones.pdf (11 pages, 196337 bytes).
 PDF statistics:
  147 PDF objects out of 1000 (max. 8388607)
  119 compressed objects within 2 object streams
