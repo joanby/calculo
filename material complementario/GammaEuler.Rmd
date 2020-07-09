@@ -1,0 +1,55 @@
+---
+title: "La función Gamma de Euler"
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+
+---
+
+
+# La función Gamma de Euler
+
+## Introducción
+La función \red{Gamma de Euler} se define de la forma siguiente como una \red{integral impropia}:
+$$
+\Gamma(t)=\int_0^\infty x^{t-1}\mathrm{e}^{-x}\, dx. 
+$$
+Esta función tiene aplicaciones en \blue{física cuántica, astrofísica y dinámica de fluidos.}
+
+También se usa para resolver problemas de \blue{convergencia de series} y \blue{problemas de integración impropia} para estudiar si determinadas integrales convergen o no.
+
+En esta presentación, estudiaremos para qué valores de $t$ la función \red{Gamma} está definida o la \red{integral impropia} anterior converge.
+
+## Estudio de la convergencia
+Para ver para qué valores de $t$ la integral anterior converge, nos fijamos en que:
+
+* si $t-1\geq 0$ o $t\geq 1$, la \red{integral impropia} es de \red{primera especie} ya que la función a integrar, $x^{t-1}\mathrm{e}^{-x}$ no tiene ninguna \red{singularidad} en el \blue{dominio de integración} $[0,\infty]$.
+
+* si en cambio $t-1<0$, o $t<1$, la \red{integral impropia} es de \red{tercera especie} ya que en este caso hay dos \red{valores singulares}: $t=0$ y $t=\infty$.
+
+## Estudio de la convergencia. Caso $t\geq 1$
+En este caso la integral impropia es de \red{primera especie} y la resolvemos usando la técnica de \blue{integración por partes:} con:
+$$
+\begin{array}{llcll}
+u  &= x^{t-1},& du &=(t-1) x^{t-2}\,dx,\\
+dv & = \mathrm{e}^{-x}, & v&=-\mathrm{e}^{-x},
+\end{array}
+$$
+$$
+\begin{array}{rl}
+\Gamma(t) & \displaystyle =\lim_{z\to\infty}\int_0^z x^{t-1}\mathrm{e}^{-x}\, dx \\[0.25cm] & \displaystyle =\lim_{z\to\infty} \left([-x^{t-1}\mathrm{e}^{-x}]_0^z +(t-1)\int_0^z x^{t-2}\mathrm{e}^{-x}\right).
+\end{array}
+$$
+El límite correspondiente al primer sumando vale:
+$$
+\lim_{z\to\infty}  [-x^{t-1}\mathrm{e}^{-x}]_0^z 
+$$
