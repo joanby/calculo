@@ -51,5 +51,102 @@ $$
 $$
 El límite correspondiente al primer sumando vale:
 $$
-\lim_{z\to\infty}  [-x^{t-1}\mathrm{e}^{-x}]_0^z 
+\lim_{z\to\infty}  [-x^{t-1}\mathrm{e}^{-x}]_0^z =-\lim_{z\to\infty} \frac{z^{t-1}}{\mathrm{e}^{z}}.
 $$
+
+## Estudio de la convergencia. Caso $t\geq 1$
+El límite anterior, al ser $t\geq 1$, es una indeterminación del tipo $\frac{\infty}{\infty}$.
+
+Para resolverlo vamos a aplicar la \blue{regla de l'Hôpital}. Como $t\geq 1$, sea $j\geq 1$ el natural tal que $j\leq t<  j+1$. Entonces aplicando la regla de l'Hôpital $j$ veces al límite anterior obtenemos:
+$$
+\begin{array}{rl}
+\displaystyle\lim_{z\to\infty}  [-x^{t-1}\mathrm{e}^{-x}]_0^z  & \displaystyle =-\lim_{z\to\infty} \frac{z^{t-1}}{\mathrm{e}^{z}}=-\lim_{z\to\infty} \frac{(t-1) z^{t-2}}{\mathrm{e}^{z}}=\cdots \\[0.25cm] & \displaystyle =-\lim_{z\to\infty} \frac{(t-1)\ldots (t-j) z^{t-(j+1)}}{\mathrm{e}^{z}}=0,
+\end{array}
+$$
+ya que el último límite es de la forma $\frac{0}{\infty}=0$, al ser $t-(j+1)<0$.
+
+## Estudio de la convergencia. Caso $t\geq 1$
+En resumen,
+$$
+\Gamma(t) = (t-1)\lim_{z\to\infty} \int_0^z x^{t-2}\mathrm{e}^{-x}\, dx.
+$$
+
+Volviendo a aplicar la técnica de \red{integración por partes} hasta llegar a una integral de la forma $\displaystyle \int_0^z x^{t-(j+1)}\mathrm{e}^{-x}\, dx$, obtenemos:
+$$
+\Gamma(t) = (t-1)\cdots (t-j)\lim_{z\to\infty} \int_0^z x^{t-(j+1)}\mathrm{e}^{-x}\, dx.
+$$
+
+## Estudio de la convergencia. Caso $t\geq 1$
+Si aplicamos el \red{criterio de comparación por cociente} a la integral impropia obtenida $\displaystyle\int_0^\infty x^{t-(j+1)}\mathrm{e}^{-x}\, dx$ comparando con la función $\mathrm{e}^{-x}$, obtenemos:
+$$
+\lim_{x\to\infty}\frac{x^{t-(j+1)}\mathrm{e}^{-x}}{\mathrm{e}^{-x}}=\lim_{x\to\infty}x^{t-(j+1)}=0,
+$$
+ya que $t-(j+1)<0$. 
+
+## Estudio de la convergencia. Caso $t\geq 1$
+Por tanto, como la integral impropia $\displaystyle\int_0^\infty \mathrm{e}^{-x}\, dx$ es convergente ya que,
+$$
+\int_0^\infty\mathrm{e}^{-x}\, dx=\lim_{z\to\infty}\int_0^z \mathrm{e}^{-x}\, dx\lim_{z\to\infty}[-\mathrm{e}^{-x}]_0^z =\lim_{z\to\infty}(1-\mathrm{e}^{-z})=1,
+$$
+nuestra integral impropia $\displaystyle\int_0^\infty x^{t-(j+1)}\mathrm{e}^{-x}\, dx$ también lo será.
+
+Concluimos que la función \red{Gamma de Euler} $\displaystyle \Gamma(t)=\int_0^\infty x^{t-1}\mathrm{e}^{-x}\, dx$ está definida para $t\geq 1$.
+
+## Estudio de la convergencia. Caso $t< 1$
+En este caso la integral impropia $\displaystyle \Gamma(t)=\int_0^\infty x^{t-1}\mathrm{e}^{-x}\, dx$ es de tercera especie con dos puntos singulares $x=0$ y $x=\infty$.
+
+En este caso, escribimos la función \red{Gamma de Euler} de la forma siguiente:
+$$
+\Gamma(t)=\int_0^\infty x^{t-1}\mathrm{e}^{-x}\, dx =\int_0^1 x^{t-1}\mathrm{e}^{-x}\, dx+\int_1^\infty x^{t-1}\mathrm{e}^{-x}\, dx.
+$$
+
+## Estudio de la convergencia. Caso $t< 1$
+De esta forma, hemos separado la función $\Gamma(t)$ en dos \blue{integrales impropias:}
+
+* una de segunda especie: $\displaystyle I_1=\int_0^1 x^{t-1}\mathrm{e}^{-x}\, dx$ y
+* otra de primera especie: $\displaystyle I_2=\int_1^\infty x^{t-1}\mathrm{e}^{-x}\, dx.$
+
+Estudiemos la convergencia de cada una de las \blue{integrales impropias anteriores.}
+
+## Estudio de la convergencia. Caso $t< 1$. Estudio de $I_1$
+La integral impropia $I_1$ vale:
+$$
+I_1=\lim_{z\to 0}\int_z^1 x^{t-1}\mathrm{e}^{-x}\, dx.
+$$
+Para estudiar su convergencia, aplicaremos el \red{criterio de comparación por cociente} con la función $x^{p-1}$:
+$$
+\lim_{x\to 0}\frac{x^{t-1}\mathrm{e}^{-x}}{x^{t-1}}=\lim_{x\to 0}\mathrm{e}^{-x}=1.
+$$
+Las integrales impropias $\displaystyle \int_0^1 x^{t-1}\mathrm{e}^{-x}\, dx$ y $\displaystyle \int_0^1 x^{t-1}\, dx$ tienen el mismo \red{carácter.}
+
+## Estudio de la convergencia. Caso $t< 1$. Estudio de $I_1$
+Estudiemos la \blue{convergencia} de la \blue{integral impropia} $\displaystyle \int_0^1 x^{t-1}\, dx$:
+$$
+\int_0^1 x^{t-1}\, dx=\lim_{z\to 0}\int_z^1 x^{t-1}\, dt=\lim_{z\to 0}\left[\frac{x^t}{t}\right]_z^1 =\frac{1}{t}\lim_{z\to 0}(1-z^t)=\frac{1}{t},
+$$
+si, y sólo si, $t>0$. Por tanto, la integral impropia $I_1$ es convergente si, y sólo si, $0<t<1$.
+
+El caso $t=0$ debe ser estudiado aparte pero se puede ver que la integral $\displaystyle \int_0^1 x^{-1}\, dx$ es divergente:
+$$
+\int_0^1 x^{-1}\, dx=\lim_{z\to 0}\int_z^1 x^{-1}\, dt=\lim_{z\to 0}\left[\ln t\right]_z^1 =\lim_{z\to 0}(-\ln z)=\infty.
+$$
+
+## Estudio de la convergencia. Caso $t< 1$. Estudio de $I_2$
+Para estudiar la \blue{convergencia} de la integral impropia $I_2=\displaystyle I_2=\int_1^\infty x^{t-1}\mathrm{e}^{-x}\, dx$, aplicamos el \red{criterio de comparación por cociente} con la integral impropia $\displaystyle \int_1^\infty \mathrm{e}^{-x}\, dx$:
+$$
+\lim_{x\to\infty}\frac{x^{t-1}\mathrm{e}^{-x}}{\mathrm{e}^{-x}}=\lim_{x\to\infty} x^{t-1} =0,
+$$
+ya que $t-1<0$. Como la integral impropia $\displaystyle \int_1^\infty \mathrm{e}^{-x}\, dx$ es convergente (ver el estudio del caso $t\geq 1$), tendremos que nuestra integral impropia $\displaystyle I_2=\int_1^\infty x^{t-1}\mathrm{e}^{-x}\, dx$ también lo será.
+
+## Estudio de la convergencia. Caso $t< 1$.
+Concluimos que en el caso $t<1$ la función \red{Gamma de Euler} 
+$$
+\Gamma(t)=\int_0^\infty x^{t-1}\mathrm{e}^{-x}\, dx,
+$$
+está definida si $0<t<1$.
+
+Entonces la función \red{Gamma de Euler}
+$$
+\Gamma(t)=\int_0^\infty x^{t-1}\mathrm{e}^{-x}\, dx,
+$$
+está definida para todo valor de $t$ estrictamente positivo: $t>0$.
