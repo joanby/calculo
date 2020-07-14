@@ -55,7 +55,7 @@ $$
 \newpage
 
 
-2. Estudiar el carácter de las siguientes integrales impropias en función del parámetre $\alpha$:
+2. Estudiar el carácter de las siguientes integrales impropias en función del parámetro $\alpha$:
     a) $\displaystyle\int_a^b\frac{dx}{(x-a)^\alpha},\ \alpha\in\mathbb{R},\ -\infty<a<b<+\infty$.
     a) $\displaystyle\int_0^1 x^\alpha\ln x\, dx$.
     a) $\displaystyle\int_1^2\frac{dx}{x(\ln x)^\alpha}.$
@@ -121,7 +121,7 @@ $$
 Sabemos por los apuntes que la integral impropia $\displaystyle\int_0^1\frac{1}{x}\, dx$ es divergente y usando el límite anterior, podemos afirmar que nuestra integral impropia $\displaystyle\int_0^1 \frac{\ln x}{x}\, dx$ también lo es.
 \newpage
 
-3. Provar que las integrales siguientes son convergentes:
+3. Probar que las integrales siguientes son convergentes:
 $$
 I=\int_0^1\frac{\ln x}{1+x^2}\, dx,\quad J=\int_1^\infty \frac{\ln x}{1+x^2}\, dx,
 $$
