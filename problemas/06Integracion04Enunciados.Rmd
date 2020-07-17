@@ -10,7 +10,7 @@ output:
 
 1. Hallar el área limitada por la curva $y^2=\frac{1-x}{1+x}$ y su asíntota.
 1. Hallar el área limitada por la curva $y=x(x-1)(x-2)$ y el eje $x$.
-1. Hallar el área limitada por la cura $f(x)=x\cdot\mathrm{e}^{-x}$ y $g(x)=x^2\cdot \mathrm{e}^{-x}$.
+1. Hallar el área limitada por la curva $f(x)=x\cdot\mathrm{e}^{-x}$ y $g(x)=x^2\cdot \mathrm{e}^{-x}$.
 1. Hallar los volúmenes engendrados al girar alrededor del eje $x$ por los recintos de ordenadas de las funciones siguientes:
     a) $f(x)=x^2$, $x=-1$, $x=2$.
     a) $f(x)=\sin x$, $x=0$, $x=\pi$.
