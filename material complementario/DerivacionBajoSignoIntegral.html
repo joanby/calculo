@@ -3123,7 +3123,7 @@ slide:not(.current) .plotly.html-widget{
 </article></slide><slide class=""><hgroup><h2>Introducción</h2></hgroup><article  id="introducción">
 
 <p>En esta presentación vamos a combinar lo aprendido en el capítulo de  y en el de  con el objetivo de hallar la derivada de funciones del tipo: \[
-F(x)=\int_{f(x)}^{g(x)}h(t)\,dt.
+F(x)=\int_{g(x)}^{h(x)}f(t)\,dt.
 \] donde \(f(x)\), \(g(x)\) y \(h(x)\) son funciones reales de variable real.</p>
 
 <p>Antes de proceder con su resolución, veamos un ejemplo ilustrativo:</p>
@@ -3139,10 +3139,42 @@ F(x)=\int_{x}^{x^2}\sin t\, dt,
 </article></slide><slide class=""><hgroup><h2>Introducción</h2></hgroup><article  id="introducción-3">
 
 <p>Nos preguntamos cuál es la expresión de la  de la función \(F(x)\): \[
-F(x)=\int_{f(x)}^{g(x)}h(t)\,dt.
+F(x)=\int_{g(x)}^{h(x)}f(t)\,dt.
 \]</p>
 
-<p>El siguiente resultado nos da la solución a nuestro problema.</p></article></slide>
+<p>El siguiente resultado nos da la solución a nuestro problema.</p>
+
+</article></slide><slide class=""><hgroup><h2>Derivada de una función bajo el signo integral</h2></hgroup><article  id="derivada-de-una-función-bajo-el-signo-integral">
+
+
+
+</article></slide><slide class=""><hgroup><h2>Derivada de una función bajo el signo integral</h2></hgroup><article  id="derivada-de-una-función-bajo-el-signo-integral-1">
+
+
+
+</article></slide><slide class=""><hgroup><h2>Derivada de una función bajo el signo integral</h2></hgroup><article  id="derivada-de-una-función-bajo-el-signo-integral-2">
+
+
+
+</article></slide><slide class=""><hgroup><h2>Derivada de una función bajo el signo integral</h2></hgroup><article  id="derivada-de-una-función-bajo-el-signo-integral-3">
+
+
+
+</article></slide><slide class=""><hgroup><h2>Derivada de una función bajo el signo integral</h2></hgroup><article  id="derivada-de-una-función-bajo-el-signo-integral-4">
+
+
+
+</article></slide><slide class=""><hgroup><h2>Ejemplo</h2></hgroup><article  id="ejemplo">
+
+<p>Calculemos, usando el resultado anterior, la derivada de la función que introdujimos al principio de esta presentación: \[
+F(x)=\int_x^{x^2}\sin x\, dx.
+\]</p>
+
+<p>En este caso, \(g(x)=x,\ h(x)=x^2\) y \(f(x)=\sin x\). Entonces: \[
+\begin{array}{rl}
+F&#39;(x) &amp; =f(h(x))\cdot h&#39;(x)-f(g(x))\cdot g&#39;(x)\\[0.25cm] &amp; =\sin(x^2)\cdot (2x)-\sin(x)\cdot 1 =2x\cdot\sin(x^2)-\sin x.
+\end{array}
+\]</p></article></slide>
 
 
   <slide class="backdrop"></slide>

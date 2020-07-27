@@ -3,12 +3,12 @@ title: "Derivación bajo el signo integral"
 author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
 date: ''
 output:
+  ioslides_presentation:
+    incremental: yes
   beamer_presentation:
     incremental: yes
     theme: Warsaw
     toc: no
-  ioslides_presentation:
-    incremental: yes
   slidy_presentation:
     incremental: yes
 header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e} \newcommand\blue[1]{\textcolor{blue}{#1}}
