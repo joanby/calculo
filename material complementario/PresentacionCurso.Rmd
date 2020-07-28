@@ -1,0 +1,549 @@
+---
+title: "Curso de cálculo"
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+
+---
+
+
+# Curso de cálculo
+
+## ¿Qué vamos a aprender?
+
+* Conocer y \blue{manejar} el conjunto de los \red{números reales} $\mathbb{R}$.
+
+## La recta real
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+xmin=0
+xmax=2
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=2
+quantsy=1
+f = function(x){x}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+2*toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=1,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 1:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-3.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 1:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+
+```
+
+## La recta real
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+xmin=0
+xmax=2
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=2
+quantsy=1
+f = function(x){x}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=1,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 1:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-3.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 1:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+lines(c(1,1),c(0,1),col="blue")
+```
+
+## La recta real
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+xmin=0
+xmax=2
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=2
+quantsy=1
+f = function(x){x}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=1,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 1:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-3.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 1:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+lines(c(1,1),c(0,1),col="blue")
+text(0.5,-4*toly, "1")
+```
+
+
+## La recta real
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+xmin=0
+xmax=2
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=2
+quantsy=1
+f = function(x){x}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=1,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 1:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-3.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 1:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+lines(c(1,1),c(0,1),col="blue")
+text(0.5,-4*toly, "1")
+text(1.1,0.5,"1")
+```
+
+## La recta real
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+xmin=0
+xmax=2
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=2
+quantsy=1
+f = function(x){x}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=1,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 1:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-3.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 1:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+lines(c(1,1),c(0,1),col="blue")
+text(0.5,-4*toly, "1")
+text(1.1,0.5,"1")
+text(0.4,0.65,expression(sqrt(1^2+1^2)))
+```
+
+## La recta real
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+xmin=0
+xmax=2
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=2
+quantsy=1
+f = function(x){x}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=1,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 1:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-3.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 1:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+lines(c(1,1),c(0,1),col="blue")
+text(0.5,-4*toly, "1")
+text(1.1,0.5,"1")
+text(0.5,0.6,expression(sqrt(2)))
+```
+
+
+## La recta real
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+xmin=0
+xmax=2
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=2
+quantsy=1
+f = function(x){x}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=1,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 1:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-3.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 1:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+lines(c(1,1),c(0,1),col="blue")
+text(0.5,-4*toly, "1")
+text(1.1,0.5,"1")
+text(0.5,0.6,expression(sqrt(2)))
+x2=c(seq(from=1,to=sqrt(2),by=0.01),sqrt(2)-0.0000001)
+y2=sqrt(2-x2^2)
+lines(x2,y2,col="red")
+```
+
+## La recta real
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+xmin=0
+xmax=2
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=2
+quantsy=1
+f = function(x){x}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=1,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 1:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-3.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 1:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+lines(c(1,1),c(0,1),col="blue")
+text(0.5,-4*toly, "1")
+text(1.1,0.5,"1")
+text(0.5,0.6,expression(sqrt(2)))
+x2=c(seq(from=1,to=sqrt(2),by=0.01),sqrt(2)-0.0000001)
+y2=sqrt(2-x2^2)
+lines(x2,y2,col="red")
+text(sqrt(2),-4*toly,expression(sqrt(2)),cex=0.75)
+```
+
+## ¿Qué vamos a aprender?
+
+* Trabajar con funciones \blue{reales} de variable \red{real}:
+$$
+f: D\subseteq \mathbb{R}\longrightarrow\mathbb{R},
+$$
+donde $D$ es el llamado \red{dominio} de la función.
+
+## Ejemplos de funciones reales de variable real
+
+* Función logística: $f(x)=\frac{1}{1+\mathrm{e}^{-x}}$:
+\vspace{-2cm}
+
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+xmin=-3
+xmax=3
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=6
+quantsy=4
+f = function(x){1/(1+exp(-x))}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-3.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(5.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+```
+
+## Función logística
+Usada en:
+
+* Redes neuronales,
+* Matemáticas en biología,
+* Química,
+* Demografía,
+* Economía,
+* Psicología,
+* Estadística,
+* etc.
+
+## Funciones de activación en redes neuronales
+En el ámbito de las redes neuronales, las \blue{funciones de activación} o \red{rectificador} se definen como:
+
+* $f(x)=\max\{0,x\}$, donde $x>0$ es la entrada de la neurona. Se usa como alternativa a la función logística:
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=3}
+xmin=-3
+xmax=3
+ymin=0
+ymax=3
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=6
+quantsy=3
+f = function(x){ifelse(x>0,x,0)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-4*toly,ymin-4*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-4.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+```
+
+## Aproximación suave
+Una aproximación suave de la función anterior es la función \red{softplus}: $f(x)=\log(1+\mathrm{e}^x)$:
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=3}
+xmin=-3
+xmax=3
+ymin=0
+ymax=3
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=6
+quantsy=3
+f = function(x){log(1+exp(x))}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-4*toly,ymin-4*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-4.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+```
+
+
+## Conceptos que aprenderemos:
+
+* Continuidad
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=3}
+xmin=-3
+xmax=3
+ymin=0
+ymax=3
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=6
+quantsy=3
+f = function(x){ifelse(x>0,1,-1)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-4*toly,ymin-4*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-4.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+```
+
+
+## Conceptos que aprenderemos:
+
+* Derivabilidad
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=3}
+xmin=-3
+xmax=3
+ymin=0
+ymax=3
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=6
+quantsy=3
+f = function(x){ifelse(x>0,x,0)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-4*toly,ymin-4*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-4.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+```
+
+## Conceptos que aprenderemos:
+
+* Integral de una función o \red{"área"}
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=3}
+xmin=-3
+xmax=3
+ymin=0
+ymax=3
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=6
+quantsy=3
+f = function(x){log(1+exp(x))}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-4*toly,ymin-4*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-4.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+
+x2=seq(from=1,to=2,by=0.01)
+for (i in 1:length(x2)){
+  lines(c(x2[i],x2[i]),c(0,f(x2[i])),col="green")
+}
+```
+
+## 
+
+\begin{center}
+\blue{\Huge Esperemos que disfrutéis del curso.}
+\end{center}
