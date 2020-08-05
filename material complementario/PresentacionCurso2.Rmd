@@ -10,6 +10,7 @@ output:
     keep_md: yes
     logo: ../teoria/Images/calculus.gif
     widescreen: yes
+    transition: slower
 ---
 
 ```{r setup, include=FALSE}
@@ -198,7 +199,7 @@ shinyApp(ui = ui, server = server)
 
 ## La recta real
 \vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=6}
 xmin=0
 xmax=2
 ymin=0
@@ -231,7 +232,7 @@ lines(x,f(x),col="red")
 
 ## La recta real
 \vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=6}
 xmin=0
 xmax=2
 ymin=0
@@ -241,7 +242,7 @@ toly=0.01*(ymax-ymin)
 quantsx=2
 quantsy=1
 f = function(x){x}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+2*toly,ymax+2*toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
 x=seq(from=xmin,to=1,by=0.01)
 #points(x,f(x),type="l")
 lines(c(0,0),c(ymin,ymax))
@@ -264,7 +265,7 @@ lines(c(1,1),c(0,1),col="blue")
 
 ## La recta real
 \vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=6}
 xmin=0
 xmax=2
 ymin=0
@@ -274,7 +275,7 @@ toly=0.01*(ymax-ymin)
 quantsx=2
 quantsy=1
 f = function(x){x}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+2*toly,ymax+2*toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
 x=seq(from=xmin,to=1,by=0.01)
 #points(x,f(x),type="l")
 lines(c(0,0),c(ymin,ymax))
@@ -299,7 +300,7 @@ text(0.5,-4*toly, "1")
 
 ## La recta real
 \vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=6}
 xmin=0
 xmax=2
 ymin=0
@@ -309,7 +310,7 @@ toly=0.01*(ymax-ymin)
 quantsx=2
 quantsy=1
 f = function(x){x}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+2*toly,ymax+2*toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
 x=seq(from=xmin,to=1,by=0.01)
 #points(x,f(x),type="l")
 lines(c(0,0),c(ymin,ymax))
@@ -334,7 +335,7 @@ text(1.1,0.5,"1")
 
 ## La recta real
 \vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=6}
 xmin=0
 xmax=2
 ymin=0
@@ -344,7 +345,7 @@ toly=0.01*(ymax-ymin)
 quantsx=2
 quantsy=1
 f = function(x){x}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+2*toly,ymax+2*toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
 x=seq(from=xmin,to=1,by=0.01)
 #points(x,f(x),type="l")
 lines(c(0,0),c(ymin,ymax))
@@ -370,7 +371,7 @@ text(0.4,0.65,expression(sqrt(1^2+1^2)))
 
 ## La recta real
 \vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=6}
 xmin=0
 xmax=2
 ymin=0
@@ -380,7 +381,7 @@ toly=0.01*(ymax-ymin)
 quantsx=2
 quantsy=1
 f = function(x){x}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+2*toly,ymax+2*toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
 x=seq(from=xmin,to=1,by=0.01)
 #points(x,f(x),type="l")
 lines(c(0,0),c(ymin,ymax))
@@ -407,7 +408,7 @@ text(0.5,0.6,expression(sqrt(2)))
 
 ## La recta real
 \vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=6}
 xmin=0
 xmax=2
 ymin=0
@@ -417,7 +418,7 @@ toly=0.01*(ymax-ymin)
 quantsx=2
 quantsy=1
 f = function(x){x}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+2*toly,ymax+2*toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
 x=seq(from=xmin,to=1,by=0.01)
 #points(x,f(x),type="l")
 lines(c(0,0),c(ymin,ymax))
@@ -446,7 +447,7 @@ lines(x2,y2,col="red")
 
 ## La recta real
 \vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=6}
 xmin=0
 xmax=2
 ymin=0
@@ -456,7 +457,7 @@ toly=0.01*(ymax-ymin)
 quantsx=2
 quantsy=1
 f = function(x){x}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-3*toly,ymin-3*toly,ymax+2*toly,ymax+2*toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
 x=seq(from=xmin,to=1,by=0.01)
 #points(x,f(x),type="l")
 lines(c(0,0),c(ymin,ymax))
@@ -492,127 +493,11 @@ f: D\subseteq \mathbb{R}\longrightarrow\mathbb{R},
 $$
 donde $D$ es el llamado **dominio** de la función.
 
-## Ejemplos de funciones reales de variable real
-
-* Función logística: $f(x)=\frac{1}{1+\mathrm{e}^{-x}}$:
-\vspace{-2cm}
-
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=4.25}
-xmin=-3
-xmax=3
-ymin=0
-ymax=1
-tolx=0.01*(xmax-xmin)
-toly=0.01*(ymax-ymin)
-quantsx=6
-quantsy=4
-f = function(x){1/(1+exp(-x))}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-# text(xmax-3*tolx,-15*tolx,"x")
-# text(toly/2,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  if(xmin+((xmax-xmin)/quantsx)*i != 0){
-    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-    text(xmin+((xmax-xmin)/quantsx)*i,-3.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
-  }
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
- text(5.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
-}
-lines(x,f(x),col="red")
-```
-
-## Función logística
-Usada en:
-
-* Redes neuronales,
-* Matemáticas en biología,
-* Química,
-* Demografía,
-* Economía,
-* Psicología,
-* Estadística,
-* etc.
-
-## Funciones de activación en redes neuronales
-En el ámbito de las redes neuronales, las **funciones de activación** o **rectificador** se definen como:
-
-* $f(x)=\max\{0,x\}$, donde $x>0$ es la entrada de la neurona. Se usa como alternativa a la función logística:
-\vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=3}
-xmin=-3
-xmax=3
-ymin=0
-ymax=3
-tolx=0.01*(xmax-xmin)
-toly=0.01*(ymax-ymin)
-quantsx=6
-quantsy=3
-f = function(x){ifelse(x>0,x,0)}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-4*toly,ymin-4*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-# text(xmax-3*tolx,-15*tolx,"x")
-# text(toly/2,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  if(xmin+((xmax-xmin)/quantsx)*i != 0){
-    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-    text(xmin+((xmax-xmin)/quantsx)*i,-4.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
-  }
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
- text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
-}
-lines(x,f(x),col="red")
-```
-
-## Aproximación suave
-Una aproximación suave de la función anterior es la función **softplus**: $f(x)=\log(1+\mathrm{e}^x)$:
-\vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=3}
-xmin=-3
-xmax=3
-ymin=0
-ymax=3
-tolx=0.01*(xmax-xmin)
-toly=0.01*(ymax-ymin)
-quantsx=6
-quantsy=3
-f = function(x){log(1+exp(x))}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-4*toly,ymin-4*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-# text(xmax-3*tolx,-15*tolx,"x")
-# text(toly/2,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  if(xmin+((xmax-xmin)/quantsx)*i != 0){
-    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-    text(xmin+((xmax-xmin)/quantsx)*i,-4.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
-  }
-
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
- text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
-}
-lines(x,f(x),col="red")
-```
 
 
-## Conceptos que aprenderemos:
+## Conceptos que aprenderemos: continuidad
 
-* Continuidad
-\vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=3}
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=5.75}
 xmin=-3
 xmax=3
 ymin=0
@@ -642,12 +527,100 @@ for (i in 0:(quantsy)){
 lines(x,f(x),col="red")
 ```
 
+## Conceptos que aprenderemos: continuidad
+```{r echo=FALSE}
+#
+# This is a Shiny web application. You can run the application by clicking
+# the 'Run App' button above.
+#
+# Find out more about building applications with Shiny here:
+#
+#    http://shiny.rstudio.com/
+#
+# Define UI for application that draws a histogram
+ui <- fluidPage(
 
-## Conceptos que aprenderemos:
+    # Application title
+    titlePanel("Función discontinua"),
 
-* Derivabilidad
-\vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=3}
+    # Sidebar with a slider input for number of bins 
+    sidebarLayout(
+        sidebarPanel(
+            sliderInput(inputId = "x0",
+                        label="valor de x:",
+                        min = -3,
+                        max = 3,
+                        step = 0.1,
+                        value = -3)
+        ),
+
+        # Show a plot of the generated distribution
+        mainPanel(
+           plotOutput("grafico")
+        )
+    )
+)
+
+# Define server logic required to draw a histogram
+server <- function(input, output) {
+
+    output$grafico <- renderPlot({
+        # generate bins based on input$bins from ui.R
+        # x0 <- seq(0,5,0.1)
+
+        # draw the histogram with the specified number of bins
+        xmin=-3
+        xmax=3
+        ymin=0
+        ymax=3
+        tolx=0.01*(xmax-xmin)
+        toly=0.05*(ymax-ymin)
+        quantsx=6
+        quantsy=3
+        f = function(x){ifelse(x<0,0,1)}
+        plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",
+             yaxt="n",axes=FALSE)
+        x=seq(from=-3,to=input$x0,by=0.1)
+        x2=seq(from=-3,to=3,by=0.01)
+        #points(x,f(x),type="l")
+        lines(c(0,0),c(ymin,ymax))
+        lines(c(xmin,xmax),c(0,0))
+        text(xmax-tolx,-15*tolx,"x")
+        text(toly/10,ymax+toly/2,"y")
+        for (i in 0:(quantsx)){
+            if(xmin+((xmax-xmin)/quantsx)*i != 0){
+                lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.15*toly,+0.15*toly))
+        #             text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+             }
+         }
+        
+        for (i in 0:(quantsy)){
+            lines(c(-tolx/2,tolx/2),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+    #         text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+        }
+        lines(x2,f(x2))
+        for (i in 1:(length(x))){
+           points(x,f(x),pch=19,cex=2)
+        }
+       
+        # for (j in 1:length(x)){
+        #     lines(c(x[j],x[j]),c(0,f(x[j])),col="green")
+        # }
+        # text(x[1],-3*toly,"x",cex=2,col="red")
+        # text(x[length(x)],-3*toly,expression(x^2),cex=2,col="red")
+    },  height = 500, width = 600
+   )
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+
+```
+
+
+
+## Conceptos que aprenderemos: derivabilidad
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=5.75}
 xmin=-3
 xmax=3
 ymin=0
@@ -677,11 +650,102 @@ for (i in 0:(quantsy)){
 lines(x,f(x),col="red")
 ```
 
-## Conceptos que aprenderemos:
+## Conceptos que aprenderemos: derivabilidad
+```{r echo=FALSE}
+#
+# This is a Shiny web application. You can run the application by clicking
+# the 'Run App' button above.
+#
+# Find out more about building applications with Shiny here:
+#
+#    http://shiny.rstudio.com/
+#
+# Define UI for application that draws a histogram
+ui <- fluidPage(
 
-* Integral de una función o **"área"**
-\vspace{-2cm}
-```{r,echo=FALSE,fig.align='center',fig.width=5,fig.height=3}
+    # Application title
+    titlePanel("Derivada de una función"),
+
+    # Sidebar with a slider input for number of bins 
+    sidebarLayout(
+        sidebarPanel(
+            sliderInput(inputId = "x0",
+                        label="valor de x:",
+                        min = -3,
+                        max = 3,
+                        step = 0.1,
+                        value = -3)
+        ),
+
+        # Show a plot of the generated distribution
+        mainPanel(
+           plotOutput("grafico")
+        )
+    )
+)
+
+# Define server logic required to draw a histogram
+server <- function(input, output) {
+
+    output$grafico <- renderPlot({
+        # generate bins based on input$bins from ui.R
+        # x0 <- seq(0,5,0.1)
+
+        # draw the histogram with the specified number of bins
+        xmin=-3
+        xmax=3
+        ymin=0
+        ymax=3
+        tolx=0.01*(xmax-xmin)
+        toly=0.05*(ymax-ymin)
+        quantsx=6
+        quantsy=3
+        f = function(x){log(1+exp(x))}
+        plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",
+             yaxt="n",axes=FALSE)
+        x=input$x0
+        x2=seq(from=-3,to=3,by=0.01)
+        #points(x,f(x),type="l")
+        lines(c(0,0),c(ymin,ymax))
+        lines(c(xmin,xmax),c(0,0))
+        text(xmax-tolx,-15*tolx,"x")
+        text(toly/10,ymax+toly/2,"y")
+        for (i in 0:(quantsx)){
+            if(xmin+((xmax-xmin)/quantsx)*i != 0){
+                lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.15*toly,+0.15*toly))
+        #             text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
+             }
+         }
+        
+        for (i in 0:(quantsy)){
+            lines(c(-tolx/2,tolx/2),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+    #         text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+        }
+        lines(x2,f(x2))
+        for (i in 1:(length(x))){
+            ordenada.origen=-x[i]/(1+exp(-x[i]))+log(1+exp(x[i]))
+            pendent = 1/(1+exp(-x[i]))
+            abline(ordenada.origen,pendent,col="red")
+        }
+       
+        # for (j in 1:length(x)){
+        #     lines(c(x[j],x[j]),c(0,f(x[j])),col="green")
+        # }
+        # text(x[1],-3*toly,"x",cex=2,col="red")
+        # text(x[length(x)],-3*toly,expression(x^2),cex=2,col="red")
+    },  height = 500, width = 600
+   )
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+
+```
+
+
+## Conceptos que aprenderemos: integral o área
+
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=5.75}
 xmin=-3
 xmax=3
 ymin=0
@@ -716,7 +780,7 @@ for (i in 1:length(x2)){
 }
 ```
 
-## Conceptos que aprenderemos:
+## Conceptos que aprenderemos: integral o área
 ```{r echo=FALSE}
 #
 # This is a Shiny web application. You can run the application by clicking
@@ -808,7 +872,7 @@ shinyApp(ui = ui, server = server)
 ```
 
 
-## Conceptos que aprenderemos:
+## Conceptos que aprenderemos: integral o área
 ```{r echo=FALSE}
 #
 # This is a Shiny web application. You can run the application by clicking
@@ -899,7 +963,7 @@ shinyApp(ui = ui, server = server)
 
 ```
 
-## Conceptos que aprenderemos:
+## Conceptos que aprenderemos: longitud de una curva
 ```{r echo=FALSE}
 #
 # This is a Shiny web application. You can run the application by clicking
@@ -909,8 +973,6 @@ shinyApp(ui = ui, server = server)
 #
 #    http://shiny.rstudio.com/
 #
-
-library(shiny)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -989,8 +1051,127 @@ shinyApp(ui = ui, server = server)
 
 ```
 
-##
+## Ejemplos de funciones reales de variable real
 
-\begin{center}
-{\Huge Esperemos que disfrutéis del curso.}
-\end{center}
+* Función logística: $f(x)=\frac{1}{1+\mathrm{e}^{-x}}$:
+\vspace*{-3cm}
+
+```{r,echo=FALSE,fig.align='center',fig.width=7,fig.height=5.5}
+xmin=-3
+xmax=3
+ymin=0
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=6
+quantsy=4
+f = function(x){1/(1+exp(-x))}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-3.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(5.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+```
+
+## Función logística
+Usada en:
+
+* Redes neuronales,
+* Matemáticas en biología,
+* Química,
+* Demografía,
+* Economía,
+* Psicología,
+* Estadística,
+* etc.
+
+## Funciones de activación en redes neuronales
+En el ámbito de las redes neuronales, las **funciones de activación** o **rectificador** se definen como:
+
+* $f(x)=\max\{0,x\}$, donde $x>0$ es la entrada de la neurona. Se usa como alternativa a la función logística:
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=6.5,fig.height=4.5}
+xmin=-3
+xmax=3
+ymin=0
+ymax=3
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=6
+quantsy=3
+f = function(x){ifelse(x>0,x,0)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-4*toly,ymin-4*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-4.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+```
+
+## Aproximación suave
+Una aproximación suave de la función anterior es la función **softplus**: $f(x)=\log(1+\mathrm{e}^x)$:
+\vspace{-2cm}
+```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=5.75}
+xmin=-3
+xmax=3
+ymin=0
+ymax=3
+tolx=0.01*(xmax-xmin)
+toly=0.01*(ymax-ymin)
+quantsx=6
+quantsy=3
+f = function(x){log(1+exp(x))}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-4*toly,ymin-4*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-15*tolx,"x")
+# text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+  if(xmin+((xmax-xmin)/quantsx)*i != 0){
+    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+    text(xmin+((xmax-xmin)/quantsx)*i,-4.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
+  }
+
+for (i in 0:(quantsy)){
+  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+ text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
+}
+lines(x,f(x),col="red")
+```
+
+
+
+## 
+
+<div class="box">
+**Esperemos que disfrutéis del curso**
+</div>
+
+
