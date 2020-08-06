@@ -543,7 +543,7 @@ ui <- fluidPage(
     # Application title
     titlePanel("Función discontinua"),
 
-    # Sidebar with a slider input for number of bins 
+    # Sidebar with a slider input for number of bins
     sidebarLayout(
         sidebarPanel(
             sliderInput(inputId = "x0",
@@ -593,7 +593,7 @@ server <- function(input, output) {
         #             text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)
              }
          }
-        
+
         for (i in 0:(quantsy)){
             lines(c(-tolx/2,tolx/2),ymin+rep(((ymax-ymin)/quantsy)*i,2))
     #         text(-1.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
@@ -602,7 +602,7 @@ server <- function(input, output) {
         for (i in 1:(length(x))){
            points(x,f(x),pch=19,cex=2)
         }
-       
+
         # for (j in 1:length(x)){
         #     lines(c(x[j],x[j]),c(0,f(x[j])),col="green")
         # }
@@ -612,7 +612,7 @@ server <- function(input, output) {
    )
 }
 
-# Run the application 
+# Run the application
 shinyApp(ui = ui, server = server)
 
 ```
