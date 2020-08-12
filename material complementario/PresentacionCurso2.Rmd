@@ -552,7 +552,8 @@ ui <- fluidPage(
                         min = -3,
                         max = 3,
                         step = 0.1,
-                        value = -3)
+                        value = -3,
+                        animate = animationOptions(interval = 300, loop = TRUE))
         ),
 
         # Show a plot of the generated distribution
@@ -675,7 +676,8 @@ ui <- fluidPage(
                         min = -3,
                         max = 3,
                         step = 0.1,
-                        value = -3)
+                        value = -3,
+                        animate = animationOptions(interval = 300, loop = TRUE))
         ),
 
         # Show a plot of the generated distribution
@@ -806,7 +808,8 @@ ui <- fluidPage(
                         min = 1,
                         max = 50,
                         step = 1,
-                        value = 2)
+                        value = 2,
+                        animate = animationOptions(interval = 300, loop = TRUE))
         ),
 
         # Show a plot of the generated distribution
@@ -898,7 +901,8 @@ ui <- fluidPage(
                         min = 1,
                         max = 50,
                         step = 1,
-                        value = 2)
+                        value = 2,
+                        animate = animationOptions(interval = 300, loop = TRUE))
         ),
 
         # Show a plot of the generated distribution
@@ -989,7 +993,8 @@ ui <- fluidPage(
                         min = 1,
                         max = 10,
                         step = 1,
-                        value = 1)
+                        value = 1,
+                        animate = animationOptions(interval = 300, loop = TRUE))
         ),
 
         # Show a plot of the generated distribution
