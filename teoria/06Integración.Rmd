@@ -422,7 +422,7 @@ $$
 
 ## Sumas inferiores y superiores
 <div class="dem">
-El objetivo es demostrar que $U(f,P')-U(f,P)\leq 0$, o que $L(f,P')\leq L(f,P)$. Para ello, basta observar que los sumandos que aparecen en la suma doble de la expresión anterior son negativos ya que en primer lugar, $x_{i,j}-x_{i,j-1}\geq 0$ y $M_{ij}-M_i\leq 0$, o $M_{i,j}\leq M_i$ ya que $M_{i,j}$ es el supremo de la función $f$ en el subintervalo $[x_{i,j-1},x_{i,j}]$ y $M_i$, el supremo de la función $f$ en el subintervalo $[x_{i-1},x_i]$. 
+El objetivo es demostrar que $U(f,P')-U(f,P)\leq 0$, o que $U(f,P')\leq U(f,P)$. Para ello, basta observar que los sumandos que aparecen en la suma doble de la expresión anterior son negativos ya que en primer lugar, $x_{i,j}-x_{i,j-1}\geq 0$ y $M_{ij}-M_i\leq 0$, o $M_{i,j}\leq M_i$ ya que $M_{i,j}$ es el supremo de la función $f$ en el subintervalo $[x_{i,j-1},x_{i,j}]$ y $M_i$, el supremo de la función $f$ en el subintervalo $[x_{i-1},x_i]$. 
 
 Como el subintervalo  $[x_{i,j-1},x_{i,j}]$ está incluído en el subintervalo $[x_{i-1},x_i]$, el valor de su supremo será menor al ser el primer subintervalo "más pequeño que el segundo".
 
@@ -632,7 +632,7 @@ $$
 La proposición anterior es equivalente a la siguiente:
 Si $\{P_n\}_n$ es una sucesión de particiones con diámetros tendiendo a cero, $\displaystyle\lim_{n\to\infty}|P_n|=0$, entonces:
 $$
-\lim_{n\to\infty} L(f,P_n)=\underline{\int_a^b} f,\quad \lim_{n\to\infty} U(f,P)=\overline{\int_a^b} f.
+\lim_{n\to\infty} L(f,P_n)=\underline{\int_a^b} f,\quad \lim_{n\to\infty} U(f,P_n)=\overline{\int_a^b} f.
 $$
 
 
@@ -679,7 +679,7 @@ La demostración de la proposición anterior se basa en la proposición vista so
 
 Veamos primero la implicación directa:
 
-$\Rightarrow$: supongamos que $f$ es integrable. Entonces, $\underline{\int_a^b}= \overline{\int_a^b} f$.
+$\Rightarrow$: supongamos que $f$ es integrable. Entonces, $\underline{\int_a^b} f= \overline{\int_a^b} f$.
 
 Consideremos un valor $\epsilon >0$. Sabemos que existe un valor $\delta >0$ tal que si $P$ es una partición del intervalo $[a,b]$ con diámetro menor que $\delta$, $|P|<\delta$, se tiene: 
 $$
@@ -735,7 +735,7 @@ Dicha proposición nos dice que para verificar que una función $f$ sea **integr
 
 Demostremos primero la implicación directa:
 
-$\Rightarrow$: supongamos que $f$ es integrable. Entonces, $\underline{\int_a^b}= \overline{\int_a^b} f$.
+$\Rightarrow$: supongamos que $f$ es integrable. Entonces, $\underline{\int_a^b} f = \overline{\int_a^b} f$.
 
 Usando la proposición anterior, sabemos que para cualquier $\epsilon >0$, existe una partición $P$, tal que $U(f,P)-L(f,P)<\epsilon$.
 
@@ -787,7 +787,7 @@ Sea $k\geq 1$ un natural cualquiera mayor que $1$. Veamos que la función $f(x)=
 
 Para ello, aplicaremos la proposición anterior y consideraremos la suceción de particiones siguiente:
 $$
-P_n =\left\{x_0=0<\frac{1}{n}<\cdots < \frac{i}{n}<\cdots < x_n =\frac{1}{n}\right\}.
+P_n =\left\{x_0=0<\frac{1}{n}<\cdots < \frac{i}{n}<\cdots < x_n =1\right\}.
 $$
 La partición anterior sería equiespaciada donde $x_i-x_{i-1}=\frac{1}{n}$. Por tanto el diámetro de $P_n$ sería $|P_n|=\frac{1}{n}$ y se verificará que $\displaystyle\lim_{n\to\infty}|P_n|=0$.
 
@@ -995,7 +995,7 @@ $$
 
 Sean $f, g:[a,b]\longrightarrow\mathbb{R}$ dos funciones integrables en el intervalo $[a,b]$. Sean $\alpha$ y $\beta$ dos valores reales. Entonces la función $\alpha f+\beta g:[a,b]\longrightarrow \mathbb{R}$ es integrable en $[a,b]$ y además:
 $$
-\int_a^b \alpha f+\beta g =\alpha\int_a^b f+\beta\int_a^b f.
+\int_a^b \alpha f+\beta g =\alpha\int_a^b f+\beta\int_a^b g.
 $$
 
 ## Linealidad de la integral
@@ -1789,7 +1789,7 @@ text(1.5,2.2,"p(x)")
 <div class="example">
 Una primitiva del polinomio anterior sería: $F(x)=-\frac{x^3}{3}+4x$. El área entre $x=-2$ y $x=2$, sería usando la regla de Barrow:
 $$
-\int_{-2}^2 p = F(2)-F(-2)=-\frac{2^3}{3}+4\cdot 2-\left(\frac{(-2)^3}{3}-4\cdot (-2)\right)=\frac{32}{3}\approx `r round(32/3,4)`.
+\int_{-2}^2 p = F(2)-F(-2)=-\frac{2^3}{3}+4\cdot 2-\left(-\frac{(-2)^3}{3}+4\cdot (-2)\right)=\frac{32}{3}\approx `r round(32/3,4)`.
 $$
 El cálculo de la integral en `Wolfram Alpha` se puede ver en el enlace siguiente:
 <l class="center">
