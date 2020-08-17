@@ -1,0 +1,12 @@
+El cálculo no solo proporciona herramientas específicas que resuelven problemas prácticos, sino que también implica una perspectiva intelectual sobre cómo analizamos el mundo.
+
+
+Una de las bases del poder del cálculo radica en el hecho de que muchas preguntas en muchas materias son equivalentes cuando se consideran en el nivel apropiado de abstracción.
+Es decir, las estructuras matemáticas que se crean para estudiar y modelar el movimiento son idénticas, matemáticamente, a las estructuras que modelan aspectos de economía, crecimiento de población, flujo de tráfico, cosmología, análisis de datos masivos, aprendizaje estadístico y muchos otros temas.
+
+Nos centramos en las relaciones y estructuras subyacentes que gobiernan el comportamiento del sistema en cuestión. El cálculo es la estructura matemática que se encuentra en el núcleo de un mundo de problemas aparentemente no relacionados.
+
+Comenzamos con una noción intuitiva de número y la usamos como punto de partida para describir la recta numérica real. Cada número decimal es una cadena interminable que constituye un solo número real. Los números reales en su totalidad constituyen un continuo que captura la idea de un flujo uniforme y fluido, en lugar de una colección discreta. Una consecuencia de esta imagen es que el número decimal interminable 0.99999 ... es exactamente igual a 1, no simplemente cercano a 1. Intuitivamente vemos nuestro mundo como un continuo. Si un objeto se mueve, su ubicación en cualquier instante se puede predecir fácilmente si conocemos su ubicación en cada momento antes y después del momento en cuestión. Esta idea de predictibilidad tiene un reflejo matemático denominado continuidad.
+
+Para explorar dicho concepto, introduciremos la continuidad de funciones reales de variables real, es decir, funciones cuyo flujo no tiene ningún "salto". En la pantalla se puede observar una función discontinua donde presenta un salto en el punto 0.
+
