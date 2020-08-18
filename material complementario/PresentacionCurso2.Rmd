@@ -21,6 +21,40 @@ reticulate::use_python("/opt/anaconda3/bin/python")
 
 # Curso de cálculo
 
+## Introducción
+
+<div class="center">
+```{r, echo=FALSE, label=urna,fig.cap="",out.width = "800px"}
+knitr::include_graphics("economia.jpg",dpi=400)
+```
+</div>
+
+
+## Introducción
+
+<div class="center">
+```{r, echo=FALSE, label=urna2,fig.cap="",out.width = "750px"}
+knitr::include_graphics("DatosMasivos.jpg",dpi=400)
+```
+</div>
+
+## Introducción
+
+<div class="center">
+```{r, echo=FALSE, label=urna3,fig.cap="",out.width = "700px"}
+knitr::include_graphics("AprendizajeEstadistico.jpg",dpi=400)
+```
+</div>
+
+
+## Introducción
+
+<div class="center">
+```{r, echo=FALSE, label=urna4,fig.cap="",out.width = "700px"}
+knitr::include_graphics("calculo.jpg",dpi=400)
+```
+</div>
+
 ## ¿Qué vamos a aprender?
 
 * Conocer y **manejar** el conjunto de los **números reales** $\mathbb{R}$.
@@ -486,6 +520,17 @@ lines(x2,y2,col="red")
 text(sqrt(2),-4*toly,expression(sqrt(2)),cex=0.75)
 ```
 
+
+## La recta real
+
+<div class="center">
+```{r, echo=FALSE, label=urna5,fig.cap="",out.width = "700px"}
+knitr::include_graphics("reales.png",dpi=400)
+```
+</div>
+
+
+
 ## ¿Qué vamos a aprender?
 
 * Trabajar con funciones **reales** de variable **real**:
@@ -622,35 +667,18 @@ shinyApp(ui = ui, server = server)
 
 
 ## Conceptos que aprenderemos: derivabilidad
-```{r,echo=FALSE,fig.align='center',fig.width=8,fig.height=5.75}
-xmin=-3
-xmax=3
-ymin=0
-ymax=3
-tolx=0.01*(xmax-xmin)
-toly=0.01*(ymax-ymin)
-quantsx=6
-quantsy=3
-f = function(x){ifelse(x>0,x,0)}
-plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-4*toly,ymin-4*toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
-x=seq(from=xmin,to=xmax,by=0.01)
-#points(x,f(x),type="l")
-lines(c(0,0),c(ymin,ymax))
-lines(c(xmin,xmax),c(0,0))
-# text(xmax-3*tolx,-15*tolx,"x")
-# text(toly/2,ymax+toly/2,"y")
-for (i in 0:(quantsx)){
-  if(xmin+((xmax-xmin)/quantsx)*i != 0){
-    lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
-    text(xmin+((xmax-xmin)/quantsx)*i,-4.5*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.5)}
-  }
 
-for (i in 0:(quantsy)){
-  lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
- text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.5)
-}
-lines(x,f(x),col="red")
+
+<div class="center">
+```{r, echo=FALSE, label=urna6,fig.cap="",out.width = "800px"}
+knitr::include_graphics("temperatura.jpg",dpi=400)
 ```
+</div>
+
+
+
+
+
 
 ## Conceptos que aprenderemos: derivabilidad
 ```{r echo=FALSE}
