@@ -1,0 +1,74 @@
+---
+title: "Método de Newton-Raphson"
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+                 
+
+                 
+              
+---
+
+
+# Ejercicios resueltos de derivación
+
+## Definición de derivada
+
+\begin{block}{Ejercicio 1}
+Usando la definición de derivada, hallar $f'(2)$ donde $f(x)=x^2+4x.$
+\end{block}
+
+\pause
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+El valor de $f'(2)$ usando la definición será:
+\begin{eqnarray*}
+f'(2) & = & \lim_{x\to 2}\frac{f(x)-f(2)}{x-2}=\lim_{x\to 2}\frac{x^2+4x-12}{x-2}
+\pause \\ & = & \lim_{x\to 2}\frac{(x-2)(x+6)}{x-2}=\lim_{x\to 2}(x+6)=8.
+\end{eqnarray*}
+}
+\end{block}
+
+## Definición de derivada
+
+\begin{block}{Ejercicio 2}
+Usando la definición de derivada, hallar $f'(1)$ donde $f(x)=-\frac{1}{x^2}.$
+\end{block}
+
+\pause
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+El valor de $f'(1)$ usando la definición será:
+\begin{eqnarray*}
+f'(1) & = & \lim_{x\to 1}\frac{f(x)-f(1)}{x-1}=\lim_{x\to 1}\frac{-\frac{1}{x^2}-(-1)}{x-1}\\\pause & = & \lim_{x\to 1}\frac{1-\frac{1}{x^2}}{x-1}=\lim_{x\to 1}\frac{x^2-1}{x^2\cdot (x-1)} \\\pause & = & \lim_{x\to 1}\frac{(x-1)\cdot (x+1)}{x^2\cdot (x-1)}=\lim_{x\to 1}\frac{x+1}{x^2}=\frac{1+1}{1}=2.
+\end{eqnarray*}
+}
+\end{block}
+
+## Cálculo de derivadas
+\begin{block}{Ejercicio 3}
+Hallar $f'(x)$ donde $f(x)=\sin (\ln (\cos x))$.
+\end{block}
+
+\pause
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Aplicando la regla de la cadena, el valor de $f'(x)$ será:
+\pause
+$$
+f'(x)=
+$$
+}
+\end{block}

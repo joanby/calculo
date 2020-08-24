@@ -1021,7 +1021,7 @@ print('El valor de c es: {c}'.format(c=c))
 ```
 
 ```
-## El valor de c es: -0.3184557133984764
+## El valor de c es: -0.318455713398
 ```
 
 </div>
@@ -1034,7 +1034,7 @@ print('El valor de la derivada de f en c es:{x}'.format(x=derivada_c))
 ```
 
 ```
-## El valor de la derivada de f en c es:0.6366197723675814
+## El valor de la derivada de f en c es:0.636619772368
 ```
 
 ```python
@@ -1042,7 +1042,7 @@ print('El valor de 2/pi es:{k}'.format(k=k))
 ```
 
 ```
-## El valor de 2/pi es:0.6366197723675814
+## El valor de 2/pi es:0.636619772368
 ```
 
 </div>
@@ -1913,7 +1913,7 @@ numpy.dot(potencias,coeficientes)
 ```
 
 ```
-## 0.5547007267350142
+## 0.55470072673501425
 ```
 </div>
 
