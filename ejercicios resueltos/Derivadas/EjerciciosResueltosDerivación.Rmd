@@ -1,5 +1,5 @@
 ---
-title: "Método de Newton-Raphson"
+title: "Ejercicios resueltos de derivación"
 author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
 date: ""
 output:
@@ -19,7 +19,6 @@ header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
 ---
 
 
-# Ejercicios resueltos de derivación
 
 ## Definición de derivada
 
@@ -67,8 +66,29 @@ Hallar $f'(x)$ donde $f(x)=\sin (\ln (\cos x))$.
 \blue{
 Aplicando la regla de la cadena, el valor de $f'(x)$ será:
 \pause
-$$
-f'(x)=
-$$
+\begin{eqnarray*}
+f'(x)& = & \cos(\ln(\cos x))\cdot\pause (\ln(\cos x))'\\ & = & \pause
+\cos(\ln(\cos x))\cdot \frac{1}{\cos x}\cdot \pause (\cos x)'\\ & = & \cos(\ln(\cos x))\cdot \frac{1}{\cos x}\cdot (-\sin x) \\ & = & -\frac{\sin x\cdot \cos(\ln(\cos x))}{\cos x}.
+\end{eqnarray*}
+}
+\end{block}
+
+
+## Cálculo de derivadas
+\begin{block}{Ejercicio 4}
+Hallar $f'(x)$ donde $f(x)=\arcsin (x^2+\tan x)$.
+\end{block}
+
+\pause
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Aplicando la regla de la cadena, el valor de $f'(x)$ será:
+\pause
+\begin{eqnarray*}
+f'(x)& = & \frac{1}{\sqrt{1-(x^2+\tan x)^2}}\cdot\pause (x^2+\tan x)' \\ &=&
+\pause
+\frac{1}{\sqrt{1-(x^2+\tan x)^2}}\cdot \left(2x+\frac{1}{\cos^2 x}\right).
+\end{eqnarray*}
 }
 \end{block}
