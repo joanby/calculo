@@ -1,0 +1,26 @@
+Derivació:
+
+- Stewart: p. 276, ex. 2
+- Stewart: p. 278, ex. 20
+- Stewart: p. 367, ex. 6
+- Stewart: p. 367, ex. 7
+
+
+Taylor:
+
+- Stewart: p. 776, ex. 14.
+- Stewart: p. 784, ex. 13 i 16.
+- Stewart: p 789, ex. 62.
+- Stewart: p. 792, ex. 22
+
+
+Integració:
+- Stewart: p. 379, ex. 5.
+- Stewart: p. 403, ex. 13 i 14.
+- Stewart: p. 404, ex. 47-48
+- Stewart: p. 422, ex. 57 i 68.
+
+
+Aplicacions integració:
+- Stewart: p. 553, ex. 5 i 12.
+- Stewart: p. 560, ex. 5 i 15 (calcular volum també).
