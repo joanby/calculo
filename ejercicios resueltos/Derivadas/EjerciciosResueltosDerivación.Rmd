@@ -92,3 +92,18 @@ f'(x)& = & \frac{1}{\sqrt{1-(x^2+\tan x)^2}}\cdot\pause (x^2+\tan x)' \\ &=&
 \end{eqnarray*}
 }
 \end{block}
+
+## Recta tangente
+\begin{block}{Ejercicio 5}
+Hallar el punto(s) donde las curvas $f(x)=x^3-3x+4$ y $g(x)=3\cdot (x^2-x)$ son tangentes en dicho punto, es decir, que las rectas tangentes a las curvas en dicho punto son la misma. Hacer un gráfico ilustrativo.
+\end{block}
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Como las rectas tangentes deben ser las mismas en el punto a hallar, las pendientes de dichas rectas también deben ser la misma.\newline
+\pause
+Recordemos que la pendiente de la recta tangente es precisamente la derivada. \newline
+\pause
+Sea $(x_0,y_0)$
+}
+\end{block}
