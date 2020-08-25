@@ -238,3 +238,26 @@ y & = & \frac{(a-b)^2}{8}\cdot\left(a+b-2c-a-b+2c\right)=0,
 tal como queríamos ver.
 }
 \end{block}
+
+## Teoremas de Rolle y del valor medio
+
+\begin{block}{Ejercicio 6}
+\begin{enumerate}[a)]
+\item ¿Existe una función derivable en el intervalo $[0,2]$ con $f(0)=-1$, $f(2)=4$ y que verifica $f'(x)\leq 2$ para todo $x\in [0,2]$?
+\item Demostrar que la ecuación $x^3-3 x+a=0$ tiene como mínimo una solución en el intervalo $[-2,2]$.
+\end{enumerate}
+\end{block}
+
+## Teoremas de Rolle y del valor medio
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+\begin{enumerate}[a)]
+\item Si aplicamos el Teorema del Valor medio a la función $f(x)$ en el intervalo $[0,2]$, deducimos que existe un valor $c\in (0,2)$ tal que:
+$$
+f'(c)=\frac{f(2)-f(0)}{2-0}=\frac{4-(-1)}{2-0}=\frac{5}{2}=`r 5/2`.
+$$
+Por tanto, la condición $f'(x)\leq 2$ falla para $x=c$ y no puede existir tal función.
+\end{enumerate}
+}
+\end{block}
