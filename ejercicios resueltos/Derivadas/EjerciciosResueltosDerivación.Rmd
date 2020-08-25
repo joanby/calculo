@@ -98,12 +98,143 @@ f'(x)& = & \frac{1}{\sqrt{1-(x^2+\tan x)^2}}\cdot\pause (x^2+\tan x)' \\ &=&
 Hallar el punto(s) donde las curvas $f(x)=x^3-3x+4$ y $g(x)=3\cdot (x^2-x)$ son tangentes en dicho punto, es decir, que las rectas tangentes a las curvas en dicho punto son la misma. Hacer un gráfico ilustrativo.
 \end{block}
 
+## Recta tangente
 \begin{block}{\textcolor{green}{Solución}}
 \blue{
 Como las rectas tangentes deben ser las mismas en el punto a hallar, las pendientes de dichas rectas también deben ser la misma.\newline
 \pause
 Recordemos que la pendiente de la recta tangente es precisamente la derivada. \newline
 \pause
-Sea $(x_0,y_0)$
+Sea $(x_0,y_0)$ el punto a hallar. \newline
+\pause
+La pendiente del punto anterior en la curva $y=f(x)$ valdrá:
+\pause
+$$
+f'(x_0)=3x_0^2-3,
+$$
+\pause
+y la pendiente en la curva $y=g(x)$ valdrá:
+\pause
+$$
+g'(x_0)=3\cdot (2x_0-1).
+$$
+}
+\end{block}
+
+
+## Recta tangente
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Como las pendientes deben ser iguales debe verificarse que $f'(x_0)=g'(x_0)$:
+\pause
+$$
+3x_0^2-3=3\cdot (2x_0-1),\pause\ \Rightarrow x_0^2=2x_0,\pause\ \Rightarrow x_0=0,\ x_0=2.
+$$
+\pause
+Analicemos las dos soluciones halladas: \pause
+\begin{itemize}
+\item $x_0=0$. El valor de $y_0=f(x_0)=f(0)$ vale $y_0=4$ y el valor de $g(x_0)=g(0)$ vale $g(0)=0$.\newline\pause
+Como $f(0)\neq g(0)$ no es un punto de corte y queda descartada esta solución.\pause
+\item $x_0=2$. El valor de $y_0=f(x_0)=f(2)$ vale $y_0=6$ y el valor de $g(x_0)=g(2)$ vale $g(2)=6$.\pause\newline
+Como $f(2)=g(2)$, el punto $(2,6)$ es un punto de corte donde las dos curvas son tangentes.
+\end{itemize}
+}
+\end{block}
+
+## Recta tangente
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{center}
+\includegraphics[width=9cm]{Ejercicio5Derivadas.png}
+\end{center}
+}
+\end{block}
+
+## Recta tangente
+\begin{block}{Ejercicio 6}
+\begin{enumerate}[a)]
+\item La función cúbica $f(x)=x\cdot (x-2)\cdot (x-6)$ tienen tres ceros distintos: $0$, $2$ y $6$. Dibujar $f$ y las rectas tangentes en los puntos medios de cada par de ceros. ¿Qué se observa?
+\item Consideremos ahora la función cúbica $f(x)=(x-a)\cdot (x-b)\cdot (x-c)$ con tres ceros $a$, $b$ y $c$. Demostrar que la recta tangente en el punto medio de los ceros $a$ y $b$ interseca la curva $y=f(x)$ en el tercer cero $c$.
+\end{enumerate}
+\end{block}
+
+
+## Recta tangente
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+\begin{center}
+\includegraphics[width=9cm]{GraficoProblema6.png}
+\end{center}
+}
+\end{block}
+
+## Recta tangente
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). Para hallar la recta tangente en el punto medio de los dos ceros, $a$ y $b$, $\frac{a+b}{2}$, tenemos que hallar primero la derivada de $f(x)$:\pause
+\begin{eqnarray*}
+f'(x) & = & (x-a)'\cdot (x-b)\cdot (x-c)+(x-a)\cdot ((x-b)\cdot (x-c))' \\
+\pause &=& (x-b)\cdot (x-c)+(x-a)\cdot (x-c+x-b) \\\pause &=&
+(x-b)\cdot (x-c)+(x-a)\cdot (2x-b-c).
+\end{eqnarray*}
+\pause
+La pendiente de la recta tangente a $f(x)$ en el punto $\frac{a+b}{2}$ valdrá:\pause
+\begin{eqnarray*}
+f'\left(\frac{a+b}{2}\right)& = & \left(\frac{a+b}{2}-b\right)\cdot \left(\frac{a+b}{2}-c\right)\\ && +\left(\frac{a+b}{2}-a\right)\cdot (a+b-b-c)
+\end{eqnarray*}
+}
+\end{block}
+
+## Recta tangente
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{eqnarray*}
+f'\left(\frac{a+b}{2}\right)& = & \left(\frac{a-b}{2}\right)\cdot \left(\frac{a+b-2c}{2}\right) +\left(\frac{b-a}{2}\right)\cdot (a-c)\\ \pause &=&
+\left(\frac{a-b}{2}\right)\cdot \left(\frac{a+b-2c}{2}-a+c\right)\\\pause &=&
+\left(\frac{a-b}{2}\right)\cdot \left(\frac{a+b-2c-2a+2c}{2}\right)\\\pause &=&
+\left(\frac{a-b}{2}\right)\cdot \left(\frac{b-a}{2}\right)=-\frac{(a-b)^2}{4}.
+\end{eqnarray*}
+}
+\end{block}
+
+## Recta tangente
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+La recta tangente en el punto $x_0=\frac{a+b}{2}$ y 
+\begin{eqnarray*}
+y_0 & = & f\left(\frac{a+b}{2}\right)=\left(\frac{a+b}{2}-a\right)\cdot \left(\frac{a+b}{2}-b\right)\cdot \left(\frac{a+b}{2}-c\right)\\\pause &=&
+\left(\frac{b-a}{2}\right)\cdot \left(\frac{a-b}{2}\right)\cdot \left(\frac{a+b-2c}{2}\right)\\\pause &=&-\frac{(a-b)^2\cdot (a+b-2c)}{8},
+\end{eqnarray*}
+será:\pause
+\begin{eqnarray*}
+y-y_0 & = &  f'(x_0)\cdot (x-x_0),\pause\Rightarrow \\ y+\frac{(a-b)^2\cdot (a+b-2c)}{8} & = & -\frac{(a-b)^2}{4}\cdot \left(x-\frac{a+b}{2}\right).
+\end{eqnarray*}
+}
+\end{block}
+
+
+## Recta tangente
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+A continuación hemos de comprobar que el punto $(c,0)$ es un punto de corte de la curva $y=f(x)=(x-a)\cdot (x-b)\cdot (x-c)$ y la recta tangente anterior:
+$$
+y+\frac{(a-b)^2\cdot (a+b-2c)}{8}  =  -\frac{(a-b)^2}{4}\cdot \left(x-\frac{a+b}{2}\right).
+$$
+\pause
+El punto $(c,0)$ pasa por la curva $y=f(x)$ ya que $y=f(c)=0$.\newline\pause
+Veamos que también pasa por la recta tangente.\newline\pause
+Para ello hemos de comprobar que si sustituimos $x$ por $c$ en la expresión de la recta tangente, el valor de $y$ vale $0$:
+}
+\end{block}
+
+## Recta tangente
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{eqnarray*}
+y & + & \frac{(a-b)^2\cdot (a+b-2c)}{8}  =   -\frac{(a-b)^2}{4}\cdot \left(c-\frac{a+b}{2}\right)\\\pause
+y & = & -\frac{(a-b)^2}{4}\cdot \frac{(2c-a-b)}{2}-\frac{(a-b)^2\cdot (a+b-2c)}{8}\\\pause
+y & = & \frac{(a-b)^2}{8}\cdot\left(a+b-2c-a-b+2c\right)=0,
+\end{eqnarray*}
+tal como queríamos ver.
 }
 \end{block}
