@@ -1,0 +1,60 @@
+---
+title: "Ejercicios resueltos de derivación. 2a parte."
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+                 
+
+                 
+              
+---
+
+
+
+## Fórmula de Taylor
+
+\begin{block}{Ejercicio 1}
+\begin{enumerate}[a)]
+\item Desarrollar la función $f(x)=\frac{1}{\sqrt[4]{1+x}}$ en desarrollo de MacLaurin de grado $n$ dando el error cometido.
+\item Dar una estimación de $\frac{1}{\sqrt[4]{1.1}}$ con 4 valores exactos.
+\end{enumerate}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Apartado a).\pause
+\newline
+En los apuntes vimos que el desarrollo de Taylor de la función $f(x)=(x+C)^\alpha$ alrededor de $x=x_0$ era:
+$$
+P_n(x)  = \sum_{k=0}^n \binom{\alpha}{k}\cdot (x_0+C)^{\alpha-k}\cdot (x-x_0)^k,
+$$
+donde $\binom{\alpha}{k}=\frac{\alpha\cdot (\alpha-1)\cdots (\alpha -k+1)}{k!}$.
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+En nuestro caso, $C=1$, $\alpha=-\frac{1}{4}$ y $x_0=0$:
+$$
+P_n(x)  = \sum_{k=0}^n \binom{-\frac{1}{4}}{k}\cdot x^k,
+$$
+\pause
+con 
+$$
+ \binom{-\frac{1}{4}}{k}=\frac{-\frac{1}{4}\cdot \left(-\frac{1}{4}-1\right)\cdots \left(-\frac{1}{4}-k+1\right)}{k!}=\frac{-\frac{1}{4}\cdot \left(-\frac{5}{4}\right)\cdots \left(-\frac{(4k-3)}{4}\right)}{k!}=\frac{(-1)^k (4k-3)!!!!}{k!}
+$$
+}
+\end{block}
