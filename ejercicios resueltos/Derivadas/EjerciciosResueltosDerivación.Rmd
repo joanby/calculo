@@ -1,5 +1,5 @@
 ---
-title: "Ejercicios resueltos de derivación"
+title: "Ejercicios resueltos de derivación. 1a parte."
 author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
 date: ""
 output:
@@ -232,8 +232,8 @@ Para ello hemos de comprobar que si sustituimos $x$ por $c$ en la expresión de 
 \blue{
 \begin{eqnarray*}
 y & + & \frac{(a-b)^2\cdot (a+b-2c)}{8}  =   -\frac{(a-b)^2}{4}\cdot \left(c-\frac{a+b}{2}\right)\\\pause
-y & = & -\frac{(a-b)^2}{4}\cdot \frac{(2c-a-b)}{2}-\frac{(a-b)^2\cdot (a+b-2c)}{8}\\\pause
-y & = & \frac{(a-b)^2}{8}\cdot\left(a+b-2c-a-b+2c\right)=0,
+y & = & \frac{(a-b)^2\cdot (2c-a-b)}{8}-\frac{(a-b)^2\cdot (2c -a-b)}{8}\\\pause
+y & = & \frac{(a-b)^2}{8}\cdot\left(2c-a-b-2c+a+b\right)=0,
 \end{eqnarray*}
 tal como queríamos ver.
 }
@@ -244,7 +244,7 @@ tal como queríamos ver.
 \begin{block}{Ejercicio 6}
 \begin{enumerate}[a)]
 \item ¿Existe una función derivable en el intervalo $[0,2]$ con $f(0)=-1$, $f(2)=4$ y que verifica $f'(x)\leq 2$ para todo $x\in [0,2]$?
-\item Demostrar que la ecuación $x^3-3 x+a=0$ tiene como mínimo una solución en el intervalo $[-2,2]$.
+\item Demostrar que la ecuación $2x-1-\sin x=0$ tiene exactamente una raíz real.
 \end{enumerate}
 \end{block}
 
@@ -258,6 +258,91 @@ $$
 f'(c)=\frac{f(2)-f(0)}{2-0}=\frac{4-(-1)}{2-0}=\frac{5}{2}=`r 5/2`.
 $$
 Por tanto, la condición $f'(x)\leq 2$ falla para $x=c$ y no puede existir tal función.
+\item Consideramos la función $f(x)=2x-1-\sin x$. \pause\newline
+El valor de $f(0)$ es $f(0)=2\cdot 0-1-\sin 0=-1<0$ y el valor de $f\left(\frac{\pi}{2}\right)$ vale $f\left(\frac{\pi}{2}\right)=2\cdot\frac{\pi}{2}-1-\sin\frac{\pi}{2}=\pi-2>0$.\pause\newline
+Por el Teorema de Bolzano, tenemos que existe un valor $c\in\left(0,\frac{\pi}{2}\right)$ tal que $f(c)$. 
+\end{enumerate}
+}
+\end{block}
+
+## Teoremas de Rolle y del valor medio
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Veamos que dicho $c$ es único.\pause\newline
+Supongamos que existiesen dos $c$'s, $c_1$ y $c_2$ tal que $f(c_1)=f(c_2)=0$. \pause\newline
+Por el Teorema de Rolle, existirá un $c_{1,2}\in <c_1,c_2>$ tal que $f'(c_{1,2})=0$ \pause pero $f'(x)=2-\cos x$.\pause\newline
+Si intentamos resolver $f'(x)=0$, obtenemos $2=\cos x$ que no tiene solución ya que $\cos x\in [-1,1]$ para cualquier valor de $x$. \pause\newline
+Llegamos a una contradicción por lo que el valor de $c$ es único.
+}
+\end{block}
+
+## Regla de l'Hôpital
+\begin{block}{Ejercicio 7}
+Calcular los límites siguientes:
+\begin{enumerate}[a)]
+\item $\displaystyle\lim_{x\to 1}\frac{x^a-1}{x^b-1}$, con $a, b>0$.
+\item $\displaystyle\lim_{x\to \infty}\frac{\ln\ln x}{x}$.
+\item $\displaystyle\lim_{x\to 1}\frac{\ln x}{\sin(\pi x)}$.
+\item $\displaystyle\lim_{x\to 0}\frac{\tan px}{\tan qx}$, con $p,q\neq 0$.
+\item $\displaystyle\lim_{x\to\frac{\pi}{2}}\left(1-\tan \frac{x}{2}\right)\cdot\sec x$.
+\item $\displaystyle\lim_{x\to 0}(\cos(3x))^\frac{5}{x}$.
+\end{enumerate}
+\end{block}
+
+## Regla de l'Hôpital
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+\begin{enumerate}[a)]
+\item $\displaystyle\lim_{x\to 1}\frac{x^a-1}{x^b-1}=\frac{0}{0}$. Como es una indeterminación del tipo $\frac{0}{0}$, aplicamos la regla de l'Hôpital:\pause
+$$
+\lim_{x\to 1}\frac{x^a-1}{x^b-1}=\lim_{x\to 1}\frac{a\cdot x^{a-1}}{b\cdot x^{b-1}}=\frac{a}{b}.
+$$
+\pause
+\item $\displaystyle\lim_{x\to \infty}\frac{\ln\ln x}{x}=\frac{\infty}{\infty}$. Como es una indeterminación del tipo $\frac{\infty}{\infty}$, aplicamos la regla de l'Hôpital:\pause
+$$
+\lim_{x\to \infty}\frac{\ln\ln x}{x} =\lim_{x\to\infty}\frac{\frac{\frac{1}{x}}{\ln x}}{1}=\lim_{x\to\infty}\frac{1}{x\ln x}=\frac{1}{\infty}=0.
+$$
+\end{enumerate}
+}
+\end{block}
+
+
+## Regla de l'Hôpital
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{2}
+\item $\displaystyle\lim_{x\to 1}\frac{\ln x}{\sin(\pi x)}=\frac{0}{0}$. Como es una indeterminación del tipo $\frac{0}{0}$, aplicamos la regla de l'Hôpital:\pause
+$$
+\lim_{x\to 1}\frac{\ln x}{\sin(\pi x)}=\lim_{x\to 1}\frac{\frac{1}{x}}{\pi\cdot\cos(\pi x)}=-\frac{1}{\pi}.
+$$
+\pause
+\item $\displaystyle\lim_{x\to 0}\frac{\tan px}{\tan qx}=\frac{0}{0}.$ Como es una indeterminación del tipo $\frac{0}{0}$, aplicamos la regla de l'Hôpital:\pause
+$$
+\lim_{x\to 0}\frac{\tan px}{\tan qx} =\lim_{x\to 0}\frac{\frac{p}{\cos^2(px)}}{\frac{q}{\cos^2(qx)}}=\frac{p}{q}.
+$$
+\end{enumerate}
+}
+\end{block}
+
+
+## Regla de l'Hôpital
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{4}
+\item $\displaystyle\lim_{x\to\frac{\pi}{2}}\left(1-\tan \frac{x}{2}\right)\cdot\sec x=\lim_{x\to\frac{\pi}{2}}\frac{1-\tan\frac{x}{2}}{\cos x}=\frac{0}{0}$. Como es una indeterminación del tipo $\frac{0}{0}$, aplicamos la regla de l'Hôpital:\pause
+$$
+\lim_{x\to\frac{\pi}{2}}\frac{1-\tan\frac{x}{2}}{\cos x} =\lim_{x\to\frac{\pi}{2}}\frac{-\frac{\frac{1}{2}}{\cos^2\left(\frac{x}{2}\right)}}{-\sin x}=\frac{\frac{\frac{1}{2}}{\frac{1}{2}}}{1}=1.
+$$
+\pause
+\item $\displaystyle\lim_{x\to 0}(\cos(3x))^\frac{5}{x}=1^\infty$. Es un límite tipo $\mathrm{e}$. Su valor será $\mathrm{e}^L$ donde $L$ vale:\pause
+$$
+L=\lim_{x\to 0}\frac{5\cdot (\cos (3x)-1)}{x}=\frac{0}{0}=\pause \lim_{x\to 0}\frac{5\cdot (-\sin(3x)\cdot 3)}{1}=0.
+$$
+\pause
+El límite será, pues, $\mathrm{e}^0=1.$
 \end{enumerate}
 }
 \end{block}
