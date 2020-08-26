@@ -53,8 +53,30 @@ P_n(x)  = \sum_{k=0}^n \binom{-\frac{1}{4}}{k}\cdot x^k,
 $$
 \pause
 con 
+\begin{eqnarray*}
+ \binom{-\frac{1}{4}}{k}& = & \frac{-\frac{1}{4}\cdot \left(-\frac{1}{4}-1\right)\cdots \left(-\frac{1}{4}-k+1\right)}{k!}\\ & =&\frac{-\frac{1}{4}\cdot \left(-\frac{5}{4}\right)\cdots \left(-\frac{(4k-3)}{4}\right)}{k!} =\frac{(-1)^k (4k-3)!!!!}{4^k\cdot k!},
+\end{eqnarray*}
+\pause
+donde $i!!!!=i\cdot (i-4)\cdot (i-8)\cdots 1$.\newline\pause
+Ejemplos: $5!!!!=5\cdot 1=5$, $8!!!!=8\cdot 4=32$.
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+El desarrollo de Taylor queda de la forma siguiente:
 $$
- \binom{-\frac{1}{4}}{k}=\frac{-\frac{1}{4}\cdot \left(-\frac{1}{4}-1\right)\cdots \left(-\frac{1}{4}-k+1\right)}{k!}=\frac{-\frac{1}{4}\cdot \left(-\frac{5}{4}\right)\cdots \left(-\frac{(4k-3)}{4}\right)}{k!}=\frac{(-1)^k (4k-3)!!!!}{k!}
+P_n(x)  = \sum_{k=0}^n \frac{(-1)^k (4k-3)!!!!}{4^k\cdot k!}\cdot x^k.
 $$
+\pause
+El error cometido viene dado por la expresión:
+\begin{eqnarray*}
+R_n(x-x_0) & = & \binom{\alpha}{n+1}\cdot (c+C)^{\alpha-n-1}\cdot  (x-x_0)^{n+1}\\ \pause
+&=& \binom{-\frac{1}{4}}{n+1}\cdot (1+c)^{-\frac{1}{4}-n-1}\cdot x^{n+1} \\ \pause
+&=& \frac{(-1)^{n+1} (4n+1)!!!!}{4^{n+1}\cdot (n+1)!}\cdot (1+c)^{-n-\frac{5}{4}}\cdot x^{n+1},
+\end{eqnarray*}
+donde $c\in <0,x>$.
 }
 \end{block}
