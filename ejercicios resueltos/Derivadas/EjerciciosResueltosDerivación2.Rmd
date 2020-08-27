@@ -37,7 +37,7 @@ Apartado a).\pause
 \newline
 En los apuntes vimos que el desarrollo de Taylor de la función $f(x)=(x+C)^\alpha$ alrededor de $x=x_0$ era:
 $$
-P_n(x)  = \sum_{k=0}^n \binom{\alpha}{k}\cdot (x_0+C)^{\alpha-k}\cdot (x-x_0)^k,
+P_n(x)  = \sum_{k=0}^n \binom{\alpha}{k}\cdot (x_0+C)^{\alpha-k}\cdot (x-x_0)^k ,
 $$
 donde $\binom{\alpha}{k}=\frac{\alpha\cdot (\alpha-1)\cdots (\alpha -k+1)}{k!}$.
 }
@@ -45,11 +45,11 @@ donde $\binom{\alpha}{k}=\frac{\alpha\cdot (\alpha-1)\cdots (\alpha -k+1)}{k!}$.
 
 ## Fórmula de Taylor
 
-\begin{block}{\textcolor{green}{Solución}}
+\begin{block}{\textcolor{green}{Solución (cont.)}}
 \blue{
 En nuestro caso, $C=1$, $\alpha=-\frac{1}{4}$ y $x_0=0$:
 $$
-P_n(x)  = \sum_{k=0}^n \binom{-\frac{1}{4}}{k}\cdot x^k,
+P_n(x)  = \sum_{k=0}^n \binom{-\frac{1}{4}}{k}\cdot x^k =1+\sum_{k=1}^n \binom{-\frac{1}{4}}{k}\cdot x^k,
 $$
 \pause
 con 
@@ -64,11 +64,11 @@ Ejemplos: $5!!!!=5\cdot 1=5$, $8!!!!=8\cdot 4=32$.
 
 ## Fórmula de Taylor
 
-\begin{block}{\textcolor{green}{Solución}}
+\begin{block}{\textcolor{green}{Solución (cont.)}}
 \blue{
 El desarrollo de Taylor queda de la forma siguiente:
 $$
-P_n(x)  = \sum_{k=0}^n \frac{(-1)^k (4k-3)!!!!}{4^k\cdot k!}\cdot x^k.
+P_n(x)  = 1+\sum_{k=1}^n \frac{(-1)^k (4k-3)!!!!}{4^k\cdot k!}\cdot x^k.
 $$
 \pause
 El error cometido viene dado por la expresión:
@@ -79,4 +79,106 @@ R_n(x-x_0) & = & \binom{\alpha}{n+1}\cdot (c+C)^{\alpha-n-1}\cdot  (x-x_0)^{n+1}
 \end{eqnarray*}
 donde $c\in <0,x>$.
 }
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). \pause\newline
+En el apartado b) nos piden hallar $f(0.1)=\frac{1}{\sqrt[4]{1+0.1}}=\frac{1}{\sqrt[4]{1.1}}$ con un error menor o igual que $10^{-4}$.\pause\newline
+Primero tenemos que hallar el grado del polinomio $n$ tal que $\left|f(0.1)-P_n(0.1)\right|\leq 10^{-4}$.\pause\newline
+Es decir:
+$$
+\left|\frac{(-1)^{n+1} (4n+1)!!!!}{4^{n+1}\cdot (n+1)!}\cdot (1+c)^{-n-\frac{5}{4}}\cdot 0.1^{n+1}\right|\leq 10^{-4},
+$$
+con $c\in (0,0.1)$.
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Acotemos la parte que depende de $c$ ya que $c$ es desconocido:\pause
+$$
+(1+c)^{-n-\frac{5}{4}} =\frac{1}{(1+c)^{n+\frac{5}{4}}}\leq 1,
+$$
+ya que el máximo valor de la fracción anterior se alcanza para $c=0$.\pause\newline
+Así el error puede acotarse por:
+$$
+\left| \frac{(4n+1)!!!!\cdot 0.1^{n+1}}{4^{n+1}\cdot (n+1)!}\right|=\left| \frac{(4n+1)!!!!}{40^{n+1}\cdot (n+1)!}\right|\leq 10^{-4}.
+$$
+\pause
+Hagamos un programa en python que nos halle el $n$:}
+\end{block}
+
+## Fórmula de Taylor
+```{python, eval=FALSE}
+from math import *
+def fourthfactorial(n):
+  if n in (1, 2, 3, 4):
+    return n
+  else:
+    if n == 0:
+      return 1
+    else:
+      return n * fourthfactorial(n-4)
+```
+
+
+## Fórmula de Taylor
+```{python, eval=FALSE}
+def calculo_n(error):
+  x=0.1
+  m=2
+  cota_error=(fourthfactorial(4*m+1)/(4.**(m+1)*
+              factorial(m+1)))*(x**(m+1)) 
+  while(cota_error >= error):
+    m=m+1
+    cota_error=(fourthfactorial(4*m+1)/(4.**(m+1)*
+               factorial(m+1)))*(x**(m+1)) 
+  return(m)
+  
+calculo_n(0.0001)
+3
+```
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El valor de $n$ será $3$ y por tanto $P_3(0.1)$ valdrá:
+}
+\end{block}
+```{python,eval=FALSE}
+def termino_k(x,k):
+  y=((-1)**k*fourthfactorial(4*k-3)/
+              (4.**k*factorial(k)))*x**k
+  return(y)
+```
+
+
+## Fórmula de Taylor
+```{python,eval=FALSE}
+def Pn(x,n):
+  p=1
+  k=1
+  while k <= n:
+    p=p+termino_k(x,k)
+    k=k+1
+  return(p)
+
+Pn(0.1,3)
+0.9764453125
+```
+
+## Fórmula de Taylor
+\begin{block}{Ejercicio 2}
+Desarrollar en polinomios de Taylor las funciones siguientes alrededor del punto $x_0$ hasta la $n$ indicada y realizar un gráfico de la función y los polinomios de Taylor obtenidos:
+\begin{enumerate}[a)]
+\item $f(x)=\sqrt{x}$, $x_0=4$ hasta $n=4$.
+\item $f(x)=\mathrm{e}^{-x^2}$, $x_0=0$ hasta $n=3$.
+\item $f(x)=\ln (1+2x)$, $x_0=1$ hasta $n=3$.
+\end{enumerate}
 \end{block}
