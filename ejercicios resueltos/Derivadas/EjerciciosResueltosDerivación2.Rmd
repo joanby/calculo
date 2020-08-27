@@ -178,7 +178,57 @@ Pn(0.1,3)
 Desarrollar en polinomios de Taylor las funciones siguientes alrededor del punto $x_0$ hasta la $n$ indicada y realizar un gráfico de la función y los polinomios de Taylor obtenidos:
 \begin{enumerate}[a)]
 \item $f(x)=\sqrt{x}$, $x_0=4$ hasta $n=4$.
-\item $f(x)=\mathrm{e}^{-x^2}$, $x_0=0$ hasta $n=3$.
-\item $f(x)=\ln (1+2x)$, $x_0=1$ hasta $n=3$.
+\item $f(x)=\mathrm{e}^{-x^2}$, $x_0=0$ hasta $n=4$.
+\item $f(x)=\ln (1+2x)$, $x_0=1$ hasta $n=4$.
 \end{enumerate}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+En general, dada una función $f(x)$, $n+1$-veces derivable, el polinomio de Taylor de grado $n$ alrededor de $x=x_0$ vale:
+$$
+P_n(x)=\sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!}\cdot (x-x_0)^k.
+$$
+\pause
+Apartado a). La función $f$ vale $f(x)=\sqrt{x}$, $x_0=4$ y $n=4$.\pause\newline
+Calculemos las cuatro primeras derivadas de $f(x)$:
+\begin{eqnarray*}
+f'(x) & = & \frac{1}{2}\cdot x^{-\frac{1}{2}},\quad f''(x)=-\frac{1}{4}\cdot x^{-\frac{3}{2}},\\\pause f'''(x) & =& \frac{3}{8}\cdot x^{-\frac{5}{2}},\quad f^{(iv)}(x)=-\frac{15}{16}\cdot x^{-\frac{7}{2}}.
+\end{eqnarray*}
+}
+\end{block}
+
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Las derivadas en $x=x_0=4$ valen:\pause
+\begin{eqnarray*}
+f'(4) & = & \frac{1}{2}\cdot 4^{-\frac{1}{2}}=\frac{1}{2}\cdot \frac{1}{2}=\frac{1}{4},\\\pause f''(4)& = & -\frac{1}{4}\cdot 4^{-\frac{3}{2}}=-\frac{1}{4}\cdot \frac{1}{2^3}=-\frac{1}{32},\\\pause f'''(4) & =& \frac{3}{8}\cdot 4^{-\frac{5}{2}}=\frac{3}{8}\cdot \frac{1}{2^5}=\frac{3}{256},\\\pause f^{(iv)}(4) & = & -\frac{15}{16}\cdot 4^{-\frac{7}{2}}=-\frac{15}{16}\cdot \frac{1}{2^7}=-\frac{15}{2048}.
+\end{eqnarray*}
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El polinomio de Taylor de grado $4$ será:
+\begin{eqnarray*}
+P_4(x) & = & 2+\frac{1}{4}\cdot (x-4)-\frac{1}{2!\cdot 32}\cdot (x-4)^2\\\pause && +\frac{3}{3!\cdot 256}\cdot (x-4)^3-\frac{15}{4!\cdot 2048}\cdot (x-4)^4\\\pause &=& 2+\frac{1}{4}\cdot (x-4)-\frac{1}{64}\cdot (x-4)^2\\\pause && +\frac{1}{512}\cdot (x-4)^3-\frac{5}{16384}\cdot (x-4)^4.
+\end{eqnarray*}
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{center}
+\includegraphics[width=9cm]{TaylorRaizx.png}
+\end{center}
+}
 \end{block}
