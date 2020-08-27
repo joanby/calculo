@@ -302,7 +302,7 @@ No tiene ya que su dominio es todo $\mathbb{R}$.
 
 
 ## Estudio local de una función
-\begin{block}{\textcolor{green}{Solución}}
+\begin{block}{\textcolor{green}{Solución (cont.)}}
 \blue{
 \begin{enumerate}[a)]
 \setcounter{enumi}{3}
@@ -320,5 +320,123 @@ $$
 \pause Al existir el límite anterior, deducimos que tiene la asíntota horizontal $y=1$.
 \end{itemize}
 \end{enumerate}
+}
+\end{block}
+
+
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{4}
+\item Asíntotas.\pause
+\begin{itemize}
+\item Verticales. La asíntota $x=a$ es una asíntota vertical si:\pause
+$$
+\lim_{x\to a}f(x)=\infty.
+$$
+\pause
+En nuestro caso, no existe ningún $a$ que verifique la condición anterior ya que estos valores son puntos de discontinuidad de la función y nuestra función no tiene puntos de discontinuidad.
+\pause
+\item Oblicuas. La asíntota de la forma $y=m\cdot x+n$ es una asíntota oblicua de pendiente:\pause
+$$
+m=\lim_{x\to\infty}\frac{f(x)}{x}=\lim_{x\to\infty}\frac{x^2-1}{x\cdot (x^2+1)}=\lim_{x\to\infty}\frac{x^2-1}{x^3+x}=0.
+$$
+\pause
+Como la pendiente es $m=0$, la asíntota no puede ser oblicua sino horizontal y éstas ya han sido estudiadas.
+\end{itemize}
+\end{enumerate}
+}
+\end{block}
+
+
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{5}
+\item Crecimiento y decrecimiento.\ \pause Para estudiar el crecimiento y el decrecimiento, hemos de calcular la función derivada:\pause
+$$
+f'(x)=\frac{2x\cdot (x^2+1)-2x\cdot (x^2-1)}{(x^2+1)^2}=\frac{4x}{(x^2+1)^2}.
+$$
+\pause
+Igualando la función derivada a cero, calculamos los puntos candidatos a extremos relativos de la función:\pause
+$$
+f'(x)=0,\ \Rightarrow \frac{4x}{(x^2+1)^2}=0,\ \Rightarrow x=0.
+$$
+\pause
+El punto $(0,-1)$ es un candidato a extremo relativo.\pause
+\end{enumerate}
+}
+\end{block}
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{5}
+\item Crecimiento y decrecimiento. A continuación realizamos la tabla siguiente para estudiar el crecimiento y decrecimiento de la función: \pause
+\begin{center}
+\begin{tabular}{lccccc}
+\hline
+$x$ & $-\infty$ && $0$ && $\infty$\\\hline
+$y'$ & & $-$ && $+$\\
+$y$ & & $\searrow$ && $\nearrow$\\\hline
+\end{tabular}
+\end{center}\pause
+Vemos que la función es decreciente en la región $(-\infty,0)$, \pause es creciente en la región $(0,\infty)$ \pause y tiene un mínimo en el punto $(0,-1)$.
+\end{enumerate}
+}
+\end{block}
+
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{6}
+\item Concavidad y convexidad\ \pause Para estudiar la concavidad y convexidad, hemos de calcular la función derivada segunda:\pause
+\begin{eqnarray*}
+f''(x)&=&\frac{4\cdot (x^2+1)^2-4x\cdot 2(x^2+1)\cdot 2x}{(x^2+1)^4}\\\pause &=&\frac{4(x^2+1)-16x^2}{(x^2+1)^3}=\frac{-12x^2+4}{(x^2+1)^3}.
+\end{eqnarray*}
+\pause
+Igualando la función derivada segunda a cero, calculamos los puntos candidatos a puntos de inflexión:\pause
+$$
+f''(x)=0,\ \Rightarrow \frac{-12x^2+4}{(x^2+1)^3},\ \Rightarrow x=\pm\sqrt{\frac{1}{3}}.
+$$
+\pause
+Los puntos $\left(\pm\sqrt{\frac{1}{3}},-\frac{1}{2}\right)$ son candidatos a puntos de inflexión.\pause
+\end{enumerate}
+}
+\end{block}
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{6}
+\item Concavidad y convexidad\ \pause A continuación realizamos la tabla siguiente para estudiar el la concavidad y la convexidad de la función: \pause
+\begin{center}
+\begin{tabular}{lccccccc}
+\hline
+$x$ & $-\infty$ && $-\sqrt{\frac{1}{3}}$ && $\sqrt{\frac{1}{3}}$ && $\infty$\\\hline
+$y''$ & & $-$ && $+$ && $-$\\
+$y$ & & $\bigcap$ && $\bigcup$ && $\bigcap$ \\\hline
+\end{tabular}
+\end{center}\pause
+La función es cóncava en la región $\left(-\infty,-\sqrt{\frac{1}{3}}\right)\cup \left(\sqrt{\frac{1}{3}},\infty\right)$, \pause es convexa en la región $\left(-\sqrt{\frac{1}{3}},\sqrt{\frac{1}{3}}\right)$ \pause y los puntos $\left(\pm\sqrt{\frac{1}{3}},-\frac{1}{2}\right)$ son puntos de inflexión.
+\end{enumerate}
+}
+\end{block}
+
+## Estudio local de una función
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{center}
+\includegraphics[width=9cm]{EstudioLocal.png}
+\end{center}
 }
 \end{block}
