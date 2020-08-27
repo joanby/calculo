@@ -179,7 +179,6 @@ Desarrollar en polinomios de Taylor las funciones siguientes alrededor del punto
 \begin{enumerate}[a)]
 \item $f(x)=\sqrt{x}$, $x_0=4$ hasta $n=4$.
 \item $f(x)=\mathrm{e}^{-x^2}$, $x_0=0$ hasta $n=4$.
-\item $f(x)=\ln (1+2x)$, $x_0=1$ hasta $n=4$.
 \end{enumerate}
 \end{block}
 
@@ -230,5 +229,96 @@ P_4(x) & = & 2+\frac{1}{4}\cdot (x-4)-\frac{1}{2!\cdot 32}\cdot (x-4)^2\\\pause 
 \begin{center}
 \includegraphics[width=9cm]{TaylorRaizx.png}
 \end{center}
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). La función $f$ vale $f(x)=\mathrm{e}^{-x^2}$, $x_0=0$ y $n=4$.\pause\newline
+Calculemos las cuatro primeras derivadas de $f(x)$:
+\begin{eqnarray*}
+f'(x) & = & -2x\cdot \mathrm{e}^{-x^2},\pause\\ f''(x)&=&(4\cdot x^2-2)\cdot \mathrm{e}^{-x^2}\pause\\ f'''(x) &=&-4 \mathrm{e}^{-x^2} x \left(2 x^2-3\right)\pause\\ f^{(iv)} &=& 4 \mathrm{e}^{-x^2} \left(4x^4-12 x^2+3\right).
+\end{eqnarray*}
+}
+\end{block}
+
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Las derivadas en $x=x_0=0$ valen:\pause
+$$
+f'(0)  =  0,\quad f''(0) =  -2,\quad f'''(0)  = 0,\quad f^{(iv)}(0)  =  12.
+$$
+\pause
+El polinomio de Taylor de grado $4$ será:
+$$
+P_4(x)  = 1-x^2+\frac{1}{2}\cdot x^4.
+$$
+}
+\end{block}
+
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{center}
+\includegraphics[width=9cm]{TaylorEmenosx2.png}
+\end{center}
+}
+\end{block}
+
+
+## Estudio local de una función
+\begin{block}{Ejercicio 3}
+Realizar un estudio local de la función $f(x)=\frac{x^2-1}{x^2+1}$.
+\end{block}
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+\begin{enumerate}[a)]
+\item Dominio. \pause
+El dominio de la función es $\mathbb{R}$ ya que sólo podría "tener problemas" en los puntos que anulen el denominador pero en este caso el denominador es diferente de cero para cualquier valor de $x$.\pause
+\item Puntos de discontinuidad.\pause
+No tiene ya que su dominio es todo $\mathbb{R}$.
+\item Puntos de corte.\pause
+\begin{itemize}
+\item Eje $X$ o eje de abscisas.\pause Hemos de resolver la ecuación $f(x)=0$, o $x^2-1=0$,\pause cuyas soluciones son $x=\pm 1$. \pause Por tanto, corta en los puntos $(-1,0)$ y $(1,0)$.\pause
+\item Eje $Y$ o eje de ordenadas. \pause Hemos de calcular $f(0)=-1$. \pause Por tanto, pasa por el punto $(0,-1)$.\pause
+\end{itemize}
+\item Simetrías.\pause 
+\begin{itemize}
+\item Respecto al eje $Y$: hemos de comprobar si $f(x)=f(-x)$. Vemos que sí se cumple, por tanto, $f$ es simétrica respecto al eje $Y$.\pause
+\item Respecto al origen. Al ser simétrica respecto al eje $Y$, no es simétrica respecto al origen, se tendría que cumplir que $f(-x)=-f(x)$.
+\end{itemize}
+\end{enumerate}
+}
+\end{block}
+
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{3}
+\item Simetrías.\pause 
+\begin{itemize}
+\item Respecto al eje $Y$: hemos de comprobar si $f(x)=f(-x)$. Vemos que sí se cumple, por tanto, $f$ es simétrica respecto al eje $Y$.\pause
+\item Respecto al origen. Al ser simétrica respecto al eje $Y$, no es simétrica respecto al origen, se tendría que cumplir que $f(-x)=-f(x)$.\pause
+\end{itemize}
+\item Asíntotas.\pause
+\begin{itemize}
+\item Horizontales. Hemos de calcular el límite siguiente:
+$$
+\lim_{x\to\infty}f(x)=\lim_{x\to\infty}\frac{x^2-1}{x^2+1}=1.
+$$
+\pause Al existir el límite anterior, deducimos que tiene la asíntota horizontal $y=1$.
+\end{itemize}
+\end{enumerate}
 }
 \end{block}
