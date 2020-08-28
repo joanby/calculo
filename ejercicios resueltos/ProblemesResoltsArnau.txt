@@ -18,11 +18,10 @@ Taylor:
 
 Integració:
 - Stewart: p. 379, ex. 5.
-- Demistified: p. 122, ex. 9 a) i f)
+- Demistified: p. 122, ex. 9 a) i 10 d)
 - Stewart: p. 403, ex. 13 i 14.
-- Stewart: p. 404, ex. 47-48
 - Stewart: p. 422, ex. 57 i 68.
-- Demistified: p. 146, ex. 5 a) i f).
+- Demistified: p. 146, ex. 4. e) y 5 a).
 
 
 Aplicacions integració:
