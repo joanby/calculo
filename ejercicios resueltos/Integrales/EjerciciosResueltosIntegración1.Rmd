@@ -1,0 +1,133 @@
+---
+title: "Ejercicios resueltos de integración. 1a parte."
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+                 
+
+                 
+              
+---
+
+
+
+## Definición de integral
+
+\begin{block}{Ejercicio 1}
+Consideremos la función $f(x)=1+x^2$ en el intervalo $[0,1]$. Demostrar que la función es integrable en el intervalo anterior.
+\end{block}
+
+## Definición de integral
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Consideremos la sucesión de particiones siguiente:
+$$
+P_n={x_0=0<\frac{1}{n}<\cdots <\frac{n}{n}=x_n=1},
+$$
+es decir $x_i=\frac{i}{n}$, $i=0,\ldots,n$.\newline
+\pause
+La suma inferior de $f$ respecto la particion $P_n$ será:
+\begin{eqnarray*}
+L(f,P_n) & = & \sum_{i=1}^n m_i\cdot (x_i-x_{i-1})=\sum_{i=1}^n\inf_{x\in [x_{i-1},x_i]}f(x)\cdot (x_i-x_{i-1})\pause \\ &=& \sum_{i=1}^n f(x_{i-1})\cdot \frac{1}{n}=\pause \frac{1}{n}\sum_{i=1}^n f\left(\frac{i-1}{n}\right)\\ & = & \pause \frac{1}{n}\sum_{i=1}^n \left(1+\frac{(i-1)^2}{n^2}\right) =\pause \frac{1}{n}\left(n+\frac{1}{n^2}\sum_{i=0}^{n-1} i^2\right)
+\end{eqnarray*}
+}
+\end{block}
+
+## Definición de integral
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+A continuación usamos la expresión siguiente:
+$$
+\sum_{i=1}^m i^2 = \frac{1}{6} m (m+1) (2m+1).
+$$
+\pause
+La suma inferior de $f$ respecto de $P_n$ será:
+\begin{eqnarray*}
+L(f,P_n) & = &  \frac{1}{n}\left(n+\frac{1}{n^2}\cdot \frac{1}{6} (n-1) n (2(n-1)+1)\right)\pause\\ & = & 1+\frac{1}{6n^3}\cdot (n-1)n(2n-1)=1+\frac{(n-1)(2n-1)}{6n^2}.
+\end{eqnarray*}
+\pause
+}
+\end{block}
+
+## Definición de integral
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+La suma superior de $f$ respecto de $P_n$ será:
+\begin{eqnarray*}
+U(f,P_n) & = & \sum_{i=1}^n M_i\cdot (x_i-x_{i-1})=\sum_{i=1}^n\sup_{x\in [x_{i-1},x_i]}f(x)\cdot (x_i-x_{i-1})\pause \\ &=& \sum_{i=1}^n f(x_{i})\cdot \frac{1}{n}=\pause \frac{1}{n}\sum_{i=1}^n f\left(\frac{i}{n}\right)\\ & = & \pause \frac{1}{n}\sum_{i=1}^n \left(1+\frac{i^2}{n^2}\right) =\pause \frac{1}{n}\left(n+\frac{1}{n^2}\sum_{i=1}^{n} i^2\right)\\\pause &=& 1+\frac{1}{n^3}\cdot\frac{1}{6}n (n+1)(2n+1)\pause =1+\frac{(n+1)(2n+1)}{6n^2}.
+\end{eqnarray*}
+}
+\end{block}
+
+
+## Definición de integral
+
+\begin{block}{\textcolor{green}{Solución} (cont.)}
+\blue{
+A continuación calculemos $\displaystyle\lim_{n\to\infty}L(f,P_n)$ y $\displaystyle\lim_{n\to\infty} U(f,P_n)$:
+\begin{eqnarray*}
+L(f,P_n) & = & \lim_{n\to\infty}1+\frac{(n+1)(2n+1)}{6n^2}=1+\frac{2}{6}=\frac{4}{3},\\\pause
+U(f, P_n)  &= & \lim_{n\to\infty}1+\frac{(n+1)(2n+1)}{6n^2}=1+\frac{2}{6}=\frac{4}{3}.
+\end{eqnarray*}
+\pause
+Como los dos límites anteriores coinciden y además $\displaystyle\lim_{n\to\infty}\delta(P_n)=\lim_{n\to\infty}\frac{1}{n}=0$, deducimos que la función $f$ es integrable en el intervalo $[0,1]$ y además $\displaystyle\int_{[0,1]} f=\frac{4}{3}$.
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{Ejercicio 2}
+La función error:
+$$
+\mathrm{erf}(x)=\frac{2}{\sqrt{\pi}}\int_0^x\mathrm{e}^{-t^2}\, dt
+$$
+se usa en probabilidad, estadística y ingeniería.
+\begin{enumerate}[a)]
+\item Demostrar que $\displaystyle\int_a^b \mathrm{e}^{-t^2}\, dt=\frac{\sqrt{\pi}}{2}(\mathrm{erf(b)}-\mathrm{erf}(a))$.
+\item Demostrar que la función $y=x^2\mathrm{erf}(x)$ satisface la ecuación diferencial $y'=2xy+\frac{2}{\sqrt{\pi}}$.
+\end{enumerate}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Apartado a). Aplicando la propiedad de la aditividad de la integral en un intervalo tenemos que:\pause
+$$
+\mathrm{erf}(b)-\mathrm{erf}(a)\pause =\frac{2}{\sqrt{\pi}}\left(\int_0^b\mathrm{e}^{-t^2}\, dt-\int_0^a\mathrm{e}^{-t^2}\, dt\right) \pause =\frac{2}{\sqrt{\pi}}\int_a^b\mathrm{e}^{-t^2}\, dt,
+$$
+y, por tanto,\pause
+$$
+\int_a^b\mathrm{e}^{-t^2}\, dt =\frac{\sqrt{\pi}}{2}(\mathrm{erf}(b)-\mathrm{erf}(a)).
+$$
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Apartado b). Aplicando el Teorema fundamental del cálculo, podemos hallar la derivada de la función $\mathrm{erf}(x)$:\pause
+$$
+\mathrm{erf}'(x)=\frac{2}{\sqrt{\pi}}\mathrm{e}^{-x^2}.
+$$
+\pause
+Por tanto,
+\begin{eqnarray*}
+y' & =& 2x\cdot\mathrm{erf}(x)+x^2\cdot \mathrm{erf}'(x)=\pause 2x\cdot\mathrm{erf}(x)+x^2\cdot \frac{2}{\sqrt{\pi}}\mathrm{e}^{-x^2}\\\pause &=&
+2x\cdot \frac{y}{x^2}+
+\end{eqnarray*}
+}
+\end{block}
