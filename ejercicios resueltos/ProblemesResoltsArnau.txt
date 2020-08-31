@@ -17,14 +17,20 @@ Taylor:
 
 
 Integració:
+  Sección 9:
 - Stewart: p. 379, ex. 5.
-- Demistified: p. 122, ex. 9 a) i 10 d)
 - Stewart: p. 403, ex. 13 i 14.
 - Stewart: p. 422, ex. 57 i 68.
-- Demistified: p. 146, ex. 4. e) y 5 a).
 
 
+
+   Sección 10
 Aplicacions integració:
+- Demistified: p. 122, ex. 9 a) i 10 d)
 - Demistified: p. 260 ex. 3 a), c), e).
 - Demistified. p. 260 ex. 4 a), b) f)
 - Longitud de f(x)=sqrt(x), desde (0,0) fins a (4,2).
+
+  Sección 11:
+- Demistified: p. 146, ex. 4. e) y 5 a).
+
