@@ -20,6 +20,7 @@ Integració:
   Sección 9:
 - Stewart: p. 379, ex. 5.
 - Stewart: p. 403, ex. 13 i 14.
+- Stewart: p. 404, ex. 56 i 58.
 - Stewart: p. 422, ex. 57 i 68.
 
 
@@ -33,4 +34,5 @@ Aplicacions integració:
 
   Sección 11:
 - Demistified: p. 146, ex. 4. e) y 5 a).
+- Stewart: p. 560, ex. 25.
 
