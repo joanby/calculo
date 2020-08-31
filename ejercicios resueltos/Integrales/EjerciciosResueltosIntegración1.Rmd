@@ -96,7 +96,7 @@ $$
 se usa en probabilidad, estadística y ingeniería.
 \begin{enumerate}[a)]
 \item Demostrar que $\displaystyle\int_a^b \mathrm{e}^{-t^2}\, dt=\frac{\sqrt{\pi}}{2}(\mathrm{erf(b)}-\mathrm{erf}(a))$.
-\item Demostrar que la función $y=x^2\mathrm{erf}(x)$ satisface la ecuación diferencial $y'=2xy+\frac{2}{\sqrt{\pi}}$.
+\item Demostrar que la función $y=x^2\mathrm{erf}(x)$ satisface la ecuación diferencial $\sqrt{\pi} x y'=2\sqrt{\pi} y+2x^3\mathrm{e}^{-x^2}$.
 \end{enumerate}
 \end{block}
 
@@ -117,7 +117,7 @@ $$
 
 ## Teorema fundamental del cálculo
 
-\begin{block}{\textcolor{green}{Solución}}
+\begin{block}{\textcolor{green}{Solución (cont.)}}
 \blue{
 Apartado b). Aplicando el Teorema fundamental del cálculo, podemos hallar la derivada de la función $\mathrm{erf}(x)$:\pause
 $$
@@ -127,7 +127,12 @@ $$
 Por tanto,
 \begin{eqnarray*}
 y' & =& 2x\cdot\mathrm{erf}(x)+x^2\cdot \mathrm{erf}'(x)=\pause 2x\cdot\mathrm{erf}(x)+x^2\cdot \frac{2}{\sqrt{\pi}}\mathrm{e}^{-x^2}\\\pause &=&
-2x\cdot \frac{y}{x^2}+
+2x\cdot \frac{y}{x^2}+\frac{2x^2}{\sqrt{\pi}}\mathrm{e}^{-x^2}=\pause  \frac{2y}{x}+\frac{2x^2}{\sqrt{\pi}}\mathrm{e}^{-x^2}.
 \end{eqnarray*}
+\pause
+Multiplicando por $\sqrt{\pi} x$ nos queda:\pause
+$$
+\sqrt{\pi} x y' = 2\sqrt{\pi} y+2x^3 \mathrm{e}^{-x^2}.
+$$
 }
 \end{block}
