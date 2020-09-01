@@ -146,4 +146,3 @@ V & = & 2\pi \int_1^9 x\cdot\sqrt{x}\, dx \pause = 2\pi\int_1^9 x^{\frac{3}{2}}\
 \end{eqnarray*}
 }
 \end{block}
-
