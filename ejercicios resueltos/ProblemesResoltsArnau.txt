@@ -25,14 +25,14 @@ Integració:
 
 
 
-   Sección 10
+   Sección 11
 Aplicacions integració:
 - Demistified: p. 122, ex. 9 a) i 10 d)
-- Demistified: p. 260 ex. 3 a), c), e).
+- Demistified: p. 260 ex. 3 a), b)
 - Demistified. p. 260 ex. 4 a), b) f)
 - Longitud de f(x)=sqrt(x), desde (0,0) fins a (4,2).
 
-  Sección 11:
+  Sección 12:
 - Demistified: p. 146, ex. 4. e) y 5 a).
 - Stewart: p. 560, ex. 25.
 

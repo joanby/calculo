@@ -303,3 +303,24 @@ El término  2 de la sucesión vale 4.4934097
 ```
 
 
+## Derivación bajo el signo integral
+\begin{block}{Ejercicio 5}
+Hallar la derivada de las funciones siguientes:
+\begin{enumerate}[a)]
+\item $\displaystyle h(x)=\int_2^{\frac{1}{x}}\arctan t\, dt.$
+\item $\displaystyle h(x)=\int_0^{x^2}\sqrt{1+r^3}\, dr.$
+\end{enumerate}
+\end{block}
+
+## Derivación bajo el signo integral
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Aplicando la fórmula de derivación bajo el signo integral, las derivadas son:\pause
+\begin{enumerate}
+\item $\displaystyle h'(x)=\arctan\left(\frac{1}{x}\right)\cdot \left(\frac{1}{x}\right)'=\pause
+\arctan\left(\frac{1}{x}\right)\cdot\left(-\frac{1}{x^2}\right)=\pause -\frac{\arctan\left(\frac{1}{x}\right)}{x^2}.$\pause
+\item $\displaystyle h'(x)=\sqrt{1+(x^2)^3}\cdot (x^2)'=\pause \sqrt{1+x^6}\cdot 2x=\pause
+2 x\cdot \sqrt{1+x^6}.$
+\end{enumerate}
+}
+\end{block}
