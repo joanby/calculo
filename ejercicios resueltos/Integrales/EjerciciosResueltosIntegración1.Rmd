@@ -136,3 +136,130 @@ $$
 $$
 }
 \end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{Ejercicio 3}
+La función seno integral:
+$$
+\mathrm{Si}(x)=\int_0^x \frac{\sin t}{t}\, dt,
+$$
+es importante en ingeniería eléctrica.
+Fijarse que aunque el integrando $f(t)=\frac{\sin t}{t}$ no está definido para $t=0$, sabemos que su límite cuando $t$ tiende a $0$ vale $1$. Por tanto, si definimos $f(0)=1$, tenemos que $f$ es continua para todo valor de $x$.
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{Ejercicio 3 (cont.)}
+\begin{enumerate}[a)]
+\item Hacer un gráfico de la función $\mathrm{Si}(x)$.
+\item ¿Para qué valores de $x$, la función $\mathrm{Si}(x)$ tiene un máximo relativo?
+\item Hallar el primer punto de inflexión a la derecha del origen. Es decir hallar el mínimo valor $x_0>0$ tal que $(x_0,\mathrm{Si}(x_0))$ es un punto de inflexión de la función $\mathrm{Si}(x)$.
+\end{enumerate}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Apartado a). El gráfico de la funció $\mathrm{Si}(x)$ es el siguiente:
+\begin{center}
+\includegraphics[width=8cm]{SinIntegral.png}
+\end{center}
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). Para hallar los extremos relativos de la función $\mathrm{Si}(x)$ hemos de calcular primero su derivada e igualarla a cero:\pause
+$$
+\mathrm{Si}'(x)=\frac{\sin x}{x}=0,\pause\ \Rightarrow \sin x=0,\ (x\neq 0),\pause\ \Rightarrow x=n\pi, \ n\in\mathbb{Z}\setminus\{0\}.
+$$
+\pause
+Las abscisas de los candidatos a extremos serán de la forma $x_n=n\pi$, con $n\neq 0$. \pause\newline
+Veamos si son máximos o mínimos:\vspace*{0.5cm}
+\setlength{\tabcolsep}{4pt}
+\begin{center}
+\begin{tabular}{lcccccccccccccccc}
+\hline
+$x$ & $-\infty$ &&$\cdots$&&$-2\pi$&&$-\pi$&&$\pi$&&$2\pi$&&$\cdots$&&$\infty$\\\hline 
+$y'$&&&&&&$-$&&$+$&&$-$&&&&&&\\
+$y$&&&&&&$\searrow$&&$\nearrow$&&$\searrow$&&&&&&\\\hline
+\end{tabular}
+\end{center}
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Entonces:
+\begin{itemize}
+\item si $n>0$, los puntos con $x_n=n\pi$, con $n$ par serán mínimos y los puntos $x_n=n\pi$ con $n$ impar serán máximos,\pause
+\item si $n<0$, los puntos con $x_n=n\pi$, con $n$ par serán máximos y los puntos $x_n=n\pi$ con $n$ impar serán mínimos.
+\end{itemize}
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado c). Los puntos de inflexión se hallan igualando a cero la derivada segunda:\pause
+$$
+\mathrm{Si}''(x)=\frac{x\cdot\cos x-\sin x}{x^2}=0,\ \Rightarrow x\cdot\cos x-\sin x=0,\ \Rightarrow x=\tan x.
+$$\pause
+Nos piden hallar la primera solución $x>0$ de la solución anterior. \newline\pause Fijarse que $x=0$ es una solución de la ecuación anterior y de hecho el valor $(0,0)$ es un punto de inflexión de la función $\mathrm{Si}(x)$.\pause\newline
+Para resolver la ecuación anterior, hagamos primero un gráfico ilustrativo:
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{center}
+\includegraphics[width=9cm]{Tanxx.png}
+\end{center}
+}
+\end{block}
+
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Resolveremos la ecuación anterior $g(x)=\tan x-x=0$, por el método de Newton-Raphson:\pause
+\begin{eqnarray*}
+x_{n+1} & = & x_n-\frac{g(x_n)}{g'(x_n)}\pause =x_n-\frac{\tan x_n-x_n}{\tan^2 x_n}\\\pause &=&\frac{x_n (\tan^2 x_n+1)-\tan x_n}{\tan^2 x_n}\pause =\frac{\frac{x_n}{\cos^2 x_n}-\frac{\sin x_n}{\cos x_n}}{\frac{\sin^2 x_n}{\cos^2 x_n}}\pause \\ &=& \frac{x_n-\sin x_n\cos x_n}{\sin^2 x_n},
+\end{eqnarray*}
+con $x_0=4.5$.\newline
+\pause
+El programa en `python` que resuelve la ecuación anterior es el siguiente:
+}
+\end{block}
+
+
+## Teorema fundamental del cálculo
+
+```{python,eval=FALSE}
+from math import *
+def f(x):
+ return((x-sin(x)*cos(x))/(sin(x)**2))
+
+epsilon=0.0001; x0=4.5; x=x0; n=0
+
+while abs(tan(x)-x) >= epsilon:
+  x=f(x)
+  n=n+1
+  print("El término {0:2} de la sucesión vale {1:.7f}".
+      format(n,x))
+      
+El término  1 de la sucesión vale 4.4936139
+El término  2 de la sucesión vale 4.4934097
+```
+
+
