@@ -89,6 +89,45 @@ Como los dos límites anteriores coinciden y además $\displaystyle\lim_{n\to\in
 ## Teorema fundamental del cálculo
 
 \begin{block}{Ejercicio 2}
+Calcular la integrales definidas siguientes:
+\begin{enumerate}[a)]
+\item $\displaystyle\int_1^2\frac{\mathrm{e}^{\frac{1}{x}}}{x^2}\, dx.$
+\item $\displaystyle\int_0^1 x\mathrm{e}^{-x^2}\, dx.$
+\end{enumerate}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Apartado a). Aplicamos el siguiente cambio de variable:\pause
+$$
+t=\frac{1}{x},\ \Rightarrow dt=-\frac{1}{x^2}\, dx,\ \Rightarrow -dt =\frac{1}{x^2}\, dx.
+$$
+\pause
+Cuando $x=1$, el valor de $t$ es: $t=\frac{1}{1}=1$ y \pause cuando $x=2$, el valor de $t$ es $t=\frac{1}{2}$.\pause\newline
+La integral a calcular nos queda en la nueva variable $t$:
+$$
+\int_1^{\frac{1}{2}}\mathrm{e}^t \,(-dt)=\pause \int_{\frac{1}{2}}^1 \mathrm{e}^t \,dt =\pause \left[\mathrm{e}^t\right]_{\frac{1}{2}}^1 =\pause \mathrm{e}^1-\mathrm{e}^{\frac{1}{2}}\approx `r round(exp(1)-exp(0.5),4)`.
+$$
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). El valor de la integral será:
+\pause
+\begin{eqnarray*}
+\int_0^1 x\mathrm{e}^{-x^2}\, dx \pause & = & -\frac{1}{2}\cdot\int_0^1 (-2x)\mathrm{e}^{-x^2}\, dx \pause =-\frac{1}{2}\left[\mathrm{e}^{-x^2}\right]_0^1\\\pause &=&-\frac{1}{2}\left(\mathrm{e}^{-1}-1\right) =\pause \frac{1}{2}\left(1-\frac{1}{\mathrm{e}}\right)\pause = \frac{\mathrm{e}-1}{2\mathrm{e}}\approx `r round((exp(1)-1)/(2*exp(1)),4)`.
+\end{eqnarray*}
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{Ejercicio 3}
 La función error:
 $$
 \mathrm{erf}(x)=\frac{2}{\sqrt{\pi}}\int_0^x\mathrm{e}^{-t^2}\, dt
@@ -99,6 +138,7 @@ se usa en probabilidad, estadística y ingeniería.
 \item Demostrar que la función $y=x^2\mathrm{erf}(x)$ satisface la ecuación diferencial $\sqrt{\pi} x y'=2\sqrt{\pi} y+2x^3\mathrm{e}^{-x^2}$.
 \end{enumerate}
 \end{block}
+
 
 ## Teorema fundamental del cálculo
 
@@ -139,7 +179,7 @@ $$
 
 ## Teorema fundamental del cálculo
 
-\begin{block}{Ejercicio 3}
+\begin{block}{Ejercicio 4}
 La función seno integral:
 $$
 \mathrm{Si}(x)=\int_0^x \frac{\sin t}{t}\, dt,
@@ -150,7 +190,7 @@ Fijarse que aunque el integrando $f(t)=\frac{\sin t}{t}$ no está definido para 
 
 ## Teorema fundamental del cálculo
 
-\begin{block}{Ejercicio 3 (cont.)}
+\begin{block}{Ejercicio 4 (cont.)}
 \begin{enumerate}[a)]
 \item Hacer un gráfico de la función $\mathrm{Si}(x)$.
 \item ¿Para qué valores de $x$, la función $\mathrm{Si}(x)$ tiene un máximo relativo?
