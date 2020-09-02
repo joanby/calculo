@@ -78,8 +78,8 @@ U(f,P_n) & = & \sum_{i=1}^n M_i\cdot (x_i-x_{i-1})=\sum_{i=1}^n\sup_{x\in [x_{i-
 \blue{
 A continuación calculemos $\displaystyle\lim_{n\to\infty}L(f,P_n)$ y $\displaystyle\lim_{n\to\infty} U(f,P_n)$:
 \begin{eqnarray*}
-L(f,P_n) & = & \lim_{n\to\infty}1+\frac{(n+1)(2n+1)}{6n^2}=1+\frac{2}{6}=\frac{4}{3},\\\pause
-U(f, P_n)  &= & \lim_{n\to\infty}1+\frac{(n+1)(2n+1)}{6n^2}=1+\frac{2}{6}=\frac{4}{3}.
+\lim_{n\to\infty}1+\frac{(n-1)(2n-1)}{6n^2} & = & 1+\frac{2}{6}=\frac{4}{3},\\\pause
+\lim_{n\to\infty}1+\frac{(n+1)(2n+1)}{6n^2} & = & 1+\frac{2}{6}=\frac{4}{3}.
 \end{eqnarray*}
 \pause
 Como los dos límites anteriores coinciden y además $\displaystyle\lim_{n\to\infty}\delta(P_n)=\lim_{n\to\infty}\frac{1}{n}=0$, deducimos que la función $f$ es integrable en el intervalo $[0,1]$ y además $\displaystyle\int_{[0,1]} f=\frac{4}{3}$.
