@@ -146,3 +146,192 @@ V & = & 2\pi \int_1^9 x\cdot\sqrt{x}\, dx \pause = 2\pi\int_1^9 x^{\frac{3}{2}}\
 \end{eqnarray*}
 }
 \end{block}
+
+## Volúmenes de revolución
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado c). Hagamos un gráfico tal como hemos hecho antes:\pause
+\begin{center}
+\includegraphics[width=8cm]{Vol3.png}
+\end{center}
+}
+\end{block}
+
+## Volúmenes de revolución
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El volumen pedido será:\pause
+\begin{eqnarray*}
+V & = & \pi \int_0^5 (x-2)^2\, dx\pause =\pi \left[\frac{(x-2)^3}{3}\right]_0^5 =\pause \frac{\pi}{3}(3^3-(-2)^3) \\ &= & \pause\frac{35\pi}{3}\approx `r round(35*pi/3,4)`.
+\end{eqnarray*}
+}
+\end{block}
+
+## Áreas de revolución
+\begin{block}{Ejercicio 3}
+\begin{enumerate}[a)]
+\item Calcular el área de la superficie de revolución al girar la curva $f(x)=x^{\frac{2}{3}}$ alrededor del eje $X$ para $0\leq x\leq 4$.
+\item Calcular el área de la superficie de revolución al girar la curva $f(x)=\sqrt{x}$ alrededor del eje $Y$ para $0\leq x\leq 3$.
+\end{enumerate}
+\end{block}
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Apartado a). Hagamos un gráfico tal como hemos hecho antes:\pause
+\begin{center}
+\includegraphics[width=8cm]{AreaRev1.png}
+\end{center}
+}
+\end{block}
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El área pedida será:\pause
+\begin{eqnarray*}
+A & = & 2\pi \int_0^4 x^{\frac{2}{3}}\cdot\sqrt{1+\left(\frac{2}{3}x^{-\frac{1}{3}}\right)^2}\, dx=\pause
+2\pi\int_0^4 x^{\frac{2}{3}}\cdot\sqrt{1+\frac{4}{9x^{\frac{2}{3}}}}\, dx\\\pause &=&
+2\pi\int_0^4 x^{\frac{2}{3}}\cdot\sqrt{\frac{9x^{\frac{2}{3}}+4}{9x^{\frac{2}{3}}}}\, dx =\pause 2\pi\int_0^4 x^{\frac{2}{3}}\cdot\frac{\sqrt{9x^{\frac{2}{3}}+4}}{3x^{\frac{1}{3}}}\, dx\\\pause &=& \frac{2\pi}{3}\int_0^4 x^{\frac{1}{3}}\sqrt{9x^{\frac{2}{3}}+4}\, dx
+\end{eqnarray*}
+}
+\end{block}
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Para resolver la integral anterior aplicaremos la técnica de integración por partes arreglando un poco la integral primero:\pause
+$$
+A=\frac{2\pi}{3}\int_0^4 x^{\frac{2}{3}}\cdot x^{-\frac{1}{3}}\sqrt{9x^{\frac{2}{3}}+4}\, dx
+$$
+\pause Sean:
+$$
+\begin{array}{llcll}
+u  &= x^{\frac{2}{3}},& du &=\frac{2}{3}\cdot x^{-\frac{1}{3}}\, dx,\\
+dv & = x^{-\frac{1}{3}}\sqrt{9x^{\frac{2}{3}}+4}\, dx, & v&=\frac{1}{9} \left(9x^{\frac{2}{3}}+4\right)^{\frac{3}{2}}.
+\end{array}
+$$
+}
+\end{block}
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El área será:
+\begin{eqnarray*}
+A&=&\frac{2\pi}{3}\left(\left[\frac{1}{9}x^{\frac{2}{3}}\cdot \left(9x^{\frac{2}{3}}+4\right)^{\frac{3}{2}}\right]_0^4-\frac{2}{27}\int_0^4 x^{-\frac{1}{3}}\cdot\left(9x^{\frac{2}{3}}+4\right)^{\frac{3}{2}}\, dx \right)\\\pause &=&
+\frac{2\pi}{3}\left(\frac{1}{9}\cdot 4^{\frac{2}{3}}\cdot \left(9\cdot  4^{\frac{2}{3}}+4\right)^{\frac{3}{2}}-\frac{2}{27}\cdot \frac{1}{15} \left[\left(9
+   x^{\frac{2}{3}}+4\right)^{\frac{5}{2}}\right]_0^4\right)\\\pause &=&
+   \frac{2\pi}{3}\left(\frac{1}{9}\cdot 4^{\frac{2}{3}}\cdot \left(9\cdot  4^{\frac{2}{3}}+4\right)^{\frac{3}{2}}-\frac{2}{405} \left(\left(9
+   \cdot 4^{\frac{2}{3}}+4\right)^{\frac{5}{2}}-4^{\frac{5}{2}}\right)\right)\\\pause &\approx &
+`r round((2*pi/3)*((1/9)*4^(2/3)*(9*4^(2/3)+4)^(3/2)-(2/405)*((9*4^(2/3)+4)^(5/2)-4^(5/2))),4)`.
+\end{eqnarray*}
+}
+\end{block}
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). Hagamos un gráfico tal como hemos hecho antes:\pause
+\begin{center}
+\includegraphics[width=8cm]{AreaRev2.png}
+\end{center}
+}
+\end{block}
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El área pedida será:\pause
+$$
+A  =  2\pi \int_0^{\sqrt{3}} y^2 \cdot\sqrt{1+(2y)^2}\, dy=\pause 2\pi \int_0^{\sqrt{3}} y^2 \cdot\sqrt{1+4 y^2}\, dy
+$$
+\pause
+Para hacer la integral anterior, consideramos el cambio de variable siguiente:
+$$
+2y=\tan u,\pause\ \Rightarrow 2\, dy=\frac{1}{\cos^2 u}\, du,\pause\ \Rightarrow dy=\frac{1}{2\cos^2 u}\, du.
+$$
+\pause
+Cuando $y=0$, el valor de $u$ será $0=\tan u$, $u=0$\pause\  y cuando $y=\sqrt{3}$, el valor de $u$ será
+$2\sqrt{3}=\tan u$, $u=\arctan(2\sqrt{3}).$
+}
+\end{block}
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+La integral queda en la nueva variable $u$:
+\begin{eqnarray*}
+A & = &  2\pi\int_0^{\arctan(2\sqrt{3})}\frac{1}{4}\tan^2 u\cdot\frac{1}{\cos u}\cdot \frac{1}{2\cos^2 u}\, du\\ &= & \pause \frac{\pi}{4}\int_0^{\arctan(2\sqrt{3})}\frac{\sin^2 u}{\cos^5 u}\, du.
+\end{eqnarray*}
+\pause Como la función a integral es impar en $\cos u$, hacemos el cambio siguiente:
+$$
+\sin u=v,\ \pause\Rightarrow \cos u\, du=dv,\ \pause\Rightarrow du=\frac{dv}{\cos u}.
+$$
+}
+\end{block}
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Cuando $u=0$, el valor de $v$ será $v=0$\pause\  y cuando $u=\arctan(2\sqrt{3})$ el valor de $v$ será
+$v=\sin(\arctan(2\sqrt{3}))$. Calculemos dicho valor:\ \pause sea $\alpha=\arctan(2\sqrt{3})$, es decir, $\tan\alpha =2\sqrt{3}$. \pause Por tanto $1+\tan^2\alpha = 1+12=13=\frac{1}{\cos^2\alpha}$, de donde $\cos\alpha =\frac{1}{\sqrt{13}}$,\ \pause y por tanto, $\sin\alpha =\sqrt{1-\frac{1}{13}}=\sqrt{\frac{12}{13}}$.\pause\newline
+El valor de $v$ para $u=\arctan(2\sqrt{3})$ será $v=\sqrt{\frac{12}{13}}$.
+}
+\end{block}
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+La integral en la nueva variable $v$ será:
+\begin{eqnarray*}
+A &=& \frac{\pi}{4}\int_0^{\sqrt{\frac{12}{13}}} \frac{v^2}{\cos^6 u}\, dv\pause =\frac{\pi}{4}\int_0^{\sqrt{\frac{12}{13}}} \frac{v^2}{(1-\sin^2 u)^3}\, dv\pause \\ &=&\frac{\pi}{4}\int_0^{\sqrt{\frac{12}{13}}} \frac{v^2}{(1-v^2)^3}\, dv
+\end{eqnarray*}
+\pause
+Se trata de una integral racional donde el grado del numerador es menor que el del denominador (no hace falta dividir)\pause\ y las raíces del denominador son $v=\pm 1$ y son triples.
+}
+\end{block}
+
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Hemos de descomponer la función a integrar de la forma siguiente:
+\begin{eqnarray*}
+\frac{v^2}{(1-v^2)^3} & = & \frac{A_1}{1-v}+\frac{A_2}{(1-v)^2}+\frac{A_3}{(1-v)^3}+\frac{A_4}{(1+v)}\\ && +\frac{A_5}{(1+v)^2}+\frac{A_6}{(1+v)^3}.
+\end{eqnarray*}
+\pause
+Los valores $A_i$ son los siguientes:
+$$
+A_1=-\frac{1}{16},\ A_2=-\frac{1}{16},\ A_3=\frac{1}{8},\, A_4=-\frac{1}{16},\ A_5=-\frac{1}{16},\ A_6=\frac{1}{8}.
+$$
+}
+\end{block}
+
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El área será:
+\begin{eqnarray*}
+A &=& \frac{\pi}{4}\left[\frac{1}{16}\ln|1-v|-\frac{1}{16(1-v)}+\frac{1}{16(1-v)^2}-\frac{1}{16}\ln|1+v|\right.\\ &&\left.+\frac{1}{16(1+v)}-\frac{1}{16(1+v)^2}\right]_0^{\sqrt{\frac{12}{13}}}\\\pause &=&
+\frac{\pi}{64}\left[\ln\left|\frac{1-v}{1+v}\right|-\frac{2v}{1-v^2}+\frac{4v}{(1-v^2)^2}\right]_0^{\sqrt{\frac{12}{13}}}\\\pause &=&
+\frac{\pi}{64}\left(\ln\left(\frac{1-\sqrt{\frac{12}{13}}}{1+\sqrt{\frac{12}{13}}}\right)-\frac{2\sqrt{\frac{12}{13}}}{1-\frac{12}{13}}+\frac{4\sqrt{\frac{12}{13}}}{\left(1-\frac{12}{13}\right)^2}\right)
+\end{eqnarray*}
+}
+\end{block}
+
+## Áreas de revolución
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El área será:
+$$
+A=\frac{\pi}{64}\left(\ln\left(\frac{\sqrt{13}-\sqrt{12}}{\sqrt{13}+\sqrt{12}}\right)+650\sqrt{\frac{12}{13}}\right)\approx `r round((pi/64)*(log((sqrt(13)-sqrt(12))/(sqrt(13)+sqrt(12)))+650*sqrt(12/13)),4)`.
+$$
+}
+\end{block}
+
+
+
