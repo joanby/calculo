@@ -47,7 +47,7 @@ Apartado a). Hagamos primero un esbozo de las gráficas de $f$ y $g$ para $x$ en
 \blue{
 El área pedida será:
 \begin{eqnarray*}
-\int_{-1}^1 (g(x)-f(x))\, dx & = & \pause \int_{-1}^1 (-3x^2+10-2x^2+4 )\, dx \\ &=& \pause\int_{-1}^1 (-5x^2+14)\, dx \pause =\left[-5\frac{x^3}{3}+14 x\right]_{-1}^1 \\ & =& \pause -\frac{5}{3}+14-\left(-\frac{5}{3}-14\right) \\ &=& \pause -\frac{10}{3}+28=\frac{74}{3}\approx `r round(74/3,4)`.
+\int_{-1}^1 (g(x)-f(x))\, dx & = & \pause \int_{-1}^1 (-3x^2+10-2x^2+4 )\, dx \\ &=& \pause\int_{-1}^1 (-5x^2+14)\, dx \pause =\left[-5\frac{x^3}{3}+14 x\right]_{-1}^1 \\ & =& \pause -\frac{5}{3}+14-\left(\frac{5}{3}-14\right) \\ &=& \pause -\frac{10}{3}+28=\frac{74}{3}\approx `r round(74/3,4)`.
 \end{eqnarray*}
 }
 \end{block}
@@ -331,11 +331,5 @@ $$
 A=\frac{\pi}{64}\left(\ln\left(\frac{\sqrt{13}-\sqrt{12}}{\sqrt{13}+\sqrt{12}}\right)+650\sqrt{\frac{12}{13}}\right)\approx `r round((pi/64)*(log((sqrt(13)-sqrt(12))/(sqrt(13)+sqrt(12)))+650*sqrt(12/13)),4)`.
 $$
 }
-\end{block}
-
-
-## Longitud de una curva
-\begin{block}{Ejercicio 4}
-Calcular la longitud de la curva $y=f(x)=\sqrt{x}$ desde el punto $(0,0)$ hasta el punto $(4,2)$.
 \end{block}
 
