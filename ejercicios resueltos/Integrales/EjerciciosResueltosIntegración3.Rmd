@@ -72,6 +72,27 @@ Hallemos el valor de nuestra integral impropia:
 }
 \end{block}
 
+## Integrales impropias
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). Evaluaremos la integral usando la técnica de integración por partes:\pause
+$$
+\int_1^\infty x^2\mathrm{e}^{-x}\, dx =\lim_{t\to\infty}\int_1^t x^2\mathrm{e}^{-x}\, dx.
+$$
+\pause
+Sean:
+$$
+\begin{array}{llcll}
+u  &= x^2,& du &=2x\, dx,\\
+dv & = \mathrm{e}^{-x}\, dx, & v&=-\mathrm{e}^{-x}.
+\end{array}
+$$
+\pause
+La integral será:
+}
+\end{block}
+
+
 ## Longitud de una curva
 \begin{block}{Ejercicio 4}
 Calcular la longitud de la curva $y=f(x)=\sqrt{x}$ desde el punto $(0,0)$ hasta el punto $(4,2)$.
