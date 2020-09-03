@@ -1,0 +1,100 @@
+---
+title: "Ejercicios resueltos de integración. 3a parte."
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+                 
+
+                 
+              
+---
+
+
+
+
+## Longitud de una curva
+\begin{block}{Ejercicio 4}
+Calcular la longitud de la curva $y=f(x)=\sqrt{x}$ desde el punto $(0,0)$ hasta el punto $(4,2)$.
+\end{block}
+
+## Longitud de una curva
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Hagamos un gráfico tal como hemos hecho anteriormente:\pause
+\begin{center}
+\includegraphics[width=8cm]{LongCurva.png}
+\end{center}
+}
+\end{block}
+
+## Longitud de una curva
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+La longitud de la curva pedida será:\pause
+$$
+L=\int_0^4\sqrt{1+\left(\frac{1}{2\sqrt{x}}\right)^2}\, dx =\pause \int_0^4\sqrt{1+\frac{1}{4x}}\, dx.
+$$
+\pause Fijarse que se trata de una integral impropia de segunda especie con una singularidad en $x=0$.\pause\newline
+Para resolver la integral anterior hacemos el cambio de variable siguiente:
+$$
+\sqrt{1+\frac{1}{4x}}=t,\pause\ \Rightarrow x=\frac{1}{4(t^2-1)},\pause\ \Rightarrow dx=-\frac{t}{2(t^2-1)^2}\, dt.
+$$
+}
+\end{block}
+
+## Longitud de una curva
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Los extremos de integración serán en la nueva variable $t$: \pause
+\begin{description}
+\item[$x=0$:] en este caso $t\to\infty$.
+\item[$x=4$:] en este caso $t=\sqrt{1+\frac{1}{16}}=\sqrt{\frac{17}{16}}=\frac{\sqrt{17}}{4}$.
+\end{description}
+\pause
+La integral a calcular en la nueva variable $t$ será:
+$$
+L=\int_{\infty}^{\frac{\sqrt{17}}{4}}\left(-\frac{t^2}{2(t^2-1)^2}\right)\, dt =\pause \frac{1}{2}\int_{\frac{\sqrt{17}}{4}}^\infty \frac{t^2}{(t^2-1)^2}\, dt.
+$$
+\pause
+Se trata de una integral racional en el que el grado del numerador es menor que el grado del denominador. 
+}
+\end{block}
+
+
+## Longitud de una curva
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Por tanto, hemos de descomponer la función a integral de la forma siguiente usando que la descomposición del denominador es:
+$$
+(t^2 -1)^2 =(t-1)^2\cdot (t+1)^2.
+$$\pause
+$$
+\frac{t^2}{(t^2-1)^2} =\frac{A_1}{t-1}+\frac{A_2}{(t-1)^2}+\frac{A_3}{t+1}+\frac{A_4}{(t+1)^2}.
+$$\pause
+Los valores $A_i$ son los siguientes:\pause
+$$
+A_1=\frac{1}{4},\ A_2=\frac{1}{4},\ A_3=-\frac{1}{4},\ A_4=\frac{1}{4}.
+$$
+}
+\end{block}
+
+## Longitud de una curva
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+La longitud de la curva será:
+\begin{eqnarray*}
+L & = & \frac{1}{2}\left[\frac{1}{4}\ln|t-1|-\frac{1}{4(t-1)}-\frac{1}{4}\ln|t+1|-\frac{1}{4(t+1)}\right]_{\frac{\sqrt{17}}{4}}^\infty\\\pause &=&
+\frac{1}{8}\left[\ln\left|\frac{t-1}{t+1}\right|-\frac{2t}{t^2-1}\right]_{\frac{\sqrt{17}}{4}}^\infty\pause =-\frac{1}{8}\left(\ln\left|\frac{\frac{\sqrt{17}}{4}-1}{\frac{\sqrt{17}}{4}+1}\right|-\frac{2\cdot \frac{\sqrt{17}}{4}}{\frac{17}{16}-1}\right)\\\pause &=&
+\frac{1}{8}\left(8\sqrt{17}-\ln\left(\frac{\sqrt{17}-4}{\sqrt{17}+4}\right)\right)\pause =\sqrt{17}-\frac{1}{8}\ln\left(\frac{\sqrt{17}-4}{\sqrt{17}+4}\right)\\\pause &\approx & `r round(sqrt(17)-(1/8)*log((sqrt(17)-4)/(sqrt(17)+4)),4)`.
+\end{eqnarray*}
+}
+\end{block}

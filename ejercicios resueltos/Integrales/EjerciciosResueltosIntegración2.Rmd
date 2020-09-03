@@ -334,4 +334,8 @@ $$
 \end{block}
 
 
+## Longitud de una curva
+\begin{block}{Ejercicio 4}
+Calcular la longitud de la curva $y=f(x)=\sqrt{x}$ desde el punto $(0,0)$ hasta el punto $(4,2)$.
+\end{block}
 

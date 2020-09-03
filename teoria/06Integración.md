@@ -253,7 +253,7 @@ print('Suma inferior={res}'.format(x=x, res=suma_inferior))
 ```
 
 ```
-## Suma inferior=0.48148148148148145
+## Suma inferior=0.481481481481
 ```
 
 ```python
@@ -261,7 +261,7 @@ print('Suma superior={res}'.format(x=x, res=suma_superior))
 ```
 
 ```
-## Suma superior=0.8148148148148148
+## Suma superior=0.814814814815
 ```
 
 </div>
@@ -457,7 +457,7 @@ print('Suma inferior={res}'.format(x=x, res=suma_inferior_P))
 ```
 
 ```
-## Suma inferior=0.48148148148148145
+## Suma inferior=0.481481481481
 ```
 
 ```python
@@ -465,7 +465,7 @@ print('Suma inferior partición más fina={res}'.format(x=x, res=suma_inferior_P
 ```
 
 ```
-## Suma inferior partición más fina=0.5873842592592592
+## Suma inferior partición más fina=0.587384259259
 ```
 </div>
 
@@ -478,7 +478,7 @@ print('Suma superior={res}'.format(x=x, res=suma_superior_P))
 ```
 
 ```
-## Suma superior=0.8148148148148148
+## Suma superior=0.814814814815
 ```
 
 ```python
@@ -486,7 +486,7 @@ print('Suma superior partición más fina={res}'.format(x=x, res=suma_superior_P
 ```
 
 ```
-## Suma superior partición más fina=0.7378472222222222
+## Suma superior partición más fina=0.737847222222
 ```
 
 </div>
