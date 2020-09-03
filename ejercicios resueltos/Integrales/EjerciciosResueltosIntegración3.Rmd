@@ -1,5 +1,5 @@
 ---
-title: "Ejercicios resueltos de integración. 3a parte."
+title: "Ejercicios resueltos de integración. Integración impropia. 3a parte."
 author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
 date: ""
 output:
@@ -19,7 +19,58 @@ header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
 ---
 
 
+## Integrales impropias
+\begin{block}{Ejercicio 1}
+Estudiar la convergencia de las integrales siguientes y hallar su valor en caso de que sean convergentes:
+\begin{enumerate}[a)]
+\item $\displaystyle\int_4^8 \frac{x+4}{(x-8)^{\frac{1}{3}}}\, dx$.
+\item $\displaystyle\int_1^\infty x^2\mathrm{e}^{-x}\, dx.$
+\end{enumerate}
+\end{block}
 
+## Integrales impropias
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Apartado a). Se trata de una integral impropia de segunda especie con un punto singular en $x=8$.\newline\pause
+Para estudiar la convergencia, apliquemos el criterio del límite comparando las funciones siguientes:\pause
+$$
+\frac{x+4}{(x-8)^{\frac{1}{3}}},\quad \frac{1}{(x-8)^{\frac{1}{3}}}.
+$$
+\pause
+Como 
+$$
+\lim_{x\to 8}\frac{\frac{x+4}{(x-8)^{\frac{1}{3}}}}{\frac{1}{(x-8)^{\frac{1}{3}}}}=\lim_{x\to 8} x+4 = 12,
+$$
+las dos integrales tienen el mismo criterio, \pause es decir, una es convergente si, y sólo si, la otra lo es.
+}
+\end{block}
+
+## Integrales impropias
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Estudiemos la convergencia de la integral impropia:
+\begin{eqnarray*}
+\int_4^8 \frac{1}{(x-8)^{\frac{1}{3}}}\, dx\pause & = & \lim_{t\to 8}\int_4^t (x-8)^{-\frac{1}{3}}\, dx\pause =\lim_{t\to 8}\left[\frac{(x-8)^{-\frac{1}{3}+1}}{-\frac{1}{3}+1}\right]_4^t\pause\\ &=&\lim_{t\to 8}\left[\frac{(x-8)^{\frac{2}{3}}}{\frac{2}{3}}\right]_4^t \pause = \frac{3}{2}\lim_{t\to 8}\left((t-8)^{\frac{2}{3}}-(-4)^{\frac{2}{3}}\right)\pause\\ &=& -\frac{3\sqrt[3]{16}}{2}=-3\sqrt[3]{2}.
+\end{eqnarray*}
+}
+\end{block}
+
+## Integrales impropias
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Como la integral impropia $\displaystyle\int_4^8 \frac{1}{(x-8)^{\frac{1}{3}}}\, dx$ es impropia, nuestra integral impropia $\displaystyle\int_4^8 \frac{x+4}{(x-8)^{\frac{1}{3}}}\, dx$ también lo será ya que hemos visto que tienen el mismo carácter. 
+}
+\end{block}
+
+## Integrales impropias
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Hallemos el valor de nuestra integral impropia:
+\begin{eqnarray*}
+&&\int_4^8 \frac{x+4}{(x-8)^{\frac{1}{3}}}\, dx = \pause\int_4^8 \frac{x-8+12}{(x-8)^{\frac{1}{3}}}\, dx\\ &=&\pause \int_4^8 \frac{x-8}{(x-8)^{\frac{1}{3}}}\, dx+\int_4^8 \frac{12}{(x-8)^{\frac{1}{3}}}\, dx\pause\\ & =& \int_4^8 (x-8)^{\frac{2}{3}}\, dx +12\int_4^8 \frac{1}{(x-8)^{\frac{1}{3}}}\, dx \pause\\ &=& \left[\frac{(x-8)^{\frac{5}{3}}}{\frac{5}{3}}\right]_4^8 +12\cdot (-3\sqrt[3]{2})\pause = \frac{3}{5}\cdot \sqrt[3]{4^5}-36\sqrt[3]{2}\pause \\ &=& \frac{3}{5}\cdot 8\sqrt[3]{2}-36\sqrt[3]{2}=-\frac{156}{5}\sqrt[3]{2}\approx `r round(-156*2^(1/3)/5,4)`.
+\end{eqnarray*}
+}
+\end{block}
 
 ## Longitud de una curva
 \begin{block}{Ejercicio 4}
