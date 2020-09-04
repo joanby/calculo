@@ -242,12 +242,12 @@ V&=&\pi \int_1^\infty \frac{1}{x^2}\, dx \pause = \pi\lim_{t\to\infty}\int_1^t\f
 \blue{
 Para calcular el área del cuerno de Gabriel hemos de estudiar la integral impropia siguiente:
 \begin{eqnarray*}
-A & = &  2\pi \int_1^\infty \frac{1}{x}\cdot\sqrt{1+\frac{1}{x^2}}\, dx \pause = 2\pi \int_1^\infty \frac{1}{x}\sqrt{\frac{x^2+1}{x^2}}\, dx \pause \\ &= & 2\pi \int_1^\infty \frac{\sqrt{x^2+1}}{x^2}\, dx.
+A & = &  2\pi \int_1^\infty \frac{1}{x}\cdot\sqrt{1+\frac{1}{x^4}}\, dx \pause = 2\pi \int_1^\infty \frac{1}{x}\sqrt{\frac{x^4+1}{x^4}}\, dx \pause \\ &= & 2\pi \int_1^\infty \frac{\sqrt{x^4+1}}{x^3}\, dx.
 \end{eqnarray*}
 \pause
 Para ver que dicha integral es divergente aplicaremos el criterio del límite a las funciones:
 $$
-\frac{\sqrt{x^2+1}}{x^2},\quad \frac{1}{x}.
+\frac{\sqrt{x^4+1}}{x^3},\quad \frac{1}{x}.
 $$
 }
 \end{block}
@@ -257,10 +257,10 @@ $$
 \blue{
 El límite del cociente de las funciones anteriores vale:\pause
 $$
-\lim_{x\to \infty}\frac{\frac{\sqrt{x^2+1}}{x^2}}{\frac{1}{x}}=\lim_{x\to\infty}\frac{\sqrt{x^2+1}}{x}=1.
+\lim_{x\to \infty}\frac{\frac{\sqrt{x^4+1}}{x^3}}{\frac{1}{x}}=\lim_{x\to\infty}\frac{\sqrt{x^4+1}}{x^2}=1.
 $$
 \pause
-Entonces las integrales impropias $\displaystyle \int_1^\infty \frac{\sqrt{x^2+1}}{x^2}\, dx$ y $\displaystyle\int_1^\infty\frac{1}{x}\, dx$ tienen es mismo carácter.\newline\pause
+Entonces las integrales impropias $\displaystyle \int_1^\infty \frac{\sqrt{x^4+1}}{x^3}\, dx$ y $\displaystyle\int_1^\infty\frac{1}{x}\, dx$ tienen es mismo carácter.\newline\pause
 Estudiemos pues la convergencia de la integral impropia $\displaystyle\int_1^\infty\frac{1}{x}\, dx$:
 }
 \end{block}
@@ -272,6 +272,6 @@ $$
 \int_1^\infty\frac{1}{x}\, dx \pause =\lim_{t\to\infty}\int_1^t\frac{1}{x}\, dx=\pause \lim_{t\to\infty}\left[\ln x\right]_1^t =\lim_{t\to\infty}\ln t=\infty.
 $$
 \pause
-Como la integral impropia $\displaystyle\int_1^\infty\frac{1}{x}\, dx$ es divergente, la nuestra $\displaystyle \int_1^\infty \frac{\sqrt{x^2+1}}{x^2}\, dx$ también lo es\pause\ y concluimos que el cuerno de Gabriel tiene área infinita.
+Como la integral impropia $\displaystyle\int_1^\infty\frac{1}{x}\, dx$ es divergente, la nuestra $\displaystyle \int_1^\infty \frac{\sqrt{x^4+1}}{x^3}\, dx$ también lo es\pause\ y concluimos que el cuerno de Gabriel tiene área infinita.
 }
 \end{block}
