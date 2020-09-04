@@ -213,7 +213,7 @@ Consideremos la región en el plano siguiente:
 $$
 R=\left\{(x,y)\in\mathbb{R}^2\ |\ x\geq 1,\ 0\leq y\leq \frac{1}{x}\right\}.
 $$
-Rotamos dicha región alrededor del eje $X$. Demostrar que el volumen de la figura obtenida es finito; sin embargo el área de la superficie obtenida es infinita. A dicha superficie se le llama **cuerno de Gabriel**.
+Rotamos dicha región alrededor del eje $X$. Demostrar que el volumen de la figura obtenida es finito; sin embargo el área de la superficie obtenida es infinita. A dicha superficie se le llama \textbf{cuerno de Gabriel.}
 \end{block}
 
 
