@@ -89,12 +89,48 @@ dv & = \mathrm{e}^{-x}\, dx, & v&=-\mathrm{e}^{-x}.
 $$
 \pause
 La integral será:
+\begin{eqnarray*}
+&& \lim_{t\to\infty}\left[-x^2\mathrm{e}^{-x}\right]_1^t+2 \int_1^t x\mathrm{e}^{-x}\, dx\pause \\ &=& \lim_{t\to\infty}\left(-t^2\cdot \mathrm{e}^{-t}+\mathrm{e}^{-1}+2 \int_1^t x\mathrm{e}^{-x}\, dx\right).
+\end{eqnarray*}
+}
+\end{block}
+
+## Integrales impropias
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El límite $\displaystyle\lim_{t\to \infty} t^2\mathrm{e}^{-t}$ vale $0$ ya que aplicando la regla de Hôpital obtenemos:\pause
+$$
+\lim_{t\to \infty} t^2\mathrm{e}^{-t}=\lim_{t\to \infty} \frac{t^2}{\mathrm{e}^{t}}=\lim_{t\to \infty} \frac{2t}{\mathrm{e}^{t}}=\lim_{t\to \infty} \frac{2}{\mathrm{e}^{t}}=\frac{2}{\infty}=0.
+$$
+\pause
+La integral quedará, pues:
+$$
+\frac{1}{\mathrm{e}}+2\lim_{t\to\infty} \int_1^t x\mathrm{e}^{-x}\, dx.
+$$
+\pause
+Volvemos a aplicar la técnica de integración por parte a la integral que queda:\pause
+$$
+\begin{array}{llcll}
+u  &= x,& du &=dx,\\
+dv & = \mathrm{e}^{-x}\, dx, & v&=-\mathrm{e}^{-x}.
+\end{array}
+$$
+}
+\end{block}
+
+## Integrales impropias
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+La integral será:
+\begin{eqnarray*}
+&& \frac{1}{\mathrm{e}}+2\left(\lim_{t\to\infty}\left[-x\mathrm{e}^{-x}\right]_1^t+ \int_1^t \mathrm{e}^{-x}\, dx\right)\pause \\ &=& \frac{1}{\mathrm{e}}+2\left(\frac{1}{\mathrm{e}}+\lim_{t\to\infty}[-\mathrm{e}^{-x}]_1^t\right)\pause = \frac{3}{\mathrm{e}}+2\lim_{t\to\infty}\left(-\mathrm{e}^{-t}+\frac{1}{\mathrm{e}}\right)\pause = \frac{5}{\mathrm{e}}.
+\end{eqnarray*}
 }
 \end{block}
 
 
 ## Longitud de una curva
-\begin{block}{Ejercicio 4}
+\begin{block}{Ejercicio 2}
 Calcular la longitud de la curva $y=f(x)=\sqrt{x}$ desde el punto $(0,0)$ hasta el punto $(4,2)$.
 \end{block}
 
@@ -109,7 +145,7 @@ Hagamos un gráfico tal como hemos hecho anteriormente:\pause
 \end{block}
 
 ## Longitud de una curva
-\begin{block}{\textcolor{green}{Solución}}
+\begin{block}{\textcolor{green}{Solución (cont.)}}
 \blue{
 La longitud de la curva pedida será:\pause
 $$
@@ -124,7 +160,7 @@ $$
 \end{block}
 
 ## Longitud de una curva
-\begin{block}{\textcolor{green}{Solución}}
+\begin{block}{\textcolor{green}{Solución (cont.)}}
 \blue{
 Los extremos de integración serán en la nueva variable $t$: \pause
 \begin{description}
@@ -143,7 +179,7 @@ Se trata de una integral racional en el que el grado del numerador es menor que 
 
 
 ## Longitud de una curva
-\begin{block}{\textcolor{green}{Solución}}
+\begin{block}{\textcolor{green}{Solución (cont.)}}
 \blue{
 Por tanto, hemos de descomponer la función a integral de la forma siguiente usando que la descomposición del denominador es:
 $$
@@ -160,7 +196,7 @@ $$
 \end{block}
 
 ## Longitud de una curva
-\begin{block}{\textcolor{green}{Solución}}
+\begin{block}{\textcolor{green}{Solución (cont.)}}
 \blue{
 La longitud de la curva será:
 \begin{eqnarray*}
@@ -168,5 +204,74 @@ L & = & \frac{1}{2}\left[\frac{1}{4}\ln|t-1|-\frac{1}{4(t-1)}-\frac{1}{4}\ln|t+1
 \frac{1}{8}\left[\ln\left|\frac{t-1}{t+1}\right|-\frac{2t}{t^2-1}\right]_{\frac{\sqrt{17}}{4}}^\infty\pause =-\frac{1}{8}\left(\ln\left|\frac{\frac{\sqrt{17}}{4}-1}{\frac{\sqrt{17}}{4}+1}\right|-\frac{2\cdot \frac{\sqrt{17}}{4}}{\frac{17}{16}-1}\right)\\\pause &=&
 \frac{1}{8}\left(8\sqrt{17}-\ln\left(\frac{\sqrt{17}-4}{\sqrt{17}+4}\right)\right)\pause =\sqrt{17}-\frac{1}{8}\ln\left(\frac{\sqrt{17}-4}{\sqrt{17}+4}\right)\\\pause &\approx & `r round(sqrt(17)-(1/8)*log((sqrt(17)-4)/(sqrt(17)+4)),4)`.
 \end{eqnarray*}
+}
+\end{block}
+
+## Volumen y área
+\begin{block}{Ejercicio 3}
+Consideremos la región en el plano siguiente:
+$$
+R=\left\{(x,y)\in\mathbb{R}^2\ |\ x\geq 1,\ 0\leq y\leq \frac{1}{x}\right\}.
+$$
+Rotamos dicha región alrededor del eje $X$. Demostrar que el volumen de la figura obtenida es finito; sin embargo el área de la superficie obtenida es infinita. A dicha superficie se le llama **cuerno de Gabriel**.
+\end{block}
+
+
+## Volumen y área
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Hagamos un gráfico tal como hemos hecho anteriormente:\pause
+\begin{center}
+\includegraphics[width=8cm]{Horn.png}
+\end{center}
+}
+\end{block}
+
+## Volumen y área
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El volumen del cuerno de Gabriel será:\pause
+\begin{eqnarray*}
+V&=&\pi \int_1^\infty \frac{1}{x^2}\, dx \pause = \pi\lim_{t\to\infty}\int_1^t\frac{1}{x^2}\, dx\pause = \pi\lim_{t\to\infty}\left[-\frac{1}{x}\right]_1^t\pause \\ &=& \pi \left(-\frac{1}{t}+1\right)=\pi.
+\end{eqnarray*}
+}
+\end{block}
+
+## Volumen y área
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Para calcular el área del cuerno de Gabriel hemos de estudiar la integral impropia siguiente:
+\begin{eqnarray*}
+A & = &  2\pi \int_1^\infty \frac{1}{x}\cdot\sqrt{1+\frac{1}{x^2}}\, dx \pause = 2\pi \int_1^\infty \frac{1}{x}\sqrt{\frac{x^2+1}{x^2}}\, dx \pause \\ &= & 2\pi \int_1^\infty \frac{\sqrt{x^2+1}}{x^2}\, dx.
+\end{eqnarray*}
+\pause
+Para ver que dicha integral es divergente aplicaremos el criterio del límite a las funciones:
+$$
+\frac{\sqrt{x^2+1}}{x^2},\quad \frac{1}{x}.
+$$
+}
+\end{block}
+
+## Volumen y área
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El límite del cociente de las funciones anteriores vale:\pause
+$$
+\lim_{x\to \infty}\frac{\frac{\sqrt{x^2+1}}{x^2}}{\frac{1}{x}}=\lim_{x\to\infty}\frac{\sqrt{x^2+1}}{x}=1.
+$$
+\pause
+Entonces las integrales impropias $\displaystyle \int_1^\infty \frac{\sqrt{x^2+1}}{x^2}\, dx$ y $\displaystyle\int_1^\infty\frac{1}{x}\, dx$ tienen es mismo carácter.\newline\pause
+Estudiemos pues la convergencia de la integral impropia $\displaystyle\int_1^\infty\frac{1}{x}\, dx$:
+}
+\end{block}
+
+## Volumen y área
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+$$
+\int_1^\infty\frac{1}{x}\, dx \pause =\lim_{t\to\infty}\int_1^t\frac{1}{x}\, dx=\pause \lim_{t\to\infty}\left[\ln x\right]_1^t =\lim_{t\to\infty}\ln t=\infty.
+$$
+\pause
+Como la integral impropia $\displaystyle\int_1^\infty\frac{1}{x}\, dx$ es divergente, la nuestra $\displaystyle \int_1^\infty \frac{\sqrt{x^2+1}}{x^2}\, dx$ también lo es\pause\ y concluimos que el cuerno de Gabriel tiene área infinita.
 }
 \end{block}
