@@ -14,7 +14,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-reticulate::use_python("/opt/anaconda3/bin/python")
+reticulate::use_python("/Users/juangabriel/opt/anaconda3/bin/python")
 ```
 
 # Derivada de una función en un punto del dominio de la misma

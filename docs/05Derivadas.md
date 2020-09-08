@@ -13,29 +13,10 @@ output:
 <script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
 
 
-```bash
-PYTHON_PATH=`which python` 
-```
-
-
 
 # Derivada de una función en un punto del dominio de la misma
 
 ## Introducción
-
-```r
-args <- commandArgs()
-print(args)
-```
-
-```
-## [1] "/Library/Frameworks/R.framework/Resources/bin/exec/R"                                                                               
-## [2] "--slave"                                                                                                                            
-## [3] "--no-save"                                                                                                                          
-## [4] "--no-restore"                                                                                                                       
-## [5] "-e"                                                                                                                                 
-## [6] "rmarkdown::render('/Users/juangabriel/Developer/Projects/Matematicas/calculo/teoria/05Derivadas.Rmd',~+~~+~encoding~+~=~+~'UTF-8');"
-```
 
 La derivada de una función sirve para formalizar la noción de **recta tangente** en un punto $x_0$ para una función $f(x)$.
 
@@ -44,7 +25,7 @@ En el gráfico siguiente, podemos observar un ejemplo del dibujo de una función
 La pendiente de la recta tangente (en rojo) vendría a representar lo que denominaremos la derivada de la función $f(x)$ en $x=x_0$.
 
 ## Introducción
-<img src="05Derivadas_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="05Derivadas_files/figure-html/unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
 
 ## Introducción
 
@@ -179,7 +160,7 @@ Este comportamiento es el usual cuando una función no es derivable en un punto 
 ## Ejemplos
 <div class="example">
 **Derivada del valor absoluto**
-<img src="05Derivadas_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="05Derivadas_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 
 
 </div>
@@ -496,7 +477,7 @@ El gráfico de la función anterior puede verse en `Wolfram Alpha` en el enlace 
 
 ## Ejemplo
 <div class="example">
-<img src="05Derivadas_files/figure-html/unnamed-chunk-5-1.png" style="display: block; margin: auto;" />
+<img src="05Derivadas_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
 
 </div>
@@ -584,7 +565,7 @@ Vemos que $f'(0)=0$. En cambio $f$ no tiene ningún extremo en este punto tal co
 ## Derivación y extremos
 <div class="example">
 **Ejemplo**
-<img src="05Derivadas_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
+<img src="05Derivadas_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
 
 </div>
