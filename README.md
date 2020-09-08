@@ -1,5 +1,7 @@
 # Curso Completo de Cálculo en una variable con Python y Sage
 
+[Consulta el curso completo con más de 40 horas de video en Udemy](https://www.udemy.com/course/draft/2748562/?couponCode=66A49245199EB2A2B7E8)
+
 ## Temario del curso
 
 1. Números Reales
