@@ -1,0 +1,36 @@
+---
+title: "Problemas de estudio de derivabilidad de funciones"
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Usando la definición, calcular la derivada de la función $\frac{1}{\sqrt{x}}$ para $x>0$ en un valor $x_0>0$.
+1. Demostrar que la función $f(x)=\sqrt[5]{x}$ no es derivable en $x=0$.
+1. Sea la función siguiente: 
+$$
+f(x)=\begin{cases}
+x^2, & \mbox{ si $x$ es racional},\\
+0, & \mbox{ si $x$ es irracional.}
+\end{cases}
+$$
+Demostrar que $f(x)$ es derivable en $x=0$.
+1. Hallar los valores de $x$ en donde la siguiente función es derivable: $f(x)=|x|+|x+1|$ y hallar la derivada correspondiente.
+1. Sea $f(x)$ una función derivable en un punto $x_0$. Demostrar que:
+$$
+f'(x_0)=\lim_{n\to\infty} \left( n\cdot\left(f(x_0+\frac{1}{n})-f(x_0)\right)\right).
+$$
+Demostrar que el recíproco es falso, es decir, dar un ejemplo de una función y un valor $x_0$ tal que exista el límite anterior pero la función no sea derivable en $x_0$. \newline
+Indicación: considerar la función $f(x)=x\cdot \sin\left(\frac{\pi}{x}\right)$ si $x\neq 0$ y $f(0)=0$. Ver que el límite anterior
+para $x_0=0$ existe pero $f(x)$ no es derivable en $x_0=0$.
+1. Calcular la derivada de las funciones siguientes:
+    a) $f(x)=\frac{x+1}{x^2+1}$.
+    a) $f(x)=\tan (x^3+x^2+x-1)$.
+    a) $f(x)=x^x$, para $x>0$. Indicación: considerar $g(x)=\ln f(x)$. Derivar la función $g(x)$ y a partir de la derivada de $g(x)$, hallar la derivada de la función $f(x)$.
+1. Consideremos la función $f(x)=\frac{a}{a+x}$, donde $a$ es un valor real. Hallar la derivada $n$-ésima de $f$ en un valor $x_0\neq -a$.
+1. Consideremos la función $f(x)=\frac{x^2-1}{x^2+1}$. Hallar la recta tangente de la curva $y=f(x)$ en el punto $(x_0=0,y_0=f(x_0)=-1)$.
+1. Diremos que una función $f:\mathbb{R}\longrightarrow \mathbb{R}$ es par si para todo valor de $x\in\mathbb{R}$, $f(x)=f(-x)$ y diremos que es impar si para todo valor $x\in\mathbb{R}$, $f(x)=-f(-x)$. Demostrar que la función derivada de toda función par es impar y viceversa, que la función derivada de toda función impar es par.
+1. Sea $h(x)$ la función de Heaviside: $h(x)=1$, para $x\geq 0$ y $h(x)=0$, para $x<0$. Demostrar que no existe ninguna función $f:\mathbb{R}\longrightarrow\mathbb{R}$ tal que $f'(x)=h(x)$, para todo $x\in\mathbb{R}$.

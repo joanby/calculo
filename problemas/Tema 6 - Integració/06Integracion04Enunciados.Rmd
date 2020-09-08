@@ -1,0 +1,19 @@
+---
+title: "Problemas de integración. Aplicaciones de la integral."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Hallar el área limitada por la curva $y^2=\frac{1-x}{1+x}$ y su asíntota.
+1. Hallar el área limitada por la curva $y=x(x-1)(x-2)$ y el eje $x$.
+1. Hallar el área limitada por la curva $f(x)=x\cdot\mathrm{e}^{-x}$ y $g(x)=x^2\cdot \mathrm{e}^{-x}$.
+1. Hallar los volúmenes engendrados al girar alrededor del eje $x$ por los recintos de ordenadas de las funciones siguientes:
+    a) $f(x)=x^2$, $x=-1$, $x=2$.
+    a) $f(x)=\sin x$, $x=0$, $x=\pi$.
+1. Hallar la longitud del arco de curva $y^2=x^3$ desde el origen al punto $(4,8)$.
+1. Hallar el volumen del cuerpo engendrado al girar, alrededor del eje $y$, la parte de la parábola $y^2=4ax$, que intercepta la recta $x=a$.
+1. Un segmento parabólico recto, de base igual a $2a$ y de altura $h$ gira alrededor de su base. Determinar el volumen del cuerpo de revolución que se engendra (*limón de Cavalieri*).

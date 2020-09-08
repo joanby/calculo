@@ -1,0 +1,326 @@
+---
+title: "Ejercicios resueltos de integración. 1a parte."
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+                 
+
+                 
+              
+---
+
+
+
+## Definición de integral
+
+\begin{block}{Ejercicio 1}
+Consideremos la función $f(x)=1+x^2$ en el intervalo $[0,1]$. Demostrar que la función es integrable en el intervalo anterior.
+\end{block}
+
+## Definición de integral
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Consideremos la sucesión de particiones siguiente:
+$$
+P_n={x_0=0<\frac{1}{n}<\cdots <\frac{n}{n}=x_n=1},
+$$
+es decir $x_i=\frac{i}{n}$, $i=0,\ldots,n$.\newline
+\pause
+La suma inferior de $f$ respecto la particion $P_n$ será:
+\begin{eqnarray*}
+L(f,P_n) & = & \sum_{i=1}^n m_i\cdot (x_i-x_{i-1})=\sum_{i=1}^n\inf_{x\in [x_{i-1},x_i]}f(x)\cdot (x_i-x_{i-1})\pause \\ &=& \sum_{i=1}^n f(x_{i-1})\cdot \frac{1}{n}=\pause \frac{1}{n}\sum_{i=1}^n f\left(\frac{i-1}{n}\right)\\ & = & \pause \frac{1}{n}\sum_{i=1}^n \left(1+\frac{(i-1)^2}{n^2}\right) =\pause \frac{1}{n}\left(n+\frac{1}{n^2}\sum_{i=0}^{n-1} i^2\right)
+\end{eqnarray*}
+}
+\end{block}
+
+## Definición de integral
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+A continuación usamos la expresión siguiente:
+$$
+\sum_{i=1}^m i^2 = \frac{1}{6} m (m+1) (2m+1).
+$$
+\pause
+La suma inferior de $f$ respecto de $P_n$ será:
+\begin{eqnarray*}
+L(f,P_n) & = &  \frac{1}{n}\left(n+\frac{1}{n^2}\cdot \frac{1}{6} (n-1) n (2(n-1)+1)\right)\pause\\ & = & 1+\frac{1}{6n^3}\cdot (n-1)n(2n-1)=1+\frac{(n-1)(2n-1)}{6n^2}.
+\end{eqnarray*}
+\pause
+}
+\end{block}
+
+## Definición de integral
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+La suma superior de $f$ respecto de $P_n$ será:
+\begin{eqnarray*}
+U(f,P_n) & = & \sum_{i=1}^n M_i\cdot (x_i-x_{i-1})=\sum_{i=1}^n\sup_{x\in [x_{i-1},x_i]}f(x)\cdot (x_i-x_{i-1})\pause \\ &=& \sum_{i=1}^n f(x_{i})\cdot \frac{1}{n}=\pause \frac{1}{n}\sum_{i=1}^n f\left(\frac{i}{n}\right)\\ & = & \pause \frac{1}{n}\sum_{i=1}^n \left(1+\frac{i^2}{n^2}\right) =\pause \frac{1}{n}\left(n+\frac{1}{n^2}\sum_{i=1}^{n} i^2\right)\\\pause &=& 1+\frac{1}{n^3}\cdot\frac{1}{6}n (n+1)(2n+1)\pause =1+\frac{(n+1)(2n+1)}{6n^2}.
+\end{eqnarray*}
+}
+\end{block}
+
+
+## Definición de integral
+
+\begin{block}{\textcolor{green}{Solución} (cont.)}
+\blue{
+A continuación calculemos $\displaystyle\lim_{n\to\infty}L(f,P_n)$ y $\displaystyle\lim_{n\to\infty} U(f,P_n)$:
+\begin{eqnarray*}
+\lim_{n\to\infty}1+\frac{(n-1)(2n-1)}{6n^2} & = & 1+\frac{2}{6}=\frac{4}{3},\\\pause
+\lim_{n\to\infty}1+\frac{(n+1)(2n+1)}{6n^2} & = & 1+\frac{2}{6}=\frac{4}{3}.
+\end{eqnarray*}
+\pause
+Como los dos límites anteriores coinciden y además $\displaystyle\lim_{n\to\infty}\delta(P_n)=\lim_{n\to\infty}\frac{1}{n}=0$, deducimos que la función $f$ es integrable en el intervalo $[0,1]$ y además $\displaystyle\int_{[0,1]} f=\frac{4}{3}$.
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{Ejercicio 2}
+Calcular la integrales definidas siguientes:
+\begin{enumerate}[a)]
+\item $\displaystyle\int_1^2\frac{\mathrm{e}^{\frac{1}{x}}}{x^2}\, dx.$
+\item $\displaystyle\int_0^1 x\mathrm{e}^{-x^2}\, dx.$
+\end{enumerate}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Apartado a). Aplicamos el siguiente cambio de variable:\pause
+$$
+t=\frac{1}{x},\ \Rightarrow dt=-\frac{1}{x^2}\, dx,\ \Rightarrow -dt =\frac{1}{x^2}\, dx.
+$$
+\pause
+Cuando $x=1$, el valor de $t$ es: $t=\frac{1}{1}=1$ y \pause cuando $x=2$, el valor de $t$ es $t=\frac{1}{2}$.\pause\newline
+La integral a calcular nos queda en la nueva variable $t$:
+$$
+\int_1^{\frac{1}{2}}\mathrm{e}^t \,(-dt)=\pause \int_{\frac{1}{2}}^1 \mathrm{e}^t \,dt =\pause \left[\mathrm{e}^t\right]_{\frac{1}{2}}^1 =\pause \mathrm{e}^1-\mathrm{e}^{\frac{1}{2}}\approx `r round(exp(1)-exp(0.5),4)`.
+$$
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). El valor de la integral será:
+\pause
+\begin{eqnarray*}
+\int_0^1 x\mathrm{e}^{-x^2}\, dx \pause & = & -\frac{1}{2}\cdot\int_0^1 (-2x)\mathrm{e}^{-x^2}\, dx \pause =-\frac{1}{2}\left[\mathrm{e}^{-x^2}\right]_0^1\\\pause &=&-\frac{1}{2}\left(\mathrm{e}^{-1}-1\right) =\pause \frac{1}{2}\left(1-\frac{1}{\mathrm{e}}\right)\pause = \frac{\mathrm{e}-1}{2\mathrm{e}}\approx `r round((exp(1)-1)/(2*exp(1)),4)`.
+\end{eqnarray*}
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{Ejercicio 3}
+La función error:
+$$
+\mathrm{erf}(x)=\frac{2}{\sqrt{\pi}}\int_0^x\mathrm{e}^{-t^2}\, dt
+$$
+se usa en probabilidad, estadística y ingeniería.
+\begin{enumerate}[a)]
+\item Demostrar que $\displaystyle\int_a^b \mathrm{e}^{-t^2}\, dt=\frac{\sqrt{\pi}}{2}(\mathrm{erf(b)}-\mathrm{erf}(a))$.
+\item Demostrar que la función $y=x^2\mathrm{erf}(x)$ satisface la ecuación diferencial $\sqrt{\pi} x y'=2\sqrt{\pi} y+2x^3\mathrm{e}^{-x^2}$.
+\end{enumerate}
+\end{block}
+
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Apartado a). Aplicando la propiedad de la aditividad de la integral en un intervalo tenemos que:\pause
+$$
+\mathrm{erf}(b)-\mathrm{erf}(a)\pause =\frac{2}{\sqrt{\pi}}\left(\int_0^b\mathrm{e}^{-t^2}\, dt-\int_0^a\mathrm{e}^{-t^2}\, dt\right) \pause =\frac{2}{\sqrt{\pi}}\int_a^b\mathrm{e}^{-t^2}\, dt,
+$$
+y, por tanto,\pause
+$$
+\int_a^b\mathrm{e}^{-t^2}\, dt =\frac{\sqrt{\pi}}{2}(\mathrm{erf}(b)-\mathrm{erf}(a)).
+$$
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). Aplicando el Teorema fundamental del cálculo, podemos hallar la derivada de la función $\mathrm{erf}(x)$:\pause
+$$
+\mathrm{erf}'(x)=\frac{2}{\sqrt{\pi}}\mathrm{e}^{-x^2}.
+$$
+\pause
+Por tanto,
+\begin{eqnarray*}
+y' & =& 2x\cdot\mathrm{erf}(x)+x^2\cdot \mathrm{erf}'(x)=\pause 2x\cdot\mathrm{erf}(x)+x^2\cdot \frac{2}{\sqrt{\pi}}\mathrm{e}^{-x^2}\\\pause &=&
+2x\cdot \frac{y}{x^2}+\frac{2x^2}{\sqrt{\pi}}\mathrm{e}^{-x^2}=\pause  \frac{2y}{x}+\frac{2x^2}{\sqrt{\pi}}\mathrm{e}^{-x^2}.
+\end{eqnarray*}
+\pause
+Multiplicando por $\sqrt{\pi} x$ nos queda:\pause
+$$
+\sqrt{\pi} x y' = 2\sqrt{\pi} y+2x^3 \mathrm{e}^{-x^2}.
+$$
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{Ejercicio 4}
+La función seno integral:
+$$
+\mathrm{Si}(x)=\int_0^x \frac{\sin t}{t}\, dt,
+$$
+es importante en ingeniería eléctrica.
+Fijarse que aunque el integrando $f(t)=\frac{\sin t}{t}$ no está definido para $t=0$, sabemos que su límite cuando $t$ tiende a $0$ vale $1$. Por tanto, si definimos $f(0)=1$, tenemos que $f$ es continua para todo valor de $x$.
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{Ejercicio 4 (cont.)}
+\begin{enumerate}[a)]
+\item Hacer un gráfico de la función $\mathrm{Si}(x)$.
+\item ¿Para qué valores de $x$, la función $\mathrm{Si}(x)$ tiene un máximo relativo?
+\item Hallar el primer punto de inflexión a la derecha del origen. Es decir hallar el mínimo valor $x_0>0$ tal que $(x_0,\mathrm{Si}(x_0))$ es un punto de inflexión de la función $\mathrm{Si}(x)$.
+\end{enumerate}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Apartado a). El gráfico de la funció $\mathrm{Si}(x)$ es el siguiente:
+\begin{center}
+\includegraphics[width=8cm]{SinIntegral.png}
+\end{center}
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). Para hallar los extremos relativos de la función $\mathrm{Si}(x)$ hemos de calcular primero su derivada e igualarla a cero:\pause
+$$
+\mathrm{Si}'(x)=\frac{\sin x}{x}=0,\pause\ \Rightarrow \sin x=0,\ (x\neq 0),\pause\ \Rightarrow x=n\pi, \ n\in\mathbb{Z}\setminus\{0\}.
+$$
+\pause
+Las abscisas de los candidatos a extremos serán de la forma $x_n=n\pi$, con $n\neq 0$. \pause\newline
+Veamos si son máximos o mínimos:\vspace*{0.5cm}
+\setlength{\tabcolsep}{4pt}
+\begin{center}
+\begin{tabular}{lcccccccccccccccc}
+\hline
+$x$ & $-\infty$ &&$\cdots$&&$-2\pi$&&$-\pi$&&$\pi$&&$2\pi$&&$\cdots$&&$\infty$\\\hline 
+$y'$&&&&&&$-$&&$+$&&$-$&&&&&&\\
+$y$&&&&&&$\searrow$&&$\nearrow$&&$\searrow$&&&&&&\\\hline
+\end{tabular}
+\end{center}
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Entonces:
+\begin{itemize}
+\item si $n>0$, los puntos con $x_n=n\pi$, con $n$ par serán mínimos y los puntos $x_n=n\pi$ con $n$ impar serán máximos,\pause
+\item si $n<0$, los puntos con $x_n=n\pi$, con $n$ par serán máximos y los puntos $x_n=n\pi$ con $n$ impar serán mínimos.
+\end{itemize}
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado c). Los puntos de inflexión se hallan igualando a cero la derivada segunda:\pause
+$$
+\mathrm{Si}''(x)=\frac{x\cdot\cos x-\sin x}{x^2}=0,\ \Rightarrow x\cdot\cos x-\sin x=0,\ \Rightarrow x=\tan x.
+$$\pause
+Nos piden hallar la primera solución $x>0$ de la solución anterior. \newline\pause Fijarse que $x=0$ es una solución de la ecuación anterior y de hecho el valor $(0,0)$ es un punto de inflexión de la función $\mathrm{Si}(x)$.\pause\newline
+Para resolver la ecuación anterior, hagamos primero un gráfico ilustrativo:
+}
+\end{block}
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{center}
+\includegraphics[width=9cm]{Tanxx.png}
+\end{center}
+}
+\end{block}
+
+
+## Teorema fundamental del cálculo
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Resolveremos la ecuación anterior $g(x)=\tan x-x=0$, por el método de Newton-Raphson:\pause
+\begin{eqnarray*}
+x_{n+1} & = & x_n-\frac{g(x_n)}{g'(x_n)}\pause =x_n-\frac{\tan x_n-x_n}{\tan^2 x_n}\\\pause &=&\frac{x_n (\tan^2 x_n+1)-\tan x_n}{\tan^2 x_n}\pause =\frac{\frac{x_n}{\cos^2 x_n}-\frac{\sin x_n}{\cos x_n}}{\frac{\sin^2 x_n}{\cos^2 x_n}}\pause \\ &=& \frac{x_n-\sin x_n\cos x_n}{\sin^2 x_n},
+\end{eqnarray*}
+con $x_0=4.5$.\newline
+\pause
+El programa en `python` que resuelve la ecuación anterior es el siguiente:
+}
+\end{block}
+
+
+## Teorema fundamental del cálculo
+
+```{python,eval=FALSE}
+from math import *
+def f(x):
+ return((x-sin(x)*cos(x))/(sin(x)**2))
+
+epsilon=0.0001; x0=4.5; x=x0; n=0
+
+while abs(tan(x)-x) >= epsilon:
+  x=f(x)
+  n=n+1
+  print("El término {0:2} de la sucesión vale {1:.7f}".
+      format(n,x))
+      
+El término  1 de la sucesión vale 4.4936139
+El término  2 de la sucesión vale 4.4934097
+```
+
+
+## Derivación bajo el signo integral
+\begin{block}{Ejercicio 5}
+Hallar la derivada de las funciones siguientes:
+\begin{enumerate}[a)]
+\item $\displaystyle h(x)=\int_2^{\frac{1}{x}}\arctan t\, dt.$
+\item $\displaystyle h(x)=\int_0^{x^2}\sqrt{1+r^3}\, dr.$
+\end{enumerate}
+\end{block}
+
+## Derivación bajo el signo integral
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Aplicando la fórmula de derivación bajo el signo integral, las derivadas son:\pause
+\begin{enumerate}
+\item $\displaystyle h'(x)=\arctan\left(\frac{1}{x}\right)\cdot \left(\frac{1}{x}\right)'=\pause
+\arctan\left(\frac{1}{x}\right)\cdot\left(-\frac{1}{x^2}\right)=\pause -\frac{\arctan\left(\frac{1}{x}\right)}{x^2}.$\pause
+\item $\displaystyle h'(x)=\sqrt{1+(x^2)^3}\cdot (x^2)'=\pause \sqrt{1+x^6}\cdot 2x=\pause
+2 x\cdot \sqrt{1+x^6}.$
+\end{enumerate}
+}
+\end{block}

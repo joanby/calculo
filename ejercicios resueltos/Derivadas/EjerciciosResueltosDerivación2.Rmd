@@ -1,0 +1,437 @@
+---
+title: "Ejercicios resueltos de derivación. 2a parte."
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+                 
+
+                 
+              
+---
+
+
+
+## Fórmula de Taylor
+
+\begin{block}{Ejercicio 1}
+\begin{enumerate}[a)]
+\item Desarrollar la función $f(x)=\frac{1}{\sqrt[4]{1+x}}$ en desarrollo de MacLaurin de grado $n$ dando el error cometido.
+\item Dar una estimación de $\frac{1}{\sqrt[4]{1.1}}$ con 4 valores exactos.
+\end{enumerate}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+Apartado a).\pause
+\newline
+En los apuntes vimos que el desarrollo de Taylor de la función $f(x)=(x+C)^\alpha$ alrededor de $x=x_0$ era:
+$$
+P_n(x)  = \sum_{k=0}^n \binom{\alpha}{k}\cdot (x_0+C)^{\alpha-k}\cdot (x-x_0)^k ,
+$$
+donde $\binom{\alpha}{k}=\frac{\alpha\cdot (\alpha-1)\cdots (\alpha -k+1)}{k!}$.
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+En nuestro caso, $C=1$, $\alpha=-\frac{1}{4}$ y $x_0=0$:
+$$
+P_n(x)  = \sum_{k=0}^n \binom{-\frac{1}{4}}{k}\cdot x^k =1+\sum_{k=1}^n \binom{-\frac{1}{4}}{k}\cdot x^k,
+$$
+\pause
+con 
+\begin{eqnarray*}
+ \binom{-\frac{1}{4}}{k}& = & \frac{-\frac{1}{4}\cdot \left(-\frac{1}{4}-1\right)\cdots \left(-\frac{1}{4}-k+1\right)}{k!}\\ & =&\frac{-\frac{1}{4}\cdot \left(-\frac{5}{4}\right)\cdots \left(-\frac{(4k-3)}{4}\right)}{k!} =\frac{(-1)^k (4k-3)!!!!}{4^k\cdot k!},
+\end{eqnarray*}
+\pause
+donde $i!!!!=i\cdot (i-4)\cdot (i-8)\cdots 1$.\newline\pause
+Ejemplos: $5!!!!=5\cdot 1=5$, $8!!!!=8\cdot 4=32$.
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El desarrollo de Taylor queda de la forma siguiente:
+$$
+P_n(x)  = 1+\sum_{k=1}^n \frac{(-1)^k (4k-3)!!!!}{4^k\cdot k!}\cdot x^k.
+$$
+\pause
+El error cometido viene dado por la expresión:
+\begin{eqnarray*}
+R_n(x-x_0) & = & \binom{\alpha}{n+1}\cdot (c+C)^{\alpha-n-1}\cdot  (x-x_0)^{n+1}\\ \pause
+&=& \binom{-\frac{1}{4}}{n+1}\cdot (1+c)^{-\frac{1}{4}-n-1}\cdot x^{n+1} \\ \pause
+&=& \frac{(-1)^{n+1} (4n+1)!!!!}{4^{n+1}\cdot (n+1)!}\cdot (1+c)^{-n-\frac{5}{4}}\cdot x^{n+1},
+\end{eqnarray*}
+donde $c\in <0,x>$.
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). \pause\newline
+En el apartado b) nos piden hallar $f(0.1)=\frac{1}{\sqrt[4]{1+0.1}}=\frac{1}{\sqrt[4]{1.1}}$ con un error menor o igual que $10^{-4}$.\pause\newline
+Primero tenemos que hallar el grado del polinomio $n$ tal que $\left|f(0.1)-P_n(0.1)\right|\leq 10^{-4}$.\pause\newline
+Es decir:
+$$
+\left|\frac{(-1)^{n+1} (4n+1)!!!!}{4^{n+1}\cdot (n+1)!}\cdot (1+c)^{-n-\frac{5}{4}}\cdot 0.1^{n+1}\right|\leq 10^{-4},
+$$
+con $c\in (0,0.1)$.
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Acotemos la parte que depende de $c$ ya que $c$ es desconocido:\pause
+$$
+(1+c)^{-n-\frac{5}{4}} =\frac{1}{(1+c)^{n+\frac{5}{4}}}\leq 1,
+$$
+ya que el máximo valor de la fracción anterior se alcanza para $c=0$.\pause\newline
+Así el error puede acotarse por:
+$$
+\left| \frac{(4n+1)!!!!\cdot 0.1^{n+1}}{4^{n+1}\cdot (n+1)!}\right|=\left| \frac{(4n+1)!!!!}{40^{n+1}\cdot (n+1)!}\right|\leq 10^{-4}.
+$$
+\pause
+Hagamos un programa en python que nos halle el $n$:}
+\end{block}
+
+## Fórmula de Taylor
+```{python, eval=FALSE}
+from math import *
+def fourthfactorial(n):
+  if n in (1, 2, 3, 4):
+    return n
+  else:
+    if n == 0:
+      return 1
+    else:
+      return n * fourthfactorial(n-4)
+```
+
+
+## Fórmula de Taylor
+```{python, eval=FALSE}
+def calculo_n(error):
+  x=0.1
+  m=2
+  cota_error=(fourthfactorial(4*m+1)/(4.**(m+1)*
+              factorial(m+1)))*(x**(m+1)) 
+  while(cota_error >= error):
+    m=m+1
+    cota_error=(fourthfactorial(4*m+1)/(4.**(m+1)*
+               factorial(m+1)))*(x**(m+1)) 
+  return(m)
+  
+calculo_n(0.0001)
+3
+```
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El valor de $n$ será $3$ y por tanto $P_3(0.1)$ valdrá:
+}
+\end{block}
+```{python,eval=FALSE}
+def termino_k(x,k):
+  y=((-1)**k*fourthfactorial(4*k-3)/
+              (4.**k*factorial(k)))*x**k
+  return(y)
+```
+
+
+## Fórmula de Taylor
+```{python,eval=FALSE}
+def Pn(x,n):
+  p=1
+  k=1
+  while k <= n:
+    p=p+termino_k(x,k)
+    k=k+1
+  return(p)
+
+Pn(0.1,3)
+0.9764453125
+```
+
+## Fórmula de Taylor
+\begin{block}{Ejercicio 2}
+Desarrollar en polinomios de Taylor las funciones siguientes alrededor del punto $x_0$ hasta la $n$ indicada y realizar un gráfico de la función y los polinomios de Taylor obtenidos:
+\begin{enumerate}[a)]
+\item $f(x)=\sqrt{x}$, $x_0=4$ hasta $n=4$.
+\item $f(x)=\mathrm{e}^{-x^2}$, $x_0=0$ hasta $n=4$.
+\end{enumerate}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+En general, dada una función $f(x)$, $n+1$-veces derivable, el polinomio de Taylor de grado $n$ alrededor de $x=x_0$ vale:
+$$
+P_n(x)=\sum_{k=0}^n \frac{f^{(k)}(x_0)}{k!}\cdot (x-x_0)^k.
+$$
+\pause
+Apartado a). La función $f$ vale $f(x)=\sqrt{x}$, $x_0=4$ y $n=4$.\pause\newline
+Calculemos las cuatro primeras derivadas de $f(x)$:
+\begin{eqnarray*}
+f'(x) & = & \frac{1}{2}\cdot x^{-\frac{1}{2}},\quad f''(x)=-\frac{1}{4}\cdot x^{-\frac{3}{2}},\\\pause f'''(x) & =& \frac{3}{8}\cdot x^{-\frac{5}{2}},\quad f^{(iv)}(x)=-\frac{15}{16}\cdot x^{-\frac{7}{2}}.
+\end{eqnarray*}
+}
+\end{block}
+
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Las derivadas en $x=x_0=4$ valen:\pause
+\begin{eqnarray*}
+f'(4) & = & \frac{1}{2}\cdot 4^{-\frac{1}{2}}=\frac{1}{2}\cdot \frac{1}{2}=\frac{1}{4},\\\pause f''(4)& = & -\frac{1}{4}\cdot 4^{-\frac{3}{2}}=-\frac{1}{4}\cdot \frac{1}{2^3}=-\frac{1}{32},\\\pause f'''(4) & =& \frac{3}{8}\cdot 4^{-\frac{5}{2}}=\frac{3}{8}\cdot \frac{1}{2^5}=\frac{3}{256},\\\pause f^{(iv)}(4) & = & -\frac{15}{16}\cdot 4^{-\frac{7}{2}}=-\frac{15}{16}\cdot \frac{1}{2^7}=-\frac{15}{2048}.
+\end{eqnarray*}
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+El polinomio de Taylor de grado $4$ será:
+\begin{eqnarray*}
+P_4(x) & = & 2+\frac{1}{4}\cdot (x-4)-\frac{1}{2!\cdot 32}\cdot (x-4)^2\\\pause && +\frac{3}{3!\cdot 256}\cdot (x-4)^3-\frac{15}{4!\cdot 2048}\cdot (x-4)^4\\\pause &=& 2+\frac{1}{4}\cdot (x-4)-\frac{1}{64}\cdot (x-4)^2\\\pause && +\frac{1}{512}\cdot (x-4)^3-\frac{5}{16384}\cdot (x-4)^4.
+\end{eqnarray*}
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{center}
+\includegraphics[width=9cm]{TaylorRaizx.png}
+\end{center}
+}
+\end{block}
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Apartado b). La función $f$ vale $f(x)=\mathrm{e}^{-x^2}$, $x_0=0$ y $n=4$.\pause\newline
+Calculemos las cuatro primeras derivadas de $f(x)$:
+\begin{eqnarray*}
+f'(x) & = & -2x\cdot \mathrm{e}^{-x^2},\pause\\ f''(x)&=&(4\cdot x^2-2)\cdot \mathrm{e}^{-x^2}\pause\\ f'''(x) &=&-4 \mathrm{e}^{-x^2} x \left(2 x^2-3\right)\pause\\ f^{(iv)} &=& 4 \mathrm{e}^{-x^2} \left(4x^4-12 x^2+3\right).
+\end{eqnarray*}
+}
+\end{block}
+
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+Las derivadas en $x=x_0=0$ valen:\pause
+$$
+f'(0)  =  0,\quad f''(0) =  -2,\quad f'''(0)  = 0,\quad f^{(iv)}(0)  =  12.
+$$
+\pause
+El polinomio de Taylor de grado $4$ será:
+$$
+P_4(x)  = 1-x^2+\frac{1}{2}\cdot x^4.
+$$
+}
+\end{block}
+
+
+## Fórmula de Taylor
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{center}
+\includegraphics[width=9cm]{TaylorEmenosx2.png}
+\end{center}
+}
+\end{block}
+
+
+## Estudio local de una función
+\begin{block}{Ejercicio 3}
+Realizar un estudio local de la función $f(x)=\frac{x^2-1}{x^2+1}$.
+\end{block}
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución}}
+\blue{
+\begin{enumerate}[a)]
+\item Dominio. \pause
+El dominio de la función es $\mathbb{R}$ ya que sólo podría "tener problemas" en los puntos que anulen el denominador pero en este caso el denominador es diferente de cero para cualquier valor de $x$.\pause
+\item Puntos de discontinuidad.\pause
+\ No tiene ya que su dominio es todo $\mathbb{R}$.\pause
+\item Puntos de corte.\pause
+\begin{itemize}
+\item Eje $X$ o eje de abscisas.\pause\  Hemos de resolver la ecuación $f(x)=0$, o $x^2-1=0$,\pause\  cuyas soluciones son $x=\pm 1$. \pause Por tanto, corta en los puntos $(-1,0)$ y $(1,0)$.\pause
+\item Eje $Y$ o eje de ordenadas. \pause Hemos de calcular $f(0)=-1$. \pause Por tanto, pasa por el punto $(0,-1)$.\pause
+\end{itemize}
+\item Simetrías.\pause 
+\begin{itemize}
+\item Respecto al eje $Y$: hemos de comprobar si $f(x)=f(-x)$. Vemos que sí se cumple, por tanto, $f$ es simétrica respecto al eje $Y$.\pause
+\item Respecto al origen. Al ser simétrica respecto al eje $Y$, no es simétrica respecto al origen, se tendría que cumplir que $f(-x)=-f(x)$.
+\end{itemize}
+\end{enumerate}
+}
+\end{block}
+
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{4}
+\item Asíntotas.\pause
+\begin{itemize}
+\item Horizontales. Hemos de calcular el límite siguiente:
+$$
+\lim_{x\to\infty}f(x)=\lim_{x\to\infty}\frac{x^2-1}{x^2+1}=1.
+$$
+\pause Al existir el límite anterior, deducimos que tiene la asíntota horizontal $y=1$.
+\end{itemize}
+\end{enumerate}
+}
+\end{block}
+
+
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{4}
+\item Asíntotas.\pause
+\begin{itemize}
+\item Verticales. La asíntota $x=a$ es una asíntota vertical si:\pause
+$$
+\lim_{x\to a}f(x)=\infty.
+$$
+\pause
+En nuestro caso, no existe ningún $a$ que verifique la condición anterior ya que estos valores son puntos de discontinuidad de la función y nuestra función no tiene puntos de discontinuidad.
+\pause
+\item Oblicuas. La asíntota de la forma $y=m\cdot x+n$ es una asíntota oblicua de pendiente:\pause
+$$
+m=\lim_{x\to\infty}\frac{f(x)}{x}=\lim_{x\to\infty}\frac{x^2-1}{x\cdot (x^2+1)}=\lim_{x\to\infty}\frac{x^2-1}{x^3+x}=0.
+$$
+\pause
+Como la pendiente es $m=0$, la asíntota no puede ser oblicua sino horizontal y éstas ya han sido estudiadas.
+\end{itemize}
+\end{enumerate}
+}
+\end{block}
+
+
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{5}
+\item Crecimiento y decrecimiento.\ \pause Para estudiar el crecimiento y el decrecimiento, hemos de calcular la función derivada:\pause
+$$
+f'(x)=\frac{2x\cdot (x^2+1)-2x\cdot (x^2-1)}{(x^2+1)^2}=\frac{4x}{(x^2+1)^2}.
+$$
+\pause
+Igualando la función derivada a cero, calculamos los puntos candidatos a extremos relativos de la función:\pause
+$$
+f'(x)=0,\ \Rightarrow \frac{4x}{(x^2+1)^2}=0,\ \Rightarrow x=0.
+$$
+\pause
+El punto $(0,-1)$ es un candidato a extremo relativo.
+\end{enumerate}
+}
+\end{block}
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{5}
+\item Crecimiento y decrecimiento. A continuación realizamos la tabla siguiente para estudiar el crecimiento y decrecimiento de la función: \pause
+\begin{center}
+\begin{tabular}{lccccc}
+\hline
+$x$ & $-\infty$ && $0$ && $\infty$\\\hline
+$y'$ & & $-$ && $+$\\
+$y$ & & $\searrow$ && $\nearrow$\\\hline
+\end{tabular}
+\end{center}\pause
+Vemos que la función es decreciente en la región $(-\infty,0)$, \pause es creciente en la región $(0,\infty)$ \pause y tiene un mínimo en el punto $(0,-1)$.
+\end{enumerate}
+}
+\end{block}
+
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{6}
+\item Concavidad y convexidad.\ \pause Para estudiar la concavidad y convexidad, hemos de calcular la función derivada segunda:\pause
+\begin{eqnarray*}
+f''(x)&=&\frac{4\cdot (x^2+1)^2-4x\cdot 2(x^2+1)\cdot 2x}{(x^2+1)^4}\\\pause &=&\frac{4(x^2+1)-16x^2}{(x^2+1)^3}=\frac{-12x^2+4}{(x^2+1)^3}.
+\end{eqnarray*}
+\pause
+Igualando la función derivada segunda a cero, calculamos los puntos candidatos a puntos de inflexión:\pause
+$$
+f''(x)=0,\ \Rightarrow \frac{-12x^2+4}{(x^2+1)^3},\ \Rightarrow x=\pm\sqrt{\frac{1}{3}}.
+$$
+\pause
+Los puntos $\left(\pm\sqrt{\frac{1}{3}},-\frac{1}{2}\right)$ son candidatos a puntos de inflexión.
+\end{enumerate}
+}
+\end{block}
+
+## Estudio local de una función
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{enumerate}[a)]
+\setcounter{enumi}{6}
+\item Concavidad y convexidad. \pause A continuación realizamos la tabla siguiente para estudiar el la concavidad y la convexidad de la función: \pause
+\begin{center}
+\begin{tabular}{lccccccc}
+\hline
+$x$ & $-\infty$ && $-\sqrt{\frac{1}{3}}$ && $\sqrt{\frac{1}{3}}$ && $\infty$\\\hline
+$y''$ & & $-$ && $+$ && $-$\\
+$y$ & & $\bigcap$ && $\bigcup$ && $\bigcap$ \\\hline
+\end{tabular}
+\end{center}\pause
+La función es cóncava en la región $\left(-\infty,-\sqrt{\frac{1}{3}}\right)\cup \left(\sqrt{\frac{1}{3}},\infty\right)$, \pause es convexa en la región $\left(-\sqrt{\frac{1}{3}},\sqrt{\frac{1}{3}}\right)$ \pause y los puntos $\left(\pm\sqrt{\frac{1}{3}},-\frac{1}{2}\right)$ son puntos de inflexión.
+\end{enumerate}
+}
+\end{block}
+
+## Estudio local de una función
+
+\begin{block}{\textcolor{green}{Solución (cont.)}}
+\blue{
+\begin{center}
+\includegraphics[width=9cm]{EstudioLocal.png}
+\end{center}
+}
+\end{block}

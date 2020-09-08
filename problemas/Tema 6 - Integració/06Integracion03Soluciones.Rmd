@@ -1,0 +1,394 @@
+---
+title: "Problemas de integración. Integración Impropia."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Estudiar la convergencia de la integral impropia $\displaystyle\int_0^\infty x^n\mathrm{e}^{-x}\,dx$ y calcular su valor en función de $n$ en el caso en que sea convergente.
+
+
+**Solución**
+
+Se trata de una integral impropia de primera especie. 
+
+Veamos primero que es convergente. Para ello, vamos a usar el criterio de comparación por cociente de la  función a integrar $x^n\mathrm{e}^{-x}$ con la función $\mathrm{e}^{-\frac{x}{2}}$:
+$$
+\begin{array}{rl}
+\displaystyle\lim_{x\to\infty}\frac{x^n\mathrm{e}^{-x}}{\mathrm{e}^{-\frac{x}{2}}}& \displaystyle =\lim_{x\to\infty}\frac{x^n}{\mathrm{e}^{\frac{x}{2}}}=\lim_{x\to\infty}\frac{nx^{n-1}}{\frac{1}{2}\mathrm{e}^{\frac{x}{2}}}=2n\lim_{x\to\infty}\frac{x^{n-1}}{\mathrm{e}^{\frac{x}{2}}}=2^2\cdot n\cdot (n-1)\lim_{x\to\infty}\frac{x^{n-2}}{\mathrm{e}^{\frac{x}{2}}}\\[0.5cm] & \displaystyle = \cdots = 2^{n-1}\cdot n!\lim_{x\to\infty}\frac{x}{\mathrm{e}^{\frac{x}{2}}}=2^n\cdot n!\lim_{x\to\infty}\frac{1}{\mathrm{e}^{\frac{x}{2}}}=0.
+\end{array}
+$$
+Como la integral impropia $\displaystyle\int_0^\infty \mathrm{e}^{-\frac{x}{2}}\, dx$ es convergente ya que:
+$$
+\int_0^\infty \mathrm{e}^{-\frac{x}{2}}\, dx =\lim_{t\to\infty}\int_0^t \mathrm{e}^{-\frac{x}{2}}\, dx =\lim_{t\to\infty}\left[-2\mathrm{e}^{-\frac{x}{2}}\right]_0^t =2\lim_{t\to\infty}\left(-\mathrm{e}^{-\frac{t}{2}}+1\right)=2\cdot (0+1)=2,
+$$
+la integral impropia $\displaystyle\int_0^\infty x^n\mathrm{e}^{-x}\,dx$, usando el criterio de comparación por cociente, también lo sería.
+
+Hallemos su valor en función de $n$. Si llamamos $\displaystyle I_n=\int_0^\infty x^n\mathrm{e}^{-x}\,dx$, usando la técnica de integración por partes con:
+$$
+\begin{array}{llcll}
+u  &= x^n,& du &=nx^{n-1}\,dx,\\
+dv & = \mathrm{e}^{-x}, & v&=-\mathrm{e}^{-x},
+\end{array}
+$$
+obtenemos:
+$$
+I_n = \int_0^\infty x^n\mathrm{e}^{-x}\,dx = [-x^n\cdot\mathrm{e}^{-x}]_0^\infty + n\int_0^\infty x^{n-1}\mathrm{e}^{-x}\,dx = n\cdot I_{n-1}.
+$$
+En el último cálculo hemos usado que si $n\geq 0$,
+$$
+\lim_{x\to\infty}x^n\cdot\mathrm{e}^{-x}=0,
+$$
+ya que 
+$$
+\begin{array}{rl}
+\displaystyle\lim_{x\to\infty}x^n\cdot\mathrm{e}^{-x}& \displaystyle =\lim_{x\to\infty}\frac{x^n}{\mathrm{e}^{x}}=\lim_{x\to\infty}\frac{nx^{n-1}}{\mathrm{e}^{x}}=n\lim_{x\to\infty}\frac{x^{n-1}}{\mathrm{e}^{x}}=n\cdot (n-1)\lim_{x\to\infty}\frac{x^{n-2}}{\mathrm{e}^{x}}\\[0.5cm] & \displaystyle = \cdots =  n!\lim_{x\to\infty}\frac{x}{\mathrm{e}^{x}}= n!\lim_{x\to\infty}\frac{1}{\mathrm{e}^{x}}=0.
+\end{array}
+$$
+Como $I_n=n\cdot I_{n-1}$, obtenemos:
+$$
+I_n = n\cdot I_{n-1}=n\cdot (n-1)\cdot I_{n-2}=n!\cdot I_0 =n!\cdot \int_0^\infty\mathrm{e}^{-x}\, dx=n!\cdot \left[-\mathrm{e}^{-x}\right]_0^\infty =n!\cdot (0+1)=n!
+$$
+\newpage
+
+
+2. Estudiar el carácter de las siguientes integrales impropias en función del parámetro $\alpha$:
+    a) $\displaystyle\int_a^b\frac{dx}{(x-a)^\alpha},\ \alpha\in\mathbb{R},\ -\infty<a<b<+\infty$.
+    a) $\displaystyle\int_0^1 x^\alpha\ln x\, dx$.
+    a) $\displaystyle\int_1^2\frac{dx}{x(\ln x)^\alpha}.$
+
+**Solución**
+
+a) Se trataría de una integral impropia de segunda especie. Si hacemos el cambio $t=x-a$, la integral impropia sería en función de la variable $t$:
+$$
+\int_0^{b-a}\frac{dt}{t^\alpha},
+$$
+ya que $dt=dx$, y si $x=a$, $t=0$ y si $x=b$, $t=b-a$.
+
+Estudiemos la convergencia de la integral impropia anterior. Consideremos dos casos:
+
+* $\alpha\neq 1$:
+$$
+\int_0^{b-a}\frac{dt}{t^\alpha}=\lim_{c\to 0^+}\int_c^{b-a}t^{-\alpha}\,dt=\lim_{c\to 0^+}\left[\frac{t^{1-\alpha}}{1-\alpha}\right]_c^{b-a}=\frac{1}{1-\alpha}\left((b-a)^{1-\alpha}-\lim_{c\to 0^+} c^{1-\alpha}\right).
+$$
+A partir de aquí, tenemos dos nuevos casos:
+    * si $1-\alpha <0$ o $\alpha >1$, $\displaystyle \lim_{c\to 0^+} c^{1-\alpha}=\infty$ y la integral sería divergente.
+    * si $1-\alpha >0$ o $\alpha <1$, $\displaystyle \lim_{c\to 0^+} c^{1-\alpha}=0$ y la integral sería convergente de valor
+    $$
+    \int_0^{b-a}\frac{dt}{t^\alpha}=\frac{(b-a)^{1-\alpha}}{1-\alpha}.
+    $$
+* $\alpha=1$:
+$$
+\int_0^{b-a}\frac{dt}{t}=\lim_{c\to 0^+}\int_c^{b-a}t^{-1}\,dt =\lim_{c\to 0^+}[\ln t]_c^{b-a} =\ln (b-a)-\lim_{c\to 0^+}\ln c =\infty.
+$$
+La integral sería divergente.
+
+b) Consideremos dos casos:
+* $\alpha\neq -1$. Apliquemos la técnica de integración por partes con:
+$$
+\begin{array}{llcll}
+u  &= \ln x,& du &=\frac{1}{x}\,dx,\\
+dv & = x^\alpha, & v&=\frac{x^{\alpha+1}}{\alpha+1},
+\end{array}
+$$
+$$
+\int_0^1 x^\alpha\ln x\, dx =\lim_{c\to 0^+}\int_c^1 x^\alpha\ln x\, dx = \lim_{c\to 0^+} \left[\ln x\cdot \frac{x^{\alpha +1}}{\alpha +1}\right]_c^1-\frac{1}{\alpha +1}\int_c^1 x^\alpha\, dx.
+$$
+En los apuntes vimos que la integral impropia $\displaystyle\int_0^1 x^\alpha\, dx$ es convergente si $-1<\alpha$ y, en este caso:
+$$
+\int_0^1 x^\alpha\, dx =\lim_{c\to 0^+}\int_c^1 x^\alpha\, dx=\lim_{c\to 0^+}\left[\frac{x^{\alpha +1}}{\alpha +1}\right]_c^1 =\frac{1}{\alpha +1}\lim_{c\to 0^+}(1-c^{\alpha +1})=\frac{1}{\alpha +1}.
+$$
+Para $\alpha > -1$, la integral inicial valdrá:
+$$
+\begin{array}{rl}
+\displaystyle\int_0^1 x^\alpha\ln x\, dx & \displaystyle =\lim_{c\to 0^+} \left[\ln x\cdot \frac{x^{\alpha +1}}{\alpha +1}\right]_c^1-\frac{1}{(\alpha +1)^2}=\frac{1}{\alpha +1}\left(\lim_{c\to 0^+}\ln x\cdot x^{\alpha +1}-\frac{1}{\alpha +1}\right)\\[0.5cm] &\displaystyle =
+\frac{1}{\alpha+1}\left(\lim_{c\to 0^+}\frac{\ln x}{x^{-(\alpha +1)}}-\frac{1}{\alpha +1}\right)  = \frac{1}{\alpha+1}\left(\lim_{c\to 0^+}\frac{\frac{1}{x}}{-(\alpha +1)x^{-(\alpha +2)}}-\frac{1}{\alpha +1}\right) \\[0.5cm] & \displaystyle = \lim_{c\to 0^+}\frac{1}{-x^{-(\alpha +1)}}-\frac{1}{(\alpha+1)^2}=-\frac{1}{(\alpha +1)^2}.
+\end{array}
+$$
+Por tanto, la integral inicial será convergente en este caso y su valor será $-\frac{1}{(\alpha +1)^2}$.
+
+* $\alpha =-1$. En este caso la integral impropia es:
+$$
+\int_0^1 \frac{\ln x}{x}\, dx.
+$$
+Para resolver la integral impropia anterior, aplicaremos el criterio de comparación por cociente usando las funciones $\frac{\ln x}{x}$ y $\frac{1}{x}$. Si hacemos el límite del cociente, obtenemos:
+$$
+\lim_{x\to 0^+}\frac{\frac{\ln x}{x}}{\frac{1}{x}}=\lim_{x\to 0^+}\ln x=-\infty.
+$$
+Sabemos por los apuntes que la integral impropia $\displaystyle\int_0^1\frac{1}{x}\, dx$ es divergente y usando el límite anterior, podemos afirmar que nuestra integral impropia $\displaystyle\int_0^1 \frac{\ln x}{x}\, dx$ también lo es.
+\newpage
+
+3. Probar que las integrales siguientes son convergentes:
+$$
+I=\int_0^1\frac{\ln x}{1+x^2}\, dx,\quad J=\int_1^\infty \frac{\ln x}{1+x^2}\, dx,
+$$
+y que $I+J=0$.
+
+**Solución**
+
+La integral impropia $I$ es de segunda especie con una singularidad en $x=0$.
+
+Para demostrar que $I$ es convergente aplicaremos la técnica de integración por partes con:
+$$
+\begin{array}{llcll}
+u  &= \ln x,& du &=\frac{1}{x}\,dx,\\
+dv & = \frac{1}{1+x^2}\, dx, & v&=\arctan x.
+\end{array}
+$$
+Usando la técnica anterior, podemos escribir la integral $I$ como:
+$$
+I=\lim_{c\to 0^+}\int_c^1  \frac{\ln x}{1+x^2}\, dx=\lim_{c\to 0^+}[\ln x\cdot\arctan x]_c^1-\lim_{c\to 0^+}\int_c^1 \frac{\arctan x}{x}\, dx.
+$$
+El primer término de la expresión anterior se calcula como:
+$$
+\lim_{c\to 0^+}[\ln x\cdot\arctan x]_c^1 =-\lim_{c\to 0^+}\ln c\cdot \arctan c.
+$$
+Usando que $\displaystyle\lim_{c\to 0^+}\frac{\arctan c}{c}=1$, ya que usando la regla de l'Hôpital,
+$$
+\lim_{c\to 0^+}\frac{\arctan c}{c}=\lim_{c\to 0^+}\frac{\frac{1}{1+c^2}}{1}=1,
+$$
+podemos sustituir $\arctan c$ por $c$ en el límite a calcular y nos queda,
+$$
+\lim_{c\to 0^+}[\ln x\cdot\arctan x]_c^1 =-\lim_{c\to 0^+}\ln c\cdot c =-\lim_{c\to 0^+}\frac{\ln c}{\frac{1}{c}}=-\lim_{c\to 0^+}\frac{\frac{1}{c}}{-\frac{1}{c^2}}=-\lim_{c\to 0^+}-c=0.
+$$
+Entonces la integral $I$ puede escribirse como:
+$$
+I=-\lim_{c\to 0^+}\int_c^1 \frac{\arctan x}{x}\, dx.
+$$
+Ahora bien, tal como hemos indicado antes, $\displaystyle\lim_{x\to 0^+}\frac{\arctan x}{x}=1$, por tanto, usando el criterio de comparación por cociente, como $\displaystyle\int_0^1 1\, dx$ es convergente, la integral impropia $\displaystyle \int_0^1 \frac{\arctan x}{x}\, dx$ también será convergente y como conclusión, la integral impropia $I$ será convergente.
+
+La integral $J$ es una integral impropia de primera especie. Para ver que $J$ es convergente, aplicaremos el criterio de comparación por cociente usando las funciones $\frac{\ln x}{1+x^2}$ y $\frac{1}{x^{\frac{3}{2}}}$:
+$$
+\begin{array}{rl}
+\displaystyle\lim_{x\to\infty}\frac{\frac{\ln x}{1+x^2}}{\frac{1}{x^{\frac{3}{2}}}} & \displaystyle =\lim_{x\to\infty}\frac{x^\frac{3}{2}\cdot\ln x}{1+x^2}=\lim_{x\to\infty}\frac{\frac{3}{2}\cdot x^\frac{1}{2}\cdot\ln x+x^\frac{3}{2}\cdot\frac{1}{x}}{2x}=\lim_{x\to\infty}\frac{\frac{3}{2}\cdot x^\frac{1}{2}\cdot\ln x+x^\frac{1}{2}}{2x}\\[0.5cm] & \displaystyle =\lim_{x\to\infty}\frac{x^\frac{1}{2}\left(\frac{3}{2}\ln x+1\right)}{2x}=\lim_{x\to\infty}\frac{\frac{3}{2}\ln x+1}{2x^\frac{1}{2}}=\lim_{x\to\infty}\frac{\frac{3}{2}\cdot\frac{1}{x}}{2\cdot \frac{1}{2}\cdot x^ {-\frac{1}{2}}}=\frac{3}{2}\lim_{x\to\infty}\frac{1}{x^\frac{1}{2}}=0.
+\end{array}
+$$
+Como la integral impropia $\displaystyle\int_1^\infty \frac{1}{x^\frac{3}{2}}\, dx$ es convergente ya que
+$$
+\int_1^\infty \frac{1}{x^\frac{3}{2}}\, dx =\lim_{c\to\infty}\int_1^c x^{-\frac{3}{2}}\, dx=\lim_{c\to\infty} \left[\frac{x^{-\frac{1}{2}}}{-\frac{1}{2}}\right]_1^c =-2\cdot\left(\lim_{c\to\infty} c^{-\frac{1}{2}}-1\right)=2,
+$$
+la integral impropia $J$ también lo será usando el límite anterior.
+
+Por último veamos que $I+J=0$.
+Para ello, realizamos el cambio de variable siguiente en la integral impropia $I$, $t=\frac{1}{x}$.
+La relación entre los diferenciales es $dt=-\frac{1}{x^2}\,dx=-t^2\, dx$, $dx=-\frac{dt}{t^2}$ y cuando $x=0$, $t=\infty$ y cuando $x=1$, $t=1$. La integral $I$ en la nueva variable $t$ será:
+$$
+I=\int_\infty^1 \frac{\ln\left(\frac{1}{t}\right)}{1+\frac{1}{t^2}}\left(-\frac{1}{t^2}\right)\, dt.
+$$
+Usando que, en general $\displaystyle\int_\infty^1 h(t)\,dt=-\int_1^\infty h(t)\, dt$, podemos escribir la integral anterior como:
+$$
+I=-\int_1^\infty\frac{-\ln t}{\frac{t^2+1}{t^2}}\left(-\frac{1}{t^2}\right)\, dt =-\int_1^\infty \frac{\ln t}{1+t^2}\, dt=-J,
+$$
+con lo cual, $I+J=0$, tal como queríamos demostrar.
+
+\newpage
+
+4. Estudiar el carácter de las siguientes integrales impropias:
+    a) $\displaystyle\int_1^\infty \frac{dx}{2\mathrm{e}^x+1}.$
+    a) $\displaystyle\int_0^1\frac{dx}{\sqrt{1-x^4}}.$
+    a) $\displaystyle\int_0^\frac{\pi}{2}\frac{\sin x}{\sqrt{1-\cos x}}\, dx.$
+    
+**Solución**
+
+a) Para estudiar el carácter de la integral impropia propuesta, realizamos el cambio de variable siguiente $t=\mathrm{e}^x$. La relación entre los diferenciales es $dt=\mathrm{e}^x\,dx=t\,dx$, $dx=\frac{dt}{t}$. Cuando $x=1$, $t=\mathrm{e}$ y cuando $x=\infty$, $t=\infty$:
+$$
+\int_1^\infty \frac{dx}{2\mathrm{e}^x+1}=\int_\mathrm{e}^\infty \frac{1}{2t+1}\cdot \frac{1}{t}\, dt=\int_\mathrm{e}^\infty\frac{1}{t\cdot (2t+1)}\, dt=\frac{1}{2}\lim_{c\to\infty}\int_\mathrm{e}^c
+\frac{1}{t\cdot \left(t+\frac{1}{2}\right)}\, dt.
+$$
+Obtenemos una integral racional. Para resolverla, descomponemos la función a integrar de la forma siguiente:
+$$
+\frac{1}{t\cdot \left(t+\frac{1}{2}\right)} =\frac{A}{t}+\frac{B}{t+\frac{1}{2}}=\frac{A\left(t+\frac{1}{2}\right)+B t}{t\cdot \left(t+\frac{1}{2}\right)}.
+$$
+Como los denominadores son iguales, los numeradores deben serlo:
+$$
+A\left(t+\frac{1}{2}\right)+B t=1.
+$$
+Si damos el valor de $t=0$, obtenemos el valor de $A$:
+$$
+\frac{1}{2}\cdot A=1,\ \Rightarrow A=2,
+$$
+y si damos el valor de $t=-\frac{1}{2}$, obtenemos el valor de $B$:
+$$
+-\frac{1}{2}\cdot B=1,\ \Rightarrow B=-2.
+$$
+La integral a resolver queda, pues:
+$$
+\begin{array}{rl}
+\displaystyle\int_1^\infty \frac{dx}{2\mathrm{e}^x+1} & \displaystyle =\frac{1}{2}\lim_{c\to\infty}\int_\mathrm{e}^c \left(\frac{2}{t}-\frac{2}{t+\frac{1}{2}}\right)\, dt =\lim_{c\to\infty}\left[\ln t-\ln\left(t+\frac{1}{2}\right)\right]_\mathrm{e}^c =\lim_{c\to\infty}\left[\ln\frac{t}{t+\frac{1}{2}}\right]_\mathrm{e}^c\\[0.5cm] & =\displaystyle \lim_{c\to\infty}\ln\frac{c}{c+\frac{1}{2}}-\ln\frac{\mathrm{e}}{\mathrm{e}+\frac{1}{2}} =\ln 1-\left(\ln e-\ln \left(\mathrm{e}+\frac{1}{2}\right)\right)=-1+\ln \left(\mathrm{e}+\frac{1}{2}\right)\approx `r round(-1+log(exp(1)+1/2),4)`.
+\end{array}
+$$
+
+b) Se trataría de una integral impropia de segunda especie con una singularidad en $x=1$. Para resolverla aplicaremos el criterio por cociente usando las funciones $\frac{1}{\sqrt[4]{1-x^4}}$ y $\frac{1}{\sqrt[4]{1-x}}$. 
+
+¿Cuál es la razón de que hayamos escogido la función $\frac{1}{\sqrt[4]{1-x}}$ para comparar?
+
+Veamos intuitivamente cómo se comporta la singuralidad de nuestra función $\frac{1}{\sqrt[4]{1-x^4}}$ en $x=1$. En primer lugar, "separamos" nuestra función en dos partes: una que conserva la singularidad y la otra no: 
+$$
+\frac{1}{\sqrt[4]{1-x^4}}=\frac{1}{\sqrt[4]{(1-x^2)\cdot (1+x^2)}}=\frac{1}{\sqrt[4]{1-x^2}}\cdot \frac{1}{\sqrt[4]{1+x^2}}.
+$$
+Vemos que la función que "hereda" la singularidad $x=1$ es $\frac{1}{\sqrt[4]{1-x^2}}$. La otra, $\frac{1}{\sqrt[4]{1+x^2}}$ no tiene ninguna singularidad en $x=1$.
+
+A su vez, podemos descomponer la función $\frac{1}{\sqrt[4]{1-x^2}}$ como:
+$$
+\frac{1}{\sqrt[4]{1-x^2}}=\frac{1}{\sqrt[4]{1-x}}\cdot\frac{1}{\sqrt[4]{1+x}}.
+$$
+La singularidad $x=1$ se "hereda" en la función $\frac{1}{\sqrt[4]{1-x}}$. En resumen, nuestra función a integrar puede descomponerse de la forma siguiente:
+$$
+\frac{1}{\sqrt[4]{1-x^4}}=\frac{1}{\sqrt[4]{1-x}}\cdot \left(\frac{1}{\sqrt[4]{1+x}}\cdot \frac{1}{\sqrt[4]{1+x^2}}\right).
+$$
+La función del paréntesis no tiene ningún "problema" en $x=1$, es decir, vemos que la función donde hay "problemas" es $\frac{1}{\sqrt[4]{1-x}}$. De ahí que parece que intuitivamente es equivalente estudiar el carácter de la integral impropia $\displaystyle\int_0^1\frac{dx}{\sqrt{1-x^4}}$ a estudiar el carácter de la integral impropia $\displaystyle\int_0^1 \frac{1}{\sqrt[4]{1-x}}\,dx$. Veámoslo:
+$$
+\lim_{x\to 1^-}\frac{\frac{1}{\sqrt[4]{1-x^4}}}{\frac{1}{\sqrt[4]{1-x}}}=\lim_{x\to 1^-}\frac{\frac{1}{\sqrt[4]{1-x}}\cdot \left(\frac{1}{\sqrt[4]{1+x}}\cdot \frac{1}{\sqrt[4]{1+x^2}}\right)}{\frac{1}{\sqrt[4]{1-x}}}=\lim_{x\to 1^-} \frac{1}{\sqrt[4]{1+x}}\cdot \frac{1}{\sqrt[4]{1+x^2}} =\frac{1}{\sqrt[4]{2}}\cdot\frac{1}{\sqrt[4]{2}}=\frac{1}{\sqrt[4]{4}},
+$$
+tal como queríamos ver.
+
+A continuación, estudiemos el carácter de la integral impropia $\displaystyle\int_0^1 \frac{1}{\sqrt[4]{1-x}}\,dx$:
+$$
+\begin{array}{rl}
+\displaystyle \int_0^1 \frac{1}{\sqrt[4]{1-x}}\,dx & \displaystyle =\lim_{c\to 1^-}\int_0^c (1-x)^{-\frac{1}{4}}\,dx=\lim_{c\to 1^-}-\left[\frac{(1-x)^{-\frac{1}{4}+1}}{-\frac{1}{4}+1}\right]_0^c=-\lim_{c\to 1^-}\left[\frac{(1-x)^{\frac{3}{4}}}{\frac{3}{4}}\right]_0^c\\[0.5cm] &\displaystyle = -\frac{4}{3}\lim_{c\to 1^-}((1-c)^\frac{3}{4}-1)=\frac{4}{3}.
+\end{array}
+$$
+Como la integral impropia $\displaystyle\int_0^1 \frac{1}{\sqrt[4]{1-x}}\,dx$ es convergente, nuestra integral impropia $\displaystyle\int_0^1\frac{dx}{\sqrt{1-x^4}}$ también lo será al tener las dos el mismo carácter.
+
+c) La función de la integral impropia  $\displaystyle\int_0^\frac{\pi}{2}\frac{\sin x}{\sqrt{1-\cos x}}\, dx$ sólo puede tener problemas en $x=0$ ya que este valor es el único valor donde se anula el denominador $\sqrt{1-\cos x}$ en el intervalo $\left(0,\frac{\pi}{2}\right)$. Veamos si realmente es una singularidad. Usando la igualdad trigonométrica $\sin\left(\frac{x}{2}\right)=\sqrt{\frac{1-\cos x}{2}}$, de donde $\sqrt{1-\cos x}=\sqrt{2}\sin\left(\frac{x}{2}\right)$:
+$$
+\lim_{x\to 0^+} \frac{\sin x}{\sqrt{1-\cos x}}=\lim_{x\to 0^+}\frac{\sin x}{\sqrt{2}{\sin\left(\frac{x}{2}\right)}}=\frac{1}{\sqrt{2}}\lim_{x\to 0^+}\frac{\cos x}{\frac{1}{2}\cos\left(\frac{x}{2}\right)}=\frac{2}{\sqrt{2}}=\sqrt{2}.
+$$
+Usando el criterio por cociente, como la integral $\displaystyle \int_0^\frac{\pi}{2} 1\, dx$ es convergente, nuestra integral impropia $\displaystyle\int_0^\frac{\pi}{2}\frac{\sin x}{\sqrt{1-\cos x}}\, dx$ también lo será ya que gracias al límite anterior, las dos integrales anteriores tienen el mismo carácter.
+
+\newpage
+
+5. Estudiar el carácter de las siguientes integrales impropias en función del parámetro $\alpha$:
+    a) $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$.
+    a) $\displaystyle\int_1^\infty \frac{\sin x}{x^\alpha}\, dx,\ \alpha >0.$
+    a) $\displaystyle\int_1^\infty \sin(x^\alpha)\, dx,\ \alpha >1$.
+
+**Solución**
+
+a) Primero tenemos que analizar las posibles singularidades de la integral impropia $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$. Distinguimos los casos siguientes:
+    * $\alpha >1$: es de primera especie ya que el polinomio $x^4-1$ no tiene raíces reales en el intervalo $[\alpha,\infty)$.
+    * $-1<\alpha \leq 1$ es de tercera especie ya que en este caso tiene dos puntos singulares: $c=1,\ \infty$.
+    * $\alpha \leq -1$ es de tercera especie ya que tiene tres puntos singulares: $c=-1,\ 1,\ \infty$.
+    
+Estudiemos cada caso por separado:
+
+* $\alpha >1$. En este caso, vamos a aplicar el criterio por cociente usando las funciones $\frac{x^\alpha}{x^4-1}$ y $x^{\alpha -4}$ ya que cuando $x\to\infty$ $\frac{x^\alpha}{x^4-1}\approx x^{\alpha -4}$:
+$$
+\lim_{x\to\infty}\frac{\frac{x^\alpha}{x^4-1}}{x^{\alpha-4}}=1.
+$$
+Por tanto, las integrales impropias $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$ y $\displaystyle\int_\alpha^\infty x^{\alpha -4}\, dx$ tienen el mismo carácter. Estudiemos el carácter de la integral impropia $\displaystyle\int_\alpha^\infty x^{\alpha -4}\, dx$:
+$$
+\begin{array}{rl}
+\displaystyle\int_\alpha^\infty x^{\alpha -4}\, dx & \displaystyle=\lim_{t\to\infty}\int_\alpha^t x^{\alpha -4}\, dx =\begin{cases} \displaystyle\lim_{t\to\infty}\left[\frac{x^{\alpha -3}}{\alpha -3}\right]_\alpha^t, & \mbox{ si }\alpha\neq 3,\\
+\displaystyle\lim_{t\to\infty}[\ln x]_\alpha^t, & \mbox{ si }\alpha=3,\end{cases}=
+\begin{cases} \displaystyle\lim_{t\to\infty}\frac{1}{\alpha-3}\left(t^{\alpha -3}-\alpha^{\alpha-3}\right), & \mbox{ si }\alpha\neq 3,\\
+\displaystyle\lim_{t\to\infty}(\ln t-\ln\alpha), & \mbox{ si }\alpha=3,\end{cases}\\ &\displaystyle = 
+\begin{cases} \begin{cases}\infty, & \mbox{ si }\alpha >3,\\ \frac{\alpha^{\alpha-3}}{3-\alpha}, & \mbox{ si }1<\alpha < 3\end{cases}, & \mbox{ si }\alpha\neq 3,\\
+\infty, & \mbox{ si }\alpha=3.\end{cases}
+\end{array}
+$$
+En resumen, si $1<\alpha<3$, nuestra integral impropia $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$ será convergente y si $\alpha \geq 3$, será divergente.
+
+* $-1< \alpha\leq 1$. En este caso, como la integral impropia es de tercera especie separamos dicha integral impropia de la forma siguiente con el objetivo de tener integrales en las que haya sólo un punto singular:
+$$
+\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx=\int_\alpha^{1}\frac{x^\alpha}{x^4-1}\, dx+\int_1^{2}\frac{x^\alpha}{x^4-1}\, dx+\int_2^\infty\frac{x^\alpha}{x^4-1}\, dx.
+$$
+Usando un razonamiento similar al del apartado anterior, como $\alpha-3 \in (-4,-2]$ ya que $\alpha\in (-1,1]$, tenemos que la integral impropia $\displaystyle \int_2^\infty\frac{x^\alpha}{x^4-1}\, dx$ será convergente ya que vimos que tiene el mismo carácter que la integral impropia $\displaystyle \int_2^\infty x^{\alpha -4}\,dx$ y esta última será convergente ya que $\alpha -3<0$ y por tanto:
+$$
+\int_\alpha^\infty x^{\alpha -4}\, dx =\lim_{t\to\infty}\int_\alpha^t x^{\alpha -4}\, dx=\lim_{t\to\infty}\frac{1}{\alpha -3}\left(t^{\alpha-3}-\alpha^{\alpha-3}\right)=\frac{\alpha^{\alpha-3}}{3-\alpha}.
+$$
+
+\newpage
+
+Estudiemos la convergencia de las otras dos integrales impropias de segunda especie. Dichas integrales impropias tienen la singularidad en $x=1$. Entonces, si descomponemos la función a integrar, $\frac{x^\alpha}{x^4-1}$ como:
+$$
+\frac{x^\alpha}{x^4-1} =\frac{1}{x-1}\cdot \frac{x^\alpha}{(x+1)\cdot (x^2+1)},
+$$
+vemos que la función que hereda la singularidad es $\frac{1}{x-1}$. Entonces, si aplicamos el criterio por cociente a las funciones $\frac{x^\alpha}{x^4-1}$ y $\frac{1}{x-1}$, obtenemos,
+$$
+\lim_{x\to 1}\frac{\frac{x^\alpha}{x^4-1}}{\frac{1}{x-1}}=\lim_{x\to 1}\frac{\frac{1}{x-1}\cdot \frac{x^\alpha}{(x+1)\cdot (x^2+1)}}{\frac{1}{x-1}}=\lim_{x\to 1}\frac{x^\alpha}{(x+1)\cdot (x^2+1)}=\frac{1}{2\cdot 2}=\frac{1}{4}.
+$$
+Por tanto, las integrales impropias $\displaystyle \int_\alpha^{1}\frac{x^\alpha}{x^4-1}\, dx$ y $\displaystyle\int_\alpha^1\frac{1}{x-1}$ tienen el mismo carácter.
+
+También deducimos que las integrales impropias $\displaystyle \int_1^{2}\frac{x^\alpha}{x^4-1}\, dx$ y $\displaystyle\int_1^2\frac{1}{x-1}\, dx$ tienen el mismo carácter.
+
+Estudiemos el carácter de las integrales impropias $\displaystyle\int_\alpha^1\frac{1}{x-1}\, dx$ y $\displaystyle\int_1^2\frac{1}{x-1}\, dx$:
+$$
+\begin{array}{rl}
+\displaystyle \int_\alpha^1\frac{1}{x-1}\, dx & \displaystyle =\lim_{t\to 1^-}\int_\alpha^t\frac{1}{x-1}\, dx=\lim_{t\to 1^-}[\ln|x-1|]_\alpha^t =\lim_{t\to 1^-}(\ln |t-1|-\ln |\alpha -1|)=-\infty,\\[0.25cm]
+\displaystyle \int_1^2\frac{1}{x-1}\, dx & \displaystyle=\lim_{t\to 1^+}\int_t^2\frac{1}{x-1}\, dx=\lim_{t\to 1^-}[\ln|x-1|]_t^2 =\lim_{t\to 1^-}\ln |t-1|=-\infty,
+\end{array}
+$$
+Como las dos integrales anteriores son divergentes, concluimos que la integral impropia de tercera especie $\displaystyle \int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$ es divergente.
+
+* $\alpha\leq -1$. En este caso, como la integral impropia es de tercera especie separamos dicha integral impropia de la forma siguiente con el objetivo de tener integrales en las que haya sólo un punto singular:
+$$
+\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx=\int_\alpha^{-1}\frac{x^\alpha}{x^4-1}\, dx+\int_{-1}^{0}\frac{x^\alpha}{x^4-1}\, dx+\int_0^{1}\frac{x^\alpha}{x^4-1}\, dx+\int_1^{2}\frac{x^\alpha}{x^4-1}\, dx+\int_2^\infty\frac{x^\alpha}{x^4-1}\, dx.
+$$
+Usando un razonamiento similar al del apartado anterior, podemos ver que las 4 primeras integrales impropias de la descomposición anterior serán divergentes y por tanto, la integral impropia de tercera especie $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$ también será divergente.
+
+b) Vamos a aplicar el criterio de Abel-Dirichlet. Consideramos $g(x)=\frac{1}{x^\alpha}=x^{-\alpha}$ y $s(x)=\sin x$.
+
+La función $g'(x)=-\alpha\cdot x^{-\alpha -1}$ es absolutamente integrable si $-\alpha -1<-1$ o $\alpha >0$ ya que
+$$
+\int_1^\infty |g'(x)|\, dx=|\alpha|\lim_{t\to\infty}\int_1^t x^{-\alpha -1}\, dx=|\alpha|\lim_{t\to\infty} \left[\frac{x^{-\alpha}}{-\alpha}\right]_1^t =\lim_{t\to\infty}(1-t^{-\alpha})=1.
+$$
+
+La función primitiva $S(t)=\int_0^t \sin x=[-\cos x]_0^t =1-\cos t$ está acotada ya que $|S(t)=1-\cos t|\leq 2$.
+
+Usando el criterio de Abel-Dirichlet podemos decir que la integral impropia  $\displaystyle\int_1^\infty \frac{\sin x}{x^\alpha}\, dx$ es convergente si $\alpha >0$.
+
+c) En primer lugar, realizamos el cambio de variable siguiente $u=x^\alpha$. La relación entre los diferenciales será: 
+$$
+du=\alpha\cdot x^{\alpha -1}\, dx=\alpha\cdot u^{\frac{\alpha -1}{\alpha}}\, dx\ \Rightarrow dx=\frac{du}{\alpha\cdot u^{1-\frac{1}{\alpha}}},
+$$
+y si $x=1$, $u=1$ y si $x=\infty$, $u=\infty$, si $\alpha >1$.
+La integral impropia vale en la nueva variable $u$: $\displaystyle\int_1^\infty\frac{\sin u}{\alpha\cdot u^{1-\frac{1}{\alpha}}}\, du$.
+
+A continuación, aplicamos el criterio de Abel-Dirichlet para resolver la integral anterior con $g(u)=\frac{1}{u^{1-\frac{1}{\alpha}}}=u^{\frac{1}{\alpha}-1}$ y $s(u)=\sin u$.
+
+La función $g'(u)=\left(\frac{1}{\alpha}-1\right)\cdot u^{\frac{1}{\alpha}-2}$ es absolutamente integrable si $\frac{1}{\alpha} -2<-1$ o $\alpha >1$ ya que
+$$
+\int_1^\infty |g'(u)|\, du=\left|\frac{1}{\alpha}-1\right|\lim_{t\to\infty}\int_1^t u^{\frac{1}{\alpha}-2}\, du=\lim_{t\to\infty} \left|\left[u^{\frac{1}{\alpha}-1}\right]_1^t\right|=1.
+$$
+En el apartado anterior, vimos que la primitiva $S(u)$ está acotada. Por tanto, la integral impropia $\displaystyle\int_1^\infty\frac{\sin u}{\alpha\cdot u^{1-\frac{1}{\alpha}}}\, du$ es convergente.
+\newpage
+
+6. Explicar por qué el valor de las integrales siguientes no es correcto, estudiar su convergencia y, en el caso en que sean convergentes, hallar su valor:
+$$
+\int_{-1}^1\frac{dx}{x^2}=-2,\quad \int_0^4\frac{dx}{(x-1)^2}=\frac{4}{3}.
+$$
+
+**Solución**
+
+La integral impropia $\displaystyle \int_{-1}^1\frac{dx}{x^2}$ tiene un punto singular en $x=0$. Por tanto, es de tercera especie y tiene que separarse de la forma siguiente:
+$$
+\int_{-1}^1\frac{dx}{x^2} =\int_{-1}^0 \frac{dx}{x^2}+\int_0^1 \frac{dx}{x^2},
+$$
+separándola en dos integrales de segunda especie. Estudiemos la convergencia de cada una de las dos integrales anteriores:
+$$
+\begin{array}{rl}
+\displaystyle \int_{-1}^0 \frac{dx}{x^2} & \displaystyle =\lim_{t\to 0^-}\int_{-1}^t \frac{dx}{x^2}=\lim_{t\to 0^-}\left[-\frac{1}{x}\right]_{-1}^t =-\lim_{t\to 0^-}\left(\frac{1}{t}+1\right)=\infty,\\[0.5cm]
+\displaystyle \int_{0}^1 \frac{dx}{x^2} & \displaystyle =\lim_{t\to 0^+}\int_{t}^1 \frac{dx}{x^2}=\lim_{t\to 0^+}\left[-\frac{1}{x}\right]_{t}^1 =-\lim_{t\to 0^-}\left(1-\frac{1}{t}\right)=\infty.
+\end{array}
+$$
+Las dos integrales de segunda especie son divergentes y, por tanto, la integral impropia de tercera especie  $\displaystyle \int_{-1}^1\frac{dx}{x^2}$ también lo es. Concluimos que el valor $-2$ es incorrecto ya que implicaría que la integral sería convergente y hemos visto que no lo es.
+
+
+
+La integral impropia $\displaystyle \int_{0}^4\frac{dx}{(x-1)^2}$ tiene un punto singular en $x=1$. Por tanto, es de tercera especie y tiene que separarse de la forma siguiente:
+$$
+\int_{0}^4\frac{dx}{(x-1)^2} =\int_{0}^1 \frac{dx}{(x-1)^2}+\int_1^4 \frac{dx}{(x-1)^2},
+$$
+separándola en dos integrales de segunda especie. Estudiemos la convergencia de cada una de las dos integrales anteriores:
+$$
+\begin{array}{rl}
+\displaystyle \int_{0}^1 \frac{dx}{(x-1)^2} & \displaystyle =\lim_{t\to 1^-}\int_{0}^t \frac{dx}{(x-1)^2}=\lim_{t\to 1^-}\left[-\frac{1}{x-1}\right]_{0}^t =-\lim_{t\to 1^-}\left(\frac{1}{t-1}+1\right)=\infty,\\[0.5cm]
+\displaystyle \int_{1}^4 \frac{dx}{(x-1)^2} & \displaystyle =\lim_{t\to 1^+}\int_{t}^4 \frac{dx}{(x-1)^2}=\lim_{t\to 1^+}\left[-\frac{1}{x-1}\right]_{t}^4 =-\lim_{t\to 1^+}\left(\frac{1}{3}-\frac{1}{t-1}\right)=\infty.
+\end{array}
+$$
+Las dos integrales de segunda especie son divergentes y, por tanto, la integral impropia de tercera especie  $\displaystyle \int_{0}^4\frac{dx}{(x-1)^2}$ también lo es. Concluimos que el valor $\frac{4}{3}$ es incorrecto ya que implicaría que la integral sería convergente y hemos visto que no lo es.
+

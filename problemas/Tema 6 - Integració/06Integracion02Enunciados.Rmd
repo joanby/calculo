@@ -1,0 +1,31 @@
+---
+title: "Problemas de integración. Teorema fundamental del cálculo."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Hallar las integrales definidas siguientes:
+    a) $\displaystyle\int_0^{\frac{\pi}{4}}\cos^2 x\, dx$.
+    a) $\displaystyle\int_0^{1}\frac{x^2}{\sqrt{x^6+4}}\, dx$.
+    a) $\displaystyle\int_0^1 \frac{\mathrm{e}^x}{1+\mathrm{e}^{2x}}dx$.
+    a) $\displaystyle\int_0^{\mathrm{e}}\frac{\sin(\ln x)}{x}\, dx$.
+1. Resolver las integrales siguientes haciendo un cambio de variable adecuado:
+    a) $\displaystyle\int_0^4 \frac{1}{1+\sqrt{x}}dx$.
+    a) $\displaystyle\int_0^{\ln 5}\frac{\mathrm{e}^x\sqrt{\mathrm{e}^x-1}}{\mathrm{e}^x+3}dx$.
+1. Resolver las integrales siguientes usando la técnica de integración por partes:
+    a) $\displaystyle\int_0^1 x\cdot\mathrm{e}^{-x}\, dx.$
+    a) $\displaystyle\int_0^{2\pi} \mathrm{e}^{-a x}\sin (bx)\, dx,$ con $a>0$.
+    a) $\displaystyle\int_1^\mathrm{e}x^n\cdot \ln x\, dx,$ con $n\in\mathbb{N}$.
+    a) $\displaystyle\int_0^2 x^3\cdot\arctan x\, dx.$
+1. Hallar los extremos relativos de la función siguiente:
+$$
+f(x)=\int_0^x \frac{\sin t}{t} \, dt, \ x > 0.
+$$
+1. Calcular las derivadas de las funciones siguientes:
+    a) $\displaystyle f_1(x) = \int_1^{\ln (x^2+1)} e^t \> dt.$
+    a) $\displaystyle f_2(x) = \int_x^0 \sqrt{1+t^4} \> dt.$
+    a) $\displaystyle f_3(x) = \int_{1/x}^{\sqrt{x}} \cos t^2 \> dt.$

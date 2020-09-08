@@ -1,0 +1,411 @@
+---
+title: "Problemas de integración. Aplicaciones de la integral."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Hallar el área limitada por la curva $y^2=\frac{1-x}{1+x}$ y su asíntota.
+
+**Solución**
+
+Veamos primero cómo es la gráfica de la curva para idear una estrategia con el objetivo de encontrar el área que delimita:
+
+
+```{r,message=FALSE,echo=FALSE}
+xmin=-1
+xmax=1
+ymin=-8
+ymax=8
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=8
+f = function(x){sqrt((1-x)/(1+x))}
+g = function(x){-sqrt((1-x)/(1+x))}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-15*tolx,"x")
+text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+   if(xmin+((xmax-xmin)/quantsx)*i != 0){
+lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+}
+
+for (i in 0:(quantsy)){
+   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+lines(x,g(x),col="blue")
+abline(v=-1,lty=2,col="green")
+
+```
+
+
+La primera observación es que la asíntota de la curva se encuentra en $x=-1$ ya que $\displaystyle\lim_{x\to -1}\frac{1-x}{1+x}=\infty$.
+Observamos por la gráfica que la curva $\displaystyle y^{2}=\frac{1-x}{1+x}$ no se puede expresar como una función real de variable real de la forma $y=f(x)$ ya que dado un valor de $x$ existen dos posibles valores de $y$. Entonces, si despejamos $y$ de la expresión de la curva vemos que:
+$$
+y=\pm\sqrt{\frac{1-x}{1+x}}
+$$
+Luego, de esta expresión y de la gráfica podemos observar que el área que queremos calcular se puede expresar como la suma del valor absoluto de la integral de $\displaystyle f(x)=\sqrt{\frac{1-x}{1+x}}$ que en este caso es $\displaystyle \int_{-1}^{1}\sqrt{\frac{1-x}{1+x}}$ entre $-1$ y $1$ (pintada de rojo) más el valor absoluto de la integral de $g(x)=-\sqrt{\frac{1-x}{1+x}}$ que en este caso es $\displaystyle -\int_{-1}^{1}-\sqrt{\frac{1-x}{1+x}}$ entre $-1$ y $1$ (pintada de azul):
+
+\begin{align*}
+\int_{-1}^{1}\sqrt{\frac{1-x}{1+x}}dx-\int_{-1}^{1}-\sqrt{\frac{1-x}{1+x}}dx  & = 2\int_{-1}^{1}\sqrt{\frac{1-x}{1+x}}dx =
+2\int_{-1}^{1}\sqrt{\frac{1-x}{1+x}}\cdot\sqrt{\frac{1-x}{1+x}}dx=2\int_{-1}^{1}\frac{1-x}{\sqrt{1-x^{2}}}dx
+\\ & =2\int_{-1}^{1}\frac{1}{\sqrt{1-x^{2}}}dx+2\int_{-1}^{1}\frac{-x}{\sqrt{1-x^{2}}}dx.
+\end{align*}
+
+Ahora vemos que cada uno de los sumandos anteriores es una integral inmediata:
+\begin{align*}
+2\int_{-1}^{1}\frac{1}{\sqrt{1-x^{2}}}\, dx & =2[\arcsin(x)]_{-1}^1 =2(\arcsin(1)-\arcsin(-1))=2\left(\frac{\pi}{2}-\left(-\frac{\pi}{2}\right)\right)=\pi,
+\\  2\int_{-1}^{1}\frac{-x}{\sqrt{1-x^{2}}}dx & =\int_{-1}^{1}\frac{-2x}{\sqrt{1-x^{2}}}\, dx=\left[\frac{\sqrt{1-x^{2}}}{\frac{1}{2}}\right]_{-1}^1 =\frac{\sqrt{1-1^{2}}}{\frac{1}{2}}-\frac{\sqrt{1-(-1)^{2}}}{\frac{1}{2}}=0.
+\end{align*}
+Por lo tanto, el área que delimita la curva es $\pi$.
+\newpage
+2. Hallar el área limitada por la curva $y=x(x-1)(x-2)$ y el eje $x$.
+
+**Solución**
+
+Para encontrar el área limitada por esta curva primero veamos la imagen de su gráfica:
+
+```{r,message=FALSE,echo=FALSE}
+xmin=-1
+xmax=3
+ymin=-2
+ymax=2
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){x*(x-1)*(x-2)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-15*tolx,"x")
+text(toly,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+   if(xmin+((xmax-xmin)/quantsx)*i != 0){
+lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+text(xmin+((xmax-xmin)/quantsx)*i,-1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+}
+
+for (i in 0:(quantsy)){
+   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+
+
+```
+
+
+
+
+
+
+Primero, a partir de la gráfica se puede deducir que el área que nos interesa está  comprendida entre $x=0$ y $x=2$, y que en $x=1$ la función cambia de signo y por lo tanto podemos observar que para $x\in (0,1),\  f(x)>0$ y que para $x\in (1,2),\  f(x)<0$. Entonces, como la función entre $x=1$ y $x=2$ es negativa, su área también lo será. Esto hace que tengamos que cambiar el signo de dicha área para obtener un área positiva:
+\begin{align*}
+\int_{0}^{1}x(x-1)(x-2)dx+\int_{1}^{2}-x(x-1)(x-2)\, dx &=\int_{0}^{1}x^{3}-3x^{2}+2x\, dx+\int_{1}^{2}-x^{3}+3x^{2}-2x\, dx \\ & = \left[\frac{x^{4}}{4}-x^{3}+x^{2}\right]_0^1 +\left[-\frac{x^{4}}{4}+x^3-x^2\right]_1^2 \\ 
+ & =\frac{1^{4}}{4}-1^2+1^2-\frac{2^{4}}{4}+2^3-2^2+\frac{1^{4}}{4}-1^3+1^2=\frac{1}{2}.
+\end{align*}
+\newpage
+
+3. Hallar el área limitada por la curva $f(x)=x\cdot\mathrm{e}^{-x}$ y $g(x)=x^2\cdot \mathrm{e}^{-x}$.
+
+**Solución**
+
+Veamos primero las gráficas de las funciones:
+
+```{r,message=FALSE,echo=FALSE}
+xmin=-1
+xmax=2
+ymin=-1
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=3
+quantsy=2
+f = function(x){x*exp(-x)}
+g = function(x){x^{2}*exp(-x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-15*tolx,"x")
+text(toly,ymax+toly,"y")
+for (i in 0:(quantsx)){
+   if(xmin+((xmax-xmin)/quantsx)*i != 0){
+lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+text(xmin+((xmax-xmin)/quantsx)*i,-1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+}
+
+for (i in 0:(quantsy)){
+lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+lines(x,g(x),col="blue")
+
+```
+
+Primero hallamos los valores $x$ que intersecan ambas gráficas: $\displaystyle g(x)=f(x)\Rightarrow g(x)-f(x)=0$:
+$$
+g(x)-f(x)=x\cdot\mathrm{e}^{-x}-x^2\cdot \mathrm{e}^{-x}=x\cdot\mathrm{e}^{-x}\cdot(1-x)=0.
+$$
+Sabemos que $\mathrm{e}^{-x}\neq 0$. Por tanto, los valores $x$ de los puntos de intersección de las curvas $y=f(x)$ e $y=g(x)$ son $x=0,1$. Nótese también que para $x\in (0,1)$ $g(x)-f(x)>0$. Por lo tanto podemos calcular el área comprendida entre estas dos curvas como:
+$$
+\int_{0}^{1}g(x)-f(x)dx=\int_{0}^{1} x\mathrm{e}^{-x}-x^{2}\mathrm{e}^{-x}\,dx=\int_0^1 x\mathrm{e}^{-x}\, dx-\int_0^1 x^{2}\mathrm{e}^{-x}\,dx=I_1-I_2.
+$$
+Para hallar la integral definida anterior, aplicaremos el método de integración por partes con
+$u=x,dv=\mathrm{e}^{-x}dx$ en la primera integral y $u=x^{2},dv=\mathrm{e}^{-x}$ en la segunda.
+
+El valor de la primera integral usando que $du=dx$ y $v=-\mathrm{e}^{-x}$ será:
+$$
+I_1=[-x\cdot\mathrm{e}^{-x}]_0^1 +\int_0^1\mathrm{e}^{-x}\, dx=-\mathrm{e}^{-1}+[-\mathrm{e}^{-x}]_0^1 =-\mathrm{e}^{-1}-\mathrm{e}^{-1}+1=1-2\mathrm{e}^{-1}=1-\frac{2}{\mathrm{e}}.
+$$
+
+El valor de la segunda integral usando que $du=2xdx$ y $v=-\mathrm{e}^{-x}$ será:
+$$
+I_2=[-x^2\cdot\mathrm{e}^{-x}]_0^1 +2\int_0^1 x\mathrm{e}^{-x}\, dx= -\mathrm{e}^{-1}+2I_1=-\frac{1}{\mathrm{e}}+2\left(1-\frac{2}{\mathrm{e}}\right)=2-\frac{5}{\mathrm{e}}.
+$$
+El área pedida será:
+$$
+I_1-I_2=1-\frac{2}{\mathrm{e}}-2+\frac{5}{\mathrm{e}}=-1+\frac{3}{\mathrm{e}}\approx `r round(-1+3/exp(1),4)`.
+$$
+
+\newpage
+
+4. Hallar los volúmenes engendrados al girar alrededor del eje $x$ por los recintos de ordenadas de las funciones siguientes:
+    a) $f(x)=x^2$, $x=-1$, $x=2$.
+    b) $f(x)=\sin x$, $x=0$, $x=\pi$.
+
+**Solución**   
+
+a) La gráfica de la función es la siguiente:
+
+```{r,message=FALSE,echo=FALSE}
+xmin=-2
+xmax=2
+ymin=-4
+ymax=4
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=8
+f = function(x){x^2}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-15*tolx,"x")
+text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+   if(xmin+((xmax-xmin)/quantsx)*i != 0){
+lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+text(xmin+((xmax-xmin)/quantsx)*i,-1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+}
+
+for (i in 0:(quantsy)){
+   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+```
+
+El volumen de revolución sobre el eje $x$ será:
+$$
+\pi\int_{-1}^{2}f(x)^{2}dx=\pi\int_{-1}^{2}x^{4}dx=\pi\left[\frac{x^5}{5}\right]_{-1}^2=\pi\left(\frac{2^{5}}{5}-\frac{-1^{5}}{5}\right)=\pi\frac{33}{5}\approx `r round(pi*33/5,4)`.
+$$
+
+b) La gráfica de la función es la siguiente:
+
+```{r,message=FALSE,echo=FALSE}
+xmin=0
+xmax=4
+ymin=-1
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=2
+f = function(x){sin(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-5*tolx,"x")
+text(2*toly,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+   if(xmin+((xmax-xmin)/quantsx)*i != 0){
+lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+text(xmin+((xmax-xmin)/quantsx)*i,-1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+}
+
+for (i in 0:(quantsy)){
+   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+text(3*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+```
+
+El volumen engengrado sera como una especie de dos sólidos separados en $x=\pi$ que es donde la función $\sin x$ cambia de signo. A su izquierda aparecerá una especie de peonza y a su derecha una especie de paraboloide.
+
+El volumen total será:
+
+$$
+\pi\int_{0}^{\pi}f(x)^{2}\, dx=\pi\int_{0}^{\pi}\sin^{2}x \, dx=\pi\int_{0}^{\pi}\frac{1-\cos(2x)}{2}\, dx=\pi\left[\frac{x}{2}-\frac{1}{2}\cdot \frac{\sin(2x)}{2}\right]_0^\pi =\pi\cdot \frac{\pi}{2}=\frac{\pi^2}{2}\approx `r round(pi^2/2,4)`.
+$$
+\newpage
+
+5. Hallar la longitud del arco de curva $y^2=x^3$ desde el origen al punto $(4,8)$.
+
+**Solución**
+
+El gráfico de la curva es el siguiente:
+
+```{r,message=FALSE,echo=FALSE}
+xmin=0
+xmax=4
+ymin=-7
+ymax=7
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=7
+f = function(x){x^{3/2}}
+g = function(x){-x^{3/2}}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-15*tolx,"x")
+text(toly/2,ymax+toly/2,"y")
+for (i in 0:(quantsx)){
+   if(xmin+((xmax-xmin)/quantsx)*i != 0){
+lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+text(xmin+((xmax-xmin)/quantsx)*i,-1.25*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+}
+
+for (i in 0:(quantsy)){
+   lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+text(3.5*tolx,ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+}
+lines(x,f(x),col="red")
+lines(x,g(x),col="blue")
+```
+
+
+Observando la gráfica y teniendo en cuenta la expresión de la curva $y=\pm\sqrt{x^{3}}$, vemos que el arco que va desde el origen hasta el punto (4,8) corresponde a la función $f(x)=\sqrt{x^{3}}$ (pintada de color rojo). Por lo tanto, usando que $f'(x)=\frac{3}{2}x^{\frac{1}{2}}$, la longitud del arco será:
+$$
+\int_{0}^{4}\sqrt{1+f'(x)^{2}}\, dx=\int_{0}^{4}\sqrt{1+\frac{9}{4}x}\, dx=\frac{4}{9}\left[\frac{(1+\frac{9}{4}x)^{\frac{3}{2}}}{\frac{3}{2}}\right]_0^4=\frac{4}{9}\left(\frac{10^{\frac{3}{2}}}{\frac{3}{2}}-\frac{2}{3}\right)=\frac{8}{27} \left(10 \sqrt{10}-1\right)\approx `r round((8/27)*(10*sqrt(10)-1),4)`. 
+$$
+\newpage
+
+6. Hallar el volumen del cuerpo engendrado al girar, alrededor del eje $y$, la parte de la parábola $y^2=4ax$, que intercepta la recta $x=a$.
+
+**Solución**
+
+La gráfica de la parábola $y^2=4ax$ entre $x=0$ y $x=a$ es la siguiente:
+
+```{r,message=FALSE,echo=FALSE}
+xmin=0
+xmax=1.2
+ymin=-2
+ymax=2
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=4
+f = function(x){2*sqrt(x)}
+g = function(x){-2*sqrt(x)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=1,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+text(xmax-3*tolx,-15*tolx,"x")
+text(toly/4,ymax+toly/2,"y")
+# for (i in 0:(quantsx)){
+#    if(xmin+((xmax-xmin)/quantsx)*i != 0){
+# lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+# text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+# }
+
+# for (i in 0:(quantsy)){
+#    lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+# text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+# }
+lines(x,f(x),col="red")
+lines(x,g(x),col="blue")
+abline(v=1,lty=2,col="green")
+text(1.015,-toly,expression("a"))
+```
+
+Se puede observar que la función pintada de roja corresponde a $f(x)=2\sqrt{ax}$ y la pintada de azul,  a $f(x)=-2\sqrt{ax}$. El volumen de revolución sobre el eje $y$ será la suma de los volúmenes generado por estas dos funciones, que al ser la misma pero cambiada de signo se puede expresar como:
+$$
+4\pi\int_{0}^{a}2x\sqrt{ax}dx=8\pi\sqrt{a}\int_{0}^{a}x^{\frac{3}{2}}dx=8\pi\sqrt{a}\frac{a^{\frac{5}{2}}}{\frac{5}{2}}=\frac{16a^{3}\pi}{5}.
+$$
+\newpage
+
+7. Un segmento parabólico recto, de base igual a $2a$ y de altura $h$ gira alrededor de su base. Determinar el volumen del cuerpo de revolución que se engendra (*limón de Cavalieri*).
+
+**Solución**
+
+La gráfica del segmento parabólico de base $2a$ se puede interpretar como una parábola que pasa por los puntos $(-a,0)$ y $(a,0)$. Como la altura es $h$, pasa por el punto $(0,h)$:
+
+
+
+```{r,message=FALSE,echo=FALSE}
+xmin=-2
+xmax=2
+ymin=-1
+ymax=1
+tolx=0.01*(xmax-xmin)
+toly=0.05*(ymax-ymin)
+quantsx=4
+quantsy=2
+f = function(x){-(x-2)*(x+2)*(1/4)}
+plot(c(xmin-tolx,xmax+tolx,xmin-tolx,xmax+tolx),c(ymin-toly,ymin-toly,ymax+toly,ymax+toly),type="n",xlab="",ylab="",xaxt="n",yaxt="n",axes=FALSE)
+x=seq(from=xmin,to=xmax,by=0.01)
+#points(x,f(x),type="l")
+lines(c(0,0),c(ymin,ymax))
+lines(c(xmin,xmax),c(0,0))
+# text(xmax-3*tolx,-5*tolx,"x")
+# text(toly,ymax-toly/2,"y")
+# for (i in 0:(quantsx)){
+#    if(xmin+((xmax-xmin)/quantsx)*i != 0){
+# lines(rep(xmin+((xmax-xmin)/quantsx)*i,2),c(-0.5*toly,+0.5*toly))
+# text(xmin+((xmax-xmin)/quantsx)*i,-1*toly,xmin+((xmax-xmin)/quantsx)*i,cex=0.75)}
+# }
+
+# for (i in 0:(quantsy)){
+#    lines(c(-tolx,tolx),ymin+rep(((ymax-ymin)/quantsy)*i,2))
+# text(3.5*tolx,0.1+ymin+((ymax-ymin)/quantsy)*i,ymin+((ymax-ymin)/quantsy)*i,cex=0.75)
+# }
+lines(x,f(x),col="red")
+text(-2,-toly,expression("-a"))
+text(2,-toly,expression("a"))
+text(2*tolx,1.1,expression("h"))
+```
+
+La gráfica de la función anterior será de la forma $y=C (x-a)(x+a)$ con $C$ una constante a determinar. Como $y(0)=h$, el valor de $C$ será: $h=-C\cdot a^2,\ \Rightarrow C=-\frac{h}{a^2}$.
+El trozo de segmento parabólico corresponderá a la función $y=-\frac{h}{a^2}(x-a)(x+a)$.
+
+El "limon de Cavalieri" se genera girando la función anterior alrededor del eje $X$. Por tanto, su valor será:
+\begin{align*}
+V & =\pi \int_{-a}^a y^2\, dx=\pi\int_{-a}^a \frac{h^2}{a^4}(x-a)^2 (x+a)^2\, dx=\frac{\pi h^2}{a^4}\int_{-a}^a (x^2-a^2)^2\, dx=\frac{\pi h^2}{a^4}\int_{-a}^a \left(x^4-2a^2 x^2+a^4\right)\, dx \\ & = \frac{\pi h^2}{a^4}\left[\frac{x^5}{5}-2a^2\frac{x^3}{3}+a^4 x\right]_{-a}^a = 2a\pi h^2\left(\frac{1}{5}-\frac{2}{3}+1\right)=\frac{16 a \pi h^2}{15}.
+\end{align*}

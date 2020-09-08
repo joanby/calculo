@@ -1,0 +1,28 @@
+---
+title: "Problemas de derivabilidad de funciones. Fórmula de Taylor"
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Usando inducción, demostrar la regla de Leibnitz para hallar la derivada $n$-ésima del producto de dos funciones:
+$$
+(f\cdot g)^{(n)}(x)=\sum_{k=0}^n \binom{n}{k} f^{(n-k)}(x)\cdot g^{(k)}(x).
+$$
+1. Si $x>0$, demostrar que:
+$$
+\left|(1+x)^\frac{1}{3}-\left(1+\frac{1}{3}x-\frac{1}{9}x^2\right)\right|\leq \frac{5}{81}x^3.
+$$
+Usar la desigualdad anterior para hallar aproximaciones de $\sqrt[3]{1.2}$ y de $\sqrt[3]{2}$.
+1. Si $x\in [0,1]$ y $n\in\mathbb{N}$, demostrar que:
+$$
+\left|\ln (x+1)-\left(x-\frac{x^2}{2}+\frac{x^3}{3}+\cdots +(-1)^{n-1}\frac{x^n}{n}\right)\right|<\frac{x^{n+1}}{n+1}.
+$$
+Usar la expresión anterior para calcular $\ln 1.5$ con un error menor que $0.001$.
+1. Sea $I=(a,b)$ un intervalo abierto y $c\in I$. Sean $f$ y $g$ dos funciones definidas en $I$ tal que las funciones derivadas $f^{(k)}$ y $g^{(k)}$ existen y son continuas en $I$, para $k=0,1,\ldots, n$. Supongamos que $f^{(k)}(c)=g^{(k)}(c)=0$ para $k=0,1,\ldots,n-1$ y $g^{(n)}\neq 0$. Demostrar que:
+$$
+\lim_{x\to c}\frac{f(x)}{g(x)}=\frac{f^{(n)}(c)}{g^{(n)}(c)}.
+$$

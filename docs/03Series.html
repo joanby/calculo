@@ -3218,7 +3218,7 @@ text-align: center; text-decoration: none;
         <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
-      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      
       <p data-config-presenter><!-- populated from slide_config.json --></p>
           </hgroup>
   </slide>
@@ -3341,7 +3341,7 @@ a_{n+1}+a_{n+2}+ \cdots + a_m = \dfrac{1}{n+1} + \dfrac{1}{n+2} +\cdots +\dfrac{
 
 </article></slide><slide class=""><hgroup><h2>Propiedades de las series convergentes.</h2></hgroup><article  id="propiedades-de-las-series-convergentes.">
 
-<p><l class="prop"> <strong>Proposición: Suma de series</strong> </l></p>
+<p><l class="prop"><strong>Proposición: Suma de series</strong></l></p>
 
 <p>Sean \(\sum a_n\) y \(\sum b_n\) dos series convergentes (divergentes), entonces</p>
 
@@ -3866,7 +3866,7 @@ S_n =\dfrac{a_1 \gamma -a_n (n \alpha + \beta)}{\gamma - (\alpha + \beta)}
 
 <p>Sea \(\sum na_n\) una serie aritmético-geométrica, és decir \(\sum a_n\) es una serie geométrica. Sea \(r\) la razón de esta serie, es decir \(\sum a_n=a \sum r^n\), con \(a&gt;0\). Tenemos que la suma de la serie dada es \(S = a(r+2r^2+3r^3+4r^4 + \cdots +(n-1) r^{n-1}+ nr^n)+ \cdots\), por otra parte \(rS = a(r^2+2r^3+3r^4+4r^5 + \cdots +(n-1) r^n+ nr^{n+1}+ \cdots\), es decir \[
 S-rS= a(r+r^2+r^3 + \cdots+r^n+ \cdots ).
-\] Ahora, \((1-r) S = \dfrac{a}{1-r}\), por lo que \(\sum nr^na= \dfrac{a}{(1-r)^2}\).</p>
+\] Ahora, \((1-r) S = \dfrac{ar}{1-r}\), por lo que \(\sum nr^na= \dfrac{ar}{(1-r)^2}\).</p>
 
 <p>En el caso general, hay que iterar este procedimiento hasta llegar a una serie geométrica.</p>
 
@@ -3910,9 +3910,15 @@ a_n = b_n-b_{n+1}.
 
 <p>Si \[
 \sum_{n \geq 1} a_n = \sum_{n\geq 1} (b_n - b_{n+1}),
-\] entonces la serie es convergente si, y sólo sí, la sucesión \(\{b_n\}\) es convergente. En cuyo caso \[
+\]</p>
+
+<p>entonces la serie es convergente si, y sólo sí, la sucesión \(\{b_n\}\) es convergente. En cuyo caso</p>
+
+<p>\[
 \sum_{n\geq 1} a_n = b_1 - \lim b_n
-\].</p>
+\]</p>
+
+</article></slide><slide class=""><hgroup><h2>Series telescópicas</h2></hgroup><article  id="series-telescópicas">
 
 <div class="dem">
 <p><strong>Demostración</strong></p>
@@ -3926,11 +3932,19 @@ S_n = a_1+a_2+ \cdots+a_n = (b_1-b_2)+(b_2-b_3)+ \cdots+ (b_{n-2}-b_{n-1}+(b_{n-
 <div class="example">
 <p><strong>Ejemplos</strong></p>
 
-<p><strong>Ejemplo 1</strong>. La serie \[
+<p><strong>Ejemplo 1</strong>. La serie</p>
+
+<p>\[
 \sum_{n \geq 1} \dfrac{1}{(n+1)(n+2)}
-\] es telescópica, puesto que, como es fácil comprobar \[
+\]</p>
+
+<p>es telescópica, puesto que, como es fácil comprobar</p>
+
+<p>\[
  \dfrac{1}{(n+1)(n+2)} =\dfrac{1}{n+1} - \dfrac{1}{n+2}
-\] dado que \(\lim \dfrac{1}{n+2} =0\) y el primer término de la sucesión \(\dfrac{1}{n+1}\) es \(\dfrac{1}{2}\), tenemos que \[
+\]</p>
+
+<p>dado que \(\lim \dfrac{1}{n+2} =0\) y el primer término de la sucesión \(\dfrac{1}{n+1}\) es \(\dfrac{1}{2}\), tenemos que \[
 \sum_{n \geq 1} \dfrac{1}{(n+1)(n+2)} = \dfrac{1}{2}
 \]</p></div>
 
@@ -3939,9 +3953,15 @@ S_n = a_1+a_2+ \cdots+a_n = (b_1-b_2)+(b_2-b_3)+ \cdots+ (b_{n-2}-b_{n-1}+(b_{n-
 <div class="example">
 <p><strong>Ejemplo 2</strong>. Sumar la serie \(\displaystyle{\sum_{n \geq 1} \dfrac{a-1}{a^{n+1}}}\), con \(a&gt;1\).</p>
 
-<p>Se trata de una serie telescópica, puesto \[
+<p>Se trata de una serie telescópica, puesto</p>
+
+<p>\[
 \sum_{n \geq 1} \dfrac{a-1}{a^{n+1}}= \sum_{n \geq 1} \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right).
-\] Dado que \(\lim \dfrac{1}{a^{n+1}}=0\), la serie es convergente y su suma es \[
+\]</p>
+
+<p>Dado que \(\lim \dfrac{1}{a^{n+1}}=0\), la serie es convergente y su suma es</p>
+
+<p>\[
 \sum_{n \geq 1} \dfrac{a-1}{a^{n+1}}=\sum_{n \geq 1} \left(\dfrac{1}{a^n} - \dfrac{1}{a^{n+1}}\right) = \dfrac{1}{a}.
 \]</p></div></article></slide>
 

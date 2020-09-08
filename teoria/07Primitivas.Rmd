@@ -8,6 +8,7 @@ output:
     css: Mery_style.css
     logo: Images/calculus.gif
     fig_caption: yes
+    keep_md: yes
 ---
 <script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
 

@@ -3218,10 +3218,12 @@ text-align: center; text-decoration: none;
         <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
-      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      
       <p data-config-presenter><!-- populated from slide_config.json --></p>
           </hgroup>
   </slide>
+
+<script src="https://kit.fontawesome.com/a0edb659c7.js" crossorigin="anonymous"></script>
 
 <slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Introducción</h2></hgroup><article  id="introducción">
 
@@ -3521,7 +3523,7 @@ g(x)=
 x+1, &amp; \mbox{ si } x \leq 0, \\
 x^2, &amp; \mbox{ si } x &gt; 0.
 \end{cases}
-\] Entonces \(\lim_{x \rightarrow 0^+} g(x) = 1\) y \(\lim_{x \rightarrow 0^-} g(x) = 0\).</p></li>
+\] Entonces \(\lim_{x \rightarrow 0^-} g(x) = 1\) y \(\lim_{x \rightarrow 0^+} g(x) = 0\).</p></li>
 <li><p>Sea \(h:\mathbb{R} \rightarrow \mathbb{R}\), la función definida por \[
 h(x)=
 \begin{cases}
@@ -3551,8 +3553,8 @@ x^2+1, &amp; \mbox{ si } x &gt; 0.
 <ol>
 <li><p>Demuestra que \(L = \lim_{x \rightarrow c^+}f(x)\) si, y sólo si, para todo \(\epsilon &gt;0\), existe \(\delta &gt;0\) tal que, siempre que \(0&lt;x-c&lt;\delta\), entonces es \(|f(x)-L| &lt; \epsilon\).</p></li>
 <li><p>Demuestra que \(L = \lim_{x \rightarrow c^-}f(x)\) si, y sólo si, para todo \(\epsilon &gt;0\), existe \(\delta &gt;0\) tal que, siempre que \(0&lt;c-x&lt;\delta\), entonces es \(|f(x)-L| &lt; \epsilon\).</p></li>
-<li><p>Demuestra que \(L = \lim_{x \rightarrow c^+}f(x)\) si, y sólo si, para todo \(\epsilon &gt;0\), existe \(\delta &gt;0\) tal que si \(x \in V^*_{\delta} (x) \cap (c, +\infty)\), entonces \(f(x) \in V_{\epsilon}(L)\)</p></li>
-<li><p>Demuestra que \(L = \lim_{x \rightarrow c^-}f(x)\) si, y sólo si, para todo \(\epsilon &gt;0\), existe \(\delta &gt;0\) tal que si \(x \in V^*_{\delta} (x) \cap (-\infty, c)\), entonces entonces \(f(x) \in V_{\epsilon}(L)\).</p></li>
+<li><p>Demuestra que \(L = \lim_{x \rightarrow c^+}f(x)\) si, y sólo si, para todo \(\epsilon &gt;0\), existe \(\delta &gt;0\) tal que si \(x \in V^*_{\delta} (c) \cap (c, +\infty)\), entonces \(f(x) \in V_{\epsilon}(L)\)</p></li>
+<li><p>Demuestra que \(L = \lim_{x \rightarrow c^-}f(x)\) si, y sólo si, para todo \(\epsilon &gt;0\), existe \(\delta &gt;0\) tal que si \(x \in V^*_{\delta} (c) \cap (-\infty, c)\), entonces \(f(x) \in V_{\epsilon}(L)\).</p></li>
 </ol></div>
 
 </article></slide><slide class=""><hgroup><h2>Límites laterales</h2></hgroup><article  id="límites-laterales-5">
@@ -3614,7 +3616,7 @@ x^2+1, &amp; \mbox{ si } x &gt; 0.
 
 <p>Sean \(f: \mathbb{R} \rightarrow \mathbb{R}\) y \(L \in \mathbb{R}\), \(L = \lim_{x \rightarrow \infty}f(x)\) si para toda sucesión \(x_n\) tal que \(\lim_{n \rightarrow \infty}x_n= +\infty\) entonces \(\lim_{n \rightarrow +\infty} f(x_n)= L\).</p>
 
-<p>Análogamente, \(L = \lim_{x \rightarrow -\infty}f(x)\) si para toda sucesión \(x_n\) tal que \(\lim_{n \rightarrow \infty}x_n= -\infty\) entonces \(\lim_{n \rightarrow -\infty} f(x_n)= L\).</p>
+<p>Análogamente, \(L = \lim_{x \rightarrow -\infty}f(x)\) si para toda sucesión \(x_n\) tal que \(\lim_{n \rightarrow \infty}x_n= -\infty\) entonces \(\lim_{n \rightarrow \infty} f(x_n)= L\).</p>
 
 <div class="exercise">
 <p><strong>Ejercicios</strong></p>
@@ -4285,7 +4287,7 @@ f(A) =\{y \in \mathbb{R}: y=f(x)\text{ para algún } x \in A \}.
 
 <p><l class="prop"> <strong>Corolario</strong> </l></p>
 
-<p>Sea \(f:[a,b] \rightarrow \mathbb{R}\) continua y sea \(c \in (a,b)\) tal que \(f(c) =0\), entonces en todo entorno de \(c\) hay puntos en los que \(f\) es positiva y puntos en los que \(f\) es negativa.</p>
+<p>Sea \(f:[a,b] \rightarrow \mathbb{R}\) continua y sea \(c \in (a,b)\) tal que en todo entorno de \(c\) hay puntos en los que \(f\) es positiva y puntos en los que \(f\) es negativa, entonces \(f(c) =0\) .</p>
 
 </article></slide><slide class=""><hgroup><h2>Teorema de la conservación del signo: Demostración.</h2></hgroup><article  id="teorema-de-la-conservación-del-signo-demostración.">
 
@@ -4405,7 +4407,7 @@ f(A) =\{y \in \mathbb{R}: y=f(x)\text{ para algún } x \in A \}.
 
 <p><l class="prop"> <strong>Proposición. Corolario del teorema del extremo.</strong> </l></p>
 
-<p>La imagen continua de un intervalo cerrado es un intervalo cerrado.</p>
+<p>La imagen de un intervalo cerrado por una función continua es un intervalo cerrado.</p>
 
 <div class="dem">
 
@@ -4523,7 +4525,7 @@ Demuestra la proposición anterior para \(f\) decreciente.</div>
 <li><p>La inversa de la función \(\sin: \left[-\dfrac{\pi}{2},\dfrac{\pi}{2} \right] \rightarrow [-1,1]\) es \(\arcsin: [-1,1] \rightarrow \left[-\dfrac{\pi}{2},\dfrac{\pi}{2} \right]\).</p></li>
 <li><p>La inversa de la función \(g(x) = \dfrac{1}{x}\) en \(\mathbb{R} \setminus \{0\}\) es ella misma.</p></li>
 <li><p>La inversa de la funcion \(h(x) =\dfrac{1}{x^2}\) en \((0,+\infty)\) es \(h^{-1}(x) = \dfrac{1}{\sqrt{x}}\).</p></li>
-<li><p>La inversa de \(t(x)=a + (b-a)x\) en \([0,1]\) es \(t^{-1}(x)= \dfrac{y-a}{b-a}\) en \([a,b]\). Este ejemplo muestra que siempre existe una aplicación biyectiva entre dos intervalos cerrados cualesquiera de \(\mathbb{R}\).</p></li>
+<li><p>La inversa de \(t(x)=a + (b-a)x\) en \([0,1]\) es \(t^{-1}(x)= \dfrac{x-a}{b-a}\) en \([a,b]\). Este ejemplo muestra que siempre existe una aplicación biyectiva entre dos intervalos cerrados cualesquiera de \(\mathbb{R}\).</p></li>
 </ol></div>
 
 </article></slide><slide class=""><hgroup><h2>Funciones inversas</h2></hgroup><article  id="funciones-inversas-3">

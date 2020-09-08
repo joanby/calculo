@@ -14,13 +14,13 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-reticulate::use_python("/usr/bin/python3.8")
-#reticulate::py_install("sympy")
+reticulate::use_python("/opt/anaconda3/bin/python")
 ```
 
 # Derivada de una función en un punto del dominio de la misma
 
 ## Introducción
+
 La derivada de una función sirve para formalizar la noción de **recta tangente** en un punto $x_0$ para una función $f(x)$.
 
 En el gráfico siguiente, podemos observar un ejemplo del dibujo de una función junto con la recta tangente en un punto $x_0$ de su dominio.

@@ -1,0 +1,13 @@
+---
+title: "Problemas de derivabilidad de funciones. Optimización"
+author: ""
+date: ""
+geometry: "left=2cm,right=2cm,top=2cm,bottom=2cm"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+1. Descomponer un número $a$ en dos sumandos $x$ e $y$ tal que el valor de $x^2+y^2$ sea mínimo.
+1. Determinar las dimensiones que ha de tener un bote cilíndrico de 2 litros de capacidad para que se construya con la cantidad mínima de material.
+1. De todos los rectángulos de igual perímetro, ¿cuál es el que tiene área mayor?

@@ -1,0 +1,25 @@
+---
+title: "Problemas de límites de sucesiones"
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Calcula los límites siguientes:
+    a) $\displaystyle\lim_{n\to\infty}\frac{3 n^5+4 n^4-n+7}{-n^5-n^4+2n^3+3n+4}.$
+    a) $\displaystyle\lim_{n\to\infty}  2n-\sqrt{4n^2-n}.$
+1. Calcula los límites siguientes:
+    a) $\displaystyle\lim_{n\to\infty} \left(\frac{n^2}{n^2+n+1}\right)^{2n-1}.$
+    a) $\displaystyle\lim_{n\to\infty} \left(\frac{\ln (n+1)}{\ln n}\right)^{\ln n}.$
+1. Calcula el valor del límite de las sucesiones siguientes definidas de forma recurrente:
+    a) $a_1 = \sqrt{2},$ $a_{n+1}=\sqrt{a_n}$.
+    a) $x_1 = 3,$ $x_{n+1}=3-\frac{1}{x_n}$.
+1. Calcula los límites siguientes:
+    a) $\displaystyle \lim_{n\to\infty}\sqrt[n]{a^n+b^n}$, si $b>a>0$.
+    a) $\displaystyle \lim_{n\to\infty}\sum_{k=1}^n \frac{1}{\sqrt[m]{n^m+k}}$, si $m\geq 2$ es un número natural.
+1. Calcula los límites siguientes:
+    a) $\displaystyle\lim_{n\to\infty} \frac{1^3+3^3+\cdots +(2n+1)^3}{n^4}.$
+    a) $\displaystyle\lim_{n\to\infty} \left(\frac{1+3+\cdots +2n-1}{n+1}-\frac{(2n+1)}{2}\right).$

@@ -1,0 +1,78 @@
+---
+title: "Problemas de derivabilidad de funciones. Teoremas de derivabilidad"
+author: ""
+date: ""
+geometry: "left=1.5cm,right=1.5cm,top=1.25cm,bottom=1.25cm"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+1. Consideremos el polinomio de grado $4$, $p_4(x)=x^4-a^2 x^2+b$ donde $a$ y $b$ son valores reales. Demostrar que $p_4(x)$ tiene tres extremos relativos, dos mínimos y un máximo.
+
+
+
+## Solución
+
+Para hallar los extremos hallemos la derivada de $p_4(x)$ y calculemos los valores que la anulan:
+$$
+p_4'(x)=4 x^3-2 a^2 x=0,\ \Rightarrow 2x\cdot (2x^2-a^2)=0,\ \Rightarrow x=-\frac{|a|}{\sqrt{2}},0,\frac{|a|}{\sqrt{2}}.
+$$
+Para saber si son máximos o mínimos, miramos el signo de $p_4''(x)$:
+$$
+p_4''(x)=12 x^2-2 a^2.
+$$
+Para $x=-\frac{|a|}{\sqrt{2}}$, $p_4''\left(-\frac{|a|}{\sqrt{2}}\right)=12\cdot\frac{a^2}{2}-2 a^2=4 a^2>0.$ Se trataría de un mínimo.\newline
+Para $x=0$, $p_4''(0)=-2 a^2< 0.$ Se trataría de un máximo.\newline
+Para $x=\frac{|a|}{\sqrt{2}}$, $p_4''\left(\frac{|a|}{\sqrt{2}}\right)=12\cdot\frac{a^2}{2}-2 a^2=4 a^2>0.$ Se trataría de un mínimo.\newline
+Por tanto, $p_4(x)$ tiene dos mínimos y un máximo.
+
+\newpage
+
+2. Demostrar que para todo valor $x,y\in\mathbb{R}$, $|\cos x-\cos y|\leq |x-y|$.\newline\newline
+
+
+## Solución
+
+Sea $f(x)=\cos x$. Supongamos para fijar ideas que $x<y$. Como $f(x)$ es derivable y continua en $\mathbb{R}$, podemos aplicar el Teorema del Valor Medio a la función $f(x)$ en el intervalo $(x,y)$ y obtener:
+$$
+f(x)-f(y)=f'(c)\cdot (x-y),\ \Rightarrow \cos x-\cos y=-\sin c\cdot (x-y), \ \Rightarrow |\cos x-\cos y|=|\sin c|\cdot |x-y|\leq |x-y|,
+$$
+tal como queríamos ver.
+
+\newpage
+
+
+
+3. Sean $a>b>0$ números reales y $n\in\mathbb{N}$ un entero positivo con $n\geq 2$. Demostrar que $a^{\frac{1}{n}}-b^{\frac{1}{n}}< (a-b)^{\frac{1}{n}}$.\newline
+Indicación: demostrar que la función $f(x)=x^{\frac{1}{n}}-(x-1)^{\frac{1}{n}}$ es decreciente para $x\geq 1$ y evaluarla en $x=1$ y $x=\frac{a}{b}$.
+
+## Solución
+
+Veamos que la función $f(x)=x^{\frac{1}{n}}-(x-1)^{\frac{1}{n}}$ es decreciente para $x\geq 1$. Si hacemos su derivada obtenemos:
+$$
+f'(x)=\frac{1}{n}\cdot x^{\frac{1}{n}-1}-\frac{1}{n}\cdot (x-1)^{\frac{1}{n}-1}=\frac{1}{n}\left( x^{\frac{1}{n}-1}-(x-1)^{\frac{1}{n}-1}\right).
+$$
+Como $\frac{1}{n}-1 <0$ si $n\geq 2$ y como $x\geq x-1$, si $x\geq 1$, tenemos que $x^{\frac{1}{n}-1}< (x-1)^{\frac{1}{n}-1}$. Por tanto, $f'(x)< 0$ y $f(x)$ será decreciente para $x\geq 1$.
+
+Como $a >b$, $\frac{a}{b}>1$ y, como $f(x)$ es decreciente,
+$$
+f\left(\frac{a}{b}\right) < f(1),\ \Rightarrow \left(\frac{a}{b}\right)^{\frac{1}{n}}-\left(\frac{a}{b}-1\right)^{\frac{1}{n}} < 1,\ \Rightarrow \left(\frac{a}{b}\right)^{\frac{1}{n}}-\left(\frac{a-b}{b}\right)^{\frac{1}{n}} < 1,\ \Rightarrow a^\frac{1}{n}-(a-b)^{\frac{1}{n}}< b^\frac{1}{n},\ \Rightarrow a^\frac{1}{n}-b^\frac{1}{n}< (a-b)^{\frac{1}{n}}.
+$$
+
+\newpage
+
+4. Sea $f:[0,2]\longrightarrow \mathbb{R}$, continua en $[0,2]$ y derivable en $(0,2)$. Supongamos que $f(0)=0,\ f(1)=f(2)=1$.
+    a) Demostrar que existe un valor $c_1\in (0,1)$ tal que $f'(c_1)=1$.
+    a) Demostrar que existe un valor $c_2\in (1,2)$ tal que $f'(c_2)=0$.
+    a) Demostrar que existe un valor $c_3\in (0,2)$ tal que $f'(c_3)=\frac{1}{2}$.
+
+
+## Solución
+
+a) Aplicando el Teorema del valor medio en el intervalo $[0,1]$ tenemos que existe un valor $c_1\in (0,1)$ tal que $$f'(c_1)=\frac{f(1)-f(0)}{1-0}=\frac{1-0}{1}=1.$$
+
+b) Aplicando el Teorema del valor medio en el intervalo $[1,2]$ tenemos que existe un valor $c_2\in (1,2)$ tal que $$f'(c_2)=\frac{f(2)-f(1)}{2-1}=\frac{1-1}{1}=0.$$
+
+c) Aplicando el Teorema del valor medio en el intervalo $[0,2]$ tenemos que existe un valor $c_3\in (0,2)$ tal que $$f'(c_3)=\frac{f(2)-f(0)}{2-0}=\frac{1-0}{2}=\frac{1}{2}.$$
+

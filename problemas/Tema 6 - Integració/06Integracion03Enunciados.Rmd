@@ -1,0 +1,32 @@
+---
+title: "Problemas de integración. Integración Impropia."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+1. Estudiar la convergencia de la integral impropia $\displaystyle\int_0^\infty x^n\mathrm{e}^{-x}\,dx$ y calcular su valor en función de $n$ en el caso en que sea convergente.
+1. Estudiar el carácter de las siguientes integrales impropias en función del parámetro $\alpha$:
+    a) $\displaystyle\int_a^b\frac{dx}{(x-a)^\alpha},\ \alpha\in\mathbb{R},\ -\infty<a<b<+\infty$.
+    a) $\displaystyle\int_0^1 x^\alpha\ln x\, dx$.
+    a) $\displaystyle\int_1^2\frac{dx}{x(\ln x)^\alpha}.$
+1. Probar que las integrales siguientes son convergentes:
+$$
+I=\int_0^1\frac{\ln x}{1+x^2}\, dx,\quad J=\int_1^\infty \frac{\ln x}{1+x^2}\, dx,
+$$
+y que $I+J=0$.
+1. Estudiar el carácter de las siguientes integrales impropias:
+    a) $\displaystyle\int_1^\infty \frac{dx}{2\mathrm{e}^x+1}.$
+    a) $\displaystyle\int_0^1\frac{dx}{\sqrt{1-x^4}}.$
+    a) $\displaystyle\int_0^\frac{\pi}{2}\frac{\sin x}{\sqrt{1-\cos x}}\, dx.$
+1. Estudiar el carácter de las siguientes integrales impropias en función del parámetro $\alpha$:
+    a) $\displaystyle\int_\alpha^\infty\frac{x^\alpha}{x^4-1}\, dx$.
+    a) $\displaystyle\int_1^\infty \frac{\sin x}{x^\alpha}\, dx,\ \alpha >0.$
+    a) $\displaystyle\int_1^\infty \sin(x^\alpha)\, dx,\ \alpha >1$.
+1. Explicar por qué el valor de las integrales siguientes no es correcto, estudiar su convergencia y, en el caso en que sean convergentes, hallar su valor:
+$$
+\int_{-1}^1\frac{dx}{x^2}=-2,\quad \int_0^4\frac{dx}{(x-1)^2}=\frac{4}{3}.
+$$
