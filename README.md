@@ -4,13 +4,13 @@
 
 ## Temario del curso
 
-1. Números Reales
-2. Sucesiones y límites de números reales
-3. Sumas y series
-4. Funciones real de variable real y continuidad
-5. Derivabilidad de funciones
-6. Integración de Riemmann
-7. Aplicaciones de la integral
+1. [Números reales](https://joanby.github.io/calculo/01NumerosReales#1). 
+2. [Sucesiones y límites](https://joanby.github.io/calculo/02Succesiones#1)
+3. [Series](https://joanby.github.io/calculo/03Series#1)
+4. [Funciones y continuidad](https://joanby.github.io/calculo/04continuidad#1)
+5. [Derivadas](https://joanby.github.io/calculo/05Derivadas#1)
+6. [Integración](https://joanby.github.io/calculo/06Integracion#1)
+7. [Cálculo de primitivas](https://joanby.github.io/calculo/07Primitivas#1)
 
 Las integrales, las derivadas, el cálculo de límites o la suma de series son solo unos pocos de los muchos temas que necesitas dominar para ser un maestro del Machine Learning, de la Inteligencia Artificial o incluso del desarrollo de apps y videojuegos. Desde las redes neuronales a las funciones de activación, el estudio de distribuciones de probabilidad, la aleatoriedad en videojuegos, el path finding o el análisis de datos son solo algunos ejemplos donde tener una sólida base de cálculo en una variable te ayudará a destacar y ser capaz de entender cómo funcionan realmente estos algoritmos. 
 
