@@ -5,10 +5,10 @@ date: ""
 runtime: shiny
 output: 
   ioslides_presentation: 
-    css: ../teoria/Mery_style.css
+    css: ../../teoria/Mery_style.css
     fig_caption: yes
     keep_md: yes
-    logo: ../teoria/Images/calculus.gif
+    logo: ../../teoria/Images/calculus.gif
     widescreen: yes
     transition: slower
 ---
