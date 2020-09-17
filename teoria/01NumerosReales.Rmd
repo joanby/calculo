@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 reticulate::use_python("/opt/anaconda3/bin/python")
 ```
 
-# Introducción
+# Introducción h
 
 ## Cálculo: Las Matemáticas del cambio
 
