@@ -146,7 +146,7 @@ Los extremos se pueden alcanzar en el interior del intervalo o en los extremos d
 Para hallar los posibles extremos en el interior del intervalo, hemos de resolver $f'(x)=0$ (primer caso) o $g'(x)=0$ (segundo caso).
 
 ## Solución
-En general, sean $x_1,\ldots, x_k$ los extremos hallados en el interior de un intervalo $[a,b]$,\pause, es decir, valores que anulan la derivada.
+En general, sean $x_1,\ldots, x_k$ los extremos hallados en el interior de un intervalo $[a,b]$,\pause\  es decir, valores que anulan la derivada.
 
 \pause
 Para hallar el mínimo absoluto y el máximo absoluto, realizamos la tabla siguiente:
