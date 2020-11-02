@@ -12,6 +12,7 @@ output:
 header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
                  \newcommand\blue[1]{\textcolor{blue}{#1}}
                  \newcommand\red[1]{\textcolor{red}{#1}}
+                 \setbeamertemplate{headline}{}
 
                  
               
@@ -29,25 +30,229 @@ Calcular los límites siguientes:
 \end{enumerate}
 \end{block}
 
-## Solución
+## Solución del primer límite
 Para calcular el primer límite, $\displaystyle\lim_{x\to\infty}\left(\tan \frac{\pi x}{2x+1}\right)^\frac{1}{x},$ primero veamos hacia dónde tiende si "sustituimos" $x$ por $\infty$:
+\pause
 $$
-\lim_{x\to\infty}\left(\tan \frac{\pi x}{2x+1}\right)^\frac{1}{x}=\left(\tan\frac{\pi}{2}\right)^0 = \infty^0.
+\lim_{x\to\infty}\left(\tan \frac{\pi x}{2x+1}\right)^\frac{1}{x}=\pause \left(\tan\frac{\pi}{2}\right)^0 = \pause \infty^0.
 $$
+\pause
 Tenemos una indeterminación del tipo $\infty^0$. 
 
-## Solución
+## Solución del primer límite
 Para resolverla, definiendo $L=\displaystyle\lim_{x\to\infty}\left(\tan \frac{\pi x}{2x+1}\right)^\frac{1}{x},$ y tomando logaritmos tenemos que:
+\pause
 $$
-\ln L =\lim_{x\to\infty} \frac{1}{x}\cdot\ln\left(\tan \frac{\pi x}{2x+1}\right)=\lim_{x\to\infty}\frac{\ln\left(\tan \frac{\pi x}{2x+1}\right)}{x
-}=\frac{\infty}{\infty},
+\ln L =\lim_{x\to\infty} \frac{1}{x}\cdot\ln\left(\tan \frac{\pi x}{2x+1}\right)=\pause \lim_{x\to\infty}\frac{\ln\left(\tan \frac{\pi x}{2x+1}\right)}{x
+}=\pause \frac{\infty}{\infty},
 $$
+\pause
 donde ahora tenemos una indeterminación del tipo $\frac{\infty}{\infty}$.
 
-## Solución
+## Solución del primer límite
 Para resolverla, aplicamos la regla de l'Hôpital:
+\pause
 \begin{align*}
 \ln L= & \lim_{x\to\infty}\frac{\ln\left(\tan \frac{\pi x}{2x+1}\right)}{x
-} = \lim_{x\to\infty} \frac{\frac{1}{\cos^2 \frac{\pi x}{2x+1}}\cdot \left(\frac{\pi x}{2x+1}\right)'}{\tan \frac{\pi x}{2x+1}} \\ = &
-\lim_{x\to\infty} \frac{\frac{1}{\cos^2 \frac{\pi x}{2x+1}}\cdot \left(\frac{\pi }{(2x+1)^2}\right)}{\tan \frac{\pi x}{2x+1}}= \lim_{x\to\infty}\frac{\pi}{(2x+1)^2\cdot \sin  \frac{\pi x}{2x+1}\cdot \cos  \frac{\pi x}{2x+1}} \\ = & \lim_{x\to\infty}\frac{2\pi}{(2x+1)^2\cdot \sin  \frac{2\pi x}{2x+1}} =\frac{2\pi}{\infty\cdot\sin \pi}=\frac{2\pi}{\infty\cdot 0}
+} = 
+\lim_{x\to\infty} \frac{\frac{1}{\cos^2 \frac{\pi x}{2x+1}}\cdot \left(\frac{\pi x}{2x+1}\right)'}{\tan \frac{\pi x}{2x+1}} \\ 
+= &
+\lim_{x\to\infty} \frac{\frac{1}{\cos^2 \frac{\pi x}{2x+1}}\cdot \left(\frac{\pi }{(2x+1)^2}\right)}{\tan \frac{\pi x}{2x+1}} 
+= \lim_{x\to\infty}\frac{\pi}{(2x+1)^2\cdot \sin  \frac{\pi x}{2x+1}\cdot \cos  \frac{\pi x}{2x+1}} \\ = &
+\lim_{x\to\infty}\frac{2\pi}{(2x+1)^2\cdot \sin  \frac{2\pi x}{2x+1}} =
+\frac{2\pi}{\infty\cdot\sin \pi}=\frac{2\pi}{\infty\cdot 0}.
 \end{align*}
+
+## Solución del primer límite
+Resolvamos la última indeterminación aparte:
+\pause
+\begin{align*}
+& \lim_{x\to\infty} (2x+1)^2\cdot \sin  \frac{2\pi x}{2x+1} =  \lim_{x\to\infty} \frac{\sin  \frac{2\pi x}{2x+1}}{\frac{1}{(2x+1)^2}} = \lim_{x\to\infty}\frac{\cos  \frac{2\pi x}{2x+1}\cdot \left( \frac{2\pi x}{2x+1}\right)'}{-\frac{4}{(2x+1)^3}}\\ & =\lim_{x\to\infty}\frac{\cos  \frac{2\pi x}{2x+1}\cdot \frac{2 \pi }{(2 x+1)^2}}{-\frac{4}{(2x+1)^3}}= \lim_{x\to\infty}\frac{2\pi \cos  \frac{2\pi x}{2x+1}}{-\frac{4}{(2x+1)}}=\lim_{x\to\infty}\frac{2\pi\cdot (-1)}{0}=\infty.
+\end{align*}
+
+\pause
+Nuestro límite será, pues:
+$$
+\ln L=\frac{2\pi}{\infty}=0,
+$$
+\pause
+y, por tanto, $L=\mathrm{e}^0=1.$
+
+## Solución del segundo límite
+El segundo límite era el siguiente:
+$$
+\lim_{x\to 0}\frac{(1+x)^\frac{1}{x}-\mathrm{e}}{x}.
+$$
+\pause
+Como $\displaystyle\lim_{x\to 0} (1+x)^\frac{1}{x}=\mathrm{e}$ tenemos una indeterminación del tipo $\frac{0}{0}$.
+
+\pause
+Si aplicamos la regla de l'Hôpital, obtenemos:
+$$
+\lim_{x\to 0}\frac{(1+x)^\frac{1}{x}-\mathrm{e}}{x}=\lim_{x\to 0}\left((1+x)^\frac{1}{x}\right)'
+$$
+
+
+## Solución del segundo límite
+A continuación vamos a derivar la función $f(x)=(1+x)^\frac{1}{x}$.
+\pause
+
+Para ello, consideramos la función $\ln f(x)=\frac{1}{x}\cdot \ln(1+x)$.
+\pause
+
+La derivada de la función anterior será:
+\pause
+\begin{align*}
+(\ln f(x))'= & \frac{f'(x)}{f(x)}=-\frac{1}{x^2}\cdot\ln (1+x)+\frac{1}{x}\cdot\frac{1}{1+x} \\ = & \frac{-(1+x)\ln(1+x)+x}{x^2 (1+x)}.
+\end{align*}
+
+## Solución del segundo límite
+Por tanto,
+\begin{align*}
+f'(x)= & \left((1+x)^\frac{1}{x}\right)'=f(x)\cdot  \frac{-(1+x)\ln(1+x)+x}{x^2 (1+x)} \\ = & (1+x)^\frac{1}{x}\cdot \frac{-(1+x)\ln(1+x)+x}{x^2 (1+x)}.
+\end{align*}
+\pause
+
+El límite a calcular valdrá:
+\pause
+\begin{align*}
+& \lim_{x\to 0}\left((1+x)^\frac{1}{x}\right)'  =  \lim_{x\to 0}(1+x)^\frac{1}{x}\cdot \frac{-(1+x)\ln(1+x)+x}{x^2 (1+x)}\\ & = \mathrm{e}\cdot \lim_{x\to 0}\frac{-(1+x)\ln(1+x)+x}{x^2+x^3)}=  \mathrm{e}\cdot\lim_{x\to 0}\frac{-\ln(1+x)-1+1}{2x+3x^2}\\ & = \mathrm{e}\cdot\lim_{x\to 0}\frac{-\ln(1+x)}{2x+3x^2} = \mathrm{e}\cdot\lim_{x\to 0}\frac{-\frac{1}{1+x}}{2+6x}=\mathrm{e}\cdot\left(-\frac{1}{2}\right)=-\frac{\mathrm{e}}{2}.
+\end{align*}
+
+# Cálculo de extremos
+
+## Cálculo de extremos
+\begin{block}{Enunciado}
+Hallar los valores máximos y mínimos de las funciones siguientes:
+\begin{enumerate}
+\item $f(x)=\sqrt{5-4x}$ para $x$ en el intervalo $[-1,1]$.
+\item $g(x)=|3x-x^2$ para $|x|\leq 2$.
+\end{enumerate}
+\end{block}
+
+
+## Solución
+Hemos de hallar los extremos absolutos (máximo y mínimo) de dos funciones contínuas en un intervalo compacto: \pause
+\begin{enumerate}
+\item $[-1,1]$ en el primer caso y 
+\pause 
+\item $[-2,2]$ en el segundo caso.
+\end{enumerate}
+
+\pause
+Los extremos se pueden alcanzar en el interior del intervalo o en los extremos del mismo. 
+\pause
+
+Para hallar los posibles extremos en el interior del intervalo, hemos de resolver $f'(x)=0$ (primer caso) o $g'(x)=0$ (segundo caso).
+
+## Solución
+En general, sean $x_1,\ldots, x_k$ los extremos hallados en el interior de un intervalo $[a,b]$,\pause, es decir, valores que anulan la derivada.
+
+\pause
+Para hallar el mínimo absoluto y el máximo absoluto, realizamos la tabla siguiente:
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+$a$&$x_1$&$\cdots$&$x_k$&$b$\\\hline
+$f(a)$&$f(x_1)$&$\cdots$&$f(x_k)$&$f(b)$\\\hline
+\end{tabular}
+\end{center}
+
+\pause
+El valor mínimo de la función $f$ corresponderá al mínimo absoluto y el valor máximo, al máximo absoluto.
+
+## Solución para la primera función
+La función era $f(x)=\sqrt{5-4x}$ en el intervalo $[-1,1]$.
+\pause
+
+Hallemos los posibles extremos en el interior del intervalo:
+\pause
+$$
+f'(x)=\frac{-4}{2\sqrt{5-4x}}\neq 0.
+$$
+Vemos que no hay. 
+\pause
+
+Por tanto, los extremos se alcanzan en los extremos del intervalo $[-1,1]$:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+$-1$&$1$\\\hline
+$f(-1)=\sqrt{9}=3$&$f(1)=\sqrt{1}=1$\\\hline
+\end{tabular}
+\end{center}
+\pause
+
+El mínimo absoluto será el punto $(1,1)$ y el máximo absoluto, $(-1,3)$.
+
+## Solución para la segunda función
+La función era $g(x)=|3x-x^2|$ para $x\in [-2,2]$.
+\pause
+
+Veamos en primer lugar cuándo $3x-x^2\geq 0$ y cuándo $3x-x^2<0$ ya que tenemos un valor absoluto:
+\pause
+
+$$
+3x-x^2\geq 0,\Rightarrow x(3-x)\geq 0.
+$$
+\pause
+
+Hemos de mirar los posibles cambios de signo en $x=0$ y $x=3$:
+\pause
+\begin{center}
+\begin{tabular}{ccccccc}
+$-\infty$ & & $0$ & & $3$ & & $\infty$\\\hline
+& $-$ & & $+$ & & $-$ & \\\hline
+\end{tabular}
+\end{center}
+\pause
+
+Entonces $3x-x^2\geq 0$ si $x\in [0,3]$ y $3x-x^2<0$ si $x\in (-\infty,0)\cup (3,\infty)$.
+
+## Solución para la segunda función
+Podemos escribir la función $g(x)$ de la forma siguiente:
+\pause
+$$
+g(x)=\begin{cases}
+x^2-3x, & \mbox{si }x\in [-2,0],\\
+3x-x^2, & \mbox{si }x\in [0,2].
+\end{cases}
+$$
+\pause
+
+Hallemos los posibles extremos en el interior del intervalo $[-2,2]$:
+$$
+g(x)=\begin{cases}
+2x-3, & \mbox{si }x\in (-2,0),\\
+3-2x, & \mbox{si }x\in (0,2).
+\end{cases}
+$$
+\pause
+El único valor que verifica $g'(x)=0$ es $x=\frac{3}{2}$.
+
+
+## Solución para la segunda función
+Los extremos absolutos se pueden alcanzar en los valores siguientes:
+\pause
+\begin{itemize}
+\item $x=-2$, por ser extremo del intervalo,
+\pause
+\item $x=0$, porque la función $g$ no es derivable en $x=0$ y hay que considerarlo,
+\pause
+\item $x=\frac{3}{2}$, porque está en el interior del intervalo y anula la derivada y,
+\item $x=2$, por ser extremo del intervalo.
+\end{itemize}
+
+```{r,echo=FALSE}
+g=function(x){abs(3*x-x^2)}
+```
+
+## Solución para la segunda función
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+$-2$&$0$&$\frac{3}{2}$&$2$\\\hline
+$g(-2)=`r g(-2)`$&$g(0)=`r g(0)`$&$g\left(\frac{3}{2}\right)=\frac{9}{4}=`r g(3/2)`$&$g(2)=`r g(2)`$\\\hline
+\end{tabular}
+\end{center}
+\pause
+
+El máximo absoluto se alcanza en el punto $(-2,`r g(-2)`)$ y el mínimo absoluto, $(0,`r g(0)`)$.
