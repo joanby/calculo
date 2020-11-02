@@ -1,0 +1,53 @@
+---
+title: "Problemas resueltos de derivación"
+author: "Juan Gabriel Gomila, Arnau Mir y Llorenç Valverde"
+date: ""
+output:
+  beamer_presentation:
+#    colortheme: rose
+    incremental: yes
+    theme: Warsaw
+    toc: no
+
+header-includes: \usepackage{amsmath,color,array,booktabs,algorithm2e}
+                 \newcommand\blue[1]{\textcolor{blue}{#1}}
+                 \newcommand\red[1]{\textcolor{red}{#1}}
+
+                 
+              
+---
+
+
+# Regla de l'Hôpital
+
+## Límites usando la regla de l'Hôpital
+\begin{block}{Enunciado}
+Calcular los límites siguientes:
+\begin{enumerate}
+\item $\displaystyle\lim_{x\to\infty}\left(\tan \frac{\pi x}{2x+1}\right)^\frac{1}{x}.$
+\item $\displaystyle\lim_{x\to 0}\frac{(1+x)^\frac{1}{x}-\mathrm{e}}{x}$.
+\end{enumerate}
+\end{block}
+
+## Solución
+Para calcular el primer límite, $\displaystyle\lim_{x\to\infty}\left(\tan \frac{\pi x}{2x+1}\right)^\frac{1}{x},$ primero veamos hacia dónde tiende si "sustituimos" $x$ por $\infty$:
+$$
+\lim_{x\to\infty}\left(\tan \frac{\pi x}{2x+1}\right)^\frac{1}{x}=\left(\tan\frac{\pi}{2}\right)^0 = \infty^0.
+$$
+Tenemos una indeterminación del tipo $\infty^0$. 
+
+## Solución
+Para resolverla, definiendo $L=\displaystyle\lim_{x\to\infty}\left(\tan \frac{\pi x}{2x+1}\right)^\frac{1}{x},$ y tomando logaritmos tenemos que:
+$$
+\ln L =\lim_{x\to\infty} \frac{1}{x}\cdot\ln\left(\tan \frac{\pi x}{2x+1}\right)=\lim_{x\to\infty}\frac{\ln\left(\tan \frac{\pi x}{2x+1}\right)}{x
+}=\frac{\infty}{\infty},
+$$
+donde ahora tenemos una indeterminación del tipo $\frac{\infty}{\infty}$.
+
+## Solución
+Para resolverla, aplicamos la regla de l'Hôpital:
+\begin{align*}
+\ln L= & \lim_{x\to\infty}\frac{\ln\left(\tan \frac{\pi x}{2x+1}\right)}{x
+} = \lim_{x\to\infty} \frac{\frac{1}{\cos^2 \frac{\pi x}{2x+1}}\cdot \left(\frac{\pi x}{2x+1}\right)'}{\tan \frac{\pi x}{2x+1}} \\ = &
+\lim_{x\to\infty} \frac{\frac{1}{\cos^2 \frac{\pi x}{2x+1}}\cdot \left(\frac{\pi }{(2x+1)^2}\right)}{\tan \frac{\pi x}{2x+1}}= \lim_{x\to\infty}\frac{\pi}{(2x+1)^2\cdot \sin  \frac{\pi x}{2x+1}\cdot \cos  \frac{\pi x}{2x+1}} \\ = & \lim_{x\to\infty}\frac{2\pi}{(2x+1)^2\cdot \sin  \frac{2\pi x}{2x+1}} =\frac{2\pi}{\infty\cdot\sin \pi}=\frac{2\pi}{\infty\cdot 0}
+\end{align*}
