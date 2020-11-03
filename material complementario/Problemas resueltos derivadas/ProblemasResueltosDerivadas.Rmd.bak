@@ -132,7 +132,7 @@ Hallar los valores máximos y mínimos de las funciones siguientes:
 
 
 ## Solución
-Hemos de hallar los extremos absolutos (máximo y mínimo) de dos funciones continuas en un intervalo compacto: \pause
+Hemos de hallar los extremos absolutos (máximo y mínimo) de dos funciones contínuas en un intervalo compacto: \pause
 \begin{enumerate}
 \item $[-1,1]$ en el primer caso y 
 \pause 
@@ -309,7 +309,7 @@ $$
 como queríamos demostrar.
 
 ## Solución de la segunda desigualdad
-Recordemos que hemos de demostrar que:
+Recordemos que hemos de demostar que:
 $$
 \frac{1}{2^{p-1}}\leq x^p +(1-x)^p\leq 1,
 $$
