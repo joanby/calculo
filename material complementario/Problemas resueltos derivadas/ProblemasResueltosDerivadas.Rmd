@@ -126,7 +126,7 @@ El límite a calcular valdrá:
 Hallar los valores máximos y mínimos de las funciones siguientes:
 \begin{enumerate}
 \item $f(x)=\sqrt{5-4x}$ para $x$ en el intervalo $[-1,1]$.
-\item $g(x)=|3x-x^2$ para $|x|\leq 2$.
+\item $g(x)=|3x-x^2|$ para $|x|\leq 2$.
 \end{enumerate}
 \end{block}
 
