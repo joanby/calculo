@@ -1,0 +1,18 @@
+---
+title: "Problema de integración."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+Demostrar la proposición siguiente:
+
+**Proposición**
+
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. Entonces, para todo valor $\epsilon >0$, siempre es posible hallar un valor $\delta >0$ tal que si $P$ es una partición del intervalo $[a,b]$ con diámetro menor que $\delta$, $|P|<\delta$, entonces:
+$$
+0\leq \underline{\int_a^b} f -L(f,P)<\epsilon, \quad 0\leq U(f,P)-\overline{\int_a^b} f <\epsilon.
+$$

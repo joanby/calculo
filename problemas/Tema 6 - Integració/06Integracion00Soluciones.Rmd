@@ -1,0 +1,57 @@
+---
+title: "Problema de integración."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+Demostrar la proposición siguiente:
+
+**Proposición**
+
+Sea $f:[a,b]\longrightarrow\mathbb{R}$ una función acotada. Entonces, para todo valor $\epsilon >0$, siempre es posible hallar un valor $\delta >0$ tal que si $P$ es una partición del intervalo $[a,b]$ con diámetro menor que $\delta$, $|P|<\delta$, entonces:
+$$
+0\leq \underline{\int_a^b} f -L(f,P)<\epsilon, \quad 0\leq U(f,P)-\overline{\int_a^b} f <\epsilon.
+$$
+
+**Solución**
+
+Consideramos el conjunto ${\cal L}$ de las sumas inferiores $L(f,P)$ de la función $f$ para todas las particiones del intervalo $[a,b]$: ${\cal L}=\{L(f,P),\ \mbox{ donde } P\mbox{ es una partición del intervalo } [a,b].\}$
+
+Sea $\epsilon >0$. Sabemos que $\underline{\int_a^b} f$ es una cota superior del conjunto ${\cal L}$ y además es la más pequeña de todas las cotas superiores. Por tanto, $\underline{\int_a^b} f-\epsilon$ no puede ser cota superior del conjunto ${\cal L}$ al ser un valor menor que $\underline{\int_a^b} f$ y recordemos que dicho valor es la menor de las cotas superiores de ${\cal L}$.
+
+Como $\underline{\int_a^b} f-\epsilon$ no es cota superior del conjunto ${\cal L}$, significa que existe una partición $P$ del intervalo $[a,b]$ tal que $\underline{\int_a^b} f-\epsilon < L(f,P)$.
+
+Veamos que podemos elegir $P$ con diámetro tan pequeño como queramos. Sea $|P|$ el diámetro de la partición $P$. Entonces, consideramos $P'$ una partición más fina de $P$ construida de la forma siguiente: añadimos para cada dos puntos $x_i<x_{i+1}$ de $P$, el punto medio $\frac{x_i+x_{i+1}}{2}$. De esta forma $|P'|=\frac{|P|}{2}$. 
+Además se cumple que:
+$$
+\underline{\int_a^b} f-\epsilon < L(f,P)\leq L(f,P').
+$$
+Siguiendo este proceso las veces $n$ que haga falta, dado un valor $\delta$, siempre podemos hallar una partición $P'$ tal que $|P'|=\frac{P}{2^n}<\delta$ y además:
+$$
+\underline{\int_a^b} f-\epsilon < L(f,P)\leq L(f,P'),
+$$
+quedando demostrada la primera parte de la proposición.
+
+
+Para la segunda parte, razonamos de manera parecida.
+
+Consideramos el conjunto ${\cal U}$ de las sumas superiores $U(f,P)$ de la función $f$ para todas las particiones del intervalo $[a,b]$: ${\cal U}=\{U(f,P),\ \mbox{ donde } P\mbox{ es una partición del intervalo } [a,b].\}$
+
+Sea $\epsilon >0$. Sabemos que $\overline{\int_a^b} f$ es una cota inferior del conjunto ${\cal U}$ y además es la más grande de todas las cotas inferiores. Por tanto, $\overline{\int_a^b} f+\epsilon$ no puede ser cota inferior del conjunto ${\cal U}$ al ser un valor mayor que $\overline{\int_a^b} f$ y recordemos que dicho valor es la mayor de las cotas inferiores de ${\cal U}$.
+
+Como $\overline{\int_a^b} f+\epsilon$ no es cota inferior del conjunto ${\cal U}$, significa que existe una partición $P$ del intervalo $[a,b]$ tal que $\overline{\int_a^b} f+\epsilon > U(f,P)$.
+
+Veamos que podemos elegir $P$ con diámetro tan pequeño como queramos. Sea $|P|$ el diámetro de la partición $P$. Entonces, consideramos $P'$ una partición más fina de $P$ construida de la forma siguiente: añadimos para cada dos puntos $x_i<x_{i+1}$ de $P$, el punto medio $\frac{x_i+x_{i+1}}{2}$. De esta forma $|P'|=\frac{|P|}{2}$. 
+Además se cumple que:
+$$
+\overline{\int_a^b} f+ \epsilon > U(f,P)\geq U(f,P').
+$$
+Siguiendo este proceso las veces $n$ que haga falta, dado un valor $\delta$, siempre podemos hallar una partición $P'$ tal que $|P'|=\frac{P}{2^n}<\delta$ y además:
+$$
+\overline{\int_a^b} f+\epsilon > U(f,P)\geq U(f,P'),
+$$
+quedando demostrada la segunda parte de la proposición.
