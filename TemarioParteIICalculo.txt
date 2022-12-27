@@ -3,7 +3,7 @@ Tema 1: Repaso de series
   Operaciones con series infinitas.
 
 Tema 2: Sucesiones de funciones
-  Convergenia uniforme y puntual. Criterio de convergencia uniforme. Continuidad.
+  Convergencia uniforme y puntual. Criterio de convergencia uniforme. Continuidad.
   Series de funciones. Integración y Derivación. Series de potencias. Integración
   y derivación de series de potencias. Operaciones. Funciones analíticas. Series de potencias
   con términos complejos. Series infinitas e integrales impropias. Productos infinitos.
