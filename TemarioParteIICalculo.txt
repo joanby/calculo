@@ -1,0 +1,14 @@
+Tema 1: Repaso de series
+  Convergencia, convergencia absoluta y condicional. Reordenamiento de términos. 
+  Operaciones con series infinitas.
+
+Tema 2: Sucesiones de funciones
+  Convergenia uniforme y puntual. Criterio de convergencia uniforme. Continuidad.
+  Series de funciones. Integración y Derivación. Series de potencias. Integración
+  y derivación de series de potencias. Operaciones. Funciones analíticas. Series de potencias
+  con términos complejos. Series infinitas e integrales impropias. Productos infinitos.
+
+Tema 3. Series trigonométricas
+  Funciones periódicas. Periodo, vibraciones armónicas, superposición. Notación compleja.
+  Series de Fourier. Desarrollo de Fourier de una función. Teorema de aproximación de Wierstrass. 
+  Aproximación de Fejer. Identidad de Parseval. Fenómeno de Gibbs. Integración de series de Fourier.
